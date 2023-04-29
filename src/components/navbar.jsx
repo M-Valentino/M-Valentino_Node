@@ -4,12 +4,16 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
+import { useState } from "react";
 
 function NavBar() {
+
+
+
   return (
     <AppBar position="static">
       <Toolbar>
-        <IconButton
+        {/* <IconButton
           size="large"
           edge="start"
           color="inherit"
@@ -17,7 +21,7 @@ function NavBar() {
           sx={{ mr: 2 }}
         >
           <MenuIcon />
-        </IconButton>
+        </IconButton> */}
         <Button color="inherit">Home</Button>
         <Button color="inherit">Projects</Button>
         <Button color="inherit">Portfolio</Button>
