@@ -15,7 +15,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body style={{ margin: 0 }}>
+      <body style={{ margin: 0}}>
         <ThemeProvider theme={MainTheme}>
           <NavBar />
           <Main />

@@ -1,10 +1,11 @@
 import * as React from "react";
+import Link from "next/link";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
-import { useState } from "react";
+
 
 function NavBar() {
 
@@ -22,9 +23,9 @@ function NavBar() {
         >
           <MenuIcon />
         </IconButton> */}
-        <Button color="inherit">Home</Button>
+        <Link href="/home"><Button color="inherit">Home</Button></Link>
         <Button color="inherit">Projects</Button>
-        <Button color="inherit">Portfolio</Button>
+        <Link href="/portfolio"><Button color="inherit">Portfolio</Button></Link>
       </Toolbar>
     </AppBar>
   );
