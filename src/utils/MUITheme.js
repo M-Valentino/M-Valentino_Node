@@ -5,10 +5,7 @@ export const MainTheme = createTheme({
   palette: {
     primary: orange,
     text: {
-      secondary: '#444',
-
-    }
-    
-
-  }
+      secondary: "#444",
+    },
+  },
 });

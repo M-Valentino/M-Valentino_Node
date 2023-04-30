@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import NavBar from "@/components/navbar";
-import { ThemeProvider} from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
 
 export default function Document() {
