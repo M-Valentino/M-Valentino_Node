@@ -24,7 +24,12 @@ export default function projects() {
       <main>
         <ThemeProvider theme={MainTheme}>
           <center>
-            <Typography variant="h3" fontWeight={500} gutterBottom textTransform={"uppercase"}>
+            <Typography
+              variant="h3"
+              fontWeight={500}
+              gutterBottom
+              textTransform={"uppercase"}
+            >
               Projects
             </Typography>
           </center>
@@ -42,7 +47,11 @@ export default function projects() {
                     </Typography>
                     <Typography variant="h5">Cities Recommender</Typography>
                   </Stack>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    style={{ textAlign: "justify" }}
+                  >
                     I wrote an AI program to recommend the best cities in
                     America to live in. Cities were optimized between being safe
                     and having favorable economic conditions (low cost of living
@@ -67,12 +76,17 @@ export default function projects() {
                     </Typography>
                     <Typography variant="h5">Retro Calculator</Typography>
                   </Stack>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    style={{ textAlign: "justify" }}
+                  >
                     A functional recreation of an old school style calculator
                     was made. I pushed CSS to the limit to make the calculator
-                    photorealistic. Vector images were not used as I wanted to
-                    make the calculator easier to be built upon in the future.
-                    The entire webpage is very small and takes up 14Kb.
+                    photorealistic by heavily using shadows and gradients.
+                    Vector images were not used as I wanted to make the
+                    calculator easier to be built upon in the future. The entire
+                    webpage is very small and takes up 14Kb.
                   </Typography>
                   <Stack direction="row" spacing={1} mt={1}>
                     <Chip label="JS" />
