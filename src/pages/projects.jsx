@@ -23,6 +23,11 @@ export default function projects() {
       </Head>
       <main>
         <ThemeProvider theme={MainTheme}>
+          <center>
+            <Typography variant="h3" fontWeight={500} gutterBottom textTransform={"uppercase"}>
+              Projects
+            </Typography>
+          </center>
           <Grid container justifyContent="center" spacing={4} direction="row">
             <Grid item>
               <Card sx={{ maxWidth: 345 }}>
@@ -53,12 +58,9 @@ export default function projects() {
               </Card>
             </Grid>
             <Grid item>
-              <Card sx={{ maxWidth: 345}}>
+              <Card sx={{ maxWidth: 345 }}>
                 <CardContent>
-                  <img
-                    src="/calculator.jpg"
-                    style={{ width: "100%" }}
-                  ></img>
+                  <img src="/calculator.jpg" style={{ width: "100%" }}></img>
                   <Stack direction="row" spacing={1}>
                     <Typography variant="h6" color="primary">
                       2022
