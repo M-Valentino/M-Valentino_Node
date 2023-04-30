@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 
-export default function portfolio() {
+export default function projects() {
   return (
     <>
       <Head>

@@ -6,13 +6,9 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
 
-
 function NavBar() {
-
-
-
   return (
-    <AppBar position="static">
+    <AppBar position="static" elevation={1}>
       <Toolbar>
         {/* <IconButton
           size="large"
@@ -23,9 +19,15 @@ function NavBar() {
         >
           <MenuIcon />
         </IconButton> */}
-        <Link href="/home"><Button color="inherit">Home</Button></Link>
-        <Button color="inherit">Projects</Button>
-        <Link href="/portfolio"><Button color="inherit">Portfolio</Button></Link>
+        <Link href="/">
+          <Button color="inherit">Home</Button>
+        </Link>
+        <Link href="/projects">
+          <Button color="inherit">Projects</Button>
+        </Link>
+        <Link href="/portfolio">
+          <Button color="inherit">Portfolio</Button>
+        </Link>
       </Toolbar>
     </AppBar>
   );
