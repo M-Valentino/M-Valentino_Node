@@ -13,7 +13,6 @@ export default function Document() {
           imageRendering: "high-quality",
           background:
             "radial-gradient(circle, rgb(246,249,251) 0%, rgb(234,240,246) 100%",
-          
         }}
       >
         <ThemeProvider theme={MainTheme}>

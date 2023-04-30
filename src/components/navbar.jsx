@@ -9,8 +9,8 @@ import { Stack } from "@mui/material";
 
 function NavBar() {
   return (
-    <AppBar position="static" elevation={1} style={{padding: 4}}>
-      <Stack spacing={4} direction="row">
+    <AppBar position="static" elevation={1} style={{ padding: 4 }}>
+      <Stack spacing={4} direction="row" style={{textDecoration: "none"}}>
         {/* <IconButton
           size="large"
           edge="start"
@@ -29,7 +29,7 @@ function NavBar() {
         <Link href="/portfolio">
           <Button color="inherit">Portfolio</Button>
         </Link>
-        </Stack>
+      </Stack>
     </AppBar>
   );
 }
