@@ -2,10 +2,7 @@ import Head from "next/head";
 import * as React from "react";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
@@ -23,16 +20,16 @@ export default function projects() {
       </Head>
       <main>
         <ThemeProvider theme={MainTheme}>
-          <center>
-            <Typography
-              variant="h3"
-              fontWeight={500}
-              gutterBottom
-              textTransform={"uppercase"}
-            >
-              Projects
-            </Typography>
-          </center>
+          <Typography
+            variant="h3"
+            fontWeight={500}
+            gutterBottom
+            textTransform={"uppercase"}
+            textAlign={"center"}
+          >
+            Projects
+          </Typography>
+
           <Grid container justifyContent="center" spacing={4} direction="row">
             <Grid item>
               <Card sx={{ maxWidth: 345 }}>
