@@ -5,7 +5,7 @@ export default function ICButton (props) {
   const {text} = props;
 
 return (
-<Stack>
+<Stack style={{position: 'absolute', left: 5, top: 0}}>
   <div
     style={{
       width: 10,
@@ -34,7 +34,7 @@ return (
       width: 125,
       height: 10,
       backgroundColor: "#000",
-      boxShadow: "0px 2.5px 0 0px rgba(0,0,0,0.28)",
+      boxShadow: "0px 2.5px 0 0px rgba(0,0,0,0.1)",
     }}
   ></div>
   <Stack direction="row">

@@ -8,29 +8,29 @@ import { Stack, Typography } from "@mui/material";
 import ICButton from "./icButton";
 
 function NavBar() {
+
+
+
+
+
   return (
-    <AppBar position="static" elevation={1} style={{ padding: 4 }}>
-      <Stack spacing={4} direction="row" style={{ textDecoration: "none" }}>
+    <AppBar
+      position="static"
+      elevation={0}
+      style={{ padding: 4 }}
+      color={"transparent"}
+    >
+      <ICButton text="HOME" />
+      <Stack spacing={0} direction="row" alignSelf="center">
+        <Link href="/"></Link>
         <Link href="/">
-          <ICButton text="HOME"/>
-        </Link>
-        {/* <IconButton
-          size="large"
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          sx={{ mr: 2 }}
-        >
-          <MenuIcon />
-        </IconButton> */}
-        <Link href="/">
-          <Button color="inherit">Home</Button>
+          <Button color="primary">Home</Button>
         </Link>
         <Link href="/projects">
-          <Button color="inherit">Projects</Button>
+          <Button color="primary">Projects</Button>
         </Link>
         <Link href="/portfolio">
-          <Button color="inherit">Portfolio</Button>
+          <Button color="primary">Portfolio</Button>
         </Link>
       </Stack>
     </AppBar>
