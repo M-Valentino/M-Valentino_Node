@@ -16,11 +16,11 @@ export default function Document() {
         }}
       >
         <ThemeProvider theme={MainTheme}>
-          <NavBar />
-          <div style={{ padding: 20 }}>
+          {/* <NavBar /> */}
+          
             <Main />
             <NextScript />
-          </div>
+          
         </ThemeProvider>
       </body>
     </Html>

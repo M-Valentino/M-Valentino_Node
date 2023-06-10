@@ -1,5 +1,7 @@
 import Head from "next/head";
-
+import NavBar from "@/components/navbar";
+import { ThemeProvider } from "@mui/material/styles";
+import { MainTheme } from "@/utils/MUITheme";
 
 export default function portfolio() {
   return (
@@ -11,6 +13,9 @@ export default function portfolio() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+      <ThemeProvider theme={MainTheme}>
+        <NavBar activeLink={2}/>
+        </ThemeProvider>
       </main>
     </>
   );

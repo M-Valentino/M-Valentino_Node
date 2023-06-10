@@ -8,6 +8,7 @@ import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
+import NavBar from "@/components/navbar";
 
 export default function projects() {
   return (
@@ -20,6 +21,7 @@ export default function projects() {
       </Head>
       <main>
         <ThemeProvider theme={MainTheme}>
+          <NavBar activeLink={1}/>
           <Typography
             variant="h3"
             fontWeight={500}
@@ -46,7 +48,9 @@ export default function projects() {
                       <Typography variant="h6" color="primary">
                         2021
                       </Typography>
-                      <Typography variant="h5" color="text.primary">Cities Recommender</Typography>
+                      <Typography variant="h5" color="text.primary">
+                        Cities Recommender
+                      </Typography>
                     </Stack>
 
                     <Typography
@@ -81,7 +85,9 @@ export default function projects() {
                       <Typography variant="h6" color="primary">
                         2022
                       </Typography>
-                      <Typography variant="h5" color="text.primary">Retro Calculator</Typography>
+                      <Typography variant="h5" color="text.primary">
+                        Retro Calculator
+                      </Typography>
                     </Stack>
                     <Typography
                       variant="body2"
