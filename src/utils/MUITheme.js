@@ -1,11 +1,18 @@
 import { createTheme } from "@mui/material/styles";
-import { green } from "@mui/material/colors";
+import { orange, grey } from "@mui/material/colors";
 
 export const MainTheme = createTheme({
   palette: {
-    primary: green,
+    primary: orange,
+    secondary: grey,
     text: {
+      primary: "#000",
       secondary: "#444",
     },
   },
+  typography: {
+    button: {
+      textTransform: 'none'
+    }
+  }
 });
