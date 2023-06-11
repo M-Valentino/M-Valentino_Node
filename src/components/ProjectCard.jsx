@@ -1,4 +1,3 @@
-
 import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -9,16 +8,13 @@ import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
 
 export default function ProjectCard(props) {
-  const {href, imageLink, title, date, description} = props.data;
+  const { href, imageLink, title, date, description, languages } = props.data;
 
   return (
     <>
       <ThemeProvider theme={MainTheme}>
         <Card sx={{ maxWidth: 345 }}>
-          <a
-            style={{ textDecoration: "none" }}
-            href={href}
-          >
+          <a style={{ textDecoration: "none" }} href={href}>
             <CardContent>
               <img src={imageLink} style={{ width: "100%" }}></img>
               <Stack direction="row" spacing={1}>
@@ -38,8 +34,9 @@ export default function ProjectCard(props) {
                 {description}
               </Typography>
               <Stack direction="row" spacing={1} mt={1}>
-                <Chip label="Python" />
-                <Chip label="Java" />
+                {languages.map((props, index) => (
+                  <Chip key={index} label={props} />
+                ))}
               </Stack>
             </CardContent>
           </a>
