@@ -5,9 +5,6 @@ import Button from "@mui/material/Button";
 import { Stack } from "@mui/material";
 import ICButton from "./icButton";
 
-
-
-
 const NavBar = (props) => {
   const {activeLink} = props;
   return (
@@ -17,16 +14,15 @@ const NavBar = (props) => {
       color={"transparent"}
     >
       <ICButton text="HOME" />
-      <Stack spacing={0} direction="row" alignSelf="center">
-        <Link href="/"></Link>
+      <Stack spacing={5} direction="row" alignSelf="center">
         <Link href="/">
-          <Button color={activeLink === 0 ?  'primary': 'secondary'}>Home</Button>
+          <Button color={activeLink === 0 ?  'primary': 'secondary'} style={{fontSize: 18}}>Home</Button>
         </Link>
         <Link href="/projects">
-          <Button color={activeLink === 1 ?  'primary': 'secondary'}>Projects</Button>
+          <Button color={activeLink === 1 ?  'primary': 'secondary'} style={{fontSize: 18}}>Projects</Button>
         </Link>
         <Link href="/portfolio">
-          <Button color={activeLink === 2 ?  'primary' : 'secondary'}>Portfolio</Button>
+          <Button color={activeLink === 2 ?  'primary' : 'secondary'} style={{fontSize: 18}}>Portfolio</Button>
         </Link>
       </Stack>
     </AppBar>

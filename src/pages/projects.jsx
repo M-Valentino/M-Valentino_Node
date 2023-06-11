@@ -1,14 +1,12 @@
 import Head from "next/head";
 import * as React from "react";
 import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import Chip from "@mui/material/Chip";
-import Stack from "@mui/material/Stack";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
 import NavBar from "@/components/navbar";
+import ProjectCard from "@/components/ProjectCard";
+import { projectContent } from "@/consts/projectcontent";
 
 export default function projects() {
   return (
@@ -21,7 +19,7 @@ export default function projects() {
       </Head>
       <main>
         <ThemeProvider theme={MainTheme}>
-          <NavBar activeLink={1}/>
+          <NavBar activeLink={1} />
           <Typography
             variant="h3"
             fontWeight={500}
@@ -33,83 +31,11 @@ export default function projects() {
           </Typography>
 
           <Grid container justifyContent="center" spacing={4} direction="row">
-            <Grid item>
-              <Card sx={{ maxWidth: 345 }}>
-                <a
-                  style={{ textDecoration: "none" }}
-                  href="https://github.com/M-Valentino/Cities-Recommender"
-                >
-                  <CardContent>
-                    <img
-                      src="/citiesrecommender.png"
-                      style={{ width: "100%" }}
-                    ></img>
-                    <Stack direction="row" spacing={1}>
-                      <Typography variant="h6" color="primary">
-                        2021
-                      </Typography>
-                      <Typography variant="h5" color="text.primary">
-                        Cities Recommender
-                      </Typography>
-                    </Stack>
-
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      style={{ textAlign: "justify" }}
-                    >
-                      I wrote an AI program to recommend the best cities in
-                      America to live in. Cities were optimized between being
-                      safe and having favorable economic conditions (low cost of
-                      living and high median income). Machine learning was used
-                      to estimate unknown cost of living values of cities. Over
-                      2000 cities were looked at.
-                    </Typography>
-                    <Stack direction="row" spacing={1} mt={1}>
-                      <Chip label="Python" />
-                      <Chip label="Java" />
-                    </Stack>
-                  </CardContent>
-                </a>
-              </Card>
-            </Grid>
-            <Grid item>
-              <Card sx={{ maxWidth: 345 }}>
-                <a
-                  href="https://m-valentino.github.io/calculator.html"
-                  style={{ textDecoration: "none" }}
-                >
-                  <CardContent>
-                    <img src="/calculator.jpg" style={{ width: "100%" }}></img>
-                    <Stack direction="row" spacing={1}>
-                      <Typography variant="h6" color="primary">
-                        2022
-                      </Typography>
-                      <Typography variant="h5" color="text.primary">
-                        Retro Calculator
-                      </Typography>
-                    </Stack>
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      style={{ textAlign: "justify" }}
-                    >
-                      A functional recreation of an old school style calculator
-                      was made. I pushed CSS to the limit to make the calculator
-                      photorealistic by heavily using shadows and gradients.
-                      Vector images were not used as I wanted to make the
-                      calculator easier to be built upon in the future. The
-                      entire webpage is very small and takes up 14Kb.
-                    </Typography>
-                    <Stack direction="row" spacing={1} mt={1}>
-                      <Chip label="JS" />
-                      <Chip label="CSS" />
-                      <Chip label="HTML5" />
-                    </Stack>
-                  </CardContent>
-                </a>
-              </Card>
-            </Grid>
+            {projectContent.map((props, index) => (
+              <Grid item >
+                <ProjectCard key={index} data={props} />
+              </Grid>
+            ))}
           </Grid>
         </ThemeProvider>
       </main>
