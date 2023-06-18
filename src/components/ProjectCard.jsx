@@ -35,7 +35,7 @@ export default function ProjectCard(props) {
               </Typography>
               <Stack direction="row" spacing={1} mt={1}>
                 {languages.map((props, index) => (
-                  <Chip key={index} label={props} />
+                  <Chip key={index} label={props}/>
                 ))}
               </Stack>
             </CardContent>
