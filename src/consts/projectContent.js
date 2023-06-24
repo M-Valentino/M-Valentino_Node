@@ -9,7 +9,7 @@ export const projectContent = [
     languages: ["Python", "Java"],
   },
   {
-    href: "https://m-valentino.github.io/calculator.html",
+    href: "/retro_calculator.html",
     imageLink: "calculator.jpg",
     title: "Retro Calculator",
     date: "2022",
