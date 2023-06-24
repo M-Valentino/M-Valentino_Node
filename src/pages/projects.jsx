@@ -6,7 +6,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
 import NavBar from "@/components/navbar";
 import ProjectCard from "@/components/ProjectCard";
-import { projectContent } from "@/consts/projectcontent";
+import { projectContent } from "@/consts/projectContent";
 
 export default function projects() {
   return (
@@ -33,7 +33,7 @@ export default function projects() {
           <Grid container justifyContent="center" spacing={4} direction="row">
             {projectContent.map((props, index) => (
               <Grid item >
-                <ProjectCard key={index} data={props} />
+                <ProjectCard key={index} data={props} style/>
               </Grid>
             ))}
           </Grid>

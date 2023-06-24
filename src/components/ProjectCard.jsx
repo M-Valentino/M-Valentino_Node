@@ -10,6 +10,21 @@ import { MainTheme } from "@/utils/MUITheme";
 export default function ProjectCard(props) {
   const { href, imageLink, title, date, description, languages } = props.data;
 
+  const getChipColor = language => {
+    switch (language) {
+      case 'CSS':
+        return '#ffb3ba'
+      case 'Java':
+        return '#ffdfba'
+        case 'JS':
+          return '#ffffba'
+      case 'Python':
+        return '#baffc9'
+      default:
+        return '#bae1ff'
+    }
+  }
+
   return (
     <>
       <ThemeProvider theme={MainTheme}>
@@ -35,7 +50,7 @@ export default function ProjectCard(props) {
               </Typography>
               <Stack direction="row" spacing={1} mt={1}>
                 {languages.map((props, index) => (
-                  <Chip key={index} label={props}/>
+                  <Chip key={index} label={props} style={{backgroundColor: getChipColor(props)}}/>
                 ))}
               </Stack>
             </CardContent>
