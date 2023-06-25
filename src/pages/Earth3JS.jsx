@@ -2,20 +2,19 @@ import React, { useRef, useMemo, useState, useEffect } from "react";
 import Head from "next/head";
 import NavBar from "@/components/navbar";
 import { Canvas, useFrame } from "react-three-fiber";
-import { Text, OrbitControls} from "@react-three/drei";
+import { Text, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 // import "./App.css";
 
-
 const Earth3JS = () => {
-  const clouds3k =  "/Earth3JS/3k_earth_clouds.webp";
+  const clouds3k = "/Earth3JS/3k_earth_clouds.webp";
   const clouds1080p = "/Earth3JS/1080p_earth_clouds.webp";
-// https://www.solarsystemscope.com/textures/
-// https://www.pngkey.com/detail/u2w7w7t4r5e6q8y3_earth-clouds-2048-earth-clouds-texture-png/
-const TwoKEarth = "/Earth3JS/2k_earth_daymap.webp";
-const FourKEarth = "/Earth3JS/4k_earth_daymap.webp";
-const moon720p = "/Earth3JS/720p_moon.webp";
-const moon360p = "/Earth3JS/360p_moon.webp";
+  // https://www.solarsystemscope.com/textures/
+  // https://www.pngkey.com/detail/u2w7w7t4r5e6q8y3_earth-clouds-2048-earth-clouds-texture-png/
+  const TwoKEarth = "/Earth3JS/2k_earth_daymap.webp";
+  const FourKEarth = "/Earth3JS/4k_earth_daymap.webp";
+  const moon720p = "/Earth3JS/720p_moon.webp";
+  const moon360p = "/Earth3JS/360p_moon.webp";
   const [textSaysLow, setTextSaysLow] = React.useState(true);
   const [earthTextureToUse, setEarthTextureToUse] = React.useState(FourKEarth);
   const [moonTextureToUse, setMoonTextureToUse] = React.useState(moon720p);
@@ -214,43 +213,48 @@ const moon360p = "/Earth3JS/360p_moon.webp";
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main style={{maxHeight: '100vh', overflow: 'hidden'}}>
-      <NavBar activeLink={1} />
-    <Canvas camera={{ position: [0, 0, 8.5], fov: 40 }} style={{width: '100%',
-  height: '100vh',
-  objectFit: 'cover',
-  backgroundImage: 'url(\'/src/images/8k_stars.webp\')',
-  backgroundSize: 'cover',
-  backgroundColor: 'black',
-  boxShadow: '0 0 200px rgba(0,0,0,0.4) inset, 0 0 300px rgba(0,0,0,1) inset'}}>
-      <Earth position={[0, -0.1, 0]} />
-      <Clouds position={[0, -0.1, 0]} />
-      <Moon position={[3, 0, 2]} />
-      <SettingsButton position={[-1.75, 2.9, 0]} onClick={toggleGraphics} />
-      {textSaysLow && (
-        <>
-          <ambientLight intensity={0.1} color="#ffffff" />
-          <spotLight
-            position={[10, 10, 10]}
-            angle={0.15}
-            penumbra={1}
-            castShadow
-            color="#fffff5"
-          />
-          <pointLight
-            position={[-5, 5, 1]}
-            intensity={0.2}
-            angle={0}
-            penumbra={0}
-            castShadow
-            color="#fffff5"
-          />
-        </>
-      )}
-      <OrbitControls />
-      
-    </Canvas>
-    </main>
+      <main style={{ maxHeight: "100vh", overflow: "hidden" }}>
+        <NavBar activeLink={1} />
+        <Canvas
+          camera={{ position: [0, 0, 8.5], fov: 40 }}
+          style={{
+            width: "100%",
+            height: "100vh",
+            objectFit: "cover",
+            backgroundImage: "url('/src/images/8k_stars.webp')",
+            backgroundSize: "cover",
+            backgroundColor: "black",
+            boxShadow:
+              "0 0 200px rgba(0,0,0,0.4) inset, 0 0 300px rgba(0,0,0,1) inset",
+          }}
+        >
+          <Earth position={[0, -0.1, 0]} />
+          <Clouds position={[0, -0.1, 0]} />
+          <Moon position={[3, 0, 2]} />
+          <SettingsButton position={[-1.75, 2.9, 0]} onClick={toggleGraphics} />
+          {textSaysLow && (
+            <>
+              <ambientLight intensity={0.1} color="#ffffff" />
+              <spotLight
+                position={[10, 10, 10]}
+                angle={0.15}
+                penumbra={1}
+                castShadow
+                color="#fffff5"
+              />
+              <pointLight
+                position={[-5, 5, 1]}
+                intensity={0.2}
+                angle={0}
+                penumbra={0}
+                castShadow
+                color="#fffff5"
+              />
+            </>
+          )}
+          <OrbitControls />
+        </Canvas>
+      </main>
     </>
   );
 };
