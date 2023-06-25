@@ -7,14 +7,14 @@ import * as THREE from "three";
 
 
 const Earth3JS = () => {
-  const clouds3k =  "/3k_earth_clouds.webp";
-  const clouds1080p = "/1080p_earth_clouds.webp";
+  const clouds3k =  "/Earth3JS/3k_earth_clouds.webp";
+  const clouds1080p = "/Earth3JS/1080p_earth_clouds.webp";
 // https://www.solarsystemscope.com/textures/
 // https://www.pngkey.com/detail/u2w7w7t4r5e6q8y3_earth-clouds-2048-earth-clouds-texture-png/
-const TwoKEarth = "/2k_earth_daymap.webp";
-const FourKEarth = "/4k_earth_daymap.webp";
-const moon720p = "/720p_moon.webp";
-const moon360p = "/360p_moon.webp";
+const TwoKEarth = "/Earth3JS/2k_earth_daymap.webp";
+const FourKEarth = "/Earth3JS/4k_earth_daymap.webp";
+const moon720p = "/Earth3JS/720p_moon.webp";
+const moon360p = "/Earth3JS/360p_moon.webp";
   const [textSaysLow, setTextSaysLow] = React.useState(true);
   const [earthTextureToUse, setEarthTextureToUse] = React.useState(FourKEarth);
   const [moonTextureToUse, setMoonTextureToUse] = React.useState(moon720p);

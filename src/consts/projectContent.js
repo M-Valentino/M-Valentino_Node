@@ -1,7 +1,7 @@
 export const projectContent = [
   {
     href: "https://github.com/M-Valentino/Cities-Recommender",
-    imageLink: "citiesrecommender.png",
+    imageLink: "/projectImages/citiesrecommender.png",
     title: "Cities Recommender",
     date: "2021",
     description:
@@ -10,7 +10,7 @@ export const projectContent = [
   },
   {
     href: "/retro_calculator.html",
-    imageLink: "calculator.jpg",
+    imageLink: "/projectImages/calculator.jpg",
     title: "Retro Calculator",
     date: "2022",
     description:
@@ -19,7 +19,7 @@ export const projectContent = [
   },
   {
     href: "https://github.com/M-Valentino/Image-Manipulation-Experiments",
-    imageLink: "tigers.jpg",
+    imageLink: "/projectImages/tigers.jpg",
     title: "Image Manipulation Experiments",
     date: "2022",
     description:
