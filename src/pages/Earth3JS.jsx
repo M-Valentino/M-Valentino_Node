@@ -1,7 +1,8 @@
 import React, { useRef, useMemo, useState, useEffect } from "react";
 import Head from "next/head";
+import NavBar from "@/components/navbar";
 import { Canvas, useFrame } from "react-three-fiber";
-import { Text, OrbitControls, Stats } from "@react-three/drei";
+import { Text, OrbitControls} from "@react-three/drei";
 import * as THREE from "three";
 // import "./App.css";
 
@@ -214,8 +215,9 @@ const moon360p = "/Earth3JS/360p_moon.webp";
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-    <Canvas camera={{ position: [0, 0, 8.5], fov: 40 }} style={{height: '100vh',
-  width: '100vw',
+      <NavBar activeLink={1} />
+    <Canvas camera={{ position: [0, 0, 8.5], fov: 40 }} style={{height: '90vh',
+  width: '100%',
   display: 'block',
   backgroundImage: 'url(\'/src/images/8k_stars.webp\')',
   backgroundSize: 'cover',
@@ -246,7 +248,7 @@ const moon360p = "/Earth3JS/360p_moon.webp";
         </>
       )}
       <OrbitControls />
-      <Stats />
+      
     </Canvas>
     </main>
     </>
