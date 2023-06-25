@@ -4,10 +4,20 @@ export const LANGUAGES = {
   html: "HTML",
   java: "Java",
   python: "Python",
+  react: "React",
   vanillaJS: "Vanilla JS",
 };
 
 export const projectContent = [
+  {
+    href: "/Earth3JS",
+    imageLink: "/projectImages/tigers.jpg",
+    title: "Earth 3JS",
+    date: "2023",
+    description:
+      "This project was made to explore how programs can perform image manipulation. I wrote a program that can open a bitmap image and store its pixel data into matrices which could then be manipulated. I was able to successfully mirror an image, invert the colors of an image, convert an image to black and white, and stretch an image programatically.",
+    languages: [LANGUAGES.react],
+  },
   {
     href: "https://github.com/M-Valentino/Cities-Recommender",
     imageLink: "/projectImages/citiesrecommender.png",

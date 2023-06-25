@@ -4,33 +4,40 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
-import Grow from '@mui/material/Grow';
+import Grow from "@mui/material/Grow";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
 import { LANGUAGES } from "@/consts/projectContent";
 
-export default function ProjectCard(props, index) {
+export default function ProjectCard(props) {
   const { href, imageLink, title, date, description, languages } = props.data;
 
-  const getChipColor = language => {
+  /**
+   * Function for determining which background color the coding language tags will have
+   * @param {*} language the string value of the language
+   * @returns the hex color
+   */
+  const getChipColor = (language) => {
     switch (language) {
       case LANGUAGES.css:
-        return '#ffb3ba'
+        return "#ffb3ba";
       case LANGUAGES.java:
-        return '#ffdfba'
+        return "#ffdfba";
       case LANGUAGES.vanillaJS:
-        return '#ffffba'
+        return "#ffffba";
       case LANGUAGES.python:
-        return '#baffc9'
+        return "#baffc9";
+      case LANGUAGES.react:
+        return "#bac9ff";
       default:
-        return '#bae1ff'
+        return "#bae1ff";
     }
-  }
+  };
 
   return (
-    <>
-      <ThemeProvider theme={MainTheme}>
-      <Grow in timeout={250 * props.index + 250} >
+    <ThemeProvider theme={MainTheme}>
+      {/* Cards on the projects page will appear one after another. Cards with a lower index will apear sooner. */}
+      <Grow in timeout={250 * props.index + 250}>
         <Card sx={{ maxWidth: 345 }}>
           <a style={{ textDecoration: "none" }} href={href}>
             <CardContent>
@@ -43,7 +50,6 @@ export default function ProjectCard(props, index) {
                   {title}
                 </Typography>
               </Stack>
-
               <Typography
                 variant="body2"
                 color="text.secondary"
@@ -53,14 +59,17 @@ export default function ProjectCard(props, index) {
               </Typography>
               <Stack direction="row" spacing={1} mt={1}>
                 {languages.map((props, index) => (
-                  <Chip index={index} label={props} style={{backgroundColor: getChipColor(props)}}/>
+                  <Chip
+                    index={index}
+                    label={props}
+                    style={{ backgroundColor: getChipColor(props) }}
+                  />
                 ))}
               </Stack>
             </CardContent>
           </a>
         </Card>
-        </Grow>
-      </ThemeProvider>
-    </>
+      </Grow>
+    </ThemeProvider>
   );
 }
