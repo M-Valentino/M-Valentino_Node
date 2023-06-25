@@ -17,4 +17,13 @@ export const projectContent = [
       "A functional recreation of an old school style calculator was made. I pushed CSS to the limit to make the calculator photorealistic by heavily using shadows and gradients. Vector images were not used as I wanted to make the calculator easier to be built upon in the future. The entire webpage is very small and takes up 14Kb.",
     languages: ["JS", "CSS", "HTML5"],
   },
+  {
+    href: "https://github.com/M-Valentino/Image-Manipulation-Experiments",
+    imageLink: "tigers.jpg",
+    title: "Image Manipulation Experiments",
+    date: "2022",
+    description:
+      "This project was made to explore how programs can perform image manipulation. I wrote a program that can open a bitmap image and store its pixel data into matrices which could then be manipulated. I was able to successfully mirror an image, invert the colors of an image, convert an image to black and white, and stretch an image programatically.",
+    languages: ["Java"],
+  },
 ];

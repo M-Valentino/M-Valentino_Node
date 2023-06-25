@@ -4,10 +4,11 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
+import Grow from '@mui/material/Grow';
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
 
-export default function ProjectCard(props) {
+export default function ProjectCard(props, index) {
   const { href, imageLink, title, date, description, languages } = props.data;
 
   const getChipColor = language => {
@@ -28,6 +29,7 @@ export default function ProjectCard(props) {
   return (
     <>
       <ThemeProvider theme={MainTheme}>
+      <Grow in timeout={250 * props.index + 250} >
         <Card sx={{ maxWidth: 345 }}>
           <a style={{ textDecoration: "none" }} href={href}>
             <CardContent>
@@ -50,12 +52,13 @@ export default function ProjectCard(props) {
               </Typography>
               <Stack direction="row" spacing={1} mt={1}>
                 {languages.map((props, index) => (
-                  <Chip key={index} label={props} style={{backgroundColor: getChipColor(props)}}/>
+                  <Chip index={index} label={props} style={{backgroundColor: getChipColor(props)}}/>
                 ))}
               </Stack>
             </CardContent>
           </a>
         </Card>
+        </Grow>
       </ThemeProvider>
     </>
   );
