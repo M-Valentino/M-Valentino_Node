@@ -1,5 +1,7 @@
 import React, { useRef, useMemo, useState, useEffect } from "react";
 import Head from "next/head";
+import { ThemeProvider } from "@mui/material/styles";
+import { MainTheme } from "@/utils/MUITheme";
 import NavBar from "@/components/navbar";
 import { Canvas, useFrame } from "react-three-fiber";
 import { Text, OrbitControls } from "@react-three/drei";
@@ -214,46 +216,51 @@ const Earth3JS = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main style={{ maxHeight: "100vh", overflow: "hidden" }}>
-        <NavBar activeLink={1} />
-        <Canvas
-          camera={{ position: [0, 0, 8.5], fov: 40 }}
-          style={{
-            width: "100%",
-            height: "100vh",
-            objectFit: "cover",
-            backgroundImage: "url('/src/images/8k_stars.webp')",
-            backgroundSize: "cover",
-            backgroundColor: "black",
-            boxShadow:
-              "0 0 200px rgba(0,0,0,0.4) inset, 0 0 300px rgba(0,0,0,1) inset",
-          }}
-        >
-          <Earth position={[0, -0.1, 0]} />
-          <Clouds position={[0, -0.1, 0]} />
-          <Moon position={[3, 0, 2]} />
-          <SettingsButton position={[-1.75, 2.9, 0]} onClick={toggleGraphics} />
-          {textSaysLow && (
-            <>
-              <ambientLight intensity={0.1} color="#ffffff" />
-              <spotLight
-                position={[10, 10, 10]}
-                angle={0.15}
-                penumbra={1}
-                castShadow
-                color="#fffff5"
-              />
-              <pointLight
-                position={[-5, 5, 1]}
-                intensity={0.2}
-                angle={0}
-                penumbra={0}
-                castShadow
-                color="#fffff5"
-              />
-            </>
-          )}
-          <OrbitControls />
-        </Canvas>
+        <ThemeProvider theme={MainTheme}>
+          <NavBar/>
+          <Canvas
+            camera={{ position: [0, 0, 8.5], fov: 40 }}
+            style={{
+              width: "100%",
+              height: "100vh",
+              objectFit: "cover",
+              backgroundImage: "url('/src/images/8k_stars.webp')",
+              backgroundSize: "cover",
+              backgroundColor: "black",
+              boxShadow:
+                "0 0 200px rgba(0,0,0,0.4) inset, 0 0 300px rgba(0,0,0,1) inset",
+            }}
+          >
+            <Earth position={[0, -0.1, 0]} />
+            <Clouds position={[0, -0.1, 0]} />
+            <Moon position={[3, 0, 2]} />
+            <SettingsButton
+              position={[-1.75, 2.9, 0]}
+              onClick={toggleGraphics}
+            />
+            {textSaysLow && (
+              <>
+                <ambientLight intensity={0.1} color="#ffffff" />
+                <spotLight
+                  position={[10, 10, 10]}
+                  angle={0.15}
+                  penumbra={1}
+                  castShadow
+                  color="#fffff5"
+                />
+                <pointLight
+                  position={[-5, 5, 1]}
+                  intensity={0.2}
+                  angle={0}
+                  penumbra={0}
+                  castShadow
+                  color="#fffff5"
+                />
+              </>
+            )}
+            <OrbitControls />
+          </Canvas>
+        </ThemeProvider>
       </main>
     </>
   );
