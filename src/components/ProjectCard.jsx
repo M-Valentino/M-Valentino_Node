@@ -7,19 +7,20 @@ import Stack from "@mui/material/Stack";
 import Grow from '@mui/material/Grow';
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
+import { LANGUAGES } from "@/consts/projectContent";
 
 export default function ProjectCard(props, index) {
   const { href, imageLink, title, date, description, languages } = props.data;
 
   const getChipColor = language => {
     switch (language) {
-      case 'CSS':
+      case LANGUAGES.css:
         return '#ffb3ba'
-      case 'Java':
+      case LANGUAGES.java:
         return '#ffdfba'
-        case 'JS':
-          return '#ffffba'
-      case 'Python':
+      case LANGUAGES.vanillaJS:
+        return '#ffffba'
+      case LANGUAGES.python:
         return '#baffc9'
       default:
         return '#bae1ff'
