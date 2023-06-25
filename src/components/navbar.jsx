@@ -13,7 +13,7 @@ const NavBar = (props) => {
       elevation={0}
       color={"transparent"}
     >
-      <ICButton text="HOME" />
+      <img src="/mark-valentino-logo.svg" style={{width: 110, position: "absolute", top: 5, left: 5}}/>
       <Stack spacing={5} direction="row" alignSelf="center">
         <Link href="/">
           <Button color={activeLink === 0 ?  'primary': 'secondary'} style={{fontSize: 18}}>Home</Button>
