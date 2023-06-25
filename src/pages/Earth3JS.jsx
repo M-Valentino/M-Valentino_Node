@@ -214,11 +214,11 @@ const moon360p = "/Earth3JS/360p_moon.webp";
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main style={{maxHeight: '100vh', overflow: 'hidden'}}>
       <NavBar activeLink={1} />
-    <Canvas camera={{ position: [0, 0, 8.5], fov: 40 }} style={{height: '90vh',
-  width: '100%',
-  display: 'block',
+    <Canvas camera={{ position: [0, 0, 8.5], fov: 40 }} style={{width: '100%',
+  height: '100vh',
+  objectFit: 'cover',
   backgroundImage: 'url(\'/src/images/8k_stars.webp\')',
   backgroundSize: 'cover',
   backgroundColor: 'black',
