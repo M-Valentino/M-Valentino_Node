@@ -2,11 +2,11 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import Grow from "@mui/material/Grow";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
+import { LanguageChip } from "./LanguageChip";
 import { LANGUAGES } from "@/consts/projectContent";
 
 export default function ProjectCard(props) {
@@ -59,10 +59,10 @@ export default function ProjectCard(props) {
               </Typography>
               <Stack direction="row" spacing={1} mt={1}>
                 {languages.map((props, index) => (
-                  <Chip
+                  <LanguageChip
                     index={index}
                     label={props}
-                    style={{ backgroundColor: getChipColor(props) }}
+                    backgroundColor={getChipColor(props)}
                   />
                 ))}
               </Stack>
