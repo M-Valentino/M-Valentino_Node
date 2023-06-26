@@ -9,7 +9,7 @@ export default function Document() {
           margin: 0,
           imageRendering: "high-quality",
           background:
-            "radial-gradient(circle, rgb(246,249,251) 0%, rgb(234,240,246) 100%",
+            "radial-gradient(circle, rgb(240,243,245) 0%, rgb(231,237,243) 100%",
         }}
       >
         <Main />

@@ -30,7 +30,7 @@ export default function projects() {
             Projects
           </Typography>
 
-          <Grid container justifyContent="center" spacing={4} direction="row">
+          <Grid container justifyContent="center" spacing={3} direction="row" style={{marginBottom: 50}}>
             {projectContent.map((props, index) => (
               <Grid item >
                 <ProjectCard index={index} data={props} style/>
