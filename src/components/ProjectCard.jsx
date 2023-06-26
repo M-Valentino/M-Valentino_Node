@@ -52,13 +52,13 @@ export default function ProjectCard(props) {
 
   /**
    * Animation to make the card enlarge a little bit when the user hovers over it.
-   * The shadow animates realistically too.
+   * The shadow animates realistically too. This animation is disabled for mobile browsers.
    */
   const cardZoom = useSpring({
     from: {
       scale: 1,
       boxShadow: initialShadow,
-      filter: "brightness(0.99)",
+      filter: isDesktopView ? "brightness(0.99)" : "brightness(1)",
     },
     to: {
       scale: isHovering && isDesktopView ? 1.05 : 1,
