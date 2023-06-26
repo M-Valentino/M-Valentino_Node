@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import { useSpring, animated } from "@react-spring/web";
@@ -9,16 +9,32 @@ import { LANGUAGES } from "@/consts/projectContent";
 
 export default function ProjectCard(props) {
   const { href, imageLink, title, date, description, languages } = props.data;
+  const [isHovering, setIsHovering] = useState(false);
 
   const springs = useSpring({
-    from: { y: -500, opacity: 0},
+    from: { y: 500, opacity: 0 },
     to: { y: 0, opacity: 1 },
-    delay: props.index * 100 ,
+    delay: props.index * 100,
     config: {
       mass: 1,
-      friction: 19
+      friction: 19,
     },
+  });
 
+  const initialShadow =
+    "0px 0.1px 0.2px rgba(0, 0, 0, 0.022), 0px 0.3px 0.4px rgba(0, 0, 0, 0.031), 0px 0.7px 0.9px rgba(0, 0, 0, 0.039), 0px 1.5px 1.8px rgba(0, 0, 0, 0.048), 0px 4px 5px rgba(0, 0, 0, 0.07)";
+  const finalShadow =
+    "0px 0.2px 1px rgba(0, 0, 0, 0.019), 0px 0.5px 2.6px rgba(0, 0, 0, 0.027), 0px 1.1px 5.3px rgba(0, 0, 0, 0.034), 0px 2.2px 11px rgba(0, 0, 0, 0.042), 0px 6px 30px rgba(0, 0, 0, 0.07)";
+  const zoom = useSpring({
+    from: {
+      scale: 1,
+      boxShadow: initialShadow,
+    },
+    to: {
+      scale: isHovering ? 1.05 : 1,
+      boxShadow: isHovering ? finalShadow : initialShadow,
+    },
+    config: { mass: 0.5, friction: 30, tension: 700},
   });
 
   /**
@@ -53,8 +69,12 @@ export default function ProjectCard(props) {
           width: 360,
           padding: 24,
           borderRadius: 4,
+          textRendering: 'geometricPrecision!important',
           ...springs,
+          ...zoom,
         }}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
       >
         <a style={{ textDecoration: "none" }} href={href}>
           <img src={imageLink} style={{ width: "100%", borderRadius: 2 }}></img>
