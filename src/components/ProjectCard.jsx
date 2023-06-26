@@ -34,7 +34,7 @@ export default function ProjectCard(props) {
       scale: isHovering ? 1.05 : 1,
       boxShadow: isHovering ? finalShadow : initialShadow,
     },
-    config: { mass: 0.5, friction: 30, tension: 700},
+    config: { mass: 0.5, friction: 30, tension: 600},
   });
 
   /**

@@ -7,11 +7,11 @@ import { Stack } from "@mui/material";
 const NavBar = (props) => {
   const { activeLink } = props;
   return (
-    <AppBar position="static" elevation={0} color={"transparent"}>
+    <AppBar position="static" elevation={0} color={"transparent"} style={{padding: 5}}>
       <Link href="/">
         <img
           src="/mark-valentino-logo.svg"
-          style={{ width: 110, position: "absolute", top: 5, left: 5 }}
+          style={{ width: 115, position: "absolute", top: 7.5, left: 7.5 }}
         />
       </Link>
       <Stack spacing={5} direction="row" alignSelf="center">
