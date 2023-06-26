@@ -4,13 +4,21 @@ import Stack from "@mui/material/Stack";
 import { useSpring, animated } from "@react-spring/web";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
-import useMediaQuery from '@mui/material/useMediaQuery';
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { LanguageChip } from "./LanguageChip";
 import { LANGUAGES } from "@/consts/projectContent";
 
 export default function ProjectCard(props) {
-  const { href, imageLink, title, date, description, languages } = props.data;
-  const isDesktopView = useMediaQuery('(min-width:1000px)');
+  const {
+    href,
+    imageLink,
+    title,
+    smallerTitleFontNeeded,
+    date,
+    description,
+    languages,
+  } = props.data;
+  const isDesktopView = useMediaQuery("(min-width:1000px)");
   // True if mouse is hovering on the card, else false.
   const [isHovering, setIsHovering] = useState(false);
 
@@ -21,18 +29,18 @@ export default function ProjectCard(props) {
    * parameter.
    */
   const cardDealt = useSpring({
-    from: { 
+    from: {
       y: 500,
-      opacity: 0
+      opacity: 0,
     },
-    to: { 
-      y: 0, 
-      opacity: 1
+    to: {
+      y: 0,
+      opacity: 1,
     },
     delay: props.index * 100,
     config: {
       mass: 1,
-      friction: 19
+      friction: 19,
     },
   });
 
@@ -50,14 +58,15 @@ export default function ProjectCard(props) {
     from: {
       scale: 1,
       boxShadow: initialShadow,
-      filter: "brightness(0.99)"
+      filter: "brightness(0.99)",
     },
     to: {
-      scale: (isHovering && isDesktopView) ? 1.05 : 1,
-      boxShadow: (isHovering && isDesktopView) ? finalShadow : initialShadow,
-      filter: (isHovering && isDesktopView) ? "brightness(1)" : "brightness(0.99)"
+      scale: isHovering && isDesktopView ? 1.05 : 1,
+      boxShadow: isHovering && isDesktopView ? finalShadow : initialShadow,
+      filter:
+        isHovering && isDesktopView ? "brightness(1)" : "brightness(0.99)",
     },
-    config: { mass: 0.5, friction: 30, tension: 600 }
+    config: { mass: 0.5, friction: 30, tension: 600 },
   });
 
   /**
@@ -84,36 +93,48 @@ export default function ProjectCard(props) {
 
   return (
     <ThemeProvider theme={MainTheme}>
-      <animated.div
-        style={{
-          backgroundColor: "#fffdfa",
-          width: 360,
-          padding: 24,
-          borderRadius: 4,
-          textRendering: "geometricPrecision!important",
-          ...cardDealt,
-          ...cardZoom
-        }}
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
-      >
-        <a style={{ textDecoration: "none" }} href={href}>
-          <img src={imageLink} style={{ width: "100%", borderRadius: 2, boxShadow: '0 1px 1px rgba(0, 0, 0, 0.1)' }}></img>
+      <a style={{ textDecoration: "none" }} href={href}>
+        <animated.div
+          style={{
+            backgroundColor: "#fffdfa",
+            width: 360,
+            padding: 24,
+            borderRadius: 4,
+            textRendering: "geometricPrecision!important",
+            ...cardDealt,
+            ...cardZoom,
+          }}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+        >
+          <img
+            src={imageLink}
+            style={{
+              width: "100%",
+              borderRadius: 2,
+              boxShadow: "0 1px 1px rgba(0, 0, 0, 0.1)",
+            }}
+          ></img>
           <Stack direction="row" spacing={1}>
             <Typography variant="h6" color="primary">
               {date}
             </Typography>
-            <Typography variant="h5" color="text.primary">
+            <Typography
+              variant={smallerTitleFontNeeded ? "h6" : "h5"}
+              color="text.primary"
+            >
               {title}
             </Typography>
           </Stack>
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            style={{ textAlign: "justify" }}
-          >
-            {description}
-          </Typography>
+          <div style={{ height: 145 }}>
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              style={{ textAlign: "justify" }}
+            >
+              {description}
+            </Typography>
+          </div>
           <Stack direction="row" spacing={1} mt={1}>
             {languages.map((props, index) => (
               <LanguageChip
@@ -123,8 +144,8 @@ export default function ProjectCard(props) {
               />
             ))}
           </Stack>
-        </a>
-      </animated.div>
+        </animated.div>
+      </a>
     </ThemeProvider>
   );
 }

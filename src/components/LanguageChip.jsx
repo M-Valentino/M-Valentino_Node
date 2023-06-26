@@ -25,7 +25,7 @@ export const LanguageChip = (props) => {
       <Typography
         variant="body2"
         color="text.primary"
-        style={{ fontWeight: 400, opacity: 0.75 }}
+        style={{ fontWeight: 400, opacity: 0.72 }}
       >
         {props.label}
       </Typography>
