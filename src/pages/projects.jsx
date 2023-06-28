@@ -6,6 +6,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
 import NavBar from "@/components/navbar";
 import ProjectCard from "@/components/ProjectCard";
+import ProjectTable from "@/components/ProjectTable";
 import { projectContent } from "@/consts/projectContent";
 
 export default function projects() {
@@ -37,6 +38,7 @@ export default function projects() {
               </Grid>
             ))}
           </Grid>
+          <ProjectTable/>
         </ThemeProvider>
       </main>
     </>
