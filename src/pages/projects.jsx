@@ -38,7 +38,7 @@ export default function projects() {
               </Grid>
             ))}
           </Grid>
-          <ProjectTable/>
+          <ProjectTable />
         </ThemeProvider>
       </main>
     </>
