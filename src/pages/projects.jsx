@@ -1,5 +1,5 @@
 import Head from "next/head";
-import * as React from "react";
+import React, { useState } from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { ThemeProvider } from "@mui/material/styles";
@@ -8,8 +8,17 @@ import NavBar from "@/components/navbar";
 import ProjectCard from "@/components/ProjectCard";
 import ProjectTable from "@/components/ProjectTable";
 import { projectContent } from "@/consts/projectContent";
+import ViewListIcon from "@mui/icons-material/ViewList";
+import ViewModuleIcon from "@mui/icons-material/ViewModule";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
 export default function projects() {
+  const [view, setView] = React.useState("cardView");
+
+  const handleChange = (event, nextView) => {
+    setView(nextView);
+  };
   return (
     <>
       <Head>
@@ -30,15 +39,33 @@ export default function projects() {
           >
             Projects
           </Typography>
-
-          <Grid container justifyContent="center" spacing={3} direction="row" style={{marginBottom: 50}}>
+          <ToggleButtonGroup
+            orientation="vertical"
+            value={view}
+            exclusive
+            onChange={handleChange}
+          >
+            <ToggleButton value="tableView" aria-label="tableView">
+              <ViewListIcon /> Table View
+            </ToggleButton>
+            <ToggleButton value="cardView" aria-label="cardView">
+              <ViewModuleIcon /> Card View
+            </ToggleButton>
+          </ToggleButtonGroup>
+          {view === 'cardView' && <Grid
+            container
+            justifyContent="center"
+            spacing={3}
+            direction="row"
+            style={{ marginBottom: 50 }}
+          >
             {projectContent.map((props, index) => (
-              <Grid item >
-                <ProjectCard index={index} data={props} style/>
+              <Grid item>
+                <ProjectCard index={index} data={props} style />
               </Grid>
             ))}
-          </Grid>
-          <ProjectTable />
+          </Grid>}
+          {view === 'tableView' && <ProjectTable />}
         </ThemeProvider>
       </main>
     </>
