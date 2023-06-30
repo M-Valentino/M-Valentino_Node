@@ -19,6 +19,7 @@ export default function projects() {
   const handleChange = (event, nextView) => {
     setView(nextView);
   };
+
   return (
     <>
       <Head>
@@ -40,15 +41,15 @@ export default function projects() {
             Projects
           </Typography>
           <ToggleButtonGroup
-            orientation="vertical"
+            orientation="horizontal"
             value={view}
             exclusive
             onChange={handleChange}
           >
-            <ToggleButton value="tableView" aria-label="tableView">
+            <ToggleButton value="tableView" aria-label="tableView" disabled={view === 'tableView'}>
               <ViewListIcon /> Table View
             </ToggleButton>
-            <ToggleButton value="cardView" aria-label="cardView">
+            <ToggleButton value="cardView" aria-label="cardView" disabled={view === 'cardView'}>
               <ViewModuleIcon /> Card View
             </ToggleButton>
           </ToggleButtonGroup>
