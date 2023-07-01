@@ -3,9 +3,11 @@ import { LANGUAGES } from "@/consts/projectContent";
 import { Typography } from "@mui/material";
 
 /**
- * This is a component akin to MUI chips. This was made since MUI chips didn't have the exact behavor I wanted.
- * It was just easier to remake them.
- * @param {*} props the text and background color to be shown
+ * This is a component akin to MUI chips. LanguageChip is used in showing what coding language
+ * was used for a project. The color of the chip changes depending on the language passed in
+ * through props. This component can either be in a small size or larger size which is also
+ * dependant of the size prop passed through.
+ * @param {*} props the coding language text to show and the size of the chip.
  */
 export const LanguageChip = (props) => {
   /**
@@ -30,7 +32,7 @@ export const LanguageChip = (props) => {
     }
   };
 
-  const fullSizeStyle = {
+  const fullSizeStyles = {
     container: {
       display: "flex",
       justifyContent: "center",
@@ -40,7 +42,7 @@ export const LanguageChip = (props) => {
       paddingRight: 12.5,
       height: 32,
       borderRadius: 16,
-      backgroundColor: getChipColor(props.label),
+      backgroundColor: getChipColor(props.language),
       textDecoration: "none",
     },
     typography: {
@@ -49,7 +51,7 @@ export const LanguageChip = (props) => {
       fontSize: 15,
     },
   };
-  const smallSizeStyle = {
+  const smallSizeStyles = {
     container: {
       display: "flex",
       justifyContent: "center",
@@ -59,7 +61,7 @@ export const LanguageChip = (props) => {
       paddingRight: 7.5,
       height: 20,
       borderRadius: 10,
-      backgroundColor: getChipColor(props.label),
+      backgroundColor: getChipColor(props.language),
       textDecoration: "none",
     },
     typography: {
@@ -74,19 +76,19 @@ export const LanguageChip = (props) => {
     <div
       style={
         props.size === "full"
-          ? fullSizeStyle.container
-          : smallSizeStyle.container
+          ? fullSizeStyles.container
+          : smallSizeStyles.container
       }
     >
       <Typography
         color="text.primary"
         style={
           props.size === "full"
-            ? fullSizeStyle.typography
-            : smallSizeStyle.typography
+            ? fullSizeStyles.typography
+            : smallSizeStyles.typography
         }
       >
-        {props.label}
+        {props.language}
       </Typography>
     </div>
   );

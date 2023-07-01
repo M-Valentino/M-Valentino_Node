@@ -112,7 +112,7 @@ export default function ProjectCard(props) {
           </div>
           <Stack direction="row" spacing={1} mt={1}>
             {languages.map((props, index) => (
-              <LanguageChip index={index} label={props} size="full" />
+              <LanguageChip index={index} language={props} size="full" />
             ))}
           </Stack>
         </animated.div>

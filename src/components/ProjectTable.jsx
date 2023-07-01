@@ -41,7 +41,7 @@ export default function ProjectTable() {
               <TableCell align="left">
                 <Stack direction='row' spacing={1}>
                   {row.languages.map((props) => (
-                    <LanguageChip label={props} size="small" />
+                    <LanguageChip language={props} size="small" />
                   ))}{" "}
                 </Stack>
               </TableCell>
