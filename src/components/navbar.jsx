@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
-import AppBar from "@mui/material/AppBar";
-import Button from "@mui/material/Button";
-import { Stack } from "@mui/material";
+import { AppBar, Button, Stack } from "@mui/material/";
 
 const NavBar = (props) => {
   const { activeLink } = props;

@@ -1,16 +1,17 @@
 import React from "react";
 import {
-  Chip,
   Paper,
+  Stack,
   Table,
   TableBody,
   TableCell,
   TableContainer,
   TableRow,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import { projectContent } from "@/consts/projectContent";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { LanguageChip } from "./LanguageChip";
 
 export default function ProjectTable() {
   const isDesktopView = useMediaQuery("(min-width:900px)");
@@ -38,9 +39,11 @@ export default function ProjectTable() {
                 </TableCell>
               )}
               <TableCell align="left">
-                {row.languages.map((props) => (
-                  <Chip label={props} size="small" style={{ margin: 2 }} />
-                ))}{" "}
+                <Stack direction='row' spacing={1}>
+                  {row.languages.map((props) => (
+                    <LanguageChip label={props} size="small" />
+                  ))}{" "}
+                </Stack>
               </TableCell>
             </TableRow>
           ))}

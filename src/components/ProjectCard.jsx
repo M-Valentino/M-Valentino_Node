@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import Typography from "@mui/material/Typography";
-import Stack from "@mui/material/Stack";
-import { useSpring, animated } from "@react-spring/web";
+import { Stack, Typography, useMediaQuery } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { useSpring, animated } from "@react-spring/web";
 import { LanguageChip } from "./LanguageChip";
-import { LANGUAGES } from "@/consts/projectContent";
 
 export default function ProjectCard(props) {
   const {
@@ -69,28 +66,6 @@ export default function ProjectCard(props) {
     config: { mass: 0.5, friction: 30, tension: 600 },
   });
 
-  /**
-   * Function for determining which background color the coding language tags will have
-   * @param {*} language the string value of the language
-   * @returns the hex color
-   */
-  const getChipColor = (language) => {
-    switch (language) {
-      case LANGUAGES.css:
-        return "#ffb3ba";
-      case LANGUAGES.java:
-        return "#ffdfba";
-      case LANGUAGES.vanillaJS:
-        return "#ffffba";
-      case LANGUAGES.python:
-        return "#baffc9";
-      case LANGUAGES.react:
-        return "#bac9ff";
-      default:
-        return "#bae1ff";
-    }
-  };
-
   return (
     <ThemeProvider theme={MainTheme}>
       <a style={{ textDecoration: "none" }} href={href}>
@@ -137,11 +112,7 @@ export default function ProjectCard(props) {
           </div>
           <Stack direction="row" spacing={1} mt={1}>
             {languages.map((props, index) => (
-              <LanguageChip
-                index={index}
-                label={props}
-                backgroundColor={getChipColor(props)}
-              />
+              <LanguageChip index={index} label={props} size="full" />
             ))}
           </Stack>
         </animated.div>
