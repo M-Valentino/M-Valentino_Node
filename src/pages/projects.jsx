@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React, { useState } from "react";
-import Grid from "@mui/material/Grid";
+import { Grid, Stack, TextField } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
@@ -14,7 +14,7 @@ import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
 export default function projects() {
-  const [view, setView] = React.useState("cardView");
+  const [view, setView] = useState("cardView");
 
   const handleChange = (event, nextView) => {
     setView(nextView);
@@ -40,33 +40,50 @@ export default function projects() {
           >
             Projects
           </Typography>
-          <ToggleButtonGroup
-            orientation="horizontal"
-            value={view}
-            exclusive
-            onChange={handleChange}
-          >
-            <ToggleButton value="tableView" aria-label="tableView" disabled={view === 'tableView'}>
-              <ViewListIcon /> Table View
-            </ToggleButton>
-            <ToggleButton value="cardView" aria-label="cardView" disabled={view === 'cardView'}>
-              <ViewModuleIcon /> Card View
-            </ToggleButton>
-          </ToggleButtonGroup>
-          {view === 'cardView' && <Grid
-            container
-            justifyContent="center"
-            spacing={3}
-            direction="row"
-            style={{ marginBottom: 50 }}
-          >
-            {projectContent.map((props, index) => (
-              <Grid item>
-                <ProjectCard index={index} data={props} style />
-              </Grid>
-            ))}
-          </Grid>}
-          {view === 'tableView' && <ProjectTable />}
+          <Stack direction="row" justifyContent="center">
+            <ToggleButtonGroup
+              orientation="horizontal"
+              value={view}
+              exclusive
+              onChange={handleChange}
+            >
+              <ToggleButton
+                value="cardView"
+                aria-label="cardView"
+                disabled={view === "cardView"}
+              >
+                <ViewModuleIcon /> Card View
+              </ToggleButton>
+              <ToggleButton
+                value="tableView"
+                aria-label="tableView"
+                disabled={view === "tableView"}
+              >
+                <ViewListIcon /> Table View
+              </ToggleButton>
+            </ToggleButtonGroup>
+            <TextField
+              label="Helper text"
+              variant="standard"
+              fullWidth
+            />
+          </Stack>
+          {view === "cardView" && (
+            <Grid
+              container
+              justifyContent="center"
+              spacing={3}
+              direction="row"
+              style={{ marginBottom: 50 }}
+            >
+              {projectContent.map((props, index) => (
+                <Grid item>
+                  <ProjectCard index={index} data={props} style />
+                </Grid>
+              ))}
+            </Grid>
+          )}
+          {view === "tableView" && <ProjectTable />}
         </ThemeProvider>
       </main>
     </>
