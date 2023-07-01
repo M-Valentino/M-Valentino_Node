@@ -10,10 +10,10 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import { projectContent } from "@/consts/projectContent";
 import { LanguageChip } from "./LanguageChip";
 
-export default function ProjectTable() {
+export default function ProjectTable(props) {
+  const {projectContent} = props;
   const isDesktopView = useMediaQuery("(min-width:900px)");
   return (
     <TableContainer component={Paper} sx={{ maxWidth: 900, margin: "auto" }}>

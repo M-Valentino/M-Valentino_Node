@@ -84,7 +84,7 @@ export default function projects() {
               ))}
             </Grid>
           )}
-          {view === "tableView" && <ProjectTable />}
+          {view === "tableView" && <ProjectTable projectContent={projectContent}/>}
         </ThemeProvider>
       </main>
     </>

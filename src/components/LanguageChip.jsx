@@ -10,6 +10,7 @@ import { Typography } from "@mui/material";
  * @param {*} props the coding language text to show and the size of the chip.
  */
 export const LanguageChip = (props) => {
+  const { size, language } = props;
   /**
    * Function for determining which background color the coding language tags will have
    * @param {*} language the string value of the language
@@ -42,7 +43,7 @@ export const LanguageChip = (props) => {
       paddingRight: 12.5,
       height: 32,
       borderRadius: 16,
-      backgroundColor: getChipColor(props.language),
+      backgroundColor: getChipColor(language),
       textDecoration: "none",
     },
     typography: {
@@ -61,7 +62,7 @@ export const LanguageChip = (props) => {
       paddingRight: 7.5,
       height: 20,
       borderRadius: 10,
-      backgroundColor: getChipColor(props.language),
+      backgroundColor: getChipColor(language),
       textDecoration: "none",
     },
     typography: {
@@ -75,20 +76,18 @@ export const LanguageChip = (props) => {
   return (
     <div
       style={
-        props.size === "full"
-          ? fullSizeStyles.container
-          : smallSizeStyles.container
+        size === "full" ? fullSizeStyles.container : smallSizeStyles.container
       }
     >
       <Typography
         color="text.primary"
         style={
-          props.size === "full"
+          size === "full"
             ? fullSizeStyles.typography
             : smallSizeStyles.typography
         }
       >
-        {props.language}
+        {language}
       </Typography>
     </div>
   );
