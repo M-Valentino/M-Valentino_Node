@@ -62,7 +62,10 @@ export default function projects() {
                   disabled={view === "cardView"}
                   color="primary"
                 >
-                  <ViewModuleIcon style={{transform: "translateY(-1.5px)", marginRight: 2}}/> Card View
+                  <ViewModuleIcon
+                    style={{ transform: "translateY(-1.5px)", marginRight: 2 }}
+                  />{" "}
+                  Card View
                 </ToggleButton>
                 <ToggleButton
                   value="tableView"
@@ -70,7 +73,10 @@ export default function projects() {
                   disabled={view === "tableView"}
                   color="primary"
                 >
-                  <ViewListIcon style={{transform: "translateY(-1.5px)", marginRight: 2}}/> Table View
+                  <ViewListIcon
+                    style={{ transform: "translateY(-1.5px)", marginRight: 2 }}
+                  />{" "}
+                  Table View
                 </ToggleButton>
               </ToggleButtonGroup>
             </Grid>
