@@ -41,7 +41,7 @@ export default function projects() {
           <Grid
             container
             justifyContent="space-between"
-            style={{ width: "calc(100% - 20px)", margin: "auto" }}
+            style={{ width: "calc(100% - 20px)", margin: "auto", marginTop: 20, marginBottom: 20 }}
           >
             <Grid item md={4} xs={12}>
               <ToggleButtonGroup
@@ -101,7 +101,7 @@ export default function projects() {
               justifyContent="center"
               spacing={3}
               direction="row"
-              style={{ marginBottom: 50, marginTop: 20 }}
+              style={{ marginBottom: 50}}
             >
               {projectContent.map((props, index) => (
                 <Grid item>
