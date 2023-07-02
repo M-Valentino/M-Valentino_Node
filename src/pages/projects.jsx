@@ -10,7 +10,7 @@ import {
   ToggleButtonGroup,
   Typography,
 } from "@mui/material";
-import SearchIcon from '@mui/icons-material/Search';
+import SearchIcon from "@mui/icons-material/Search";
 import ViewListIcon from "@mui/icons-material/ViewList";
 import ViewModuleIcon from "@mui/icons-material/ViewModule";
 import { MainTheme } from "@/utils/MUITheme";
@@ -81,9 +81,16 @@ export default function projects() {
             </Grid>
             <Grid item md={4} xs={12}>
               <Stack direction="row">
-                <TextField label="Search Projects" variant="outlined" fullWidth />
+                <TextField
+                  label="Search Projects"
+                  variant="outlined"
+                  fullWidth
+                />
 
-                <Button variant="contained" style={{marginLeft: 5}}><SearchIcon/>Search</Button>
+                <Button variant="contained" style={{ marginLeft: 5 }}>
+                  <SearchIcon />
+                  Search
+                </Button>
               </Stack>
             </Grid>
           </Grid>
