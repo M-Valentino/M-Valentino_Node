@@ -41,7 +41,12 @@ export default function projects() {
           <Grid
             container
             justifyContent="space-between"
-            style={{ width: "calc(100% - 20px)", margin: "auto", marginTop: 20, marginBottom: 20 }}
+            style={{
+              width: "calc(100% - 20px)",
+              margin: "auto",
+              marginTop: 20,
+              marginBottom: 20,
+            }}
           >
             <Grid item md={4} xs={12}>
               <ToggleButtonGroup
@@ -57,7 +62,7 @@ export default function projects() {
                   disabled={view === "cardView"}
                   color="primary"
                 >
-                  <ViewModuleIcon /> Card View
+                  <ViewModuleIcon style={{transform: "translateY(-1.5px)", marginRight: 2}}/> Card View
                 </ToggleButton>
                 <ToggleButton
                   value="tableView"
@@ -65,7 +70,7 @@ export default function projects() {
                   disabled={view === "tableView"}
                   color="primary"
                 >
-                  <ViewListIcon /> Table View
+                  <ViewListIcon style={{transform: "translateY(-1.5px)", marginRight: 2}}/> Table View
                 </ToggleButton>
               </ToggleButtonGroup>
             </Grid>
@@ -87,7 +92,10 @@ export default function projects() {
                   fullWidth
                 />
 
-                <Button variant="contained" style={{ marginLeft: 5 }}>
+                <Button
+                  variant="contained"
+                  sx={{ boxShadow: 1, marginLeft: 1 }}
+                >
                   <SearchIcon />
                   Search
                 </Button>
@@ -101,7 +109,7 @@ export default function projects() {
               justifyContent="center"
               spacing={3}
               direction="row"
-              style={{ marginBottom: 50}}
+              style={{ marginBottom: 50 }}
             >
               {projectContent.map((props, index) => (
                 <Grid item>
