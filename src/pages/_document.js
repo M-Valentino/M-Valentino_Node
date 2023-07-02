@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html lang="en" style={{ backgroundColor: "rgb(240,243,245)" }}>
+    <Html lang="en" style={{ backgroundColor: "rgb(232,233,236)" }}>
       <Head />
       <body
         style={{
