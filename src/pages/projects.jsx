@@ -56,6 +56,7 @@ export default function projects() {
                 value="cardView"
                 aria-label="cardView"
                 disabled={view === "cardView"}
+                color="primary"
               >
                 <ViewModuleIcon /> Card View
               </ToggleButton>
@@ -63,6 +64,7 @@ export default function projects() {
                 value="tableView"
                 aria-label="tableView"
                 disabled={view === "tableView"}
+                color="primary"
               >
                 <ViewListIcon /> Table View
               </ToggleButton>
