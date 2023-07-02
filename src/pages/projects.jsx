@@ -42,6 +42,11 @@ export default function projects() {
     );
   };
 
+  const handleResetFilter = () => {
+    setProjectData(projectContent);
+    setInputValue("");
+  }
+
   return (
     <>
       <Head>
@@ -58,7 +63,7 @@ export default function projects() {
             container
             justifyContent="space-between"
             style={{
-              width: "calc(100% - 20px)",
+              width: "calc(100% - 100px)",
               margin: "auto",
               marginTop: 20,
               marginBottom: 20,
@@ -123,6 +128,13 @@ export default function projects() {
                 >
                   <SearchIcon />
                   Search
+                </Button>
+                <Button
+                  variant="outlined"
+                  sx={{ boxShadow: 1, marginLeft: 1 }}
+                  onClick={() => handleResetFilter()}
+                >
+                  Reset
                 </Button>
               </Stack>
             </Grid>
