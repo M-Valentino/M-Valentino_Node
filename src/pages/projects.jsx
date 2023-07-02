@@ -33,7 +33,12 @@ export default function projects() {
 
   const filterProjects = () => {
     setProjectData(
-      projectData.filter((data) =>  JSON.stringify(data).toLowerCase().indexOf(inputValue.toLowerCase()) !== -1)
+      projectContent.filter(
+        (data) =>
+          JSON.stringify(data)
+            .toLowerCase()
+            .indexOf(inputValue.toLowerCase()) !== -1
+      )
     );
   };
 
