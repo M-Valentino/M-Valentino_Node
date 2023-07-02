@@ -16,7 +16,7 @@ export default function ProjectTable(props) {
   const {projectContent} = props;
   const isDesktopView = useMediaQuery("(min-width:900px)");
   return (
-    <TableContainer component={Paper} sx={{ maxWidth: 900, margin: "auto" }}>
+    <TableContainer component={Paper} sx={{ maxWidth: 900, margin: "auto"}}>
       <Table aria-label="simple table">
         <TableBody>
           {projectContent.map((row) => (

@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React, { useState } from "react";
 import {
+  Button,
   Grid,
   Stack,
   TextField,
@@ -9,6 +10,7 @@ import {
   ToggleButtonGroup,
   Typography,
 } from "@mui/material";
+import SearchIcon from '@mui/icons-material/Search';
 import ViewListIcon from "@mui/icons-material/ViewList";
 import ViewModuleIcon from "@mui/icons-material/ViewModule";
 import { MainTheme } from "@/utils/MUITheme";
@@ -16,7 +18,6 @@ import NavBar from "@/components/navbar";
 import ProjectCard from "@/components/ProjectCard";
 import ProjectTable from "@/components/ProjectTable";
 import { projectContent } from "@/consts/projectContent";
-
 
 export default function projects() {
   const [view, setView] = useState("cardView");
@@ -36,48 +37,64 @@ export default function projects() {
       <main>
         <ThemeProvider theme={MainTheme}>
           <NavBar activeLink={1} />
-          <Typography
-            variant="h3"
-            fontWeight={500}
-            gutterBottom
-            textTransform={"uppercase"}
-            textAlign={"center"}
+
+          <Grid
+            container
+            justifyContent="space-between"
+            style={{ width: "calc(100% - 20px)", margin: "auto" }}
           >
-            Projects
-          </Typography>
-          <Stack direction="row" justifyContent="center">
-            <ToggleButtonGroup
-              orientation="horizontal"
-              value={view}
-              exclusive
-              onChange={handleChange}
-            >
-              <ToggleButton
-                value="cardView"
-                aria-label="cardView"
-                disabled={view === "cardView"}
-                color="primary"
+            <Grid item md={4} xs={12}>
+              <ToggleButtonGroup
+                orientation="horizontal"
+                value={view}
+                exclusive
+                onChange={handleChange}
+                style={{ whiteSpace: "nowrap" }}
               >
-                <ViewModuleIcon /> Card View
-              </ToggleButton>
-              <ToggleButton
-                value="tableView"
-                aria-label="tableView"
-                disabled={view === "tableView"}
-                color="primary"
+                <ToggleButton
+                  value="cardView"
+                  aria-label="cardView"
+                  disabled={view === "cardView"}
+                  color="primary"
+                >
+                  <ViewModuleIcon /> Card View
+                </ToggleButton>
+                <ToggleButton
+                  value="tableView"
+                  aria-label="tableView"
+                  disabled={view === "tableView"}
+                  color="primary"
+                >
+                  <ViewListIcon /> Table View
+                </ToggleButton>
+              </ToggleButtonGroup>
+            </Grid>
+            <Grid item md={4} xs={12}>
+              <Typography
+                variant="h3"
+                fontWeight={500}
+                textTransform={"uppercase"}
+                textAlign={"center"}
               >
-                <ViewListIcon /> Table View
-              </ToggleButton>
-            </ToggleButtonGroup>
-            <TextField label="Helper text" variant="standard" fullWidth />
-          </Stack>
+                Projects
+              </Typography>
+            </Grid>
+            <Grid item md={4} xs={12}>
+              <Stack direction="row">
+                <TextField label="Search Projects" variant="outlined" fullWidth />
+
+                <Button variant="contained" style={{marginLeft: 5}}><SearchIcon/>Search</Button>
+              </Stack>
+            </Grid>
+          </Grid>
+
           {view === "cardView" && (
             <Grid
               container
               justifyContent="center"
               spacing={3}
               direction="row"
-              style={{ marginBottom: 50 }}
+              style={{ marginBottom: 50, marginTop: 20 }}
             >
               {projectContent.map((props, index) => (
                 <Grid item>
@@ -86,7 +103,9 @@ export default function projects() {
               ))}
             </Grid>
           )}
-          {view === "tableView" && <ProjectTable projectContent={projectContent}/>}
+          {view === "tableView" && (
+            <ProjectTable projectContent={projectContent} />
+          )}
         </ThemeProvider>
       </main>
     </>
