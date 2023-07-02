@@ -1,17 +1,16 @@
 import React from "react";
 import {
-  Paper,
   Stack,
   Table,
   TableBody,
   TableCell,
-  TableContainer,
   TableRow,
   Typography,
   useMediaQuery,
 } from "@mui/material";
 import { useSpring, animated } from "@react-spring/web";
 import { LanguageChip } from "./LanguageChip";
+import { CARD_AND_TABLE_SHADOW } from "@/consts/shadows";
 
 export default function ProjectTable(props) {
   const { projectContent } = props;
@@ -37,7 +36,15 @@ export default function ProjectTable(props) {
         ...tableZoom,
       }}
     >
-      <TableContainer component={Paper} sx={{ maxWidth: 900, margin: "auto" }}>
+      <div
+        style={{
+          maxWidth: 900,
+          margin: "auto",
+          borderRadius: 4,
+          backgroundColor: "#fffdfa",
+          boxShadow: CARD_AND_TABLE_SHADOW
+        }}
+      >
         <Table aria-label="simple table">
           <TableBody>
             {projectContent.map((row) => (
@@ -72,7 +79,7 @@ export default function ProjectTable(props) {
             ))}
           </TableBody>
         </Table>
-      </TableContainer>
+      </div>
     </animated.div>
   );
 }

@@ -4,6 +4,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
 import { useSpring, animated } from "@react-spring/web";
 import { LanguageChip } from "./LanguageChip";
+import { CARD_AND_TABLE_SHADOW, FINAL_CARD_SHADOW } from "@/consts/shadows";
 
 export default function ProjectCard(props) {
   const {
@@ -41,12 +42,7 @@ export default function ProjectCard(props) {
     },
   });
 
-  const initialShadow =
-    "0px 0.1px 0.2px rgba(0, 0, 0, 0.022), 0px 0.3px 0.4px rgba(0, 0, 0, 0.031), 0px 0.7px 0.9px rgba(0, 0, 0, 0.039), 0px 1.5px 1.8px rgba(0, 0, 0, 0.048), 0px 4px 5px rgba(0, 0, 0, 0.07)";
-  // Shadow that has slightly more blur and a slightly longer vertical distance than initalShadow
-  const finalShadow =
-    "0px 0.2px 1px rgba(0, 0, 0, 0.019), 0px 0.5px 2.6px rgba(0, 0, 0, 0.027), 0px 1.1px 5.3px rgba(0, 0, 0, 0.034), 0px 2.2px 11px rgba(0, 0, 0, 0.042), 0px 6px 30px rgba(0, 0, 0, 0.07)";
-
+  
   /**
    * Animation to make the card enlarge a little bit when the user hovers over it.
    * The shadow animates realistically too. This animation is disabled for mobile browsers.
@@ -54,12 +50,12 @@ export default function ProjectCard(props) {
   const cardZoom = useSpring({
     from: {
       scale: 1,
-      boxShadow: initialShadow,
+      boxShadow: CARD_AND_TABLE_SHADOW,
       filter: isDesktopView ? "brightness(0.99)" : "brightness(1)",
     },
     to: {
       scale: isHovering && isDesktopView ? 1.05 : 1,
-      boxShadow: isHovering && isDesktopView ? finalShadow : initialShadow,
+      boxShadow: isHovering && isDesktopView ? FINAL_CARD_SHADOW : CARD_AND_TABLE_SHADOW,
       filter:
         isHovering && isDesktopView ? "brightness(1)" : "brightness(0.99)",
     },
