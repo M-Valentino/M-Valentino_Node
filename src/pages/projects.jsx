@@ -21,10 +21,14 @@ import { projectContent } from "@/consts/projectContent";
 
 export default function projects() {
   const [view, setView] = useState("cardView");
-
-  const handleChange = (event, nextView) => {
+  const [projectData, setProjectData] = useState(projectContent);
+  const handleSetView = (event, nextView) => {
     setView(nextView);
   };
+
+  const filterProjects = () => {
+    setProjectData(projectData.filter(item => item.date !== "2023"));
+  }
 
   return (
     <>
@@ -53,7 +57,7 @@ export default function projects() {
                 orientation="horizontal"
                 value={view}
                 exclusive
-                onChange={handleChange}
+                onChange={handleSetView}
                 style={{ whiteSpace: "nowrap" }}
               >
                 <ToggleButton
@@ -101,6 +105,7 @@ export default function projects() {
                 <Button
                   variant="contained"
                   sx={{ boxShadow: 1, marginLeft: 1 }}
+                  onClick={() => filterProjects()}
                 >
                   <SearchIcon />
                   Search
@@ -117,7 +122,7 @@ export default function projects() {
               direction="row"
               style={{ marginBottom: 50 }}
             >
-              {projectContent.map((props, index) => (
+              {projectData.map((props, index) => (
                 <Grid item>
                   <ProjectCard index={index} data={props} style />
                 </Grid>
@@ -125,7 +130,7 @@ export default function projects() {
             </Grid>
           )}
           {view === "tableView" && (
-            <ProjectTable projectContent={projectContent} />
+            <ProjectTable projectContent={projectData} />
           )}
         </ThemeProvider>
       </main>
