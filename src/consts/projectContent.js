@@ -10,7 +10,6 @@ export const LANGUAGES = {
 
 export const projectContent = [
   {
-    show: true,
     href: "/Earth3JS",
     imageLink: "/projectImages/tigers.jpg",
     title: "Earth 3JS",
@@ -21,7 +20,6 @@ export const projectContent = [
     languages: [LANGUAGES.react],
   },
   {
-    show: true,
     href: "https://github.com/M-Valentino/Image-Manipulation-Experiments",
     imageLink: "/projectImages/tigers.jpg",
     title: "Image Manipulation Experiments",
@@ -32,7 +30,6 @@ export const projectContent = [
     languages: [LANGUAGES.java],
   },
   {
-    show: true,
     href: "https://github.com/M-Valentino/Cities-Recommender",
     imageLink: "/projectImages/citiesrecommender.png",
     title: "Cities Recommender",
@@ -43,7 +40,6 @@ export const projectContent = [
     languages: [LANGUAGES.python, LANGUAGES.java],
   },
   {
-    show: true,
     href: "/retro_calculator.html",
     imageLink: "/projectImages/calculator.jpg",
     title: "Retro Calculator",

@@ -25,10 +25,17 @@ export default function projects() {
   const handleSetView = (event, nextView) => {
     setView(nextView);
   };
+  const [inputValue, setInputValue] = React.useState("");
+
+  const onChangeHandler = (event) => {
+    setInputValue(event.target.value);
+  };
 
   const filterProjects = () => {
-    setProjectData(projectData.filter(item => item.date !== "2023"));
-  }
+    setProjectData(
+      projectData.filter((data) =>  JSON.stringify(data).toLowerCase().indexOf(inputValue.toLowerCase()) !== -1)
+    );
+  };
 
   return (
     <>
@@ -100,6 +107,8 @@ export default function projects() {
                   label="Search Projects"
                   variant="outlined"
                   fullWidth
+                  onChange={onChangeHandler}
+                  value={inputValue}
                 />
 
                 <Button
