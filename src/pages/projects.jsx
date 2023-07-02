@@ -6,6 +6,7 @@ import {
   Stack,
   TextField,
   ThemeProvider,
+  Tooltip,
   ToggleButton,
   ToggleButtonGroup,
   Typography,
@@ -107,7 +108,7 @@ export default function projects() {
                 >
                   <ViewModuleIcon
                     style={{ transform: "translateY(-1.5px)", marginRight: 2 }}
-                  />{" "}
+                  />
                   Card View
                 </ToggleButton>
                 <ToggleButton
@@ -118,7 +119,7 @@ export default function projects() {
                 >
                   <ViewListIcon
                     style={{ transform: "translateY(-1.5px)", marginRight: 2 }}
-                  />{" "}
+                  />
                   Table View
                 </ToggleButton>
               </ToggleButtonGroup>
@@ -149,15 +150,17 @@ export default function projects() {
                   onClick={() => filterProjects()}
                 >
                   <SearchIcon />
-                  Search
                 </Button>
-                <Button
-                  variant="outlined"
-                  sx={{ boxShadow: 1, marginLeft: 1 }}
-                  onClick={() => handleResetFilter()}
-                >
-                  Reset
-                </Button>
+                <Tooltip title="Shows all projects again.">
+                  <Button
+                    color="secondary"
+                    variant="outlined"
+                    sx={{ boxShadow: 1, marginLeft: 1 }}
+                    onClick={() => handleResetFilter()}
+                  >
+                    Reset
+                  </Button>
+                </Tooltip>
               </Stack>
             </Grid>
           </Grid>

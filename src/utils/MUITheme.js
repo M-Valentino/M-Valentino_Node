@@ -3,7 +3,7 @@ import { orange, deepOrange } from "@mui/material/colors";
 
 export const MainTheme = createTheme({
   palette: {
-    primary: orange,
+    primary: deepOrange,
     secondary: {
       light: '#777',
       main: '#444',
