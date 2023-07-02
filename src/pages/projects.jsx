@@ -20,32 +20,54 @@ import ProjectTable from "@/components/ProjectTable";
 import { projectContent } from "@/consts/projectContent";
 
 export default function projects() {
+  // For if the projects are shown in a card or table view
   const [view, setView] = useState("cardView");
-  const [projectData, setProjectData] = useState(projectContent);
-  const handleSetView = (event, nextView) => {
+  // For managing the project search results
+  const [projectResults, setProjectResults] = useState(projectContent);
+  // For managing the search input from the user
+  const [searchInputValue, setSearchInputValue] = React.useState("");
+
+  /**
+   * Function to handle changing the state of the view. It is called by the
+   * ToggleButtonGroup.
+   * @param {*} _event
+   * @param {*} nextView the view to be set
+   */
+  const handleSetView = (_event, nextView) => {
     setView(nextView);
   };
-  const [inputValue, setInputValue] = React.useState("");
 
+  /**
+   * Handles the current value of the TextField
+   * @param {*} event
+   */
   const onChangeHandler = (event) => {
-    setInputValue(event.target.value);
+    setSearchInputValue(event.target.value);
   };
 
+  /**
+   * Function filter out projects that don't contain a string from the TextField
+   * input and update the projects shown on the screen. It filters from the
+   * projectContent object which contain the default values.
+   */
   const filterProjects = () => {
-    setProjectData(
+    setProjectResults(
       projectContent.filter(
         (data) =>
           JSON.stringify(data)
             .toLowerCase()
-            .indexOf(inputValue.toLowerCase()) !== -1
+            .indexOf(searchInputValue.toLowerCase()) !== -1
       )
     );
   };
 
+  /**
+   * Function to load the default project values and clear what the user typed.
+   */
   const handleResetFilter = () => {
-    setProjectData(projectContent);
-    setInputValue("");
-  }
+    setProjectResults(projectContent);
+    setSearchInputValue("");
+  };
 
   return (
     <>
@@ -118,7 +140,7 @@ export default function projects() {
                   variant="outlined"
                   fullWidth
                   onChange={onChangeHandler}
-                  value={inputValue}
+                  value={searchInputValue}
                 />
 
                 <Button
@@ -148,7 +170,7 @@ export default function projects() {
               direction="row"
               style={{ marginBottom: 50 }}
             >
-              {projectData.map((props, index) => (
+              {projectResults.map((props, index) => (
                 <Grid item>
                   <ProjectCard index={index} data={props} style />
                 </Grid>
@@ -156,7 +178,7 @@ export default function projects() {
             </Grid>
           )}
           {view === "tableView" && (
-            <ProjectTable projectContent={projectData} />
+            <ProjectTable projectContent={projectResults} />
           )}
         </ThemeProvider>
       </main>

@@ -15,6 +15,7 @@ import { CARD_AND_TABLE_SHADOW } from "@/consts/shadows";
 export default function ProjectTable(props) {
   const { projectContent } = props;
   const isDesktopView = useMediaQuery("(min-width:900px)");
+  // Anaimation that is shown when the table first appears.
   const tableZoom = useSpring({
     from: {
       scale: 0,
