@@ -32,54 +32,47 @@ export default function ProjectTable(props) {
   return (
     <animated.div
       style={{
+        maxWidth: 900,
+        margin: "auto",
+        borderRadius: 4,
+        backgroundColor: "#fffdfa",
+        boxShadow: CARD_AND_TABLE_SHADOW,
         textRendering: "geometricPrecision!important",
         ...tableZoom,
       }}
     >
-      <div
-        style={{
-          maxWidth: 900,
-          margin: "auto",
-          borderRadius: 4,
-          backgroundColor: "#fffdfa",
-          boxShadow: CARD_AND_TABLE_SHADOW
-        }}
-      >
-        <Table aria-label="simple table">
-          <TableBody>
-            {projectContent.map((row) => (
-              <TableRow
-                key={row.date}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
-                <TableCell align="right">{row.date}</TableCell>
-                <TableCell align="left" height={50}>
-                  <img src={row.imageLink} style={{ height: "100%" }} />
-                </TableCell>
+      <Table aria-label="simple table">
+        <TableBody>
+          {projectContent.map((row) => (
+            <TableRow
+              key={row.date}
+              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+            >
+              <TableCell align="right">{row.date}</TableCell>
+              <TableCell align="left" height={50}>
+                <img src={row.imageLink} style={{ height: "100%" }} />
+              </TableCell>
+              <TableCell align="left">
+                <Typography style={{ fontWeight: 400 }}>{row.title}</Typography>
+              </TableCell>
+              {isDesktopView && (
                 <TableCell align="left">
-                  <Typography style={{ fontWeight: 400 }}>
-                    {row.title}
+                  <Typography style={{ fontSize: 12.5 }}>
+                    {row.description.split(". ", 1)[0]}...
                   </Typography>
                 </TableCell>
-                {isDesktopView && (
-                  <TableCell align="left">
-                    <Typography style={{ fontSize: 12.5 }}>
-                      {row.description.split(". ", 1)[0]}...
-                    </Typography>
-                  </TableCell>
-                )}
-                <TableCell align="left">
-                  <Stack direction="row" spacing={1}>
-                    {row.languages.map((props) => (
-                      <LanguageChip language={props} size="small" />
-                    ))}{" "}
-                  </Stack>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </div>
+              )}
+              <TableCell align="left">
+                <Stack direction="row" spacing={1}>
+                  {row.languages.map((props) => (
+                    <LanguageChip language={props} size="small" />
+                  ))}{" "}
+                </Stack>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     </animated.div>
   );
 }
