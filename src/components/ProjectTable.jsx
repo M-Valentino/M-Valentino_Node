@@ -8,7 +8,10 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import { useSpring, animated } from "@react-spring/web";
+import { 
+  // useSpring, 
+  animated 
+} from "@react-spring/web";
 import { LanguageChip } from "./LanguageChip";
 import { CARD_AND_TABLE_SHADOW } from "@/consts/shadows";
 
@@ -16,20 +19,20 @@ export default function ProjectTable(props) {
   const { projectContent } = props;
   const isDesktopView = useMediaQuery("(min-width:900px)");
   // Anaimation that is shown when the table first appears.
-  const tableZoom = useSpring({
-    from: {
-      scale: 0,
-      opacity: 0,
-    },
-    to: {
-      scale: 1,
-      opacity: 1,
-    },
-    config: {
-      mass: 1,
-      friction: 19,
-    },
-  });
+  // const tableZoom = useSpring({
+  //   from: {
+  //     scale: 0,
+  //     opacity: 0,
+  //   },
+  //   to: {
+  //     scale: 1,
+  //     opacity: 1,
+  //   },
+  //   config: {
+  //     mass: 1,
+  //     friction: 19,
+  //   },
+  // });
   return (
     <animated.div
       style={{
@@ -39,7 +42,7 @@ export default function ProjectTable(props) {
         backgroundColor: "#fffdfa",
         boxShadow: CARD_AND_TABLE_SHADOW,
         textRendering: "geometricPrecision!important",
-        ...tableZoom,
+        // ...tableZoom,
       }}
     >
       <Table aria-label="simple table">

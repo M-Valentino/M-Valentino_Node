@@ -26,21 +26,21 @@ export default function ProjectCard(props) {
    * moving one after another. This is determined by the card's index in the delay
    * parameter.
    */
-  const cardDealt = useSpring({
-    from: {
-      y: props.cardCanBeDealt ? 500 : 0,
-      opacity: props.cardCanBeDealt ? 0 : 1,
-    },
-    to: {
-      y: 0,
-      opacity: 1,
-    },
-    delay: props.index * 100,
-    config: {
-      mass: 1,
-      friction: 19,
-    },
-  });
+  // const cardDealt = useSpring({
+  //   from: {
+  //     y: props.cardCanBeDealt ? 500 : 0,
+  //     opacity: props.cardCanBeDealt ? 0 : 1,
+  //   },
+  //   to: {
+  //     y: 0,
+  //     opacity: 1,
+  //   },
+  //   delay: props.index * 100,
+  //   config: {
+  //     mass: 1,
+  //     friction: 19,
+  //   },
+  // });
 
   
   /**
@@ -72,7 +72,7 @@ export default function ProjectCard(props) {
             padding: 24,
             borderRadius: 4,
             textRendering: "geometricPrecision!important",
-            ...cardDealt,
+            // ...cardDealt,
             ...cardZoom,
           }}
           onMouseEnter={() => setIsHovering(true)}

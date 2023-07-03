@@ -27,7 +27,7 @@ export default function projects() {
   const [projectResults, setProjectResults] = useState(projectContent);
   // For managing the search input from the user
   const [searchInputValue, setSearchInputValue] = useState("");
-  const [cardCanBeDealt, setCardCanBeDealt] = useState(true);
+  // const [cardCanBeDealt, setCardCanBeDealt] = useState(true);
 
   /**
    * Function to handle changing the state of the view. It is called by the
@@ -71,16 +71,16 @@ export default function projects() {
     setSearchInputValue("");
   };
 
-  useEffect(() => {
-    if (
-      searchInputValue !== "" &&
-      projectContent.length !== projectResults.length
-    ) {
-      setCardCanBeDealt(false);
-    } else {
-      setCardCanBeDealt(true);
-    }
-  }, [projectResults, searchInputValue]);
+  // useEffect(() => {
+  //   if (
+  //     searchInputValue !== "" &&
+  //     projectContent.length !== projectResults.length
+  //   ) {
+  //     setCardCanBeDealt(false);
+  //   } else {
+  //     setCardCanBeDealt(true);
+  //   }
+  // }, [projectResults, searchInputValue]);
 
   return (
     <>
@@ -190,7 +190,7 @@ export default function projects() {
                   <ProjectCard
                     index={index}
                     data={props}
-                    cardCanBeDealt={cardCanBeDealt}
+                    // cardCanBeDealt={cardCanBeDealt}
                   />
                 </Grid>
               ))}
