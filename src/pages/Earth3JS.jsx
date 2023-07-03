@@ -6,13 +6,12 @@ import NavBar from "@/components/navbar";
 import { Canvas, useFrame } from "react-three-fiber";
 import { Text, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
+import { Typography } from "@mui/material";
 // import "./App.css";
 
 const Earth3JS = () => {
   const clouds3k = "/Earth3JS/3k_earth_clouds.webp";
   const clouds1080p = "/Earth3JS/1080p_earth_clouds.webp";
-  // https://www.solarsystemscope.com/textures/
-  // https://www.pngkey.com/detail/u2w7w7t4r5e6q8y3_earth-clouds-2048-earth-clouds-texture-png/
   const TwoKEarth = "/Earth3JS/2k_earth_daymap.webp";
   const FourKEarth = "/Earth3JS/4k_earth_daymap.webp";
   const moon720p = "/Earth3JS/720p_moon.webp";
@@ -217,14 +216,14 @@ const Earth3JS = () => {
       </Head>
       <main style={{ maxHeight: "100vh", overflow: "hidden" }}>
         <ThemeProvider theme={MainTheme}>
-          <NavBar/>
+          <NavBar />
           <Canvas
             camera={{ position: [0, 0, 8.5], fov: 40 }}
             style={{
               width: "100%",
               height: "100vh",
               objectFit: "cover",
-              backgroundImage: "url('/src/images/8k_stars.webp')",
+              backgroundImage: "url('/earth3JS/8k_stars.webp')",
               backgroundSize: "cover",
               backgroundColor: "black",
               boxShadow:
@@ -260,6 +259,28 @@ const Earth3JS = () => {
             )}
             <OrbitControls />
           </Canvas>
+
+          <div
+            style={{
+              position: "absolute",
+              right: 0,
+              bottom: 0,
+              backgroundColor: "#ccc",
+              opacity: 0.6,
+              paddingLeft: 2,
+              paddingRight: 2,
+            }}
+          >
+            <Typography style={{ fontSize: 12 }}>
+              <a href="https://www.solarsystemscope.com/textures/">
+                Earth, Clouds, and Moon Texture Source
+              </a>
+              &emsp;|&emsp;
+              <a href="https://photojournal.jpl.nasa.gov/catalog/PIA12348">
+                Background Texture Source
+              </a>
+            </Typography>
+          </div>
         </ThemeProvider>
       </main>
     </>
