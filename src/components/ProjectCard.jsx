@@ -59,7 +59,7 @@ export default function ProjectCard(props) {
       filter:
         isHovering && isDesktopView ? "brightness(1)" : "brightness(0.99)",
     },
-    config: { mass: 0.5, friction: 30, tension: 600 },
+    config: { mass: 0.5, friction: 17, tension: 600 },
   });
 
   return (
