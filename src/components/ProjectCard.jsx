@@ -28,8 +28,8 @@ export default function ProjectCard(props) {
    */
   const cardDealt = useSpring({
     from: {
-      y: 500,
-      opacity: 0,
+      y: props.cardCanBeDealt ? 500 : 0,
+      opacity: props.cardCanBeDealt ? 0 : 1,
     },
     to: {
       y: 0,

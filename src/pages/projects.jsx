@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Grid,
@@ -26,7 +26,8 @@ export default function projects() {
   // For managing the project search results
   const [projectResults, setProjectResults] = useState(projectContent);
   // For managing the search input from the user
-  const [searchInputValue, setSearchInputValue] = React.useState("");
+  const [searchInputValue, setSearchInputValue] = useState("");
+  const [cardCanBeDealt, setCardCanBeDealt] = useState(true);
 
   /**
    * Function to handle changing the state of the view. It is called by the
@@ -69,6 +70,17 @@ export default function projects() {
     setProjectResults(projectContent);
     setSearchInputValue("");
   };
+
+  useEffect(() => {
+    if (
+      searchInputValue !== "" &&
+      projectContent.length !== projectResults.length
+    ) {
+      setCardCanBeDealt(false);
+    } else {
+      setCardCanBeDealt(true);
+    }
+  }, [projectResults, searchInputValue]);
 
   return (
     <>
@@ -175,7 +187,11 @@ export default function projects() {
             >
               {projectResults.map((props, index) => (
                 <Grid item>
-                  <ProjectCard index={index} data={props} style />
+                  <ProjectCard
+                    index={index}
+                    data={props}
+                    cardCanBeDealt={cardCanBeDealt}
+                  />
                 </Grid>
               ))}
             </Grid>
