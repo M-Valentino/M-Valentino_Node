@@ -7,7 +7,6 @@ import { Canvas, useFrame } from "react-three-fiber";
 import { Text, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 import { Typography } from "@mui/material";
-// import "./App.css";
 
 const Earth3JS = () => {
   const clouds3k = "/Earth3JS/3k_earth_clouds.webp";
@@ -266,7 +265,7 @@ const Earth3JS = () => {
               right: 0,
               bottom: 0,
               backgroundColor: "#ccc",
-              opacity: 0.6,
+              opacity: 0.5,
               paddingLeft: 2,
               paddingRight: 2,
             }}
