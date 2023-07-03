@@ -10,6 +10,7 @@ import {
   ToggleButton,
   ToggleButtonGroup,
   Typography,
+  useMediaQuery
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ViewListIcon from "@mui/icons-material/ViewList";
@@ -19,6 +20,7 @@ import NavBar from "@/components/navbar";
 import ProjectCard from "@/components/ProjectCard";
 import ProjectTable from "@/components/ProjectTable";
 import { projectContent } from "@/consts/projectContent";
+import { DESKTOP_WIDTH, MOBILE_WIDTH } from "@/consts/stylingValues";
 
 export default function projects() {
   // For if the projects are shown in a card or table view
@@ -28,7 +30,7 @@ export default function projects() {
   // For managing the search input from the user
   const [searchInputValue, setSearchInputValue] = useState("");
   // const [cardCanBeDealt, setCardCanBeDealt] = useState(true);
-
+  const isDesktopView = useMediaQuery("(min-width:1000px)");
   /**
    * Function to handle changing the state of the view. It is called by the
    * ToggleButtonGroup.
@@ -98,7 +100,7 @@ export default function projects() {
             container
             justifyContent="space-between"
             style={{
-              width: "calc(100% - 100px)",
+              width: isDesktopView ? DESKTOP_WIDTH : MOBILE_WIDTH,
               margin: "auto",
               marginTop: 20,
               marginBottom: 20,

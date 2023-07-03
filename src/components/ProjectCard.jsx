@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import { Stack, Typography, useMediaQuery } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
 import { useSpring, animated } from "@react-spring/web";
 import { LanguageChip } from "./LanguageChip";
-import { CARD_AND_TABLE_SHADOW, FINAL_CARD_SHADOW } from "@/consts/shadows";
+import { CARD_AND_TABLE_SHADOW, FINAL_CARD_SHADOW } from "@/consts/stylingValues";
 
 export default function ProjectCard(props) {
   const {
@@ -64,7 +65,7 @@ export default function ProjectCard(props) {
 
   return (
     <ThemeProvider theme={MainTheme}>
-      <a style={{ textDecoration: "none" }} href={href}>
+      <Link style={{ textDecoration: "none" }} href={`/project/${props.index}`}>
         <animated.div
           style={{
             backgroundColor: "#fffdfa",
@@ -112,7 +113,7 @@ export default function ProjectCard(props) {
             ))}
           </Stack>
         </animated.div>
-      </a>
+      </Link>
     </ThemeProvider>
   );
 }

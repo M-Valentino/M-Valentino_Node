@@ -8,12 +8,8 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import { 
-  // useSpring, 
-  animated 
-} from "@react-spring/web";
 import { LanguageChip } from "./LanguageChip";
-import { CARD_AND_TABLE_SHADOW } from "@/consts/shadows";
+import { CARD_AND_TABLE_SHADOW } from "@/consts/stylingValues";
 
 export default function ProjectTable(props) {
   const { projectContent } = props;
@@ -34,7 +30,7 @@ export default function ProjectTable(props) {
   //   },
   // });
   return (
-    <animated.div
+    <div
       style={{
         maxWidth: 900,
         margin: "auto",
@@ -77,6 +73,6 @@ export default function ProjectTable(props) {
           ))}
         </TableBody>
       </Table>
-    </animated.div>
+    </div>
   );
 }
