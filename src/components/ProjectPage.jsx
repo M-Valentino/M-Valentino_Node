@@ -8,8 +8,11 @@ export default function ProjectPage(props) {
   const { href, hrefType, imageLink, title, date, description, languages } =
     props.data;
   const isDesktopView = useMediaQuery("(min-width:900px)");
-  const [iframeStyle, setIframeStyle] = useState({width: "100%",
-  height: 500});
+  const [iframeStyle, setIframeStyle] = useState({
+    width: "100%",
+    height: 500,
+    border: "none",
+  });
 
   const iframeBig = {
     position: "fixed",
@@ -33,12 +36,10 @@ export default function ProjectPage(props) {
       case HREF_TYPES.iframe:
         return (
           <>
-            <iframe
-              src={href}
-              title="description"
-              style={iframeStyle}
-            />
-            <Button onClick={() => setIframeStyle(iframeBig)}>FullScreen</Button>
+            <iframe src={href} title="description" style={iframeStyle} />
+            <Button onClick={() => setIframeStyle(iframeBig)}>
+              FullScreen
+            </Button>
           </>
         );
     }
