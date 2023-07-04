@@ -8,9 +8,23 @@ export const LANGUAGES = {
   vanillaJS: "Vanilla JS",
 };
 
+export const PROJECT_HREFS = {
+  earth3Js: "/Earth3JS",
+  imageManipulationExperiments:
+    "https://github.com/M-Valentino/Image-Manipulation-Experiments",
+  citiesRecommender: "https://github.com/M-Valentino/Cities-Recommender",
+  retroCalculator: "/retro_calculator.html",
+};
+
+export const HREF_TYPES = {
+  iframe: "iframe",
+  externalLink: "externalLink",
+};
+
 export const projectContent = [
   {
-    href: "/Earth3JS",
+    href: PROJECT_HREFS.earth3Js,
+    hrefType: HREF_TYPES.iframe,
     imageLink: "/projectImages/tigers.jpg",
     title: "Earth 3JS",
     date: "2023",
@@ -19,7 +33,8 @@ export const projectContent = [
     languages: [LANGUAGES.react],
   },
   {
-    href: "https://github.com/M-Valentino/Image-Manipulation-Experiments",
+    href: PROJECT_HREFS.imageManipulationExperiments,
+    hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/tigers.jpg",
     title: "Image Manipulation Experiments",
     date: "2022",
@@ -28,7 +43,8 @@ export const projectContent = [
     languages: [LANGUAGES.java],
   },
   {
-    href: "https://github.com/M-Valentino/Cities-Recommender",
+    href: PROJECT_HREFS.citiesRecommender,
+    hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/citiesrecommender.png",
     title: "Cities Recommender",
     date: "2021",
@@ -37,7 +53,8 @@ export const projectContent = [
     languages: [LANGUAGES.python, LANGUAGES.java],
   },
   {
-    href: "/retro_calculator.html",
+    href: PROJECT_HREFS.retroCalculator,
+    hrefType: HREF_TYPES.iframe,
     imageLink: "/projectImages/calculator.jpg",
     title: "Retro Calculator",
     date: "2022",

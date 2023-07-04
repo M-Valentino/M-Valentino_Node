@@ -2,7 +2,6 @@ import React, { useRef, useMemo, useState, useEffect } from "react";
 import Head from "next/head";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
-import NavBar from "@/components/navbar";
 import { Canvas, useFrame } from "react-three-fiber";
 import { Text, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
@@ -220,7 +219,7 @@ export const Earth3JS = () => {
             camera={{ position: [0, 0, 8.5], fov: 40 }}
             style={{
               width: "100%",
-              height: "90vh",
+              height: "100vh",
               objectFit: "cover",
               backgroundImage: "url('/earth3JS/8k_stars.webp')",
               backgroundSize: "cover",
