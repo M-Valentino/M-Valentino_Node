@@ -18,7 +18,7 @@ export const LanguageChip = (props) => {
    */
   const getChipColor = (language) => {
     switch (language) {
-      case LANGUAGES.css:
+      case LANGUAGES.htmlPlusCss:
         return "#ffb3ba";
       case LANGUAGES.java:
         return "#ffdfba";
