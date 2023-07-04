@@ -12,7 +12,7 @@ export default function ProjectPage(props) {
   const getProjectComponent = () => {
     switch (hrefType) {
       case HREF_TYPES.externalLink:
-        break;
+        return <img src={imageLink} height={359} />
       case HREF_TYPES.iframe:
         return <iframe src={href} width="100%" height={500} title="description" />;
     }
