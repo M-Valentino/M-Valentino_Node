@@ -1,49 +1,61 @@
 import React from "react";
 import Link from "next/link";
-import { AppBar, Button, Stack } from "@mui/material/";
+import { Grid, Button, Stack, useMediaQuery } from "@mui/material/";
+import { DESKTOP_WIDTH, MOBILE_WIDTH } from "@/consts/stylingValues";
 
 const NavBar = (props) => {
   const { activeLink } = props;
+  const isDesktopView = useMediaQuery("(min-width:1000px)");
   return (
-    <AppBar
-      position="static"
-      elevation={0}
-      color={"transparent"}
-      style={{ padding: 5 }}
+    <Grid
+      container
+      style={{margin: "auto", maxWidth: isDesktopView ? DESKTOP_WIDTH : MOBILE_WIDTH }}
     >
-      <Link href="/">
-        <img
-          src="/mark-valentino-logo.svg"
-          style={{ width: 115, position: "absolute", top: 7.5, left: 7.5 }}
-        />
-      </Link>
-      <Stack spacing={5} direction="row" alignSelf="center">
+      <Grid item xs={4}>
         <Link href="/">
-          <Button
-            color={activeLink === 0 ? "primary" : "secondary"}
-            style={{ fontSize: 18 }}
-          >
-            Home
-          </Button>
+          <div style={{width: 115, paddingTop: 5}}>
+          <img
+            src="/mark-valentino-logo.svg"
+            style={{
+              width: "100%"
+              // position: "absolute",
+              // top: 7.5, left: 7.5
+            }}
+          />
+          </div>
         </Link>
-        <Link href="/projects">
-          <Button
-            color={activeLink === 1 ? "primary" : "secondary"}
-            style={{ fontSize: 18 }}
-          >
-            Projects
-          </Button>
-        </Link>
-        <Link href="/portfolio">
-          <Button
-            color={activeLink === 2 ? "primary" : "secondary"}
-            style={{ fontSize: 18 }}
-          >
-            Portfolio
-          </Button>
-        </Link>
-      </Stack>
-    </AppBar>
+      </Grid>
+      <Grid item xs={4}>
+        <center>
+          <Stack spacing={5} direction="row" justifyContent="space-between">
+            <Link href="/">
+              <Button
+                color={activeLink === 0 ? "primary" : "secondary"}
+                style={{ fontSize: 18 }}
+              >
+                Home
+              </Button>
+            </Link>
+            <Link href="/projects">
+              <Button
+                color={activeLink === 1 ? "primary" : "secondary"}
+                style={{ fontSize: 18 }}
+              >
+                Projects
+              </Button>
+            </Link>
+            <Link href="/portfolio">
+              <Button
+                color={activeLink === 2 ? "primary" : "secondary"}
+                style={{ fontSize: 18 }}
+              >
+                Portfolio
+              </Button>
+            </Link>
+          </Stack>
+        </center>
+      </Grid>
+    </Grid>
   );
 };
 export default NavBar;
