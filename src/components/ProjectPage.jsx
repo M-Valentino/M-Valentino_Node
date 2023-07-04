@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Stack, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Stack, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import { LanguageChip } from "./LanguageChip";
 import { MOBILE_WIDTH, DESKTOP_WIDTH } from "@/consts/stylingValues";
 import { HREF_TYPES, PROJECT_HREFS } from "@/consts/projectContent";
@@ -8,13 +8,39 @@ export default function ProjectPage(props) {
   const { href, hrefType, imageLink, title, date, description, languages } =
     props.data;
   const isDesktopView = useMediaQuery("(min-width:900px)");
+  const [iframeStyle, setIframeStyle] = useState({width: "100%",
+  height: 500});
+
+  const iframeBig = {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    width: "100%",
+    height: "100%",
+    border: "none",
+    margin: 0,
+    padding: 0,
+    overflow: "hidden",
+    zIndex: 999999,
+  };
 
   const getProjectComponent = () => {
     switch (hrefType) {
       case HREF_TYPES.externalLink:
-        return <img src={imageLink} height={359} />
+        return <img src={imageLink} height={359} />;
       case HREF_TYPES.iframe:
-        return <iframe src={href} width="100%" height={500} title="description" />;
+        return (
+          <>
+            <iframe
+              src={href}
+              title="description"
+              style={iframeStyle}
+            />
+            <Button onClick={() => setIframeStyle(iframeBig)}>FullScreen</Button>
+          </>
+        );
     }
   };
   return (
