@@ -8,7 +8,7 @@ import { Text, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 import { Typography } from "@mui/material";
 
-const Earth3JS = () => {
+export const Earth3JS = () => {
   const clouds3k = "/Earth3JS/3k_earth_clouds.webp";
   const clouds1080p = "/Earth3JS/1080p_earth_clouds.webp";
   const TwoKEarth = "/Earth3JS/2k_earth_daymap.webp";
@@ -215,12 +215,12 @@ const Earth3JS = () => {
       </Head>
       <main style={{ maxHeight: "100vh", overflow: "hidden" }}>
         <ThemeProvider theme={MainTheme}>
-          <NavBar />
+          {/* <NavBar /> */}
           <Canvas
             camera={{ position: [0, 0, 8.5], fov: 40 }}
             style={{
               width: "100%",
-              height: "100vh",
+              height: "90vh",
               objectFit: "cover",
               backgroundImage: "url('/earth3JS/8k_stars.webp')",
               backgroundSize: "cover",

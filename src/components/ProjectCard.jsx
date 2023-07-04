@@ -9,10 +9,8 @@ import { CARD_AND_TABLE_SHADOW, FINAL_CARD_SHADOW } from "@/consts/stylingValues
 
 export default function ProjectCard(props) {
   const {
-    href,
     imageLink,
     title,
-    smallerTitleFontNeeded,
     date,
     description,
     languages,
@@ -92,7 +90,7 @@ export default function ProjectCard(props) {
               {date}
             </Typography>
             <Typography
-              variant={smallerTitleFontNeeded ? "h6" : "h5"}
+              variant={title.length > 28 ? "h6" : "h5"}
               color="text.primary"
             >
               {title}
