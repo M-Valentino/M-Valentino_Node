@@ -21,8 +21,6 @@ const NavBar = (props) => {
               src="/mark-valentino-logo.svg"
               style={{
                 width: "100%",
-                // position: "absolute",
-                // top: 7.5, left: 7.5
               }}
             />
           </Link>
@@ -30,7 +28,7 @@ const NavBar = (props) => {
       </Grid>
       <Grid item xs={4}>
         <center>
-          <Stack spacing={5} direction="row" justifyContent="space-between">
+          <Stack direction="row" justifyContent="space-between">
             <Link href="/">
               <Button
                 color={activeLink === 0 ? "primary" : "secondary"}
