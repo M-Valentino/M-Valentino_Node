@@ -9,21 +9,24 @@ const NavBar = (props) => {
   return (
     <Grid
       container
-      style={{margin: "auto", maxWidth: isDesktopView ? DESKTOP_WIDTH : MOBILE_WIDTH }}
+      style={{
+        margin: "auto",
+        maxWidth: isDesktopView ? DESKTOP_WIDTH : MOBILE_WIDTH,
+      }}
     >
       <Grid item xs={4}>
-        <Link href="/">
-          <div style={{width: 115, paddingTop: 5}}>
-          <img
-            src="/mark-valentino-logo.svg"
-            style={{
-              width: "100%"
-              // position: "absolute",
-              // top: 7.5, left: 7.5
-            }}
-          />
-          </div>
-        </Link>
+        <div style={{ width: 115, paddingTop: 5 }}>
+          <Link href="/">
+            <img
+              src="/mark-valentino-logo.svg"
+              style={{
+                width: "100%",
+                // position: "absolute",
+                // top: 7.5, left: 7.5
+              }}
+            />
+          </Link>
+        </div>
       </Grid>
       <Grid item xs={4}>
         <center>
