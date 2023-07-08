@@ -13,7 +13,7 @@ import {
   MOBILE_WIDTH,
   DESKTOP_WIDTH,
   XL_ICON_BUTTON_WIDTH_HEIGHT,
-  XL_ICON_SIZE,
+  SCREEN_CONTROL_STYLES,
 } from "@/consts/stylingValues";
 import { HREF_TYPES } from "@/consts/projectContent";
 
@@ -47,7 +47,7 @@ export default function ProjectPage(props) {
   const getProjectComponent = () => {
     switch (hrefType) {
       case HREF_TYPES.externalLink:
-        return <img src={imageLink} height={359} />;
+        return <img src={imageLink} width="100%" />;
       case HREF_TYPES.iframe:
         return (
           <>
@@ -67,9 +67,9 @@ export default function ProjectPage(props) {
               color="tertiary"
             >
               {iframeFullScreen ? (
-                <FullscreenExitIcon style={XL_ICON_SIZE} />
+                <FullscreenExitIcon style={SCREEN_CONTROL_STYLES} />
               ) : (
-                <FullscreenIcon style={XL_ICON_SIZE} />
+                <FullscreenIcon style={SCREEN_CONTROL_STYLES} />
               )}
             </IconButton>
           </>
@@ -88,11 +88,12 @@ export default function ProjectPage(props) {
         style={{
           width: isDesktopView ? DESKTOP_WIDTH : MOBILE_WIDTH,
           margin: "auto",
-          borderRadius: 4,
           textRendering: "geometricPrecision!important",
+          paddingTop: 20,
+          paddingBottom: 60
         }}
       >
-        <Stack direction="row" spacing={1}>
+        <Stack direction="row" spacing={1} style={{marginBottom: 20}}>
           <Typography variant="h3" color="primary">
             {date}
           </Typography>
@@ -100,20 +101,20 @@ export default function ProjectPage(props) {
             {title}
           </Typography>
         </Stack>
-        <Grid container>
+        <Grid container spacing={2} justifyContent="space-around">
           <Grid item md={6} xs={12}>
             {getProjectComponent()}
           </Grid>
-          <Grid item md={6} xs={12}>
-            <div style={{ height: 145 }}>
+          <Grid item md={5} xs={12}>
+            
               <Typography
-                variant="body2"
+                variant="body1"
                 color="text.secondary"
                 style={{ textAlign: "justify" }}
               >
                 {description}
               </Typography>
-            </div>
+            
             <Stack direction="row" spacing={1} mt={1}>
               {languages.map((props, index) => (
                 <LanguageChip index={index} language={props} size="full" />
