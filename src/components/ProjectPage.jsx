@@ -1,20 +1,30 @@
 import React, { useState } from "react";
-import { Stack, Button, Grid, Typography, useMediaQuery } from "@mui/material";
+import {
+  Stack,
+  IconButton,
+  Grid,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+import FullscreenIcon from "@mui/icons-material/Fullscreen";
+import FullscreenExitIcon from "@mui/icons-material/FullscreenExit";
 import { LanguageChip } from "./LanguageChip";
 import { MOBILE_WIDTH, DESKTOP_WIDTH } from "@/consts/stylingValues";
-import { HREF_TYPES, PROJECT_HREFS } from "@/consts/projectContent";
+import { HREF_TYPES } from "@/consts/projectContent";
 
 export default function ProjectPage(props) {
   const { href, hrefType, imageLink, title, date, description, languages } =
     props.data;
   const isDesktopView = useMediaQuery("(min-width:900px)");
-  const [iframeStyle, setIframeStyle] = useState({
+  const [iframeFullScreen, setIframeFullScreen] = useState(false);
+
+  const iframeSmallStyle = {
     width: "100%",
     height: 500,
     border: "none",
-  });
+  };
 
-  const iframeBig = {
+  const iframeBigStyle = {
     position: "fixed",
     top: 0,
     left: 0,
@@ -26,7 +36,7 @@ export default function ProjectPage(props) {
     margin: 0,
     padding: 0,
     overflow: "hidden",
-    zIndex: 999999,
+    zIndex: 9,
   };
 
   const getProjectComponent = () => {
@@ -36,10 +46,19 @@ export default function ProjectPage(props) {
       case HREF_TYPES.iframe:
         return (
           <>
-            <iframe src={href} title="description" style={iframeStyle} />
-            <Button onClick={() => setIframeStyle(iframeBig)}>
-              FullScreen
-            </Button>
+            <iframe
+              src={href}
+              title="description"
+              style={iframeFullScreen ? iframeBigStyle : iframeSmallStyle}
+            />
+            <IconButton
+              onClick={() => setIframeFullScreen(!iframeFullScreen)}
+              size="large"
+              style={{ transform: "translate(7.5px, -60px)", zIndex: 99 }}
+              color="primary"
+            >
+              {iframeFullScreen ? <FullscreenExitIcon /> : <FullscreenIcon />}
+            </IconButton>
           </>
         );
     }
