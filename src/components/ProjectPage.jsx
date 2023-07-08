@@ -53,11 +53,10 @@ export default function ProjectPage(props) {
             />
             <IconButton
               onClick={() => setIframeFullScreen(!iframeFullScreen)}
-              size="large"
-              style={{ transform: "translate(7.5px, -60px)", zIndex: 99 }}
+              style={{ transform: "translate(7.5px, -60px)", zIndex: 99, width: 50, height: 50 }}
               color="primary"
             >
-              {iframeFullScreen ? <FullscreenExitIcon /> : <FullscreenIcon />}
+              {iframeFullScreen ? <FullscreenExitIcon style={{width: 40, height: 40}}/> : <FullscreenIcon style={{width: 40, height: 40}} />}
             </IconButton>
           </>
         );
@@ -87,21 +86,27 @@ export default function ProjectPage(props) {
             {title}
           </Typography>
         </Stack>
-        {getProjectComponent()}
-        <div style={{ height: 145 }}>
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            style={{ textAlign: "justify" }}
-          >
-            {description}
-          </Typography>
-        </div>
-        <Stack direction="row" spacing={1} mt={1}>
-          {languages.map((props, index) => (
-            <LanguageChip index={index} language={props} size="full" />
-          ))}
-        </Stack>
+        <Grid container>
+          <Grid item md={6} xs={12}>
+            {getProjectComponent()}
+          </Grid>
+          <Grid item md={6} xs={12}>
+            <div style={{ height: 145 }}>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                style={{ textAlign: "justify" }}
+              >
+                {description}
+              </Typography>
+            </div>
+            <Stack direction="row" spacing={1} mt={1}>
+              {languages.map((props, index) => (
+                <LanguageChip index={index} language={props} size="full" />
+              ))}
+            </Stack>
+          </Grid>
+        </Grid>
       </div>
     </div>
   );
