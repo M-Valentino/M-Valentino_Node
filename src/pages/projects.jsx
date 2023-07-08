@@ -102,7 +102,7 @@ export default function projects() {
             style={{
               width: isDesktopView ? DESKTOP_WIDTH : MOBILE_WIDTH,
               margin: "auto",
-              marginTop: 20,
+              marginTop: 40,
               marginBottom: 20,
             }}
           >
