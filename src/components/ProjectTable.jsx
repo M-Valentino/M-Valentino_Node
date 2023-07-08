@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import {
   Stack,
   Table,
@@ -43,17 +44,36 @@ export default function ProjectTable(props) {
     >
       <Table aria-label="simple table">
         <TableBody>
-          {projectContent.map((row) => (
+          {projectContent.map((row, index) => (
             <TableRow
               key={row.date}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-              <TableCell align="right">{row.date}</TableCell>
+              <TableCell align="right">
+                <Link
+                  style={{ textDecoration: "none" }}
+                  href={`/project/${index}`}
+                >
+                  {row.date}
+                </Link>
+              </TableCell>
               <TableCell align="left" height={50}>
-                <img src={row.imageLink} style={{ height: "100%" }} />
+                <Link
+                  style={{ textDecoration: "none" }}
+                  href={`/project/${index}`}
+                >
+                  <img src={row.imageLink} style={{ height: "100%" }} />
+                </Link>
               </TableCell>
               <TableCell align="left">
-                <Typography style={{ fontWeight: 400 }}>{row.title}</Typography>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  href={`/project/${index}`}
+                >
+                  <Typography style={{ fontWeight: 400 }}>
+                    {row.title}
+                  </Typography>
+                </Link>
               </TableCell>
               {isDesktopView && (
                 <TableCell align="left">

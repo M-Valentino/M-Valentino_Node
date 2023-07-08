@@ -90,10 +90,10 @@ export default function ProjectPage(props) {
           margin: "auto",
           textRendering: "geometricPrecision!important",
           paddingTop: 20,
-          paddingBottom: 60
+          paddingBottom: 60,
         }}
       >
-        <Stack direction="row" spacing={1} style={{marginBottom: 20}}>
+        <Stack direction="row" spacing={1} style={{ marginBottom: 20 }}>
           <Typography variant="h3" color="primary">
             {date}
           </Typography>
@@ -106,15 +106,14 @@ export default function ProjectPage(props) {
             {getProjectComponent()}
           </Grid>
           <Grid item md={5} xs={12}>
-            
-              <Typography
-                variant="body1"
-                color="text.secondary"
-                style={{ textAlign: "justify" }}
-              >
-                {description}
-              </Typography>
-            
+            <Typography
+              variant="body1"
+              color="text.secondary"
+              style={{ textAlign: "justify" }}
+            >
+              {description}
+            </Typography>
+
             <Stack direction="row" spacing={1} mt={1}>
               {languages.map((props, index) => (
                 <LanguageChip index={index} language={props} size="full" />
