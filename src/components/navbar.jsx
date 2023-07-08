@@ -26,35 +26,33 @@ const NavBar = (props) => {
           </Link>
         </div>
       </Grid>
-      <Grid item xs={4} >
-        <center>
-          <Stack direction="row" justifyContent="space-around" >
-            <Link href="/">
-              <Button
-                color={activeLink === 0 ? "primary" : "secondary"}
-                style={{ fontSize: 18 }}
-              >
-                Home
-              </Button>
-            </Link>
-            <Link href="/projects">
-              <Button
-                color={activeLink === 1 ? "primary" : "secondary"}
-                style={{ fontSize: 18 }}
-              >
-                Projects
-              </Button>
-            </Link>
-            <Link href="/portfolio">
-              <Button
-                color={activeLink === 2 ? "primary" : "secondary"}
-                style={{ fontSize: 18 }}
-              >
-                Portfolio
-              </Button>
-            </Link>
-          </Stack>
-        </center>
+      <Grid item xs={4} bgcolor="red">
+        <Stack direction="row" justifyContent="space-around">
+          <Link href="/">
+            <Button
+              color={activeLink === 0 ? "primary" : "secondary"}
+              style={{ fontSize: 18 }}
+            >
+              Home
+            </Button>
+          </Link>
+          <Link href="/projects">
+            <Button
+              color={activeLink === 1 ? "primary" : "secondary"}
+              style={{ fontSize: 18 }}
+            >
+              Projects
+            </Button>
+          </Link>
+          <Link href="/portfolio">
+            <Button
+              color={activeLink === 2 ? "primary" : "secondary"}
+              style={{ fontSize: 18 }}
+            >
+              Portfolio
+            </Button>
+          </Link>
+        </Stack>
       </Grid>
     </Grid>
   );
