@@ -9,7 +9,12 @@ import {
 import FullscreenIcon from "@mui/icons-material/Fullscreen";
 import FullscreenExitIcon from "@mui/icons-material/FullscreenExit";
 import { LanguageChip } from "./LanguageChip";
-import { MOBILE_WIDTH, DESKTOP_WIDTH } from "@/consts/stylingValues";
+import {
+  MOBILE_WIDTH,
+  DESKTOP_WIDTH,
+  XL_ICON_BUTTON_WIDTH_HEIGHT,
+  XL_ICON_SIZE,
+} from "@/consts/stylingValues";
 import { HREF_TYPES } from "@/consts/projectContent";
 
 export default function ProjectPage(props) {
@@ -53,10 +58,19 @@ export default function ProjectPage(props) {
             />
             <IconButton
               onClick={() => setIframeFullScreen(!iframeFullScreen)}
-              style={{ transform: "translate(7.5px, -60px)", zIndex: 99, width: 50, height: 50 }}
-              color="primary"
+              style={{
+                transform: "translate(7.5px, -60px)",
+                zIndex: 99,
+                width: XL_ICON_BUTTON_WIDTH_HEIGHT,
+                height: XL_ICON_BUTTON_WIDTH_HEIGHT,
+              }}
+              color="tertiary"
             >
-              {iframeFullScreen ? <FullscreenExitIcon style={{width: 40, height: 40}}/> : <FullscreenIcon style={{width: 40, height: 40}} />}
+              {iframeFullScreen ? (
+                <FullscreenExitIcon style={XL_ICON_SIZE} />
+              ) : (
+                <FullscreenIcon style={XL_ICON_SIZE} />
+              )}
             </IconButton>
           </>
         );

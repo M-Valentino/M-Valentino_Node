@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material/styles";
-import { orange, deepOrange } from "@mui/material/colors";
+import { orange, deepOrange, } from "@mui/material/colors";
 
 export const MainTheme = createTheme({
   palette: {
@@ -9,6 +9,11 @@ export const MainTheme = createTheme({
       main: '#444',
       dark: '#000',
       contrastText: '#000',
+    },
+    tertiary: {
+      light: '#fff',
+      main: '#eee',
+      dark: '#aaa',
     },
     text: {
       primary: "#000",
