@@ -26,9 +26,9 @@ const NavBar = (props) => {
           </Link>
         </div>
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={4} >
         <center>
-          <Stack direction="row" justifyContent="space-between">
+          <Stack direction="row" justifyContent="space-around" >
             <Link href="/">
               <Button
                 color={activeLink === 0 ? "primary" : "secondary"}
