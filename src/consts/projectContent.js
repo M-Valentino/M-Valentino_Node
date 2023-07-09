@@ -14,13 +14,16 @@ export const LANGUAGES = {
 
   // Python Stack
   python: "Python",
-  faker: "Faker",
   numPy: "NumPy",
   pandas: "Pandas",
+  faker: "Faker",
+  plotly: "Ploty",
 
   // React Stack
   react: "React",
   reactThreeFiber: "React Three Fiber",
+  drie: "drei",
+
 };
 
 export const PLUS_MORE = "+ more";
@@ -41,7 +44,7 @@ export const projectContent = [
     date: "2023",
     description:
       "I made a 3D model of the Earth with the moon orbiting around it. You can toggle between high and low settings. I made this project to learn 3D web developement.",
-    languages: [LANGUAGES.react, LANGUAGES.reactThreeFiber],
+    languages: [LANGUAGES.react, LANGUAGES.reactThreeFiber, LANGUAGES.drie],
   },
   {
     gitLink: "https://github.com/M-Valentino/Image-Manipulation-Experiments",
@@ -66,6 +69,7 @@ export const projectContent = [
       LANGUAGES.numPy,
       LANGUAGES.pandas,
       LANGUAGES.faker,
+      LANGUAGES.plotly,
       LANGUAGES.java,
     ],
   },
