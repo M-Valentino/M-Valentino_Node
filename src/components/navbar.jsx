@@ -3,7 +3,10 @@ import Link from "next/link";
 import { Grid, Button, Stack, useMediaQuery } from "@mui/material/";
 import { DESKTOP_WIDTH, MOBILE_WIDTH } from "@/consts/stylingValues";
 
+
+ // This component is the main navbar of the site.
 const NavBar = (props) => {
+  // The index of the button to change color to show it is the active link.
   const { activeLink } = props;
   const isDesktopView = useMediaQuery("(min-width:1000px)");
   return (

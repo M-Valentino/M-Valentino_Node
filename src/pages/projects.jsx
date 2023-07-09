@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Button,
   Grid,
@@ -10,7 +10,7 @@ import {
   ToggleButton,
   ToggleButtonGroup,
   Typography,
-  useMediaQuery
+  useMediaQuery,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ViewListIcon from "@mui/icons-material/ViewList";
@@ -22,6 +22,10 @@ import ProjectTable from "@/components/ProjectTable";
 import { projectContent } from "@/consts/projectContent";
 import { DESKTOP_WIDTH, MOBILE_WIDTH } from "@/consts/stylingValues";
 
+/**
+ * This component shows all projects in either a card view or a table view.
+ * Users can toggle between card and table view as well as search for projects.
+ */
 export default function projects() {
   // For if the projects are shown in a card or table view
   const [view, setView] = useState("cardView");
@@ -29,7 +33,6 @@ export default function projects() {
   const [projectResults, setProjectResults] = useState(projectContent);
   // For managing the search input from the user
   const [searchInputValue, setSearchInputValue] = useState("");
-  // const [cardCanBeDealt, setCardCanBeDealt] = useState(true);
   const isDesktopView = useMediaQuery("(min-width:1000px)");
   /**
    * Function to handle changing the state of the view. It is called by the
@@ -65,24 +68,11 @@ export default function projects() {
     );
   };
 
-  /**
-   * Function to load the default project values and clear what the user typed.
-   */
+  // Function to load the default project values and clear what the user typed.
   const handleResetFilter = () => {
     setProjectResults(projectContent);
     setSearchInputValue("");
   };
-
-  // useEffect(() => {
-  //   if (
-  //     searchInputValue !== "" &&
-  //     projectContent.length !== projectResults.length
-  //   ) {
-  //     setCardCanBeDealt(false);
-  //   } else {
-  //     setCardCanBeDealt(true);
-  //   }
-  // }, [projectResults, searchInputValue]);
 
   return (
     <>
@@ -95,7 +85,6 @@ export default function projects() {
       <main>
         <ThemeProvider theme={MainTheme}>
           <NavBar activeLink={1} />
-
           <Grid
             container
             justifyContent="space-between"
@@ -192,7 +181,6 @@ export default function projects() {
                   <ProjectCard
                     index={index}
                     data={props}
-                    // cardCanBeDealt={cardCanBeDealt}
                   />
                 </Grid>
               ))}

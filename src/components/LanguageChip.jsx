@@ -4,10 +4,14 @@ import { Typography } from "@mui/material";
 import { PLUS_MORE } from "@/consts/projectContent";
 
 /**
- * This is a component akin to MUI chips. LanguageChip is used in showing what coding language
- * was used for a project. The color of the chip changes depending on the language passed in
- * through props. This component can either be in a small size or larger size which is also
- * dependant of the size prop passed through.
+ * This is a component akin to MUI chips. LanguageChip is used in showing what coding languages
+ * and libraries were used for a project. The color of the chip changes depending on the 
+ * language passed in through props. This component can either be in a small size or larger size
+ * which is also dependant of the size prop passed through.
+ * 
+ * There is a special use case here for having the chip show "+ more". It is used in showing that
+ * there are more languages than what can be shown currently. When "+ more" is passed in through
+ * the language prop, it is styled differently.
  * @param {*} props the coding language text to show and the size of the chip.
  */
 export const LanguageChip = (props) => {
@@ -19,6 +23,7 @@ export const LanguageChip = (props) => {
    * @returns the hsl color
    */
   const getChipColor = (language) => {
+    // This is not a language or library so the color is made distinct from the rest.
     if (language === PLUS_MORE) {
       return "#222";
     }
@@ -26,7 +31,11 @@ export const LanguageChip = (props) => {
       Object.entries(LANGUAGES)
     )) {
       if (value === language) {
-        return `hsl(${index * 30}, 100%, 85%)`;
+    
+        return `hsl(${
+          // All colors assigned to a language will be evenly spaced by angle for the hue.
+          index * (360 / Object.keys(LANGUAGES).length)
+        }, 100%, 85%)`;
       }
     }
   };
@@ -50,6 +59,7 @@ export const LanguageChip = (props) => {
       fontSize: 15,
     },
   };
+
   const smallSizeStyles = {
     container: {
       display: "flex",

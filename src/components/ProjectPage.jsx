@@ -19,6 +19,16 @@ import {
 } from "@/consts/stylingValues";
 import { HREF_TYPES } from "@/consts/projectContent";
 
+/**
+ * Component that is shown that takes up most of the screen. When a project
+ * card or project table entry is clicked, the user is shown this component.
+ * This component displays more content about a project than in card or table
+ * form. All languages and libraries are shown here as well as a GitHub link
+ * to the source code.
+ * 
+ * Some projects can be run in the browser, if they are an iframe containing
+ * the project is shown.
+ */
 export default function ProjectPage(props) {
   const {
     href,

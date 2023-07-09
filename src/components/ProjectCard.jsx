@@ -8,6 +8,11 @@ import { LanguageChip } from "./LanguageChip";
 import { CARD_AND_TABLE_SHADOW, FINAL_CARD_SHADOW } from "@/consts/stylingValues";
 import { PLUS_MORE } from "@/consts/projectContent";
 
+/**
+ * This component takes in one project object from the projectContent array and
+ * populates the elements with it's data. This component is shown on the Projects
+ * page. It grows in size when hovered over.
+ */
 export default function ProjectCard(props) {
   const {
     imageLink,

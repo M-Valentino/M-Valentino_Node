@@ -7,14 +7,23 @@ import { Text, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 import { Typography } from "@mui/material";
 
+/**
+ * This page shows a 3D model of Earth with the moon orbiting around it. There is
+ * floating 3D text that can be clicked to toggle between low or high settings.
+ * Both the moon and Earth slowly rotate. The clouds on Earth rotate slightly faster
+ * than Earth itself. There are orbit controls too.
+ */
 export const Earth3JS = () => {
+  // Used when high settings are toggled.
   const clouds3k = "/Earth3JS/3k_earth_clouds.webp";
   const clouds1080p = "/Earth3JS/1080p_earth_clouds.webp";
   const TwoKEarth = "/Earth3JS/2k_earth_daymap.webp";
+  // Used when high settings are toggled.
   const FourKEarth = "/Earth3JS/4k_earth_daymap.webp";
+  // Used when high settings are toggled.
   const moon720p = "/Earth3JS/720p_moon.webp";
   const moon360p = "/Earth3JS/360p_moon.webp";
-  const [textSaysLow, setTextSaysLow] = React.useState(true);
+  const [settingsAreLow, setSettingsAreLow] = React.useState(true);
   const [earthTextureToUse, setEarthTextureToUse] = React.useState(FourKEarth);
   const [moonTextureToUse, setMoonTextureToUse] = React.useState(moon720p);
   const [cloudsTextureToUse, setCloudsTextureToUse] = React.useState(clouds3k);
@@ -57,10 +66,10 @@ export const Earth3JS = () => {
       setMoonTrisAmount(32);
     }
 
-    if (textSaysLow) {
-      setTextSaysLow(false);
+    if (settingsAreLow) {
+      setSettingsAreLow(false);
     } else {
-      setTextSaysLow(true);
+      setSettingsAreLow(true);
     }
   };
 
@@ -78,7 +87,7 @@ export const Earth3JS = () => {
     return (
       <mesh {...props} ref={mesh} scale={[2, 2, 2]}>
         <sphereBufferGeometry args={[1, earthTrisAmount, earthTrisAmount]} />
-        {textSaysLow && (
+        {settingsAreLow && (
           <meshStandardMaterial
             attach="material"
             roughness={0.7}
@@ -88,7 +97,7 @@ export const Earth3JS = () => {
             <primitive attach="map" object={texture} />
           </meshStandardMaterial>
         )}
-        {!textSaysLow && (
+        {!settingsAreLow && (
           <meshBasicMaterial attach="material">
             <primitive attach="map" object={texture} />
           </meshBasicMaterial>
@@ -115,12 +124,12 @@ export const Earth3JS = () => {
     return (
       <mesh {...props} ref={mesh} scale={[2.005, 2.005, 2.005]}>
         <sphereBufferGeometry transparent={true} args={[1, 64, 64]} />
-        {textSaysLow && (
+        {settingsAreLow && (
           <meshStandardMaterial attach="material" transparent={true}>
             <primitive attach="map" object={texture} />
           </meshStandardMaterial>
         )}
-        {!textSaysLow && (
+        {!settingsAreLow && (
           <meshBasicMaterial attach="material" transparent={true}>
             <primitive attach="map" object={texture} />
           </meshBasicMaterial>
@@ -153,12 +162,12 @@ export const Earth3JS = () => {
           args={[1, moonTrisAmount, moonTrisAmount]}
         />
 
-        {textSaysLow && (
+        {settingsAreLow && (
           <meshStandardMaterial attach="material" roughness={1}>
             <primitive attach="map" object={texture} />
           </meshStandardMaterial>
         )}
-        {!textSaysLow && (
+        {!settingsAreLow && (
           <meshBasicMaterial attach="material">
             <primitive attach="map" object={texture} />
           </meshBasicMaterial>
@@ -180,7 +189,7 @@ export const Earth3JS = () => {
     const mesh = useRef();
 
     useFrame(() => {
-      if (textSaysLow) {
+      if (settingsAreLow) {
         mesh.current.rotation.x = Math.sin(Date.now() * 0.001) * Math.PI * 0.01;
         mesh.current.rotation.y =
           Math.sin(Date.now() * 0.001) * Math.PI * 0.004;
@@ -198,7 +207,7 @@ export const Earth3JS = () => {
         onPointerOut={() => setHovered(false)}
       >
         <Text depthTest={true} fillOpacity={0.5}>
-          Toggle {textSaysLow ? "Low" : "High"} Settings
+          Toggle {settingsAreLow ? "Low" : "High"} Settings
         </Text>
       </mesh>
     );
@@ -235,7 +244,7 @@ export const Earth3JS = () => {
               position={[-1.75, 2.9, 0]}
               onClick={toggleGraphics}
             />
-            {textSaysLow && (
+            {settingsAreLow && (
               <>
                 <ambientLight intensity={0.1} color="#ffffff" />
                 <spotLight

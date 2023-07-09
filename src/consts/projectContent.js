@@ -1,4 +1,5 @@
 /**
+ * Used for the LanguageChip componenet.
  * Related languages and libraries are grouped together since their index 
  * determines their color, and indexes close to each other will have a similar
  * color. 
@@ -26,8 +27,10 @@ export const LANGUAGES = {
 
 };
 
+// Special const that is passed through LanguageChip also. It isn't a language or library.
 export const PLUS_MORE = "+ more";
 
+// Determines whether a project can be shown on ProjectPage in an Iframe or not.
 export const HREF_TYPES = {
   iframe: "iframe",
   externalLink: "externalLink",
