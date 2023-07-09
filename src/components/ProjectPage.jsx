@@ -20,8 +20,16 @@ import {
 import { HREF_TYPES } from "@/consts/projectContent";
 
 export default function ProjectPage(props) {
-  const { href, hrefType, imageLink, title, date, description, languages } =
-    props.data;
+  const {
+    href,
+    hrefType,
+    imageLink,
+    title,
+    date,
+    description,
+    languages,
+    gitLink,
+  } = props.data;
   const isDesktopView = useMediaQuery("(min-width:900px)");
   const [iframeFullScreen, setIframeFullScreen] = useState(false);
 
@@ -122,6 +130,9 @@ export default function ProjectPage(props) {
               ))}
             </Stack>
             <Button
+              target="_blank"
+              href={gitLink}
+              rel="noreferrer"
               style={{
                 width: "100%",
                 height: 100,
@@ -131,7 +142,14 @@ export default function ProjectPage(props) {
               variant="contained"
               color="primary"
             >
-              <GitHubIcon style={{ height: 45, width: 45, marginRight: 10, transform: "translateY(-5px)", }} />
+              <GitHubIcon
+                style={{
+                  height: 45,
+                  width: 45,
+                  marginRight: 10,
+                  transform: "translateY(-5px)",
+                }}
+              />
               View Code Source
             </Button>
           </Grid>

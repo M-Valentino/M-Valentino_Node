@@ -15,6 +15,7 @@ export const HREF_TYPES = {
 export const projectContent = [
   {
     href: "/Earth3JS",
+    gitLink: "https://github.com/M-Valentino/M-Valentino_Node/blob/main/src/pages/Earth3JS.jsx",
     hrefType: HREF_TYPES.iframe,
     imageLink: "/projectImages/tigers.jpg",
     title: "Earth 3JS",
@@ -24,7 +25,7 @@ export const projectContent = [
     languages: [LANGUAGES.react],
   },
   {
-    href: "https://github.com/M-Valentino/Image-Manipulation-Experiments",
+    gitLink: "https://github.com/M-Valentino/Image-Manipulation-Experiments",
     hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/tigers.jpg",
     title: "Image Manipulation Experiments",
@@ -34,7 +35,7 @@ export const projectContent = [
     languages: [LANGUAGES.java],
   },
   {
-    href: "https://github.com/M-Valentino/Cities-Recommender",
+    gitLink: "https://github.com/M-Valentino/Cities-Recommender",
     hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/citiesrecommender.png",
     title: "Cities Recommender",
@@ -45,6 +46,7 @@ export const projectContent = [
   },
   {
     href: "/retro_calculator.html",
+    gitLink: "https://github.com/M-Valentino/M-Valentino_Node/blob/main/public/retro_calculator.html",
     hrefType: HREF_TYPES.iframe,
     imageLink: "/projectImages/calculator.jpg",
     title: "Retro Calculator",
