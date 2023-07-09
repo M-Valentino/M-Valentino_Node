@@ -25,7 +25,7 @@ export const LanguageChip = (props) => {
   const getChipColor = (language) => {
     // This is not a language or library so the color is made distinct from the rest.
     if (language === PLUS_MORE) {
-      return "#222";
+      return "#555";
     }
     for (const [index, [, value]] of Object.entries(
       Object.entries(LANGUAGES)
