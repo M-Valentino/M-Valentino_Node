@@ -12,24 +12,16 @@ import { Typography } from "@mui/material";
 export const LanguageChip = (props) => {
   const { size, language } = props;
   /**
-   * Function for determining which background color the coding language tags will have
+   * Function for determining which background color the coding language tags will have.
+   * HSL is used so that colors do not have to be defined for every new language added.
    * @param {*} language the string value of the language
-   * @returns the hex color
+   * @returns the hsl color
    */
   const getChipColor = (language) => {
-    switch (language) {
-      case LANGUAGES.htmlPlusCss:
-        return "#ffb3ba";
-      case LANGUAGES.java:
-        return "#ffdfba";
-      case LANGUAGES.vanillaJS:
-        return "#ffffba";
-      case LANGUAGES.python:
-        return "#baffc9";
-      case LANGUAGES.react:
-        return "#bac9ff";
-      default:
-        return "#bae1ff";
+    for (const [index, [, value]] of Object.entries(Object.entries(LANGUAGES))) {
+      if (value === language) {
+        return `hsl(${index * 30}, 100%, 85%)`;
+      }
     }
   };
 
