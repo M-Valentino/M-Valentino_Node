@@ -116,7 +116,7 @@ export default function ProjectPage(props) {
           <Grid item md={6} xs={12}>
             {getProjectComponent()}
           </Grid>
-          <Grid item md={5} xs={12}>
+          <Grid item md={6} lg={5} xs={12}>
             <Typography
               variant="body1"
               color="text.secondary"
@@ -124,6 +124,7 @@ export default function ProjectPage(props) {
             >
               {description}
             </Typography>
+            <Typography variant="h5" style={{marginTop: 20}}>Languages and Libraries used:</Typography>
             <Stack direction="row" spacing={1} mt={1}>
               {languages.map((props, index) => (
                 <LanguageChip index={index} language={props} size="full" />
