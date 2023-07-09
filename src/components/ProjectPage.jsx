@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  Button,
   Stack,
   IconButton,
   Grid,
@@ -8,6 +9,7 @@ import {
 } from "@mui/material";
 import FullscreenIcon from "@mui/icons-material/Fullscreen";
 import FullscreenExitIcon from "@mui/icons-material/FullscreenExit";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import { LanguageChip } from "./LanguageChip";
 import {
   MOBILE_WIDTH,
@@ -80,9 +82,10 @@ export default function ProjectPage(props) {
     <div
       style={{
         width: "100%",
+        height: "100%",
         backgroundColor: "#fffdfa",
+        justifyContent: "space-between",
       }}
-      justifyContent="space-between"
     >
       <div
         style={{
@@ -113,12 +116,24 @@ export default function ProjectPage(props) {
             >
               {description}
             </Typography>
-
             <Stack direction="row" spacing={1} mt={1}>
               {languages.map((props, index) => (
                 <LanguageChip index={index} language={props} size="full" />
               ))}
             </Stack>
+            <Button
+              style={{
+                width: "100%",
+                height: 100,
+                marginTop: 20,
+                fontSize: 32,
+              }}
+              variant="contained"
+              color="primary"
+            >
+              <GitHubIcon style={{ height: 45, width: 45, marginRight: 10, transform: "translateY(-5px)", }} />
+              View Code Source
+            </Button>
           </Grid>
         </Grid>
       </div>
