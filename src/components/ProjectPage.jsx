@@ -25,7 +25,7 @@ import { HREF_TYPES } from "@/consts/projectContent";
  * This component displays more content about a project than in card or table
  * form. All languages and libraries are shown here as well as a GitHub link
  * to the source code.
- * 
+ *
  * Some projects can be run in the browser, if they are an iframe containing
  * the project is shown.
  */
@@ -41,7 +41,8 @@ export default function ProjectPage(props) {
     gitLink,
   } = props.data;
   const isDesktopView = useMediaQuery("(min-width:900px)");
-  const [iframeFullScreen, setIframeFullScreen] = useState(false);
+  // Handles whether the iframe covers the whole page or not.
+  const [iframeFullSize, setIframeFullSize] = useState(false);
 
   const iframeSmallStyle = {
     width: "100%",
@@ -74,10 +75,10 @@ export default function ProjectPage(props) {
             <iframe
               src={href}
               title="description"
-              style={iframeFullScreen ? iframeBigStyle : iframeSmallStyle}
+              style={iframeFullSize ? iframeBigStyle : iframeSmallStyle}
             />
             <IconButton
-              onClick={() => setIframeFullScreen(!iframeFullScreen)}
+              onClick={() => setIframeFullSize(!iframeFullSize)}
               style={{
                 transform: "translate(7.5px, -60px)",
                 zIndex: 99,
@@ -86,7 +87,7 @@ export default function ProjectPage(props) {
               }}
               color="tertiary"
             >
-              {iframeFullScreen ? (
+              {iframeFullSize ? (
                 <FullscreenExitIcon style={SCREEN_CONTROL_STYLES} />
               ) : (
                 <FullscreenIcon style={SCREEN_CONTROL_STYLES} />
@@ -134,7 +135,9 @@ export default function ProjectPage(props) {
             >
               {description}
             </Typography>
-            <Typography variant="h5" style={{marginTop: 20}}>Languages and Libraries used:</Typography>
+            <Typography variant="h5" style={{ marginTop: 20 }}>
+              Languages and Libraries used:
+            </Typography>
             <Stack direction="row" spacing={1} mt={1}>
               {languages.map((props, index) => (
                 <LanguageChip index={index} language={props} size="full" />
