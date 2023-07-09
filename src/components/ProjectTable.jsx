@@ -6,11 +6,13 @@ import {
   TableBody,
   TableCell,
   TableRow,
+  Tooltip,
   Typography,
   useMediaQuery,
 } from "@mui/material";
 import { LanguageChip } from "./LanguageChip";
 import { CARD_AND_TABLE_SHADOW } from "@/consts/stylingValues";
+import { PLUS_MORE } from "@/consts/projectContent";
 
 export default function ProjectTable(props) {
   const { projectContent } = props;
@@ -83,11 +85,22 @@ export default function ProjectTable(props) {
                 </TableCell>
               )}
               <TableCell align="left">
-                <Stack direction="row" spacing={1}>
-                  {row.languages.map((props) => (
-                    <LanguageChip language={props} size="small" />
-                  ))}{" "}
-                </Stack>
+                <Tooltip
+                  title={
+                    row.languages.length > 3 ? row.languages.join(", ") : ""
+                  }
+                >
+                  <Stack direction="row" spacing={1}>
+                    {row.languages.slice(0, 3).map((props) => (
+                      <LanguageChip language={props} size="small" />
+                    ))}
+                    {row.languages.length > 3 ? (
+                      <LanguageChip language={PLUS_MORE} size="small" />
+                    ) : (
+                      <></>
+                    )}
+                  </Stack>
+                </Tooltip>
               </TableCell>
             </TableRow>
           ))}

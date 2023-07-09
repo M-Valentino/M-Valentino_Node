@@ -1,15 +1,26 @@
+/**
+ * Related languages and libraries are grouped together since their index 
+ * determines their color, and indexes close to each other will have a similar
+ * color. 
+ */
 export const LANGUAGES = {
   bash: "Bash",
-  html: "HTML",
-  faker: "Faker",
   java: "Java",
-  python: "Python",
-  react: "React",
-  numPy: "NumPy",
-  vanillaJS: "Vanilla JS",
-  pandas: "Pandas",
+
+  // Traditional webdev stack
   css: "css",
-  reactThreeFiber: "React Three Fiber"
+  html: "HTML",
+  vanillaJS: "Vanilla JS",
+
+  // Python Stack
+  python: "Python",
+  faker: "Faker",
+  numPy: "NumPy",
+  pandas: "Pandas",
+
+  // React Stack
+  react: "React",
+  reactThreeFiber: "React Three Fiber",
 };
 
 export const PLUS_MORE = "+ more";
@@ -22,7 +33,8 @@ export const HREF_TYPES = {
 export const projectContent = [
   {
     href: "/Earth3JS",
-    gitLink: "https://github.com/M-Valentino/M-Valentino_Node/blob/main/src/pages/Earth3JS.jsx",
+    gitLink:
+      "https://github.com/M-Valentino/M-Valentino_Node/blob/main/src/pages/Earth3JS.jsx",
     hrefType: HREF_TYPES.iframe,
     imageLink: "/projectImages/tigers.jpg",
     title: "Earth 3JS",
@@ -49,11 +61,18 @@ export const projectContent = [
     date: "2021",
     description:
       "I wrote an AI program to recommend the best cities in America to live in. Cities were optimized between being safe and having favorable economic conditions (low cost of living and high median income). Machine learning was used to estimate unknown cost of living values of cities. Over 2000 cities were looked at.",
-    languages: [LANGUAGES.python, LANGUAGES.numPy, LANGUAGES.pandas, LANGUAGES.faker, LANGUAGES.java,],
+    languages: [
+      LANGUAGES.python,
+      LANGUAGES.numPy,
+      LANGUAGES.pandas,
+      LANGUAGES.faker,
+      LANGUAGES.java,
+    ],
   },
   {
     href: "/retro_calculator.html",
-    gitLink: "https://github.com/M-Valentino/M-Valentino_Node/blob/main/public/retro_calculator.html",
+    gitLink:
+      "https://github.com/M-Valentino/M-Valentino_Node/blob/main/public/retro_calculator.html",
     hrefType: HREF_TYPES.iframe,
     imageLink: "/projectImages/calculator.jpg",
     title: "Retro Calculator",
