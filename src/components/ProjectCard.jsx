@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { Stack, Typography, useMediaQuery } from "@mui/material";
+import { Stack, Tooltip, Typography, useMediaQuery } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
 import { useSpring, animated } from "@react-spring/web";
 import { LanguageChip } from "./LanguageChip";
 import { CARD_AND_TABLE_SHADOW, FINAL_CARD_SHADOW } from "@/consts/stylingValues";
+import { PLUS_MORE } from "@/consts/projectContent";
 
 export default function ProjectCard(props) {
   const {
@@ -105,11 +106,16 @@ export default function ProjectCard(props) {
               {description}
             </Typography>
           </div>
+          <Tooltip title={languages.length > 3 ? languages.join(', ') : ""}>
           <Stack direction="row" spacing={1} mt={1}>
-            {languages.map((props, index) => (
+            {languages.slice(0, 3).map((props, index) => (
               <LanguageChip index={index} language={props} size="full" />
             ))}
+            {languages.length > 3 ? 
+            <LanguageChip language={PLUS_MORE} size="full"/>
+            : <></>}
           </Stack>
+          </Tooltip>
         </animated.div>
       </Link>
     </ThemeProvider>

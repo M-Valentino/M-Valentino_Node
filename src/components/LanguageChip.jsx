@@ -1,6 +1,7 @@
 import React from "react";
 import { LANGUAGES } from "@/consts/projectContent";
 import { Typography } from "@mui/material";
+import { PLUS_MORE } from "@/consts/projectContent";
 
 /**
  * This is a component akin to MUI chips. LanguageChip is used in showing what coding language
@@ -18,7 +19,12 @@ export const LanguageChip = (props) => {
    * @returns the hsl color
    */
   const getChipColor = (language) => {
-    for (const [index, [, value]] of Object.entries(Object.entries(LANGUAGES))) {
+    if (language === PLUS_MORE) {
+      return "#222";
+    }
+    for (const [index, [, value]] of Object.entries(
+      Object.entries(LANGUAGES)
+    )) {
       if (value === language) {
         return `hsl(${index * 30}, 100%, 85%)`;
       }
@@ -79,7 +85,9 @@ export const LanguageChip = (props) => {
             : smallSizeStyles.typography
         }
       >
-        {language}
+        <span style={{ color: language === PLUS_MORE ? "#fff" : "#000" }}>
+          {language}
+        </span>
       </Typography>
     </div>
   );
