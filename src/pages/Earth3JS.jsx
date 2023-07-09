@@ -270,11 +270,19 @@ export const Earth3JS = () => {
             }}
           >
             <Typography style={{ fontSize: 12 }}>
-              <a href="https://www.solarsystemscope.com/textures/">
+              <a
+                href="https://www.solarsystemscope.com/textures/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Earth, Clouds, and Moon Texture Source
               </a>
               &emsp;|&emsp;
-              <a href="https://photojournal.jpl.nasa.gov/catalog/PIA12348">
+              <a
+                href="https://photojournal.jpl.nasa.gov/catalog/PIA12348"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Background Texture Source
               </a>
             </Typography>
