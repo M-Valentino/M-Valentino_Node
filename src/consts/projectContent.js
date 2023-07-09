@@ -1,10 +1,15 @@
 export const LANGUAGES = {
   bash: "Bash",
-  htmlPlusCss: "HTML + CSS",
+  html: "HTML",
+  faker: "Faker",
   java: "Java",
   python: "Python",
   react: "React",
+  numPy: "NumPy",
   vanillaJS: "Vanilla JS",
+  pandas: "Pandas",
+  css: "css",
+  reactThreeFiber: "React Three Fiber"
 };
 
 export const HREF_TYPES = {
@@ -22,7 +27,7 @@ export const projectContent = [
     date: "2023",
     description:
       "I made a 3D model of the Earth with the moon orbiting around it. You can toggle between high and low settings. I made this project to learn 3D web developement.",
-    languages: [LANGUAGES.react],
+    languages: [LANGUAGES.react, LANGUAGES.reactThreeFiber],
   },
   {
     gitLink: "https://github.com/M-Valentino/Image-Manipulation-Experiments",
@@ -42,7 +47,7 @@ export const projectContent = [
     date: "2021",
     description:
       "I wrote an AI program to recommend the best cities in America to live in. Cities were optimized between being safe and having favorable economic conditions (low cost of living and high median income). Machine learning was used to estimate unknown cost of living values of cities. Over 2000 cities were looked at.",
-    languages: [LANGUAGES.python, LANGUAGES.java],
+    languages: [LANGUAGES.python, LANGUAGES.numPy, LANGUAGES.pandas, LANGUAGES.java,],
   },
   {
     href: "/retro_calculator.html",
@@ -53,6 +58,6 @@ export const projectContent = [
     date: "2022",
     description:
       "A functional recreation of an old school style calculator was made. I pushed CSS to the limit to make the calculator photorealistic by heavily using shadows and gradients. Vector images were not used as I wanted to make the calculator easier to be built upon in the future. The entire webpage is very small and takes up 14Kb.",
-    languages: [LANGUAGES.vanillaJS, LANGUAGES.htmlPlusCss],
+    languages: [LANGUAGES.vanillaJS, LANGUAGES.css, LANGUAGES.html],
   },
 ];
