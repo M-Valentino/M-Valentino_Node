@@ -1,5 +1,5 @@
 import React from "react";
-import { LANGUAGES } from "@/consts/projectContent";
+import { LANGUAGES, LANGUAGE_LINKS } from "@/consts/projectContent";
 import { Typography } from "@mui/material";
 import { PLUS_MORE } from "@/consts/projectContent";
 
@@ -22,7 +22,7 @@ export const LanguageChip = (props) => {
    * @param {*} language the string value of the language
    * @returns the hsl color
    */
-  const getChipColor = (language) => {
+  const getChipColor = () => {
     // This is not a language or library so the color is made distinct from the rest.
     if (language === PLUS_MORE) {
       return "#555";
@@ -40,6 +40,8 @@ export const LanguageChip = (props) => {
     }
   };
 
+  
+
   const fullSizeStyles = {
     container: {
       display: "flex",
@@ -50,7 +52,7 @@ export const LanguageChip = (props) => {
       paddingRight: 12.5,
       height: 32,
       borderRadius: 16,
-      backgroundColor: getChipColor(language),
+      backgroundColor: getChipColor(),
       textDecoration: "none",
     },
     typography: {
@@ -70,7 +72,7 @@ export const LanguageChip = (props) => {
       paddingRight: 7.5,
       height: 20,
       borderRadius: 10,
-      backgroundColor: getChipColor(language),
+      backgroundColor: getChipColor(),
       textDecoration: "none",
     },
     typography: {
