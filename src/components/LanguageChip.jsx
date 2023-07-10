@@ -1,5 +1,5 @@
 import React from "react";
-import { LANGUAGES, LANGUAGE_LINKS } from "@/consts/projectContent";
+import { LANGUAGES } from "@/consts/projectContent";
 import { Typography } from "@mui/material";
 import { PLUS_MORE } from "@/consts/projectContent";
 
@@ -39,8 +39,6 @@ export const LanguageChip = (props) => {
       }
     }
   };
-
-  
 
   const fullSizeStyles = {
     container: {

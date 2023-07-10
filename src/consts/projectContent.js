@@ -26,12 +26,6 @@ export const LANGUAGES = {
   drie: "drei",
 };
 
-export const LANGUAGE_LINKS = {
-  [LANGUAGES.reactThreeFiber]: "https://docs.pmnd.rs/react-three-fiber/getting-started/introduction",
-  // Not a great link but drie's index page is broken.
-  [LANGUAGES.drie]: "https://drei.pmnd.rs/?path=/story/shapes--sphere",
-};
-
 // Special const that is passed through LanguageChip also. It isn't a language or library.
 export const PLUS_MORE = "+ more";
 
