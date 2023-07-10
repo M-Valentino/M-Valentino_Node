@@ -41,7 +41,7 @@ export const projectContent = [
     gitLink:
       "https://github.com/M-Valentino/M-Valentino_Node/blob/main/src/pages/Earth3JS.jsx",
     hrefType: HREF_TYPES.iframe,
-    imageLink: "/projectImages/tigers.jpg",
+    imageLink: "/projectImages/earth3js.webp",
     title: "Earth 3JS",
     date: "2023",
     description:
