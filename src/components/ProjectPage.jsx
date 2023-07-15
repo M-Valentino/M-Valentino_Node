@@ -18,7 +18,6 @@ import {
   SCREEN_CONTROL_STYLES,
 } from "@/consts/stylingValues";
 import { HREF_TYPES } from "@/consts/projectContent";
-import { Key } from "@mui/icons-material";
 
 /**
  * Component that is shown that takes up most of the screen. When a project

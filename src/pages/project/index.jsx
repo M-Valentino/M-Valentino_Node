@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "@/components/navbar";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
-import ProjectPage from "@/components/projectPage";
+import ProjectPage from "@/components/ProjectPage";
 import { projectContent } from "@/consts/projectContent";
 
 class Test extends React.Component {
