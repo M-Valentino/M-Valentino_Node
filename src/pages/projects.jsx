@@ -26,7 +26,7 @@ import { DESKTOP_WIDTH, MOBILE_WIDTH } from "@/consts/stylingValues";
  * This component shows all projects in either a card view or a table view.
  * Users can toggle between card and table view as well as search for projects.
  */
-export default function projects() {
+export default function Projects() {
   // For if the projects are shown in a card or table view
   const [view, setView] = useState("cardView");
   // For managing the project search results
