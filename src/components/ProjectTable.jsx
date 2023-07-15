@@ -80,7 +80,7 @@ export default function ProjectTable(props) {
               {isDesktopView && (
                 <TableCell align="left">
                   <Typography style={{ fontSize: 12.5 }}>
-                    {row.description.split(". ", 1)[0]}...
+                    {row.description.split(/[\.|\?]/, 1)[0]}...
                   </Typography>
                 </TableCell>
               )}
