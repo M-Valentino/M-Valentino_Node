@@ -176,10 +176,10 @@ export default function Projects() {
               direction="row"
               style={{ marginBottom: 50 }}
             >
-              {projectResults.map((props, index) => (
+              {projectResults.map((props, key) => (
                 <Grid item>
                   <ProjectCard
-                    index={index}
+                    key={key}
                     data={props}
                   />
                 </Grid>

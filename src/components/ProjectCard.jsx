@@ -28,7 +28,7 @@ export default function ProjectCard(props) {
   /**
    * Animation that is triggered when the Projects page is loaded. The card moves onto
    * the screen in a slightly bouncy fashion. Each card in the projects page starts
-   * moving one after another. This is determined by the card's index in the delay
+   * moving one after another. This is determined by the card's key in the delay
    * parameter.
    */
   // const cardDealt = useSpring({
@@ -40,7 +40,7 @@ export default function ProjectCard(props) {
   //     y: 0,
   //     opacity: 1,
   //   },
-  //   delay: props.index * 100,
+  //   delay: props.key * 100,
   //   config: {
   //     mass: 1,
   //     friction: 19,
@@ -69,7 +69,7 @@ export default function ProjectCard(props) {
 
   return (
     <ThemeProvider theme={MainTheme}>
-      <Link style={{ textDecoration: "none" }} href={`/project/${props.index}`}>
+      <Link style={{ textDecoration: "none" }} href={`/project/${props.key}`}>
         <animated.div
           style={{
             backgroundColor: "#fffdfa",
@@ -113,8 +113,8 @@ export default function ProjectCard(props) {
           </div>
           <Tooltip title={languages.length > 3 ? languages.join(', ') : ""}>
           <Stack direction="row" spacing={1} mt={1}>
-            {languages.slice(0, 3).map((props, index) => (
-              <LanguageChip index={index} language={props} size="full" />
+            {languages.slice(0, 3).map((props, key) => (
+              <LanguageChip key={key} language={props} size="full" />
             ))}
             {languages.length > 3 ? 
             <LanguageChip language={PLUS_MORE} size="full"/>
