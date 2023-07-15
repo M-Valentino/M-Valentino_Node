@@ -15,9 +15,11 @@ export const LANGUAGES = {
 
   // Python Stack
   python: "Python",
+  pillow: "Pillow",
   numPy: "NumPy",
   pandas: "Pandas",
   faker: "Faker",
+  cairoSVG: "Cairo SVG",
   plotly: "Ploty",
 
   // React Stack
@@ -47,6 +49,18 @@ export const projectContent = [
     description:
       "I made a 3D model of the Earth with the moon orbiting around it. You can toggle between high and low settings. I made this project to learn 3D web developement.",
     languages: [LANGUAGES.react, LANGUAGES.reactThreeFiber, LANGUAGES.drie],
+  },
+  {
+    href: "/Earth3JS",
+    gitLink:
+      "https://github.com/M-Valentino/M-Valentino_Node/blob/main/src/pages/Earth3JS.jsx",
+    hrefType: HREF_TYPES.iframe,
+    imageLink: "/projectImages/icat.webp",
+    title: "ICat",
+    date: "2023",
+    description:
+      "I made a 3D model of the Earth with the moon orbiting around it. You can toggle between high and low settings. I made this project to learn 3D web developement.",
+    languages: [LANGUAGES.bash, LANGUAGES.python, LANGUAGES.pillow, LANGUAGES.pandas, LANGUAGES.cairoSVG],
   },
   {
     gitLink: "https://github.com/M-Valentino/Image-Manipulation-Experiments",
@@ -85,6 +99,6 @@ export const projectContent = [
     date: "2022",
     description:
       "A functional recreation of an old school style calculator was made. I pushed CSS to the limit to make the calculator photorealistic by heavily using shadows and gradients. Vector images were not used as I wanted to make the calculator easier to be built upon in the future. The entire webpage is very small and takes up 14Kb.",
-    languages: [LANGUAGES.vanillaJS, LANGUAGES.css, LANGUAGES.html],
+    languages: [LANGUAGES.vanillaJS, LANGUAGES.html, LANGUAGES.css],
   },
 ];
