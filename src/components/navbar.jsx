@@ -39,7 +39,7 @@ const NavBar = (props) => {
               Home
             </Button>
           </Link>
-          <Link href="/Projects">
+          <Link href="/projects">
             <Button
               color={activeLink === 1 ? "primary" : "secondary"}
               style={{ fontSize: 18 }}
