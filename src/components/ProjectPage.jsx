@@ -18,6 +18,7 @@ import {
   SCREEN_CONTROL_STYLES,
 } from "@/consts/stylingValues";
 import { HREF_TYPES } from "@/consts/projectContent";
+import { Key } from "@mui/icons-material";
 
 /**
  * Component that is shown that takes up most of the screen. When a project
@@ -39,7 +40,7 @@ export default function ProjectPage(props) {
     description,
     languages,
     gitLink,
-  } = props.data;
+  } = props.key;
   const isDesktopView = useMediaQuery("(min-width:900px)");
   // Handles whether the iframe covers the whole page or not.
   const [iframeFullSize, setIframeFullSize] = useState(false);
@@ -139,8 +140,8 @@ export default function ProjectPage(props) {
               Languages and Libraries used:
             </Typography>
             <Stack direction="row" spacing={1} mt={1}>
-              {languages.map((props, index) => (
-                <LanguageChip index={index} language={props} size="full" />
+              {languages.map((props, key) => (
+                <LanguageChip index={key} language={props} size="full" />
               ))}
             </Stack>
             <Button

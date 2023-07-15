@@ -39,7 +39,7 @@ const NavBar = (props) => {
               Home
             </Button>
           </Link>
-          <Link href="/projects">
+          <Link href="/Projects">
             <Button
               color={activeLink === 1 ? "primary" : "secondary"}
               style={{ fontSize: 18 }}
@@ -47,14 +47,14 @@ const NavBar = (props) => {
               Projects
             </Button>
           </Link>
-          <Link href="/portfolio">
+          {/* <Link href="/portfolio"> */}
             <Button
               color={activeLink === 2 ? "primary" : "secondary"}
               style={{ fontSize: 18 }}
             >
               Portfolio
             </Button>
-          </Link>
+          {/* </Link> */}
         </Stack>
       </Grid>
     </Grid>
