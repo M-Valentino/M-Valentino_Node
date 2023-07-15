@@ -39,7 +39,7 @@ export default function ProjectPage(props) {
     description,
     languages,
     gitLink,
-  } = props.key;
+  } = props.data;
   const isDesktopView = useMediaQuery("(min-width:900px)");
   // Handles whether the iframe covers the whole page or not.
   const [iframeFullSize, setIframeFullSize] = useState(false);
