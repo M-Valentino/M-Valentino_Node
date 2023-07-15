@@ -140,7 +140,7 @@ export default function ProjectPage(props) {
             </Typography>
             <Stack direction="row" spacing={1} mt={1}>
               {languages.map((props, key) => (
-                <LanguageChip index={key} language={props} size="full" />
+                <LanguageChip key={key} language={props} size="full" />
               ))}
             </Stack>
             <Button
