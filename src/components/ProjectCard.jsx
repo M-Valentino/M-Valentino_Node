@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Link from "next/link";
 import { Stack, Tooltip, Typography, useMediaQuery } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
