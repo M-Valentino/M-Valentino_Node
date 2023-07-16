@@ -29,17 +29,18 @@ import { DESKTOP_WIDTH, MOBILE_WIDTH } from "@/consts/stylingValues";
  */
 export default function Projects() {
   const isDesktopView = useMediaQuery("(min-width:1000px)");
+  const isTabletView = useMediaQuery("(max-width:899px)");
   /**
    * For if the projects are shown in a card or table view. Mobile devices will
    * be shown the table view by default while desktop devices will be shown the
    * card view by default.
-   */ 
+   */
   const [view, setView] = useState(isDesktopView ? "cardView" : "tableView");
   // For managing the project search results
   const [projectResults, setProjectResults] = useState(projectContent);
   // For managing the search input from the user
   const [searchInputValue, setSearchInputValue] = useState("");
- 
+
   /**
    * Function to handle changing the state of the view. It is called by the
    * ToggleButtonGroup.
@@ -102,40 +103,57 @@ export default function Projects() {
             }}
           >
             <Grid item md={4} xs={12}>
-              <ToggleButtonGroup
-                orientation="horizontal"
-                value={view}
-                exclusive
-                onChange={handleSetView}
-                style={{ whiteSpace: "nowrap" }}
-              >
-                <ToggleButton
-                  value="cardView"
-                  aria-label="cardView"
-                  disabled={view === "cardView"}
-                  color="primary"
+              {/* Suprisingly, this is the only way to align the toggle buttons other than <center>  */}
+              <div style={{ textAlign: isTabletView ? "center" : "left" }}>
+                <ToggleButtonGroup
+                  orientation="horizontal"
+                  value={view}
+                  exclusive
+                  onChange={handleSetView}
+                  style={{ whiteSpace: "nowrap" }}
                 >
-                  <ViewModuleIcon
-                    style={{ transform: "translateY(-1.5px)", marginRight: 2 }}
-                  />
-                  Card View
-                </ToggleButton>
-                <ToggleButton
-                  value="tableView"
-                  aria-label="tableView"
-                  disabled={view === "tableView"}
-                  color="primary"
-                >
-                  <ViewListIcon
-                    style={{ transform: "translateY(-1.5px)", marginRight: 2 }}
-                  />
-                  Table View
-                </ToggleButton>
-              </ToggleButtonGroup>
+                  <ToggleButton
+                    value="cardView"
+                    aria-label="cardView"
+                    disabled={view === "cardView"}
+                    color="primary"
+                  >
+                    <ViewModuleIcon
+                      style={{
+                        transform: "translateY(-1.5px)",
+                        marginRight: 2,
+                      }}
+                    />
+                    Card View
+                  </ToggleButton>
+                  <ToggleButton
+                    value="tableView"
+                    aria-label="tableView"
+                    disabled={view === "tableView"}
+                    color="primary"
+                  >
+                    <ViewListIcon
+                      style={{
+                        transform: "translateY(-1.5px)",
+                        marginRight: 2,
+                      }}
+                    />
+                    Table View
+                  </ToggleButton>
+                </ToggleButtonGroup>
+              </div>
             </Grid>
-            <Grid item md={4} xs={12}>
+            <Grid
+              item
+              md={4}
+              xs={12}
+              style={{
+                marginTop: isTabletView ? 20 : 0,
+                marginBottom: isTabletView ? 20 : 0,
+              }}
+            >
               <Typography
-                variant="h3"
+                variant={isTabletView ? "h4" : "h3"}
                 fontWeight={500}
                 textTransform={"uppercase"}
                 textAlign={"center"}
