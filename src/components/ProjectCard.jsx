@@ -66,13 +66,22 @@ export default function ProjectCard(props) {
     config: { mass: 0.5, friction: 18, tension: 600 },
   });
 
+  const getCardPadding = () => {
+    if (isMobileView && !isSmallMobileView) {
+      return 12;
+    } else if (isSmallMobileView) {
+      return 8;
+    }
+    return 24;
+  }
+
   return (
     <ThemeProvider theme={MainTheme}>
       <animated.div
         style={{
           backgroundColor: "#fffdfa",
           maxWidth: isMobileView ? "100%" : 360,
-          padding: 24,
+          padding: getCardPadding(),
           borderRadius: 4,
           textRendering: "geometricPrecision!important",
           // ...cardDealt,
@@ -90,7 +99,7 @@ export default function ProjectCard(props) {
           }}
         ></img>
         <Stack direction="row" spacing={1}>
-          <Typography variant="h6" color="primary">
+          <Typography variant={"h6"} color="primary">
             {date}
           </Typography>
           <Typography
@@ -112,10 +121,10 @@ export default function ProjectCard(props) {
         <Tooltip title={languages.length > 3 ? languages.join(", ") : ""}>
           <Stack direction="row" spacing={1} mt={1}>
             {languages.slice(0, 3).map((props, key) => (
-              <LanguageChip key={key} language={props} size={isSmallMobileView ? "small" : "full"} />
+              <LanguageChip key={key} language={props} size={isMobileView ? "small" : "full"} />
             ))}
             {languages.length > 3 ? (
-              <LanguageChip language={PLUS_MORE} size={isSmallMobileView ? "small" : "full"} />
+              <LanguageChip language={PLUS_MORE} size={isMobileView ? "small" : "full"} />
             ) : (
               <></>
             )}

@@ -17,6 +17,10 @@ import { PLUS_MORE } from "@/consts/projectContent";
 export default function ProjectTable(props) {
   const { projectContent } = props;
   const isDesktopView = useMediaQuery("(min-width:900px)");
+  const isLargeMobileView = useMediaQuery("(max-width:600px)");
+  const isMobileView = useMediaQuery("(max-width:500px)");
+  const isSmallMobileView = useMediaQuery("(max-width:486px)");
+  const isExtraSmallMobileView = useMediaQuery("(max-width:384px)");
   // Anaimation that is shown when the table first appears.
   // const tableZoom = useSpring({
   //   from: {
@@ -32,6 +36,17 @@ export default function ProjectTable(props) {
   //     friction: 19,
   //   },
   // });
+
+  const getMaxChipsToShow = () => {
+    if (isSmallMobileView) {
+      return 1;
+    } else if (isMobileView) {
+      return 2;
+    } else {
+      return 3;
+    }
+  };
+
   return (
     <div
       style={{
@@ -51,14 +66,16 @@ export default function ProjectTable(props) {
               key={row.date}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-              <TableCell align="right">
-                <Link
-                  style={{ textDecoration: "none" }}
-                  href={`/project/${key}`}
-                >
-                  {row.date}
-                </Link>
-              </TableCell>
+              {!isLargeMobileView && (
+                <TableCell align="right">
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    href={`/project/${key}`}
+                  >
+                    {row.date}
+                  </Link>
+                </TableCell>
+              )}
               <TableCell align="left" height={50}>
                 <Link
                   style={{ textDecoration: "none" }}
@@ -84,24 +101,30 @@ export default function ProjectTable(props) {
                   </Typography>
                 </TableCell>
               )}
-              <TableCell align="left">
-                <Tooltip
-                  title={
-                    row.languages.length > 3 ? row.languages.join(", ") : ""
-                  }
-                >
-                  <Stack direction="row" spacing={1}>
-                    {row.languages.slice(0, 3).map((props) => (
-                      <LanguageChip language={props} size="small" />
-                    ))}
-                    {row.languages.length > 3 ? (
-                      <LanguageChip language={PLUS_MORE} size="small" />
-                    ) : (
-                      <></>
-                    )}
-                  </Stack>
-                </Tooltip>
-              </TableCell>
+              {!isExtraSmallMobileView && (
+                <TableCell align="left">
+                  <Tooltip
+                    title={
+                      row.languages.length > getMaxChipsToShow()
+                        ? row.languages.join(", ")
+                        : ""
+                    }
+                  >
+                    <Stack direction="row" spacing={1}>
+                      {row.languages
+                        .slice(0, getMaxChipsToShow())
+                        .map((props) => (
+                          <LanguageChip language={props} size="small" />
+                        ))}
+                      {row.languages.length > getMaxChipsToShow() ? (
+                        <LanguageChip language={PLUS_MORE} size="small" />
+                      ) : (
+                        <></>
+                      )}
+                    </Stack>
+                  </Tooltip>
+                </TableCell>
+              )}
             </TableRow>
           ))}
         </TableBody>
