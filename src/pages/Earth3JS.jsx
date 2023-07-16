@@ -15,14 +15,14 @@ import { Typography } from "@mui/material";
  */
 export const Earth3JS = () => {
   // Used when high settings are toggled.
-  const clouds3k = "/Earth3JS/3k_earth_clouds.webp";
-  const clouds1080p = "/Earth3JS/1080p_earth_clouds.webp";
-  const TwoKEarth = "/Earth3JS/2k_earth_daymap.webp";
+  const clouds3k = "/earth3JS/3k_earth_clouds.webp";
+  const clouds1080p = "/earth3JS/1080p_earth_clouds.webp";
+  const TwoKEarth = "/earth3JS/2k_earth_daymap.webp";
   // Used when high settings are toggled.
-  const FourKEarth = "/Earth3JS/4k_earth_daymap.webp";
+  const FourKEarth = "/earth3JS/4k_earth_daymap.webp";
   // Used when high settings are toggled.
-  const moon720p = "/Earth3JS/720p_moon.webp";
-  const moon360p = "/Earth3JS/360p_moon.webp";
+  const moon720p = "/earth3JS/720p_moon.webp";
+  const moon360p = "/earth3JS/360p_moon.webp";
   const [settingsAreLow, setSettingsAreLow] = React.useState(true);
   const [earthTextureToUse, setEarthTextureToUse] = React.useState(FourKEarth);
   const [moonTextureToUse, setMoonTextureToUse] = React.useState(moon720p);
