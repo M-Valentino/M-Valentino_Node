@@ -4,7 +4,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
 import ProjectPage from "@/components/ProjectPage";
 import { projectContent } from "@/consts/projectContent";
-
+// todo change function name
 class Test extends React.Component {
   static async getInitialProps({ query }) {
     return { query };
