@@ -57,6 +57,7 @@ export const LanguageChip = (props) => {
       fontWeight: 400,
       opacity: 0.8,
       fontSize: 15,
+      whiteSpace: "nowrap",
     },
   };
 
