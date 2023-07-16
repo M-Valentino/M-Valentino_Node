@@ -73,7 +73,7 @@ export default function ProjectCard(props) {
       return 8;
     }
     return 24;
-  }
+  };
 
   return (
     <ThemeProvider theme={MainTheme}>
@@ -99,9 +99,11 @@ export default function ProjectCard(props) {
           }}
         ></img>
         <Stack direction="row" spacing={1}>
-          <Typography variant={"h6"} color="primary">
-            {date}
-          </Typography>
+          {!isSmallMobileView && (
+            <Typography variant={"h6"} color="primary">
+              {date}
+            </Typography>
+          )}
           <Typography
             variant={title.length > 28 ? "h6" : "h5"}
             color="text.primary"
@@ -121,10 +123,17 @@ export default function ProjectCard(props) {
         <Tooltip title={languages.length > 3 ? languages.join(", ") : ""}>
           <Stack direction="row" spacing={1} mt={1}>
             {languages.slice(0, 3).map((props, key) => (
-              <LanguageChip key={key} language={props} size={isMobileView ? "small" : "full"} />
+              <LanguageChip
+                key={key}
+                language={props}
+                size={isMobileView ? "small" : "full"}
+              />
             ))}
             {languages.length > 3 ? (
-              <LanguageChip language={PLUS_MORE} size={isMobileView ? "small" : "full"} />
+              <LanguageChip
+                language={PLUS_MORE}
+                size={isMobileView ? "small" : "full"}
+              />
             ) : (
               <></>
             )}

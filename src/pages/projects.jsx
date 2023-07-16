@@ -28,13 +28,18 @@ import { DESKTOP_WIDTH, MOBILE_WIDTH } from "@/consts/stylingValues";
  * Users can toggle between card and table view as well as search for projects.
  */
 export default function Projects() {
-  // For if the projects are shown in a card or table view
-  const [view, setView] = useState("cardView");
+  const isDesktopView = useMediaQuery("(min-width:1000px)");
+  /**
+   * For if the projects are shown in a card or table view. Mobile devices will
+   * be shown the table view by default while desktop devices will be shown the
+   * card view by default.
+   */ 
+  const [view, setView] = useState(isDesktopView ? "cardView" : "tableView");
   // For managing the project search results
   const [projectResults, setProjectResults] = useState(projectContent);
   // For managing the search input from the user
   const [searchInputValue, setSearchInputValue] = useState("");
-  const isDesktopView = useMediaQuery("(min-width:1000px)");
+ 
   /**
    * Function to handle changing the state of the view. It is called by the
    * ToggleButtonGroup.
