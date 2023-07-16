@@ -178,10 +178,12 @@ export default function Projects() {
             >
               {projectResults.map((props, key) => (
                 <Grid item>
-                  <ProjectCard
-                    key={key}
-                    data={props}
-                  />
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    href={`/project/${key}`}
+                  >
+                    <ProjectCard key={key} data={props} />
+                  </Link>
                 </Grid>
               ))}
             </Grid>
