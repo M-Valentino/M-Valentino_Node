@@ -35,7 +35,7 @@ export default function Projects() {
    * be shown the table view by default while desktop devices will be shown the
    * card view by default.
    */
-  const [view, setView] = useState(isDesktopView ? "cardView" : "tableView");
+  const [view, setView] = useState("cardView");
   // For managing the project search results
   const [projectResults, setProjectResults] = useState(projectContent);
   // For managing the search input from the user
