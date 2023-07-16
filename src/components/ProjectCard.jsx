@@ -19,6 +19,8 @@ import { PLUS_MORE } from "@/consts/projectContent";
 export default function ProjectCard(props) {
   const { imageLink, title, date, description, languages } = props.data;
   const isDesktopView = useMediaQuery("(min-width:1000px)");
+  // Tablet view is in between isMobileView and isDeskTopView
+  const isMobileView = useMediaQuery("(max-width:400px)");
   // True if mouse is hovering on the card, else false.
   const [isHovering, setIsHovering] = useState(false);
 
@@ -69,7 +71,7 @@ export default function ProjectCard(props) {
       <animated.div
         style={{
           backgroundColor: "#fffdfa",
-          width: 360,
+          maxWidth: isMobileView ? "98%" : 360,
           padding: 24,
           borderRadius: 4,
           textRendering: "geometricPrecision!important",
