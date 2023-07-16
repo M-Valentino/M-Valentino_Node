@@ -89,14 +89,20 @@ export default function ProjectCard(props) {
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
-        <img
-          src={imageLink}
-          style={{
-            width: "100%",
-            borderRadius: 2,
-            boxShadow: "0 1px 1px rgba(0, 0, 0, 0.1)",
-          }}
-        ></img>
+        
+          <div
+            style={{
+              backgroundImage: `url(${imageLink})`,
+              backgroundSize: "cover",
+              backgroundColor: "#ccc",
+              width: "100%",
+              height: 270,
+              borderRadius: 2,
+              boxShadow: "0 1px 1px rgba(0, 0, 0, 0.1)",
+            }}
+            loading="lazy"
+          />
+      
         <Stack direction="row" spacing={1}>
           {!isSmallMobileView && (
             <Typography variant={"h6"} color="primary">
