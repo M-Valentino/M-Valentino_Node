@@ -19,8 +19,8 @@ import { PLUS_MORE } from "@/consts/projectContent";
 export default function ProjectCard(props) {
   const { imageLink, title, date, description, languages } = props.data;
   const isDesktopView = useMediaQuery("(min-width:1000px)");
-  // Tablet view is in between isMobileView and isDeskTopView
-  const isMobileView = useMediaQuery("(max-width:400px)");
+  const isLargeMobileView = useMediaQuery("(max-width:400px)");
+  const isSmallMobileView = useMediaQuery("(max-width:372px)");
   // True if mouse is hovering on the card, else false.
   const [isHovering, setIsHovering] = useState(false);
 
@@ -71,7 +71,7 @@ export default function ProjectCard(props) {
       <animated.div
         style={{
           backgroundColor: "#fffdfa",
-          maxWidth: isMobileView ? "98%" : 360,
+          maxWidth: isLargeMobileView ? "100%" : 360,
           padding: 24,
           borderRadius: 4,
           textRendering: "geometricPrecision!important",
@@ -112,10 +112,10 @@ export default function ProjectCard(props) {
         <Tooltip title={languages.length > 3 ? languages.join(", ") : ""}>
           <Stack direction="row" spacing={1} mt={1}>
             {languages.slice(0, 3).map((props, key) => (
-              <LanguageChip key={key} language={props} size="full" />
+              <LanguageChip key={key} language={props} size={isSmallMobileView ? "small" : "full"} />
             ))}
             {languages.length > 3 ? (
-              <LanguageChip language={PLUS_MORE} size="full" />
+              <LanguageChip language={PLUS_MORE} size={isSmallMobileView ? "small" : "full"} />
             ) : (
               <></>
             )}
