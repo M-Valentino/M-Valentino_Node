@@ -19,7 +19,7 @@ import { PLUS_MORE } from "@/consts/projectContent";
 export default function ProjectCard(props) {
   const { imageLink, title, date, description, languages } = props.data;
   const isDesktopView = useMediaQuery("(min-width:1000px)");
-  const isLargeMobileView = useMediaQuery("(max-width:400px)");
+  const isMobileView = useMediaQuery("(max-width:400px)");
   const isSmallMobileView = useMediaQuery("(max-width:372px)");
   // True if mouse is hovering on the card, else false.
   const [isHovering, setIsHovering] = useState(false);
@@ -71,7 +71,7 @@ export default function ProjectCard(props) {
       <animated.div
         style={{
           backgroundColor: "#fffdfa",
-          maxWidth: isLargeMobileView ? "100%" : 360,
+          maxWidth: isMobileView ? "100%" : 360,
           padding: 24,
           borderRadius: 4,
           textRendering: "geometricPrecision!important",
@@ -100,7 +100,7 @@ export default function ProjectCard(props) {
             {title}
           </Typography>
         </Stack>
-        <div style={{ height: 145 }}>
+        <div style={{ height: isMobileView ? "unset" : 145 }}>
           <Typography
             variant="body2"
             color="text.secondary"
