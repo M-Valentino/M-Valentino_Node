@@ -104,7 +104,7 @@ export default function ProjectCard(props) {
           <Typography
             variant="body2"
             color="text.secondary"
-            style={{ textAlign: "justify" }}
+            style={{ textAlign: isSmallMobileView ? "left" : "justify" }}
           >
             {description}
           </Typography>
