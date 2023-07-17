@@ -41,6 +41,8 @@ export default function ProjectPage(props) {
     gitLink,
   } = props.data;
   const isDesktopView = useMediaQuery("(min-width:900px)");
+  const isLargeMobileView = useMediaQuery("(max-width:424px)");
+  const isRegularMobileView = useMediaQuery("(max-width:380px)");
   // Handles whether the iframe covers the whole page or not.
   const [iframeFullSize, setIframeFullSize] = useState(false);
 
@@ -140,7 +142,7 @@ export default function ProjectPage(props) {
             </Typography>
             <Stack direction="row" spacing={1} mt={1}>
               {languages.map((props, key) => (
-                <LanguageChip key={key} language={props} size="full" />
+                <LanguageChip key={key} language={props} size={isLargeMobileView ? "small" : "full"} />
               ))}
             </Stack>
             <Button
@@ -149,17 +151,17 @@ export default function ProjectPage(props) {
               rel="noreferrer"
               style={{
                 width: "100%",
-                height: 100,
+                height: isRegularMobileView ? 70 : 100,
                 marginTop: 20,
-                fontSize: 32,
+                fontSize: isRegularMobileView ? 26 : 32,
               }}
               variant="contained"
               color="primary"
             >
               <GitHubIcon
                 style={{
-                  height: 45,
-                  width: 45,
+                  height: isRegularMobileView ? 37 : 45,
+                  width: isRegularMobileView ? 37 : 45,
                   marginRight: 10,
                   transform: "translateY(-5px)",
                 }}
