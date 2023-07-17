@@ -8,6 +8,7 @@ import {
   CARD_AND_TABLE_SHADOW,
   FINAL_CARD_SHADOW,
   MINUTE_SHADOW,
+  OFF_WHITE_COLOR,
 } from "@/consts/stylingValues";
 import { PLUS_MORE } from "@/consts/projectContent";
 
@@ -79,7 +80,7 @@ export default function ProjectCard(props) {
     <ThemeProvider theme={MainTheme}>
       <animated.div
         style={{
-          backgroundColor: "#fffdfa",
+          backgroundColor: OFF_WHITE_COLOR,
           maxWidth: isMobileView ? "100%" : 360,
           padding: getCardPadding(),
           borderRadius: 4,

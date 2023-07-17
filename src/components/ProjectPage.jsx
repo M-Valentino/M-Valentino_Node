@@ -14,6 +14,7 @@ import { LanguageChip } from "./LanguageChip";
 import {
   MOBILE_WIDTH,
   DESKTOP_WIDTH,
+  OFF_WHITE_COLOR,
   XL_ICON_BUTTON_WIDTH_HEIGHT,
   SCREEN_CONTROL_STYLES,
 } from "@/consts/stylingValues";
@@ -104,7 +105,7 @@ export default function ProjectPage(props) {
       style={{
         width: "100%",
         height: "100%",
-        backgroundColor: "#fffdfa",
+        backgroundColor: OFF_WHITE_COLOR,
         justifyContent: "space-between",
       }}
     >

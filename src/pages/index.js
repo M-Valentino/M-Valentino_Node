@@ -2,6 +2,7 @@ import Head from "next/head";
 import NavBar from "@/components/navbar";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
+import { MINUTE_SHADOW } from "@/consts/stylingValues";
 
 export default function Home() {
   return (
@@ -15,6 +16,9 @@ export default function Home() {
       <main>
       <ThemeProvider theme={MainTheme}>
         <NavBar activeLink={0}/>
+        <div style={{backgroundColor: "#fffdfa", borderRadius: 4, boxShadow: MINUTE_SHADOW}}>
+        FJKELJFKLEW
+        </div>
         </ThemeProvider>
       </main>
     </>
