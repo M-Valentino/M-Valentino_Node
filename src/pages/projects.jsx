@@ -202,7 +202,7 @@ export default function Projects() {
             >
               {/* Projects are mapped in reverse so that a new project can be shown as the first 
               card without changing the url of all the cards.  */}
-              {projectResults.toReversed().map((props, key) => (
+              {projectResults.slice(0).reverse().map((props, key) => (
                 <Grid item>
                   <Link
                     style={{ textDecoration: "none" }}

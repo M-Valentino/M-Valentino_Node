@@ -61,7 +61,7 @@ export default function ProjectTable(props) {
     >
       <Table aria-label="simple table">
         <TableBody>
-          {projectContent.toReversed().map((row, key) => (
+          {projectContent.slice(0).reverse().map((row, key) => (
             <TableRow
               key={row.date}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
