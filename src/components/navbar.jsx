@@ -68,9 +68,13 @@ const NavBar = (props) => {
               "aria-labelledby": "basic-button",
             }}
           >
-            <MenuItem onClick={handleClose}>Home</MenuItem>
-            <MenuItem onClick={handleClose}>Projects</MenuItem>
-            <MenuItem onClick={handleClose}>Portfolio</MenuItem>
+            <Link href="/">
+              <MenuItem>Home</MenuItem>
+            </Link>
+            <Link href="/projects">
+              <MenuItem>Projects</MenuItem>
+            </Link>
+            <MenuItem>Portfolio</MenuItem>
           </Menu>
         </Grid>
       ) : (
