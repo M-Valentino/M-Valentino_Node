@@ -44,6 +44,7 @@ const NavBar = (props) => {
                 src="/mark-valentino-logo.svg"
                 style={{
                   width: "100%",
+                  filter: "drop-shadow(0px 1px 0.25px rgb(0 0 0 / 0.12))",
                 }}
               />
             </Link>
