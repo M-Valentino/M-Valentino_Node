@@ -94,6 +94,7 @@ export default function ProjectCard(props) {
           style={{
             backgroundImage: `url(${imageLink})`,
             backgroundSize: "cover",
+            backgroundPosition: "50% 50%",
             backgroundColor: "#ccc",
             width: "100%",
             height: 270,
