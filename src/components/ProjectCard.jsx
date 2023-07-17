@@ -97,7 +97,7 @@ export default function ProjectCard(props) {
             backgroundPosition: "50% 50%",
             backgroundColor: "#ccc",
             width: "100%",
-            height: 270,
+            height: isMobileView ? 260 : 270,
             borderRadius: 2,
             boxShadow: MINUTE_SHADOW,
           }}
