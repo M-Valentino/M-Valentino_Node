@@ -36,16 +36,19 @@ const NavBar = (props) => {
       }}
     >
       <Grid item xs={4}>
-        <div style={{ width: 115, paddingTop: 5 }}>
-          <Link href="/">
-            <img
-              src="/mark-valentino-logo.svg"
-              style={{
-                width: "100%",
-              }}
-            />
-          </Link>
-        </div>
+        {/* For giving the logo touch ripple effects */}
+        <Button style={{ padding: 0 }}>
+          <div style={{ width: 115, paddingTop: 5 }}>
+            <Link href="/">
+              <img
+                src="/mark-valentino-logo.svg"
+                style={{
+                  width: "100%",
+                }}
+              />
+            </Link>
+          </div>
+        </Button>
       </Grid>
       {isMobileView ? (
         <Grid item xs={8}>
