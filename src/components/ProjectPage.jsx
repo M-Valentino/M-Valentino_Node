@@ -41,8 +41,8 @@ export default function ProjectPage(props) {
     gitLink,
   } = props.data;
   const isDesktopView = useMediaQuery("(min-width:900px)");
-  const isLargeMobileView = useMediaQuery("(max-width:424px)");
-  const isRegularMobileView = useMediaQuery("(max-width:380px)");
+  const isLargeMobileView = useMediaQuery("(max-width:428px)");
+  const isSmallMobileView = useMediaQuery("(max-width:380px)");
   // Handles whether the iframe covers the whole page or not.
   const [iframeFullSize, setIframeFullSize] = useState(false);
 
@@ -117,11 +117,17 @@ export default function ProjectPage(props) {
           paddingBottom: 60,
         }}
       >
-        <Stack direction="row" spacing={1} style={{ marginBottom: 20 }}>
-          <Typography variant="h3" color="primary">
-            {date}
-          </Typography>
-          <Typography variant="h3" color="text.primary">
+        <Stack direction="row" spacing={1}>
+          {isDesktopView && (
+            <Typography variant="h3" color="primary">
+              {date}
+            </Typography>
+          )}
+          <Typography
+            variant={isLargeMobileView ? "h4" : "h3"}
+            color="text.primary"
+            style={{ marginBottom: 20 }}
+          >
             {title}
           </Typography>
         </Stack>
@@ -130,10 +136,15 @@ export default function ProjectPage(props) {
             {getProjectComponent()}
           </Grid>
           <Grid item md={6} lg={5} xs={12}>
+            {!isDesktopView && (
+              <Typography variant="h5" color="primary">
+                {date}
+              </Typography>
+            )}
             <Typography
               variant="body1"
               color="text.secondary"
-              style={{ textAlign: "justify" }}
+              style={{ textAlign: isDesktopView ? "justify" : "left" }}
             >
               {description}
             </Typography>
@@ -142,7 +153,11 @@ export default function ProjectPage(props) {
             </Typography>
             <Stack direction="row" spacing={1} mt={1}>
               {languages.map((props, key) => (
-                <LanguageChip key={key} language={props} size={isLargeMobileView ? "small" : "full"} />
+                <LanguageChip
+                  key={key}
+                  language={props}
+                  size={!isDesktopView ? "small" : "full"}
+                />
               ))}
             </Stack>
             <Button
@@ -151,17 +166,17 @@ export default function ProjectPage(props) {
               rel="noreferrer"
               style={{
                 width: "100%",
-                height: isRegularMobileView ? 70 : 100,
+                height: isSmallMobileView ? 70 : 100,
                 marginTop: 20,
-                fontSize: isRegularMobileView ? 26 : 32,
+                fontSize: isSmallMobileView ? 26 : 32,
               }}
               variant="contained"
               color="primary"
             >
               <GitHubIcon
                 style={{
-                  height: isRegularMobileView ? 37 : 45,
-                  width: isRegularMobileView ? 37 : 45,
+                  height: isSmallMobileView ? 37 : 45,
+                  width: isSmallMobileView ? 37 : 45,
                   marginRight: 10,
                   transform: "translateY(-5px)",
                 }}
