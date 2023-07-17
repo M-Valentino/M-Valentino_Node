@@ -2,6 +2,7 @@ import React from "react";
 import { LANGUAGES } from "@/consts/projectContent";
 import { Typography } from "@mui/material";
 import { PLUS_MORE } from "@/consts/projectContent";
+import { MINUTE_SHADOW } from "@/consts/stylingValues";
 
 /**
  * This is a component akin to MUI chips. LanguageChip is used in showing what coding languages
@@ -52,6 +53,7 @@ export const LanguageChip = (props) => {
       borderRadius: 16,
       backgroundColor: getChipColor(),
       textDecoration: "none",
+      boxShadow: MINUTE_SHADOW,
     },
     typography: {
       fontWeight: 400,

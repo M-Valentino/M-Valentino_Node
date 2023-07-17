@@ -7,6 +7,7 @@ import { LanguageChip } from "./LanguageChip";
 import {
   CARD_AND_TABLE_SHADOW,
   FINAL_CARD_SHADOW,
+  MINUTE_SHADOW,
 } from "@/consts/stylingValues";
 import { PLUS_MORE } from "@/consts/projectContent";
 
@@ -89,20 +90,17 @@ export default function ProjectCard(props) {
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
-        
-          <div
-            style={{
-              backgroundImage: `url(${imageLink})`,
-              backgroundSize: "cover",
-              backgroundColor: "#ccc",
-              width: "100%",
-              height: 270,
-              borderRadius: 2,
-              boxShadow: "0 1px 1px rgba(0, 0, 0, 0.1)",
-            }}
-            loading="lazy"
-          />
-      
+        <div
+          style={{
+            backgroundImage: `url(${imageLink})`,
+            backgroundSize: "cover",
+            backgroundColor: "#ccc",
+            width: "100%",
+            height: 270,
+            borderRadius: 2,
+            boxShadow: MINUTE_SHADOW,
+          }}
+        />
         <Stack direction="row" spacing={1}>
           {!isSmallMobileView && (
             <Typography variant={"h6"} color="primary">
