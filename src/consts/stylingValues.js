@@ -13,6 +13,8 @@ export const MINUTE_SHADOW = "0px 1px 1px rgba(0, 0, 0, 0.07)"
 export const DESKTOP_WIDTH = "calc(100% - 100px)";
 export const MOBILE_WIDTH = "calc(100% - 10px)";
 
+export const OFF_WHITE_COLOR = "#fffdfa";
+
 export const SCREEN_CONTROL_STYLES = {
   width: 40,
   height: 40,
