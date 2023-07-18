@@ -8,7 +8,8 @@ export const CARD_AND_TABLE_SHADOW =
 export const FINAL_CARD_SHADOW =
   "0px 0.2px 1px rgba(0, 0, 0, 0.019), 0px 0.5px 2.6px rgba(0, 0, 0, 0.027), 0px 1.1px 5.3px rgba(0, 0, 0, 0.034), 0px 2.2px 11px rgba(0, 0, 0, 0.042), 0px 6px 30px rgba(0, 0, 0, 0.07)";
 
-export const MINUTE_SHADOW = "0px 1px 1px rgba(0, 0, 0, 0.07)"
+export const MINUTE_SHADOW = "0px 1px 0.5px rgba(0, 0, 0, 0.06)";
+export const MINUTE_SHADOW_SVG = "drop-shadow(0px 1px 0.25px rgb(0 0 0 / 0.06))";
 
 export const DESKTOP_WIDTH = "calc(100% - 100px)";
 export const MOBILE_WIDTH = "calc(100% - 10px)";

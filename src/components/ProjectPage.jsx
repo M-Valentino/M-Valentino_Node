@@ -17,6 +17,7 @@ import {
   OFF_WHITE_COLOR,
   XL_ICON_BUTTON_WIDTH_HEIGHT,
   SCREEN_CONTROL_STYLES,
+  MINUTE_SHADOW_SVG,
 } from "@/consts/stylingValues";
 import { HREF_TYPES } from "@/consts/projectContent";
 
@@ -180,6 +181,7 @@ export default function ProjectPage(props) {
                   width: isSmallMobileView ? 37 : 45,
                   marginRight: 10,
                   transform: "translateY(-5px)",
+                  filter: MINUTE_SHADOW_SVG,
                 }}
               />
               View Code Source

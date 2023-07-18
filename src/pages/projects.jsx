@@ -21,7 +21,12 @@ import NavBar from "@/components/navbar";
 import ProjectCard from "@/components/ProjectCard";
 import ProjectTable from "@/components/ProjectTable";
 import { projectContent } from "@/consts/projectContent";
-import { DESKTOP_WIDTH, MOBILE_WIDTH } from "@/consts/stylingValues";
+import {
+  DESKTOP_WIDTH,
+  MOBILE_WIDTH,
+  MINUTE_SHADOW,
+  MINUTE_SHADOW_SVG,
+} from "@/consts/stylingValues";
 
 /**
  * This component shows all projects in either a card view or a table view.
@@ -110,7 +115,7 @@ export default function Projects() {
                   value={view}
                   exclusive
                   onChange={handleSetView}
-                  style={{ whiteSpace: "nowrap" }}
+                  style={{ whiteSpace: "nowrap", boxShadow: MINUTE_SHADOW }}
                 >
                   <ToggleButton
                     value="cardView"
@@ -122,6 +127,7 @@ export default function Projects() {
                       style={{
                         transform: "translateY(-1.5px)",
                         marginRight: 2,
+                        filter: MINUTE_SHADOW_SVG,
                       }}
                     />
                     Card View
@@ -136,6 +142,7 @@ export default function Projects() {
                       style={{
                         transform: "translateY(-1.5px)",
                         marginRight: 2,
+                        filter: MINUTE_SHADOW_SVG,
                       }}
                     />
                     Table View
@@ -176,7 +183,7 @@ export default function Projects() {
                   sx={{ boxShadow: 1, marginLeft: 1 }}
                   onClick={() => filterProjects()}
                 >
-                  <SearchIcon />
+                  <SearchIcon style={{ filter: MINUTE_SHADOW_SVG }} />
                 </Button>
                 <Tooltip title="Shows all projects again.">
                   <Button
@@ -202,16 +209,19 @@ export default function Projects() {
             >
               {/* Projects are mapped in reverse so that a new project can be shown as the first 
               card without changing the url of all the cards.  */}
-              {projectResults.slice(0).reverse().map((props, key) => (
-                <Grid item>
-                  <Link
-                    style={{ textDecoration: "none" }}
-                    href={`/project/${projectResults.length - key - 1}`}
-                  >
-                    <ProjectCard key={key} data={props} />
-                  </Link>
-                </Grid>
-              ))}
+              {projectResults
+                .slice(0)
+                .reverse()
+                .map((props, key) => (
+                  <Grid item>
+                    <Link
+                      style={{ textDecoration: "none" }}
+                      href={`/project/${projectResults.length - key - 1}`}
+                    >
+                      <ProjectCard key={key} data={props} />
+                    </Link>
+                  </Grid>
+                ))}
             </Grid>
           )}
           {view === "tableView" && (

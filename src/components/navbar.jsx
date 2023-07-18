@@ -10,7 +10,7 @@ import {
   useMediaQuery,
 } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
-import { DESKTOP_WIDTH, MOBILE_WIDTH } from "@/consts/stylingValues";
+import { DESKTOP_WIDTH, MOBILE_WIDTH, MINUTE_SHADOW_SVG } from "@/consts/stylingValues";
 
 // This component is the main navbar of the site.
 const NavBar = (props) => {
@@ -44,7 +44,7 @@ const NavBar = (props) => {
                 src="/mark-valentino-logo.svg"
                 style={{
                   width: "100%",
-                  filter: "drop-shadow(0px 1px 0.25px rgb(0 0 0 / 0.12))",
+                  filter: MINUTE_SHADOW_SVG,
                 }}
               />
             </Link>
