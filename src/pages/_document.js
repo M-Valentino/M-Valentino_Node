@@ -7,7 +7,7 @@ export default function Document() {
       style={{
         backgroundColor: "rgb(236,233,235)",
         backgroundImage:
-          "linear-gradient(0deg, rgba(235,236,233,1) 0%, rgba(236,233,235,1) 100%)",
+          "linear-gradient(0deg, rgba(234,235,232,1) 0%, rgba(236,233,235,1) 100%)",
       }}
     >
       <Head />
