@@ -5,9 +5,9 @@ export default function Document() {
     <Html
       lang="en"
       style={{
-        backgroundColor: "rgb(236,233,235)",
+        backgroundColor: "rgb(237,233,235)",
         backgroundImage:
-          "linear-gradient(0deg, rgba(234,235,232,1) 0%, rgba(236,233,235,1) 100%)",
+          "linear-gradient(0deg, rgba(230,231,228,1) 0%, rgba(237,233,235,1) 100%)",
       }}
     >
       <Head />
