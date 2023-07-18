@@ -26,6 +26,7 @@ import {
   MOBILE_WIDTH,
   MINUTE_SHADOW,
   MINUTE_SHADOW_SVG,
+  MINUTE_SHADOW_TEXT,
 } from "@/consts/stylingValues";
 
 /**
@@ -164,6 +165,7 @@ export default function Projects() {
                 fontWeight={500}
                 textTransform={"uppercase"}
                 textAlign={"center"}
+                style={{textShadow: MINUTE_SHADOW_TEXT}}
               >
                 Projects
               </Typography>

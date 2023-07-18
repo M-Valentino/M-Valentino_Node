@@ -18,6 +18,7 @@ import {
   XL_ICON_BUTTON_WIDTH_HEIGHT,
   SCREEN_CONTROL_STYLES,
   MINUTE_SHADOW_SVG,
+  MINUTE_SHADOW_TEXT,
 } from "@/consts/stylingValues";
 import { HREF_TYPES } from "@/consts/projectContent";
 
@@ -121,14 +122,18 @@ export default function ProjectPage(props) {
       >
         <Stack direction="row" spacing={1}>
           {isDesktopView && (
-            <Typography variant="h3" color="primary">
+            <Typography
+              variant="h3"
+              color="primary"
+              style={{ textShadow: MINUTE_SHADOW_TEXT }}
+            >
               {date}
             </Typography>
           )}
           <Typography
             variant={isLargeMobileView ? "h4" : "h3"}
             color="text.primary"
-            style={{ marginBottom: 20 }}
+            style={{ marginBottom: 20, textShadow: MINUTE_SHADOW_TEXT }}
           >
             {title}
           </Typography>
@@ -171,6 +176,7 @@ export default function ProjectPage(props) {
                 height: isSmallMobileView ? 70 : 100,
                 marginTop: 20,
                 fontSize: isSmallMobileView ? 26 : 32,
+                textShadow: MINUTE_SHADOW_TEXT,
               }}
               variant="contained"
               color="primary"

@@ -10,6 +10,7 @@ export const FINAL_CARD_SHADOW =
 
 export const MINUTE_SHADOW = "0px 1px 0.5px rgba(0, 0, 0, 0.06)";
 export const MINUTE_SHADOW_SVG = "drop-shadow(0px 1px 0.25px rgb(0 0 0 / 0.06))";
+export const MINUTE_SHADOW_TEXT = "0px 1px 0.5px rgba(0, 0, 0, 0.06)";
 
 export const DESKTOP_WIDTH = "calc(100% - 100px)";
 export const MOBILE_WIDTH = "calc(100% - 10px)";
