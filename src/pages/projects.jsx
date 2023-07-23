@@ -163,7 +163,6 @@ export default function Projects() {
               <Typography
                 variant={isTabletView ? "h4" : "h3"}
                 fontWeight={500}
-                textTransform={"uppercase"}
                 textAlign={"center"}
                 style={{textShadow: MINUTE_SHADOW_TEXT}}
               >
