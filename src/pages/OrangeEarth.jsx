@@ -8,7 +8,7 @@ export const OrangeEarth = () => {
     const mesh = useRef();
     // The earth will continually rotate.
     useFrame(() => {
-      mesh.current.rotation.y += 0.0025;
+      mesh.current.rotation.y += 0.003;
     });
 
     const texture = useMemo(
@@ -19,12 +19,12 @@ export const OrangeEarth = () => {
 
     return (
       <mesh {...props} ref={mesh} scale={[2, 2, 2]}>
-        <sphereBufferGeometry args={[1, 26, 26]} />
+        <sphereBufferGeometry args={[1, 20, 20]} />
 
         <meshStandardMaterial
           attach="material"
           roughness={0.55}
-          metalness={0.5}
+          metalness={0.1}
           dithering={true}
         >
           <primitive attach="map" object={texture} />
@@ -35,7 +35,7 @@ export const OrangeEarth = () => {
 
   return (
     <>
-      <Canvas camera={{ position: [0, 0, 8.5], fov: 40 }}>
+      <Canvas camera={{ position: [0, 0, 8.5], fov: 40 }} style={{width: 50, height: 50}}>
         <Earth position={[0, -0.1, 0]} />
         <pointLight
           position={[-5, 7, 15]}

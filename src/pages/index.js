@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import NavBar from "@/components/navbar";
 import OrangeEarth from "./OrangeEarth";
 import { ThemeProvider } from "@mui/material/styles";
@@ -8,7 +9,7 @@ import {
   OFF_WHITE_COLOR,
   MINUTE_SHADOW_TEXT,
 } from "@/consts/stylingValues";
-import { Grid, Typography, useMediaQuery } from "@mui/material";
+import { Button, Grid, Typography, useMediaQuery } from "@mui/material";
 
 export default function Home() {
   const isDesktopView = useMediaQuery("(min-width:900px)");
@@ -30,6 +31,7 @@ export default function Home() {
             style={{
               maxWidth: 900,
               margin: "auto",
+              marginBottom: 40,
               backgroundColor: OFF_WHITE_COLOR,
               borderRadius: 4,
               boxShadow: MINUTE_SHADOW,
@@ -42,7 +44,7 @@ export default function Home() {
             >
               Hi, I'm Mark Valentino.
             </Typography>
-            <Typography style={{ marginTop: 20, fontSize: 18 }}>
+            <Typography style={{ marginTop: 15, fontSize: 18 }}>
               Web development, app development, and graphics programming are my
               specialties. I have gotten where I am today through passion,
               perseverance, and curiosity.
@@ -54,7 +56,7 @@ export default function Home() {
               My Tech Stack
             </Typography>
             {/* @TODO Map this grid container from JSON */}
-            <Grid container spacing={4}>
+            <Grid container spacing={4} justifyContent="center">
               <Grid item md={2} xs={3}>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" />
                 <Typography style={stackIconLabelTextStyle}>AWS</Typography>
@@ -156,7 +158,24 @@ export default function Home() {
                 </Typography>
               </Grid>
             </Grid>
-            {/* <OrangeEarth /> */}
+            <center>
+              <Link href="/projects" style={{textDecoration: "none"}}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  style={{
+                    display: "flex",
+                    justifySelf: "center",
+                    marginTop: 40,
+                    fontSize: isDesktopView ? 30 : 18,
+                    
+                  }}
+                >
+                  <OrangeEarth />Be sure to checkout my projects!
+                </Button>
+              </Link>
+            </center>
+            {/*  */}
           </div>
         </ThemeProvider>
       </main>

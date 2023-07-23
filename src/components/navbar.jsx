@@ -10,7 +10,12 @@ import {
   useMediaQuery,
 } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
-import { DESKTOP_WIDTH, MOBILE_WIDTH, MINUTE_SHADOW_SVG } from "@/consts/stylingValues";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import {
+  DESKTOP_WIDTH,
+  MOBILE_WIDTH,
+  MINUTE_SHADOW_SVG,
+} from "@/consts/stylingValues";
 
 // This component is the main navbar of the site.
 const NavBar = (props) => {
@@ -78,7 +83,13 @@ const NavBar = (props) => {
             <Link href="/projects">
               <MenuItem>Projects</MenuItem>
             </Link>
-            <MenuItem>Portfolio</MenuItem>
+            <Link
+              href="https://github.com/M-Valentino"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MenuItem>GitHub</MenuItem>
+            </Link>
           </Menu>
         </Grid>
       ) : (
@@ -100,14 +111,21 @@ const NavBar = (props) => {
                 Projects
               </Button>
             </Link>
-            {/* <Link href="/portfolio"> */}
-            <Button
-              color={activeLink === 2 ? "primary" : "secondary"}
-              style={{ fontSize: 18 }}
+            <Link
+              href="https://github.com/M-Valentino"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Portfolio
-            </Button>
-            {/* </Link> */}
+              <Button
+                color={activeLink === 2 ? "primary" : "secondary"}
+                style={{ fontSize: 18 }}
+              >
+                <GitHubIcon
+                  style={{ transform: "translateY(-3px)", marginRight: 2 }}
+                />
+                GitHub
+              </Button>
+            </Link>
           </Stack>
         </Grid>
       )}
