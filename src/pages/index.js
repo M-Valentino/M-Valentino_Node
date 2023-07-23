@@ -171,7 +171,7 @@ export default function Home() {
                     
                   }}
                 >
-                  <OrangeEarth />Be sure to checkout my projects!
+                  <OrangeEarth /> Checkout my projects!
                 </Button>
               </Link>
             </center>

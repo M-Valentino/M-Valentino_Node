@@ -77,16 +77,17 @@ const NavBar = (props) => {
               "aria-labelledby": "basic-button",
             }}
           >
-            <Link href="/">
+            <Link href="/" style={{textDecoration: "none"}}>
               <MenuItem>Home</MenuItem>
             </Link>
-            <Link href="/projects">
+            <Link href="/projects" style={{textDecoration: "none"}}>
               <MenuItem>Projects</MenuItem>
             </Link>
             <Link
               href="https://github.com/M-Valentino"
               target="_blank"
               rel="noopener noreferrer"
+              style={{textDecoration: "none"}}
             >
               <MenuItem>GitHub</MenuItem>
             </Link>
@@ -95,7 +96,7 @@ const NavBar = (props) => {
       ) : (
         <Grid item xs={4}>
           <Stack direction="row" justifyContent="space-around">
-            <Link href="/">
+            <Link href="/" style={{textDecoration: "none"}}>
               <Button
                 color={activeLink === 0 ? "primary" : "secondary"}
                 style={{ fontSize: 18 }}
@@ -103,7 +104,7 @@ const NavBar = (props) => {
                 Home
               </Button>
             </Link>
-            <Link href="/projects">
+            <Link href="/projects" style={{textDecoration: "none"}}>
               <Button
                 color={activeLink === 1 ? "primary" : "secondary"}
                 style={{ fontSize: 18 }}
@@ -115,6 +116,7 @@ const NavBar = (props) => {
               href="https://github.com/M-Valentino"
               target="_blank"
               rel="noopener noreferrer"
+              style={{textDecoration: "none"}}
             >
               <Button
                 color={activeLink === 2 ? "primary" : "secondary"}
