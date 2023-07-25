@@ -168,7 +168,7 @@ export default function Home() {
                     justifySelf: "center",
                     marginTop: 40,
                     fontSize: isDesktopView ? 30 : 18,
-                    
+                    textShadow: MINUTE_SHADOW_TEXT,
                   }}
                 >
                   <OrangeEarth /> Checkout my projects!
