@@ -16,6 +16,7 @@ export const DESKTOP_WIDTH = "calc(100% - 100px)";
 export const MOBILE_WIDTH = "calc(100% - 10px)";
 
 export const OFF_WHITE_COLOR = "#fffdfa";
+export const MUI_PRIMARY_COLOR_DEEP_ORANGE = "#ff5722";
 
 export const SCREEN_CONTROL_STYLES = {
   width: 40,

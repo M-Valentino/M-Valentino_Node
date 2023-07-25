@@ -6,6 +6,7 @@ import OrangeEarth from "./OrangeEarth";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
 import {
+  MUI_PRIMARY_COLOR_DEEP_ORANGE,
   MINUTE_SHADOW,
   OFF_WHITE_COLOR,
   MINUTE_SHADOW_TEXT,
@@ -51,7 +52,7 @@ export default function Home() {
                 1000,
                 "Python,",
                 1000,
-                "C++",
+                "C++,",
                 1000,
                 "and more!",
                 1500,
@@ -63,7 +64,7 @@ export default function Home() {
                 display: "inline-block",
                 fontFamily: "sans-serif",
                 textShadow: MINUTE_SHADOW_TEXT,
-                color: "#ff5722"
+                color: MUI_PRIMARY_COLOR_DEEP_ORANGE
               }}
               repeat={Infinity}
             />
