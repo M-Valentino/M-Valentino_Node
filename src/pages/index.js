@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import NavBar from "@/components/navbar";
@@ -10,10 +11,10 @@ import {
   MINUTE_SHADOW_TEXT,
 } from "@/consts/stylingValues";
 import { Button, Grid, Typography, useMediaQuery } from "@mui/material";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Home() {
   const isDesktopView = useMediaQuery("(min-width:900px)");
-
   const stackIconLabelTextStyle = { textAlign: "center" };
 
   return (
@@ -38,12 +39,31 @@ export default function Home() {
               padding: isDesktopView ? 60 : 10,
             }}
           >
-            <Typography
-              variant={isDesktopView ? "h2" : "h4"}
-              style={{ textShadow: MINUTE_SHADOW_TEXT }}
-            >
-              Hi, I'm Mark Valentino.
-            </Typography>
+            <TypeAnimation
+              sequence={[
+                "Hi, I'm Mark Valentino",
+                2000,
+                "I code in",
+                1000,
+                "React JS",
+                1000,
+                "React Native,",
+                1000,
+                "Python,",
+                1000,
+                "and more!",
+                1500,
+              ]}
+              wrapper="span"
+              speed={50}
+              style={{
+                fontSize: 38,
+                display: "inline-block",
+                fontFamily: "sans-serif",
+                textShadow: MINUTE_SHADOW_TEXT,
+              }}
+              repeat={Infinity}
+            />
             <Typography style={{ marginTop: 15, fontSize: 18 }}>
               Web development, app development, and graphics programming are my
               specialties. I have gotten where I am today through passion,
@@ -159,7 +179,7 @@ export default function Home() {
               </Grid>
             </Grid>
             <center>
-              <Link href="/projects" style={{textDecoration: "none"}}>
+              <Link href="/projects" style={{ textDecoration: "none" }}>
                 <Button
                   variant="contained"
                   color="primary"
