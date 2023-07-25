@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { Stack, Tooltip, Typography, useMediaQuery } from "@mui/material";
+import {
+  Button,
+  Stack,
+  Tooltip,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
 import { useSpring, animated } from "@react-spring/web";
@@ -78,73 +84,83 @@ export default function ProjectCard(props) {
 
   return (
     <ThemeProvider theme={MainTheme}>
-      <animated.div
-        style={{
-          backgroundColor: OFF_WHITE_COLOR,
-          maxWidth: isMobileView ? "100%" : 360,
-          padding: getCardPadding(),
-          borderRadius: 4,
-          textRendering: "geometricPrecision!important",
-          // ...cardDealt,
-          ...cardZoom,
+      <Button
+        style={{ padding: 0 }}
+        sx={{
+          "&.MuiButton-root:hover": { bgcolor: "transparent" },
+          "&& .MuiTouchRipple-rippleVisible": {
+            animationDuration: "2000ms",
+          },
         }}
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
       >
-        <div
+        <animated.div
           style={{
-            backgroundImage: `url(${imageLink})`,
-            backgroundSize: "cover",
-            backgroundPosition: "50% 50%",
-            backgroundColor: "#ccc",
-            width: "100%",
-            height: isMobileView ? 260 : 270,
-            borderRadius: 2,
-            boxShadow: MINUTE_SHADOW,
+            backgroundColor: OFF_WHITE_COLOR,
+            maxWidth: isMobileView ? "100%" : 360,
+            padding: getCardPadding(),
+            borderRadius: 4,
+            textRendering: "geometricPrecision!important",
+            // ...cardDealt,
+            ...cardZoom,
           }}
-        />
-        <Stack direction="row" spacing={1}>
-          {!isSmallMobileView && (
-            <Typography variant={"h6"} color="primary">
-              {date}
-            </Typography>
-          )}
-          <Typography
-            variant={title.length > 28 ? "h6" : "h5"}
-            color="text.primary"
-          >
-            {title}
-          </Typography>
-        </Stack>
-        <div style={{ height: isMobileView ? "unset" : 145 }}>
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            style={{ textAlign: isSmallMobileView ? "left" : "justify" }}
-          >
-            {description}
-          </Typography>
-        </div>
-        <Tooltip title={languages.length > 3 ? languages.join(", ") : ""}>
-          <Stack direction="row" spacing={1} mt={1}>
-            {languages.slice(0, 3).map((props, key) => (
-              <LanguageChip
-                key={key}
-                language={props}
-                size={isMobileView ? "small" : "full"}
-              />
-            ))}
-            {languages.length > 3 ? (
-              <LanguageChip
-                language={PLUS_MORE}
-                size={isMobileView ? "small" : "full"}
-              />
-            ) : (
-              <></>
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+        >
+          <div
+            style={{
+              backgroundImage: `url(${imageLink})`,
+              backgroundSize: "cover",
+              backgroundPosition: "50% 50%",
+              backgroundColor: "#ccc",
+              width: "100%",
+              height: isMobileView ? 260 : 270,
+              borderRadius: 2,
+              boxShadow: MINUTE_SHADOW,
+            }}
+          />
+          <Stack direction="row" spacing={1}>
+            {!isSmallMobileView && (
+              <Typography variant={"h6"} color="primary">
+                {date}
+              </Typography>
             )}
+            <Typography
+              variant={title.length > 28 ? "h6" : "h5"}
+              color="text.primary"
+            >
+              {title}
+            </Typography>
           </Stack>
-        </Tooltip>
-      </animated.div>
+          <div style={{ height: isMobileView ? "unset" : 145 }}>
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              style={{ textAlign: isSmallMobileView ? "left" : "justify" }}
+            >
+              {description}
+            </Typography>
+          </div>
+          <Tooltip title={languages.length > 3 ? languages.join(", ") : ""}>
+            <Stack direction="row" spacing={1} mt={1}>
+              {languages.slice(0, 3).map((props, key) => (
+                <LanguageChip
+                  key={key}
+                  language={props}
+                  size={isMobileView ? "small" : "full"}
+                />
+              ))}
+              {languages.length > 3 ? (
+                <LanguageChip
+                  language={PLUS_MORE}
+                  size={isMobileView ? "small" : "full"}
+                />
+              ) : (
+                <></>
+              )}
+            </Stack>
+          </Tooltip>
+        </animated.div>
+      </Button>
     </ThemeProvider>
   );
 }
