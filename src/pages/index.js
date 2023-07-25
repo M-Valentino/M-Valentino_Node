@@ -41,8 +41,8 @@ export default function Home() {
           >
             <TypeAnimation
               sequence={[
-                "Hi, I'm Mark Valentino",
-                2000,
+                "Hi, I'm Mark Valentino.",
+                2200,
                 "I code in",
                 1000,
                 "React JS",
@@ -50,6 +50,8 @@ export default function Home() {
                 "React Native,",
                 1000,
                 "Python,",
+                1000,
+                "C++",
                 1000,
                 "and more!",
                 1500,
@@ -61,6 +63,7 @@ export default function Home() {
                 display: "inline-block",
                 fontFamily: "sans-serif",
                 textShadow: MINUTE_SHADOW_TEXT,
+                color: "#ff5722"
               }}
               repeat={Infinity}
             />
