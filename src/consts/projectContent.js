@@ -58,7 +58,7 @@ export const projectContent = [
   {
     href: "/retro_calculator.html",
     gitLink:
-      "https://github.com/M-Valentino/M-Valentino_Node/blob/main/public/retro_calculator.html",
+      "https://github.com/M-Valentino/M-Valentino.github.io/blob/main/calculator.html",
     hrefType: HREF_TYPES.iframe,
     imageLink: "/projectImages/calculator.jpg",
     title: "Retro Calculator",
