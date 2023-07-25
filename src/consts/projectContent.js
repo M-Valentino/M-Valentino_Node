@@ -95,8 +95,7 @@ export const projectContent = [
   },
   {
     href: "/Earth3JS",
-    gitLink:
-      "https://github.com/M-Valentino/M-Valentino_Node/blob/main/src/pages/Earth3JS.jsx",
+    gitLink: "https://github.com/M-Valentino/Earth-3JS",
     hrefType: HREF_TYPES.iframe,
     imageLink: "/projectImages/earth3js.webp",
     title: "Earth 3JS",
