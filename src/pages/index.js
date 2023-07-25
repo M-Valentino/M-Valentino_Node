@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import NavBar from "@/components/navbar";
-import OrangeEarth from "./OrangeEarth";
+import OrangeEarth from "../components/OrangeEarth";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
 import {
