@@ -208,16 +208,12 @@ export default function Projects() {
               direction="row"
               style={{ marginBottom: 50 }}
             >
-              {/* Projects are mapped in reverse so that a new project can be shown as the first 
-              card without changing the url of all the cards.  */}
               {projectResults
-                .slice(0)
-                .reverse()
                 .map((props, key) => (
                   <Grid item>
                     <Link
                       style={{ textDecoration: "none" }}
-                      href={`/project/${projectResults.length - key - 1}`}
+                      href={`/project/${props.index}`}
                     >
                       <ProjectCard key={key} data={props} />
                     </Link>
