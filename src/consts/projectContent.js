@@ -24,6 +24,10 @@ export const LANGUAGES = {
 
   // React Stack
   react: "React",
+  reactNative: "React Native",
+  firebase: "Firebase",
+  detox: "Detox",
+  jest: "Jest",
   reactThreeFiber: "React Three Fiber",
   drie: "drei",
 };
@@ -76,6 +80,21 @@ export const projectContent = [
     description:
       "This project was made to explore how programs can perform image manipulation. I wrote a program that can open a bitmap image and store its pixel data into matrices which could then be manipulated. I was able to successfully mirror an image, invert the colors of an image, convert an image to black and white, and stretch an image programatically.",
     languages: [LANGUAGES.java],
+  },
+  {
+    gitLink: "https://github.com/SCCapstone/I_Spy_A-Eye",
+    hrefType: HREF_TYPES.externalLink,
+    imageLink: "/projectImages/i-spy-shopper.svg",
+    title: "I Spy Shopper",
+    date: "2023",
+    description:
+      "I Spy Shopper is a grocery devilery app for the visually impaired (with pretend payment transactions). This is also a college capstone group project. I Spy Shopper uses the Kroger API for generating grocery data. It also uses Firebase for authentication and data storage. Over 100 automated tests were written in the app using Detox and Jest.",
+    languages: [
+      LANGUAGES.reactNative,
+      LANGUAGES.firebase,
+      LANGUAGES.jest,
+      LANGUAGES.detox,
+    ],
   },
   {
     gitLink: "https://github.com/M-Valentino/ICat",
