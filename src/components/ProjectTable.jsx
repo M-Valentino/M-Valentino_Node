@@ -61,7 +61,7 @@ export default function ProjectTable(props) {
     >
       <Table aria-label="simple table">
         <TableBody>
-          {projectContent.slice(0).reverse().map((row, key) => (
+          {projectContent.map((row, key) => (
             <TableRow
               key={row.date}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
@@ -70,7 +70,7 @@ export default function ProjectTable(props) {
                 <TableCell align="right">
                   <Link
                     style={{ textDecoration: "none" }}
-                    href={`/project/${projectContent.length - key - 1}`}
+                    href={`/project/${row.index}`}
                   >
                     {row.date}
                   </Link>
@@ -79,7 +79,7 @@ export default function ProjectTable(props) {
               <TableCell align="left" height={50}>
                 <Link
                   style={{ textDecoration: "none" }}
-                  href={`/project/${projectContent.length - key - 1}`}
+                  href={`/project/${row.index}`}
                 >
                   <img src={row.imageLink} style={{ height: "100%" }} />
                 </Link>
@@ -87,7 +87,7 @@ export default function ProjectTable(props) {
               <TableCell align="left">
                 <Link
                   style={{ textDecoration: "none" }}
-                  href={`/project/${projectContent.length - key - 1}`}
+                  href={`/project/${row.index}`}
                 >
                   <Typography style={{ fontWeight: 400 }}>
                     {row.title}
