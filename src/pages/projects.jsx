@@ -222,7 +222,7 @@ export default function Projects() {
             </Grid>
           )}
           {view === "tableView" && (
-            <ProjectTable projectContent={projectResults} />
+            <ProjectTable projectContent={projectResults} key={projectResults}/>
           )}
         </ThemeProvider>
       </main>
