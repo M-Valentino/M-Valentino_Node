@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { LANGUAGES, LANGUAGE_LINKS } from "@/consts/projectContent";
 import { Typography } from "@mui/material";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { PLUS_MORE } from "@/consts/projectContent";
 import { MINUTE_SHADOW } from "@/consts/stylingValues";
 
@@ -103,6 +104,16 @@ export const LanguageChip = (props) => {
         <span style={{ color: language === PLUS_MORE ? "#fff" : "#000" }}>
           {language}
         </span>
+        {showLink && size === "full" && (
+          <OpenInNewIcon
+            style={{
+              transform: "translateY(1px)",
+              marginLeft: 4,
+              width: 12,
+              height: 12,
+            }}
+          />
+        )}
       </Typography>
     </div>
   );

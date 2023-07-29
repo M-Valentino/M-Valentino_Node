@@ -158,16 +158,18 @@ export default function ProjectPage(props) {
             <Typography variant="h5" style={{ marginTop: 20 }}>
               Languages and Libraries used:
             </Typography>
-            <Stack direction="row" spacing={1} mt={1}>
+            <Grid container spacing={1} mt={1}>
               {languages.map((props, key) => (
+                <Grid item>
                 <LanguageChip
                   key={key}
                   language={props}
                   size={!isDesktopView ? "small" : "full"}
                   showLink
                 />
+                </Grid>
               ))}
-            </Stack>
+            </Grid>
             <Button
               target="_blank"
               href={gitLink}
