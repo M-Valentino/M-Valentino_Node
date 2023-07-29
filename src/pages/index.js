@@ -82,101 +82,101 @@ export default function Home() {
             {/* @TODO Map this grid container from JSON */}
             <Grid container spacing={4} justifyContent="center">
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="Amazon Web Services logo" />
                 <Typography style={stackIconLabelTextStyle}>AWS</Typography>
               </Grid>
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="Android Studio logo"/>
                 <Typography style={stackIconLabelTextStyle}>
                   Android Studio
                 </Typography>
               </Grid>
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash logo"/>
                 <Typography style={stackIconLabelTextStyle}>Bash</Typography>
               </Grid>
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++ logo"/>
                 <Typography style={stackIconLabelTextStyle}>C++</Typography>
               </Grid>
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3 logo"/>
                 <Typography style={stackIconLabelTextStyle}>CSS3</Typography>
               </Grid>
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase logo"/>
                 <Typography style={stackIconLabelTextStyle}>
                   Firebase
                 </Typography>
               </Grid>
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/handlebars/handlebars-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/handlebars/handlebars-original.svg" alt="Handlebars logo"/>
                 <Typography style={stackIconLabelTextStyle}>
                   Handlebars
                 </Typography>
               </Grid>
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 logo"/>
                 <Typography style={stackIconLabelTextStyle}>Html5</Typography>
               </Grid>
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java logo"/>
                 <Typography style={stackIconLabelTextStyle}>Java</Typography>
               </Grid>
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo"/>
                 <Typography style={stackIconLabelTextStyle}>
-                  Javascript
+                  JavaScript
                 </Typography>
               </Grid>
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" alt="Jest logo"/>
                 <Typography style={stackIconLabelTextStyle}>Jest</Typography>
               </Grid>
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg" alt="Jupyter Notebook logo"/>
                 <Typography style={{ textAlign: "center", fontSize: 14 }}>
                   Jupyter Notebook
                 </Typography>
               </Grid>
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg" alt="Material UI logo"/>
                 <Typography style={stackIconLabelTextStyle}>
                   Material UI
                 </Typography>
               </Grid>
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL logo"/>
                 <Typography style={stackIconLabelTextStyle}>MySQL</Typography>
               </Grid>
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next logo"/>
                 <Typography style={stackIconLabelTextStyle}>Next JS</Typography>
               </Grid>
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" alt="Node logo"/>
                 <Typography style={stackIconLabelTextStyle}>Node JS</Typography>
               </Grid>
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy logo"/>
                 <Typography style={stackIconLabelTextStyle}>NumPy</Typography>
               </Grid>
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas logo"/>
                 <Typography style={stackIconLabelTextStyle}>Pandas</Typography>
               </Grid>
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt=" Python logo"/>
                 <Typography style={stackIconLabelTextStyle}>Python</Typography>
               </Grid>
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native logo"/>
                 <Typography style={stackIconLabelTextStyle}>
                   React Native
                 </Typography>
               </Grid>
               <Grid item md={2} xs={3}>
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg" alt="three.js logo"/>
                 <Typography style={stackIconLabelTextStyle}>
                   three.js
                 </Typography>
