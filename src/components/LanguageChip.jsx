@@ -1,22 +1,23 @@
 import React from "react";
-import { LANGUAGES } from "@/consts/projectContent";
+import Link from "next/link";
+import { LANGUAGES, LANGUAGE_LINKS } from "@/consts/projectContent";
 import { Typography } from "@mui/material";
 import { PLUS_MORE } from "@/consts/projectContent";
 import { MINUTE_SHADOW } from "@/consts/stylingValues";
 
 /**
  * This is a component akin to MUI chips. LanguageChip is used in showing what coding languages
- * and libraries were used for a project. The color of the chip changes depending on the 
+ * and libraries were used for a project. The color of the chip changes depending on the
  * language passed in through props. This component can either be in a small size or larger size
  * which is also dependant of the size prop passed through.
- * 
+ *
  * There is a special use case here for having the chip show "+ more". It is used in showing that
  * there are more languages than what can be shown currently. When "+ more" is passed in through
  * the language prop, it is styled differently.
  * @param {*} props the coding language text to show and the size of the chip.
  */
 export const LanguageChip = (props) => {
-  const { size, language } = props;
+  const { size, language, showLink } = props;
   /**
    * Function for determining which background color the coding language tags will have.
    * HSL is used so that colors do not have to be defined for every new language added.
@@ -32,7 +33,6 @@ export const LanguageChip = (props) => {
       Object.entries(LANGUAGES)
     )) {
       if (value === language) {
-    
         return `hsl(${
           // All colors assigned to a language will be evenly spaced by angle for the hue.
           index * (360 / Object.keys(LANGUAGES).length)
@@ -84,7 +84,7 @@ export const LanguageChip = (props) => {
     },
   };
 
-  return (
+  const Chip = () => (
     <div
       style={
         size === "full" ? fullSizeStyles.container : smallSizeStyles.container
@@ -103,5 +103,18 @@ export const LanguageChip = (props) => {
         </span>
       </Typography>
     </div>
+  );
+
+  return showLink ? (
+    <Link
+      href={LANGUAGE_LINKS[language]}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{textDecoration: "none"}}
+    >
+      <Chip />
+    </Link>
+  ) : (
+    <Chip />
   );
 };

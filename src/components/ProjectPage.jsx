@@ -164,6 +164,7 @@ export default function ProjectPage(props) {
                   key={key}
                   language={props}
                   size={!isDesktopView ? "small" : "full"}
+                  showLink
                 />
               ))}
             </Stack>

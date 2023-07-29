@@ -32,6 +32,28 @@ export const LANGUAGES = {
   drie: "drei",
 };
 
+export const LANGUAGE_LINKS = {
+  [LANGUAGES.bash]: "https://www.gnu.org/software/bash",
+  [LANGUAGES.java]: "https://www.java.com", 
+  [LANGUAGES.css]: "https://www.w3.org/Style/CSS/Overview.en.html",
+  [LANGUAGES.html]: "https://www.w3.org/html",
+  [LANGUAGES.vanillaJS]: "https://www.ecma-international.org/technical-committees/tc39/",
+  [LANGUAGES.python]: "https://www.python.org",
+  [LANGUAGES.pillow]: "https://pillow.readthedocs.io/en/stable/",
+  [LANGUAGES.numPy]: "https://numpy.org",
+  [LANGUAGES.pandas]: "https://pandas.pydata.org",
+  [LANGUAGES.faker]: "https://faker.readthedocs.io/en/master/",
+  [LANGUAGES.cairoSVG]: "https://cairosvg.org",
+  [LANGUAGES.plotly]: "https://plotly.com/python/",
+  [LANGUAGES.react]: "https://react.dev",
+  [LANGUAGES.reactNative]: "https://reactnative.dev",
+  [LANGUAGES.firebase]: "https://firebase.google.com",
+  [LANGUAGES.detox]: "https://wix.github.io/Detox/",
+  [LANGUAGES.jest]: "https://jestjs.io",
+  [LANGUAGES.reactThreeFiber]: "https://docs.pmnd.rs/react-three-fiber/getting-started/introduction",
+  [LANGUAGES.drie]: "https://github.com/pmndrs/drei",
+}
+
 // Special const that is passed through LanguageChip also. It isn't a language or library.
 export const PLUS_MORE = "+ more";
 
