@@ -130,7 +130,7 @@ export const projectContent = [
     title: "Retro Calculator",
     date: "2022",
     description:
-      "A functional recreation of an old school style calculator was made. I pushed CSS to the limit to make the calculator photorealistic by heavily using shadows and gradients. Vector images were not used as I wanted to make the calculator easier to be built upon in the future. The entire webpage is very small and takes up 14Kb.",
+      "A functional recreation of an old school style calculator was made. I pushed CSS to the limit to make the calculator photorealistic by heavily using shadows and gradients. Vector images were not used as I wanted to make the calculator easier to be built upon in the future. The entire webpage is very small and takes up 15Kb.",
     languages: [LANGUAGES.vanillaJS, LANGUAGES.html, LANGUAGES.css],
   },
 
