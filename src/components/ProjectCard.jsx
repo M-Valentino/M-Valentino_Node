@@ -89,7 +89,7 @@ export default function ProjectCard(props) {
         sx={{
           "&.MuiButton-root:hover": { bgcolor: "transparent" },
           "&& .MuiTouchRipple-rippleVisible": {
-            animationDuration: "2000ms",
+            animationDuration: "1500ms",
           },
         }}
       >
