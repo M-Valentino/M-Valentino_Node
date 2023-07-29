@@ -20,7 +20,10 @@ export default function Home() {
   const stackIconLabelTextStyle = { textAlign: "center" };
   const [privacyPolicyOpen, setPrivacyPolicyOpen] = useState(false);
 
-  const handlePrivacyPolicyClose = () => {
+  const handlePrivacyPolicyClose = (_event, reason) => {
+    if (reason && reason == "backdropClick") {
+        return;
+    }
     setPrivacyPolicyOpen(false);
   };
 

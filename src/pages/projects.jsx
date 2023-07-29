@@ -90,7 +90,10 @@ export default function Projects() {
 
   const [privacyPolicyOpen, setPrivacyPolicyOpen] = useState(false);
 
-  const handlePrivacyPolicyClose = () => {
+  const handlePrivacyPolicyClose = (_event, reason) => {
+    if (reason && reason == "backdropClick") {
+      return;
+    }
     setPrivacyPolicyOpen(false);
   };
 
