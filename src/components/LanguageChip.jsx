@@ -60,6 +60,7 @@ export const LanguageChip = (props) => {
       opacity: 0.8,
       fontSize: 15,
       whiteSpace: "nowrap",
+      userSelect: "none",
     },
   };
 
@@ -81,6 +82,7 @@ export const LanguageChip = (props) => {
       opacity: 0.8,
       fontSize: 12,
       whiteSpace: "nowrap",
+      userSelect: "none",
     },
   };
 
@@ -110,7 +112,7 @@ export const LanguageChip = (props) => {
       href={LANGUAGE_LINKS[language]}
       target="_blank"
       rel="noopener noreferrer"
-      style={{textDecoration: "none"}}
+      style={{ textDecoration: "none" }}
     >
       <Chip />
     </Link>

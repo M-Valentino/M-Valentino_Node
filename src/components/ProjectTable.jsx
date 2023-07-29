@@ -114,7 +114,11 @@ export default function ProjectTable(props) {
                       {row.languages
                         .slice(0, getMaxChipsToShow())
                         .map((props) => (
-                          <LanguageChip language={props} size="small" />
+                          <LanguageChip
+                            language={props}
+                            size="small"
+                            showLink
+                          />
                         ))}
                       {row.languages.length > getMaxChipsToShow() ? (
                         <LanguageChip language={PLUS_MORE} size="small" />
