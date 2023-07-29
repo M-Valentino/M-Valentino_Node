@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { LANGUAGES, LANGUAGE_LINKS } from "@/consts/projectContent";
 import { Typography } from "@mui/material";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import { useSpring, animated } from "@react-spring/web";
 import { PLUS_MORE } from "@/consts/projectContent";
 import { MINUTE_SHADOW } from "@/consts/stylingValues";
 
@@ -19,6 +20,7 @@ import { MINUTE_SHADOW } from "@/consts/stylingValues";
  */
 export const LanguageChip = (props) => {
   const { size, language, showLink } = props;
+  const [isHovering, setIsHovering] = useState(false);
   /**
    * Function for determining which background color the coding language tags will have.
    * HSL is used so that colors do not have to be defined for every new language added.
@@ -41,6 +43,15 @@ export const LanguageChip = (props) => {
       }
     }
   };
+
+  const hoverAnimation = useSpring({
+    from: {
+      filter: "brightness(1.0)",
+    },
+    to: {
+      filter: isHovering ? "brightness(0.87)" : "brightness(1.0)",
+    },
+  });
 
   const fullSizeStyles = {
     container: {
@@ -119,14 +130,20 @@ export const LanguageChip = (props) => {
   );
 
   return showLink ? (
-    <Link
-      href={LANGUAGE_LINKS[language]}
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{ textDecoration: "none" }}
+    <animated.div
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+      style={...hoverAnimation}
     >
-      <Chip />
-    </Link>
+      <Link
+        href={LANGUAGE_LINKS[language]}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ textDecoration: "none" }}
+      >
+        <Chip />
+      </Link>
+    </animated.div>
   ) : (
     <Chip />
   );
