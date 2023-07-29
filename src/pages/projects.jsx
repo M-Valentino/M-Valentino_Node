@@ -21,6 +21,7 @@ import NavBar from "@/components/navbar";
 import ProjectCard from "@/components/ProjectCard";
 import ProjectTable from "@/components/ProjectTable";
 import { projectContent } from "@/consts/projectContent";
+import { PrivacyPolicyDialog } from "@/components/privacyPolicyDialog";
 import {
   DESKTOP_WIDTH,
   MOBILE_WIDTH,
@@ -85,6 +86,12 @@ export default function Projects() {
   const handleResetFilter = () => {
     setProjectResults(projectContent);
     setSearchInputValue("");
+  };
+
+  const [privacyPolicyOpen, setPrivacyPolicyOpen] = useState(false);
+
+  const handlePrivacyPolicyClose = () => {
+    setPrivacyPolicyOpen(false);
   };
 
   return (
@@ -164,7 +171,7 @@ export default function Projects() {
                 variant={isTabletView ? "h4" : "h3"}
                 fontWeight={500}
                 textAlign={"center"}
-                style={{textShadow: MINUTE_SHADOW_TEXT}}
+                style={{ textShadow: MINUTE_SHADOW_TEXT }}
               >
                 Projects
               </Typography>
@@ -208,22 +215,33 @@ export default function Projects() {
               direction="row"
               style={{ marginBottom: 50 }}
             >
-              {projectResults
-                .map((props, key) => (
-                  <Grid item>
-                    <Link
-                      style={{ textDecoration: "none" }}
-                      href={`/project/${props.index}`}
-                    >
-                      <ProjectCard key={key} data={props} />
-                    </Link>
-                  </Grid>
-                ))}
+              {projectResults.map((props, key) => (
+                <Grid item>
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    href={`/project/${props.index}`}
+                  >
+                    <ProjectCard key={key} data={props} />
+                  </Link>
+                </Grid>
+              ))}
             </Grid>
           )}
           {view === "tableView" && (
-            <ProjectTable projectContent={projectResults} key={projectResults}/>
+            <ProjectTable
+              projectContent={projectResults}
+              key={projectResults}
+            />
           )}
+          <center>
+            <Button onClick={() => setPrivacyPolicyOpen(true)}>
+              Privacy Policy
+            </Button>
+          </center>
+          <PrivacyPolicyDialog
+            handlePrivacyPolicyClose={handlePrivacyPolicyClose}
+            privacyPolicyOpen={privacyPolicyOpen}
+          />
         </ThemeProvider>
       </main>
     </>

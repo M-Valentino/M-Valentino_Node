@@ -56,6 +56,7 @@ export default function ProjectTable(props) {
         backgroundColor: "#fffdfa",
         boxShadow: CARD_AND_TABLE_SHADOW,
         textRendering: "geometricPrecision!important",
+        marginBottom: 50,
         // ...tableZoom,
       }}
     >

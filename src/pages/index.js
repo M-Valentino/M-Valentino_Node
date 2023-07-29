@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import NavBar from "@/components/navbar";
 import OrangeEarth from "../components/OrangeEarth";
+import { PrivacyPolicyDialog } from "@/components/privacyPolicyDialog";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
 import {
@@ -17,6 +18,11 @@ import { TypeAnimation } from "react-type-animation";
 export default function Home() {
   const isDesktopView = useMediaQuery("(min-width:900px)");
   const stackIconLabelTextStyle = { textAlign: "center" };
+  const [privacyPolicyOpen, setPrivacyPolicyOpen] = useState(false);
+
+  const handlePrivacyPolicyClose = () => {
+    setPrivacyPolicyOpen(false);
+  };
 
   return (
     <>
@@ -48,7 +54,7 @@ export default function Home() {
             style={{
               maxWidth: 900,
               margin: "auto",
-              marginBottom: 40,
+              marginBottom: 50,
               backgroundColor: OFF_WHITE_COLOR,
               borderRadius: 4,
               boxShadow: MINUTE_SHADOW,
@@ -279,6 +285,15 @@ export default function Home() {
             </center>
             {/*  */}
           </div>
+          <center>
+            <Button onClick={() => setPrivacyPolicyOpen(true)}>
+              Privacy Policy
+            </Button>
+          </center>
+          <PrivacyPolicyDialog
+            handlePrivacyPolicyClose={handlePrivacyPolicyClose}
+            privacyPolicyOpen={privacyPolicyOpen}
+          />
         </ThemeProvider>
       </main>
     </>
