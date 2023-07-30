@@ -167,7 +167,6 @@ export default function Projects() {
               xs={12}
               style={{
                 marginTop: isTabletView ? 20 : 0,
-                marginBottom: isTabletView ? 20 : 0,
               }}
             >
               <Typography
@@ -209,7 +208,17 @@ export default function Projects() {
               </Stack>
             </Grid>
           </Grid>
-
+          <Typography
+            style={{
+              fontSize: 13,
+              color: "#555",
+              textAlign: "center",
+              marginBottom: 5,
+            }}
+          >
+            Click a card to view more details. Each project has a link to a
+            GitHub repo.
+          </Typography>
           {view === "cardView" && (
             <Grid
               container

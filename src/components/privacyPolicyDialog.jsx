@@ -14,9 +14,10 @@ export const PrivacyPolicyDialog = (props) => {
 
   return (
     <Dialog onClose={handlePrivacyPolicyClose} open={privacyPolicyOpen}>
-      <DialogTitle>Privacy Policy</DialogTitle>
+      <DialogTitle fontWeight={500} style={{fontSize: 22}}>Privacy Policy</DialogTitle>
       <DialogContent>
-        <Typography>
+        <Typography style={{fontSize: 15, marginBottom: 10}}>Last updated: July 29th, 2023</Typography>
+        <Typography style={{color: "#222"}}>
           This website partners with Microsoft Clarity to capture how you use
           and interact with this website through behavioral metrics, heatmaps,
           and session replay to improve the user expirience of this site.
