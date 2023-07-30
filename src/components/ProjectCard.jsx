@@ -15,7 +15,9 @@ import {
   FINAL_CARD_SHADOW,
   MINUTE_SHADOW,
   OFF_WHITE_COLOR,
+  MUI_PRIMARY_COLOR_DEEP_ORANGE,
 } from "@/consts/stylingValues";
+import { HREF_TYPES } from "@/consts/projectContent";
 import { PLUS_MORE } from "@/consts/projectContent";
 
 /**
@@ -24,7 +26,8 @@ import { PLUS_MORE } from "@/consts/projectContent";
  * page. It grows in size when hovered over.
  */
 export default function ProjectCard(props) {
-  const { imageLink, title, date, description, languages } = props.data;
+  const { imageLink, title, date, description, languages, hrefType } =
+    props.data;
   const isDesktopView = useMediaQuery("(min-width:1000px)");
   const isMobileView = useMediaQuery("(max-width:400px)");
   const isSmallMobileView = useMediaQuery("(max-width:372px)");
@@ -117,7 +120,21 @@ export default function ProjectCard(props) {
               borderRadius: 2,
               boxShadow: MINUTE_SHADOW,
             }}
-          />
+          >
+            {hrefType === HREF_TYPES.iframe && (
+              <div
+                style={{
+                  backgroundColor: MUI_PRIMARY_COLOR_DEEP_ORANGE,
+                  width: 168,
+                  color: "#fff",
+                  borderBottomRightRadius: 10,
+                  fontSize: 13
+                }}
+              >
+                Try it in your browser!
+              </div>
+            )}
+          </div>
           <Stack direction="row" spacing={1}>
             {!isSmallMobileView && (
               <Typography variant={"h6"} color="primary">
