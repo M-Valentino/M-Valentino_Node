@@ -18,7 +18,7 @@ import { TypeAnimation } from "react-type-animation";
 
 export default function Home() {
   const isDesktopView = useMediaQuery("(min-width:900px)");
-  const stackIconLabelTextStyle = { textAlign: "center" };
+  const stackIconLabelTextStyle = { textAlign: "center", fontWeight: "bold" };
   const [privacyPolicyOpen, setPrivacyPolicyOpen] = useState(false);
 
   const handlePrivacyPolicyClose = (_event, reason) => {
@@ -90,6 +90,7 @@ export default function Home() {
                 fontFamily: "sans-serif",
                 textShadow: MINUTE_SHADOW_TEXT,
                 color: MUI_PRIMARY_COLOR_DEEP_ORANGE,
+                fontWeight: 600
               }}
               repeat={Infinity}
             />
@@ -100,7 +101,7 @@ export default function Home() {
             </Typography>
             <Typography
               variant="h4"
-              style={{ marginTop: 40, marginBottom: 10, textAlign: "center" }}
+              style={{ marginTop: 40, marginBottom: 10, textAlign: "center", fontWeight: 600 }}
             >
               My Tech Stack
             </Typography>
@@ -196,7 +197,7 @@ export default function Home() {
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg"
                   alt="Jupyter Notebook logo"
                 />
-                <Typography style={{ textAlign: "center", fontSize: 14 }}>
+                <Typography style={{ textAlign: "center", fontSize: 14, fontWeight: "bold" }}>
                   Jupyter Notebook
                 </Typography>
               </Grid>

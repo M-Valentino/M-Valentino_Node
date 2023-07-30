@@ -75,7 +75,7 @@ export default function ProjectPage(props) {
 
   const handlePrivacyPolicyClose = (_event, reason) => {
     if (reason && reason == "backdropClick") {
-        return;
+      return;
     }
     setPrivacyPolicyOpen(false);
   };
@@ -136,7 +136,7 @@ export default function ProjectPage(props) {
               <Typography
                 variant="h3"
                 color="primary"
-                style={{ textShadow: MINUTE_SHADOW_TEXT }}
+                style={{ textShadow: MINUTE_SHADOW_TEXT, fontWeight: "bolder" }}
               >
                 {date}
               </Typography>
@@ -144,7 +144,11 @@ export default function ProjectPage(props) {
             <Typography
               variant={isLargeMobileView ? "h4" : "h3"}
               color="text.primary"
-              style={{ marginBottom: 20, textShadow: MINUTE_SHADOW_TEXT }}
+              style={{
+                marginBottom: 20,
+                textShadow: MINUTE_SHADOW_TEXT,
+                fontWeight: "bolder",
+              }}
             >
               {title}
             </Typography>
