@@ -38,6 +38,7 @@ export default function ProjectPage(props) {
     href,
     hrefType,
     imageLink,
+    imageAltText,
     title,
     date,
     description,
@@ -83,7 +84,9 @@ export default function ProjectPage(props) {
   const getProjectComponent = () => {
     switch (hrefType) {
       case HREF_TYPES.externalLink:
-        return <img src={imageLink} width="100%" />;
+        return (
+          <img src={imageLink} width="100%" role="img" alt={imageAltText} />
+        );
       case HREF_TYPES.iframe:
         return (
           <>

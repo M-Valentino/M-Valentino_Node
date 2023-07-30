@@ -26,8 +26,15 @@ import { PLUS_MORE } from "@/consts/projectContent";
  * page. It grows in size when hovered over.
  */
 export default function ProjectCard(props) {
-  const { imageLink, title, date, description, languages, hrefType } =
-    props.data;
+  const {
+    imageLink,
+    title,
+    date,
+    description,
+    languages,
+    hrefType,
+    imageAltText,
+  } = props.data;
   const isDesktopView = useMediaQuery("(min-width:1000px)");
   const isMobileView = useMediaQuery("(max-width:400px)");
   const isSmallMobileView = useMediaQuery("(max-width:372px)");
@@ -110,6 +117,8 @@ export default function ProjectCard(props) {
           onMouseLeave={() => setIsHovering(false)}
         >
           <div
+            role="img"
+            alt={imageAltText}
             style={{
               backgroundImage: `url(${imageLink})`,
               backgroundSize: "cover",
