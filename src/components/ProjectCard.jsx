@@ -128,7 +128,8 @@ export default function ProjectCard(props) {
                   width: 168,
                   color: "#fff",
                   borderBottomRightRadius: 10,
-                  fontSize: 13
+                  fontSize: 13,
+                  boxShadow: MINUTE_SHADOW,
                 }}
               >
                 Try it in your browser!
