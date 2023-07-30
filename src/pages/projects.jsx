@@ -216,8 +216,8 @@ export default function Projects() {
               marginBottom: 5,
             }}
           >
-            Click a card to view more details. Each project has a link to a
-            GitHub repo.
+            Click {view === "cardView" ? "a card" : "an entry"} to view more
+            details. Each project has a link to a GitHub repo.
           </Typography>
           {view === "cardView" && (
             <Grid
