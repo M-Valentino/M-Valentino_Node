@@ -90,7 +90,7 @@ export default function Home() {
                 fontFamily: "sans-serif",
                 textShadow: MINUTE_SHADOW_TEXT,
                 color: MUI_PRIMARY_COLOR_DEEP_ORANGE,
-                fontWeight: 600
+                fontWeight: 600,
               }}
               repeat={Infinity}
             />
@@ -101,7 +101,12 @@ export default function Home() {
             </Typography>
             <Typography
               variant="h4"
-              style={{ marginTop: 40, marginBottom: 10, textAlign: "center", fontWeight: 600 }}
+              style={{
+                marginTop: 40,
+                marginBottom: 10,
+                textAlign: "center",
+                fontWeight: 600,
+              }}
             >
               My Tech Stack
             </Typography>
@@ -109,6 +114,7 @@ export default function Home() {
             <Grid container spacing={4} justifyContent="center">
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
                   alt="Amazon Web Services logo"
                 />
@@ -116,6 +122,7 @@ export default function Home() {
               </Grid>
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg"
                   alt="Android Studio logo"
                 />
@@ -125,6 +132,7 @@ export default function Home() {
               </Grid>
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg"
                   alt="Bash logo"
                 />
@@ -132,6 +140,7 @@ export default function Home() {
               </Grid>
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
                   alt="C++ logo"
                 />
@@ -139,6 +148,7 @@ export default function Home() {
               </Grid>
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
                   alt="CSS3 logo"
                 />
@@ -146,6 +156,7 @@ export default function Home() {
               </Grid>
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
                   alt="Firebase logo"
                 />
@@ -155,6 +166,7 @@ export default function Home() {
               </Grid>
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/handlebars/handlebars-original.svg"
                   alt="Handlebars logo"
                 />
@@ -164,6 +176,7 @@ export default function Home() {
               </Grid>
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
                   alt="HTML5 logo"
                 />
@@ -171,6 +184,7 @@ export default function Home() {
               </Grid>
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
                   alt="Java logo"
                 />
@@ -178,6 +192,7 @@ export default function Home() {
               </Grid>
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
                   alt="JavaScript logo"
                 />
@@ -187,6 +202,7 @@ export default function Home() {
               </Grid>
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg"
                   alt="Jest logo"
                 />
@@ -194,15 +210,23 @@ export default function Home() {
               </Grid>
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg"
                   alt="Jupyter Notebook logo"
                 />
-                <Typography style={{ textAlign: "center", fontSize: 14, fontWeight: "bold" }}>
+                <Typography
+                  style={{
+                    textAlign: "center",
+                    fontSize: 14,
+                    fontWeight: "bold",
+                  }}
+                >
                   Jupyter Notebook
                 </Typography>
               </Grid>
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg"
                   alt="Material UI logo"
                 />
@@ -212,6 +236,7 @@ export default function Home() {
               </Grid>
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
                   alt="MySQL logo"
                 />
@@ -219,6 +244,7 @@ export default function Home() {
               </Grid>
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
                   alt="Next logo"
                 />
@@ -226,6 +252,7 @@ export default function Home() {
               </Grid>
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg"
                   alt="Node logo"
                 />
@@ -233,6 +260,7 @@ export default function Home() {
               </Grid>
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
                   alt="NumPy logo"
                 />
@@ -240,6 +268,7 @@ export default function Home() {
               </Grid>
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
                   alt="Pandas logo"
                 />
@@ -247,6 +276,7 @@ export default function Home() {
               </Grid>
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
                   alt=" Python logo"
                 />
@@ -254,6 +284,7 @@ export default function Home() {
               </Grid>
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
                   alt="React Native logo"
                 />
@@ -263,6 +294,7 @@ export default function Home() {
               </Grid>
               <Grid item md={2} xs={3}>
                 <img
+                  role="img"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg"
                   alt="three.js logo"
                 />

@@ -105,14 +105,16 @@ const NavBar = (props) => {
                 Home
               </Button>
             </Link>
-            <Link href="/projects" style={{textDecoration: "none"}}>
+            
               <Button
                 color={activeLink === 1 ? "primary" : "secondary"}
                 style={{ fontSize: 18 }}
+                LinkComponent={Link}
+                href="/projects"
               >
                 Projects
               </Button>
-            </Link>
+            
             <Link
               href="https://github.com/M-Valentino"
               target="_blank"
