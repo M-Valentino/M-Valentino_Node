@@ -208,7 +208,7 @@ export default function Projects() {
               </Stack>
             </Grid>
           </Grid>
-          <div style={{maxWidth: 900, margin: "auto"}}>
+          <div style={{width: "fit-content", margin: "auto"}}>
             <Typography
               style={{
                 fontSize: 13,
