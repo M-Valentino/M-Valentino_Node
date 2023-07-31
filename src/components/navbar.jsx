@@ -78,17 +78,17 @@ const NavBar = (props) => {
               "aria-labelledby": "basic-button",
             }}
           >
-            <Link href="/" style={{textDecoration: "none"}}>
+            <Link href="/" style={{ textDecoration: "none" }}>
               <MenuItem>Home</MenuItem>
             </Link>
-            <Link href="/projects" style={{textDecoration: "none"}}>
+            <Link href="/projects" style={{ textDecoration: "none" }}>
               <MenuItem>Projects</MenuItem>
             </Link>
             <Link
               href="https://github.com/M-Valentino"
               target="_blank"
               rel="noopener noreferrer"
-              style={{textDecoration: "none"}}
+              style={{ textDecoration: "none" }}
             >
               <MenuItem>GitHub</MenuItem>
             </Link>
@@ -97,40 +97,35 @@ const NavBar = (props) => {
       ) : (
         <Grid item xs={4}>
           <Stack direction="row" justifyContent="space-around">
-            <Link href="/" style={{textDecoration: "none"}}>
-              <Button
-                color={activeLink === 0 ? "primary" : "secondary"}
-                style={{ fontSize: 18 }}
-              >
-                Home
-              </Button>
-            </Link>
-            
-              <Button
-                color={activeLink === 1 ? "primary" : "secondary"}
-                style={{ fontSize: 18 }}
-                LinkComponent={Link}
-                href="/projects"
-              >
-                Projects
-              </Button>
-            
-            <Link
+            <Button
+              color={activeLink === 0 ? "primary" : "secondary"}
+              style={{ fontSize: 18 }}
+              LinkComponent={Link}
+              href="/"
+            >
+              Home
+            </Button>
+            <Button
+              color={activeLink === 1 ? "primary" : "secondary"}
+              style={{ fontSize: 18 }}
+              LinkComponent={Link}
+              href="/projects"
+            >
+              Projects
+            </Button>
+            <Button
+              color={activeLink === 2 ? "primary" : "secondary"}
+              style={{ fontSize: 18 }}
+              LinkComponent={Link}
               href="https://github.com/M-Valentino"
               target="_blank"
               rel="noopener noreferrer"
-              style={{textDecoration: "none"}}
             >
-              <Button
-                color={activeLink === 2 ? "primary" : "secondary"}
-                style={{ fontSize: 18 }}
-              >
-                <GitHubIcon
-                  style={{ transform: "translateY(-3px)", marginRight: 2 }}
-                />
-                GitHub
-              </Button>
-            </Link>
+              <GitHubIcon
+                style={{ transform: "translateY(-3px)", marginRight: 2 }}
+              />
+              GitHub
+            </Button>
           </Stack>
         </Grid>
       )}
