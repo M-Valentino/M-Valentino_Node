@@ -192,6 +192,7 @@ export default function Projects() {
                   variant="contained"
                   sx={{ boxShadow: 1, marginLeft: 1 }}
                   onClick={() => filterProjects()}
+                  aria-label="search"
                 >
                   <SearchIcon style={{ filter: MINUTE_SHADOW_SVG }} />
                 </Button>
@@ -201,6 +202,7 @@ export default function Projects() {
                     variant="outlined"
                     sx={{ boxShadow: 1, marginLeft: 1 }}
                     onClick={() => handleResetFilter()}
+                    aria-label="reset search"
                   >
                     Reset
                   </Button>
@@ -208,7 +210,7 @@ export default function Projects() {
               </Stack>
             </Grid>
           </Grid>
-          <div style={{width: "fit-content", margin: "auto"}}>
+          <div style={{ width: "fit-content", margin: "auto" }}>
             <Typography
               style={{
                 fontSize: 13,
