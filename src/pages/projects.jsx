@@ -208,17 +208,23 @@ export default function Projects() {
               </Stack>
             </Grid>
           </Grid>
-          <Typography
-            style={{
-              fontSize: 13,
-              color: "#555",
-              textAlign: "center",
-              marginBottom: 5,
-            }}
-          >
-            Click {view === "cardView" ? "a card" : "an entry"} to view more
-            details. Each project has a link to a GitHub repo.
-          </Typography>
+          <div style={{maxWidth: 900, margin: "auto"}}>
+            <Typography
+              style={{
+                fontSize: 13,
+                color: "#555",
+                marginBottom: 5,
+                marginLeft: 5,
+                marginRight: 5,
+                textAlign: "justify",
+              }}
+            >
+              {isDesktopView ? "Click " : "Select "}
+              {view === "cardView" ? "a card" : "an entry"} to view more
+              details. Each project has a link to a GitHub repo as well as full
+              list of languages and libraries used.
+            </Typography>
+          </div>
           {view === "cardView" && (
             <Grid
               container

@@ -46,6 +46,7 @@ const NavBar = (props) => {
           <div style={{ width: 115, paddingTop: 5 }}>
             <Link href="/">
               <img
+                alt="Mark Valentino logo"
                 src="/mark-valentino-logo.svg"
                 style={{
                   width: "100%",
