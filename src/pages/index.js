@@ -99,6 +99,20 @@ export default function Home() {
               specialties. I have gotten where I am today through passion,
               perseverance, and curiosity.
             </Typography>
+            <img
+              style={{
+                margin: "auto",
+                display: "block",
+                marginTop: 20,
+                borderRadius: 999,
+                maxWidth: 130,
+                border: `10px solid ${MUI_PRIMARY_COLOR_DEEP_ORANGE}`,
+                boxShadow: `${MINUTE_SHADOW}, inset ${MINUTE_SHADOW}`, 
+              }}
+              role="img"
+              alt="Professional portrait of me in a suite and tie."
+              src="https://avatars.githubusercontent.com/u/79779618?s=400&u=15e063ba7f2751b5f71ac4ba9a586fe296f569a8&v=4"
+            />
             <Typography
               variant="h4"
               style={{
