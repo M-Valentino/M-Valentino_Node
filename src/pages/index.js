@@ -93,7 +93,24 @@ export default function Home() {
                 fontWeight: 600,
               }}
               repeat={Infinity}
+              aria-hidden="true"
             />
+            {/* This span is not visible but is for making the Typing text accessible to screen readers. */}
+            <span
+              style={{
+                clip: "rect(1px, 1px, 1px, 1px)",
+                clipPath: "inset(50%)",
+                height: "1px",
+                width: "1px",
+                margin: "-1px",
+                overflow: "hidden",
+                padding: "0",
+                position: "absolute",
+              }}
+            >
+              Hi, I'm Mark Valentino. I code in React JS, React Native, Python,
+              C++, and more!,
+            </span>
             <Typography style={{ marginTop: 15, fontSize: 18 }}>
               Web development, app development, and graphics programming are my
               specialties. I have gotten where I am today through passion,
@@ -107,7 +124,7 @@ export default function Home() {
                 borderRadius: 999,
                 maxWidth: 130,
                 border: `10px solid ${MUI_PRIMARY_COLOR_DEEP_ORANGE}`,
-                boxShadow: `${MINUTE_SHADOW}, inset ${MINUTE_SHADOW}`, 
+                boxShadow: `${MINUTE_SHADOW}, inset ${MINUTE_SHADOW}`,
               }}
               role="img"
               alt="Professional portrait of me in a suite and tie."
