@@ -213,30 +213,30 @@ export const Earth3JS = () => {
     );
   };
 
-    const [latitude, setLatitude] = useState(null);
-  const [longitude, setLongitude] = useState(null);
+//   const [latitude, setLatitude] = useState(null);
+//   const [longitude, setLongitude] = useState(null);
 
-  useEffect(() => {
-    // Check if geolocation is available in the browser
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setLatitude(position.coords.latitude);
-          setLongitude(position.coords.longitude);
-          let x = 1 * Math.cos(latitude) * Math.cos(longitude)
+//   useEffect(() => {
+//     // Check if geolocation is available in the browser
+//     if ("geolocation" in navigator) {
+//       navigator.geolocation.getCurrentPosition(
+//         (position) => {
+//           setLatitude(position.coords.latitude);
+//           setLongitude(position.coords.longitude);
+//           let x = 1 * Math.cos(latitude) * Math.cos(longitude)
 
-let y = 1 * Math.cos(latitude) * Math.sin(longitude)
+// let y = 1 * Math.cos(latitude) * Math.sin(longitude)
 
-let z = 1 * Math.sin(latitude)
-        },
-        (error) => {
-          console.error("Error getting geolocation:", error);
-        }
-      );
-    } else {
-      console.error("Geolocation is not available in this browser.");
-    }
-  }, []);
+// let z = 1 * Math.sin(latitude)
+//         },
+//         (error) => {
+//           console.error("Error getting geolocation:", error);
+//         }
+//       );
+//     } else {
+//       console.error("Geolocation is not available in this browser.");
+//     }
+//   }, []);
  
 
   return (
