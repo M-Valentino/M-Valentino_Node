@@ -217,11 +217,15 @@ export default function ProjectPage(props) {
           </Grid>
         </div>
       </div>
-      <center>
-        <Button onClick={() => setPrivacyPolicyOpen(true)}>
-          Privacy Policy
-        </Button>
-      </center>
+      <Button
+        style={{
+          margin: "auto",
+          display: "block",
+        }}
+        onClick={() => setPrivacyPolicyOpen(true)}
+      >
+        Privacy Policy
+      </Button>
       <PrivacyPolicyDialog
         handlePrivacyPolicyClose={handlePrivacyPolicyClose}
         privacyPolicyOpen={privacyPolicyOpen}
