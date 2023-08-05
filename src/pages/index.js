@@ -333,23 +333,24 @@ export default function Home() {
                 </Typography>
               </Grid>
             </Grid>
-            <Link href="/projects" style={{ textDecoration: "none" }}>
-              <Button
-                variant="contained"
-                color="primary"
-                style={{
-                  margin: "auto",
-                  display: "block",
-                  marginTop: 40,
-                  fontSize: isDesktopView ? 30 : 18,
-                  textShadow: MINUTE_SHADOW_TEXT,
-                }}
-              >
-                <Stack direction="row" style={{ alignItems: "center" }}>
-                  <OrangeEarth /> Checkout my projects!
-                </Stack>
-              </Button>
-            </Link>
+            <Button
+              variant="contained"
+              color="primary"
+              LinkComponent={Link}
+              href="/projects"
+              style={{
+                width: "fit-content",
+                margin: "auto",
+                display: "block",
+                marginTop: 40,
+                fontSize: isDesktopView ? 30 : 18,
+                textShadow: MINUTE_SHADOW_TEXT,
+              }}
+            >
+              <Stack direction="row" style={{ alignItems: "center" }}>
+                <OrangeEarth /> Checkout my projects!
+              </Stack>
+            </Button>
           </div>
           <Button
             style={{
