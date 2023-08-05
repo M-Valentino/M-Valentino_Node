@@ -345,7 +345,7 @@ export default function Home() {
                   textShadow: MINUTE_SHADOW_TEXT,
                 }}
               >
-                <Stack direction="row">
+                <Stack direction="row" style={{ alignItems: "center" }}>
                   <OrangeEarth /> Checkout my projects!
                 </Stack>
               </Button>
