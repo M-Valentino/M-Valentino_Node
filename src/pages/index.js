@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import Script from "next/script";
 import NavBar from "@/components/navbar";
 import OrangeEarth from "../components/OrangeEarth";
 import { PrivacyPolicyDialog } from "@/components/privacyPolicyDialog";
@@ -13,7 +12,7 @@ import {
   OFF_WHITE_COLOR,
   MINUTE_SHADOW_TEXT,
 } from "@/consts/stylingValues";
-import { Button, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Button, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
 import { TypeAnimation } from "react-type-animation";
 
 export default function Home() {
@@ -334,24 +333,23 @@ export default function Home() {
                 </Typography>
               </Grid>
             </Grid>
-            <center>
-              <Link href="/projects" style={{ textDecoration: "none" }}>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  style={{
-                    display: "flex",
-                    justifySelf: "center",
-                    marginTop: 40,
-                    fontSize: isDesktopView ? 30 : 18,
-                    textShadow: MINUTE_SHADOW_TEXT,
-                  }}
-                >
+            <Link href="/projects" style={{ textDecoration: "none" }}>
+              <Button
+                variant="contained"
+                color="primary"
+                style={{
+                  margin: "auto",
+                  display: "block",
+                  marginTop: 40,
+                  fontSize: isDesktopView ? 30 : 18,
+                  textShadow: MINUTE_SHADOW_TEXT,
+                }}
+              >
+                <Stack direction="row">
                   <OrangeEarth /> Checkout my projects!
-                </Button>
-              </Link>
-            </center>
-            {/*  */}
+                </Stack>
+              </Button>
+            </Link>
           </div>
           <Button
             style={{
