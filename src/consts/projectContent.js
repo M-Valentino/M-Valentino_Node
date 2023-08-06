@@ -74,7 +74,7 @@ export const projectContent = [
     title: "Earth 3JS",
     date: "2023",
     description:
-      "I made a 3D model of the Earth with the moon orbiting around it. You can toggle between high and low settings. I made this project to learn 3D web developement.",
+      "I made an interactive 3D scene of the earth with the moon orbiting around it. You can toggle between high and low settings, as well as adjust the simulation speed. I made this project to learn 3D web developement.",
     languages: [LANGUAGES.react, LANGUAGES.reactThreeFiber, LANGUAGES.drie],
   },
   {
