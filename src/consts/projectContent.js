@@ -15,11 +15,12 @@ export const LANGUAGES = {
 
   // Python Stack
   python: "Python",
+  cairoSVG: "Cairo SVG",
   pillow: "Pillow",
+  openCV: "OpenCV",
   numPy: "NumPy",
   pandas: "Pandas",
   faker: "Faker",
-  cairoSVG: "Cairo SVG",
   plotly: "Ploty",
 
   // React Stack
@@ -34,25 +35,28 @@ export const LANGUAGES = {
 
 export const LANGUAGE_LINKS = {
   [LANGUAGES.bash]: "https://www.gnu.org/software/bash",
-  [LANGUAGES.java]: "https://www.java.com", 
+  [LANGUAGES.java]: "https://www.java.com",
   [LANGUAGES.css]: "https://www.w3.org/Style/CSS/Overview.en.html",
   [LANGUAGES.html]: "https://www.w3.org/html",
-  [LANGUAGES.vanillaJS]: "https://www.ecma-international.org/technical-committees/tc39/",
+  [LANGUAGES.vanillaJS]:
+    "https://www.ecma-international.org/technical-committees/tc39/",
   [LANGUAGES.python]: "https://www.python.org",
   [LANGUAGES.pillow]: "https://pillow.readthedocs.io/en/stable/",
   [LANGUAGES.numPy]: "https://numpy.org",
   [LANGUAGES.pandas]: "https://pandas.pydata.org",
   [LANGUAGES.faker]: "https://faker.readthedocs.io/en/master/",
   [LANGUAGES.cairoSVG]: "https://cairosvg.org",
+  [LANGUAGES.openCV]: "https://opencv.org",
   [LANGUAGES.plotly]: "https://plotly.com/python/",
   [LANGUAGES.react]: "https://react.dev",
   [LANGUAGES.reactNative]: "https://reactnative.dev",
   [LANGUAGES.firebase]: "https://firebase.google.com",
   [LANGUAGES.detox]: "https://wix.github.io/Detox/",
   [LANGUAGES.jest]: "https://jestjs.io",
-  [LANGUAGES.reactThreeFiber]: "https://docs.pmnd.rs/react-three-fiber/getting-started/introduction",
+  [LANGUAGES.reactThreeFiber]:
+    "https://docs.pmnd.rs/react-three-fiber/getting-started/introduction",
   [LANGUAGES.drie]: "https://github.com/pmndrs/drei",
-}
+};
 
 // Special const that is passed through LanguageChip also. It isn't a language or library.
 export const PLUS_MORE = "+ more";
@@ -79,10 +83,28 @@ export const projectContent = [
   },
   {
     index: 1,
+    gitLink: "https://github.com/M-Valentino/Exploring-Canny-Edge-Detection",
+    hrefType: HREF_TYPES.externalLink,
+    imageLink: "/projectImages/canny_edge_detection.webp",
+    imageAltText: "Photo of the Union Pacific Big Boy next to other images where a sobel filter and a Canny edge detection filter is applied. An image of a code sinppet of Guassian blur and an image of the kronecker product is also there.",
+    title: "Exploring Canny Edge Detection",
+    date: "2023",
+    description:
+      "I explored the coding steps involved to perform Canny Edge detection on an image. For each step of the algorithm I explored, I used Jupyter Notebook to generate an image preview. I wanted to learn about computer vision which is used in AI. This is my final project for my linear algebra lab.",
+    languages: [
+      LANGUAGES.python,
+      LANGUAGES.pillow,
+      LANGUAGES.openCV,
+      LANGUAGES.numPy,
+    ],
+  },
+  {
+    index: 2,
     gitLink: "https://github.com/M-Valentino/ICat",
     hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/icat.webp",
-    imageAltText: "Regular picture of Garfield next to one converted to ASCII characters.",
+    imageAltText:
+      "Regular picture of Garfield next to one converted to ASCII characters.",
     title: "ICat",
     date: "2023",
     description:
@@ -96,11 +118,12 @@ export const projectContent = [
     ],
   },
   {
-    index: 2,
+    index: 3,
     gitLink: "https://github.com/SCCapstone/I_Spy_A-Eye",
     hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/i-spy-shopper.svg",
-    imageAltText: "I Spy Shopper Logo of a magnifying glass and a shopping bag.",
+    imageAltText:
+      "I Spy Shopper Logo of a magnifying glass and a shopping bag.",
     title: "I Spy Shopper",
     date: "2023",
     description:
@@ -113,11 +136,12 @@ export const projectContent = [
     ],
   },
   {
-    index: 3,
+    index: 4,
     gitLink: "https://github.com/M-Valentino/Image-Manipulation-Experiments",
     hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/tigers.jpg",
-    imageAltText: "Four pictures of tigers, where one is inverted, one is mirrored, one is in black and white, and the last is the original image.",
+    imageAltText:
+      "Four pictures of tigers, where one is inverted, one is mirrored, one is in black and white, and the last is the original image.",
     title: "Image Manipulation Experiments",
     date: "2022",
     description:
@@ -125,7 +149,7 @@ export const projectContent = [
     languages: [LANGUAGES.java],
   },
   {
-    index: 4,
+    index: 5,
     href: "/retro_calculator.html",
     gitLink:
       "https://github.com/M-Valentino/M-Valentino.github.io/blob/main/calculator.html",
@@ -140,7 +164,7 @@ export const projectContent = [
   },
 
   {
-    index: 5,
+    index: 6,
     gitLink: "https://github.com/M-Valentino/Cities-Recommender",
     hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/citiesrecommender.png",
