@@ -15,8 +15,8 @@ export const LANGUAGES = {
 
   // Python Stack
   python: "Python",
-  cairoSVG: "Cairo SVG",
   pillow: "Pillow",
+  cairoSVG: "Cairo SVG",
   openCV: "OpenCV",
   numPy: "NumPy",
   pandas: "Pandas",
@@ -27,8 +27,9 @@ export const LANGUAGES = {
   react: "React",
   reactNative: "React Native",
   firebase: "Firebase",
-  detox: "Detox",
   jest: "Jest",
+  detox: "Detox",
+  asyncStorage: "Async Storage",
   reactThreeFiber: "React Three Fiber",
   drie: "drei",
 };
@@ -50,6 +51,7 @@ export const LANGUAGE_LINKS = {
   [LANGUAGES.plotly]: "https://plotly.com/python/",
   [LANGUAGES.react]: "https://react.dev",
   [LANGUAGES.reactNative]: "https://reactnative.dev",
+  [LANGUAGES.asyncStorage]: "https://react-native-async-storage.github.io/async-storage/docs/install",
   [LANGUAGES.firebase]: "https://firebase.google.com",
   [LANGUAGES.detox]: "https://wix.github.io/Detox/",
   [LANGUAGES.jest]: "https://jestjs.io",
@@ -96,7 +98,6 @@ export const projectContent = [
       LANGUAGES.bash,
       LANGUAGES.python,
       LANGUAGES.pillow,
-      LANGUAGES.pandas,
       LANGUAGES.cairoSVG,
     ],
   },
@@ -116,6 +117,7 @@ export const projectContent = [
       LANGUAGES.firebase,
       LANGUAGES.jest,
       LANGUAGES.detox,
+      LANGUAGES.asyncStorage,
     ],
   },
   {
