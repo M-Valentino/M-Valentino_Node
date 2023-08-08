@@ -83,23 +83,6 @@ export const projectContent = [
   },
   {
     index: 1,
-    gitLink: "https://github.com/M-Valentino/Exploring-Canny-Edge-Detection",
-    hrefType: HREF_TYPES.externalLink,
-    imageLink: "/projectImages/canny_edge_detection.webp",
-    imageAltText: "Photo of the Union Pacific Big Boy next to other images where a sobel filter and a Canny edge detection filter is applied. An image of a code sinppet of Guassian blur and an image of the kronecker product is also there.",
-    title: "Exploring Canny Edge Detection",
-    date: "2023",
-    description:
-      "I explored the coding steps involved to perform Canny Edge detection on an image. For each step of the algorithm I explored, I used Jupyter Notebook to generate an image preview. I wanted to learn about computer vision which is used in AI. This is my final project for my linear algebra lab.",
-    languages: [
-      LANGUAGES.python,
-      LANGUAGES.pillow,
-      LANGUAGES.openCV,
-      LANGUAGES.numPy,
-    ],
-  },
-  {
-    index: 2,
     gitLink: "https://github.com/M-Valentino/ICat",
     hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/icat.webp",
@@ -118,7 +101,7 @@ export const projectContent = [
     ],
   },
   {
-    index: 3,
+    index: 2,
     gitLink: "https://github.com/SCCapstone/I_Spy_A-Eye",
     hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/i-spy-shopper.svg",
@@ -133,6 +116,23 @@ export const projectContent = [
       LANGUAGES.firebase,
       LANGUAGES.jest,
       LANGUAGES.detox,
+    ],
+  },
+  {
+    index: 3,
+    gitLink: "https://github.com/M-Valentino/Exploring-Canny-Edge-Detection",
+    hrefType: HREF_TYPES.externalLink,
+    imageLink: "/projectImages/canny_edge_detection.webp",
+    imageAltText: "Photo of the Union Pacific Big Boy next to other images where a sobel filter and a Canny edge detection filter is applied. An image of a code sinppet of Guassian blur and an image of the kronecker product is also there.",
+    title: "Exploring Canny Edge Detection",
+    date: "2022",
+    description:
+      "I explored the coding steps involved to perform Canny Edge detection on an image. For each step of the algorithm I explored, I used Jupyter Notebook to generate an image preview. I wanted to learn about computer vision which is used in AI. This is my final project for my linear algebra lab.",
+    languages: [
+      LANGUAGES.python,
+      LANGUAGES.pillow,
+      LANGUAGES.openCV,
+      LANGUAGES.numPy,
     ],
   },
   {
