@@ -64,7 +64,7 @@ export default function ProjectTable(props) {
         <TableBody>
           {projectContent.map((row, key) => (
             <TableRow
-              key={row.date}
+              key={key}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               {!isLargeMobileView && (
@@ -114,8 +114,9 @@ export default function ProjectTable(props) {
                     <Stack direction="row" spacing={1}>
                       {row.languages
                         .slice(0, getMaxChipsToShow())
-                        .map((props) => (
+                        .map((props, key) => (
                           <LanguageChip
+                            key={key}
                             language={props}
                             size="small"
                             showLink
