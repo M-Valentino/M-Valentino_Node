@@ -21,7 +21,7 @@ import NavBar from "@/components/navbar";
 import ProjectCard from "@/components/ProjectCard";
 import ProjectTable from "@/components/ProjectTable";
 import { projectContent } from "@/consts/projectContent";
-import { PrivacyPolicyDialog } from "@/components/privacyPolicyDialog";
+import { Footer } from "@/components/footer";
 import {
   DESKTOP_WIDTH,
   MOBILE_WIDTH,
@@ -86,15 +86,6 @@ export default function Projects() {
   const handleResetFilter = () => {
     setProjectResults(projectContent);
     setSearchInputValue("");
-  };
-
-  const [privacyPolicyOpen, setPrivacyPolicyOpen] = useState(false);
-
-  const handlePrivacyPolicyClose = (_event, reason) => {
-    if (reason && reason == "backdropClick") {
-      return;
-    }
-    setPrivacyPolicyOpen(false);
   };
 
   return (
@@ -253,19 +244,7 @@ export default function Projects() {
               key={projectResults}
             />
           )}
-          <Button
-            style={{
-              margin: "auto",
-              display: "block",
-            }}
-            onClick={() => setPrivacyPolicyOpen(true)}
-          >
-            Privacy Policy
-          </Button>
-          <PrivacyPolicyDialog
-            handlePrivacyPolicyClose={handlePrivacyPolicyClose}
-            privacyPolicyOpen={privacyPolicyOpen}
-          />
+          <Footer />
         </ThemeProvider>
       </main>
     </>

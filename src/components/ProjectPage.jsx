@@ -11,7 +11,7 @@ import FullscreenIcon from "@mui/icons-material/Fullscreen";
 import FullscreenExitIcon from "@mui/icons-material/FullscreenExit";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { LanguageChip } from "./LanguageChip";
-import { PrivacyPolicyDialog } from "./privacyPolicyDialog";
+import { Footer } from "./footer";
 import {
   MOBILE_WIDTH,
   DESKTOP_WIDTH,
@@ -70,15 +70,6 @@ export default function ProjectPage(props) {
     padding: 0,
     overflow: "hidden",
     zIndex: 9,
-  };
-
-  const [privacyPolicyOpen, setPrivacyPolicyOpen] = useState(false);
-
-  const handlePrivacyPolicyClose = (_event, reason) => {
-    if (reason && reason == "backdropClick") {
-      return;
-    }
-    setPrivacyPolicyOpen(false);
   };
 
   const getProjectComponent = () => {
@@ -217,19 +208,7 @@ export default function ProjectPage(props) {
           </Grid>
         </div>
       </div>
-      <Button
-        style={{
-          margin: "auto",
-          display: "block",
-        }}
-        onClick={() => setPrivacyPolicyOpen(true)}
-      >
-        Privacy Policy
-      </Button>
-      <PrivacyPolicyDialog
-        handlePrivacyPolicyClose={handlePrivacyPolicyClose}
-        privacyPolicyOpen={privacyPolicyOpen}
-      />
+      <Footer />
     </>
   );
 }
