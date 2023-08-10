@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Button } from "@mui/material";
+import Link from "next/link";
+import { Button, Stack } from "@mui/material";
 import { PrivacyPolicyDialog } from "./privacyPolicyDialog";
 
 export const Footer = () => {
@@ -12,20 +13,28 @@ export const Footer = () => {
     setPrivacyPolicyOpen(false);
   };
   return (
-    <>
+    <Stack direction="row" justifyContent="center">
       <Button
-        style={{
-          margin: "auto",
-          display: "block",
-        }}
-        onClick={() => setPrivacyPolicyOpen(true)}
+        LinkComponent={Link}
+        href="/humans.txt"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        Privacy Policy
+        humans.txt
       </Button>
+      <Button onClick={() => setPrivacyPolicyOpen(true)}>Privacy Policy</Button>
       <PrivacyPolicyDialog
         handlePrivacyPolicyClose={handlePrivacyPolicyClose}
         privacyPolicyOpen={privacyPolicyOpen}
       />
-    </>
+      <Button
+        LinkComponent={Link}
+        href="/sitemap.xml"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Site Map
+      </Button>
+    </Stack>
   );
 };
