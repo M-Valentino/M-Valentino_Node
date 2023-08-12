@@ -3,7 +3,7 @@ import NavBar from "@/components/navbar";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
 import ProjectPage from "@/components/ProjectPage";
-import { projectContent } from "@/consts/projectContent";
+import { PROJECT_CONTENT } from "@/consts/projectContent";
 // todo change function name
 class Test extends React.Component {
   static async getInitialProps({ query }) {
@@ -14,7 +14,7 @@ class Test extends React.Component {
     return (
       <ThemeProvider theme={MainTheme}>
         <NavBar />
-        <ProjectPage data={projectContent[this.props.query.projectID]} />
+        <ProjectPage data={PROJECT_CONTENT[this.props.query.projectID]} />
       </ThemeProvider>
     );
   }

@@ -72,7 +72,7 @@ export const HREF_TYPES = {
   externalLink: "externalLink",
 };
 
-export const projectContent = [
+export const PROJECT_CONTENT = [
   {
     index: 0,
     href: "/Earth3JS",

@@ -15,7 +15,7 @@ import { CARD_AND_TABLE_SHADOW } from "@/consts/stylingValues";
 import { PLUS_MORE } from "@/consts/projectContent";
 
 export default function ProjectTable(props) {
-  const { projectContent } = props;
+  const { PROJECT_CONTENT } = props;
   const isDesktopView = useMediaQuery("(min-width:900px)");
   const isLargeMobileView = useMediaQuery("(max-width:600px)");
   const isMobileView = useMediaQuery("(max-width:500px)");
@@ -62,7 +62,7 @@ export default function ProjectTable(props) {
     >
       <Table aria-label="simple table">
         <TableBody>
-          {projectContent.map((row, key) => (
+          {PROJECT_CONTENT.map((row, key) => (
             <TableRow
               key={key}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}

@@ -20,7 +20,7 @@ import { MainTheme } from "@/utils/MUITheme";
 import NavBar from "@/components/navbar";
 import ProjectCard from "@/components/ProjectCard";
 import ProjectTable from "@/components/ProjectTable";
-import { projectContent } from "@/consts/projectContent";
+import { PROJECT_CONTENT } from "@/consts/projectContent";
 import { Footer } from "@/components/footer";
 import {
   DESKTOP_WIDTH,
@@ -44,7 +44,7 @@ export default function Projects() {
    */
   const [view, setView] = useState("cardView");
   // For managing the project search results
-  const [projectResults, setProjectResults] = useState(projectContent);
+  const [projectResults, setProjectResults] = useState(PROJECT_CONTENT);
   // For managing the search input from the user
   const [searchInputValue, setSearchInputValue] = useState("");
 
@@ -69,11 +69,11 @@ export default function Projects() {
   /**
    * Function filter out projects that don't contain a string from the TextField
    * input and update the projects shown on the screen. It filters from the
-   * projectContent object which contain the default values.
+   * PROJECT_CONTENT object which contain the default values.
    */
   const filterProjects = () => {
     setProjectResults(
-      projectContent.filter(
+      PROJECT_CONTENT.filter(
         (data) =>
           JSON.stringify(data)
             .toLowerCase()
@@ -84,7 +84,7 @@ export default function Projects() {
 
   // Function to load the default project values and clear what the user typed.
   const handleResetFilter = () => {
-    setProjectResults(projectContent);
+    setProjectResults(PROJECT_CONTENT);
     setSearchInputValue("");
   };
 
@@ -240,7 +240,7 @@ export default function Projects() {
           )}
           {view === "tableView" && (
             <ProjectTable
-              projectContent={projectResults}
+              PROJECT_CONTENT={projectResults}
               key={projectResults}
             />
           )}
