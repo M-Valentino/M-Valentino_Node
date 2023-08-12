@@ -32,6 +32,7 @@ export const LANGUAGES = {
   asyncStorage: "Async Storage",
   reactThreeFiber: "React Three Fiber",
   drie: "drei",
+  materialUi: "Material UI",
 };
 
 export const LANGUAGE_LINKS = {
@@ -51,13 +52,15 @@ export const LANGUAGE_LINKS = {
   [LANGUAGES.plotly]: "https://plotly.com/python/",
   [LANGUAGES.react]: "https://react.dev",
   [LANGUAGES.reactNative]: "https://reactnative.dev",
-  [LANGUAGES.asyncStorage]: "https://react-native-async-storage.github.io/async-storage/docs/install",
+  [LANGUAGES.asyncStorage]:
+    "https://react-native-async-storage.github.io/async-storage/docs/install",
   [LANGUAGES.firebase]: "https://firebase.google.com",
   [LANGUAGES.detox]: "https://wix.github.io/Detox/",
   [LANGUAGES.jest]: "https://jestjs.io",
   [LANGUAGES.reactThreeFiber]:
     "https://docs.pmnd.rs/react-three-fiber/getting-started/introduction",
   [LANGUAGES.drie]: "https://github.com/pmndrs/drei",
+  [LANGUAGES.materialUi]: "https://mui.com",
 };
 
 // Special const that is passed through LanguageChip also. It isn't a language or library.
@@ -81,7 +84,12 @@ export const projectContent = [
     date: "2023",
     description:
       "I made an interactive 3D scene of the earth with the moon orbiting around it. You can toggle between high and low settings, as well as adjust the simulation speed. I made this project to learn 3D web developement.",
-    languages: [LANGUAGES.react, LANGUAGES.reactThreeFiber, LANGUAGES.drie],
+    languages: [
+      LANGUAGES.react,
+      LANGUAGES.reactThreeFiber,
+      LANGUAGES.drie,
+      LANGUAGES.materialUi,
+    ],
   },
   {
     index: 1,
@@ -125,7 +133,8 @@ export const projectContent = [
     gitLink: "https://github.com/M-Valentino/Exploring-Canny-Edge-Detection",
     hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/canny_edge_detection.webp",
-    imageAltText: "Photo of the Union Pacific Big Boy next to other images where a sobel filter and a Canny edge detection filter is applied. An image of a code sinppet of Guassian blur and an image of the kronecker product is also there.",
+    imageAltText:
+      "Photo of the Union Pacific Big Boy next to other images where a sobel filter and a Canny edge detection filter is applied. An image of a code sinppet of Guassian blur and an image of the kronecker product is also there.",
     title: "Exploring Canny Edge Detection",
     date: "2022",
     description:
