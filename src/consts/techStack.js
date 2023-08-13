@@ -1,3 +1,4 @@
+// Holds the data used in rendering the "My Tech Stack" section on the index page.
 export const TECH_STACK = [
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
@@ -58,6 +59,7 @@ export const TECH_STACK = [
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg",
     alt: "Jupyter Notebook logo",
     label: "Jupyter Notebook",
+    // Makes the font for the label smaller so that the label can be rendered on one line.
     smallFontSize: true,
   },
   {

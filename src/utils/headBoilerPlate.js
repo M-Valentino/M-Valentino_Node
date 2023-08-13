@@ -1,3 +1,10 @@
+/**
+ * Function to return head elements used inside ever webpage. It takes in a parameter
+ * to give a unique description to the page. This function exists to keep code for pages
+ * less cluttered.
+ * @param {*} descriptionText the text to displayed for the page
+ * @returns component
+ */
 export const getHeadBoilerPlate = (descriptionText) => {
   return (
     <>

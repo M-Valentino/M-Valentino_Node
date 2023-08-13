@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import NavBar from "@/components/navbar";
 import OrangeEarth from "../components/OrangeEarth";
-import { getHeadBoilerPlate } from "@/components/headBoilerPlate";
+import { getHeadBoilerPlate } from "@/utils/headBoilerPlate";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";

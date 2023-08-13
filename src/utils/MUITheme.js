@@ -1,6 +1,7 @@
 import { createTheme } from "@mui/material/styles";
-import { orange, deepOrange, } from "@mui/material/colors";
+import { deepOrange } from "@mui/material/colors";
 
+// This controls the main theme of the website.
 export const MainTheme = createTheme({
   palette: {
     primary: deepOrange,

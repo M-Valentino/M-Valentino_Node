@@ -20,7 +20,7 @@ import { MainTheme } from "@/utils/MUITheme";
 import NavBar from "@/components/navbar";
 import ProjectCard from "@/components/ProjectCard";
 import ProjectTable from "@/components/ProjectTable";
-import { getHeadBoilerPlate } from "@/components/headBoilerPlate";
+import { getHeadBoilerPlate } from "@/utils/headBoilerPlate";
 import { PROJECT_CONTENT } from "@/consts/projectContent";
 import { Footer } from "@/components/footer";
 import {
