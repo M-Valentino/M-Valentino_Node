@@ -1,2 +1,2 @@
-import Test from "./index";
-export default Test;
+import ProjectTemplate from "./index";
+export default ProjectTemplate;

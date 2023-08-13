@@ -6,8 +6,8 @@ import { MainTheme } from "@/utils/MUITheme";
 import ProjectPage from "@/components/ProjectPage";
 import { getHeadBoilerPlate } from "@/components/headBoilerPlate";
 import { PROJECT_CONTENT } from "@/consts/projectContent";
-// todo change function name
-class Test extends React.Component {
+
+class ProjectTemplate extends React.Component {
   static async getInitialProps({ query }) {
     return { query };
   }
@@ -16,9 +16,11 @@ class Test extends React.Component {
     return (
       <>
         <Head>
-          <title>{`Mark Valentino - ${
-            PROJECT_CONTENT[this.props.query.projectID].title
-          }`}</title>
+          <title>
+            {`Mark Valentino - ${
+              PROJECT_CONTENT[this.props.query.projectID].title
+            }`}
+          </title>
           {getHeadBoilerPlate(
             PROJECT_CONTENT[this.props.query.projectID].description
           )}
@@ -32,4 +34,4 @@ class Test extends React.Component {
   }
 }
 
-export default Test;
+export default ProjectTemplate;
