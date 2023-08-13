@@ -5,7 +5,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
 import ProjectPage from "@/components/ProjectPage";
 import { getHeadBoilerPlate } from "@/components/headBoilerPlate";
-import { PROJECT_CONTENT } from "@/consts/projectContent";
+import { filterProjectMatchingTitle } from "@/utils/routerFunctions";
 
 class ProjectTemplate extends React.Component {
   static async getInitialProps({ query }) {
@@ -13,21 +13,18 @@ class ProjectTemplate extends React.Component {
   }
 
   render() {
+    const projectToRender = filterProjectMatchingTitle(
+      this.props.query.projectID
+    )[0];
     return (
       <>
         <Head>
-          <title>
-            {`Mark Valentino - ${
-              PROJECT_CONTENT[this.props.query.projectID].title
-            }`}
-          </title>
-          {getHeadBoilerPlate(
-            PROJECT_CONTENT[this.props.query.projectID].description
-          )}
+          <title>{`Mark Valentino - ${projectToRender.title}`}</title>
+          {getHeadBoilerPlate(projectToRender.description)}
         </Head>
         <ThemeProvider theme={MainTheme}>
           <NavBar />
-          <ProjectPage data={PROJECT_CONTENT[this.props.query.projectID]} />
+          <ProjectPage data={projectToRender} />
         </ThemeProvider>
       </>
     );

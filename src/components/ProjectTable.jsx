@@ -71,7 +71,7 @@ export default function ProjectTable(props) {
                 <TableCell align="right">
                   <Link
                     style={{ textDecoration: "none" }}
-                    href={`/project/${row.index}`}
+                    href={`/project/${row.title}`}
                   >
                     {row.date}
                   </Link>
@@ -80,7 +80,7 @@ export default function ProjectTable(props) {
               <TableCell align="left" height={50}>
                 <Link
                   style={{ textDecoration: "none" }}
-                  href={`/project/${row.index}`}
+                  href={`/project/${row.title}`}
                 >
                   <img src={row.imageLink} style={{ height: "100%" }} />
                 </Link>
@@ -88,7 +88,7 @@ export default function ProjectTable(props) {
               <TableCell align="left">
                 <Link
                   style={{ textDecoration: "none" }}
-                  href={`/project/${row.index}`}
+                  href={`/project/${row.title}`}
                 >
                   <Typography style={{ fontWeight: 400 }}>
                     {row.title}

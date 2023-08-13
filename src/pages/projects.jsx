@@ -229,7 +229,7 @@ export default function Projects() {
                 <Grid item key={key}>
                   <Link
                     style={{ textDecoration: "none" }}
-                    href={`/project/${props.index}`}
+                    href={`/project/${props.title}`}
                   >
                     <ProjectCard data={props} />
                   </Link>
