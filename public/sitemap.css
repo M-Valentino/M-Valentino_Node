@@ -8,12 +8,6 @@ urlset {
   margin: 10px;
 }
 
-urlset::before {
-  font-style: italic;
-  color: #888;
-  content: "Not all last modified values are accurate.";
-}
-
 loc {
   display: block;
   font-family: var(--dataFont);
@@ -22,18 +16,6 @@ loc {
 loc::before {
   color: var(--orange);
   content: "url: ";
-  font-family: var(--labelFont);
-  font-weight: 700;
-}
-
-lastmod {
-  display: block;
-  font-family: var(--dataFont);
-}
-
-lastmod::before {
-  color: var(--orange);
-  content: "last modified: ";
   font-family: var(--labelFont);
   font-weight: 700;
 }
