@@ -1,4 +1,5 @@
 User-agent: *
-Disallow: 
+Disallow: /retro_calculator.html
+Disallow: /Earth3JS
 Crawl-delay: 1
 Sitemap: https://mark-valentino.vercel.app/sitemap.xml
