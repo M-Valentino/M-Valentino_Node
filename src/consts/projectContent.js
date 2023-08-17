@@ -72,6 +72,10 @@ export const HREF_TYPES = {
   externalLink: "externalLink",
 };
 
+export const PROJECT_TITLES = {
+  Earth3Js: "Earth 3JS"
+}
+
 export const PROJECT_CONTENT = [
   {
     index: 0,
@@ -80,7 +84,7 @@ export const PROJECT_CONTENT = [
     hrefType: HREF_TYPES.iframe,
     imageLink: "/projectImages/earth3js.webp",
     imageAltText: "3D render of the earth with the moon orbiting it",
-    title: "Earth 3JS",
+    title: PROJECT_TITLES.Earth3Js,
     date: "2023",
     description:
       "I made an interactive 3D scene of the earth with the moon orbiting around it. You can toggle between high and low settings, as well as adjust the simulation speed. I made this project to learn 3D web developement.",

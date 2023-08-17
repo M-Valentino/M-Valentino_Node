@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   Button,
-  Stack,
   IconButton,
   Grid,
   Typography,
@@ -11,6 +10,7 @@ import FullscreenIcon from "@mui/icons-material/Fullscreen";
 import FullscreenExitIcon from "@mui/icons-material/FullscreenExit";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { LanguageChip } from "./LanguageChip";
+import { getExtraProjectContent } from "@/utils/getProjectExtraContent";
 import { Footer } from "./footer";
 import {
   MOBILE_WIDTH,
@@ -161,14 +161,13 @@ export default function ProjectPage(props) {
           >
             {description}
           </Typography>
-          <Typography variant="h5" style={{ marginTop: 20 }}>
+          <Typography variant="h5" style={{ marginTop: 20, marginBottom: 5 }}>
             Languages and Libraries used:
           </Typography>
-          <Grid container spacing={1} mt={1}>
+          <Grid container spacing={1}>
             {languages.map((props, key) => (
-              <Grid item>
+              <Grid item key={key}>
                 <LanguageChip
-                  key={key}
                   language={props}
                   size={!isDesktopView ? "small" : "full"}
                   showLink
@@ -183,7 +182,8 @@ export default function ProjectPage(props) {
             style={{
               width: "100%",
               height: isSmallMobileView ? 70 : 100,
-              marginTop: 20,
+              marginTop: 40,
+              marginBottom: 40,
               fontSize: isSmallMobileView ? 26 : 32,
               textShadow: MINUTE_SHADOW_TEXT,
             }}
@@ -195,12 +195,14 @@ export default function ProjectPage(props) {
                 height: isSmallMobileView ? 37 : 45,
                 width: isSmallMobileView ? 37 : 45,
                 marginRight: 10,
+                
                 transform: "translateY(-5px)",
                 filter: MINUTE_SHADOW_SVG,
               }}
             />
             View Code Source
           </Button>
+          {getExtraProjectContent(title)}
         </div>
       </div>
       <Footer />
