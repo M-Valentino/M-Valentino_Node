@@ -175,13 +175,14 @@ export default function ProjectPage(props) {
               </Grid>
             ))}
           </Grid>
+          <div style={{display: "flex", justifyContent: "center"}}>
           <Button
             target="_blank"
             href={gitLink}
             rel="noreferrer"
             style={{
-              width: "100%",
-              height: isSmallMobileView ? 70 : 100,
+              width: !isDesktopView ? "100%" : "60%",
+              height: isSmallMobileView ? 70 : 80,
               marginTop: 40,
               marginBottom: 40,
               fontSize: isSmallMobileView ? 26 : 32,
@@ -202,6 +203,7 @@ export default function ProjectPage(props) {
             />
             View Code Source
           </Button>
+          </div>
           {getExtraProjectContent(title)}
         </div>
       </div>
