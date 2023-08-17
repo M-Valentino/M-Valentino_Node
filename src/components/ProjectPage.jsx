@@ -18,6 +18,7 @@ import {
   OFF_WHITE_COLOR,
   XL_ICON_BUTTON_WIDTH_HEIGHT,
   SCREEN_CONTROL_STYLES,
+  MINUTE_SHADOW,
   MINUTE_SHADOW_SVG,
   MINUTE_SHADOW_TEXT,
 } from "@/consts/stylingValues";
@@ -76,7 +77,17 @@ export default function ProjectPage(props) {
     switch (hrefType) {
       case HREF_TYPES.externalLink:
         return (
-          <img src={imageLink} width="100%" role="img" alt={imageAltText} />
+          <img
+            src={imageLink}
+            role="img"
+            alt={imageAltText}
+            style={{
+              width: !isDesktopView ? "100%" : 500,
+              margin: "auto",
+              marginBottom: 40,
+              display: "block",
+            }}
+          />
         );
       case HREF_TYPES.iframe:
         return (
@@ -110,10 +121,12 @@ export default function ProjectPage(props) {
     <>
       <div
         style={{
-          width: "100%",
+          maxWidth: 900,
+          margin: "auto",
           backgroundColor: OFF_WHITE_COLOR,
-          justifyContent: "space-between",
           marginBottom: 50,
+          borderRadius: 4,
+          boxShadow: MINUTE_SHADOW,
         }}
       >
         <div
@@ -125,87 +138,69 @@ export default function ProjectPage(props) {
             paddingBottom: 60,
           }}
         >
-          <Stack direction="row" spacing={1}>
-            {isDesktopView && (
-              <Typography
-                variant="h3"
-                color="primary"
-                style={{ textShadow: MINUTE_SHADOW_TEXT, fontWeight: "bolder" }}
-              >
-                {date}
-              </Typography>
-            )}
-            <Typography
-              variant={isLargeMobileView ? "h4" : "h3"}
-              color="text.primary"
-              style={{
-                marginBottom: 20,
-                textShadow: MINUTE_SHADOW_TEXT,
-                fontWeight: "bolder",
-              }}
-            >
-              {title}
-            </Typography>
-          </Stack>
-          <Grid container spacing={2} justifyContent="space-around">
-            <Grid item md={6} xs={12}>
-              {getProjectComponent()}
-            </Grid>
-            <Grid item md={6} lg={5} xs={12}>
-              {!isDesktopView && (
-                <Typography variant="h5" color="primary">
-                  {date}
-                </Typography>
-              )}
-              <Typography
-                variant="body1"
-                color="text.secondary"
-                style={{ textAlign: isDesktopView ? "justify" : "left" }}
-              >
-                {description}
-              </Typography>
-              <Typography variant="h5" style={{ marginTop: 20 }}>
-                Languages and Libraries used:
-              </Typography>
-              <Grid container spacing={1} mt={1}>
-                {languages.map((props, key) => (
-                  <Grid item>
-                    <LanguageChip
-                      key={key}
-                      language={props}
-                      size={!isDesktopView ? "small" : "full"}
-                      showLink
-                    />
-                  </Grid>
-                ))}
-              </Grid>
-              <Button
-                target="_blank"
-                href={gitLink}
-                rel="noreferrer"
-                style={{
-                  width: "100%",
-                  height: isSmallMobileView ? 70 : 100,
-                  marginTop: 20,
-                  fontSize: isSmallMobileView ? 26 : 32,
-                  textShadow: MINUTE_SHADOW_TEXT,
-                }}
-                variant="contained"
-                color="primary"
-              >
-                <GitHubIcon
-                  style={{
-                    height: isSmallMobileView ? 37 : 45,
-                    width: isSmallMobileView ? 37 : 45,
-                    marginRight: 10,
-                    transform: "translateY(-5px)",
-                    filter: MINUTE_SHADOW_SVG,
-                  }}
+          <Typography
+            variant={isLargeMobileView ? "h4" : "h3"}
+            color="text.primary"
+            style={{
+              marginBottom: 20,
+              textShadow: MINUTE_SHADOW_TEXT,
+              fontWeight: "bolder",
+            }}
+          >
+            {title}
+          </Typography>
+          {getProjectComponent()}
+          <Typography variant="h6" color="primary">
+            Year completed: {date}
+          </Typography>
+
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            style={{ textAlign: isDesktopView ? "justify" : "left" }}
+          >
+            {description}
+          </Typography>
+          <Typography variant="h5" style={{ marginTop: 20 }}>
+            Languages and Libraries used:
+          </Typography>
+          <Grid container spacing={1} mt={1}>
+            {languages.map((props, key) => (
+              <Grid item>
+                <LanguageChip
+                  key={key}
+                  language={props}
+                  size={!isDesktopView ? "small" : "full"}
+                  showLink
                 />
-                View Code Source
-              </Button>
-            </Grid>
+              </Grid>
+            ))}
           </Grid>
+          <Button
+            target="_blank"
+            href={gitLink}
+            rel="noreferrer"
+            style={{
+              width: "100%",
+              height: isSmallMobileView ? 70 : 100,
+              marginTop: 20,
+              fontSize: isSmallMobileView ? 26 : 32,
+              textShadow: MINUTE_SHADOW_TEXT,
+            }}
+            variant="contained"
+            color="primary"
+          >
+            <GitHubIcon
+              style={{
+                height: isSmallMobileView ? 37 : 45,
+                width: isSmallMobileView ? 37 : 45,
+                marginRight: 10,
+                transform: "translateY(-5px)",
+                filter: MINUTE_SHADOW_SVG,
+              }}
+            />
+            View Code Source
+          </Button>
         </div>
       </div>
       <Footer />
