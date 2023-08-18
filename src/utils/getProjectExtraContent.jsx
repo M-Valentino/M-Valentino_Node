@@ -1,6 +1,7 @@
 import React from "react";
 import { PROJECT_TITLES } from "@/consts/projectContent";
 import { Earth3JSContent } from "@/components/projectExtraContent/Earth3JSContent";
+import { IcatContent } from "@/components/projectExtraContent/IcatContent";
 
 /**
  * Function to get extra content associated with a project. This content is shown on
@@ -11,8 +12,10 @@ import { Earth3JSContent } from "@/components/projectExtraContent/Earth3JSConten
  */
 export const getExtraProjectContent = (title) => {
   switch (title) {
-    case PROJECT_TITLES.Earth3Js:
+    case PROJECT_TITLES.earth3Js:
       return <Earth3JSContent />;
+    case PROJECT_TITLES.icat:
+      return <IcatContent />;
     default:
       return <></>;
   }

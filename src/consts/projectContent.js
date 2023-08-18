@@ -73,7 +73,8 @@ export const HREF_TYPES = {
 };
 
 export const PROJECT_TITLES = {
-  Earth3Js: "Earth 3JS"
+  earth3Js: "Earth 3JS",
+  icat: "ICat",
 }
 
 export const PROJECT_CONTENT = [
@@ -84,7 +85,7 @@ export const PROJECT_CONTENT = [
     hrefType: HREF_TYPES.iframe,
     imageLink: "/projectImages/earth3js.webp",
     imageAltText: "3D render of the earth with the moon orbiting it",
-    title: PROJECT_TITLES.Earth3Js,
+    title: PROJECT_TITLES.earth3Js,
     date: "2023",
     description:
       "I made an interactive 3D scene of the earth with the moon orbiting around it. You can toggle between high and low settings, as well as adjust the simulation speed. I made this project to learn 3D web developement.",
@@ -102,7 +103,7 @@ export const PROJECT_CONTENT = [
     imageLink: "/projectImages/icat.webp",
     imageAltText:
       "Regular picture of Garfield next to one converted to ASCII characters.",
-    title: "ICat",
+    title: PROJECT_TITLES.icat,
     date: "2023",
     description:
       'Have you ever wanted to know what an image looks like without having to leave the terminal? Well you\'re in luck! Now you can "cat" images with this utility called ICat (short for image cat)! ICat works by reading images and converting them to ASCII text. Images printed to the terminal are displayed in greyscale with 5 colors.',

@@ -8,7 +8,7 @@ export const Earth3JSContent = () => {
       <Typography variant="h4" gutterBottom>
         How it was coded
       </Typography>
-      <Typography variant="body1" color="text.secondary" paragraph>
+      <Typography paragraph>
         I used{" "}
         <Link href="https://threejs.org/docs/#api/en/geometries/SphereGeometry">
           SphereGeometry
