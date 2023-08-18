@@ -162,7 +162,7 @@ export default function Home() {
               }}
             >
               <Stack direction="row" style={{ alignItems: "center" }}>
-                <OrangeEarth /> Checkout my projects!
+                <OrangeEarth /> Check out my projects!
               </Stack>
             </Button>
           </div>
