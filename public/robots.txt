@@ -1,5 +1,6 @@
 User-agent: *
 Disallow: /retro_calculator.html
 Disallow: /Earth3JS
+Disallow: /CannyEdgeDetectionJupyterNotebook.html
 Crawl-delay: 1
 Sitemap: https://mark-valentino.vercel.app/sitemap.xml
