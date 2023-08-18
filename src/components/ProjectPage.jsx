@@ -204,7 +204,7 @@ export default function ProjectPage(props) {
             View Code Source
           </Button>
           </div>
-          {getExtraProjectContent(title)}
+          {getExtraProjectContent(title, isDesktopView)}
         </div>
       </div>
       <Footer />

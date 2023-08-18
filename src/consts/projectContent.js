@@ -75,6 +75,7 @@ export const HREF_TYPES = {
 export const PROJECT_TITLES = {
   earth3Js: "Earth 3JS",
   icat: "ICat",
+  exploringCannyEdgeDetection: "Exploring Canny Edge Detection",
 }
 
 export const PROJECT_CONTENT = [
@@ -140,7 +141,7 @@ export const PROJECT_CONTENT = [
     imageLink: "/projectImages/canny_edge_detection.webp",
     imageAltText:
       "Photo of the Union Pacific Big Boy next to other images where a sobel filter and a Canny edge detection filter is applied. An image of a code sinppet of Guassian blur and an image of the kronecker product is also there.",
-    title: "Exploring Canny Edge Detection",
+    title: PROJECT_TITLES.exploringCannyEdgeDetection,
     date: "2022",
     description:
       "I explored the coding steps involved to perform Canny Edge detection on an image. For each step of the algorithm I explored, I used Jupyter Notebook to generate an image preview. I wanted to learn about computer vision which is used in AI. This is my final project for my linear algebra lab.",
