@@ -38,7 +38,8 @@ export const Earth3JSContent = () => {
       </Typography>
       <Typography paragraph>
         I thought it would be neat to be able to change the simulation speed or
-        to just pause the simulation, so I implemented a speed control slider.
+        to just pause the simulation, so I implemented a speed control{" "}
+        <Link href="https://mui.com/material-ui/react-slider/">slider</Link>.
         The value from the slider was placed as a coefficient in all animation
         formulas.
       </Typography>
