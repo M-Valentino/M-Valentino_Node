@@ -95,9 +95,10 @@ export default function Projects() {
         <title>Mark Valentino - Projects</title>
         {getHeadBoilerPlate("Mark Valentino's coding projects.")}
       </Head>
-      <main>
-        <ThemeProvider theme={MainTheme}>
-          <NavBar activeLink={1} />
+
+      <ThemeProvider theme={MainTheme}>
+        <NavBar activeLink={1} />
+        <main>
           <Grid
             container
             justifyContent="space-between"
@@ -243,9 +244,9 @@ export default function Projects() {
               key={projectResults}
             />
           )}
-          <Footer />
-        </ThemeProvider>
-      </main>
+        </main>
+        <Footer />
+      </ThemeProvider>
     </>
   );
 }

@@ -24,7 +24,9 @@ export default function Home() {
     <>
       <Head>
         <title>Mark Valentino - Home</title>
-        {getHeadBoilerPlate("The personal website of Mark Valentino, a software engineer.")}
+        {getHeadBoilerPlate(
+          "The personal website of Mark Valentino, a software engineer."
+        )}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -41,9 +43,10 @@ export default function Home() {
         />
         ;
       </Head>
-      <main>
-        <ThemeProvider theme={MainTheme}>
-          <NavBar activeLink={0} />
+
+      <ThemeProvider theme={MainTheme}>
+        <NavBar activeLink={0} />
+        <main>
           <div
             style={{
               maxWidth: 900,
@@ -166,9 +169,9 @@ export default function Home() {
               </Stack>
             </Button>
           </div>
-          <Footer />
-        </ThemeProvider>
-      </main>
+        </main>
+        <Footer />
+      </ThemeProvider>
     </>
   );
 }

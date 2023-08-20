@@ -11,7 +11,6 @@ import FullscreenExitIcon from "@mui/icons-material/FullscreenExit";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { LanguageChip } from "./LanguageChip";
 import { getExtraProjectContent } from "@/utils/getProjectExtraContent";
-import { Footer } from "./footer";
 import {
   MOBILE_WIDTH,
   DESKTOP_WIDTH,
@@ -213,7 +212,6 @@ export default function ProjectPage(props) {
           {getExtraProjectContent(title, isDesktopView)}
         </div>
       </div>
-      <Footer />
     </>
   );
 }

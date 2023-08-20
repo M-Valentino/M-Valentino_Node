@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import NavBar from "@/components/navbar";
+import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
 import ProjectPage from "@/components/ProjectPage";
@@ -41,9 +42,13 @@ class ProjectTemplate extends React.Component {
           <title>{`Mark Valentino - ${projectToRender.title}`}</title>
           {getHeadBoilerPlate(projectToRender.description)}
         </Head>
+
         <ThemeProvider theme={MainTheme}>
           <NavBar />
-          <ProjectPage data={projectToRender} />
+          <main>
+            <ProjectPage data={projectToRender} />
+          </main>
+          <Footer />
         </ThemeProvider>
       </>
     );
