@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import NavBar from "@/components/navbar";
-import { Footer } from "@/components/footer";
+import { Footer } from "@/components/footerComponents/footer";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
 import ProjectPage from "@/components/ProjectPage";

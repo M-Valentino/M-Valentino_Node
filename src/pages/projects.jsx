@@ -22,7 +22,7 @@ import ProjectCard from "@/components/ProjectCard";
 import ProjectTable from "@/components/ProjectTable";
 import { getHeadBoilerPlate } from "@/utils/headBoilerPlate";
 import { PROJECT_CONTENT } from "@/consts/projectContent";
-import { Footer } from "@/components/footer";
+import { Footer } from "@/components/footerComponents/footer";
 import {
   DESKTOP_WIDTH,
   MOBILE_WIDTH,
