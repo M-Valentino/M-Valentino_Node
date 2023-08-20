@@ -18,7 +18,7 @@ export const ExploringCannyEdgeDetectionContent = ({ isDesktopView }) => {
             "0px 1px 2px #00000015, 0px 0.5px 4px #00000020, 0px 0.25px 12px #00000029",
           scrollbarGutter: "stable",
         }}
-        src="/CannyEdgeDetectionJupyterNotebook.html"
+        src="https://m-valentino.github.io/pages/CannyEdgeDetectionJupyterNotebook.html"
       />
     </>
   );
