@@ -97,10 +97,16 @@ export default function ProjectPage(props) {
               title="description"
               style={iframeFullSize ? iframeBigStyle : iframeSmallStyle}
             />
+            {/* This button will always be visible no matter the size of the iframe. When the
+             iframe covers the full page, it's position will be fixed to the bottom left corner. */}
             <IconButton
               onClick={() => setIframeFullSize(!iframeFullSize)}
               style={{
-                transform: "translate(7.5px, -60px)",
+                // Button is below the iframe whe not full screen so it is moved up to appear inside it.
+                transform: iframeFullSize ? "none" : "translate(7.5px, -60px)",
+                position: iframeFullSize ? "fixed" : "relative",
+                bottom: iframeFullSize ? 40 : "none",
+                left: iframeFullSize ? 40 : "none",
                 zIndex: 99,
                 width: XL_ICON_BUTTON_WIDTH_HEIGHT,
                 height: XL_ICON_BUTTON_WIDTH_HEIGHT,
@@ -175,34 +181,34 @@ export default function ProjectPage(props) {
               </Grid>
             ))}
           </Grid>
-          <div style={{display: "flex", justifyContent: "center"}}>
-          <Button
-            target="_blank"
-            href={gitLink}
-            rel="noreferrer"
-            style={{
-              width: !isDesktopView ? "100%" : "60%",
-              height: isSmallMobileView ? 70 : 80,
-              marginTop: 40,
-              marginBottom: 40,
-              fontSize: isSmallMobileView ? 26 : 32,
-              textShadow: MINUTE_SHADOW_TEXT,
-            }}
-            variant="contained"
-            color="primary"
-          >
-            <GitHubIcon
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <Button
+              target="_blank"
+              href={gitLink}
+              rel="noreferrer"
               style={{
-                height: isSmallMobileView ? 37 : 45,
-                width: isSmallMobileView ? 37 : 45,
-                marginRight: 10,
-                
-                transform: "translateY(-5px)",
-                filter: MINUTE_SHADOW_SVG,
+                width: !isDesktopView ? "100%" : "60%",
+                height: isSmallMobileView ? 70 : 80,
+                marginTop: 40,
+                marginBottom: 40,
+                fontSize: isSmallMobileView ? 26 : 32,
+                textShadow: MINUTE_SHADOW_TEXT,
               }}
-            />
-            View Code Source
-          </Button>
+              variant="contained"
+              color="primary"
+            >
+              <GitHubIcon
+                style={{
+                  height: isSmallMobileView ? 37 : 45,
+                  width: isSmallMobileView ? 37 : 45,
+                  marginRight: 10,
+
+                  transform: "translateY(-5px)",
+                  filter: MINUTE_SHADOW_SVG,
+                }}
+              />
+              View Code Source
+            </Button>
           </div>
           {getExtraProjectContent(title, isDesktopView)}
         </div>
