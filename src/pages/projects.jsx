@@ -218,7 +218,7 @@ export default function Projects() {
               list of languages and libraries used.
             </Typography>
           </div>
-          {view === "cardView" && (
+          {view === "cardView" ? (
             <Grid
               container
               justifyContent="center"
@@ -237,8 +237,7 @@ export default function Projects() {
                 </Grid>
               ))}
             </Grid>
-          )}
-          {view === "tableView" && (
+          ) : (
             <ProjectTable
               PROJECT_CONTENT={projectResults}
               key={projectResults}
