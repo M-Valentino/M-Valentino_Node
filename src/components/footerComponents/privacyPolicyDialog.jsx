@@ -8,6 +8,7 @@ import {
   DialogTitle,
   Typography,
 } from "@mui/material";
+import { MINUTE_SHADOW, MINUTE_SHADOW_TEXT } from "@/consts/stylingValues";
 
 export const PrivacyPolicyDialog = (props) => {
   const { handlePrivacyPolicyClose, privacyPolicyOpen } = props;
@@ -16,7 +17,7 @@ export const PrivacyPolicyDialog = (props) => {
     <Dialog onClose={handlePrivacyPolicyClose} open={privacyPolicyOpen}>
       <DialogTitle
         fontWeight={600}
-        style={{ fontSize: 24, textAlign: "center" }}
+        style={{ fontSize: 24, textAlign: "center", boxShadow: MINUTE_SHADOW }}
       >
         Privacy Policy
       </DialogTitle>
@@ -130,7 +131,7 @@ export const PrivacyPolicyDialog = (props) => {
         <Button
           onClick={handlePrivacyPolicyClose}
           variant="contained"
-          style={{ margin: "auto" }}
+          style={{ margin: "auto", textShadow: MINUTE_SHADOW_TEXT }}
         >
           Ok
         </Button>
