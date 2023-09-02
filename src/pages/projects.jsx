@@ -224,7 +224,11 @@ export default function Projects() {
               justifyContent="center"
               spacing={3}
               direction="row"
-              style={{ marginBottom: 50 }}
+              style={{
+                marginBottom: 50,
+                paddingLeft: isDesktopView ? 40 : 0,
+                paddingRight: isDesktopView ? 40 : 0,
+              }}
             >
               {projectResults.map((props, key) => (
                 <Grid item key={key}>
