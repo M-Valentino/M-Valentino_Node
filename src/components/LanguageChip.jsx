@@ -28,20 +28,18 @@ export const LanguageChip = (props) => {
    * @returns the hsl color
    */
   const getChipColor = () => {
-    // This is not a language or library so the color is made distinct from the rest.
+    // This is not a language or a library, so the color returned will be destinct.
     if (language === PLUS_MORE) {
       return "#555";
     }
-    for (const [index, [, value]] of Object.entries(
-      Object.entries(LANGUAGES)
-    )) {
-      if (value === language) {
-        return `hsl(${
-          // All colors assigned to a language will be evenly spaced by angle for the hue.
-          index * (360 / Object.keys(LANGUAGES).length)
-        }, 100%, 85%)`;
-      }
-    }
+    const languageEntries = Object.entries(LANGUAGES);
+    const matchingIndex = languageEntries.findIndex(([, value]) => value === language);
+    /**
+     * The hue determined will be evenly spaced by angle between all possible hues for
+     *  every language.
+     */
+    const hue = matchingIndex * (360 / languageEntries.length);
+    return `hsl(${hue}, 100%, 85%)`;
   };
 
   const hoverAnimation = useSpring({
