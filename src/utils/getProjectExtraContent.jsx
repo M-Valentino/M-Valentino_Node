@@ -2,6 +2,7 @@ import React from "react";
 import { PROJECT_TITLES } from "@/consts/projectContent";
 import { Earth3JSContent } from "@/components/projectExtraContent/Earth3JSContent";
 import { IcatContent } from "@/components/projectExtraContent/IcatContent";
+import { ISpyShopperContent } from "@/components/projectExtraContent/ISpyShopperContent";
 import { ExploringCannyEdgeDetectionContent } from "@/components/projectExtraContent/ExploringCannyEdgeDetectionContent";
 
 /**
@@ -18,6 +19,8 @@ export const getExtraProjectContent = (title, isDesktopView) => {
       return <Earth3JSContent />;
     case PROJECT_TITLES.icat:
       return <IcatContent />;
+    case PROJECT_TITLES.iSpyShopper:
+      return <ISpyShopperContent />;
     case PROJECT_TITLES.exploringCannyEdgeDetection:
       return (
         <ExploringCannyEdgeDetectionContent isDesktopView={isDesktopView} />

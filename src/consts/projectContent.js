@@ -76,6 +76,7 @@ export const PROJECT_TITLES = {
   earth3Js: "Earth 3JS",
   icat: "ICat",
   exploringCannyEdgeDetection: "Exploring Canny Edge Detection",
+  iSpyShopper: "I Spy Shopper",
 }
 
 export const PROJECT_CONTENT = [
@@ -122,7 +123,7 @@ export const PROJECT_CONTENT = [
     imageLink: "/projectImages/i-spy-shopper.svg",
     imageAltText:
       "I Spy Shopper Logo of a magnifying glass and a shopping bag.",
-    title: "I Spy Shopper",
+    title: PROJECT_TITLES.iSpyShopper,
     date: "2023",
     description:
       "I Spy Shopper is a grocery devilery app for the visually impaired (with pretend payment transactions). This is also a college capstone group project. I Spy Shopper uses the Kroger API for generating grocery data. It also uses Firebase for authentication and data storage. Over 100 automated tests were written in the app using Detox and Jest.",
