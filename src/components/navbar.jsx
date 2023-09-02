@@ -68,7 +68,11 @@ const NavBar = (props) => {
             onClick={handleClick}
             style={{ float: "right" }}
           >
-            <MenuIcon color="primary" fontSize="large" />
+            <MenuIcon
+              color="primary"
+              fontSize="large"
+              style={{ filter: MINUTE_SHADOW_SVG }}
+            />
           </IconButton>
           <Menu
             id="basic-menu"
