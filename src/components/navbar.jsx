@@ -15,6 +15,7 @@ import {
   DESKTOP_WIDTH,
   MOBILE_WIDTH,
   MINUTE_SHADOW_SVG,
+  MOBILE_MENU_ITEM_STYLE,
 } from "@/consts/stylingValues";
 
 // This component is the main navbar of the site.
@@ -78,17 +79,17 @@ const NavBar = (props) => {
               "aria-labelledby": "basic-button",
             }}
           >
-            <Link href="/" style={{ textDecoration: "none" }}>
+            <Link href="/" style={MOBILE_MENU_ITEM_STYLE}>
               <MenuItem>Home</MenuItem>
             </Link>
-            <Link href="/projects" style={{ textDecoration: "none" }}>
+            <Link href="/projects" style={MOBILE_MENU_ITEM_STYLE}>
               <MenuItem>Projects</MenuItem>
             </Link>
             <Link
               href="https://github.com/M-Valentino"
+              style={MOBILE_MENU_ITEM_STYLE}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
             >
               <MenuItem>GitHub</MenuItem>
             </Link>
