@@ -1,8 +1,13 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import Link from "next/link";
 
-export const ISpyShopperContent = () => {
+export const ISpyShopperContent = ({ isDesktopView }) => {
+  const screenshotStyles = {
+    display: "block",
+    margin: "auto",
+    width: isDesktopView ? "80%" : "50%",
+  };
   return (
     <>
       <Typography variant="h4" gutterBottom>
@@ -17,6 +22,25 @@ export const ISpyShopperContent = () => {
         </Link>
         , which has even more information about I Spy Shopper.
       </Typography>
+      <Typography variant="h4" gutterBottom>
+        Screenshots
+      </Typography>
+      <Grid container justifyContent="center" spacing={1}>
+        <Grid item xs={12} md={6}>
+          <img
+            src="/projectImages/extra/searchscreen1.png"
+            style={screenshotStyles}
+            alt="screenshot of of I Spy Shopper's search screen"
+          />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <img
+            src="/projectImages/extra/settingsscreen1.png"
+            style={screenshotStyles}
+            alt="screenshot of of I Spy Shopper's settings screen"
+          />
+        </Grid>
+      </Grid>
     </>
   );
 };

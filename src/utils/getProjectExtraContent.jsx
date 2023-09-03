@@ -20,7 +20,7 @@ export const getExtraProjectContent = (title, isDesktopView) => {
     case PROJECT_TITLES.icat:
       return <IcatContent />;
     case PROJECT_TITLES.iSpyShopper:
-      return <ISpyShopperContent />;
+      return <ISpyShopperContent isDesktopView={isDesktopView} />;
     case PROJECT_TITLES.exploringCannyEdgeDetection:
       return (
         <ExploringCannyEdgeDetectionContent isDesktopView={isDesktopView} />
