@@ -164,12 +164,26 @@ const powerballStyle = {
   marginRight: 10,
   textAlign: "center",
   paddingTop: 5,
-  
 };
 const Custom404 = () => {
   return (
-    <div style={{ cursor: "help" }}>
-      <marquee>You're not supposed to be here.</marquee>
+    <div
+      style={{
+        cursor: "help",
+        backgroundColor: "#e5e5f7",
+        backgroundImage:
+          "repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 4px ), repeating-linear-gradient( #f79645e5, #f756a5 )",
+      }}
+    >
+      <marquee
+        behavior="alternate"
+        style={{
+          fontSize: 20,
+          textShadow: "1px 1px #FFAAAA, 2px 2px #AAFFAA, 3px 3px #AAAAFF",
+        }}
+      >
+        You're not supposed to be here.
+      </marquee>
       <h1
         style={{
           fontSize: 64,
@@ -204,18 +218,17 @@ const Custom404 = () => {
         }}
       >
         {Array.apply(null, { length: 250 }).map((i, index) => (
-          <div key={i}>
-            <div
-              style={{
-                color: `hsl(${(index * 0.2) % 40}, ${
-                  Math.floor(Math.random() * (100 - 80 + 1)) + 80
-                }%, 84%)`,
-                transform: `rotate(${index * (360 / 500)}deg)`,
-              }}
-            >
-              {" "}
-              The selected page could not be returned.{" "}
-            </div>
+          <div
+            key={index}
+            style={{
+              color: `hsl(${(index * 0.2) % 40}, ${
+                Math.floor(Math.random() * (100 - 80 + 1)) + 80
+              }%, 54%)`,
+              transform: `rotate(${index * (360 / 500)}deg)`,
+            }}
+          >
+            {" "}
+            The selected page could not be returned.{" "}
           </div>
         ))}
       </div>
@@ -411,7 +424,6 @@ const Custom404 = () => {
           display: "flex",
           flexDirection: "row",
           justifyContent: "center",
-          marginBottom: 20
         }}
       >
         <div style={powerballStyle}>
