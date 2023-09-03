@@ -1,7 +1,5 @@
-import React from "react";
 import Link from "next/link";
 import { Grid, Typography } from "@mui/material";
-
 import ICButton from "@/components/icButton";
 
 export default function Custom404() {
