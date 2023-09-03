@@ -85,6 +85,7 @@ export default function ProjectPage(props) {
               margin: "auto",
               marginBottom: 40,
               display: "block",
+              boxShadow: MINUTE_SHADOW,
             }}
           />
         );
