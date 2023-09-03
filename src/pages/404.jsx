@@ -156,10 +156,20 @@ const integratedCircuit = (
   </div>
 );
 
+const powerballStyle = {
+  backgroundColor: "#fff",
+  width: 30,
+  height: 30,
+  borderRadius: 15,
+  marginRight: 10,
+  textAlign: "center",
+  paddingTop: 5,
+  
+};
 const Custom404 = () => {
   return (
-    <>
-    <marquee>You're not supposed to be here.</marquee>
+    <div style={{ cursor: "help" }}>
+      <marquee>You're not supposed to be here.</marquee>
       <h1
         style={{
           fontSize: 64,
@@ -395,7 +405,45 @@ const Custom404 = () => {
 </body>
 </html>`}
       />
-    </>
+      <h3 style={{ textAlign: "center" }}>Your Lucky Powerball Numbers</h3>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          marginBottom: 20
+        }}
+      >
+        <div style={powerballStyle}>
+          {Math.floor(Math.random() * (69 - 1 + 1)) + 1}
+        </div>
+        <div style={powerballStyle}>
+          {Math.floor(Math.random() * (69 - 1 + 1)) + 1}
+        </div>
+        <div style={powerballStyle}>
+          {Math.floor(Math.random() * (69 - 1 + 1)) + 1}
+        </div>
+        <div style={powerballStyle}>
+          {Math.floor(Math.random() * (69 - 1 + 1)) + 1}
+        </div>
+        <div style={powerballStyle}>
+          {Math.floor(Math.random() * (69 - 1 + 1)) + 1}
+        </div>
+        <div
+          style={{
+            backgroundColor: "#f00",
+            width: 30,
+            maxHeight: 30,
+            borderRadius: 15,
+            marginRight: 10,
+            textAlign: "center",
+            paddingTop: 5,
+          }}
+        >
+          {Math.floor(Math.random() * (26 - 1 + 1)) + 1}
+        </div>
+      </div>
+    </div>
   );
 };
 
