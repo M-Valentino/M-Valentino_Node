@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Button,
   FormControl,
@@ -38,6 +38,8 @@ import {
 /**
  * This component shows all projects in either a card view or a table view.
  * Users can toggle between card and table view as well as search for projects.
+ * Additionally, projects can be displayed from newest to oldest or oldest to
+ * newest.
  */
 export default function Projects() {
   const isDesktopView = useMediaQuery("(min-width:1200px)");
@@ -49,15 +51,6 @@ export default function Projects() {
    * card view by default.
    */
   const [view, setView] = useState("cardView");
-  /**
-   * For managing the order of the projects shown. If false, the oldest
-   * projects are shown first.
-   */
-  const [showNewestFirst, setShowNewestFirst] = useState(true);
-  // For managing the project search results
-  const [projectResults, setProjectResults] = useState(PROJECT_CONTENT);
-  // For managing the search input from the user
-  const [searchInputValue, setSearchInputValue] = useState("");
 
   /**
    * Function to handle changing the state of the view. It is called by the
@@ -70,6 +63,12 @@ export default function Projects() {
   };
 
   /**
+   * For managing the order of the projects shown. If false, the oldest
+   * projects are shown first.
+   */
+  const [showNewestFirst, setShowNewestFirst] = useState(true);
+
+  /**
    * Function to change the state of showNewestFirst and reverse the ording of
    * the projects.
    * @param {*} event when the user selects "Newest" or "Oldest"
@@ -79,6 +78,9 @@ export default function Projects() {
     setProjectResults([...projectResults].reverse());
   };
 
+  // For managing the search input from the user
+  const [searchInputValue, setSearchInputValue] = useState("");
+
   /**
    * Handles the current value of the TextField
    * @param {*} event
@@ -86,6 +88,9 @@ export default function Projects() {
   const onChangeHandler = (event) => {
     setSearchInputValue(event.target.value);
   };
+
+  // For managing the project search results
+  const [projectResults, setProjectResults] = useState(PROJECT_CONTENT);
 
   /**
    * Function filter out projects that don't contain a string from the TextField
