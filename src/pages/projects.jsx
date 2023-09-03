@@ -1,9 +1,13 @@
 import Head from "next/head";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Button,
+  FormControl,
   Grid,
+  InputLabel,
+  MenuItem,
+  Select,
   Stack,
   TextField,
   ThemeProvider,
@@ -36,14 +40,20 @@ import {
  * Users can toggle between card and table view as well as search for projects.
  */
 export default function Projects() {
-  const isDesktopView = useMediaQuery("(min-width:1000px)");
+  const isDesktopView = useMediaQuery("(min-width:1200px)");
   const isTabletView = useMediaQuery("(max-width:899px)");
+
   /**
    * For if the projects are shown in a card or table view. Mobile devices will
    * be shown the table view by default while desktop devices will be shown the
    * card view by default.
    */
   const [view, setView] = useState("cardView");
+  /**
+   * For managing the order of the projects shown. If false, the oldest
+   * projects are shown first.
+   */
+  const [showNewestFirst, setShowNewestFirst] = useState(true);
   // For managing the project search results
   const [projectResults, setProjectResults] = useState(PROJECT_CONTENT);
   // For managing the search input from the user
@@ -60,6 +70,16 @@ export default function Projects() {
   };
 
   /**
+   * Function to change the state of showNewestFirst and reverse the ording of
+   * the projects.
+   * @param {*} event when the user selects "Newest" or "Oldest"
+   */
+  const handleSetSort = (event) => {
+    setShowNewestFirst(event.target.value);
+    setProjectResults([...projectResults].reverse());
+  };
+
+  /**
    * Handles the current value of the TextField
    * @param {*} event
    */
@@ -73,19 +93,31 @@ export default function Projects() {
    * PROJECT_CONTENT object which contain the default values.
    */
   const filterProjects = () => {
-    setProjectResults(
-      PROJECT_CONTENT.filter(
-        (data) =>
-          JSON.stringify(data)
-            .toLowerCase()
-            .indexOf(searchInputValue.toLowerCase()) !== -1
-      )
+    let results = [...PROJECT_CONTENT];
+    results = results.filter(
+      (data) =>
+        JSON.stringify(data)
+          .toLowerCase()
+          .indexOf(searchInputValue.toLowerCase()) !== -1
     );
+    // If the sort is selected as "Newest".
+    if (showNewestFirst === true) {
+      setProjectResults(results);
+    } else {
+      setProjectResults(results.reverse());
+    }
   };
 
-  // Function to load the default project values and clear what the user typed.
+  /**
+   * Function to load the default project values and clear what the user typed.
+   * It keeps the current selected sort order too.
+   */
   const handleResetFilter = () => {
-    setProjectResults(PROJECT_CONTENT);
+    if (showNewestFirst === true) {
+      setProjectResults([...PROJECT_CONTENT]);
+    } else {
+      setProjectResults([...PROJECT_CONTENT].reverse());
+    }
     setSearchInputValue("");
   };
 
@@ -110,18 +142,39 @@ export default function Projects() {
             }}
           >
             <Grid item md={4} xs={12}>
-              {/* Suprisingly, this is the only way to align the toggle buttons other than <center>  */}
-              <div style={{ textAlign: isTabletView ? "center" : "left" }}>
+              <Stack
+                direction="row"
+                justifyContent={isTabletView ? "center" : "flex-start"}
+              >
+                <FormControl
+                  sx={{ marginRight: 1 }}
+                  fullWidth
+                  style={{ maxWidth: 150 }}
+                >
+                  <InputLabel>Sort By</InputLabel>
+                  <Select
+                    aria-label="Sort By"
+                    value={showNewestFirst}
+                    label="Sort By"
+                    onChange={handleSetSort}
+                  >
+                    <MenuItem value={true}>Newest</MenuItem>
+                    <MenuItem value={false}>Oldest</MenuItem>
+                  </Select>
+                </FormControl>
                 <ToggleButtonGroup
                   orientation="horizontal"
                   value={view}
                   exclusive
                   onChange={handleSetView}
-                  style={{ whiteSpace: "nowrap", boxShadow: MINUTE_SHADOW }}
+                  style={{
+                    whiteSpace: "nowrap",
+                    boxShadow: MINUTE_SHADOW,
+                  }}
                 >
                   <ToggleButton
                     value="cardView"
-                    aria-label="cardView"
+                    aria-label="card view"
                     disabled={view === "cardView"}
                     color="primary"
                   >
@@ -132,11 +185,11 @@ export default function Projects() {
                         filter: MINUTE_SHADOW_SVG,
                       }}
                     />
-                    Card View
+                    {isDesktopView ? "Card View" : "Cards"}
                   </ToggleButton>
                   <ToggleButton
                     value="tableView"
-                    aria-label="tableView"
+                    aria-label="table view"
                     disabled={view === "tableView"}
                     color="primary"
                   >
@@ -147,10 +200,10 @@ export default function Projects() {
                         filter: MINUTE_SHADOW_SVG,
                       }}
                     />
-                    Table View
+                    {isDesktopView ? "Table View" : "Table"}
                   </ToggleButton>
                 </ToggleButtonGroup>
-              </div>
+              </Stack>
             </Grid>
             <Grid
               item
@@ -164,7 +217,10 @@ export default function Projects() {
                 variant={isTabletView ? "h4" : "h3"}
                 fontWeight={600}
                 textAlign={"center"}
-                style={{ textShadow: MINUTE_SHADOW_TEXT }}
+                style={{
+                  textShadow: MINUTE_SHADOW_TEXT,
+                  marginBottom: isTabletView ? 20 : 0,
+                }}
               >
                 Projects
               </Typography>
@@ -177,6 +233,7 @@ export default function Projects() {
                   fullWidth
                   onChange={onChangeHandler}
                   value={searchInputValue}
+                  style={{ minWidth: 150 }}
                 />
 
                 <Button
