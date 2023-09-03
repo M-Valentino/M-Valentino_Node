@@ -22,9 +22,10 @@ import ViewListIcon from "@mui/icons-material/ViewList";
 import ViewModuleIcon from "@mui/icons-material/ViewModule";
 import { MainTheme } from "@/utils/MUITheme";
 import NavBar from "@/components/navbar";
-import ProjectCard from "@/components/ProjectCard";
-import ProjectTable from "@/components/ProjectTable";
+import ProjectCard from "@/components/ProjectsPage/ProjectCard";
+import ProjectTable from "@/components/ProjectsPage/ProjectTable";
 import { getHeadBoilerPlate } from "@/utils/headBoilerPlate";
+import { NoResults, ShowResults } from "@/components/ProjectsPage/NoResults";
 import { PROJECT_CONTENT } from "@/consts/projectContent";
 import { Footer } from "@/components/footerComponents/footer";
 import {
@@ -280,34 +281,40 @@ export default function Projects() {
               list of languages and libraries used.
             </Typography>
           </div>
-          {view === "cardView" ? (
-            <Grid
-              container
-              justifyContent="center"
-              spacing={3}
-              direction="row"
-              style={{
-                marginBottom: 50,
-                paddingLeft: isDesktopView ? 40 : 0,
-                paddingRight: isDesktopView ? 40 : 0,
-              }}
-            >
-              {projectResults.map((props, key) => (
-                <Grid item key={key}>
-                  <Link
-                    style={{ textDecoration: "none" }}
-                    href={`/project/${props.title}`}
-                  >
-                    <ProjectCard data={props} />
-                  </Link>
+          {projectResults.length > 0 ? (
+            <>
+              {view === "cardView" ? (
+                <Grid
+                  container
+                  justifyContent="center"
+                  spacing={3}
+                  direction="row"
+                  style={{
+                    marginBottom: 50,
+                    paddingLeft: isDesktopView ? 40 : 0,
+                    paddingRight: isDesktopView ? 40 : 0,
+                  }}
+                >
+                  {projectResults.map((props, key) => (
+                    <Grid item key={key}>
+                      <Link
+                        style={{ textDecoration: "none" }}
+                        href={`/project/${props.title}`}
+                      >
+                        <ProjectCard data={props} />
+                      </Link>
+                    </Grid>
+                  ))}
                 </Grid>
-              ))}
-            </Grid>
+              ) : (
+                <ProjectTable
+                  PROJECT_CONTENT={projectResults}
+                  key={projectResults}
+                />
+              )}
+            </>
           ) : (
-            <ProjectTable
-              PROJECT_CONTENT={projectResults}
-              key={projectResults}
-            />
+            <NoResults />
           )}
         </main>
         <Footer />

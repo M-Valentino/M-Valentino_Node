@@ -10,7 +10,7 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import { LanguageChip } from "./LanguageChip";
+import { LanguageChip } from "../LanguageChip";
 import { CARD_AND_TABLE_SHADOW } from "@/consts/stylingValues";
 import { PLUS_MORE } from "@/consts/projectContent";
 

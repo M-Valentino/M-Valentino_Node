@@ -9,7 +9,7 @@ import {
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
 import { useSpring, animated } from "@react-spring/web";
-import { LanguageChip } from "./LanguageChip";
+import { LanguageChip } from "../LanguageChip";
 import {
   CARD_AND_TABLE_SHADOW,
   FINAL_CARD_SHADOW,
