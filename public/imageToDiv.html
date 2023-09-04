@@ -42,6 +42,7 @@
     dotMatrix = false;
     // Holds the size of the div pixels. The user can update this value.
     divSize = 1;
+
     /*
      * Function to upload image from file picker. Code mostly came from this source:
      * https://stackoverflow.com/questions/22087076/how-to-make-a-simple-image-upload-using-javascript-html
@@ -62,6 +63,9 @@
 
     // Function to convert the uploaded image to divs. 
     function convertImageToDiv() {
+      document.getElementById("upload").disabled = true;
+      document.getElementById("dotMatrix").disabled = true;
+      document.getElementById("sizeInput").disabled = true;
       // gridContainer will hold all 1px by 1px divs and display those divs in a grid.
       var gridContainer = document.createElement("div");
       gridContainer.id = "gridContainer";
@@ -95,13 +99,13 @@
   </p>
   <p>Note: The conversion for large images is slow.</p>
   <h2>Uploaded File</h2>
-  <input type="file" />
+  <input id="upload" type="file" autocomplete=off />
   <span class="input">
     <input id="dotMatrix" type="checkbox" value="false" onchange="dotMatrix=this.checked;" autocomplete=off>
     <label for="dotMatrix">Dot matrix effect</label>
   </span>
   <span class="input">
-    <input id="sizeInput" type="text" value="1" onchange="divSize=this.value;" autocomplete=off>
+    <input id="sizeInput" type="text" value="1" onchange="divSize=this.value;" autocomplete=off >
     <label for="sizeInput">Div size in pixels</label>
   </span>
 
