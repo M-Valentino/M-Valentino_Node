@@ -3,11 +3,18 @@
 
 <head>
   <style>
-    p {
-      max-width: 900px;
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #eef;
     }
-
+    p {
+      max-width: 875px;
+    }
+    img {
+      margin-top: 10px;
+    }
     #code {
+      background-color: #fff;
       width: 100%;
       height: 40px;
       overflow-x: scroll;
@@ -16,12 +23,12 @@
 </head>
 
 <body>
-  <canvas id="canvas1" width="200" height="200" style="position: absolute; right: 0; top: 0;"></canvas>
   <script src="https://www.marvinj.org/releases/marvinj-0.7.js"></script>
   <script>
+    // Image variable to eventually iterate through and convert.
     image = new MarvinImage();
     /*
-     * Image upload code came from this source:
+     * Function to upload image from file picker. Code mostly came from this source:
      * https://stackoverflow.com/questions/22087076/how-to-make-a-simple-image-upload-using-javascript-html
      */
     window.addEventListener('load', function () {
@@ -31,26 +38,31 @@
           img.onload = () => {
             URL.revokeObjectURL(img.src);
           }
-
           img.src = URL.createObjectURL(this.files[0]);
+          // Executes the convertImageToDiv function after the image is finished uploading.
           image.load(img.src, convertImageToDiv);
         }
       });
     });
 
+    // Function to convert the uploaded image to divs. 
     function convertImageToDiv() {
+      // gridContainer will hold all 1px by 1px divs and display those divs in a grid.
       var gridContainer = document.createElement('div');
       gridContainer.id = "gridContainer";
       gridContainer.style.cssText = `width:${image.getWidth()}; height:${image.getHeight()}; display: grid; grid-template-columns: repeat(${image.getWidth()}, 1px);`;
       document.body.appendChild(gridContainer);
+      // Iterates through image data and appends divs inside the root grid container div.
       for (var y = 0; y < image.getHeight(); y++) {
         for (var x = 0; x < image.getWidth(); x++) {
           var elemDiv = document.createElement('div');
+          // Generates the styling for the div with the background color set to the current pixel.
           elemDiv.style.cssText = `display: inline-block;background-color:rgb(${image.getIntComponent0(x, y)},${image.getIntComponent1(x, y)},${image.getIntComponent2(x, y)});width: 1px;height: 1px;`;
           document.getElementById('gridContainer').appendChild(elemDiv);
         }
 
       }
+      // Outputs the code of the converted image to the <pre> tag.
       document.getElementById('code').textContent = document.getElementById('gridContainer').outerHTML;
     }
 
