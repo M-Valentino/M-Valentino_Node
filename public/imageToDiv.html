@@ -13,6 +13,9 @@
     img {
       margin-top: 10px;
     }
+    .checkBox {
+      margin-left: 10px;
+    }
     #code {
       background-color: #fff;
       width: 100%;
@@ -27,6 +30,8 @@
   <script>
     // Image variable to eventually iterate through and convert.
     image = new MarvinImage();
+    // If true, the converted image will have a dot matrix effect.
+    dotMatrix = false;
     /*
      * Function to upload image from file picker. Code mostly came from this source:
      * https://stackoverflow.com/questions/22087076/how-to-make-a-simple-image-upload-using-javascript-html
@@ -57,7 +62,12 @@
         for (var x = 0; x < image.getWidth(); x++) {
           var elemDiv = document.createElement('div');
           // Generates the styling for the div with the background color set to the current pixel.
+          if (dotMatrix) {
+            elemDiv.style.cssText = `display: inline-block;background-color:rgb(${image.getIntComponent0(x, y)},${image.getIntComponent1(x, y)},${image.getIntComponent2(x, y)});width: 1px;height: 1px; border-radius: 1px`;
+
+          } else {
           elemDiv.style.cssText = `display: inline-block;background-color:rgb(${image.getIntComponent0(x, y)},${image.getIntComponent1(x, y)},${image.getIntComponent2(x, y)});width: 1px;height: 1px;`;
+          }
           document.getElementById('gridContainer').appendChild(elemDiv);
         }
 
@@ -75,7 +85,7 @@
   </p>
   <p>Note: The conversion for large images is slow.</p>
   <h2>Uploaded File</h2>
-  <input type='file' />
+  <input type='file' /><span class="checkBox"><input class='messageCheckbox' type='checkbox' onchange='dotMatrix=this.checked;'>Generate dot matrix effect.</span>
   <br>
   <img id="myImg" src="#" alt="Your uploaded file will appear here.">
   <h2>Code Result</h2>
