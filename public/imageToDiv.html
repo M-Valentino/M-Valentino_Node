@@ -9,14 +9,31 @@
   <canvas id="canvas1" width="200" height="200" style="position: absolute; right: 0; top: 0;"></canvas>
   <script src="https://www.marvinj.org/releases/marvinj-0.7.js"></script>
   <script>
-    
     image = new MarvinImage();
-    image.load("https://i.imgur.com/88gGNel.png", imageLoaded);
+   /*
+    * Image upload code came from this source:
+    * https://stackoverflow.com/questions/22087076/how-to-make-a-simple-image-upload-using-javascript-html
+    */
+    window.addEventListener('load', function () {
+      document.querySelector('input[type="file"]').addEventListener('change', function () {
+        if (this.files && this.files[0]) {
+          var img = document.querySelector('img');
+          img.onload = () => {
+            URL.revokeObjectURL(img.src);
+          }
+
+          img.src = URL.createObjectURL(this.files[0]); 
+          image.load(img.src, imageLoaded);
+        }
+      });
+    });
+
+
 
     function imageLoaded() {
       var gridContainer = document.createElement('div');
       gridContainer.id = "gridContainer";
-      gridContainer.style.cssText = `width:${image.getWidth()}; height:${image.getHeight()}; display: grid; grid-template-columns: repeat(${image.getHeight()}, 1px);`;
+      gridContainer.style.cssText = `width:${image.getWidth()}; height:${image.getHeight()}; display: grid; grid-template-columns: repeat(${image.getWidth()}, 1px);`;
       document.body.appendChild(gridContainer);
       for (var y = 0; y < image.getHeight(); y++) {
         for (var x = 0; x < image.getWidth(); x++) {
@@ -31,7 +48,10 @@
 
   </script>
   <h1>Image to Divs</h1>
-  <p></p>
+  
+  <input type='file' />
+  <h2>Uploaded File</h2>
+  <img id="myImg" src="#" alt="Your uploaded file will appear here.">
   <h2>Code Result</h2>
   <pre id="code" style="width: 100%; height: 40px; overflow-x: scroll;"></pre>
   <h2>Image Converted to Divs</h2>
