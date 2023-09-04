@@ -30,6 +30,10 @@
       height: 40px;
       overflow-x: scroll;
     }
+
+    #convertAnother {
+      display: none;
+    }
   </style>
 </head>
 
@@ -78,16 +82,15 @@
           // Generates the styling for the div with the background color set to the current pixel.
           if (dotMatrix) {
             elemDiv.style.cssText = `display: inline-block;background-color:rgb(${image.getIntComponent0(x, y)},${image.getIntComponent1(x, y)},${image.getIntComponent2(x, y)});width:${divSize}px;height:${divSize}px;border-radius: ${divSize / 2}px`;
-
           } else {
             elemDiv.style.cssText = `display: inline-block;background-color:rgb(${image.getIntComponent0(x, y)},${image.getIntComponent1(x, y)},${image.getIntComponent2(x, y)});width:${divSize}px;height:${divSize}px;`;
           }
           document.getElementById("gridContainer").appendChild(elemDiv);
         }
-
       }
       // Outputs the code of the converted image to the <pre> tag.
       document.getElementById("code").textContent = document.getElementById("gridContainer").outerHTML;
+      document.getElementById("convertAnother").style.display = "unset";
     }
 
   </script>
@@ -108,7 +111,9 @@
     <input id="sizeInput" type="text" value="1" onchange="divSize=this.value;" autocomplete=off >
     <label for="sizeInput">Div size in pixels</label>
   </span>
-
+  <br>
+  <!-- This button is not visible until an image is converted. The page must be refreshed in order to convert again. -->
+  <button id="convertAnother" onClick="window.location.reload();">Convert Another Image</button>
   <br>
   <img id="myImg" src="#" alt="Your uploaded file will appear here.">
   <h2>Code Result</h2>
