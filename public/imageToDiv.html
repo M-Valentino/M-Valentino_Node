@@ -7,15 +7,23 @@
       font-family: Arial, Helvetica, sans-serif;
       background-color: #eef;
     }
+
     p {
       max-width: 875px;
     }
+
     img {
       margin-top: 10px;
     }
-    .checkBox {
+
+    .input {
       margin-left: 10px;
     }
+
+    #sizeInput {
+      width: 20px;
+    }
+
     #code {
       background-color: #fff;
       width: 100%;
@@ -32,6 +40,8 @@
     image = new MarvinImage();
     // If true, the converted image will have a dot matrix effect.
     dotMatrix = false;
+    // Holds the size of the div pixels. The user can update this value.
+    divSize = 1;
     /*
      * Function to upload image from file picker. Code mostly came from this source:
      * https://stackoverflow.com/questions/22087076/how-to-make-a-simple-image-upload-using-javascript-html
@@ -53,45 +63,54 @@
     // Function to convert the uploaded image to divs. 
     function convertImageToDiv() {
       // gridContainer will hold all 1px by 1px divs and display those divs in a grid.
-      var gridContainer = document.createElement('div');
+      var gridContainer = document.createElement("div");
       gridContainer.id = "gridContainer";
-      gridContainer.style.cssText = `width:${image.getWidth()}; height:${image.getHeight()}; display: grid; grid-template-columns: repeat(${image.getWidth()}, 1px);`;
+      gridContainer.style.cssText = `width:${image.getWidth() * divSize}px; height:${image.getHeight() * divSize}px; display: grid; grid-template-columns: repeat(${image.getWidth()}, ${divSize}px);`;
       document.body.appendChild(gridContainer);
       // Iterates through image data and appends divs inside the root grid container div.
       for (var y = 0; y < image.getHeight(); y++) {
         for (var x = 0; x < image.getWidth(); x++) {
-          var elemDiv = document.createElement('div');
+          var elemDiv = document.createElement("div");
           // Generates the styling for the div with the background color set to the current pixel.
           if (dotMatrix) {
-            elemDiv.style.cssText = `display: inline-block;background-color:rgb(${image.getIntComponent0(x, y)},${image.getIntComponent1(x, y)},${image.getIntComponent2(x, y)});width: 1px;height: 1px; border-radius: 1px`;
+            elemDiv.style.cssText = `display: inline-block;background-color:rgb(${image.getIntComponent0(x, y)},${image.getIntComponent1(x, y)},${image.getIntComponent2(x, y)});width:${divSize}px;height:${divSize}px;border-radius: ${divSize / 2}px`;
 
           } else {
-          elemDiv.style.cssText = `display: inline-block;background-color:rgb(${image.getIntComponent0(x, y)},${image.getIntComponent1(x, y)},${image.getIntComponent2(x, y)});width: 1px;height: 1px;`;
+            elemDiv.style.cssText = `display: inline-block;background-color:rgb(${image.getIntComponent0(x, y)},${image.getIntComponent1(x, y)},${image.getIntComponent2(x, y)});width:${divSize}px;height:${divSize}px;`;
           }
-          document.getElementById('gridContainer').appendChild(elemDiv);
+          document.getElementById("gridContainer").appendChild(elemDiv);
         }
 
       }
       // Outputs the code of the converted image to the <pre> tag.
-      document.getElementById('code').textContent = document.getElementById('gridContainer').outerHTML;
+      document.getElementById("code").textContent = document.getElementById("gridContainer").outerHTML;
     }
 
   </script>
   <h1>Image to Divs</h1>
   <p>Have you ever wanted to put an image on your website, but wanted it to be nearly impossible for users to save it?
     No? Well, uh here you can upload and convert an image to pure CSS code. How it works is that for each pixel read, a
-    1px by 1px div is created with a background color equal to that pixel's color. All divs are put inside a root div
-    that displays all the 1px by 1px in a grid.
+    tiny square div is created with a background color equal to that pixel's color. All divs are put inside a root div
+    that displays all of them in a grid.
   </p>
   <p>Note: The conversion for large images is slow.</p>
   <h2>Uploaded File</h2>
-  <input type='file' /><span class="checkBox"><input class='messageCheckbox' type='checkbox' onchange='dotMatrix=this.checked;'>Generate dot matrix effect.</span>
+  <input type="file" />
+  <span class="input">
+    <input id="dotMatrix" type="checkbox" value="false" onchange="dotMatrix=this.checked;" autocomplete=off>
+    <label for="dotMatrix">Dot matrix effect</label>
+  </span>
+  <span class="input">
+    <input id="sizeInput" type="text" value="1" onchange="divSize=this.value;" autocomplete=off>
+    <label for="sizeInput">Div size in pixels</label>
+  </span>
+
   <br>
   <img id="myImg" src="#" alt="Your uploaded file will appear here.">
   <h2>Code Result</h2>
   <pre id="code"></pre>
   <h2>Image Converted to Divs</h2>
-  
+
 </body>
 
 </html>
