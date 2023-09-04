@@ -26,6 +26,11 @@
       width: 20px;
     }
 
+    .helperText {
+      font-size: 14px;
+      color: #555;
+    }
+
     #code {
       background-color: #fff;
       width: 100%;
@@ -102,7 +107,8 @@
     tiny square div is created with a background color equal to that pixel's color. All divs are put inside a root div
     that displays all of them in a grid.
   </p>
-  <p>Note: The conversion for large images is slow.</p>
+  <p class="helperText">Note: The conversion for large images is slow. Also, Chrome has a bug where it displays the code result as
+    invisible, but you can still select and copy it.</p>
   <h2>Uploaded File</h2>
   <input id="upload" type="file" autocomplete=off />
   <span class="input">
@@ -110,7 +116,7 @@
     <label for="dotMatrix">Dot matrix effect</label>
   </span>
   <span class="input">
-    <input id="sizeInput" type="text" value="1" onchange="divSize=this.value;" autocomplete=off >
+    <input id="sizeInput" type="text" value="1" onchange="divSize=this.value;" autocomplete=off>
     <label for="sizeInput">Div size in pixels</label>
   </span>
   <br>
@@ -119,6 +125,7 @@
   <br>
   <img id="myImg" src="#" alt="Your uploaded file will appear here.">
   <h2>Code Result</h2>
+  <p class="helperText">Tripple click in the box below to select all the code.</p>
   <pre id="code"></pre>
   <h2>Image Converted to Divs</h2>
 
