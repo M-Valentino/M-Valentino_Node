@@ -100,9 +100,14 @@ export default function Projects() {
    */
   const filterProjects = () => {
     let results = [...PROJECT_CONTENT];
+    // If all JSON fields were matches with the query, the results would not be as good.
     results = results.filter(
       (data) =>
-        JSON.stringify(data)
+        JSON.stringify(data.description)
+          .concat(
+            JSON.stringify(data.languages),
+            JSON.stringify(data.imageAltText)
+          )
           .toLowerCase()
           .indexOf(searchInputValue.toLowerCase()) !== -1
     );
