@@ -2,7 +2,17 @@
 <html lang="en-US">
 
 <head>
+  <style>
+    p {
+      max-width: 900px;
+    }
 
+    #code {
+      width: 100%;
+      height: 40px;
+      overflow-x: scroll;
+    }
+  </style>
 </head>
 
 <body>
@@ -10,10 +20,10 @@
   <script src="https://www.marvinj.org/releases/marvinj-0.7.js"></script>
   <script>
     image = new MarvinImage();
-   /*
-    * Image upload code came from this source:
-    * https://stackoverflow.com/questions/22087076/how-to-make-a-simple-image-upload-using-javascript-html
-    */
+    /*
+     * Image upload code came from this source:
+     * https://stackoverflow.com/questions/22087076/how-to-make-a-simple-image-upload-using-javascript-html
+     */
     window.addEventListener('load', function () {
       document.querySelector('input[type="file"]').addEventListener('change', function () {
         if (this.files && this.files[0]) {
@@ -22,15 +32,13 @@
             URL.revokeObjectURL(img.src);
           }
 
-          img.src = URL.createObjectURL(this.files[0]); 
-          image.load(img.src, imageLoaded);
+          img.src = URL.createObjectURL(this.files[0]);
+          image.load(img.src, convertImageToDiv);
         }
       });
     });
 
-
-
-    function imageLoaded() {
+    function convertImageToDiv() {
       var gridContainer = document.createElement('div');
       gridContainer.id = "gridContainer";
       gridContainer.style.cssText = `width:${image.getWidth()}; height:${image.getHeight()}; display: grid; grid-template-columns: repeat(${image.getWidth()}, 1px);`;
@@ -48,12 +56,17 @@
 
   </script>
   <h1>Image to Divs</h1>
-  
+  <p>Have you ever wanted to put an image on your website, but wanted it to be nearly impossible for users to save it?
+    No? Well, uh here you can upload and convert an image to pure CSS code. How it works is that for each pixel read, a
+    1px by 1px div is created with a background color equal to that pixel's color. All divs are put inside a root div
+    that displays all the 1px by 1px in a grid.
+  </p>
+  <p>Note: The conversion for large images is slow.</p>
   <input type='file' />
   <h2>Uploaded File</h2>
   <img id="myImg" src="#" alt="Your uploaded file will appear here.">
   <h2>Code Result</h2>
-  <pre id="code" style="width: 100%; height: 40px; overflow-x: scroll;"></pre>
+  <pre id="code"></pre>
   <h2>Image Converted to Divs</h2>
 </body>
 
