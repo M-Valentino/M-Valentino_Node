@@ -12,6 +12,7 @@ export const LANGUAGES = {
   css: "css",
   html: "HTML",
   vanillaJS: "Vanilla JS",
+  marvinJ: "MarvinJ",
 
   // Python Stack
   python: "Python",
@@ -42,6 +43,7 @@ export const LANGUAGE_LINKS = {
   [LANGUAGES.html]: "https://www.w3.org/html",
   [LANGUAGES.vanillaJS]:
     "https://www.ecma-international.org/technical-committees/tc39/",
+  [LANGUAGES.marvinJ]: "https://www.marvinj.org/en/index.html",
   [LANGUAGES.python]: "https://www.python.org",
   [LANGUAGES.pillow]: "https://pillow.readthedocs.io/en/stable/",
   [LANGUAGES.numPy]: "https://numpy.org",
@@ -77,11 +79,29 @@ export const PROJECT_TITLES = {
   icat: "ICat",
   exploringCannyEdgeDetection: "Exploring Canny Edge Detection",
   iSpyShopper: "I Spy Shopper",
-}
+};
 
 export const PROJECT_CONTENT = [
   {
     index: 0,
+    href: "/imageToDivs.html",
+    gitLink: "https://github.com/M-Valentino/Image-To-Divs",
+    hrefType: HREF_TYPES.iframe,
+    imageLink: "/projectImages/imageToDivs.webp",
+    imageAltText: "A screenshot of Robocop for the Gameboy converted to divs with a dot matrix effect. Below it is a a page inspector open showing the divs to the image.",
+    title: "Image to Divs",
+    date: "2023",
+    description:
+      "Using the MarvinJ JavaScript library, I was able to make an online image converter that allows you to upload and convert images to pure CSS divs. There many not be much use for this program (except for maybe making captchas harder to bypass with AI), but I always like pushing the limits of what's possible in coding.",
+    languages: [
+      LANGUAGES.marvinJ,
+      LANGUAGES.vanillaJS,
+      LANGUAGES.html,
+      LANGUAGES.css,
+    ],
+  },
+  {
+    index: 1,
     href: "/Earth3JS",
     gitLink: "https://github.com/M-Valentino/Earth-3JS",
     hrefType: HREF_TYPES.iframe,
@@ -99,7 +119,7 @@ export const PROJECT_CONTENT = [
     ],
   },
   {
-    index: 1,
+    index: 2,
     gitLink: "https://github.com/M-Valentino/ICat",
     hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/icat.webp",
@@ -117,7 +137,7 @@ export const PROJECT_CONTENT = [
     ],
   },
   {
-    index: 2,
+    index: 3,
     gitLink: "https://github.com/SCCapstone/I_Spy_A-Eye",
     hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/i-spy-shopper.svg",
@@ -136,7 +156,7 @@ export const PROJECT_CONTENT = [
     ],
   },
   {
-    index: 3,
+    index: 4,
     gitLink: "https://github.com/M-Valentino/Exploring-Canny-Edge-Detection",
     hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/canny_edge_detection.webp",
@@ -154,7 +174,7 @@ export const PROJECT_CONTENT = [
     ],
   },
   {
-    index: 4,
+    index: 5,
     gitLink: "https://github.com/M-Valentino/Image-Manipulation-Experiments",
     hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/tigers.jpg",
@@ -167,7 +187,7 @@ export const PROJECT_CONTENT = [
     languages: [LANGUAGES.java],
   },
   {
-    index: 5,
+    index: 6,
     href: "/retro_calculator.html",
     gitLink:
       "https://github.com/M-Valentino/M-Valentino.github.io/blob/main/calculator.html",
@@ -182,7 +202,7 @@ export const PROJECT_CONTENT = [
   },
 
   {
-    index: 6,
+    index: 7,
     gitLink: "https://github.com/M-Valentino/Cities-Recommender",
     hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/citiesrecommender.png",
