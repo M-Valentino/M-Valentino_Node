@@ -50,7 +50,7 @@
     // Image variable to eventually iterate through and convert.
     image = new MarvinImage();
     // If true, the converted image will have a dot matrix effect.
-    dotMatrix = false;
+    let dotMatrix = false;
     // Holds the size of the div pixels. The user can update this value.
     divSize = 1;
 
@@ -61,7 +61,7 @@
     window.addEventListener('load', function () {
       document.querySelector('input[type="file"]').addEventListener('change', function () {
         if (this.files && this.files[0]) {
-          var img = document.querySelector('img');
+          let img = document.querySelector('img');
           img.onload = () => {
             URL.revokeObjectURL(img.src);
           }
@@ -78,14 +78,14 @@
       document.getElementById("dotMatrix").disabled = true;
       document.getElementById("sizeInput").disabled = true;
       // gridContainer will hold all 1px by 1px divs and display those divs in a grid.
-      var gridContainer = document.createElement("div");
+      let gridContainer = document.createElement("div");
       gridContainer.id = "gridContainer";
       gridContainer.style.cssText = `width:${image.getWidth() * divSize}px; height:${image.getHeight() * divSize}px; display: grid; grid-template-columns: repeat(${image.getWidth()}, ${divSize}px);`;
       document.body.appendChild(gridContainer);
       // Iterates through image data and appends divs inside the root grid container div.
-      for (var y = 0; y < image.getHeight(); y++) {
-        for (var x = 0; x < image.getWidth(); x++) {
-          var elemDiv = document.createElement("div");
+      for (let y = 0; y < image.getHeight(); y++) {
+        for (let x = 0; x < image.getWidth(); x++) {
+          let elemDiv = document.createElement("div");
           // Generates the styling for the div with the background color set to the current pixel.
           if (dotMatrix) {
             elemDiv.style.cssText = `display: inline-block;background-color:rgb(${image.getIntComponent0(x, y)},${image.getIntComponent1(x, y)},${image.getIntComponent2(x, y)});width:${divSize}px;height:${divSize}px;border-radius: ${divSize / 2}px`;
@@ -128,7 +128,6 @@
   <p class="helperText">Tripple click in the box below to select all the code.</p>
   <pre id="code"></pre>
   <h2>Image Converted to Divs</h2>
-
 </body>
 
 </html>
