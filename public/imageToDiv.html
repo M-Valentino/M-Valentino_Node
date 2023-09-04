@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+</head>
+
+<body style="line-height: 0px;">
+  <canvas id="canvas1" width="200" height="200" style="position: absolute; right: 0; top: 0;"></canvas>
+  <script src="https://www.marvinj.org/releases/marvinj-0.7.js"></script>
+  <script>
+    var canvas1 = document.getElementById("canvas1");
+    image = new MarvinImage();
+    image.load("https://i.imgur.com/88gGNel.png", imageLoaded);
+
+    function imageLoaded() {
+      image.draw(canvas1);
+      var threshold = 200;
+      var gridContainer = document.createElement('div');
+      gridContainer.id = "gridContainer";
+      gridContainer.style.cssText = `width:${image.getWidth()}; height:${image.getHeight()}; display: grid; grid-template-columns: repeat(${image.getHeight()}, 1px);`;
+      document.body.appendChild(gridContainer);
+      for (var y = 0; y < image.getHeight(); y++) {
+        for (var x = 0; x < image.getWidth(); x++) {
+          var elemDiv = document.createElement('div');
+          elemDiv.style.cssText = `display: inline-block;background-color:rgb(${image.getIntComponent0(x, y)},${image.getIntComponent1(x, y)},${image.getIntComponent2(x, y)});width: 1px;height: 1px;`;
+          document.getElementById('gridContainer').appendChild(elemDiv);
+          // code+= elemDiv.innerHTML;
+        }
+
+      }
+      document.getElementById('code').textContent = document.getElementById('gridContainer').outerHTML;
+    }
+
+  </script>
+  <pre id="code"></pre>
+</body>
+
+</html>
