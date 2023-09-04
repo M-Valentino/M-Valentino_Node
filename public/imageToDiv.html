@@ -12,6 +12,11 @@
       height: 40px;
       overflow-x: scroll;
     }
+    iframe {
+      border: none;
+      width: 160px;
+      height: 90px;
+    }
   </style>
 </head>
 
@@ -62,12 +67,16 @@
     that displays all the 1px by 1px in a grid.
   </p>
   <p>Note: The conversion for large images is slow.</p>
-  <input type='file' />
+  <h2>Example Image</h2>
+  <iframe src="/exampleDivToImage.html"></iframe>
   <h2>Uploaded File</h2>
+  <input type='file' />
+  <br>
   <img id="myImg" src="#" alt="Your uploaded file will appear here.">
   <h2>Code Result</h2>
   <pre id="code"></pre>
   <h2>Image Converted to Divs</h2>
+  
 </body>
 
 </html>
