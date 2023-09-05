@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import React, { useState } from "react";
 import {
+  Autocomplete,
   Button,
   FormControl,
   Grid,
@@ -25,8 +26,8 @@ import NavBar from "@/components/navbar";
 import ProjectCard from "@/components/ProjectsPage/ProjectCard";
 import ProjectTable from "@/components/ProjectsPage/ProjectTable";
 import { getHeadBoilerPlate } from "@/utils/headBoilerPlate";
-import { NoResults, ShowResults } from "@/components/ProjectsPage/NoResults";
-import { PROJECT_CONTENT } from "@/consts/projectContent";
+import { NoResults } from "@/components/ProjectsPage/NoResults";
+import { PROJECT_CONTENT, AUTO_COMPLETE_OPTIONS } from "@/consts/projectContent";
 import { Footer } from "@/components/footerComponents/footer";
 import {
   DESKTOP_WIDTH,
@@ -45,6 +46,7 @@ import {
 export default function Projects() {
   const isDesktopView = useMediaQuery("(min-width:1200px)");
   const isTabletView = useMediaQuery("(max-width:899px)");
+  
 
   /**
    * For if the projects are shown in a card or table view. Mobile devices will
@@ -61,6 +63,7 @@ export default function Projects() {
    */
   const handleSetView = (_event, nextView) => {
     setView(nextView);
+    console.log(AUTO_COMPLETE_OPTIONS);
   };
 
   /**
@@ -238,13 +241,16 @@ export default function Projects() {
             </Grid>
             <Grid item md={4} xs={12}>
               <Stack direction="row">
-                <TextField
-                  label="Search Projects"
+                <Autocomplete
+                  disablePortal
+                  options={AUTO_COMPLETE_OPTIONS}
+                  getOptionLabel={(option) => option.label}
                   variant="outlined"
                   fullWidth
                   onChange={onChangeHandler}
                   value={searchInputValue}
                   style={{ minWidth: 150 }}
+                  renderInput={(params) => <TextField {...params} label="Search Projects" />}
                 />
 
                 <Button
