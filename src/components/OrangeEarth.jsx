@@ -19,7 +19,7 @@ export const OrangeEarth = () => {
 
     return (
       <mesh {...props} ref={mesh} scale={[2, 2, 2]}>
-        <sphereBufferGeometry args={[1, 26, 26]} />
+        <sphereGeometry args={[1, 26, 26]} />
 
         <meshStandardMaterial
           attach="material"

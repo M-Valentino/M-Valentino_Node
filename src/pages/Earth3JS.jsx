@@ -91,7 +91,7 @@ export const Earth3JS = () => {
 
     return (
       <mesh {...props} ref={mesh} scale={[2, 2, 2]}>
-        <sphereBufferGeometry args={[1, earthTrisAmount, earthTrisAmount]} />
+        <sphereGeometry args={[1, earthTrisAmount, earthTrisAmount]} />
         {settingsAreLow && (
           <meshStandardMaterial
             attach="material"
@@ -128,7 +128,7 @@ export const Earth3JS = () => {
 
     return (
       <mesh {...props} ref={mesh} scale={[2.005, 2.005, 2.005]}>
-        <sphereBufferGeometry transparent={true} args={[1, 64, 64]} />
+        <sphereGeometry transparent={true} args={[1, 64, 64]} />
         {settingsAreLow && (
           <meshStandardMaterial attach="material" transparent={true}>
             <primitive attach="map" object={texture} />
@@ -162,7 +162,7 @@ export const Earth3JS = () => {
 
     return (
       <mesh {...props} ref={mesh} scale={[0.4, 0.4, 0.4]}>
-        <sphereBufferGeometry
+        <sphereGeometry
           transparent={true}
           args={[1, moonTrisAmount, moonTrisAmount]}
         />
