@@ -2,7 +2,7 @@ import React, { useRef, useMemo, useState, useEffect } from "react";
 import Head from "next/head";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
-import { Canvas, useFrame } from "react-three-fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { Text, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 import { Slider, Typography } from "@mui/material";

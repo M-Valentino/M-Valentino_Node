@@ -1,5 +1,5 @@
 import React, { useRef, useMemo } from "react";
-import { Canvas, useFrame } from "react-three-fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
 // This is a simple component of a 3D model of Earth where the continents are orange.
