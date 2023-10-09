@@ -253,7 +253,7 @@ export const Earth3JS = () => {
               <>
                 <ambientLight intensity={0.4} color="#fceaff" />
                 <spotLight
-                  position={[10, -2, 0]}
+                  position={[10, -1, 10]}
                   angle={1.7}
                   penumbra={1}
                   castShadow
