@@ -39,7 +39,7 @@ export const OrangeEarth = () => {
         <Earth position={[0, -0.1, 0]} />
         <pointLight
           position={[0, 8, 15]}
-          intensity={2}
+          intensity={1200}
           angle={0}
           penumbra={0}
           color="#fff9f0"
