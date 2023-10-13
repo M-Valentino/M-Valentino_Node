@@ -89,6 +89,9 @@ const NavBar = (props) => {
             <Link href="/projects" style={MOBILE_MENU_ITEM_STYLE}>
               <MenuItem>Projects</MenuItem>
             </Link>
+            <Link href="/blog" style={MOBILE_MENU_ITEM_STYLE}>
+              <MenuItem>Blog</MenuItem>
+            </Link>
             <Link
               href="https://github.com/M-Valentino"
               style={MOBILE_MENU_ITEM_STYLE}
@@ -117,6 +120,14 @@ const NavBar = (props) => {
               href="/projects"
             >
               Projects
+            </Button>
+            <Button
+              color={activeLink === 2 ? "primary" : "secondary"}
+              style={{ fontSize: 18 }}
+              LinkComponent={Link}
+              href="/blog"
+            >
+              Blog
             </Button>
             <Button
               color={activeLink === 2 ? "primary" : "secondary"}

@@ -75,6 +75,7 @@ export const HREF_TYPES = {
 };
 
 export const PROJECT_TITLES = {
+  imageToDivs: "Image to Divs",
   earth3Js: "Earth 3JS",
   icat: "ICat",
   exploringCannyEdgeDetection: "Exploring Canny Edge Detection",
