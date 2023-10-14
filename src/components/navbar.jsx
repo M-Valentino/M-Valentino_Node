@@ -22,7 +22,7 @@ import {
 const NavBar = (props) => {
   // The index of the button to change color to show it is the active link.
   const { activeLink } = props;
-  const isDesktopView = useMediaQuery("(min-width:1000px)");
+  const isDesktopView = useMediaQuery("(min-width:1200px)");
   const isMobileView = useMediaQuery("(max-width:712px)");
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -34,32 +34,36 @@ const NavBar = (props) => {
   };
 
   return (
-    <Grid
-      container
-      style={{
-        margin: "auto",
-        maxWidth: isDesktopView ? DESKTOP_WIDTH : MOBILE_WIDTH,
-      }}
-    >
-      <Grid item xs={4}>
-        {/* For giving the logo touch ripple effects */}
-        <Button style={{ padding: 0 }}>
-          <div style={{ width: 115, paddingTop: 5 }}>
-            <Link href="/">
-              <img
-                alt="Mark Valentino logo"
-                src="/mark-valentino-logo.svg"
-                style={{
-                  width: "100%",
-                  filter: MINUTE_SHADOW_SVG,
-                }}
-              />
-            </Link>
-          </div>
-        </Button>
-      </Grid>
+    <div style={{ marginBottom: 50}}>
+      {/* For giving the logo touch ripple effects */}
+      <Button
+        style={{
+          padding: 0,
+          position: "absolute",
+          top: 5,
+          left: isDesktopView ? 50 : 5,
+        }}
+      >
+        <div
+          style={{
+            width: 115,
+          }}
+        >
+          <Link href="/">
+            <img
+              alt="Mark Valentino logo"
+              src="/mark-valentino-logo.svg"
+              style={{
+                width: "100%",
+                filter: MINUTE_SHADOW_SVG,
+              }}
+            />
+          </Link>
+        </div>
+      </Button>
+
       {isMobileView ? (
-        <Grid item xs={8}>
+        <>
           <IconButton
             id="basic-button"
             aria-controls={open ? "basic-menu" : undefined}
@@ -101,51 +105,56 @@ const NavBar = (props) => {
               <MenuItem>GitHub</MenuItem>
             </Link>
           </Menu>
-        </Grid>
+        </>
       ) : (
-        <Grid item xs={4}>
-          <Stack direction="row" justifyContent="space-around">
-            <Button
-              color={activeLink === 0 ? "primary" : "secondary"}
-              style={{ fontSize: 18 }}
-              LinkComponent={Link}
-              href="/"
-            >
-              Home
-            </Button>
-            <Button
-              color={activeLink === 1 ? "primary" : "secondary"}
-              style={{ fontSize: 18 }}
-              LinkComponent={Link}
-              href="/projects"
-            >
-              Projects
-            </Button>
-            <Button
-              color={activeLink === 2 ? "primary" : "secondary"}
-              style={{ fontSize: 18 }}
-              LinkComponent={Link}
-              href="/blog"
-            >
-              Blog
-            </Button>
-            <Button
-              color={activeLink === 3 ? "primary" : "secondary"}
-              style={{ fontSize: 18 }}
-              LinkComponent={Link}
-              href="https://github.com/M-Valentino"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GitHubIcon
-                style={{ transform: "translateY(-3px)", marginRight: 2 }}
-              />
-              GitHub
-            </Button>
-          </Stack>
-        </Grid>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+            maxWidth: 500,
+            margin: "auto",
+          }}
+        >
+          <Button
+            color={activeLink === 0 ? "primary" : "secondary"}
+            style={{ fontSize: 18 }}
+            LinkComponent={Link}
+            href="/"
+          >
+            Home
+          </Button>
+          <Button
+            color={activeLink === 1 ? "primary" : "secondary"}
+            style={{ fontSize: 18 }}
+            LinkComponent={Link}
+            href="/projects"
+          >
+            Projects
+          </Button>
+          <Button
+            color={activeLink === 2 ? "primary" : "secondary"}
+            style={{ fontSize: 18 }}
+            LinkComponent={Link}
+            href="/blog"
+          >
+            Blog
+          </Button>
+          <Button
+            color={activeLink === 3 ? "primary" : "secondary"}
+            style={{ fontSize: 18 }}
+            LinkComponent={Link}
+            href="https://github.com/M-Valentino"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GitHubIcon
+              style={{ transform: "translateY(-3px)", marginRight: 2 }}
+            />
+            GitHub
+          </Button>
+        </div>
       )}
-    </Grid>
+    </div>
   );
 };
 export default NavBar;
