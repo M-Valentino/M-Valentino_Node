@@ -1,19 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import {
-  Grid,
   Button,
   IconButton,
   Menu,
   MenuItem,
-  Stack,
   useMediaQuery,
 } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import {
-  DESKTOP_WIDTH,
-  MOBILE_WIDTH,
   MINUTE_SHADOW_SVG,
   MOBILE_MENU_ITEM_STYLE,
 } from "@/consts/stylingValues";
@@ -34,7 +30,7 @@ const NavBar = (props) => {
   };
 
   return (
-    <div style={{ marginBottom: 50}}>
+    <div style={{ marginBottom: 50 }}>
       {/* For giving the logo touch ripple effects */}
       <Button
         style={{
@@ -70,7 +66,7 @@ const NavBar = (props) => {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}
-            style={{ float: "right" }}
+            style={{ position: "absolute", top: 0, right: 0 }}
           >
             <MenuIcon
               color="primary"
