@@ -130,7 +130,7 @@ const NavBar = (props) => {
               Blog
             </Button>
             <Button
-              color={activeLink === 2 ? "primary" : "secondary"}
+              color={activeLink === 3 ? "primary" : "secondary"}
               style={{ fontSize: 18 }}
               LinkComponent={Link}
               href="https://github.com/M-Valentino"

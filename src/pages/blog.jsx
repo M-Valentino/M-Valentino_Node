@@ -33,7 +33,7 @@ export default function Home() {
       </Head>
 
       <ThemeProvider theme={MainTheme}>
-        <NavBar activeLink={0} />
+        <NavBar activeLink={2} />
         <main>
           <div
             style={{
@@ -55,22 +55,50 @@ export default function Home() {
                 fontWeight: "bolder",
               }}
             >
-              MarvinJ Might get Dethroned by MarvalJ
+              MarvinJ Might get Dethroned by MarvalJ in the Future
             </Typography>
-            <Typography
-              variant="body1"
-              color="text.secondary"
-              style={{ textAlign: isDesktopView ? "justify" : "left" }}
-            >
+            <Typography paragraph>
               I recently came across this pretty nifty{" "}
               <Link href={LANGUAGE_LINKS[LANGUAGES.marvinJ]}>
                 JavaScript image processing library called MarvinJ
-              </Link>
-              . It was really useful in creating my{" "}
+              </Link>{" "}
+              while creating my{" "}
               <Link href={`/project/${PROJECT_TITLES.imageToDivs}`}>
                 Image to Divs project
               </Link>
-              .
+              . MarvinJ can apply Gaussian blur to images, do Prewitt edge
+              detection, make images have a sepia effect, ect. I was really
+              impressed by it as I'm a web developer who is also really into
+              graphics programming.
+            </Typography>
+            <Typography paragraph>
+              I noticed that MarvinJ was missing some image processing filters
+              that I would expect to see in a typical Photoshop-like image
+              editor, and I also noticed that it was open source too. I thought
+              that maybe I could contribute to the library, but I soon found out
+              that the library hasn't been updated in several years with an old
+              pending pull request. I decided that if I was going to contribute,
+              I would just make a fork of it and start my own library.
+            </Typography>
+            <Typography paragraph>
+              So, I went and made a fork of the library and called it MarvalJ,
+              which is a play on words from my actual name. Soon after, I was
+              able to add two functions to the library, with one function for
+              adding black and white noise to an image, and one for adding color
+              noise to an image. These two image processing filters are common
+              in image editors like Gimp and Photopea, and I thought they would
+              be useful to have.
+            </Typography>
+            <Typography paragraph>
+              I felt pretty accomplished after being able to expand upon an
+              already established library, and I knew I could expand upon it
+              more. So, I added scan line filter funtions.
+            </Typography>
+            <Typography paragraph>
+              After that, I added a color sort function, which is literally a
+              function to sort all the pixels in an image by thier brightness.
+              It may sound like a feature that is there just for fun, but this
+              function can be used in generating color palletes from images.
             </Typography>
           </div>
         </main>
