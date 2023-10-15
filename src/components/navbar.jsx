@@ -11,7 +11,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import {
   MINUTE_SHADOW_SVG,
-  MOBILE_MENU_ITEM_STYLE,
   MUI_PRIMARY_COLOR_DEEP_ORANGE,
 } from "@/consts/stylingValues";
 

@@ -4,6 +4,7 @@ import Link from "next/link";
 import NavBar from "@/components/navbar";
 import OrangeEarth from "../components/OrangeEarth";
 import { CustomPaper } from "@/components/CustomPaper";
+import { SubHeading } from "@/components/Headings";
 import { getHeadBoilerPlate } from "@/utils/headBoilerPlate";
 import { Footer } from "@/components/footerComponents/footer";
 import { ThemeProvider } from "@mui/material/styles";
@@ -104,6 +105,7 @@ export default function Home() {
                 margin: "auto",
                 display: "block",
                 marginTop: 20,
+                marginBottom: 40,
                 borderRadius: 999,
                 maxWidth: 130,
                 border: `10px solid ${MUI_PRIMARY_COLOR_DEEP_ORANGE}`,
@@ -113,17 +115,9 @@ export default function Home() {
               alt="Professional portrait of me in a suite and tie."
               src="https://avatars.githubusercontent.com/u/79779618?s=400&u=15e063ba7f2751b5f71ac4ba9a586fe296f569a8&v=4"
             />
-            <Typography
-              variant="h4"
-              style={{
-                marginTop: 40,
-                marginBottom: 10,
-                textAlign: "center",
-                fontWeight: 600,
-              }}
-            >
+            <SubHeading shrinkFontOn={!isDesktopView}>
               My Tech Stack
-            </Typography>
+            </SubHeading>
             <Grid container spacing={4} justifyContent="center">
               {TECH_STACK.map((data, key) => (
                 <Grid item md={2} xs={3} key={key}>

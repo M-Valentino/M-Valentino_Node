@@ -27,6 +27,7 @@ export const SubHeading = ({ children, shrinkFontOn}) => {
         marginBottom: 20,
         textShadow: MINUTE_SHADOW_TEXT,
         fontWeight: "bolder",
+        textAlign: "center"
       }}
     >
       {children}
