@@ -11,11 +11,9 @@ import FullscreenIcon from "@mui/icons-material/Fullscreen";
 import FullscreenExitIcon from "@mui/icons-material/FullscreenExit";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { LanguageChip } from "./LanguageChip";
+import { CustomPaper } from "./CustomPaper";
 import { getExtraProjectContent } from "@/utils/getProjectExtraContent";
 import {
-  MOBILE_WIDTH,
-  DESKTOP_WIDTH,
-  OFF_WHITE_COLOR,
   XL_ICON_BUTTON_WIDTH_HEIGHT,
   SCREEN_CONTROL_STYLES,
   MINUTE_SHADOW,
@@ -130,94 +128,75 @@ export default function ProjectPage(props) {
   };
   return (
     <>
-      <div
-        style={{
-          maxWidth: 900,
-          margin: "auto",
-          backgroundColor: OFF_WHITE_COLOR,
-          marginBottom: 50,
-          borderRadius: 4,
-          boxShadow: MINUTE_SHADOW,
-        }}
-      >
-        <div
+      <CustomPaper isDesktopView={isDesktopView}>
+        <Typography
+          variant={isLargeMobileView ? "h4" : "h3"}
+          color="text.primary"
           style={{
-            width: isDesktopView ? DESKTOP_WIDTH : MOBILE_WIDTH,
-            margin: "auto",
-            textRendering: "geometricPrecision!important",
-            paddingTop: 20,
-            paddingBottom: 60,
+            marginBottom: 20,
+            textShadow: MINUTE_SHADOW_TEXT,
+            fontWeight: "bolder",
           }}
         >
-          <Typography
-            variant={isLargeMobileView ? "h4" : "h3"}
-            color="text.primary"
-            style={{
-              marginBottom: 20,
-              textShadow: MINUTE_SHADOW_TEXT,
-              fontWeight: "bolder",
-            }}
-          >
-            {title}
-          </Typography>
-          {getProjectComponent()}
-          <Typography variant="h6" color="primary">
-            Year completed: {date}
-          </Typography>
+          {title}
+        </Typography>
+        {getProjectComponent()}
+        <Typography variant="h6" color="primary">
+          Year completed: {date}
+        </Typography>
 
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            style={{ textAlign: isDesktopView ? "justify" : "left" }}
-          >
-            {description}
-          </Typography>
-          <Typography variant="h5" style={{ marginTop: 20, marginBottom: 5 }}>
-            Languages and Libraries used:
-          </Typography>
-          <Grid container spacing={1}>
-            {languages.map((props, key) => (
-              <Grid item key={key}>
-                <LanguageChip
-                  language={props}
-                  size={!isDesktopView ? "small" : "full"}
-                  showLink
-                />
-              </Grid>
-            ))}
-          </Grid>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <Button
-              target="_blank"
-              href={gitLink}
-              rel="noreferrer"
-              style={{
-                width: !isDesktopView ? "100%" : "60%",
-                height: isSmallMobileView ? 70 : 80,
-                marginTop: 40,
-                marginBottom: 40,
-                fontSize: isSmallMobileView ? 26 : 32,
-                textShadow: MINUTE_SHADOW_TEXT,
-              }}
-              variant="contained"
-              color="primary"
-            >
-              <GitHubIcon
-                style={{
-                  height: isSmallMobileView ? 37 : 45,
-                  width: isSmallMobileView ? 37 : 45,
-                  marginRight: 10,
-
-                  transform: "translateY(-5px)",
-                  filter: MINUTE_SHADOW_SVG,
-                }}
+        <Typography
+          variant="body1"
+          color="text.secondary"
+          style={{ textAlign: isDesktopView ? "justify" : "left" }}
+        >
+          {description}
+        </Typography>
+        <Typography variant="h5" style={{ marginTop: 20, marginBottom: 5 }}>
+          Languages and Libraries used:
+        </Typography>
+        <Grid container spacing={1}>
+          {languages.map((props, key) => (
+            <Grid item key={key}>
+              <LanguageChip
+                language={props}
+                size={!isDesktopView ? "small" : "full"}
+                showLink
               />
-              View Code Source
-            </Button>
-          </div>
-          {getExtraProjectContent(title, isDesktopView)}
+            </Grid>
+          ))}
+        </Grid>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <Button
+            target="_blank"
+            href={gitLink}
+            rel="noreferrer"
+            style={{
+              width: !isDesktopView ? "100%" : "60%",
+              height: isSmallMobileView ? 70 : 80,
+              marginTop: 40,
+              marginBottom: 40,
+              fontSize: isSmallMobileView ? 26 : 32,
+              textShadow: MINUTE_SHADOW_TEXT,
+            }}
+            variant="contained"
+            color="primary"
+          >
+            <GitHubIcon
+              style={{
+                height: isSmallMobileView ? 37 : 45,
+                width: isSmallMobileView ? 37 : 45,
+                marginRight: 10,
+
+                transform: "translateY(-5px)",
+                filter: MINUTE_SHADOW_SVG,
+              }}
+            />
+            View Code Source
+          </Button>
         </div>
-      </div>
+        {getExtraProjectContent(title, isDesktopView)}
+      </CustomPaper>
     </>
   );
 }

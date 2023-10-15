@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import NavBar from "@/components/navbar";
 import OrangeEarth from "../components/OrangeEarth";
+import { CustomPaper } from "@/components/CustomPaper";
 import { getHeadBoilerPlate } from "@/utils/headBoilerPlate";
 import { Footer } from "@/components/footerComponents/footer";
 import { ThemeProvider } from "@mui/material/styles";
@@ -10,7 +11,6 @@ import { MainTheme } from "@/utils/MUITheme";
 import {
   MUI_PRIMARY_COLOR_DEEP_ORANGE,
   MINUTE_SHADOW,
-  OFF_WHITE_COLOR,
   MINUTE_SHADOW_TEXT,
 } from "@/consts/stylingValues";
 import { TECH_STACK } from "@/consts/techStack";
@@ -47,17 +47,7 @@ export default function Home() {
       <ThemeProvider theme={MainTheme}>
         <NavBar activeLink={0} />
         <main>
-          <div
-            style={{
-              maxWidth: 900,
-              margin: "auto",
-              marginBottom: 50,
-              backgroundColor: OFF_WHITE_COLOR,
-              borderRadius: 4,
-              boxShadow: MINUTE_SHADOW,
-              padding: isDesktopView ? 60 : 10,
-            }}
-          >
+          <CustomPaper isDesktopView={isDesktopView}>
             <TypeAnimation
               sequence={[
                 "Hi, I'm Mark Valentino.",
@@ -168,7 +158,7 @@ export default function Home() {
                 <OrangeEarth /> Check out my projects!
               </Stack>
             </Button>
-          </div>
+          </CustomPaper>
         </main>
         <Footer />
       </ThemeProvider>

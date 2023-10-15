@@ -4,13 +4,10 @@ import Link from "next/link";
 import NavBar from "@/components/navbar";
 import { getHeadBoilerPlate } from "@/utils/headBoilerPlate";
 import { Footer } from "@/components/footerComponents/footer";
+import { CustomPaper } from "@/components/CustomPaper";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
-import {
-  MINUTE_SHADOW,
-  OFF_WHITE_COLOR,
-  MINUTE_SHADOW_TEXT,
-} from "@/consts/stylingValues";
+import { MINUTE_SHADOW_TEXT } from "@/consts/stylingValues";
 import { Stack, Typography, useMediaQuery } from "@mui/material";
 import EastIcon from "@mui/icons-material/East";
 import {
@@ -43,22 +40,12 @@ export default function Home() {
             textAlign="center"
             style={{
               textShadow: MINUTE_SHADOW_TEXT,
-              marginBottom: 20
+              marginBottom: 20,
             }}
           >
             Mark Valentino's Tech Blog
           </Typography>
-          <div
-            style={{
-              maxWidth: 900,
-              margin: "auto",
-              marginBottom: 50,
-              backgroundColor: OFF_WHITE_COLOR,
-              borderRadius: 4,
-              boxShadow: MINUTE_SHADOW,
-              padding: isDesktopView ? 60 : 10,
-            }}
-          >
+          <CustomPaper isDesktopView={isDesktopView}>
             <Typography
               variant={isLargeMobileView ? "h5" : "h4"}
               color="text.primary"
@@ -178,7 +165,7 @@ export default function Home() {
               </Link>
               . Maybe I should do the same.
             </Typography>
-          </div>
+          </CustomPaper>
         </main>
         <Footer />
       </ThemeProvider>
