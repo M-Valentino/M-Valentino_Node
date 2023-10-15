@@ -12,6 +12,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import {
   MINUTE_SHADOW_SVG,
   MOBILE_MENU_ITEM_STYLE,
+  MUI_PRIMARY_COLOR_DEEP_ORANGE,
 } from "@/consts/stylingValues";
 
 // This component is the main navbar of the site.
@@ -82,25 +83,49 @@ const NavBar = (props) => {
             MenuListProps={{
               "aria-labelledby": "basic-button",
             }}
+            style={{ textDecoration: "none" }}
           >
-            <Link href="/" style={MOBILE_MENU_ITEM_STYLE}>
+            <Link
+              href="/"
+              style={{
+                textDecoration: "none",
+                color:
+                  activeLink === 0 ? MUI_PRIMARY_COLOR_DEEP_ORANGE : "#000",
+              }}
+            >
               <MenuItem>Home</MenuItem>
             </Link>
-            <Link href="/projects" style={MOBILE_MENU_ITEM_STYLE}>
+            <Link
+              href="/projects"
+              style={{
+                textDecoration: "none",
+                color:
+                  activeLink === 1 ? MUI_PRIMARY_COLOR_DEEP_ORANGE : "#000",
+              }}
+            >
               <MenuItem>Projects</MenuItem>
             </Link>
-            <Link href="/blog" style={MOBILE_MENU_ITEM_STYLE}>
+            <Link
+              href="/blog"
+              style={{
+                textDecoration: "none",
+                color:
+                  activeLink === 2 ? MUI_PRIMARY_COLOR_DEEP_ORANGE : "#000",
+              }}
+            >
               <MenuItem>Blog</MenuItem>
             </Link>
             <Link
               href="https://github.com/M-Valentino"
-              style={MOBILE_MENU_ITEM_STYLE}
+              style={{ textDecoration: "none", color: "#000" }}
               target="_blank"
               rel="noopener noreferrer"
             >
               <MenuItem>GitHub</MenuItem>
             </Link>
           </Menu>
+          {/* For creating spacing below the navbar during mobile view. */}
+          <div style={{ width: "100%", height: 15 }}></div>
         </>
       ) : (
         <div
@@ -136,7 +161,7 @@ const NavBar = (props) => {
             Blog
           </Button>
           <Button
-            color={activeLink === 3 ? "primary" : "secondary"}
+            color="secondary"
             style={{ fontSize: 18 }}
             LinkComponent={Link}
             href="https://github.com/M-Valentino"

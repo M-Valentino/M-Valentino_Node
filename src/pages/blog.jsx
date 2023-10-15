@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import NavBar from "@/components/navbar";
@@ -11,7 +11,8 @@ import {
   OFF_WHITE_COLOR,
   MINUTE_SHADOW_TEXT,
 } from "@/consts/stylingValues";
-import { Typography, useMediaQuery } from "@mui/material";
+import { Stack, Typography, useMediaQuery } from "@mui/material";
+import EastIcon from "@mui/icons-material/East";
 import {
   LANGUAGE_LINKS,
   LANGUAGES,
@@ -89,17 +90,47 @@ export default function Home() {
               in image editors like Gimp and Photopea, and I thought they would
               be useful to have.
             </Typography>
+            <Stack direction={isDesktopView ? "row" : "column"}>
+              <img
+                src="/blogImages/blackAndWhiteNoise.png"
+                style={{ width: "70%", height: "70%", margin: "auto" }}
+              />
+              <img
+                src="/blogImages/colorNoise.png"
+                style={{ width: "70%", height: "70%", margin: "auto" }}
+              />
+            </Stack>
             <Typography paragraph>
               I felt pretty accomplished after being able to expand upon an
               already established library, and I knew I could expand upon it
               more. So, I added scan line filter funtions.
             </Typography>
+
             <Typography paragraph>
               After that, I added a color sort function, which is literally a
               function to sort all the pixels in an image by thier brightness.
               It may sound like a feature that is there just for fun, but this
               function can be used in generating color palletes from images.
             </Typography>
+            <Stack direction="row">
+              <img
+                src="/blogImages/originalImage.png"
+                style={{ width: "70%", height: "70%", margin: "auto" }}
+              />
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <EastIcon />
+              </div>
+              <img
+                src="/blogImages/colorSort.png"
+                style={{ width: "70%", height: "70%", margin: "auto" }}
+              />
+            </Stack>
           </div>
         </main>
         <Footer />
