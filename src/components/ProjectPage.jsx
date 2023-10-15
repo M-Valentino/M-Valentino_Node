@@ -12,6 +12,7 @@ import FullscreenExitIcon from "@mui/icons-material/FullscreenExit";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { LanguageChip } from "./LanguageChip";
 import { CustomPaper } from "./CustomPaper";
+import { MainHeading } from "./Headings";
 import { getExtraProjectContent } from "@/utils/getProjectExtraContent";
 import {
   XL_ICON_BUTTON_WIDTH_HEIGHT,
@@ -129,17 +130,9 @@ export default function ProjectPage(props) {
   return (
     <>
       <CustomPaper isDesktopView={isDesktopView}>
-        <Typography
-          variant={isLargeMobileView ? "h4" : "h3"}
-          color="text.primary"
-          style={{
-            marginBottom: 20,
-            textShadow: MINUTE_SHADOW_TEXT,
-            fontWeight: "bolder",
-          }}
-        >
+        <MainHeading shrinkFontOn={isLargeMobileView} addMarginBottomOn={true}>
           {title}
-        </Typography>
+        </MainHeading>
         {getProjectComponent()}
         <Typography variant="h6" color="primary">
           Year completed: {date}

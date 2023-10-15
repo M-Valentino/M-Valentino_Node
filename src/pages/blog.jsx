@@ -5,9 +5,9 @@ import NavBar from "@/components/navbar";
 import { getHeadBoilerPlate } from "@/utils/headBoilerPlate";
 import { Footer } from "@/components/footerComponents/footer";
 import { CustomPaper } from "@/components/CustomPaper";
+import { MainHeading, SubHeading } from "@/components/Headings";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainTheme } from "@/utils/MUITheme";
-import { MINUTE_SHADOW_TEXT } from "@/consts/stylingValues";
 import { Stack, Typography, useMediaQuery } from "@mui/material";
 import EastIcon from "@mui/icons-material/East";
 import {
@@ -34,29 +34,13 @@ export default function Home() {
       <ThemeProvider theme={MainTheme}>
         <NavBar activeLink={2} />
         <main>
-          <Typography
-            variant={!isDesktopView ? "h4" : "h3"}
-            fontWeight={600}
-            textAlign="center"
-            style={{
-              textShadow: MINUTE_SHADOW_TEXT,
-              marginBottom: 20,
-            }}
-          >
+          <MainHeading shrinkFontOn={!isDesktopView} addMarginBottomOn={true}>
             Mark Valentino's Tech Blog
-          </Typography>
+          </MainHeading>
           <CustomPaper isDesktopView={isDesktopView}>
-            <Typography
-              variant={isLargeMobileView ? "h5" : "h4"}
-              color="text.primary"
-              style={{
-                marginBottom: 20,
-                textShadow: MINUTE_SHADOW_TEXT,
-                fontWeight: "bolder",
-              }}
-            >
+            <SubHeading shrinkFontOn={isLargeMobileView}>
               Could My Image Processing Library Replace MarvinJ?
-            </Typography>
+            </SubHeading>
             <Typography
               variant="h6"
               gutterBottom

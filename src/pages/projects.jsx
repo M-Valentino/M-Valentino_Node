@@ -25,7 +25,7 @@ import NavBar from "@/components/navbar";
 import ProjectCard from "@/components/ProjectsPage/ProjectCard";
 import ProjectTable from "@/components/ProjectsPage/ProjectTable";
 import { getHeadBoilerPlate } from "@/utils/headBoilerPlate";
-import { NoResults, ShowResults } from "@/components/ProjectsPage/NoResults";
+import { NoResults } from "@/components/ProjectsPage/NoResults";
 import { PROJECT_CONTENT } from "@/consts/projectContent";
 import { Footer } from "@/components/footerComponents/footer";
 import {
@@ -33,8 +33,8 @@ import {
   MOBILE_WIDTH,
   MINUTE_SHADOW,
   MINUTE_SHADOW_SVG,
-  MINUTE_SHADOW_TEXT,
 } from "@/consts/stylingValues";
+import { MainHeading } from "@/components/Headings";
 
 /**
  * This component shows all projects in either a card view or a table view.
@@ -224,17 +224,12 @@ export default function Projects() {
                 marginTop: isTabletView ? 20 : 0,
               }}
             >
-              <Typography
-                variant={isTabletView ? "h4" : "h3"}
-                fontWeight={600}
-                textAlign={"center"}
-                style={{
-                  textShadow: MINUTE_SHADOW_TEXT,
-                  marginBottom: isTabletView ? 20 : 0,
-                }}
+              <MainHeading
+                shrinkFontOn={isTabletView}
+                addMarginBottomOn={isTabletView}
               >
                 Projects
-              </Typography>
+              </MainHeading>
             </Grid>
             <Grid item md={4} xs={12}>
               <Stack direction="row">
