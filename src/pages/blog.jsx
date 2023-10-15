@@ -132,8 +132,8 @@ export default function Home() {
               src="/blogImages/scanlines.png"
               style={{
                 display: "block",
-                width: "50%",
-                height: "50%",
+                width: isDesktopView ? "50%" : "70%",
+                height: isDesktopView ? "50%" : "70%",
                 margin: "auto",
               }}
             />
