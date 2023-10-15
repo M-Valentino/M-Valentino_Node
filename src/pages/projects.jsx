@@ -28,12 +28,7 @@ import { getHeadBoilerPlate } from "@/utils/headBoilerPlate";
 import { NoResults } from "@/components/ProjectsPage/NoResults";
 import { PROJECT_CONTENT } from "@/consts/projectContent";
 import { Footer } from "@/components/footerComponents/footer";
-import {
-  DESKTOP_WIDTH,
-  MOBILE_WIDTH,
-  MINUTE_SHADOW,
-  MINUTE_SHADOW_SVG,
-} from "@/consts/stylingValues";
+import { MINUTE_SHADOW, MINUTE_SHADOW_SVG } from "@/consts/stylingValues";
 import { MainHeading } from "@/components/Headings";
 
 /**
@@ -146,7 +141,7 @@ export default function Projects() {
             container
             justifyContent="space-between"
             style={{
-              width: isDesktopView ? DESKTOP_WIDTH : MOBILE_WIDTH,
+              width: isDesktopView ? "calc(100% - 100px)" : "calc(100% - 10px)",
               margin: "auto",
               marginTop: 40,
               marginBottom: 20,
