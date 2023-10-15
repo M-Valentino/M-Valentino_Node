@@ -18,7 +18,7 @@ export const getExtraProjectContent = (title, isDesktopView) => {
     case PROJECT_TITLES.earth3Js:
       return <Earth3JSContent />;
     case PROJECT_TITLES.icat:
-      return <IcatContent />;
+      return <IcatContent isDesktopView={isDesktopView} />;
     case PROJECT_TITLES.iSpyShopper:
       return <ISpyShopperContent isDesktopView={isDesktopView} />;
     case PROJECT_TITLES.exploringCannyEdgeDetection:

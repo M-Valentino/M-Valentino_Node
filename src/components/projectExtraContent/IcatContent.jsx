@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Typography } from "@mui/material";
 
-export const IcatContent = () => {
+export const IcatContent = ({ isDesktopView }) => {
   return (
     <>
       <Typography variant="h4" gutterBottom>
@@ -56,8 +56,10 @@ export const IcatContent = () => {
       <Typography variant="h4" gutterBottom>
         Example Prints
       </Typography>
-      <pre>
-        {`
+      {isDesktopView ? (
+        <>
+          <pre>
+            {`
                ░▓░     ░▒░▒▒     ░▒▒▒▒      ▒▒      ▒▒░▒░              
               ▒▒▓      ░▒▓▒     ▓░  ▓░    ▓   ▓░   ░▒▓▒      ▓   ▓              
                 ▓        ▒▒     ▓░  ▒░    ▓   ▓░     ▒▒     ░▓   ▓              
@@ -89,9 +91,9 @@ export const IcatContent = () => {
               ▓░  ▓░     ▓░        ▓        ▓░        ▓      ▓   ▓              
               ░▒░▒▒    ░░▓▒░     ░▒▓▒░    ░░▓▒░     ░▒▓▒░    ░▒▒▒▒      
         `}
-      </pre>
-      <pre style={{ fontSize: 7}}>
-        {`
+          </pre>
+          <pre style={{ fontSize: 7 }}>
+            {`
         ████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
         ████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
         ████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
@@ -162,7 +164,22 @@ export const IcatContent = () => {
         █████████████████▓░               ▒▓█████████░░░░  ░▓▒▓▒▒██▒          ░▒▓██▓▒░░░▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓███▓▓▒░░░    ░░▒▓███████████▒      ░░▒▓▒▒▒░░░   ░        
         
         `}
-      </pre>
+          </pre>
+        </>
+      ) : (
+        <>
+          <img
+            src="/projectImages/extra/binaryicat.png"
+            alt="Matrix of binary numbers converted into ASCII text."
+            style={{ width: "100%" }}
+          />
+          <img
+            src="/projectImages/extra/jeffthekillericat.png"
+            alt="Image of Jeff the killer converted into ASCII text."
+            style={{ width: "100%" }}
+          />
+        </>
+      )}
       <Typography paragraph>
         <Link href="/humans.txt">Garfeild print.</Link>
       </Typography>
