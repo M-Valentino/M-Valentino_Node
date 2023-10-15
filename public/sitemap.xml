@@ -17,6 +17,11 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://mark-valentino.vercel.app/blog</loc>
+  <lastmod>2023-10-15T05:22:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://mark-valentino.vercel.app/humans.txt</loc>
   <lastmod>2023-09-02T21:21:26+00:00</lastmod>
   <priority>0.80</priority>
