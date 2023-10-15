@@ -167,19 +167,19 @@ export default function ProjectCard(props) {
               {description}
             </Typography>
           </div>
-          <Tooltip title={languages.length > 3 ? languages.join(", ") : ""}>
+          <Tooltip title={languages.length > 4 ? languages.join(", ") : ""}>
             <Stack direction="row" spacing={1} mt={1}>
-              {languages.slice(0, 3).map((props, key) => (
+              {languages.slice(0, 4).map((props, key) => (
                 <LanguageChip
                   key={key}
                   language={props}
-                  size={isMobileView ? "small" : "full"}
+                  size="small" 
                 />
               ))}
-              {languages.length > 3 ? (
+              {languages.length > 4 ? (
                 <LanguageChip
                   language={PLUS_MORE}
-                  size={isMobileView ? "small" : "full"}
+                  size="small"
                 />
               ) : (
                 <></>
