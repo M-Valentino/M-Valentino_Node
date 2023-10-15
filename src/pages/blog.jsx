@@ -27,9 +27,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Mark Valentino - Home</title>
+        <title>Mark Valentino's Tech Blog</title>
         {getHeadBoilerPlate(
-          "The personal website of Mark Valentino, a software engineer."
+          "The tech blog of Mark Valentino - a software engineer."
         )}
         ;
       </Head>
@@ -37,6 +37,17 @@ export default function Home() {
       <ThemeProvider theme={MainTheme}>
         <NavBar activeLink={2} />
         <main>
+          <Typography
+            variant={!isDesktopView ? "h4" : "h3"}
+            fontWeight={600}
+            textAlign="center"
+            style={{
+              textShadow: MINUTE_SHADOW_TEXT,
+              marginBottom: 20
+            }}
+          >
+            Mark Valentino's Tech Blog
+          </Typography>
           <div
             style={{
               maxWidth: 900,
@@ -58,6 +69,14 @@ export default function Home() {
               }}
             >
               Could My Image Processing Library Replace MarvinJ?
+            </Typography>
+            <Typography
+              variant="h6"
+              gutterBottom
+              color="secondary"
+              style={{ fontStyle: "italic" }}
+            >
+              Published October 15, 2023
             </Typography>
             <Typography paragraph>
               I recently came across this pretty nifty{" "}
