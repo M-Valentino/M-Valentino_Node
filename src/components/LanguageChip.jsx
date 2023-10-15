@@ -86,6 +86,7 @@ export const LanguageChip = (props) => {
       borderRadius: 10,
       backgroundColor: getChipColor(),
       textDecoration: "none",
+      boxShadow: MINUTE_SHADOW,
     },
     typography: {
       fontWeight: 400,
