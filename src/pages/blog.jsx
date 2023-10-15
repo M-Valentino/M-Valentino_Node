@@ -22,6 +22,7 @@ import {
 export default function Home() {
   const isDesktopView = useMediaQuery("(min-width:900px)");
   const isLargeMobileView = useMediaQuery("(max-width:428px)");
+  const sideBySideImageStyle = { width: "70%", height: "70%", margin: "auto" };
 
   return (
     <>
@@ -56,7 +57,7 @@ export default function Home() {
                 fontWeight: "bolder",
               }}
             >
-              MarvinJ Might get Dethroned by MarvalJ in the Future
+              Could My Image Processing Library Replace MarvinJ?
             </Typography>
             <Typography paragraph>
               I recently came across this pretty nifty{" "}
@@ -82,8 +83,11 @@ export default function Home() {
               I would just make a fork of it and start my own library.
             </Typography>
             <Typography paragraph>
-              So, I went and made a fork of the library and called it MarvalJ,
-              which is a play on words from my actual name. Soon after, I was
+              So,{" "}
+              <Link href="https://github.com/M-Valentino/marvalj">
+                I went and made a fork of the library and called it MarvalJ
+              </Link>
+              , which is a play on words from my actual name. Soon after, I was
               able to add two functions to the library, with one function for
               adding black and white noise to an image, and one for adding color
               noise to an image. These two image processing filters are common
@@ -93,11 +97,11 @@ export default function Home() {
             <Stack direction={isDesktopView ? "row" : "column"}>
               <img
                 src="/blogImages/blackAndWhiteNoise.png"
-                style={{ width: "70%", height: "70%", margin: "auto" }}
+                style={sideBySideImageStyle}
               />
               <img
                 src="/blogImages/colorNoise.png"
-                style={{ width: "70%", height: "70%", margin: "auto" }}
+                style={sideBySideImageStyle}
               />
             </Stack>
             <Typography paragraph>
@@ -105,7 +109,15 @@ export default function Home() {
               already established library, and I knew I could expand upon it
               more. So, I added scan line filter funtions.
             </Typography>
-
+            <img
+              src="/blogImages/scanlines.png"
+              style={{
+                display: "block",
+                width: "50%",
+                height: "50%",
+                margin: "auto",
+              }}
+            />
             <Typography paragraph>
               After that, I added a color sort function, which is literally a
               function to sort all the pixels in an image by thier brightness.
@@ -115,7 +127,7 @@ export default function Home() {
             <Stack direction="row">
               <img
                 src="/blogImages/originalImage.png"
-                style={{ width: "70%", height: "70%", margin: "auto" }}
+                style={sideBySideImageStyle}
               />
               <div
                 style={{
@@ -128,9 +140,20 @@ export default function Home() {
               </div>
               <img
                 src="/blogImages/colorSort.png"
-                style={{ width: "70%", height: "70%", margin: "auto" }}
+                style={sideBySideImageStyle}
               />
             </Stack>
+            <Typography paragraph>
+              What I have written is basically the extent of my progress on
+              MarvinJ. What is lacking for this to be widely used by others is a
+              website with documentation. Additionally, much of web development
+              these days is Node.js based, which MarvinJ and MarvalJ don't
+              integrate well with.{" "}
+              <Link href="https://github.com/davicrystal/marvinj">
+                Someone already made an NPM module for MarvinJ
+              </Link>
+              . Maybe I should do the same.
+            </Typography>
           </div>
         </main>
         <Footer />
