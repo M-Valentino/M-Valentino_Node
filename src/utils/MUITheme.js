@@ -13,7 +13,7 @@ export const MainTheme = createTheme({
     },
     tertiary: {
       light: '#fff',
-      main: '#eee',
+      main: '#fdfdfd',
       dark: '#aaa',
     },
     text: {

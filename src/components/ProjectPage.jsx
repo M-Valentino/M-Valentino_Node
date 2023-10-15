@@ -3,6 +3,7 @@ import {
   Button,
   IconButton,
   Grid,
+  Tooltip,
   Typography,
   useMediaQuery,
 } from "@mui/material";
@@ -97,28 +98,32 @@ export default function ProjectPage(props) {
               title="description"
               style={iframeFullSize ? iframeBigStyle : iframeSmallStyle}
             />
-            {/* This button will always be visible no matter the size of the iframe. When the
+            <Tooltip title={iframeFullSize ? "Shrink" : "Expand"}>
+              {/* This button will always be visible no matter the size of the iframe. When the
              iframe covers the full page, it's position will be fixed to the bottom left corner. */}
-            <IconButton
-              onClick={() => setIframeFullSize(!iframeFullSize)}
-              style={{
-                // Button is below the iframe whe not full screen so it is moved up to appear inside it.
-                transform: iframeFullSize ? "none" : "translate(7.5px, -60px)",
-                position: iframeFullSize ? "fixed" : "relative",
-                bottom: iframeFullSize ? 40 : "none",
-                left: iframeFullSize ? 40 : "none",
-                zIndex: 99,
-                width: XL_ICON_BUTTON_WIDTH_HEIGHT,
-                height: XL_ICON_BUTTON_WIDTH_HEIGHT,
-              }}
-              color="tertiary"
-            >
-              {iframeFullSize ? (
-                <FullscreenExitIcon style={SCREEN_CONTROL_STYLES} />
-              ) : (
-                <FullscreenIcon style={SCREEN_CONTROL_STYLES} />
-              )}
-            </IconButton>
+              <IconButton
+                onClick={() => setIframeFullSize(!iframeFullSize)}
+                style={{
+                  // Button is below the iframe whe not full screen so it is moved up to appear inside it.
+                  transform: iframeFullSize
+                    ? "none"
+                    : "translate(7.5px, -60px)",
+                  position: iframeFullSize ? "fixed" : "relative",
+                  bottom: iframeFullSize ? 40 : "unset",
+                  left: iframeFullSize ? 40 : "unset",
+                  zIndex: 99,
+                  width: XL_ICON_BUTTON_WIDTH_HEIGHT,
+                  height: XL_ICON_BUTTON_WIDTH_HEIGHT,
+                }}
+                color="tertiary"
+              >
+                {iframeFullSize ? (
+                  <FullscreenExitIcon style={SCREEN_CONTROL_STYLES} />
+                ) : (
+                  <FullscreenIcon style={SCREEN_CONTROL_STYLES} />
+                )}
+              </IconButton>
+            </Tooltip>
           </>
         );
     }
