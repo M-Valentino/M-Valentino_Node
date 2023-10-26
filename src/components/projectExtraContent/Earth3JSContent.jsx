@@ -9,7 +9,8 @@ export const Earth3JSContent = () => {
         How it was coded
       </Typography>
       <Typography paragraph>
-        I used{" "}
+        This project depends on the React Three Fiber library for coding 3D
+        graphics. I used{" "}
         <Link href="https://threejs.org/docs/#api/en/geometries/SphereGeometry">
           SphereGeometry
         </Link>{" "}

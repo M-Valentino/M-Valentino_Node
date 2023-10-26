@@ -22,7 +22,7 @@ export const IcatContent = ({ isDesktopView }) => {
         The next challenge was determining how to have ICat be executable in any
         directory and have an installation exectuable allowing this to happen. I
         discovered that this was easy to do in Bash, so I decided that Bash
-        would handle the installation and and user interface for running the
+        would handle the installation and the user interface for running the
         program.
       </Typography>
       <Typography paragraph>
