@@ -4,17 +4,16 @@ import {
   Button,
   IconButton,
   Menu,
-  MenuItem,
   useMediaQuery,
 } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import {
   MINUTE_SHADOW_SVG,
-  MUI_PRIMARY_COLOR_DEEP_ORANGE,
 } from "@/consts/stylingValues";
 import { PAGE_TITLES } from "@/consts/pageTitles";
 import { NavButton } from "./NavButton";
+import { MobileNavItem } from "./MobileNavItem";
 
 // This component is the main navbar of the site.
 const NavBar = (props) => {
@@ -86,50 +85,22 @@ const NavBar = (props) => {
             }}
             style={{ textDecoration: "none" }}
           >
-            <Link
-              href="/"
-              style={{
-                textDecoration: "none",
-                color:
-                  activeLink === PAGE_TITLES.home
-                    ? MUI_PRIMARY_COLOR_DEEP_ORANGE
-                    : "#000",
-              }}
-            >
-              <MenuItem>{PAGE_TITLES.home}</MenuItem>
-            </Link>
-            <Link
-              href="/projects"
-              style={{
-                textDecoration: "none",
-                color:
-                  activeLink === PAGE_TITLES.projects
-                    ? MUI_PRIMARY_COLOR_DEEP_ORANGE
-                    : "#000",
-              }}
-            >
-              <MenuItem>{PAGE_TITLES.projects}</MenuItem>
-            </Link>
-            <Link
-              href="/blog"
-              style={{
-                textDecoration: "none",
-                color:
-                  activeLink === PAGE_TITLES.blog
-                    ? MUI_PRIMARY_COLOR_DEEP_ORANGE
-                    : "#000",
-              }}
-            >
-              <MenuItem>{PAGE_TITLES.blog}</MenuItem>
-            </Link>
-            <Link
-              href="https://github.com/M-Valentino"
-              style={{ textDecoration: "none", color: "#000" }}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <MenuItem>GitHub</MenuItem>
-            </Link>
+            <MobileNavItem
+              activeLink={activeLink}
+              itemTextAndOrLink={PAGE_TITLES.home}
+            />
+            <MobileNavItem
+              activeLink={activeLink}
+              itemTextAndOrLink={PAGE_TITLES.projects}
+            />
+            <MobileNavItem
+              activeLink={activeLink}
+              itemTextAndOrLink={PAGE_TITLES.blog}
+            />
+            <MobileNavItem
+              externalLink="https://github.com/M-Valentino"
+              itemTextAndOrLink="GitHub"
+            />
           </Menu>
           {/* For creating spacing below the navbar during mobile view. */}
           <div style={{ width: "100%", height: 15 }}></div>

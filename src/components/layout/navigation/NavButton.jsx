@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@mui/material";
-import { PAGE_TITLES } from "@/consts/pageTitles";
+import { generateNavLink } from "@/utils/generateNavLink";
 
 export const NavButton = ({
   activeLink,
@@ -9,21 +9,13 @@ export const NavButton = ({
   children,
   externalLink,
 }) => {
-  const generateLink = () => {
-    if (buttonTextAndOrLink === PAGE_TITLES.home) {
-      return "/";
-    } else if (externalLink) {
-      return externalLink;
-    } else {
-      return `/${buttonTextAndOrLink.toLowerCase()}`;
-    }
-  };
+  
   return (
     <Button
       color={activeLink === buttonTextAndOrLink ? "primary" : "secondary"}
       style={{ fontSize: 18 }}
       LinkComponent={Link}
-      href={generateLink()}
+      href={generateNavLink(buttonTextAndOrLink, externalLink)}
       target={externalLink ? "_blank" : ""}
       rel={externalLink ? "noopener noreferrer" : ""}
     >
