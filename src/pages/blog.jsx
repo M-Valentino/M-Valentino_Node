@@ -12,6 +12,7 @@ import {
   LANGUAGES,
   PROJECT_TITLES,
 } from "@/consts/projectContent";
+import { PAGE_TITLES } from "@/consts/pageTitles";
 
 export default function Home() {
   const isDesktopView = useMediaQuery("(min-width:900px)");
@@ -28,7 +29,7 @@ export default function Home() {
         ;
       </Head>
 
-      <MainWrapper activeLink={2}>
+      <MainWrapper activeLink={PAGE_TITLES.blog}>
         <MainHeading shrinkFontOn={!isDesktopView} addMarginBottomOn={true}>
           Mark Valentino's Tech Blog
         </MainHeading>

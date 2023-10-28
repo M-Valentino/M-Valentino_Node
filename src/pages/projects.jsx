@@ -27,6 +27,7 @@ import { NoResults } from "@/components/ProjectsPage/NoResults";
 import { PROJECT_CONTENT } from "@/consts/projectContent";
 import { MINUTE_SHADOW, MINUTE_SHADOW_SVG } from "@/consts/stylingValues";
 import { MainHeading } from "@/components/layout/Headings";
+import { PAGE_TITLES } from "@/consts/pageTitles";
 
 /**
  * This component shows all projects in either a card view or a table view.
@@ -131,7 +132,7 @@ export default function Projects() {
         {getHeadBoilerPlate("Mark Valentino's coding projects.")}
       </Head>
 
-      <MainWrapper activeLink={1}>
+      <MainWrapper activeLink={PAGE_TITLES.projects}>
         <Grid
           container
           justifyContent="space-between"

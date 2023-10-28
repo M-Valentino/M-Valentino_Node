@@ -14,6 +14,7 @@ import {
 import { TECH_STACK } from "@/consts/techStack";
 import { Button, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
 import { TypeAnimation } from "react-type-animation";
+import { PAGE_TITLES } from "@/consts/pageTitles";
 
 export default function Home() {
   const isDesktopView = useMediaQuery("(min-width:900px)");
@@ -42,7 +43,7 @@ export default function Home() {
         ;
       </Head>
 
-      <MainWrapper activeLink={0}>
+      <MainWrapper activeLink={PAGE_TITLES.home}>
         <CustomPaper isDesktopView={isDesktopView}>
           <TypeAnimation
             sequence={[

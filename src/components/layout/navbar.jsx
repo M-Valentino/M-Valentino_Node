@@ -13,6 +13,7 @@ import {
   MINUTE_SHADOW_SVG,
   MUI_PRIMARY_COLOR_DEEP_ORANGE,
 } from "@/consts/stylingValues";
+import { PAGE_TITLES } from "@/consts/pageTitles";
 
 // This component is the main navbar of the site.
 const NavBar = (props) => {
@@ -89,30 +90,36 @@ const NavBar = (props) => {
               style={{
                 textDecoration: "none",
                 color:
-                  activeLink === 0 ? MUI_PRIMARY_COLOR_DEEP_ORANGE : "#000",
+                  activeLink === PAGE_TITLES.home
+                    ? MUI_PRIMARY_COLOR_DEEP_ORANGE
+                    : "#000",
               }}
             >
-              <MenuItem>Home</MenuItem>
+              <MenuItem>{PAGE_TITLES.home}</MenuItem>
             </Link>
             <Link
               href="/projects"
               style={{
                 textDecoration: "none",
                 color:
-                  activeLink === 1 ? MUI_PRIMARY_COLOR_DEEP_ORANGE : "#000",
+                  activeLink === PAGE_TITLES.projects
+                    ? MUI_PRIMARY_COLOR_DEEP_ORANGE
+                    : "#000",
               }}
             >
-              <MenuItem>Projects</MenuItem>
+              <MenuItem>{PAGE_TITLES.projects}</MenuItem>
             </Link>
             <Link
               href="/blog"
               style={{
                 textDecoration: "none",
                 color:
-                  activeLink === 2 ? MUI_PRIMARY_COLOR_DEEP_ORANGE : "#000",
+                  activeLink === PAGE_TITLES.blog
+                    ? MUI_PRIMARY_COLOR_DEEP_ORANGE
+                    : "#000",
               }}
             >
-              <MenuItem>Blog</MenuItem>
+              <MenuItem>{PAGE_TITLES.blog}</MenuItem>
             </Link>
             <Link
               href="https://github.com/M-Valentino"
@@ -136,28 +143,30 @@ const NavBar = (props) => {
           }}
         >
           <Button
-            color={activeLink === 0 ? "primary" : "secondary"}
+            color={activeLink === PAGE_TITLES.home ? "primary" : "secondary"}
             style={{ fontSize: 18 }}
             LinkComponent={Link}
             href="/"
           >
-            Home
+            {PAGE_TITLES.home}
           </Button>
           <Button
-            color={activeLink === 1 ? "primary" : "secondary"}
+            color={
+              activeLink === PAGE_TITLES.projects ? "primary" : "secondary"
+            }
             style={{ fontSize: 18 }}
             LinkComponent={Link}
             href="/projects"
           >
-            Projects
+            {PAGE_TITLES.projects}
           </Button>
           <Button
-            color={activeLink === 2 ? "primary" : "secondary"}
+            color={activeLink === PAGE_TITLES.blog ? "primary" : "secondary"}
             style={{ fontSize: 18 }}
             LinkComponent={Link}
             href="/blog"
           >
-            Blog
+            {PAGE_TITLES.blog}
           </Button>
           <Button
             color="secondary"
