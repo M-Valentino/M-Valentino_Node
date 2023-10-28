@@ -11,8 +11,8 @@ import FullscreenIcon from "@mui/icons-material/Fullscreen";
 import FullscreenExitIcon from "@mui/icons-material/FullscreenExit";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { LanguageChip } from "./LanguageChip";
-import { CustomPaper } from "./CustomPaper";
-import { MainHeading } from "./Headings";
+import { CustomPaper } from "./layout/CustomPaper";
+import { MainHeading } from "./layout/Headings";
 import { getExtraProjectContent } from "@/utils/getProjectExtraContent";
 import {
   SCREEN_CONTROL_STYLES,

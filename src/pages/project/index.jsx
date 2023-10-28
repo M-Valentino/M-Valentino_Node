@@ -1,9 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import NavBar from "@/components/navbar";
-import { Footer } from "@/components/footerComponents/footer";
-import { ThemeProvider } from "@mui/material/styles";
-import { MainTheme } from "@/utils/MUITheme";
+import { MainWrapper } from "@/components/layout/MainWrapper";
 import ProjectPage from "@/components/ProjectPage";
 import { getHeadBoilerPlate } from "@/utils/headBoilerPlate";
 import { PROJECT_CONTENT } from "@/consts/projectContent";
@@ -42,14 +39,9 @@ class ProjectTemplate extends React.Component {
           <title>{`Mark Valentino - ${projectToRender.title}`}</title>
           {getHeadBoilerPlate(projectToRender.description)}
         </Head>
-
-        <ThemeProvider theme={MainTheme}>
-          <NavBar />
-          <main>
-            <ProjectPage data={projectToRender} />
-          </main>
-          <Footer />
-        </ThemeProvider>
+        <MainWrapper>
+          <ProjectPage data={projectToRender} />
+        </MainWrapper>
       </>
     );
   }

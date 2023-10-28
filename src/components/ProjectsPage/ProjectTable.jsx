@@ -11,7 +11,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { LanguageChip } from "../LanguageChip";
-import { CustomPaper } from "../CustomPaper";
+import { CustomPaper } from "../layout/CustomPaper";
 import { PLUS_MORE } from "@/consts/projectContent";
 
 export default function ProjectTable(props) {
