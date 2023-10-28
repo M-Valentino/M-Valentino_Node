@@ -14,6 +14,7 @@ import {
   MUI_PRIMARY_COLOR_DEEP_ORANGE,
 } from "@/consts/stylingValues";
 import { PAGE_TITLES } from "@/consts/pageTitles";
+import { NavButton } from "./NavButton";
 
 // This component is the main navbar of the site.
 const NavBar = (props) => {
@@ -142,45 +143,26 @@ const NavBar = (props) => {
             margin: "auto",
           }}
         >
-          <Button
-            color={activeLink === PAGE_TITLES.home ? "primary" : "secondary"}
-            style={{ fontSize: 18 }}
-            LinkComponent={Link}
-            href="/"
-          >
-            {PAGE_TITLES.home}
-          </Button>
-          <Button
-            color={
-              activeLink === PAGE_TITLES.projects ? "primary" : "secondary"
-            }
-            style={{ fontSize: 18 }}
-            LinkComponent={Link}
-            href="/projects"
-          >
-            {PAGE_TITLES.projects}
-          </Button>
-          <Button
-            color={activeLink === PAGE_TITLES.blog ? "primary" : "secondary"}
-            style={{ fontSize: 18 }}
-            LinkComponent={Link}
-            href="/blog"
-          >
-            {PAGE_TITLES.blog}
-          </Button>
-          <Button
-            color="secondary"
-            style={{ fontSize: 18 }}
-            LinkComponent={Link}
-            href="https://github.com/M-Valentino"
-            target="_blank"
-            rel="noopener noreferrer"
+          <NavButton
+            activeLink={activeLink}
+            buttonTextAndOrLink={PAGE_TITLES.home}
+          />
+          <NavButton
+            activeLink={activeLink}
+            buttonTextAndOrLink={PAGE_TITLES.projects}
+          />
+          <NavButton
+            activeLink={activeLink}
+            buttonTextAndOrLink={PAGE_TITLES.blog}
+          />
+          <NavButton
+            externalLink="https://github.com/M-Valentino"
+            buttonTextAndOrLink="GitHub"
           >
             <GitHubIcon
               style={{ transform: "translateY(-3px)", marginRight: 2 }}
             />
-            GitHub
-          </Button>
+          </NavButton>
         </div>
       )}
     </div>
