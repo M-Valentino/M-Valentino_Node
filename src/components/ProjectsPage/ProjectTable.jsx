@@ -11,7 +11,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { LanguageChip } from "../LanguageChip";
-import { CARD_AND_TABLE_SHADOW } from "@/consts/stylingValues";
+import { CustomPaper } from "../CustomPaper";
 import { PLUS_MORE } from "@/consts/projectContent";
 
 export default function ProjectTable(props) {
@@ -21,21 +21,6 @@ export default function ProjectTable(props) {
   const isMobileView = useMediaQuery("(max-width:500px)");
   const isSmallMobileView = useMediaQuery("(max-width:486px)");
   const isExtraSmallMobileView = useMediaQuery("(max-width:384px)");
-  // Anaimation that is shown when the table first appears.
-  // const tableZoom = useSpring({
-  //   from: {
-  //     scale: 0,
-  //     opacity: 0,
-  //   },
-  //   to: {
-  //     scale: 1,
-  //     opacity: 1,
-  //   },
-  //   config: {
-  //     mass: 1,
-  //     friction: 19,
-  //   },
-  // });
 
   const getMaxChipsToShow = () => {
     if (isSmallMobileView) {
@@ -48,19 +33,8 @@ export default function ProjectTable(props) {
   };
 
   return (
-    <div
-      style={{
-        maxWidth: 900,
-        margin: "auto",
-        borderRadius: 4,
-        backgroundColor: "#fffdfa",
-        boxShadow: CARD_AND_TABLE_SHADOW,
-        textRendering: "geometricPrecision!important",
-        marginBottom: 50,
-        // ...tableZoom,
-      }}
-    >
-      <Table aria-label="simple table">
+    <CustomPaper>
+      <Table aria-label="Table of projects">
         <TableBody>
           {PROJECT_CONTENT.map((row, key) => (
             <TableRow
@@ -98,6 +72,7 @@ export default function ProjectTable(props) {
               {isDesktopView && (
                 <TableCell align="left">
                   <Typography style={{ fontSize: 12.5 }}>
+                    {/* Keeps only the first sentence of a project description. */}
                     {row.description.split(/[\.|\?]/, 1)[0]}...
                   </Typography>
                 </TableCell>
@@ -135,6 +110,6 @@ export default function ProjectTable(props) {
           ))}
         </TableBody>
       </Table>
-    </div>
+    </CustomPaper>
   );
 }
