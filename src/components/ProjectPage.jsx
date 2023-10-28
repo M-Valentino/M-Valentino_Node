@@ -15,7 +15,6 @@ import { CustomPaper } from "./CustomPaper";
 import { MainHeading } from "./Headings";
 import { getExtraProjectContent } from "@/utils/getProjectExtraContent";
 import {
-  XL_ICON_BUTTON_WIDTH_HEIGHT,
   SCREEN_CONTROL_STYLES,
   MINUTE_SHADOW,
   MINUTE_SHADOW_SVG,
@@ -111,8 +110,8 @@ export default function ProjectPage(props) {
                   bottom: iframeFullSize ? 40 : "unset",
                   left: iframeFullSize ? 40 : "unset",
                   zIndex: 99,
-                  width: XL_ICON_BUTTON_WIDTH_HEIGHT,
-                  height: XL_ICON_BUTTON_WIDTH_HEIGHT,
+                  width: 50,
+                  height: 50,
                 }}
                 color="tertiary"
               >

@@ -22,4 +22,3 @@ export const SCREEN_CONTROL_STYLES = {
   filter:
     "drop-shadow(0px 1px 0.5px rgb(0 0 0 / 0.21)) drop-shadow(0px 1.5px 1px rgb(0 0 0 / 0.24)) drop-shadow(0px 2px 2px rgb(0 0 0 / 0.3))",
 };
-export const XL_ICON_BUTTON_WIDTH_HEIGHT = 50;
