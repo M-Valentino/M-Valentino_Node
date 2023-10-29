@@ -99,7 +99,7 @@ const NavBar = (props) => {
             />
             <MobileNavItem
               externalLink="https://github.com/M-Valentino"
-              itemTextAndOrLink="GitHub"
+              itemTextAndOrLink={PAGE_TITLES.gitHub}
             />
           </Menu>
           {/* For creating spacing below the navbar during mobile view. */}
@@ -128,7 +128,7 @@ const NavBar = (props) => {
           />
           <NavButton
             externalLink="https://github.com/M-Valentino"
-            buttonTextAndOrLink="GitHub"
+            buttonTextAndOrLink={PAGE_TITLES.gitHub}
           >
             <GitHubIcon
               style={{ transform: "translateY(-3px)", marginRight: 2 }}
