@@ -15,7 +15,7 @@ export const NavButton = ({
       color={activeLink === buttonTextAndOrLink ? "primary" : "secondary"}
       style={{ fontSize: 18 }}
       LinkComponent={Link}
-      href={generateNavLink(buttonTextAndOrLink, externalLink)}
+      href={generateNavLink(buttonTextAndOrLink)}
       target={externalLink ? "_blank" : ""}
       rel={externalLink ? "noopener noreferrer" : ""}
     >

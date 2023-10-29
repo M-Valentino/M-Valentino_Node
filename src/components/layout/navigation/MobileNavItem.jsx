@@ -18,7 +18,7 @@ export const MobileNavItem = ({
 }) => {
   return (
     <Link
-      href={generateNavLink(itemTextAndOrLink, externalLink)}
+      href={generateNavLink(itemTextAndOrLink)}
       style={{
         textDecoration: "none",
         color:

@@ -98,7 +98,7 @@ const NavBar = (props) => {
               itemTextAndOrLink={PAGE_TITLES.blog}
             />
             <MobileNavItem
-              externalLink="https://github.com/M-Valentino"
+              externalLink
               itemTextAndOrLink={PAGE_TITLES.gitHub}
             />
           </Menu>
@@ -127,7 +127,7 @@ const NavBar = (props) => {
             buttonTextAndOrLink={PAGE_TITLES.blog}
           />
           <NavButton
-            externalLink="https://github.com/M-Valentino"
+            externalLink
             buttonTextAndOrLink={PAGE_TITLES.gitHub}
           >
             <GitHubIcon
