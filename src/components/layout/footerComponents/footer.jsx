@@ -3,6 +3,11 @@ import Link from "next/link";
 import { Button, Stack } from "@mui/material";
 import { PrivacyPolicyDialog } from "./privacyPolicyDialog";
 
+/**
+ * Component displayed at the bottom of nearly all the pages with
+ * buttons.
+ * @returns Footer compoenet
+ */
 export const Footer = () => {
   const [privacyPolicyOpen, setPrivacyPolicyOpen] = useState(false);
 
