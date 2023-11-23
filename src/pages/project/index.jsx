@@ -5,11 +5,13 @@ import ProjectPage from "@/components/ProjectPage";
 import { getHeadBoilerPlate } from "@/utils/headBoilerPlate";
 import { PROJECT_CONTENT } from "@/consts/projectContent";
 
+export const dynamic = 'force-dynamic';
 /**
  * This is component handles rendering pages for individual projects. Based on the
  * query prop, it determines which project data to show.
  */
 class ProjectTemplate extends React.Component {
+  
   static async getInitialProps({ query }) {
     return { query };
   }
@@ -23,6 +25,7 @@ class ProjectTemplate extends React.Component {
      * @returns JSON snippet of the project to render.
      */
     const filterProjectMatchingTitle = (projectTitle) => {
+   
       var result = PROJECT_CONTENT.filter((obj) => {
         return obj.title === projectTitle;
       });
