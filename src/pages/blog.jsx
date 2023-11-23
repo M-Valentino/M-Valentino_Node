@@ -113,7 +113,7 @@ export default function Home() {
             may sound like a feature that is there just for fun, but this
             function can be used in generating color palletes from images.
           </Typography>
-          <Stack direction="row">
+          <Stack direction={isDesktopView ? "row" : "column"}>
             <img
               src="/blogImages/originalImage.png"
               alt="The original painting of a landscape."
@@ -124,6 +124,7 @@ export default function Home() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                transform: isDesktopView ? "rotate(0)" : "rotate(90deg)"
               }}
             >
               <EastIcon />
