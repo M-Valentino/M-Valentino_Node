@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Link from "next/link";
 import React, { useState } from "react";
 import {
@@ -22,7 +21,7 @@ import ViewModuleIcon from "@mui/icons-material/ViewModule";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import ProjectCard from "@/components/ProjectsPage/ProjectCard";
 import ProjectTable from "@/components/ProjectsPage/ProjectTable";
-import { getHeadBoilerPlate } from "@/utils/headBoilerPlate";
+import { CustomHead } from "@/components/layout/CustomHead";
 import { NoResults } from "@/components/ProjectsPage/NoResults";
 import { PROJECT_CONTENT } from "@/consts/projectContent";
 import { MINUTE_SHADOW, MINUTE_SHADOW_SVG } from "@/consts/stylingValues";
@@ -127,11 +126,10 @@ export default function Projects() {
 
   return (
     <>
-      <Head>
-        <title>Mark Valentino - Projects</title>
-        {getHeadBoilerPlate("Mark Valentino's coding projects.")}
-      </Head>
-
+      <CustomHead
+        descriptionText="Mark Valentino's coding projects."
+        title="Mark Valentino - Projects"
+      />
       <MainWrapper activeLink={PAGE_TITLES.projects}>
         <Grid
           container

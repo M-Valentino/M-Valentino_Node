@@ -1,10 +1,9 @@
 import React from "react";
-import Head from "next/head";
 import Link from "next/link";
 import OrangeEarth from "../components/OrangeEarth";
 import { CustomPaper } from "@/components/layout/CustomPaper";
 import { SubHeading } from "@/components/layout/Headings";
-import { getHeadBoilerPlate } from "@/utils/headBoilerPlate";
+import { CustomHead } from "@/components/layout/CustomHead";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import {
   MUI_PRIMARY_COLOR_DEEP_ORANGE,
@@ -20,11 +19,10 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Mark Valentino - Home</title>
-        {getHeadBoilerPlate(
-          "The personal website of Mark Valentino, a software engineer."
-        )}
+      <CustomHead
+        descriptionText="The personal website of Mark Valentino, a software engineer."
+        title="Mark Valentino - Home"
+      >
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -40,7 +38,7 @@ export default function Home() {
           }}
         />
         ;
-      </Head>
+      </CustomHead>
 
       <MainWrapper activeLink={PAGE_TITLES.home}>
         <CustomPaper isDesktopView={isDesktopView}>

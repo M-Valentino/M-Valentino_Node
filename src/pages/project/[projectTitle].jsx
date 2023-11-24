@@ -1,8 +1,7 @@
 import React from "react";
-import Head from "next/head";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import ProjectPage from "@/components/ProjectPage";
-import { getHeadBoilerPlate } from "@/utils/headBoilerPlate";
+import { CustomHead } from "@/components/layout/CustomHead";
 import { PROJECT_CONTENT } from "@/consts/projectContent";
 
 // Function to get all possible paths for individual project pages
@@ -25,10 +24,10 @@ export const getStaticProps = async (context) => {
 export default function ProjectTemplate({ project }) {
   return (
     <>
-      <Head>
-        <title>{`Mark Valentino - ${project.title}`}</title>
-        {getHeadBoilerPlate(project.description)}
-      </Head>
+      <CustomHead
+        descriptionText={project.description}
+        title={`Mark Valentino - ${project.title}`}
+      />
       <MainWrapper>
         <ProjectPage data={project} />
       </MainWrapper>
