@@ -1,5 +1,5 @@
 import React from "react";
-import { MINUTE_SHADOW, OFF_WHITE_COLOR } from "@/consts/stylingValues";
+import { SMALL_SHADOW, OFF_WHITE_COLOR } from "@/consts/stylingValues";
 
 export const CustomPaper = ({children, isDesktopView}) => {
   return (
@@ -10,7 +10,7 @@ export const CustomPaper = ({children, isDesktopView}) => {
         marginBottom: 50,
         backgroundColor: OFF_WHITE_COLOR,
         borderRadius: 4,
-        boxShadow: MINUTE_SHADOW,
+        boxShadow: SMALL_SHADOW,
         padding: isDesktopView ? 60 : 10,
       }}
     >

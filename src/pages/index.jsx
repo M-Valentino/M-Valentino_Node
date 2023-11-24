@@ -9,7 +9,6 @@ import { MainWrapper } from "@/components/layout/MainWrapper";
 import {
   MUI_PRIMARY_COLOR_DEEP_ORANGE,
   MINUTE_SHADOW,
-  MINUTE_SHADOW_TEXT,
 } from "@/consts/stylingValues";
 import { TECH_STACK } from "@/consts/techStack";
 import { Button, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
@@ -68,7 +67,7 @@ export default function Home() {
               fontSize: 38,
               display: "inline-block",
               fontFamily: "sans-serif",
-              textShadow: MINUTE_SHADOW_TEXT,
+              textShadow: MINUTE_SHADOW,
               color: MUI_PRIMARY_COLOR_DEEP_ORANGE,
               fontWeight: 600,
             }}
@@ -139,7 +138,7 @@ export default function Home() {
               display: "block",
               marginTop: 40,
               fontSize: isDesktopView ? 30 : 18,
-              textShadow: MINUTE_SHADOW_TEXT,
+              textShadow: MINUTE_SHADOW,
             }}
           >
             <Stack direction="row" style={{ alignItems: "center" }}>

@@ -18,7 +18,6 @@ import {
   SCREEN_CONTROL_STYLES,
   MINUTE_SHADOW,
   MINUTE_SHADOW_SVG,
-  MINUTE_SHADOW_TEXT,
 } from "@/consts/stylingValues";
 import { HREF_TYPES } from "@/consts/projectContent";
 
@@ -169,7 +168,7 @@ export default function ProjectPage(props) {
               marginTop: 40,
               marginBottom: 40,
               fontSize: isSmallMobileView ? 26 : 32,
-              textShadow: MINUTE_SHADOW_TEXT,
+              textShadow: MINUTE_SHADOW,
             }}
             variant="contained"
             color="primary"
