@@ -5,6 +5,7 @@ import ProjectPage from "@/components/ProjectPage";
 import { getHeadBoilerPlate } from "@/utils/headBoilerPlate";
 import { PROJECT_CONTENT } from "@/consts/projectContent";
 
+// Function to get all possible paths for individual project pages
 export const getStaticPaths = async () => {
   const paths = PROJECT_CONTENT.map((key) => {
     return { params: { projectTitle: key.title } };
@@ -13,9 +14,11 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
+// Function to get all possible data for individual project pages (except for projectExtraContent components)
 export const getStaticProps = async (context) => {
-  const projectTitle = context.params.projectTitle;
-  const project = PROJECT_CONTENT.find((obj) => obj.title === projectTitle);
+  const project = PROJECT_CONTENT.find(
+    (obj) => obj.title === context.params.projectTitle
+  );
   return { props: { project: project } };
 };
 
