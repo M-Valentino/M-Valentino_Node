@@ -1,9 +1,11 @@
 import Head from "next/head";
 /**
- * Function to return head elements used inside ever webpage. It takes in a parameter
- * to give a unique description to the page. This function exists to keep code for pages
- * less cluttered.
- * @param {*} descriptionText the text to displayed for the page
+ * Function to return head elements used inside every webpage.This function
+ * exists to keep code for pages less cluttered.
+ * @param {*} descriptionText the text to displayed for the page for SEO
+ * @param {*} title the title of the page
+ * @param {*} keywords the keywords of the page for SEO
+ * @param {*} loadClarity a boolean to determine if Clarity should be loaded.
  * @returns component
  */
 export const CustomHead = ({
@@ -18,7 +20,7 @@ export const CustomHead = ({
       <meta name="description" content={descriptionText} />
       <meta name="author" content="Mark Valentino" />
       <meta name="keywords" content={keywords} />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" href="/favicon.ico" />
       {loadClarity && (
         <script
