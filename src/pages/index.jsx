@@ -22,24 +22,9 @@ export default function Home() {
       <CustomHead
         descriptionText="The personal website of Mark Valentino, a software engineer."
         title="Mark Valentino - Home"
-      >
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-         (function(c,l,a,r,i,t,y){
-             c[a] = c[a] || function () { (c[a].q = c[a].q || 
-             []).push(arguments) };
-             t=l.createElement(r);
-             t.async=1;
-             t.src="https://www.clarity.ms/tag/"+i;
-             y=l.getElementsByTagName(r)[0];
-             y.parentNode.insertBefore(t,y);
-         })(window, document, "clarity", "script", "${process.env.MS_CLARITY_ID}");`,
-          }}
-        />
-        ;
-      </CustomHead>
-
+        keywords="professional site, software engineer, web developer"
+        loadClarity
+      />
       <MainWrapper activeLink={PAGE_TITLES.home}>
         <CustomPaper isDesktopView={isDesktopView}>
           <TypeAnimation

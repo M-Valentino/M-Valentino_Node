@@ -129,6 +129,7 @@ export default function Projects() {
       <CustomHead
         descriptionText="Mark Valentino's coding projects."
         title="Mark Valentino - Projects"
+        keywords="projects, web development, AI, data science"
       />
       <MainWrapper activeLink={PAGE_TITLES.projects}>
         <Grid

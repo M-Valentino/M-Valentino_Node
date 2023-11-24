@@ -23,6 +23,7 @@ export default function Home() {
       <CustomHead
         descriptionText="The tech blog of Mark Valentino - a software engineer."
         title="Mark Valentino's Tech Blog"
+        keywords="technology, programming, coding"
       />
       <MainWrapper activeLink={PAGE_TITLES.blog}>
         <MainHeading shrinkFontOn={!isDesktopView} addMarginBottomOn={true}>

@@ -27,6 +27,7 @@ export default function ProjectTemplate({ project }) {
       <CustomHead
         descriptionText={project.description}
         title={`Mark Valentino - ${project.title}`}
+        keywords={project.languages}
       />
       <MainWrapper>
         <ProjectPage data={project} />
