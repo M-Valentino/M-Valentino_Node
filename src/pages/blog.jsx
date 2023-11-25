@@ -1,8 +1,7 @@
 import React from "react";
-import Head from "next/head";
 import Link from "next/link";
 import { MainWrapper } from "@/components/layout/MainWrapper";
-import { getHeadBoilerPlate } from "@/utils/headBoilerPlate";
+import { CustomHead } from "@/components/layout/CustomHead";
 import { CustomPaper } from "@/components/layout/CustomPaper";
 import { MainHeading, SubHeading } from "@/components/layout/Headings";
 import { Stack, Typography, useMediaQuery } from "@mui/material";
@@ -21,14 +20,11 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Mark Valentino's Tech Blog</title>
-        {getHeadBoilerPlate(
-          "The tech blog of Mark Valentino - a software engineer."
-        )}
-        ;
-      </Head>
-
+      <CustomHead
+        descriptionText="The tech blog of Mark Valentino - a software engineer."
+        title="Mark Valentino's Tech Blog"
+        keywords="technology, programming, coding"
+      />
       <MainWrapper activeLink={PAGE_TITLES.blog}>
         <MainHeading shrinkFontOn={!isDesktopView} addMarginBottomOn={true}>
           Mark Valentino's Tech Blog
@@ -152,7 +148,7 @@ export default function Home() {
             may sound like a feature that is there just for fun, but this
             function can be used in generating color palletes from images.
           </Typography>
-          <Stack direction="row">
+          <Stack direction={isDesktopView ? "row" : "column"}>
             <img
               src="/blogImages/originalImage.png"
               alt="The original painting of a landscape."
@@ -163,6 +159,7 @@ export default function Home() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                transform: isDesktopView ? "rotate(0)" : "rotate(90deg)",
               }}
             >
               <EastIcon />

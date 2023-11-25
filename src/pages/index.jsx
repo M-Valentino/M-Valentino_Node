@@ -1,15 +1,13 @@
 import React from "react";
-import Head from "next/head";
 import Link from "next/link";
 import OrangeEarth from "../components/OrangeEarth";
 import { CustomPaper } from "@/components/layout/CustomPaper";
 import { SubHeading } from "@/components/layout/Headings";
-import { getHeadBoilerPlate } from "@/utils/headBoilerPlate";
+import { CustomHead } from "@/components/layout/CustomHead";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import {
   MUI_PRIMARY_COLOR_DEEP_ORANGE,
   MINUTE_SHADOW,
-  MINUTE_SHADOW_TEXT,
 } from "@/consts/stylingValues";
 import { TECH_STACK } from "@/consts/techStack";
 import { Button, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
@@ -21,28 +19,12 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Mark Valentino - Home</title>
-        {getHeadBoilerPlate(
-          "The personal website of Mark Valentino, a software engineer."
-        )}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-         (function(c,l,a,r,i,t,y){
-             c[a] = c[a] || function () { (c[a].q = c[a].q || 
-             []).push(arguments) };
-             t=l.createElement(r);
-             t.async=1;
-             t.src="https://www.clarity.ms/tag/"+i;
-             y=l.getElementsByTagName(r)[0];
-             y.parentNode.insertBefore(t,y);
-         })(window, document, "clarity", "script", "${process.env.MS_CLARITY_ID}");`,
-          }}
-        />
-        ;
-      </Head>
-
+      <CustomHead
+        descriptionText="The personal website of Mark Valentino, a software engineer."
+        title="Mark Valentino - Home"
+        keywords="professional site, software engineer, web developer"
+        loadClarity
+      />
       <MainWrapper activeLink={PAGE_TITLES.home}>
         <CustomPaper isDesktopView={isDesktopView}>
           <TypeAnimation
@@ -68,7 +50,7 @@ export default function Home() {
               fontSize: 38,
               display: "inline-block",
               fontFamily: "sans-serif",
-              textShadow: MINUTE_SHADOW_TEXT,
+              textShadow: MINUTE_SHADOW,
               color: MUI_PRIMARY_COLOR_DEEP_ORANGE,
               fontWeight: 600,
             }}
@@ -139,7 +121,7 @@ export default function Home() {
               display: "block",
               marginTop: 40,
               fontSize: isDesktopView ? 30 : 18,
-              textShadow: MINUTE_SHADOW_TEXT,
+              textShadow: MINUTE_SHADOW,
             }}
           >
             <Stack direction="row" style={{ alignItems: "center" }}>

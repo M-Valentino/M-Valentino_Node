@@ -8,7 +8,7 @@ import {
   DialogTitle,
   Typography,
 } from "@mui/material";
-import { MINUTE_SHADOW, MINUTE_SHADOW_TEXT } from "@/consts/stylingValues";
+import { MINUTE_SHADOW } from "@/consts/stylingValues";
 
 /**
  * Dialog that opens when the Privacy Policy button is clicked.
@@ -136,7 +136,7 @@ export const PrivacyPolicyDialog = (props) => {
         <Button
           onClick={handlePrivacyPolicyClose}
           variant="contained"
-          style={{ margin: "auto", textShadow: MINUTE_SHADOW_TEXT }}
+          style={{ margin: "auto", textShadow: MINUTE_SHADOW }}
         >
           Ok
         </Button>
