@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   Button,
   Stack,
@@ -42,28 +43,6 @@ export default function ProjectCard(props) {
   const [isHovering, setIsHovering] = useState(false);
 
   /**
-   * Animation that is triggered when the Projects page is loaded. The card moves onto
-   * the screen in a slightly bouncy fashion. Each card in the projects page starts
-   * moving one after another. This is determined by the card's key in the delay
-   * parameter.
-   */
-  // const cardDealt = useSpring({
-  //   from: {
-  //     y: props.cardCanBeDealt ? 500 : 0,
-  //     opacity: props.cardCanBeDealt ? 0 : 1,
-  //   },
-  //   to: {
-  //     y: 0,
-  //     opacity: 1,
-  //   },
-  //   delay: props.key * 100,
-  //   config: {
-  //     mass: 1,
-  //     friction: 19,
-  //   },
-  // });
-
-  /**
    * Animation to make the card enlarge a little bit when the user hovers over it.
    * The shadow animates realistically too. This animation is disabled for mobile browsers.
    */
@@ -102,6 +81,8 @@ export default function ProjectCard(props) {
             animationDuration: "1500ms",
           },
         }}
+        LinkComponent={Link}
+        href={`/project/${title}`}
       >
         <animated.div
           style={{
@@ -110,7 +91,6 @@ export default function ProjectCard(props) {
             padding: getCardPadding(),
             borderRadius: 4,
             textRendering: "geometricPrecision!important",
-            // ...cardDealt,
             ...cardZoom,
           }}
           onMouseEnter={() => setIsHovering(true)}
@@ -136,6 +116,7 @@ export default function ProjectCard(props) {
                   backgroundColor: MUI_PRIMARY_COLOR_DEEP_ORANGE,
                   width: 168,
                   color: "#fff",
+                  textAlign: "center",
                   borderBottomRightRadius: 10,
                   fontSize: 13,
                   boxShadow: MINUTE_SHADOW,
@@ -170,17 +151,10 @@ export default function ProjectCard(props) {
           <Tooltip title={languages.length > 4 ? languages.join(", ") : ""}>
             <Stack direction="row" spacing={1} mt={1}>
               {languages.slice(0, 4).map((props, key) => (
-                <LanguageChip
-                  key={key}
-                  language={props}
-                  size="small" 
-                />
+                <LanguageChip key={key} language={props} size="small" />
               ))}
               {languages.length > 4 ? (
-                <LanguageChip
-                  language={PLUS_MORE}
-                  size="small"
-                />
+                <LanguageChip language={PLUS_MORE} size="small" />
               ) : (
                 <></>
               )}

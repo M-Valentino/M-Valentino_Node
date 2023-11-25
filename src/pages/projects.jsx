@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React, { useState } from "react";
 import {
   Button,
@@ -287,12 +286,7 @@ export default function Projects() {
               >
                 {projectResults.map((props, key) => (
                   <Grid item key={key}>
-                    <Link
-                      style={{ textDecoration: "none" }}
-                      href={`/project/${props.title}`}
-                    >
-                      <ProjectCard data={props} />
-                    </Link>
+                    <ProjectCard data={props} />
                   </Grid>
                 ))}
               </Grid>

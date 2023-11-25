@@ -5,6 +5,8 @@ import { CustomPaper } from "@/components/layout/CustomPaper";
 import { SubHeading } from "@/components/layout/Headings";
 import { CustomHead } from "@/components/layout/CustomHead";
 import { MainWrapper } from "@/components/layout/MainWrapper";
+import ProjectCard from "@/components/ProjectsPage/ProjectCard";
+import { PROJECT_CONTENT } from "@/consts/projectContent";
 import {
   MUI_PRIMARY_COLOR_DEEP_ORANGE,
   MINUTE_SHADOW,
@@ -28,22 +30,7 @@ export default function Home() {
       <MainWrapper activeLink={PAGE_TITLES.home}>
         <CustomPaper isDesktopView={isDesktopView}>
           <TypeAnimation
-            sequence={[
-              "Hi, I'm Mark Valentino.",
-              2200,
-              "I code in",
-              1000,
-              "React JS,",
-              1000,
-              "React Native,",
-              1000,
-              "Python,",
-              1000,
-              "C++,",
-              1000,
-              "and more!",
-              1500,
-            ]}
+            sequence={["Hi, I'm Mark Valentino."]}
             wrapper="span"
             speed={50}
             style={{
@@ -54,7 +41,8 @@ export default function Home() {
               color: MUI_PRIMARY_COLOR_DEEP_ORANGE,
               fontWeight: 600,
             }}
-            repeat={Infinity}
+            repeat={1}
+            cursor={false}
             aria-hidden="true"
           />
           {/* This span is not visible but is for making the Typing text accessible to screen readers. */}
@@ -70,8 +58,7 @@ export default function Home() {
               position: "absolute",
             }}
           >
-            Hi, I'm Mark Valentino. I code in React JS, React Native, Python,
-            C++, and more!,
+            Hi, I'm Mark Valentino.
           </span>
           <Typography style={{ marginTop: 15, fontSize: 18 }}>
             Web development, app development, and graphics programming are my
@@ -96,7 +83,7 @@ export default function Home() {
           <SubHeading shrinkFontOn={!isDesktopView}>My Tech Stack</SubHeading>
           <Grid container spacing={4} justifyContent="center">
             {TECH_STACK.map((data, key) => (
-              <Grid item md={2} xs={3} key={key}>
+              <Grid item sm={1.7} xs={3} key={key}>
                 <img role="img" src={data.src} alt={data.alt} />
                 <Typography
                   style={{
@@ -110,6 +97,20 @@ export default function Home() {
               </Grid>
             ))}
           </Grid>
+          
+        </CustomPaper>
+        <SubHeading shrinkFontOn={!isDesktopView}>
+            Featured Projects
+          </SubHeading>
+          <Stack
+            direction={isDesktopView ? "row" : "column"}
+            justifyContent="space-evenly"
+            style={{maxWidth: 900, margin: "auto"}}
+            spacing={2}
+          >
+            <ProjectCard data={PROJECT_CONTENT[0]} />
+            <ProjectCard data={PROJECT_CONTENT[1]} />
+          </Stack>
           <Button
             variant="contained"
             color="primary"
@@ -119,16 +120,16 @@ export default function Home() {
               width: "fit-content",
               margin: "auto",
               display: "block",
-              marginTop: 40,
+              marginTop: 30,
+              marginBottom: 50,
               fontSize: isDesktopView ? 30 : 18,
               textShadow: MINUTE_SHADOW,
             }}
           >
-            <Stack direction="row" style={{ alignItems: "center" }}>
-              <OrangeEarth /> Check out my projects!
+            <Stack direction="row" style={{ alignItems: "center" }} >
+              <OrangeEarth /> See More Projects
             </Stack>
           </Button>
-        </CustomPaper>
       </MainWrapper>
     </>
   );
