@@ -13,7 +13,7 @@ export const MINUTE_SHADOW = "0px 1px 0.5px rgba(0, 0, 0, 0.045)";
 export const MINUTE_SHADOW_SVG =
   "drop-shadow(0px 1px 0.25px rgb(0 0 0 / 0.045))";
 export const SMALL_SHADOW =
-  "0px 1.75px 2.25px rgba(0, 0, 0, 0.08), 0px 1.25px 0.75px rgba(0, 0, 0, 0.05)";
+  "0px 1.625px 2.25px rgba(0, 0, 0, 0.065), 0px 1.2px 0.7px rgba(0, 0, 0, 0.045)";
 
 export const OFF_WHITE_COLOR = "#fffdfa";
 export const MUI_PRIMARY_COLOR_DEEP_ORANGE = "#ff5722";
