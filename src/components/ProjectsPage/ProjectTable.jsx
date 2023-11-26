@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Stack,
   Table,
@@ -56,7 +57,13 @@ export default function ProjectTable(props) {
                   style={{ textDecoration: "none" }}
                   href={`/project/${row.title}`}
                 >
-                  <img src={row.imageLink} style={{ height: "100%" }} />
+                  {/* Generates a smaller image but optimized for dpi scalling higher than 100% */}
+                  <Image
+                    src={row.imageLink}
+                    height={75}
+                    width={100}
+                    style={{ height: 50, width: 66.7 }}
+                  />
                 </Link>
               </TableCell>
               <TableCell align="left">
