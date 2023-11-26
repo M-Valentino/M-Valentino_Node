@@ -63,6 +63,7 @@ export default function ProjectTable(props) {
                     height={100}
                     width={133.4}
                     style={{ height: 50, width: 66.7 }}
+                    quality={95}
                   />
                 </Link>
               </TableCell>
