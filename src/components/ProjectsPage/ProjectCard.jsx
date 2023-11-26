@@ -115,11 +115,12 @@ export default function ProjectCard(props) {
                 style={{
                   backgroundColor: MUI_PRIMARY_COLOR_DEEP_ORANGE,
                   width: 168,
-                  color: "#fff",
+                  color: OFF_WHITE_COLOR,
                   textAlign: "center",
                   borderBottomRightRadius: 10,
                   fontSize: 13,
                   boxShadow: MINUTE_SHADOW,
+                  textShadow: MINUTE_SHADOW,
                 }}
               >
                 Try it in your browser!
