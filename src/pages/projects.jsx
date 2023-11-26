@@ -36,13 +36,15 @@ import { PAGE_TITLES } from "@/consts/pageTitles";
 export default function Projects() {
   const isDesktopView = useMediaQuery("(min-width:1200px)");
   const isTabletView = useMediaQuery("(max-width:899px)");
+  const CARD_VIEW = "cardView";
+  const TABLE_VIEW = "tableView";
 
   /**
    * For if the projects are shown in a card or table view. Mobile devices will
    * be shown the table view by default while desktop devices will be shown the
    * card view by default.
    */
-  const [view, setView] = useState("cardView");
+  const [view, setView] = useState(isDesktopView ? CARD_VIEW : TABLE_VIEW);
 
   /**
    * Function to handle changing the state of the view. It is called by the
@@ -173,9 +175,9 @@ export default function Projects() {
                 }}
               >
                 <ToggleButton
-                  value="cardView"
+                  value={CARD_VIEW}
                   aria-label="card view"
-                  disabled={view === "cardView"}
+                  disabled={view === CARD_VIEW}
                   color="primary"
                 >
                   <ViewModuleIcon
@@ -188,9 +190,9 @@ export default function Projects() {
                   {isDesktopView ? "Card View" : "Cards"}
                 </ToggleButton>
                 <ToggleButton
-                  value="tableView"
+                  value={TABLE_VIEW}
                   aria-label="table view"
-                  disabled={view === "tableView"}
+                  disabled={view === TABLE_VIEW}
                   color="primary"
                 >
                   <ViewListIcon
@@ -265,14 +267,14 @@ export default function Projects() {
             }}
           >
             {isDesktopView ? "Click " : "Select "}
-            {view === "cardView" ? "a card" : "an entry"} to view more details.
+            {view === CARD_VIEW ? "a card" : "an entry"} to view more details.
             Each project has a link to a GitHub repo as well as full list of
             languages and libraries used.
           </Typography>
         </div>
         {projectResults.length > 0 ? (
           <>
-            {view === "cardView" ? (
+            {view === CARD_VIEW ? (
               <Grid
                 container
                 justifyContent="center"
