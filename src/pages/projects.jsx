@@ -56,6 +56,12 @@ export default function Projects() {
     setView(nextView);
   };
 
+  const viewIconStyle = {
+    transform: "translateY(-1.5px)",
+    marginRight: 2,
+    filter: MINUTE_SHADOW_SVG,
+  };
+
   /**
    * For managing the order of the projects shown. If false, the oldest
    * projects are shown first.
@@ -181,11 +187,7 @@ export default function Projects() {
                   color="primary"
                 >
                   <ViewModuleIcon
-                    style={{
-                      transform: "translateY(-1.5px)",
-                      marginRight: 2,
-                      filter: MINUTE_SHADOW_SVG,
-                    }}
+                    style={viewIconStyle}
                   />
                   {isDesktopView ? "Card View" : "Cards"}
                 </ToggleButton>
@@ -196,11 +198,7 @@ export default function Projects() {
                   color="primary"
                 >
                   <ViewListIcon
-                    style={{
-                      transform: "translateY(-1.5px)",
-                      marginRight: 2,
-                      filter: MINUTE_SHADOW_SVG,
-                    }}
+                    style={viewIconStyle}
                   />
                   {isDesktopView ? "Table View" : "Table"}
                 </ToggleButton>
