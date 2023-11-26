@@ -57,11 +57,11 @@ export default function ProjectTable(props) {
                   style={{ textDecoration: "none" }}
                   href={`/project/${row.title}`}
                 >
-                  {/* Generates a smaller image but optimized for dpi scalling higher than 100% */}
+                  {/* Generates a smaller image but optimized for 200% dpi scaling */}
                   <Image
                     src={row.imageLink}
-                    height={75}
-                    width={100}
+                    height={100}
+                    width={133.4}
                     style={{ height: 50, width: 66.7 }}
                   />
                 </Link>
