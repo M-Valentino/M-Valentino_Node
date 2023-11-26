@@ -1,3 +1,4 @@
+import { createTheme } from "@mui/material/styles";
 // Shadow used when a project card is not being hovered. Also the static shadow of the projects table.
 export const CARD_AND_TABLE_SHADOW =
   "0px 0.1px 0.2px rgba(0, 0, 0, 0.022), 0px 0.3px 0.4px rgba(0, 0, 0, 0.031), 0px 0.7px 0.9px rgba(0, 0, 0, 0.039), 0px 1.5px 1.8px rgba(0, 0, 0, 0.048), 0px 4px 5px rgba(0, 0, 0, 0.07)";
@@ -24,3 +25,35 @@ export const SCREEN_CONTROL_STYLES = {
   filter:
     "drop-shadow(0px 1px 0.5px rgb(0 0 0 / 0.21)) drop-shadow(0px 1.5px 1px rgb(0 0 0 / 0.24)) drop-shadow(0px 2px 2px rgb(0 0 0 / 0.3))",
 };
+
+// This controls the main theme of the website.
+export const MainTheme = createTheme({
+  palette: {
+    primary: {
+      light: "#ff8720",
+      main: MUI_PRIMARY_COLOR_DEEP_ORANGE,
+      dark: "#ee4312",
+      contrastText: OFF_WHITE_COLOR,
+    },
+    secondary: {
+      light: "#777",
+      main: "#444",
+      dark: "#000",
+      contrastText: "#000",
+    },
+    tertiary: {
+      light: "#fff",
+      main: "#fdfdfd",
+      dark: "#aaa",
+    },
+    text: {
+      primary: "#000",
+      secondary: "#444",
+    },
+  },
+  typography: {
+    button: {
+      textTransform: "none",
+    },
+  },
+});
