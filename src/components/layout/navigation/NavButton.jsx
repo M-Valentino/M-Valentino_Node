@@ -9,7 +9,6 @@ export const NavButton = ({
   children,
   externalLink,
 }) => {
-  
   return (
     <Button
       color={activeLink === buttonTextAndOrLink ? "primary" : "secondary"}

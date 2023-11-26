@@ -1,7 +1,8 @@
 import React from "react";
 import { SMALL_SHADOW, OFF_WHITE_COLOR } from "@/consts/stylingValues";
 
-export const CustomPaper = ({children, isDesktopView}) => {
+// This component holds page sections inside the <main> content.
+export const CustomPaper = ({ children, isDesktopView }) => {
   return (
     <div
       style={{

@@ -35,7 +35,10 @@ export const OrangeEarth = () => {
 
   return (
     <>
-      <Canvas camera={{ position: [0, 0, 8.5], fov: 40 }} style={{width: 50, height: 50}}>
+      <Canvas
+        camera={{ position: [0, 0, 8.5], fov: 40 }}
+        style={{ width: 50, height: 50 }}
+      >
         <Earth position={[0, -0.1, 0]} />
         <pointLight
           position={[0, 8, 15]}

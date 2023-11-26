@@ -3,5 +3,5 @@ export const PAGE_TITLES = {
   projects: "Projects",
   blog: "Blog",
   gitHub: "GitHub",
-  linkedIn: "LinkedIn"
-}
+  linkedIn: "LinkedIn",
+};

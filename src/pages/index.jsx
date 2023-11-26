@@ -97,39 +97,36 @@ export default function Home() {
               </Grid>
             ))}
           </Grid>
-          
         </CustomPaper>
-        <SubHeading shrinkFontOn={!isDesktopView}>
-            Featured Projects
-          </SubHeading>
-          <Stack
-            direction={isDesktopView ? "row" : "column"}
-            justifyContent="space-evenly"
-            style={{maxWidth: 900, margin: "auto"}}
-            spacing={2}
-          >
-            <ProjectCard data={PROJECT_CONTENT[0]} />
-            <ProjectCard data={PROJECT_CONTENT[1]} />
+        <SubHeading shrinkFontOn={!isDesktopView}>Featured Projects</SubHeading>
+        <Stack
+          direction={isDesktopView ? "row" : "column"}
+          justifyContent="space-evenly"
+          style={{ maxWidth: 900, margin: "auto" }}
+          spacing={2}
+        >
+          <ProjectCard data={PROJECT_CONTENT[0]} />
+          <ProjectCard data={PROJECT_CONTENT[1]} />
+        </Stack>
+        <Button
+          variant="contained"
+          color="primary"
+          LinkComponent={Link}
+          href="/projects"
+          style={{
+            width: "fit-content",
+            margin: "auto",
+            display: "block",
+            marginTop: 30,
+            marginBottom: 50,
+            fontSize: isDesktopView ? 30 : 18,
+            textShadow: MINUTE_SHADOW,
+          }}
+        >
+          <Stack direction="row" style={{ alignItems: "center" }}>
+            <OrangeEarth /> See More Projects
           </Stack>
-          <Button
-            variant="contained"
-            color="primary"
-            LinkComponent={Link}
-            href="/projects"
-            style={{
-              width: "fit-content",
-              margin: "auto",
-              display: "block",
-              marginTop: 30,
-              marginBottom: 50,
-              fontSize: isDesktopView ? 30 : 18,
-              textShadow: MINUTE_SHADOW,
-            }}
-          >
-            <Stack direction="row" style={{ alignItems: "center" }} >
-              <OrangeEarth /> See More Projects
-            </Stack>
-          </Button>
+        </Button>
       </MainWrapper>
     </>
   );

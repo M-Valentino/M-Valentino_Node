@@ -82,7 +82,7 @@ export const PROJECT_TITLES = {
   iSpyShopper: "I Spy Shopper",
   imageManipulationExperiments: "Image Manipulation Experiments",
   retroCalculator: "Retro Calculator",
-  citiesRecommender: "Cities Recommender"
+  citiesRecommender: "Cities Recommender",
 };
 
 export const PROJECT_CONTENT = [
@@ -92,7 +92,8 @@ export const PROJECT_CONTENT = [
     gitLink: "https://github.com/M-Valentino/Image-To-Divs",
     hrefType: HREF_TYPES.iframe,
     imageLink: "/projectImages/imageToDivs.webp",
-    imageAltText: "A screenshot of Robocop for the Gameboy converted to divs with a dot matrix effect. Below it is a a page inspector open showing the divs to the image.",
+    imageAltText:
+      "A screenshot of Robocop for the Gameboy converted to divs with a dot matrix effect. Below it is a a page inspector open showing the divs to the image.",
     title: PROJECT_TITLES.imageToDivs,
     date: "2023",
     description:
@@ -107,7 +108,8 @@ export const PROJECT_CONTENT = [
   {
     index: 1,
     href: "/Earth3JS",
-    gitLink: "https://github.com/M-Valentino/M-Valentino_Node/blob/main/src/pages/Earth3JS.jsx",
+    gitLink:
+      "https://github.com/M-Valentino/M-Valentino_Node/blob/main/src/pages/Earth3JS.jsx",
     hrefType: HREF_TYPES.iframe,
     imageLink: "/projectImages/earth3js.webp",
     imageAltText: "3D render of the earth with the moon orbiting it",

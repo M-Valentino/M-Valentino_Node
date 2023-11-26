@@ -24,7 +24,7 @@ import { PLUS_MORE } from "@/consts/projectContent";
 /**
  * This component takes in one project object from the projectContent array and
  * populates the elements with it's data. This component is shown on the Projects
- * page. It grows in size when hovered over.
+ * page and index page. It grows in size when hovered over.
  */
 export default function ProjectCard(props) {
   const {
@@ -148,6 +148,8 @@ export default function ProjectCard(props) {
               {description}
             </Typography>
           </div>
+          {/* Tooltip shows all languages on a card if there are some hidden. + more
+          language chip denotes that there are more languages that couldn't fit. */}
           <Tooltip title={languages.length > 4 ? languages.join(", ") : ""}>
             <Stack direction="row" spacing={1} mt={1}>
               {languages.slice(0, 4).map((props, key) => (
