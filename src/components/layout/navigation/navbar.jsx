@@ -1,6 +1,12 @@
 import React from "react";
 import Link from "next/link";
-import { Button, IconButton, Menu, useMediaQuery } from "@mui/material/";
+import {
+  Button,
+  Divider,
+  IconButton,
+  Menu,
+  useMediaQuery,
+} from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -91,6 +97,7 @@ const NavBar = (props) => {
               activeLink={activeLink}
               itemTextAndOrLink={PAGE_TITLES.blog}
             />
+            <Divider />
             <MobileNavItem
               externalLink
               itemTextAndOrLink={PAGE_TITLES.gitHub}
