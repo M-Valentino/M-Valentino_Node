@@ -8,6 +8,7 @@ import {
   useMediaQuery,
 } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import UseAnimations from "react-useanimations";
 import github from "react-useanimations/lib/github";
 import linkedin from "react-useanimations/lib/linkedin";
@@ -73,11 +74,19 @@ const NavBar = (props) => {
             onClick={handleClick}
             style={{ position: "absolute", top: 0, right: 0 }}
           >
-            <MenuIcon
-              color="primary"
-              fontSize="large"
-              style={{ filter: MINUTE_SHADOW_SVG }}
-            />
+            {open ? (
+              <CloseIcon
+                color="primary"
+                fontSize="large"
+                style={{ filter: MINUTE_SHADOW_SVG }}
+              />
+            ) : (
+              <MenuIcon
+                color="primary"
+                fontSize="large"
+                style={{ filter: MINUTE_SHADOW_SVG }}
+              />
+            )}
           </IconButton>
           <Menu
             id="basic-menu"
