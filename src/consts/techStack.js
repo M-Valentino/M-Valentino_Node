@@ -9,6 +9,8 @@ export const TECH_STACK = [
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg",
     alt: "Android Studio logo",
     label: "Android Studio",
+    // Makes the font for the label smaller so that the grid item doesn't take up that much space since the label will be on two lines.
+    smallFontSize: true,
   },
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg",
@@ -59,7 +61,6 @@ export const TECH_STACK = [
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg",
     alt: "Jupyter Notebook logo",
     label: "Jupyter Notebook",
-    // Makes the font for the label smaller so that the label can be rendered on one line.
     smallFontSize: true,
   },
   {

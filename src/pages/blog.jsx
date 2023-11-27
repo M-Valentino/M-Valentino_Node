@@ -39,7 +39,7 @@ export default function Home() {
             color="secondary"
             style={{ fontStyle: "italic" }}
           >
-            Published October 15, 2023
+            Published November 26, 2023
           </Typography>
           <Typography paragraph>
             I'm sure this sounds shocking to people reading this blog, but I'm
@@ -54,18 +54,36 @@ export default function Home() {
             according to what I think looks good. Most people would either
             dislike it or think of me as not having good web design skills.
           </Typography>
-          <img src="/blogImages/neocities_professional_website.webp" style={{width: "100%"}}/>
           <Typography paragraph>
-            People have told me my website looks great, and I know it looks
-            modern. The reason why is because I'm following web design trends,
-            and I'm using Material UI and custom components resembling what they
-            use. Part of me does like the design, but I feel a little empty
-            inside looking at it. To me my site looks boring, sterile, and not
-            unique enough. Part of it is because I haven't fully decorated it
-            all the way, but even when I achieve that, I still wouldn't fully be
-            proud of it.
+            Below is an example of an old "professional" website I created where
+            I completely ignored nearly every convention in web design and made
+            what I wanted to make:
           </Typography>
-
+          <img
+            src="/blogImages/neocities_professional_website.webp"
+            style={{ width: "100%" }}
+          />
+          <Typography paragraph>
+            I don't think many hiring managers would take that website too
+            seriously.
+          </Typography>
+          <Typography paragraph>
+            So, going back to my current website, people have told me my website
+            looks great, and I know it looks modern. The reason why is because
+            I'm following web design trends, and I'm using Material UI and
+            custom components resembling what they use. Part of me does like the
+            design, but I feel a little empty inside looking at it. To me my
+            site looks boring, sterile, and not unique enough. Part of it is
+            because I haven't fully decorated it all the way, but even when I
+            achieve that, I still wouldn't fully be proud of it.
+          </Typography>
+          <Typography paragraph>
+            All is not doom and gloom. Coding whatever I wanted to code, has
+            exposed me to a lot of facets of CSS and JS that I wouldn't have
+            even touched otherwise.{" "}
+            <Link href="https://neocities.org/browse">Neocities</Link> exists
+            too where going against the grain is even celebrated.
+          </Typography>
         </CustomPaper>
 
         <CustomPaper isDesktopView={isDesktopView}>

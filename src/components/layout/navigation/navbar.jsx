@@ -1,16 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import {
-  Button,
-  IconButton,
-  Menu,
-  useMediaQuery,
-} from "@mui/material/";
+import { Button, IconButton, Menu, useMediaQuery } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import {
-  MINUTE_SHADOW_SVG,
-} from "@/consts/stylingValues";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { MINUTE_SHADOW_SVG } from "@/consts/stylingValues";
 import { PAGE_TITLES } from "@/consts/pageTitles";
 import { NavButton } from "./NavButton";
 import { MobileNavItem } from "./MobileNavItem";
@@ -20,7 +14,7 @@ const NavBar = (props) => {
   // The index of the button to change color to show it is the active link.
   const { activeLink } = props;
   const isDesktopView = useMediaQuery("(min-width:1200px)");
-  const isMobileView = useMediaQuery("(max-width:712px)");
+  const isMobileView = useMediaQuery("(max-width:876px)");
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -101,40 +95,59 @@ const NavBar = (props) => {
               externalLink
               itemTextAndOrLink={PAGE_TITLES.gitHub}
             />
+            <MobileNavItem
+              externalLink
+              itemTextAndOrLink={PAGE_TITLES.linkedIn}
+            />
           </Menu>
           {/* For creating spacing below the navbar during mobile view. */}
           <div style={{ width: "100%", height: 15 }}></div>
         </>
       ) : (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            maxWidth: 500,
-            margin: "auto",
-          }}
-        >
-          <NavButton
-            activeLink={activeLink}
-            buttonTextAndOrLink={PAGE_TITLES.home}
-          />
-          <NavButton
-            activeLink={activeLink}
-            buttonTextAndOrLink={PAGE_TITLES.projects}
-          />
-          <NavButton
-            activeLink={activeLink}
-            buttonTextAndOrLink={PAGE_TITLES.blog}
-          />
-          <NavButton
-            externalLink
-            buttonTextAndOrLink={PAGE_TITLES.gitHub}
+        <>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-around",
+              width: 380,
+              margin: "auto",
+            }}
           >
-            <GitHubIcon
-              style={{ transform: "translateY(-3px)", marginRight: 2 }}
+            <NavButton
+              activeLink={activeLink}
+              buttonTextAndOrLink={PAGE_TITLES.home}
             />
-          </NavButton>
-        </div>
+            <NavButton
+              activeLink={activeLink}
+              buttonTextAndOrLink={PAGE_TITLES.projects}
+            />
+            <NavButton
+              activeLink={activeLink}
+              buttonTextAndOrLink={PAGE_TITLES.blog}
+            />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              width: 240,
+              position: "absolute",
+              top: 0,
+              right: isDesktopView ? 50 : 5,
+            }}
+          >
+            <NavButton externalLink buttonTextAndOrLink={PAGE_TITLES.gitHub}>
+              <GitHubIcon
+                style={{ transform: "translateY(-3px)", marginRight: 2 }}
+              />
+            </NavButton>
+            <NavButton externalLink buttonTextAndOrLink={PAGE_TITLES.linkedIn}>
+              <LinkedInIcon
+                style={{ transform: "translateY(-3px)", marginRight: 2 }}
+              />
+            </NavButton>
+          </div>
+        </>
       )}
     </div>
   );

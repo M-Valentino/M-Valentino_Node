@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   Button,
   Stack,
@@ -6,8 +7,6 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import { ThemeProvider } from "@mui/material/styles";
-import { MainTheme } from "@/utils/MUITheme";
 import { useSpring, animated } from "@react-spring/web";
 import { LanguageChip } from "../LanguageChip";
 import {
@@ -23,7 +22,7 @@ import { PLUS_MORE } from "@/consts/projectContent";
 /**
  * This component takes in one project object from the projectContent array and
  * populates the elements with it's data. This component is shown on the Projects
- * page. It grows in size when hovered over.
+ * page and index page. It grows in size when hovered over.
  */
 export default function ProjectCard(props) {
   const {
@@ -40,28 +39,6 @@ export default function ProjectCard(props) {
   const isSmallMobileView = useMediaQuery("(max-width:372px)");
   // True if mouse is hovering on the card, else false.
   const [isHovering, setIsHovering] = useState(false);
-
-  /**
-   * Animation that is triggered when the Projects page is loaded. The card moves onto
-   * the screen in a slightly bouncy fashion. Each card in the projects page starts
-   * moving one after another. This is determined by the card's key in the delay
-   * parameter.
-   */
-  // const cardDealt = useSpring({
-  //   from: {
-  //     y: props.cardCanBeDealt ? 500 : 0,
-  //     opacity: props.cardCanBeDealt ? 0 : 1,
-  //   },
-  //   to: {
-  //     y: 0,
-  //     opacity: 1,
-  //   },
-  //   delay: props.key * 100,
-  //   config: {
-  //     mass: 1,
-  //     friction: 19,
-  //   },
-  // });
 
   /**
    * Animation to make the card enlarge a little bit when the user hovers over it.
@@ -93,101 +70,97 @@ export default function ProjectCard(props) {
   };
 
   return (
-    <ThemeProvider theme={MainTheme}>
-      <Button
-        style={{ padding: 0 }}
-        sx={{
-          "&.MuiButton-root:hover": { bgcolor: "transparent" },
-          "&& .MuiTouchRipple-rippleVisible": {
-            animationDuration: "1500ms",
-          },
+    <Button
+      style={{ padding: 0 }}
+      sx={{
+        "&.MuiButton-root:hover": { bgcolor: "transparent" },
+        "&& .MuiTouchRipple-rippleVisible": {
+          animationDuration: "1500ms",
+        },
+      }}
+      LinkComponent={Link}
+      href={`/project/${title}`}
+    >
+      <animated.div
+        style={{
+          backgroundColor: OFF_WHITE_COLOR,
+          maxWidth: isMobileView ? "100%" : 360,
+          padding: getCardPadding(),
+          borderRadius: 4,
+          textRendering: "geometricPrecision!important",
+          ...cardZoom,
         }}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
       >
-        <animated.div
+        <div
+          role="img"
+          alt={imageAltText}
           style={{
-            backgroundColor: OFF_WHITE_COLOR,
-            maxWidth: isMobileView ? "100%" : 360,
-            padding: getCardPadding(),
-            borderRadius: 4,
-            textRendering: "geometricPrecision!important",
-            // ...cardDealt,
-            ...cardZoom,
+            backgroundImage: `url(${imageLink})`,
+            backgroundSize: "cover",
+            backgroundPosition: "50% 50%",
+            backgroundColor: "#ccc",
+            width: "100%",
+            height: isMobileView ? 260 : 270,
+            borderRadius: 2,
+            boxShadow: MINUTE_SHADOW,
           }}
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
         >
-          <div
-            role="img"
-            alt={imageAltText}
-            style={{
-              backgroundImage: `url(${imageLink})`,
-              backgroundSize: "cover",
-              backgroundPosition: "50% 50%",
-              backgroundColor: "#ccc",
-              width: "100%",
-              height: isMobileView ? 260 : 270,
-              borderRadius: 2,
-              boxShadow: MINUTE_SHADOW,
-            }}
+          {hrefType === HREF_TYPES.iframe && (
+            <div
+              style={{
+                backgroundColor: MUI_PRIMARY_COLOR_DEEP_ORANGE,
+                width: 168,
+                color: OFF_WHITE_COLOR,
+                textAlign: "center",
+                borderBottomRightRadius: 10,
+                fontSize: 13,
+                boxShadow: MINUTE_SHADOW,
+                textShadow: MINUTE_SHADOW,
+              }}
+            >
+              Try it in your browser!
+            </div>
+          )}
+        </div>
+        <Stack direction="row" spacing={1}>
+          {!isSmallMobileView && (
+            <Typography variant={"h6"} color="primary">
+              {date}
+            </Typography>
+          )}
+          <Typography
+            variant={title.length > 28 ? "h6" : "h5"}
+            color="text.primary"
           >
-            {hrefType === HREF_TYPES.iframe && (
-              <div
-                style={{
-                  backgroundColor: MUI_PRIMARY_COLOR_DEEP_ORANGE,
-                  width: 168,
-                  color: "#fff",
-                  borderBottomRightRadius: 10,
-                  fontSize: 13,
-                  boxShadow: MINUTE_SHADOW,
-                }}
-              >
-                Try it in your browser!
-              </div>
+            {title}
+          </Typography>
+        </Stack>
+        <div style={{ height: isMobileView ? "unset" : 145 }}>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            style={{ textAlign: isSmallMobileView ? "left" : "justify" }}
+          >
+            {description}
+          </Typography>
+        </div>
+        {/* Tooltip shows all languages on a card if there are some hidden. + more
+          language chip denotes that there are more languages that couldn't fit. */}
+        <Tooltip title={languages.length > 4 ? languages.join(", ") : ""}>
+          <Stack direction="row" spacing={1} mt={1}>
+            {languages.slice(0, 4).map((props, key) => (
+              <LanguageChip key={key} language={props} size="small" />
+            ))}
+            {languages.length > 4 ? (
+              <LanguageChip language={PLUS_MORE} size="small" />
+            ) : (
+              <></>
             )}
-          </div>
-          <Stack direction="row" spacing={1}>
-            {!isSmallMobileView && (
-              <Typography variant={"h6"} color="primary">
-                {date}
-              </Typography>
-            )}
-            <Typography
-              variant={title.length > 28 ? "h6" : "h5"}
-              color="text.primary"
-            >
-              {title}
-            </Typography>
           </Stack>
-          <div style={{ height: isMobileView ? "unset" : 145 }}>
-            <Typography
-              variant="body2"
-              color="text.secondary"
-              style={{ textAlign: isSmallMobileView ? "left" : "justify" }}
-            >
-              {description}
-            </Typography>
-          </div>
-          <Tooltip title={languages.length > 4 ? languages.join(", ") : ""}>
-            <Stack direction="row" spacing={1} mt={1}>
-              {languages.slice(0, 4).map((props, key) => (
-                <LanguageChip
-                  key={key}
-                  language={props}
-                  size="small" 
-                />
-              ))}
-              {languages.length > 4 ? (
-                <LanguageChip
-                  language={PLUS_MORE}
-                  size="small"
-                />
-              ) : (
-                <></>
-              )}
-            </Stack>
-          </Tooltip>
-        </animated.div>
-      </Button>
-    </ThemeProvider>
+        </Tooltip>
+      </animated.div>
+    </Button>
   );
 }

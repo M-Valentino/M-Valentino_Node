@@ -18,7 +18,7 @@ export const MainHeading = ({ children, shrinkFontOn, addMarginBottomOn }) => {
   );
 };
 
-export const SubHeading = ({ children, shrinkFontOn}) => {
+export const SubHeading = ({ children, shrinkFontOn }) => {
   return (
     <Typography
       variant={shrinkFontOn ? "h5" : "h4"}
@@ -27,7 +27,7 @@ export const SubHeading = ({ children, shrinkFontOn}) => {
         marginBottom: 20,
         textShadow: MINUTE_SHADOW,
         fontWeight: "bolder",
-        textAlign: "center"
+        textAlign: "center",
       }}
     >
       {children}
