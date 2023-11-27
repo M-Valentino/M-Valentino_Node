@@ -13,11 +13,11 @@ export default function Home() {
   // Controlls how many blog posts can be seen.
   const [postsToShow, setPostsToShow] = useState(1);
 
-  // If user scrolled to the bottom, increment postsToShow.
+  // If user scrolled 98% or more to the bottom, increment postsToShow.
   const handleScroll = () => {
     if (
       Math.ceil(window.innerHeight + window.scrollY) >=
-      document.documentElement.scrollHeight
+      Math.ceil(document.documentElement.scrollHeight * 0.98)
     ) {
       setPostsToShow((postsToShow) => postsToShow + 1);
     }
