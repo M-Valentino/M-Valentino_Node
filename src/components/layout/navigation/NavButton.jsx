@@ -8,6 +8,7 @@ export const NavButton = ({
   buttonTextAndOrLink,
   children,
   externalLink,
+  events
 }) => {
   return (
     <Button
@@ -17,6 +18,7 @@ export const NavButton = ({
       href={generateNavLink(buttonTextAndOrLink)}
       target={externalLink ? "_blank" : ""}
       rel={externalLink ? "noopener noreferrer" : ""}
+      {...events}
     >
       {children}
       {buttonTextAndOrLink}

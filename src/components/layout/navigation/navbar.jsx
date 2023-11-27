@@ -8,9 +8,13 @@ import {
   useMediaQuery,
 } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { MINUTE_SHADOW_SVG } from "@/consts/stylingValues";
+import UseAnimations from "react-useanimations";
+import github from "react-useanimations/lib/github";
+import linkedin from "react-useanimations/lib/linkedin";
+import {
+  MINUTE_SHADOW_SVG,
+  MUI_SECONDARY_COLOR_GRAY,
+} from "@/consts/stylingValues";
 import { PAGE_TITLES } from "@/consts/pageTitles";
 import { NavButton } from "./NavButton";
 import { MobileNavItem } from "./MobileNavItem";
@@ -143,16 +147,36 @@ const NavBar = (props) => {
               right: isDesktopView ? 50 : 5,
             }}
           >
-            <NavButton externalLink buttonTextAndOrLink={PAGE_TITLES.gitHub}>
-              <GitHubIcon
-                style={{ transform: "translateY(-3px)", marginRight: 2 }}
-              />
-            </NavButton>
-            <NavButton externalLink buttonTextAndOrLink={PAGE_TITLES.linkedIn}>
-              <LinkedInIcon
-                style={{ transform: "translateY(-3px)", marginRight: 2 }}
-              />
-            </NavButton>
+            <UseAnimations
+              animation={linkedin}
+              size={30}
+              wrapperStyle={{ transform: "translate(-1px, -4.8px)" }}
+              strokeColor={MUI_SECONDARY_COLOR_GRAY}
+              render={(eventProps, animationProps) => (
+                <NavButton
+                  externalLink
+                  buttonTextAndOrLink={PAGE_TITLES.linkedIn}
+                  events={eventProps}
+                >
+                  <div {...animationProps} />
+                </NavButton>
+              )}
+            />
+            <UseAnimations
+              animation={github}
+              size={30}
+              wrapperStyle={{ transform: "translateY(-4px)" }}
+              strokeColor={MUI_SECONDARY_COLOR_GRAY}
+              render={(eventProps, animationProps) => (
+                <NavButton
+                  externalLink
+                  buttonTextAndOrLink={PAGE_TITLES.gitHub}
+                  events={eventProps}
+                >
+                  <div {...animationProps} />
+                </NavButton>
+              )}
+            />
           </div>
         </>
       )}
