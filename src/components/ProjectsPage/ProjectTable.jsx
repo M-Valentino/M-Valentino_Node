@@ -60,6 +60,7 @@ export default function ProjectTable(props) {
                   {/* Generates a smaller image but optimized for 200% dpi scaling */}
                   <Image
                     src={row.imageLink}
+                    alt={row.imageAltText}
                     height={100}
                     width={133.4}
                     style={{ height: 50, width: 66.7 }}
