@@ -147,6 +147,8 @@ const NavBar = (props) => {
               right: isDesktopView ? 50 : 5,
             }}
           >
+            {/* Wrapping NavButton inside UseAnimations ensures that
+             the animation plays when hovering on the button. */}
             <UseAnimations
               animation={linkedin}
               size={30}
