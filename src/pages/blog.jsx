@@ -91,17 +91,26 @@ export default function Home() {
         <MainHeading shrinkFontOn={!isDesktopView} addMarginBottomOn={true}>
           Mark Valentino's Tech Blog
         </MainHeading>
+
+        <SwipeableDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+          <List>
+            {posts.map((item, listIndex) => (
+              <ListItem key={listIndex}>
+                <ListItemText primary={item.title} secondary={item.date} />
+              </ListItem>
+            ))}
+          </List>
+        </SwipeableDrawer>
         <animated.div
           style={{
-            postion: "absolute",
+            display: "inline-block",
+            position: "fixed",
             left: 0,
-            top: 80,
             backgroundColor: MUI_PRIMARY_COLOR_DEEP_ORANGE,
             width: 170,
             padding: 15,
             cursor: "pointer",
             boxShadow: CARD_AND_TABLE_SHADOW,
-            transform: bookmarkHover ? "none" : "translateX(-20px)",
             ...bookmarkMove,
           }}
           onClick={() => setDrawerOpen(!drawerOpen)}
@@ -119,15 +128,6 @@ export default function Home() {
             Show All Posts
           </Typography>
         </animated.div>
-        <SwipeableDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-          <List>
-            {posts.map((item, listIndex) => (
-              <ListItem key={listIndex}>
-                <ListItemText primary={item.title} secondary={item.date} />
-              </ListItem>
-            ))}
-          </List>
-        </SwipeableDrawer>
         {posts.slice(0, postsToShow).map((item, postIndex) => (
           <CustomPaper isDesktopView={isDesktopView} key={postIndex}>
             <SubHeading shrinkFontOn={isLargeMobileView}>
