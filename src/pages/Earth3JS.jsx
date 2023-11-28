@@ -146,7 +146,7 @@ export const Earth3JS = () => {
   // The moon orbits and rotates slightly.
   const Moon = (props) => {
     let angle = 0;
-    let radius = 5;
+    const radius = 5;
     const mesh = useRef();
     useFrame(() => {
       mesh.current.rotation.y -= 0.001 * simulationSpeed;
