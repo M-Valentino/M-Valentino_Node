@@ -62,6 +62,7 @@ export default function Home() {
           <img
             src="/blogImages/neocities_professional_website.webp"
             style={{ width: "100%" }}
+            alt="Old professional website that looks like it came out of the early 2000's"
           />
           <Typography paragraph>
             I don't think many hiring managers would take that website too

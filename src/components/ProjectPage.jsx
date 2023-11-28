@@ -146,10 +146,10 @@ export default function ProjectPage(props) {
         Languages and Libraries used:
       </Typography>
       <Grid container spacing={1}>
-        {languages.map((props, key) => (
-          <Grid item key={key}>
+        {languages.map((item, index) => (
+          <Grid item key={index}>
             <LanguageChip
-              language={props}
+              language={item}
               size={!isDesktopView ? "small" : "full"}
               showLink
             />

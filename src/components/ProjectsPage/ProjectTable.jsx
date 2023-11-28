@@ -28,18 +28,17 @@ export default function ProjectTable(props) {
       return 1;
     } else if (isMobileView) {
       return 2;
-    } else {
-      return 3;
     }
+    return 3;
   };
 
   return (
     <CustomPaper>
       <Table aria-label="Table of projects">
         <TableBody>
-          {PROJECT_CONTENT.map((row, key) => (
+          {PROJECT_CONTENT.map((row, projectIndex) => (
             <TableRow
-              key={key}
+              key={projectIndex}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               {!isLargeMobileView && (
@@ -98,10 +97,10 @@ export default function ProjectTable(props) {
                     <Stack direction="row" spacing={1}>
                       {row.languages
                         .slice(0, getMaxChipsToShow())
-                        .map((props, key) => (
+                        .map((item, chipIndex) => (
                           <LanguageChip
-                            key={key}
-                            language={props}
+                            key={chipIndex}
+                            language={item}
                             size="small"
                             showLink
                           />
