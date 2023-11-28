@@ -150,8 +150,8 @@ export default function ProjectCard(props) {
           language chip denotes that there are more languages that couldn't fit. */}
         <Tooltip title={languages.length > 4 ? languages.join(", ") : ""}>
           <Stack direction="row" spacing={1} mt={1}>
-            {languages.slice(0, 4).map((props, key) => (
-              <LanguageChip key={key} language={props} size="small" />
+            {languages.slice(0, 4).map((item, index) => (
+              <LanguageChip key={index} language={item} size="small" />
             ))}
             {languages.length > 4 ? (
               <LanguageChip language={PLUS_MORE} size="small" />

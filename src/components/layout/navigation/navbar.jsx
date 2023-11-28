@@ -1,28 +1,20 @@
 import React from "react";
 import Link from "next/link";
-import { Button, IconButton, Menu, useMediaQuery } from "@mui/material/";
-import MenuIcon from "@mui/icons-material/Menu";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { Button, useMediaQuery } from "@mui/material/";
 import { MINUTE_SHADOW_SVG } from "@/consts/stylingValues";
-import { PAGE_TITLES } from "@/consts/pageTitles";
-import { NavButton } from "./NavButton";
-import { MobileNavItem } from "./MobileNavItem";
+import { MobileMenu } from "./MobileMenu";
+import { DesktopMenu } from "./DesktopMenu";
 
-// This component is the main navbar of the site.
-const NavBar = (props) => {
-  // The index of the button to change color to show it is the active link.
-  const { activeLink } = props;
+/**
+ * This component is the main navbar of the site and determines
+ * whether to show the mobile or desktop menu.
+ * @param {*} activeLink The index of the button (desktop) or
+ * menu item (mobile) to change color to show it is the active link.
+ * @returns component
+ */
+const NavBar = ({ activeLink }) => {
   const isDesktopView = useMediaQuery("(min-width:1200px)");
   const isMobileView = useMediaQuery("(max-width:876px)");
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   return (
     <div style={{ marginBottom: 50 }}>
@@ -54,100 +46,9 @@ const NavBar = (props) => {
       </Button>
 
       {isMobileView ? (
-        <>
-          <IconButton
-            id="basic-button"
-            aria-controls={open ? "basic-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}
-            style={{ position: "absolute", top: 0, right: 0 }}
-          >
-            <MenuIcon
-              color="primary"
-              fontSize="large"
-              style={{ filter: MINUTE_SHADOW_SVG }}
-            />
-          </IconButton>
-          <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              "aria-labelledby": "basic-button",
-            }}
-            style={{ textDecoration: "none" }}
-          >
-            <MobileNavItem
-              activeLink={activeLink}
-              itemTextAndOrLink={PAGE_TITLES.home}
-            />
-            <MobileNavItem
-              activeLink={activeLink}
-              itemTextAndOrLink={PAGE_TITLES.projects}
-            />
-            <MobileNavItem
-              activeLink={activeLink}
-              itemTextAndOrLink={PAGE_TITLES.blog}
-            />
-            <MobileNavItem
-              externalLink
-              itemTextAndOrLink={PAGE_TITLES.gitHub}
-            />
-            <MobileNavItem
-              externalLink
-              itemTextAndOrLink={PAGE_TITLES.linkedIn}
-            />
-          </Menu>
-          {/* For creating spacing below the navbar during mobile view. */}
-          <div style={{ width: "100%", height: 15 }}></div>
-        </>
+        <MobileMenu activeLink={activeLink} />
       ) : (
-        <>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-around",
-              width: 380,
-              margin: "auto",
-            }}
-          >
-            <NavButton
-              activeLink={activeLink}
-              buttonTextAndOrLink={PAGE_TITLES.home}
-            />
-            <NavButton
-              activeLink={activeLink}
-              buttonTextAndOrLink={PAGE_TITLES.projects}
-            />
-            <NavButton
-              activeLink={activeLink}
-              buttonTextAndOrLink={PAGE_TITLES.blog}
-            />
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              width: 240,
-              position: "absolute",
-              top: 0,
-              right: isDesktopView ? 50 : 5,
-            }}
-          >
-            <NavButton externalLink buttonTextAndOrLink={PAGE_TITLES.gitHub}>
-              <GitHubIcon
-                style={{ transform: "translateY(-3px)", marginRight: 2 }}
-              />
-            </NavButton>
-            <NavButton externalLink buttonTextAndOrLink={PAGE_TITLES.linkedIn}>
-              <LinkedInIcon
-                style={{ transform: "translateY(-3px)", marginRight: 2 }}
-              />
-            </NavButton>
-          </div>
-        </>
+        <DesktopMenu activeLink={activeLink} isDesktopView={isDesktopView} />
       )}
     </div>
   );

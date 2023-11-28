@@ -17,6 +17,7 @@ export const SMALL_SHADOW =
 
 export const OFF_WHITE_COLOR = "#fffdfa";
 export const MUI_PRIMARY_COLOR_DEEP_ORANGE = "#ff5722";
+export const MUI_SECONDARY_COLOR_GRAY = "#444";
 export const OFF_WHITE_GRADIENT = `linear-gradient(0deg, #fdfbfa 0%, ${OFF_WHITE_COLOR} 100%)`;
 
 export const SCREEN_CONTROL_STYLES = {
@@ -37,7 +38,7 @@ export const MainTheme = createTheme({
     },
     secondary: {
       light: "#777",
-      main: "#444",
+      main: MUI_SECONDARY_COLOR_GRAY,
       dark: "#000",
       contrastText: "#000",
     },

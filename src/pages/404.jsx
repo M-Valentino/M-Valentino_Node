@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const integratedCircuit = (
   <div
     style={{
@@ -209,7 +211,7 @@ const Custom404 = () => {
       >
         404 - Page Not Found
       </h1>
-      <a href="/">{integratedCircuit}</a>
+      <Link href="/">{integratedCircuit}</Link>
       <div
         style={{
           display: "grid",

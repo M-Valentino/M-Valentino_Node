@@ -1,3 +1,15 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": { 
+    "react/no-unescaped-entities": 0,
+    "@next/next/no-img-element": "off",
+    "no-nested-ternary": 1,
+    "no-unneeded-ternary": 1,
+    "prefer-const": 1,
+    "no-console": 1,
+    "no-else-return": 1,
+    "no-inline-comments": 1,
+    "no-multi-assign": 1,
+    "no-shadow": 1
+  }
 }

@@ -19,27 +19,26 @@ export default function ProjectTable(props) {
   const { PROJECT_CONTENT } = props;
   const isDesktopView = useMediaQuery("(min-width:900px)");
   const isLargeMobileView = useMediaQuery("(max-width:600px)");
-  const isMobileView = useMediaQuery("(max-width:500px)");
-  const isSmallMobileView = useMediaQuery("(max-width:486px)");
-  const isExtraSmallMobileView = useMediaQuery("(max-width:384px)");
+  const isMobileView = useMediaQuery("(max-width:538px)");
+  const isSmallMobileView = useMediaQuery("(max-width:496px)");
+  const isExtraSmallMobileView = useMediaQuery("(max-width:412px)");
 
   const getMaxChipsToShow = () => {
     if (isSmallMobileView) {
       return 1;
     } else if (isMobileView) {
       return 2;
-    } else {
-      return 3;
     }
+    return 3;
   };
 
   return (
     <CustomPaper>
       <Table aria-label="Table of projects">
         <TableBody>
-          {PROJECT_CONTENT.map((row, key) => (
+          {PROJECT_CONTENT.map((row, projectIndex) => (
             <TableRow
-              key={key}
+              key={projectIndex}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               {!isLargeMobileView && (
@@ -98,10 +97,10 @@ export default function ProjectTable(props) {
                     <Stack direction="row" spacing={1}>
                       {row.languages
                         .slice(0, getMaxChipsToShow())
-                        .map((props, key) => (
+                        .map((item, chipIndex) => (
                           <LanguageChip
-                            key={key}
-                            language={props}
+                            key={chipIndex}
+                            language={item}
                             size="small"
                             showLink
                           />

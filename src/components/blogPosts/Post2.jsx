@@ -37,6 +37,7 @@ export const Post2 = ({isDesktopView, isLargeMobileView}) => {
       </Typography>
       <img
         src="/blogImages/neocities_professional_website.webp"
+        alt="Old professional website that looks like it came out of the early 2000's"
         style={{ width: "100%" }}
       />
       <Typography paragraph>
