@@ -10,13 +10,16 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { PAGE_TITLES } from "@/consts/pageTitles";
 import {
   MUI_PRIMARY_COLOR_DEEP_ORANGE,
   MUI_PRIMARY_COLOR_DEEP_ORANGE_DARK,
   OFF_WHITE_COLOR,
-  CARD_AND_TABLE_SHADOW,
   MINUTE_SHADOW,
+  MINUTE_SHADOW_SVG,
+  BOOKMARK_INITAL_SHADOW,
+  BOOKMARK_FINAL_SHADOW,
 } from "@/consts/stylingValues";
 import { CustomPaper } from "@/components/layout/CustomPaper";
 import { MainHeading, SubHeading } from "@/components/layout/Headings";
@@ -26,18 +29,20 @@ import { Post2 } from "@/components/blogPosts/Post2";
 export default function Home() {
   const isDesktopView = useMediaQuery("(min-width:900px)");
   const isLargeMobileView = useMediaQuery("(max-width:428px)");
-  const [drawerOpen, setDrawerOpen] = useState(true);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const [bookmarkHover, setBookmarkHover] = useState(false);
   const bookmarkMove = useSpring({
     from: {
       backgroundColor: MUI_PRIMARY_COLOR_DEEP_ORANGE,
       transform: "translateX(-20px)",
+      boxShadow: BOOKMARK_INITAL_SHADOW,
     },
     to: {
       backgroundColor: bookmarkHover
         ? MUI_PRIMARY_COLOR_DEEP_ORANGE_DARK
         : MUI_PRIMARY_COLOR_DEEP_ORANGE,
       transform: bookmarkHover ? "translateX(-5px)" : "translateX(-20px)",
+      boxShadow: bookmarkHover ? BOOKMARK_FINAL_SHADOW : BOOKMARK_INITAL_SHADOW,
     },
     config: { mass: 0.5, friction: 18, tension: 600 },
   });
@@ -107,10 +112,13 @@ export default function Home() {
             position: "fixed",
             left: 0,
             backgroundColor: MUI_PRIMARY_COLOR_DEEP_ORANGE,
-            width: 170,
-            padding: 15,
+            width: 175,
+            paddingTop: 15,
+            paddingBottom: 15,
+            paddingLeft: 30,
+            borderTopRightRadius: 4,
+            borderBottomRightRadius: 4,
             cursor: "pointer",
-            boxShadow: CARD_AND_TABLE_SHADOW,
             ...bookmarkMove,
           }}
           onClick={() => setDrawerOpen(!drawerOpen)}
@@ -120,12 +128,17 @@ export default function Home() {
           <Typography
             style={{
               color: OFF_WHITE_COLOR,
-              textAlign: "center",
               textShadow: MINUTE_SHADOW,
             }}
             variant="h6"
           >
             Show All Posts
+            <ArrowForwardIosIcon
+              style={{
+                transform: "translate(3px, 6px)",
+                filter: MINUTE_SHADOW_SVG,
+              }}
+            />
           </Typography>
         </animated.div>
         {posts.slice(0, postsToShow).map((item, postIndex) => (

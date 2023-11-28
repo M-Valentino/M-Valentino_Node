@@ -15,6 +15,11 @@ export const MINUTE_SHADOW_SVG =
 export const SMALL_SHADOW =
   "0px 1.625px 2.25px rgba(0, 0, 0, 0.065), 0px 1.2px 0.7px rgba(0, 0, 0, 0.045)";
 
+export const BOOKMARK_INITAL_SHADOW =
+  "0px 0.5px 0.25px rgba(0, 0, 0, 0.026),0px 1.3px 1.7px rgba(0, 0, 0, 0.036),0px 3px 3.8px rgba(0, 0, 0, 0.046),0px 10px 13px rgba(0, 0, 0, 0.07)";
+export const BOOKMARK_FINAL_SHADOW =
+  "0px 0.7px 0.5px rgba(0, 0, 0, 0.034),0px 1.9px 2px rgba(0, 0, 0, 0.047),0px 4.5px 4.8px rgba(0, 0, 0, 0.06),0px 15px 16px rgba(0, 0, 0, 0.09)";
+
 export const OFF_WHITE_COLOR = "#fffdfa";
 export const MUI_PRIMARY_COLOR_DEEP_ORANGE = "#ff5722";
 export const MUI_PRIMARY_COLOR_DEEP_ORANGE_DARK = "#ee4312";
