@@ -10,6 +10,10 @@
     "no-else-return": 1,
     "no-inline-comments": 1,
     "no-multi-assign": 1,
-    "no-shadow": 1
+    "no-shadow": 1,
+    "no-useless-concat": 1,
+    "no-useless-return": 1,
+    "vars-on-top": 1,
+    "yoda": 1
   }
 }
