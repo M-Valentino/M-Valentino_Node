@@ -3,14 +3,16 @@ import { MainWrapper } from "@/components/layout/MainWrapper";
 import { CustomHead } from "@/components/layout/CustomHead";
 import { useSpring, animated } from "@react-spring/web";
 import {
+  IconButton,
   List,
   ListItem,
   ListItemText,
-  SwipeableDrawer,
+  Drawer,
   Typography,
   useMediaQuery,
 } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import CloseIcon from "@mui/icons-material/Close";
 import { PAGE_TITLES } from "@/consts/pageTitles";
 import {
   MUI_PRIMARY_COLOR_DEEP_ORANGE,
@@ -97,7 +99,16 @@ export default function Home() {
           Mark Valentino's Tech Blog
         </MainHeading>
 
-        <SwipeableDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+        <Drawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+        <div>
+            <IconButton id="basic-button" onClick={() => setDrawerOpen(false)}>
+              <CloseIcon
+                color="primary"
+                fontSize="large"
+                style={{ filter: MINUTE_SHADOW_SVG }}
+              />
+            </IconButton>
+            </div>
           <List>
             {posts.map((item, listIndex) => (
               <ListItem key={listIndex}>
@@ -105,7 +116,7 @@ export default function Home() {
               </ListItem>
             ))}
           </List>
-        </SwipeableDrawer>
+        </Drawer>
         <animated.div
           style={{
             display: "inline-block",
