@@ -17,6 +17,7 @@ export const SMALL_SHADOW =
 
 export const OFF_WHITE_COLOR = "#fffdfa";
 export const MUI_PRIMARY_COLOR_DEEP_ORANGE = "#ff5722";
+export const MUI_PRIMARY_COLOR_DEEP_ORANGE_DARK = "#ee4312";
 export const MUI_SECONDARY_COLOR_GRAY = "#444";
 export const OFF_WHITE_GRADIENT = `linear-gradient(0deg, #fdfbfa 0%, ${OFF_WHITE_COLOR} 100%)`;
 

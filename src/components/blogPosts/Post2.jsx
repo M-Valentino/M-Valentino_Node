@@ -1,23 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import { CustomPaper } from "@/components/layout/CustomPaper";
-import { SubHeading } from "@/components/layout/Headings";
 import { Typography } from "@mui/material";
 
-export const Post2 = ({isDesktopView, isLargeMobileView}) => {
+export const Post2 = () => {
   return (
-    <CustomPaper isDesktopView={isDesktopView}>
-      <SubHeading shrinkFontOn={isLargeMobileView}>
-        I Don't Quite Like the Design of My Site
-      </SubHeading>
-      <Typography
-        variant="h6"
-        gutterBottom
-        color="secondary"
-        style={{ fontStyle: "italic" }}
-      >
-        Published November 26, 2023
-      </Typography>
+    <>
       <Typography paragraph>
         I'm sure this sounds shocking to people reading this blog, but I'm not
         the most fond of how my website looks. So, why did I make the site look
@@ -60,6 +47,6 @@ export const Post2 = ({isDesktopView, isLargeMobileView}) => {
         otherwise. <Link href="https://neocities.org/browse">Neocities</Link>{" "}
         exists too where going against the grain is even celebrated.
       </Typography>
-    </CustomPaper>
+    </>
   );
 };

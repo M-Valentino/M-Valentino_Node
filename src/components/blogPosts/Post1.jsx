@@ -1,8 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { CustomPaper } from "@/components/layout/CustomPaper";
-import { SubHeading } from "@/components/layout/Headings";
-import { Stack, Typography } from "@mui/material";
+import { Stack, Typography, useMediaQuery } from "@mui/material";
 import EastIcon from "@mui/icons-material/East";
 import {
   LANGUAGE_LINKS,
@@ -10,21 +8,11 @@ import {
   PROJECT_TITLES,
 } from "@/consts/projectContent";
 
-export const Post1 = ({ isDesktopView, isLargeMobileView }) => {
+export const Post1 = () => {
   const sideBySideImageStyle = { width: "70%", height: "70%", margin: "auto" };
+  const isDesktopView = useMediaQuery("(min-width:900px)");
   return (
-    <CustomPaper isDesktopView={isDesktopView}>
-      <SubHeading shrinkFontOn={isLargeMobileView}>
-        Could My Image Processing Library Replace MarvinJ?
-      </SubHeading>
-      <Typography
-        variant="h6"
-        gutterBottom
-        color="secondary"
-        style={{ fontStyle: "italic" }}
-      >
-        Published October 15, 2023
-      </Typography>
+    <>
       <Typography paragraph>
         I recently came across this pretty nifty{" "}
         <Link href={LANGUAGE_LINKS[LANGUAGES.marvinJ]}>
@@ -123,6 +111,6 @@ export const Post1 = ({ isDesktopView, isLargeMobileView }) => {
         </Link>
         . Maybe I should do the same.
       </Typography>
-    </CustomPaper>
+    </>
   );
 };

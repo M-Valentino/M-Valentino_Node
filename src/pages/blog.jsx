@@ -1,10 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import { CustomHead } from "@/components/layout/CustomHead";
-import { MainHeading } from "@/components/layout/Headings";
-import { useMediaQuery } from "@mui/material";
-import { List, ListItem, ListItemText, SwipeableDrawer } from "@mui/material";
+import { useSpring, animated } from "@react-spring/web";
+import {
+  List,
+  ListItem,
+  ListItemText,
+  SwipeableDrawer,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { PAGE_TITLES } from "@/consts/pageTitles";
+import {
+  MUI_PRIMARY_COLOR_DEEP_ORANGE,
+  MUI_PRIMARY_COLOR_DEEP_ORANGE_DARK,
+  OFF_WHITE_COLOR,
+  CARD_AND_TABLE_SHADOW,
+  MINUTE_SHADOW,
+} from "@/consts/stylingValues";
+import { CustomPaper } from "@/components/layout/CustomPaper";
+import { MainHeading, SubHeading } from "@/components/layout/Headings";
 import { Post1 } from "@/components/blogPosts/Post1";
 import { Post2 } from "@/components/blogPosts/Post2";
 
@@ -12,6 +27,20 @@ export default function Home() {
   const isDesktopView = useMediaQuery("(min-width:900px)");
   const isLargeMobileView = useMediaQuery("(max-width:428px)");
   const [drawerOpen, setDrawerOpen] = useState(true);
+  const [bookmarkHover, setBookmarkHover] = useState(false);
+  const bookmarkMove = useSpring({
+    from: {
+      backgroundColor: MUI_PRIMARY_COLOR_DEEP_ORANGE,
+      transform: "translateX(-20px)",
+    },
+    to: {
+      backgroundColor: bookmarkHover
+        ? MUI_PRIMARY_COLOR_DEEP_ORANGE_DARK
+        : MUI_PRIMARY_COLOR_DEEP_ORANGE,
+      transform: bookmarkHover ? "translateX(-5px)" : "translateX(-20px)",
+    },
+    config: { mass: 0.5, friction: 18, tension: 600 },
+  });
   // Controlls how many blog posts can be seen.
   const [postsToShow, setPostsToShow] = useState(1);
   var oldTime = Date.now();
@@ -37,6 +66,19 @@ export default function Home() {
     };
   }, []);
 
+  const posts = [
+    {
+      component: <Post2 />,
+      title: "I Don't Quite Like the Design of My Site",
+      date: "November 26, 2023",
+    },
+    {
+      component: <Post1 />,
+      title: "Could My Image Processing Library Replace MarvinJ?",
+      date: "October 15, 2023",
+    },
+  ];
+
   return (
     <>
       <CustomHead
@@ -49,40 +91,59 @@ export default function Home() {
         <MainHeading shrinkFontOn={!isDesktopView} addMarginBottomOn={true}>
           Mark Valentino's Tech Blog
         </MainHeading>
-        <SwipeableDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} >
+        <animated.div
+          style={{
+            postion: "absolute",
+            left: 0,
+            top: 80,
+            backgroundColor: MUI_PRIMARY_COLOR_DEEP_ORANGE,
+            width: 170,
+            padding: 15,
+            cursor: "pointer",
+            boxShadow: CARD_AND_TABLE_SHADOW,
+            transform: bookmarkHover ? "none" : "translateX(-20px)",
+            ...bookmarkMove,
+          }}
+          onClick={() => setDrawerOpen(!drawerOpen)}
+          onMouseOver={() => setBookmarkHover(true)}
+          onMouseLeave={() => setBookmarkHover(false)}
+        >
+          <Typography
+            style={{
+              color: OFF_WHITE_COLOR,
+              textAlign: "center",
+              textShadow: MINUTE_SHADOW,
+            }}
+            variant="h6"
+          >
+            Show All Posts
+          </Typography>
+        </animated.div>
+        <SwipeableDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>
           <List>
-            <ListItem>
-              <ListItemText
-                primary="I Don't Quite Like the Design of My Site"
-                secondary="November 26, 2023"
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemText
-                primary="Could My Image Processing Library Replace MarvinJ?"
-                secondary="Published October 15, 2023"
-              />
-            </ListItem>
+            {posts.map((item, listIndex) => (
+              <ListItem key={listIndex}>
+                <ListItemText primary={item.title} secondary={item.date} />
+              </ListItem>
+            ))}
           </List>
         </SwipeableDrawer>
-        {postsToShow > 0 && (
-          <Post2
-            isDesktopView={isDesktopView}
-            isLargeMobileView={isLargeMobileView}
-          />
-        )}
-        {postsToShow > 1 && (
-          <Post1
-            isDesktopView={isDesktopView}
-            isLargeMobileView={isLargeMobileView}
-          />
-        )}
-        {postsToShow > 2 && (
-          <Post2
-            isDesktopView={isDesktopView}
-            isLargeMobileView={isLargeMobileView}
-          />
-        )}
+        {posts.slice(0, postsToShow).map((item, postIndex) => (
+          <CustomPaper isDesktopView={isDesktopView} key={postIndex}>
+            <SubHeading shrinkFontOn={isLargeMobileView}>
+              {item.title}
+            </SubHeading>
+            <Typography
+              variant="h6"
+              gutterBottom
+              color="secondary"
+              style={{ fontStyle: "italic" }}
+            >
+              Published {item.date}
+            </Typography>
+            {item.component}
+          </CustomPaper>
+        ))}
       </MainWrapper>
     </>
   );
