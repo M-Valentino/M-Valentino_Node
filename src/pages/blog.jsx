@@ -3,7 +3,6 @@ import { MainWrapper } from "@/components/layout/MainWrapper";
 import { CustomHead } from "@/components/layout/CustomHead";
 import { useSpring, animated } from "@react-spring/web";
 import {
-  ButtonBase,
   IconButton,
   List,
   ListItem,
@@ -61,12 +60,12 @@ export default function Home() {
   const [postsToShow, setPostsToShow] = useState(1);
   var oldTime = Date.now();
 
-  // If user scrolled 98% or more to the bottom, increment postsToShow.
+  // If user scrolled close to the bottom, increment postsToShow.
   const handleScroll = () => {
     if (
       Math.ceil(window.innerHeight + window.scrollY) >=
         document.documentElement.scrollHeight - 5 &&
-      oldTime + 1500 < Date.now()
+      oldTime + 500 < Date.now()
     ) {
       setPostsToShow((postsToShow) => postsToShow + 1);
       oldTime = Date.now();
