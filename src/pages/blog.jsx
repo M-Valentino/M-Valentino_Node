@@ -3,6 +3,7 @@ import { MainWrapper } from "@/components/layout/MainWrapper";
 import { CustomHead } from "@/components/layout/CustomHead";
 import { useSpring, animated } from "@react-spring/web";
 import {
+  ButtonBase,
   IconButton,
   List,
   ListItem,
@@ -15,6 +16,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CloseIcon from "@mui/icons-material/Close";
 import { PAGE_TITLES } from "@/consts/pageTitles";
 import {
+  MUI_PRIMARY_COLOR_DEEP_ORANGE_LIGHT,
   MUI_PRIMARY_COLOR_DEEP_ORANGE,
   MUI_PRIMARY_COLOR_DEEP_ORANGE_DARK,
   OFF_WHITE_COLOR,
@@ -33,17 +35,24 @@ export default function Home() {
   const isLargeMobileView = useMediaQuery("(max-width:428px)");
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [bookmarkHover, setBookmarkHover] = useState(false);
+  const [bookmarkMouseDown, setBookmarkMouseDown] = useState(false);
   const bookmarkMove = useSpring({
     from: {
       backgroundColor: MUI_PRIMARY_COLOR_DEEP_ORANGE,
-      transform: "translateX(-20px)",
+      transform: "translateX(-35px) rotateY(0deg)",
       boxShadow: BOOKMARK_INITAL_SHADOW,
     },
     to: {
       backgroundColor: bookmarkHover
-        ? MUI_PRIMARY_COLOR_DEEP_ORANGE_DARK
+        ? bookmarkMouseDown
+          ? MUI_PRIMARY_COLOR_DEEP_ORANGE_LIGHT
+          : MUI_PRIMARY_COLOR_DEEP_ORANGE_DARK
         : MUI_PRIMARY_COLOR_DEEP_ORANGE,
-      transform: bookmarkHover ? "translateX(-5px)" : "translateX(-20px)",
+      transform: bookmarkHover
+        ? bookmarkMouseDown
+          ? "translateX(-10px) rotateY(15deg)"
+          : "translateX(-20px) rotateY(0deg)"
+        : "translateX(-35px) rotateY(0deg)",
       boxShadow: bookmarkHover ? BOOKMARK_FINAL_SHADOW : BOOKMARK_INITAL_SHADOW,
     },
     config: { mass: 0.5, friction: 18, tension: 600 },
@@ -100,7 +109,7 @@ export default function Home() {
         </MainHeading>
 
         <Drawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-        <div>
+          <div>
             <IconButton id="basic-button" onClick={() => setDrawerOpen(false)}>
               <CloseIcon
                 color="primary"
@@ -108,7 +117,7 @@ export default function Home() {
                 style={{ filter: MINUTE_SHADOW_SVG }}
               />
             </IconButton>
-            </div>
+          </div>
           <List>
             {posts.map((item, listIndex) => (
               <ListItem key={listIndex}>
@@ -123,10 +132,10 @@ export default function Home() {
             position: "fixed",
             left: 0,
             backgroundColor: MUI_PRIMARY_COLOR_DEEP_ORANGE,
-            width: 175,
+            width: 190,
             paddingTop: 15,
             paddingBottom: 15,
-            paddingLeft: 30,
+            paddingLeft: 50,
             borderTopRightRadius: 4,
             borderBottomRightRadius: 4,
             cursor: "pointer",
@@ -134,7 +143,12 @@ export default function Home() {
           }}
           onClick={() => setDrawerOpen(!drawerOpen)}
           onMouseOver={() => setBookmarkHover(true)}
-          onMouseLeave={() => setBookmarkHover(false)}
+          onMouseLeave={() => {
+            setBookmarkHover(false);
+            setBookmarkMouseDown(false);
+          }}
+          onMouseDown={() => setBookmarkMouseDown(true)}
+          onMouseUp={() => setBookmarkMouseDown(false)}
         >
           <Typography
             style={{
