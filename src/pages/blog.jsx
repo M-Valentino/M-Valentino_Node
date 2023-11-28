@@ -154,6 +154,7 @@ export default function Home() {
             style={{
               color: OFF_WHITE_COLOR,
               textShadow: MINUTE_SHADOW,
+              userSelect: "none",
             }}
             variant="h6"
           >
