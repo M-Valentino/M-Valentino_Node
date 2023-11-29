@@ -77,11 +77,12 @@ export default function Blog() {
         <MainHeading shrinkFontOn={!isDesktopView} addMarginBottomOn={true}>
           {isAtLeastTabletView && "Mark Valentino's"}Tech Blog
         </MainHeading>
-        <BlogDrawer isDesktopView={isDesktopView} />
+        <BlogDrawer />
         {BLOG_POSTS.slice(0, postsToShow).map((item, postIndex) => (
           <CustomPaper isDesktopView={isDesktopView} key={postIndex}>
             <SubHeading shrinkFontOn={isLargeMobileView}>
-              {item.title}{item.appendQuestionMark ? "?" : ""}
+              {item.title}
+              {item.appendQuestionMark ? "?" : ""}
             </SubHeading>
             <Typography
               variant="h6"

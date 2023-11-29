@@ -36,7 +36,7 @@ export default function BlogTemplate({ post }) {
         }`}
       />
       <MainWrapper>
-        <BlogDrawer isDesktopView={isDesktopView} />
+        <BlogDrawer />
         <CustomPaper isDesktopView={isDesktopView}>
           <SubHeading shrinkFontOn={isLargeMobileView}>
             {post.title}

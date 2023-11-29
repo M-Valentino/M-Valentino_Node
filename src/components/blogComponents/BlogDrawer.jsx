@@ -10,6 +10,7 @@ import {
   ListItemText,
   Drawer,
   Typography,
+  useMediaQuery
 } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CloseIcon from "@mui/icons-material/Close";
@@ -25,7 +26,8 @@ import {
 } from "@/consts/stylingValues";
 import { BLOG_POSTS_NO_COMPONENT } from "@/pages/blog";
 
-export const BlogDrawer = ({ isDesktopView }) => {
+export const BlogDrawer = () => {
+  const isDesktopView = useMediaQuery("(min-width:1366px)");
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [bookmarkHover, setBookmarkHover] = useState(false);
   const [bookmarkMouseDown, setBookmarkMouseDown] = useState(false);
