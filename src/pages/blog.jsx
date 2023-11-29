@@ -9,6 +9,11 @@ import { Post1 } from "@/components/blogComponents/blogPosts/Post1";
 import { Post2 } from "@/components/blogComponents/blogPosts/Post2";
 import { BlogDrawer } from "@/components/blogComponents/BlogDrawer";
 
+/**
+ * Holds all blog posts. appendQuestionMark is needed because blog
+ * post titles are used in dynamic routing and including question
+ * marks in URLs creates incompatibilities. 
+ */
 export const BLOG_POSTS = [
   {
     component: <Post2 />,
@@ -23,6 +28,10 @@ export const BLOG_POSTS = [
   },
 ];
 
+/**
+ * The component property must be removed for dynamic routing
+ * because components can't be serialized.
+ */
 export const BLOG_POSTS_NO_COMPONENT = BLOG_POSTS.map((obj) => {
   const newObj = { ...obj };
   if (newObj.hasOwnProperty("component")) {
@@ -45,7 +54,11 @@ export default function Blog() {
   const [postsToShow, setPostsToShow] = useState(1);
   var oldTime = Date.now();
 
-  // If user scrolled close to the bottom, increment postsToShow.
+  /**
+   * If user scrolled close to the bottom and 500ms have passed,
+   * increment postsToShow. Adding a time delay is needed since
+   * postsToShow can be incremented too much.
+   */
   const handleScroll = () => {
     if (
       Math.ceil(window.innerHeight + window.scrollY) >=

@@ -10,7 +10,7 @@ import {
   ListItemText,
   Drawer,
   Typography,
-  useMediaQuery
+  useMediaQuery,
 } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CloseIcon from "@mui/icons-material/Close";
@@ -26,7 +26,17 @@ import {
 } from "@/consts/stylingValues";
 import { BLOG_POSTS_NO_COMPONENT } from "@/pages/blog";
 
+/**
+ * This Component handles the code for displaying the list of blog posts
+ * in an MUI drawer as well as the buttons (desktop and mobile versions)
+ * for opening the drawer.
+ * @returns component
+ */
 export const BlogDrawer = () => {
+  /**
+   * Bookmark button overlaps the CustomPaper too much when the screen is
+   * under 1366px.
+   */
   const isDesktopView = useMediaQuery("(min-width:1366px)");
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [bookmarkHover, setBookmarkHover] = useState(false);
@@ -56,6 +66,8 @@ export const BlogDrawer = () => {
     <>
       <Drawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>
         <div>
+          {/* This is the only way to close the drawer on mobile. Including this 
+          on desktop is good for UX */}
           <IconButton id="basic-button" onClick={() => setDrawerOpen(false)}>
             <CloseIcon
               color="primary"
@@ -78,6 +90,7 @@ export const BlogDrawer = () => {
         </List>
       </Drawer>
       {isDesktopView ? (
+        // This is a button made to resemble something made by MUI
         <animated.div
           style={{
             display: "inline-block",
@@ -87,6 +100,7 @@ export const BlogDrawer = () => {
             width: 190,
             paddingTop: 15,
             paddingBottom: 15,
+            // Extra padding is needed here since the animations intentionally overshoot.
             paddingLeft: 50,
             borderTopRightRadius: 4,
             borderBottomRightRadius: 4,
