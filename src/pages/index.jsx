@@ -120,7 +120,6 @@ export default function Home() {
             marginTop: 30,
             marginBottom: 50,
             fontSize: isDesktopView ? 30 : 18,
-            textShadow: MINUTE_SHADOW,
           }}
         >
           <Stack direction="row" style={{ alignItems: "center" }}>

@@ -64,4 +64,16 @@ export const MainTheme = createTheme({
       textTransform: "none",
     },
   },
+  components: {
+    MuiButton: {
+      variants: [
+        {
+          props: { variant: "contained" },
+          style: {
+            textShadow: MINUTE_SHADOW,
+          },
+        },
+      ],
+    },
+  },
 });

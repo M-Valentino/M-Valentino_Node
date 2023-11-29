@@ -125,7 +125,6 @@ export const BlogDrawer = () => {
           onClick={() => setDrawerOpen(!drawerOpen)}
           style={{
             display: "block",
-            textShadow: MINUTE_SHADOW,
             margin: "auto",
             marginBottom: 20,
           }}

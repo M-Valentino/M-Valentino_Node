@@ -167,7 +167,6 @@ export default function ProjectPage(props) {
             marginTop: 40,
             marginBottom: 40,
             fontSize: isSmallMobileView ? 26 : 32,
-            textShadow: MINUTE_SHADOW,
           }}
           variant="contained"
           color="primary"
@@ -177,7 +176,6 @@ export default function ProjectPage(props) {
               height: isSmallMobileView ? 37 : 45,
               width: isSmallMobileView ? 37 : 45,
               marginRight: 10,
-
               transform: "translateY(-5px)",
               filter: MINUTE_SHADOW_SVG,
             }}

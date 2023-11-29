@@ -12,7 +12,7 @@ import { MINUTE_SHADOW } from "@/consts/stylingValues";
 
 /**
  * Dialog that opens when the Privacy Policy button is clicked.
- * @param {*} props 
+ * @param {*} props
  * @returns component
  */
 export const PrivacyPolicyDialog = (props) => {
@@ -136,7 +136,7 @@ export const PrivacyPolicyDialog = (props) => {
         <Button
           onClick={handlePrivacyPolicyClose}
           variant="contained"
-          style={{ margin: "auto", textShadow: MINUTE_SHADOW }}
+          style={{ margin: "auto" }}
         >
           Ok
         </Button>
