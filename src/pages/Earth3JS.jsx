@@ -33,7 +33,7 @@ export const Earth3JS = () => {
   /** For handling the speed of everything that is moving on the screen.
    *  The speed is set with the slider controls.
    */
-  const [simulationSpeed, setSimulationSpeed] = useState(1);
+  const simulationSpeed= useRef(1);
 
   /**
    * Function to toggle the graphics settings of various elements from highest
@@ -81,7 +81,7 @@ export const Earth3JS = () => {
   const Earth = (props) => {
     const mesh = useRef();
     useFrame(() => {
-      mesh.current.rotation.y += simulationSpeed * 0.0008;
+      mesh.current.rotation.y += simulationSpeed.current* 0.0008;
     });
 
     const texture = useMemo(
@@ -118,7 +118,7 @@ export const Earth3JS = () => {
   const Clouds = (props) => {
     const mesh = useRef();
     useFrame(() => {
-      mesh.current.rotation.y += simulationSpeed * 0.001;
+      mesh.current.rotation.y += simulationSpeed.current* 0.001;
     });
 
     const texture = useMemo(
@@ -149,8 +149,8 @@ export const Earth3JS = () => {
     const radius = 5;
     const mesh = useRef();
     useFrame(() => {
-      mesh.current.rotation.y -= 0.001 * simulationSpeed;
-      angle += Math.acos(1 - Math.pow(0.01 / radius, 2) / 2) * simulationSpeed;
+      mesh.current.rotation.y -= 0.001 * simulationSpeed.current;
+      angle += Math.acos(1 - Math.pow(0.01 / radius, 2) / 2) * simulationSpeed.current;
       mesh.current.position.z = radius * Math.cos(angle);
       mesh.current.position.x = radius * Math.sin(angle);
     });
@@ -196,11 +196,11 @@ export const Earth3JS = () => {
     useFrame(() => {
       if (settingsAreLow) {
         mesh.current.rotation.x =
-          simulationSpeed * (Math.sin(Date.now() * 0.001) * Math.PI * 0.01);
+          simulationSpeed.current* (Math.sin(Date.now() * 0.001) * Math.PI * 0.01);
         mesh.current.rotation.y =
-          simulationSpeed * (Math.sin(Date.now() * 0.001) * Math.PI * 0.004);
+          simulationSpeed.current* (Math.sin(Date.now() * 0.001) * Math.PI * 0.004);
         mesh.current.rotation.z =
-          simulationSpeed * (Math.sin(Date.now() * 0.001) * Math.PI * 0.015);
+          simulationSpeed.current* (Math.sin(Date.now() * 0.001) * Math.PI * 0.015);
       }
     });
 
@@ -278,9 +278,9 @@ export const Earth3JS = () => {
           >
             <Slider
               size="small"
-              defaultValue={simulationSpeed}
-              onChange={(_, newValue) => setSimulationSpeed(newValue)}
-              onChangeCommitted={(_, newValue) => setSimulationSpeed(newValue)}
+              defaultValue={simulationSpeed.current}
+              onChange={(_, newValue) => simulationSpeed.current = newValue}
+              onChangeCommitted={(_, newValue) => simulationSpeed.current = newValue}
               valueLabelDisplay="auto"
               step={0.25}
               marks
