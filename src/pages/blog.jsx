@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import { CustomHead } from "@/components/layout/CustomHead";
 import { Typography, useMediaQuery } from "@mui/material";
@@ -12,7 +12,7 @@ import { BlogDrawer } from "@/components/blogComponents/BlogDrawer";
 /**
  * Holds all blog posts. appendQuestionMark is needed because blog
  * post titles are used in dynamic routing and including question
- * marks in URLs creates incompatibilities. 
+ * marks in URLs creates incompatibilities.
  */
 export const BLOG_POSTS = [
   {
@@ -52,7 +52,7 @@ export default function Blog() {
 
   // Controlls how many blog posts can be seen.
   const [postsToShow, setPostsToShow] = useState(1);
-  var oldTime = Date.now();
+  const oldTime = useRef(Date.now());
 
   /**
    * If user scrolled close to the bottom and 500ms have passed,
@@ -62,11 +62,11 @@ export default function Blog() {
   const handleScroll = () => {
     if (
       Math.ceil(window.innerHeight + window.scrollY) >=
-        document.documentElement.scrollHeight - 5 &&
-      oldTime + 500 < Date.now()
+        document.documentElement.scrollHeight - 20 &&
+      oldTime.current + 500 < Date.now()
     ) {
       setPostsToShow((oldValue) => oldValue + 1);
-      oldTime = Date.now();
+      oldTime.current = Date.now();
     }
   };
 
