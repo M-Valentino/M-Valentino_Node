@@ -41,40 +41,20 @@ export const Earth3JS = () => {
    * Earth sphere does not lower since it would clip through the clouds sphere.
    */
   const toggleGraphics = () => {
-    if (earthTextureToUse === TwoKEarth) {
-      setEarthTextureToUse(FourKEarth);
-    } else {
-      setEarthTextureToUse(TwoKEarth);
-    }
-
-    if (cloudsTextureToUse === clouds3k) {
-      setCloudsTextureToUse(clouds1080p);
-    } else {
-      setCloudsTextureToUse(clouds3k);
-    }
-
-    if (earthTextureToUse === moon360p) {
-      setMoonTextureToUse(moon720p);
-    } else {
-      setMoonTextureToUse(moon360p);
-    }
-
-    if (earthTrisAmount === 128) {
-      setEarthTrisAmount(32);
-    } else {
-      setEarthTrisAmount(128);
-    }
-
-    if (moonTrisAmount === 32) {
-      setMoonTrisAmount(16);
-    } else {
-      setMoonTrisAmount(32);
-    }
-
     if (settingsAreLow) {
       setSettingsAreLow(false);
+      setMoonTrisAmount(16);
+      setEarthTrisAmount(32);
+      setMoonTextureToUse(moon720p);
+      setCloudsTextureToUse(clouds1080p);
+      setEarthTextureToUse(FourKEarth);
     } else {
       setSettingsAreLow(true);
+      setMoonTrisAmount(32);
+      setEarthTrisAmount(128);
+      setMoonTextureToUse(moon360p);
+      setCloudsTextureToUse(clouds3k);
+      setEarthTextureToUse(TwoKEarth);
     }
   };
 
