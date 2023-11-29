@@ -4,6 +4,7 @@ import { MainWrapper } from "@/components/layout/MainWrapper";
 import { CustomHead } from "@/components/layout/CustomHead";
 import { useSpring, animated } from "@react-spring/web";
 import {
+  Button,
   IconButton,
   List,
   ListItem,
@@ -60,6 +61,7 @@ export const getBlogComponent = (title) => {
 
 export default function Blog() {
   const isDesktopView = useMediaQuery("(min-width:900px)");
+  const isAtLeastTabletView = useMediaQuery("(min-width:600px)");
   const isLargeMobileView = useMediaQuery("(max-width:428px)");
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [bookmarkHover, setBookmarkHover] = useState(false);
@@ -120,7 +122,7 @@ export default function Blog() {
 
       <MainWrapper activeLink={PAGE_TITLES.blog}>
         <MainHeading shrinkFontOn={!isDesktopView} addMarginBottomOn={true}>
-          Mark Valentino's Tech Blog
+          {isAtLeastTabletView && "Mark Valentino's"}Tech Blog
         </MainHeading>
 
         <Drawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>
@@ -146,47 +148,62 @@ export default function Blog() {
             ))}
           </List>
         </Drawer>
-        <animated.div
-          style={{
-            display: "inline-block",
-            position: "fixed",
-            left: 0,
-            backgroundColor: MUI_PRIMARY_COLOR_DEEP_ORANGE,
-            width: 190,
-            paddingTop: 15,
-            paddingBottom: 15,
-            paddingLeft: 50,
-            borderTopRightRadius: 4,
-            borderBottomRightRadius: 4,
-            cursor: "pointer",
-            ...bookmarkMove,
-          }}
-          onClick={() => setDrawerOpen(!drawerOpen)}
-          onMouseOver={() => setBookmarkHover(true)}
-          onMouseLeave={() => {
-            setBookmarkHover(false);
-            setBookmarkMouseDown(false);
-          }}
-          onMouseDown={() => setBookmarkMouseDown(true)}
-          onMouseUp={() => setBookmarkMouseDown(false)}
-        >
-          <Typography
+        {isDesktopView ? (
+          <animated.div
             style={{
-              color: OFF_WHITE_COLOR,
-              textShadow: MINUTE_SHADOW,
-              userSelect: "none",
+              display: "inline-block",
+              position: "fixed",
+              left: 0,
+              backgroundColor: MUI_PRIMARY_COLOR_DEEP_ORANGE,
+              width: 190,
+              paddingTop: 15,
+              paddingBottom: 15,
+              paddingLeft: 50,
+              borderTopRightRadius: 4,
+              borderBottomRightRadius: 4,
+              cursor: "pointer",
+              ...bookmarkMove,
             }}
-            variant="h6"
+            onClick={() => setDrawerOpen(!drawerOpen)}
+            onMouseOver={() => setBookmarkHover(true)}
+            onMouseLeave={() => {
+              setBookmarkHover(false);
+              setBookmarkMouseDown(false);
+            }}
+            onMouseDown={() => setBookmarkMouseDown(true)}
+            onMouseUp={() => setBookmarkMouseDown(false)}
+          >
+            <Typography
+              style={{
+                color: OFF_WHITE_COLOR,
+                textShadow: MINUTE_SHADOW,
+                userSelect: "none",
+              }}
+              variant="h6"
+            >
+              Show All Posts
+              <ArrowForwardIosIcon
+                style={{
+                  transform: "translate(3px, 6px)",
+                  filter: MINUTE_SHADOW_SVG,
+                }}
+              />
+            </Typography>
+          </animated.div>
+        ) : (
+          <Button
+            variant="contained"
+            onClick={() => setDrawerOpen(!drawerOpen)}
+            style={{
+              display: "block",
+              textShadow: MINUTE_SHADOW,
+              margin: "auto",
+              marginBottom: 20,
+            }}
           >
             Show All Posts
-            <ArrowForwardIosIcon
-              style={{
-                transform: "translate(3px, 6px)",
-                filter: MINUTE_SHADOW_SVG,
-              }}
-            />
-          </Typography>
-        </animated.div>
+          </Button>
+        )}
         {BLOG_POSTS.slice(0, postsToShow).map((item, postIndex) => (
           <CustomPaper isDesktopView={isDesktopView} key={postIndex}>
             <SubHeading shrinkFontOn={isLargeMobileView}>
