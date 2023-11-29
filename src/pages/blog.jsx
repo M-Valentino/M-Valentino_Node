@@ -52,7 +52,7 @@ export default function Blog() {
         document.documentElement.scrollHeight - 5 &&
       oldTime + 500 < Date.now()
     ) {
-      setPostsToShow((postsToShow) => postsToShow + 1);
+      setPostsToShow((oldValue) => oldValue + 1);
       oldTime = Date.now();
     }
   };
@@ -64,7 +64,7 @@ export default function Blog() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  });
 
   return (
     <>
