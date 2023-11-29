@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import { CustomHead } from "@/components/layout/CustomHead";
 import { useSpring, animated } from "@react-spring/web";
@@ -6,6 +7,7 @@ import {
   IconButton,
   List,
   ListItem,
+  ListItemButton,
   ListItemText,
   Drawer,
   Typography,
@@ -28,6 +30,7 @@ import { CustomPaper } from "@/components/layout/CustomPaper";
 import { MainHeading, SubHeading } from "@/components/layout/Headings";
 import { Post1 } from "@/components/blogComponents/blogPosts/Post1";
 import { Post2 } from "@/components/blogComponents/blogPosts/Post2";
+import { cleanLinkText } from "@/utils/generateNavLink";
 
 export const BLOG_POSTS = [
   {
@@ -133,7 +136,12 @@ export default function Blog() {
           <List>
             {BLOG_POSTS.map((item, listIndex) => (
               <ListItem key={listIndex}>
-                <ListItemText primary={item.title} secondary={item.date} />
+                <ListItemButton
+                  component={Link}
+                  href={cleanLinkText(`/blogPost/${item.title}`)}
+                >
+                  <ListItemText primary={item.title} secondary={item.date} />
+                </ListItemButton>
               </ListItem>
             ))}
           </List>
