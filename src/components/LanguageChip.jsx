@@ -132,7 +132,7 @@ export const LanguageChip = (props) => {
     <animated.div
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
-      style={...hoverAnimation}
+      style={{...hoverAnimation}}
     >
       <Link
         href={LANGUAGE_LINKS[language]}
