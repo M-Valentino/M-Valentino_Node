@@ -26,10 +26,36 @@ import {
 } from "@/consts/stylingValues";
 import { CustomPaper } from "@/components/layout/CustomPaper";
 import { MainHeading, SubHeading } from "@/components/layout/Headings";
-import { Post1 } from "@/components/blogPosts/Post1";
-import { Post2 } from "@/components/blogPosts/Post2";
+import { Post1 } from "@/components/blogComponents/blogPosts/Post1";
+import { Post2 } from "@/components/blogComponents/blogPosts/Post2";
 
-export default function Home() {
+export const BLOG_POSTS = [
+  {
+    component: <Post2 />,
+    title: "I Don't Quite Like the Design of My Site",
+    date: "November 26, 2023",
+  },
+  {
+    component: <Post1 />,
+    title: "Could My Image Processing Library Replace MarvinJ?",
+    date: "October 15, 2023",
+  },
+];
+
+export const BLOG_POSTS_NO_COMPONENT = BLOG_POSTS.map((obj) => {
+  const newObj = { ...obj };
+  if (newObj.hasOwnProperty("component")) {
+    delete newObj["component"];
+  }
+  return newObj;
+});
+
+export const getBlogComponent = (title) => {
+  const post = BLOG_POSTS.find((obj) => obj.title === title);
+  return post.component;
+};
+
+export default function Blog() {
   const isDesktopView = useMediaQuery("(min-width:900px)");
   const isLargeMobileView = useMediaQuery("(max-width:428px)");
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -81,19 +107,6 @@ export default function Home() {
     };
   }, []);
 
-  const posts = [
-    {
-      component: <Post2 />,
-      title: "I Don't Quite Like the Design of My Site",
-      date: "November 26, 2023",
-    },
-    {
-      component: <Post1 />,
-      title: "Could My Image Processing Library Replace MarvinJ?",
-      date: "October 15, 2023",
-    },
-  ];
-
   return (
     <>
       <CustomHead
@@ -118,7 +131,7 @@ export default function Home() {
             </IconButton>
           </div>
           <List>
-            {posts.map((item, listIndex) => (
+            {BLOG_POSTS.map((item, listIndex) => (
               <ListItem key={listIndex}>
                 <ListItemText primary={item.title} secondary={item.date} />
               </ListItem>
@@ -166,7 +179,7 @@ export default function Home() {
             />
           </Typography>
         </animated.div>
-        {posts.slice(0, postsToShow).map((item, postIndex) => (
+        {BLOG_POSTS.slice(0, postsToShow).map((item, postIndex) => (
           <CustomPaper isDesktopView={isDesktopView} key={postIndex}>
             <SubHeading shrinkFontOn={isLargeMobileView}>
               {item.title}
