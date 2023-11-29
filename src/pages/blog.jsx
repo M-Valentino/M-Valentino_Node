@@ -17,7 +17,8 @@ export const BLOG_POSTS = [
   },
   {
     component: <Post1 />,
-    title: "Could My Image Processing Library Replace MarvinJ?",
+    title: "Could My Image Processing Library Replace MarvinJ",
+    appendQuestionMark: true,
     date: "October 15, 2023",
   },
 ];
@@ -80,7 +81,7 @@ export default function Blog() {
         {BLOG_POSTS.slice(0, postsToShow).map((item, postIndex) => (
           <CustomPaper isDesktopView={isDesktopView} key={postIndex}>
             <SubHeading shrinkFontOn={isLargeMobileView}>
-              {item.title}
+              {item.title}{item.appendQuestionMark && "?"}
             </SubHeading>
             <Typography
               variant="h6"

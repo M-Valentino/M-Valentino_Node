@@ -12,7 +12,3 @@ export const generateNavLink = (navtext) => {
       return `/${navtext.toLowerCase()}`;
   }
 };
-
-export const cleanLinkText = (linkText) => {
-  return linkText.replace("?", "%3F");
-}

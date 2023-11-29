@@ -30,11 +30,18 @@ export default function BlogTemplate({ post }) {
   const isLargeMobileView = useMediaQuery("(max-width:428px)");
   return (
     <>
-      <CustomHead title={`Mark Valentino - ${post.title}`} />
+      <CustomHead
+        title={`Mark Valentino - ${post.title}${
+          post.appendQuestionMark && "?"
+        }`}
+      />
       <MainWrapper>
         <BlogDrawer isDesktopView={isDesktopView} />
         <CustomPaper isDesktopView={isDesktopView}>
-          <SubHeading shrinkFontOn={isLargeMobileView}>{post.title}</SubHeading>
+          <SubHeading shrinkFontOn={isLargeMobileView}>
+            {post.title}
+            {post.appendQuestionMark && "?"}
+          </SubHeading>
           <Typography
             variant="h6"
             gutterBottom

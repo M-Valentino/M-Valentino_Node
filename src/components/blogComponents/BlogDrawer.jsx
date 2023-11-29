@@ -23,10 +23,9 @@ import {
   BOOKMARK_INITAL_SHADOW,
   BOOKMARK_FINAL_SHADOW,
 } from "@/consts/stylingValues";
-import { cleanLinkText } from "@/utils/linkFunctions";
 import { BLOG_POSTS_NO_COMPONENT } from "@/pages/blog";
 
-export const BlogDrawer = ({isDesktopView}) => {
+export const BlogDrawer = ({ isDesktopView }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [bookmarkHover, setBookmarkHover] = useState(false);
   const [bookmarkMouseDown, setBookmarkMouseDown] = useState(false);
@@ -66,11 +65,11 @@ export const BlogDrawer = ({isDesktopView}) => {
         <List>
           {BLOG_POSTS_NO_COMPONENT.map((item, listIndex) => (
             <ListItem key={listIndex}>
-              <ListItemButton
-                component={Link}
-                href={cleanLinkText(`/blogPost/${item.title}`)}
-              >
-                <ListItemText primary={item.title} secondary={item.date} />
+              <ListItemButton component={Link} href={`/blogPost/${item.title}`}>
+                <ListItemText
+                  primary={`${item.title}${item.appendQuestionMark && "?"}`}
+                  secondary={item.date}
+                />
               </ListItemButton>
             </ListItem>
           ))}
