@@ -19,7 +19,7 @@ export default function Document() {
           margin: 0,
           height: "fit",
           imageRendering: "high-quality",
-          backgroundImage: "url(rotated%20rectangle.svg)",
+          backgroundImage: "url(/rotated%20rectangle.svg)",
           backgroundSize: "fill",
           // backgroundSize: "95vw, 420vh",
           backgroundRepeat: "no-repeat",
