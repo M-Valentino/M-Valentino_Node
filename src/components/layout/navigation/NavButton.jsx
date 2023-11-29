@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@mui/material";
-import { generateNavLink } from "@/utils/generateNavLink";
+import { generateNavLink } from "@/utils/linkFunctions";
 
 export const NavButton = ({
   activeLink,

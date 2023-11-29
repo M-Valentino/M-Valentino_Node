@@ -30,7 +30,7 @@ import { CustomPaper } from "@/components/layout/CustomPaper";
 import { MainHeading, SubHeading } from "@/components/layout/Headings";
 import { Post1 } from "@/components/blogComponents/blogPosts/Post1";
 import { Post2 } from "@/components/blogComponents/blogPosts/Post2";
-import { cleanLinkText } from "@/utils/generateNavLink";
+import { cleanLinkText } from "@/utils/linkFunctions";
 
 export const BLOG_POSTS = [
   {
