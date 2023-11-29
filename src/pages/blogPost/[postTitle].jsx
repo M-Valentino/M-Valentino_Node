@@ -6,6 +6,7 @@ import { CustomPaper } from "@/components/layout/CustomPaper";
 import { SubHeading } from "@/components/layout/Headings";
 import { BLOG_POSTS_NO_COMPONENT } from "../blog";
 import { getBlogComponent } from "../blog";
+import { BlogDrawer } from "@/components/blogComponents/BlogDrawer";
 
 // Function to get all possible paths for individual post pages
 export const getStaticPaths = async () => {
@@ -29,10 +30,9 @@ export default function BlogTemplate({ post }) {
   const isLargeMobileView = useMediaQuery("(max-width:428px)");
   return (
     <>
-      <CustomHead
-        title={`Mark Valentino - ${post.title}`}
-      />
+      <CustomHead title={`Mark Valentino - ${post.title}`} />
       <MainWrapper>
+        <BlogDrawer isDesktopView={isDesktopView} />
         <CustomPaper isDesktopView={isDesktopView}>
           <SubHeading shrinkFontOn={isLargeMobileView}>{post.title}</SubHeading>
           <Typography
