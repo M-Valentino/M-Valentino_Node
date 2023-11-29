@@ -59,6 +59,7 @@ export const MainTheme = createTheme({
       secondary: "#444",
     },
   },
+  // Makes button text not in all caps
   typography: {
     button: {
       textTransform: "none",
