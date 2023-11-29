@@ -45,7 +45,7 @@ export const DesktopMenu = ({ activeLink, isDesktopView }) => {
         <UseAnimations
           animation={linkedin}
           size={30}
-          wrapperStyle={{ transform: "translate(-1px, -4.8px)" }}
+          wrapperStyle={{ transform: "translate(-1px, -4px)" }}
           strokeColor={MUI_SECONDARY_COLOR_GRAY}
           render={(eventProps, animationProps) => (
             <NavButton
