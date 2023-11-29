@@ -81,7 +81,7 @@ export default function Blog() {
         {BLOG_POSTS.slice(0, postsToShow).map((item, postIndex) => (
           <CustomPaper isDesktopView={isDesktopView} key={postIndex}>
             <SubHeading shrinkFontOn={isLargeMobileView}>
-              {item.title}{item.appendQuestionMark && "?"}
+              {item.title}{item.appendQuestionMark ? "?" : ""}
             </SubHeading>
             <Typography
               variant="h6"

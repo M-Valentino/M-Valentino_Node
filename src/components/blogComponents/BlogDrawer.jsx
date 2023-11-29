@@ -67,7 +67,7 @@ export const BlogDrawer = ({ isDesktopView }) => {
             <ListItem key={listIndex}>
               <ListItemButton component={Link} href={`/blogPost/${item.title}`}>
                 <ListItemText
-                  primary={`${item.title}${item.appendQuestionMark && "?"}`}
+                  primary={`${item.title}${item.appendQuestionMark ? "?" : ""}`}
                   secondary={item.date}
                 />
               </ListItemButton>

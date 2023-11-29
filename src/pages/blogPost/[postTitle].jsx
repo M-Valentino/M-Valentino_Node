@@ -32,7 +32,7 @@ export default function BlogTemplate({ post }) {
     <>
       <CustomHead
         title={`Mark Valentino - ${post.title}${
-          post.appendQuestionMark && "?"
+          post.appendQuestionMark ? "?" : ""
         }`}
       />
       <MainWrapper>
@@ -40,7 +40,7 @@ export default function BlogTemplate({ post }) {
         <CustomPaper isDesktopView={isDesktopView}>
           <SubHeading shrinkFontOn={isLargeMobileView}>
             {post.title}
-            {post.appendQuestionMark && "?"}
+            {post.appendQuestionMark ? "?" : ""}
           </SubHeading>
           <Typography
             variant="h6"
