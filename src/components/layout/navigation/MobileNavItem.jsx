@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { MenuItem } from "@mui/material";
-import { generateNavLink } from "@/utils/generateNavLink";
+import { generateNavLink } from "@/utils/linkFunctions";
 import { MUI_PRIMARY_COLOR_DEEP_ORANGE } from "@/consts/stylingValues";
 
 /**

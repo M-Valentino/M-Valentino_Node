@@ -3,7 +3,6 @@
   "rules": { 
     "react/no-unescaped-entities": 0,
     "@next/next/no-img-element": "off",
-    "no-nested-ternary": 1,
     "no-unneeded-ternary": 1,
     "prefer-const": 1,
     "no-console": 1,
