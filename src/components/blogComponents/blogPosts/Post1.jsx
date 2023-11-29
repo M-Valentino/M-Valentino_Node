@@ -9,8 +9,13 @@ import {
 } from "@/consts/projectContent";
 
 export const Post1 = () => {
-  const sideBySideImageStyle = { width: "70%", height: "70%", margin: "auto" };
   const isDesktopView = useMediaQuery("(min-width:900px)");
+  const isMobileView = useMediaQuery("(max-width:500px)");
+  const sideBySideImageStyle = {
+    width: isMobileView ? "80%" : 400,
+    margin: "auto",
+  };
+
   return (
     <>
       <Typography paragraph>
@@ -68,8 +73,7 @@ export const Post1 = () => {
         alt="painting of a landscape with horizontal scanlines applied."
         style={{
           display: "block",
-          width: isDesktopView ? "50%" : "70%",
-          height: isDesktopView ? "50%" : "70%",
+          width: isMobileView ? "80%" : 400,
           margin: "auto",
         }}
       />
