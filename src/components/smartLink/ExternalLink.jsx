@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Tooltip } from "@mui/material";
 import getRootDomain from "get-root-domain";
+import { OFF_WHITE_COLOR, MINUTE_SHADOW } from "@/consts/stylingValues";
 
 export const ExternalLink = ({ href, children }) => {
   const rootDomain = getRootDomain(href);
@@ -13,12 +14,13 @@ export const ExternalLink = ({ href, children }) => {
         <div style={{ height: 55 }}>
           <div
             style={{
-              backgroundColor: "#fff",
+              backgroundColor: OFF_WHITE_COLOR,
               height: 22,
               width: 22,
               padding: 6,
               borderRadius: "50%",
               margin: "auto",
+              boxShadow: MINUTE_SHADOW,
             }}
           >
             <img

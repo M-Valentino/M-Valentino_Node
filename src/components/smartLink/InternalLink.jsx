@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Tooltip } from "@mui/material";
+import { OFF_WHITE_COLOR, MINUTE_SHADOW } from "@/consts/stylingValues";
 
 export const InternalLink = ({ href, children }) => {
   return (
@@ -10,21 +11,21 @@ export const InternalLink = ({ href, children }) => {
         <div style={{ height: 55 }}>
           <div
             style={{
-              backgroundColor: "#fff",
+              backgroundColor: OFF_WHITE_COLOR,
               height: 22,
               width: 22,
               padding: 6,
               borderRadius: "50%",
               margin: "auto",
+              boxShadow: MINUTE_SHADOW,
             }}
           >
             <img
               src="/favicon.ico"
               style={{
-                height: 24,
-                display: "block",
+                height: "100%",
+                width: "100%",
                 margin: "auto",
-                filter: "drop-shadow(0 1px 4px rgba(255, 255, 255, 0.25))",
               }}
             />
           </div>
