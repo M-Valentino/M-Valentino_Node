@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import { SmartLink } from "@/components/smartLink/SmartLink";
 import { Typography } from "@mui/material";
 
 export const Post2 = () => {
@@ -44,7 +44,7 @@ export const Post2 = () => {
       <Typography paragraph>
         All is not doom and gloom. Coding whatever I wanted to code, has exposed
         me to a lot of facets of CSS and JS that I wouldn't have even touched
-        otherwise. <Link href="https://neocities.org/browse">Neocities</Link>{" "}
+        otherwise. <SmartLink href="https://neocities.org/browse">Neocities</SmartLink>{" "}
         exists too where going against the grain is even celebrated.
       </Typography>
     </>
