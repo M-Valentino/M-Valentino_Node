@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
-import Link from "next/link";
+import { SmartLink } from "../smartLink/SmartLink";
 
 export const ISpyShopperContent = ({ isDesktopView }) => {
   const screenshotStyles = {
@@ -17,9 +17,9 @@ export const ISpyShopperContent = ({ isDesktopView }) => {
         Making this app was a team effort and work was divided amongst
         ourselves. The largest contributions I made were implementing Firebase,
         implementing the navigation bar, and implementing form validation.{" "}
-        <Link href="https://sccapstone.github.io/I_Spy_A-Eye/">
+        <SmartLink href="https://sccapstone.github.io/I_Spy_A-Eye/">
           I also coded the app's GitHub website
-        </Link>
+        </SmartLink>
         , which has even more information about I Spy Shopper.
       </Typography>
       <Typography variant="h4" gutterBottom>
