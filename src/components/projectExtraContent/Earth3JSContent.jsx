@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import { SmartLink } from "../smartLink/SmartLink";
 import { Typography } from "@mui/material";
 
 export const Earth3JSContent = () => {
@@ -11,9 +11,9 @@ export const Earth3JSContent = () => {
       <Typography paragraph>
         This project depends on the React Three Fiber library for coding 3D
         graphics. I used{" "}
-        <Link href="https://threejs.org/docs/#api/en/geometries/SphereGeometry">
+        <SmartLink href="https://threejs.org/docs/#api/en/geometries/SphereGeometry">
           SphereGeometry
-        </Link>{" "}
+        </SmartLink>{" "}
         components for coding the earth and moon. For the moon, it was quite
         simple as I essentially needed a simple sphere. However, it wasn't so
         easy with generating the earth as I wanted to have animated clouds that
@@ -40,7 +40,7 @@ export const Earth3JSContent = () => {
       <Typography paragraph>
         I thought it would be neat to be able to change the simulation speed or
         to just pause the simulation, so I implemented a speed control{" "}
-        <Link href="https://mui.com/material-ui/react-slider/">slider</Link>.
+        <SmartLink href="https://mui.com/material-ui/react-slider/">slider</SmartLink>.
         The value from the slider was placed as a coefficient in all animation
         formulas.
       </Typography>

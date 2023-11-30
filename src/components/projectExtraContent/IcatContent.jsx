@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import { SmartLink } from "../smartLink/SmartLink";
 import { Typography } from "@mui/material";
 
 export const IcatContent = ({ isDesktopView }) => {
@@ -27,9 +27,9 @@ export const IcatContent = ({ isDesktopView }) => {
       </Typography>
       <Typography paragraph>
         I had previous knowledge from{" "}
-        <Link href="/project/Exploring Canny Edge Detection">
+        <SmartLink href="/project/Exploring Canny Edge Detection">
           another Python project
-        </Link>{" "}
+        </SmartLink>{" "}
         that I could open an image, convert it to black and white, and then
         convert it into a NumPy 2D array. With that knowledge I knew I could
         iterate through the array and print shaded ascii block characters (█, ▓,
@@ -181,7 +181,7 @@ export const IcatContent = ({ isDesktopView }) => {
         </>
       )}
       <Typography paragraph>
-        <Link href="/humans.txt">Garfeild print.</Link>
+        <SmartLink href="/humans.txt">Garfeild print.</SmartLink>
       </Typography>
     </>
   );
