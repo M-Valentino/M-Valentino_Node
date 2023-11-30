@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import { ExternalLink } from "@/components/layout/ExternalLink";
 import { Stack, Typography, useMediaQuery } from "@mui/material";
 import EastIcon from "@mui/icons-material/East";
 import {
@@ -20,13 +20,15 @@ export const Post1 = () => {
     <>
       <Typography paragraph>
         I recently came across this pretty nifty{" "}
-        <Link href={LANGUAGE_LINKS[LANGUAGES.marvinJ]}>
+        <ExternalLink
+          href={LANGUAGE_LINKS[LANGUAGES.marvinJ]}
+        >
           JavaScript image processing library called MarvinJ
-        </Link>{" "}
+        </ExternalLink>{" "}
         while creating my{" "}
-        <Link href={`/project/${PROJECT_TITLES.imageToDivs}`}>
+        <ExternalLink href={`/project/${PROJECT_TITLES.imageToDivs}`}>
           Image to Divs project
-        </Link>
+        </ExternalLink>
         . MarvinJ can apply Gaussian blur to images, do Prewitt edge detection,
         make images have a sepia effect, ect. I was really impressed by it as
         I'm a web developer who is also really into graphics programming.
@@ -42,9 +44,11 @@ export const Post1 = () => {
       </Typography>
       <Typography paragraph>
         So,{" "}
-        <Link href="https://github.com/M-Valentino/marvalj">
+        <ExternalLink
+          href="https://github.com/M-Valentino/marvalj"
+        >
           I went and made a fork of the library and called it MarvalJ
-        </Link>
+        </ExternalLink>
         , which is a play on words from my actual name. Soon after, I was able
         to add two functions to the library, with one function for adding black
         and white noise to an image, and one for adding color noise to an image.
@@ -110,9 +114,11 @@ export const Post1 = () => {
         What is lacking for this to be widely used by others is a website with
         documentation. Additionally, much of web development these days is
         Node.js based, which MarvinJ and MarvalJ don't integrate well with.{" "}
-        <Link href="https://github.com/davicrystal/marvinj">
+        <ExternalLink
+          href="https://github.com/davicrystal/marvinj"
+        >
           Someone already made an NPM module for MarvinJ
-        </Link>
+        </ExternalLink>
         . Maybe I should do the same.
       </Typography>
     </>
