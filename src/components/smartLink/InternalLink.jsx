@@ -4,21 +4,24 @@ import { Tooltip } from "@mui/material";
 import { LinkInfoWrapper } from "./LinkInfoWrapper";
 import { EXTERNAL_FAVICON_STYLES } from "@/consts/stylingValues";
 
-export const InternalLink = ({ href, children }) => {
+export const InternalLink = ({ href, children, style, openInNewTab }) => {
   return (
     <Tooltip
       followCursor
+      style={style}
       title={
         <LinkInfoWrapper rootDomain="mark-valentino.vercel.app">
-          <img
-            src="/favicon.ico"
-            alt=""
-            style={EXTERNAL_FAVICON_STYLES}
-          />
+          <img src="/favicon.ico" alt="" style={EXTERNAL_FAVICON_STYLES} />
         </LinkInfoWrapper>
       }
     >
-      <Link href={href}>{children}</Link>
+      <Link
+        href={href}
+        target={openInNewTab ? "_blank" : ""}
+        rel={openInNewTab ? "noopener noreferrer" : ""}
+      >
+        {children}
+      </Link>
     </Tooltip>
   );
 };

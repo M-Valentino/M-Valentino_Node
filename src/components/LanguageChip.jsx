@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import { SmartLink } from "./smartLink/SmartLink";
 import { LANGUAGES, LANGUAGE_LINKS } from "@/consts/projectContent";
 import { Typography } from "@mui/material";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
@@ -33,7 +34,9 @@ export const LanguageChip = (props) => {
       return "#555";
     }
     const languageEntries = Object.entries(LANGUAGES);
-    const matchingIndex = languageEntries.findIndex(([, value]) => value === language);
+    const matchingIndex = languageEntries.findIndex(
+      ([, value]) => value === language
+    );
     /**
      * The hue determined will be evenly spaced by angle between all possible hues for
      *  every language.
@@ -132,16 +135,26 @@ export const LanguageChip = (props) => {
     <animated.div
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
-      style={{...hoverAnimation}}
+      style={{ ...hoverAnimation }}
     >
-      <Link
-        href={LANGUAGE_LINKS[language]}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{ textDecoration: "none" }}
-      >
-        <Chip />
-      </Link>
+      {size === "full" ? (
+        <SmartLink
+          href={LANGUAGE_LINKS[language]}
+          openInNewTab
+          style={{ textDecoration: "none" }}
+        >
+          <Chip />
+        </SmartLink>
+      ) : (
+        <Link
+          href={LANGUAGE_LINKS[language]}
+          target="_blank"
+          rel="noopener"
+          style={{ textDecoration: "none" }}
+        >
+          <Chip />
+        </Link>
+      )}
     </animated.div>
   ) : (
     <Chip />
