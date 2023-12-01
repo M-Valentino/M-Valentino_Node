@@ -22,6 +22,7 @@ export const InternalLink = ({ href, children }) => {
           >
             <img
               src="/favicon.ico"
+              alt=""
               style={{
                 height: "100%",
                 width: "100%",

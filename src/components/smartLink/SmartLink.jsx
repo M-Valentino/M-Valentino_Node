@@ -6,9 +6,9 @@ export const SmartLink = ({ href, children }) => {
   return (
     <>
       {href.match(/http.*/) ? (
-        <ExternalLink href={href} children={children} />
+        <ExternalLink href={href}>{children}</ExternalLink>
       ) : (
-        <InternalLink href={href} children={children} />
+        <InternalLink href={href}>{children}</InternalLink>
       )}
     </>
   );
