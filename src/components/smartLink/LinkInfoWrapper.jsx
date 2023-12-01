@@ -16,8 +16,8 @@ export const LinkInfoWrapper = ({ children, rootDomain }) => {
         }}
       >
         {children}
-        <div style={{ marginTop: 5 }}>{rootDomain}</div>
       </div>
+      <div style={{ marginTop: 5 }}>{rootDomain}</div>
     </div>
   );
 };

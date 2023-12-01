@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Tooltip } from "@mui/material";
 import getRootDomain from "get-root-domain";
-import { OFF_WHITE_COLOR, MINUTE_SHADOW } from "@/consts/stylingValues";
+import { LinkInfoWrapper } from "./LinkInfoWrapper";
 
 export const ExternalLink = ({ href, children }) => {
   const rootDomain = getRootDomain(href);
@@ -11,31 +11,18 @@ export const ExternalLink = ({ href, children }) => {
     <Tooltip
       followCursor
       title={
-        <div style={{ height: 55 }}>
-          <div
+        <LinkInfoWrapper rootDomain={rootDomain}>
+          <img
+            src={imgSrc ? imgSrc : fallback}
+            onError={onError}
+            alt=""
             style={{
-              backgroundColor: OFF_WHITE_COLOR,
-              height: 22,
-              width: 22,
-              padding: 6,
-              borderRadius: "50%",
+              height: "100%",
+              width: "100%",
               margin: "auto",
-              boxShadow: MINUTE_SHADOW,
             }}
-          >
-            <img
-              src={imgSrc ? imgSrc : fallback}
-              onError={onError}
-              alt=""
-              style={{
-                height: "100%",
-                width: "100%",
-                margin: "auto",
-              }}
-            />
-          </div>
-          <div style={{ marginTop: 5 }}>{rootDomain}</div>
-        </div>
+          />
+        </LinkInfoWrapper>
       }
     >
       <a href={href}>{children}</a>
