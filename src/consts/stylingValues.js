@@ -25,6 +25,7 @@ export const MUI_PRIMARY_COLOR_DEEP_ORANGE_LIGHT = "#f57F63";
 export const MUI_PRIMARY_COLOR_DEEP_ORANGE = "#ff5722";
 export const MUI_PRIMARY_COLOR_DEEP_ORANGE_DARK = "#ee4312";
 export const MUI_SECONDARY_COLOR_GRAY = "#444";
+export const SUCCESS_GREEN = "#6a6";
 export const OFF_WHITE_GRADIENT = `linear-gradient(0deg, #fdfbfa 0%, ${OFF_WHITE_COLOR} 100%)`;
 
 export const SCREEN_CONTROL_STYLES = {
