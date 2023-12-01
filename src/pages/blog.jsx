@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import { CustomHead } from "@/components/layout/CustomHead";
-import { Typography, useMediaQuery } from "@mui/material";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { Divider, Typography, useMediaQuery } from "@mui/material";
 import { PAGE_TITLES } from "@/consts/pageTitles";
 import { CustomPaper } from "@/components/layout/CustomPaper";
 import { MainHeading, SubHeading } from "@/components/layout/Headings";
@@ -65,8 +66,10 @@ export default function Blog() {
         document.documentElement.scrollHeight - 20 &&
       oldTime.current + 500 < Date.now()
     ) {
-      setPostsToShow((oldValue) => oldValue + 1);
-      oldTime.current = Date.now();
+      if (postsToShow < BLOG_POSTS.length) {
+        setPostsToShow((oldValue) => oldValue + 1);
+        oldTime.current = Date.now();
+      }
     }
   };
 
@@ -91,23 +94,40 @@ export default function Blog() {
           {isAtLeastTabletView && "Mark Valentino's"}Tech Blog
         </MainHeading>
         <BlogDrawer />
-        {BLOG_POSTS.slice(0, postsToShow).map((item, postIndex) => (
-          <CustomPaper isDesktopView={isDesktopView} key={postIndex}>
-            <SubHeading shrinkFontOn={isLargeMobileView}>
-              {item.title}
-              {item.appendQuestionMark ? "?" : ""}
-            </SubHeading>
-            <Typography
-              variant="h6"
-              gutterBottom
-              color="secondary"
-              style={{ fontStyle: "italic" }}
-            >
-              Published {item.date}
-            </Typography>
-            {item.component}
-          </CustomPaper>
-        ))}
+        <CustomPaper isDesktopView={isDesktopView}>
+          {BLOG_POSTS.slice(0, postsToShow).map((item, postIndex) => (
+            <span key={postIndex}>
+              <SubHeading shrinkFontOn={isLargeMobileView}>
+                {item.title}
+                {item.appendQuestionMark ? "?" : ""}
+              </SubHeading>
+              <Typography
+                variant="h6"
+                gutterBottom
+                color="secondary"
+                style={{ fontStyle: "italic" }}
+              >
+                Published {item.date}
+              </Typography>
+              {item.component}
+              {postIndex === postsToShow - 1 &&
+                postIndex !== BLOG_POSTS.length - 1 && (
+                  <ArrowDropDownIcon
+                    style={{
+                      display: "block",
+                      margin: "auto",
+                      transform: "translateY(20px)",
+                      width: 40,
+                      height: 40,
+                    }}
+                  />
+                )}
+              {postIndex !== postsToShow - 1 && (
+                <Divider style={{ marginTop: 50, marginBottom: 50 }} />
+              )}
+            </span>
+          ))}
+        </CustomPaper>
       </MainWrapper>
     </>
   );
