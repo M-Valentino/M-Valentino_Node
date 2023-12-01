@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Tooltip } from "@mui/material";
 import { LinkInfoWrapper } from "./LinkInfoWrapper";
 import { EXTERNAL_FAVICON_STYLES } from "@/consts/stylingValues";
+import { PAGE_TITLES } from "@/consts/pageTitles";
 
 export const InternalLink = ({ href, children, style, openInNewTab }) => {
   return (
@@ -10,7 +11,7 @@ export const InternalLink = ({ href, children, style, openInNewTab }) => {
       followCursor
       style={style}
       title={
-        <LinkInfoWrapper rootDomain="mark-valentino.vercel.app">
+        <LinkInfoWrapper rootDomain={PAGE_TITLES.domain}>
           <img src="/favicon.ico" alt="" style={EXTERNAL_FAVICON_STYLES} />
         </LinkInfoWrapper>
       }

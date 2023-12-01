@@ -9,6 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import { MINUTE_SHADOW } from "@/consts/stylingValues";
+import { PAGE_TITLES } from "@/consts/pageTitles";
 
 /**
  * Dialog that opens when the Privacy Policy button is clicked.
@@ -36,8 +37,8 @@ export const PrivacyPolicyDialog = (props) => {
           This document outlines how my site gathers, stores, uses, and possibly
           shares your information when you use my services, including visiting
           my website at{" "}
-          <Link href="https://mark-valentino.vercel.app">
-            https://mark-valentino.vercel.app
+          <Link href={`https://${PAGE_TITLES.domain}`}>
+            {PAGE_TITLES.domain}
           </Link>
           . By using my website, you agree to the terms laid out in this policy.
           If you have questions or concerns, reading this policy will provide

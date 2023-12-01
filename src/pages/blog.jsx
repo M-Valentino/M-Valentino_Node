@@ -141,7 +141,7 @@ export default function Blog() {
                     }}
                     onClick={() => {
                       navigator.clipboard.writeText(
-                        `https://mark-valentino.vercel.app/blogPost/${item.title}`
+                        `https://${PAGE_TITLES.domain}/blogPost/${item.title}`
                       );
                       setPostIdCopied(postIndex);
                     }}
