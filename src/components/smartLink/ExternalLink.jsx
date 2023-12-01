@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Tooltip } from "@mui/material";
 import getRootDomain from "get-root-domain";
 import { LinkInfoWrapper } from "./LinkInfoWrapper";
+import { EXTERNAL_FAVICON_STYLES } from "@/consts/stylingValues";
 
 export const ExternalLink = ({ href, children }) => {
   const rootDomain = getRootDomain(href);
@@ -16,11 +17,7 @@ export const ExternalLink = ({ href, children }) => {
             src={imgSrc ? imgSrc : fallback}
             onError={onError}
             alt=""
-            style={{
-              height: "100%",
-              width: "100%",
-              margin: "auto",
-            }}
+            style={EXTERNAL_FAVICON_STYLES}
           />
         </LinkInfoWrapper>
       }
