@@ -37,10 +37,11 @@ export const BlogDrawer = () => {
    * Bookmark button overlaps the CustomPaper too much when the screen is
    * under 1366px.
    */
-  const isDesktopView = useMediaQuery("(min-width:1366px)");
+  const isDesktopView = useMediaQuery("(min-width:1260px)");
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [bookmarkHover, setBookmarkHover] = useState(false);
   const [bookmarkMouseDown, setBookmarkMouseDown] = useState(false);
+
   const bookmarkMove = useSpring({
     from: {
       backgroundColor: MUI_PRIMARY_COLOR_DEEP_ORANGE,
@@ -62,6 +63,9 @@ export const BlogDrawer = () => {
     },
     config: { mass: 0.5, friction: 18, tension: 600 },
   });
+
+  const BUTTON_TEXT = "All Posts";
+
   return (
     <>
       <Drawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>
@@ -97,7 +101,7 @@ export const BlogDrawer = () => {
             position: "fixed",
             left: 0,
             backgroundColor: MUI_PRIMARY_COLOR_DEEP_ORANGE,
-            width: 190,
+            width: 130,
             paddingTop: 15,
             paddingBottom: 15,
             // Extra padding is needed here since the animations intentionally overshoot.
@@ -124,7 +128,7 @@ export const BlogDrawer = () => {
             }}
             variant="h6"
           >
-            Show All Posts
+            {BUTTON_TEXT}
             <ArrowForwardIosIcon
               style={{
                 transform: "translate(3px, 6px)",
@@ -143,7 +147,7 @@ export const BlogDrawer = () => {
             marginBottom: 20,
           }}
         >
-          Show All Posts
+          {BUTTON_TEXT}
         </Button>
       )}
     </>

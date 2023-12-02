@@ -64,7 +64,12 @@ export const BlogPostHeader = (props) => {
             {/* Boolean is for preventing "Link Copied!" from showing on all posts */}
             {postIdCopied === postIndex && (
               <Stack direction="column" justifyContent="center">
-                <Typography style={{ fontSize: 14, color: SUCCESS_GREEN }}>
+                <Typography
+                  style={{
+                    fontSize: isLargeMobileView ? 11 : 14,
+                    color: SUCCESS_GREEN,
+                  }}
+                >
                   Link Copied!
                 </Typography>
               </Stack>

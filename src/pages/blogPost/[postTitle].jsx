@@ -38,12 +38,7 @@ export default function BlogTemplate({ post }) {
       <MainWrapper>
         <BlogDrawer />
         <CustomPaper isDesktopView={isDesktopView}>
-          <BlogPostHeader
-          item={post}
-          // postIndex={postIndex}
-          // setPostIdCopied={setPostIdCopied}
-          // postIdCopied={postIdCopied}
-          />
+          <BlogPostHeader item={post} />
           {getBlogComponent(post.title)}
         </CustomPaper>
       </MainWrapper>
