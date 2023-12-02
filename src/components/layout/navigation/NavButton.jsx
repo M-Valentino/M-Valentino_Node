@@ -3,13 +3,9 @@ import Link from "next/link";
 import { Button } from "@mui/material";
 import { generateNavLink } from "@/utils/linkFunctions";
 
-export const NavButton = ({
-  activeLink,
-  buttonTextAndOrLink,
-  children,
-  externalLink,
-  events
-}) => {
+export const NavButton = (props) => {
+  const { activeLink, buttonTextAndOrLink, children, externalLink, events } =
+    props;
   return (
     <Button
       color={activeLink === buttonTextAndOrLink ? "primary" : "secondary"}

@@ -12,7 +12,7 @@ export const Footer = () => {
   const [privacyPolicyOpen, setPrivacyPolicyOpen] = useState(false);
 
   const handlePrivacyPolicyClose = (_event, reason) => {
-    if (reason && reason == "backdropClick") {
+    if (reason && reason === "backdropClick") {
       return;
     }
     setPrivacyPolicyOpen(false);

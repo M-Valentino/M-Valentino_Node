@@ -5,7 +5,7 @@
     "@next/next/no-img-element": "off",
     "no-unneeded-ternary": 1,
     "prefer-const": 1,
-    "no-console": 1,
+    "no-console": 2,
     "no-else-return": 1,
     "no-inline-comments": 1,
     "no-multi-assign": 1,
@@ -13,6 +13,23 @@
     "no-useless-concat": 1,
     "no-useless-return": 1,
     "vars-on-top": 1,
-    "yoda": 1
+    "yoda": 1,
+    "accessor-pairs": 1,
+    "array-callback-return": 1,
+    "arrow-parens": 1,
+    "arrow-spacing": 1,
+    "block-scoped-var": 1,
+    "block-spacing": 1,
+    "comma-dangle": [1, "always-multiline"],
+    "comma-spacing": 1,
+    "comma-style": 1,
+    "computed-property-spacing": 1,
+    "default-case-last": 1,
+    "dot-location": [1, "property"],
+    "dot-notation": 1,
+    "eol-last": 2,
+    "eqeqeq": [1, "smart"],
+    "func-call-spacing": 1,
+    "func-name-matching": 1
   }
 }

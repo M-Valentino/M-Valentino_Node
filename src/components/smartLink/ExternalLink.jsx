@@ -22,10 +22,12 @@ export const ExternalLink = ({ href, children, style, openInNewTab }) => {
       {/* These invisble 0.1x0.1 images force prefetching for fast favicon loading. */}
       <img
         src={`https://${rootDomain}/favicon.ico`}
+        alt=""
         style={{ height: 0.1, width: 0.1 }}
       />
       <img
         src={`https://s2.googleusercontent.com/s2/favicons?domain=https://${rootDomain}`}
+        alt=""
         style={{ height: 0.1, width: 0.1 }}
       />
       <Tooltip

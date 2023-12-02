@@ -39,7 +39,7 @@ export const BlogPostHeader = (props) => {
         </Stack>
         {/* Sharing functionality is turned off for dynamically routed blog posts. 
           postIndex isn't passed as a prop inside [postTitle].jsx*/}
-        {postIndex != undefined && (
+        {postIndex !== undefined && (
           <>
             <Tooltip title="Copy link to just this post">
               <IconButton

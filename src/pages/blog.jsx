@@ -37,7 +37,7 @@ export const BLOG_POSTS = [
 export const BLOG_POSTS_NO_COMPONENT = BLOG_POSTS.map((obj) => {
   const newObj = { ...obj };
   if (newObj.hasOwnProperty("component")) {
-    delete newObj["component"];
+    delete newObj.component;
   }
   return newObj;
 });
