@@ -2,25 +2,14 @@ import React, { useEffect, useRef, useState } from "react";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import { CustomHead } from "@/components/layout/CustomHead";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import ShareIcon from "@mui/icons-material/Share";
-import {
-  Divider,
-  IconButton,
-  Stack,
-  Tooltip,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
+import { Divider, useMediaQuery } from "@mui/material";
 import { PAGE_TITLES } from "@/consts/pageTitles";
-import {
-  MUI_SECONDARY_COLOR_GRAY,
-  SUCCESS_GREEN,
-} from "@/consts/stylingValues";
 import { CustomPaper } from "@/components/layout/CustomPaper";
-import { MainHeading, SubHeading } from "@/components/layout/Headings";
+import { MainHeading } from "@/components/layout/Headings";
 import { Post1 } from "@/components/blogComponents/blogPosts/Post1";
 import { Post2 } from "@/components/blogComponents/blogPosts/Post2";
 import { BlogDrawer } from "@/components/blogComponents/BlogDrawer";
+import { BlogPostHeader } from "@/components/blogComponents/BlogPostHeader";
 
 /**
  * Holds all blog posts. appendQuestionMark is needed because blog
@@ -61,7 +50,6 @@ export const getBlogComponent = (title) => {
 export default function Blog() {
   const isDesktopView = useMediaQuery("(min-width:900px)");
   const isAtLeastTabletView = useMediaQuery("(min-width:600px)");
-  const isLargeMobileView = useMediaQuery("(max-width:428px)");
 
   // Controlls how many blog posts can be seen.
   const [postsToShow, setPostsToShow] = useState(1);
@@ -111,53 +99,12 @@ export default function Blog() {
         <CustomPaper isDesktopView={isDesktopView}>
           {BLOG_POSTS.slice(0, postsToShow).map((item, postIndex) => (
             <span key={postIndex}>
-              <SubHeading shrinkFontOn={isLargeMobileView}>
-                {item.title}
-                {item.appendQuestionMark ? "?" : ""}
-              </SubHeading>
-              <Stack direction="row" style={{ height: 36, marginBottom: 5 }}>
-                <Stack
-                  direction="column"
-                  justifyContent="center"
-                  style={{ marginRight: 10 }}
-                >
-                  <Typography
-                    variant="subtitle1"
-                    color="secondary"
-                    style={{ fontStyle: "italic" }}
-                  >
-                    Published {item.date}
-                  </Typography>
-                </Stack>
-                <Tooltip title="Copy link to just this post">
-                  <IconButton
-                    style={{
-                      height: 36,
-                      width: 36,
-                      color:
-                        postIdCopied === postIndex
-                          ? SUCCESS_GREEN
-                          : MUI_SECONDARY_COLOR_GRAY,
-                    }}
-                    onClick={() => {
-                      navigator.clipboard.writeText(
-                        `https://${PAGE_TITLES.domain}/blogPost/${item.title}`
-                      );
-                      setPostIdCopied(postIndex);
-                    }}
-                  >
-                    <ShareIcon />
-                  </IconButton>
-                </Tooltip>
-                {/* Boolean is for preventing "Link Copied!" from showing on all posts */}
-                {postIdCopied === postIndex && (
-                  <Stack direction="column" justifyContent="center">
-                    <Typography style={{ fontSize: 14, color: SUCCESS_GREEN }}>
-                      Link Copied!
-                    </Typography>
-                  </Stack>
-                )}
-              </Stack>
+              <BlogPostHeader
+                item={item}
+                postIndex={postIndex}
+                setPostIdCopied={setPostIdCopied}
+                postIdCopied={postIdCopied}
+              />
               {item.component}
               {postIndex === postsToShow - 1 &&
                 postIndex !== BLOG_POSTS.length - 1 && (

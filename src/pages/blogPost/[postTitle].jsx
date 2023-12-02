@@ -7,6 +7,7 @@ import { SubHeading } from "@/components/layout/Headings";
 import { BLOG_POSTS_NO_COMPONENT } from "../blog";
 import { getBlogComponent } from "../blog";
 import { BlogDrawer } from "@/components/blogComponents/BlogDrawer";
+import { BlogPostHeader } from "@/components/blogComponents/BlogPostHeader";
 
 // Function to get all possible paths for individual post pages
 export const getStaticPaths = async () => {
@@ -27,7 +28,6 @@ export const getStaticProps = async (context) => {
 
 export default function BlogTemplate({ post }) {
   const isDesktopView = useMediaQuery("(min-width:900px)");
-  const isLargeMobileView = useMediaQuery("(max-width:428px)");
   return (
     <>
       <CustomHead
@@ -38,18 +38,12 @@ export default function BlogTemplate({ post }) {
       <MainWrapper>
         <BlogDrawer />
         <CustomPaper isDesktopView={isDesktopView}>
-          <SubHeading shrinkFontOn={isLargeMobileView}>
-            {post.title}
-            {post.appendQuestionMark ? "?" : ""}
-          </SubHeading>
-          <Typography
-            variant="h6"
-            gutterBottom
-            color="secondary"
-            style={{ fontStyle: "italic" }}
-          >
-            Published {post.date}
-          </Typography>
+          <BlogPostHeader
+          item={post}
+          // postIndex={postIndex}
+          // setPostIdCopied={setPostIdCopied}
+          // postIdCopied={postIdCopied}
+          />
           {getBlogComponent(post.title)}
         </CustomPaper>
       </MainWrapper>
