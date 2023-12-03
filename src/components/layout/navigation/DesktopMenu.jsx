@@ -2,7 +2,7 @@ import React from "react";
 import UseAnimations from "react-useanimations";
 import github from "react-useanimations/lib/github";
 import linkedin from "react-useanimations/lib/linkedin";
-import { COLORS } from "@/consts/stylingValues";
+import { COLORS, SHADOWS } from "@/consts/stylingValues";
 import { PAGE_TITLES } from "@/consts/pageTitles";
 import { NavButton } from "./NavButton";
 
@@ -45,7 +45,10 @@ export const DesktopMenu = ({ activeLink, isDesktopView }) => {
         <UseAnimations
           animation={linkedin}
           size={30}
-          wrapperStyle={{ transform: "translate(-1px, -4px)" }}
+          wrapperStyle={{
+            transform: "translate(-1px, -4px)",
+            filter: SHADOWS.minuteSVG,
+          }}
           strokeColor={COLORS.mainGray}
           render={(eventProps, animationProps) => (
             <NavButton
@@ -60,7 +63,10 @@ export const DesktopMenu = ({ activeLink, isDesktopView }) => {
         <UseAnimations
           animation={github}
           size={30}
-          wrapperStyle={{ transform: "translateY(-4px)" }}
+          wrapperStyle={{
+            transform: "translateY(-4px)",
+            filter: SHADOWS.minuteSVG,
+          }}
           strokeColor={COLORS.mainGray}
           render={(eventProps, animationProps) => (
             <NavButton
