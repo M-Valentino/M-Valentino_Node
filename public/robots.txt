@@ -2,4 +2,6 @@ User-agent: *
 Disallow: /retro_calculator.html
 Disallow: /Earth3JS
 Disallow: /imageToDivs.html
+Disallow: /project/[projectTitle]
+Disallow: /blogPost/[postTitle]
 Sitemap: https://mark-valentino.vercel.app/sitemap.xml
