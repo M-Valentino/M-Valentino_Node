@@ -14,13 +14,7 @@ import {
 } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CloseIcon from "@mui/icons-material/Close";
-import { COLORS } from "@/consts/stylingValues";
-import {
-  MINUTE_SHADOW,
-  MINUTE_SHADOW_SVG,
-  BOOKMARK_INITAL_SHADOW,
-  BOOKMARK_FINAL_SHADOW,
-} from "@/consts/stylingValues";
+import { COLORS, SHADOWS } from "@/consts/stylingValues";
 import { BLOG_POSTS_NO_COMPONENT } from "@/pages/blog";
 
 /**
@@ -43,7 +37,7 @@ export const BlogDrawer = () => {
     from: {
       backgroundColor: COLORS.mainOrange,
       transform: "translateX(-35px) rotateY(0deg)",
-      boxShadow: BOOKMARK_INITAL_SHADOW,
+      boxShadow: SHADOWS.bookmarkInitial,
     },
     to: {
       backgroundColor: bookmarkHover
@@ -56,7 +50,9 @@ export const BlogDrawer = () => {
           ? "translateX(-10px) rotateY(15deg)"
           : "translateX(-20px) rotateY(0deg)"
         : "translateX(-35px) rotateY(0deg)",
-      boxShadow: bookmarkHover ? BOOKMARK_FINAL_SHADOW : BOOKMARK_INITAL_SHADOW,
+      boxShadow: bookmarkHover
+        ? SHADOWS.bookmarkFinal
+        : SHADOWS.bookmarkInitial,
     },
     config: { mass: 0.5, friction: 18, tension: 600 },
   });
@@ -73,7 +69,7 @@ export const BlogDrawer = () => {
             <CloseIcon
               color="primary"
               fontSize="large"
-              style={{ filter: MINUTE_SHADOW_SVG }}
+              style={{ filter: SHADOWS.minuteSVG }}
             />
           </IconButton>
         </div>
@@ -120,7 +116,7 @@ export const BlogDrawer = () => {
           <Typography
             style={{
               color: COLORS.offWhiteColor,
-              textShadow: MINUTE_SHADOW,
+              textShadow: SHADOWS.minute,
               userSelect: "none",
             }}
             variant="h6"
@@ -129,7 +125,7 @@ export const BlogDrawer = () => {
             <ArrowForwardIosIcon
               style={{
                 transform: "translate(3px, 6px)",
-                filter: MINUTE_SHADOW_SVG,
+                filter: SHADOWS.minuteSVG,
               }}
             />
           </Typography>

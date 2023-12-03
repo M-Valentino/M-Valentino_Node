@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import { MINUTE_SHADOW, SMALL_SHADOW } from "@/consts/stylingValues";
+import { SHADOWS } from "@/consts/stylingValues";
 
 export const MainHeading = ({ children, shrinkFontOn, addMarginBottomOn }) => {
   return (
@@ -9,7 +9,7 @@ export const MainHeading = ({ children, shrinkFontOn, addMarginBottomOn }) => {
       fontWeight={600}
       textAlign={"center"}
       style={{
-        textShadow: SMALL_SHADOW,
+        textShadow: SHADOWS.small,
         marginBottom: !addMarginBottomOn ? 0 : 20,
       }}
     >
@@ -25,7 +25,7 @@ export const SubHeading = ({ children, shrinkFontOn }) => {
       color="text.primary"
       style={{
         marginBottom: 20,
-        textShadow: MINUTE_SHADOW,
+        textShadow: SHADOWS.minute,
         fontWeight: "bolder",
         textAlign: "center",
       }}

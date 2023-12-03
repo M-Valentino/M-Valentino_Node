@@ -8,7 +8,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { PAGE_TITLES } from "@/consts/pageTitles";
-import { COLORS } from "@/consts/stylingValues";
+import { COLORS, SHADOWS } from "@/consts/stylingValues";
 import { SubHeading } from "@/components/layout/Headings";
 
 export const BlogPostHeader = (props) => {
@@ -43,6 +43,7 @@ export const BlogPostHeader = (props) => {
                 style={{
                   height: 36,
                   width: 36,
+                  filter: SHADOWS.minuteSVG,
                   color:
                     postIdCopied === postIndex
                       ? COLORS.successGreen

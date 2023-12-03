@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { Divider, IconButton, Menu } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { MINUTE_SHADOW_SVG } from "@/consts/stylingValues";
+import { SHADOWS } from "@/consts/stylingValues";
 import { PAGE_TITLES } from "@/consts/pageTitles";
 import { MobileNavItem } from "./MobileNavItem";
 
@@ -29,13 +29,13 @@ export const MobileMenu = ({activeLink}) => {
           <CloseIcon
             color="primary"
             fontSize="large"
-            style={{ filter: MINUTE_SHADOW_SVG }}
+            style={{ filter: SHADOWS.minuteSVG }}
           />
         ) : (
           <MenuIcon
             color="primary"
             fontSize="large"
-            style={{ filter: MINUTE_SHADOW_SVG }}
+            style={{ filter: SHADOWS.minuteSVG }}
           />
         )}
       </IconButton>

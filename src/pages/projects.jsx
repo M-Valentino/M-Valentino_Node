@@ -23,7 +23,7 @@ import ProjectTable from "@/components/ProjectsPage/ProjectTable";
 import { CustomHead } from "@/components/layout/CustomHead";
 import { NoResults } from "@/components/ProjectsPage/NoResults";
 import { PROJECT_CONTENT } from "@/consts/projectContent";
-import { MINUTE_SHADOW, MINUTE_SHADOW_SVG } from "@/consts/stylingValues";
+import { SHADOWS } from "@/consts/stylingValues";
 import { MainHeading } from "@/components/layout/Headings";
 import { PAGE_TITLES } from "@/consts/pageTitles";
 
@@ -59,7 +59,7 @@ export default function Projects() {
   const viewIconStyle = {
     transform: "translateY(-1.5px)",
     marginRight: 2,
-    filter: MINUTE_SHADOW_SVG,
+    filter: SHADOWS.minuteSVG,
   };
 
   /**
@@ -177,7 +177,7 @@ export default function Projects() {
                 onChange={handleSetView}
                 style={{
                   whiteSpace: "nowrap",
-                  boxShadow: MINUTE_SHADOW,
+                  boxShadow: SHADOWS.minute,
                 }}
               >
                 <ToggleButton
@@ -237,7 +237,7 @@ export default function Projects() {
                 onClick={() => filterProjects()}
                 aria-label="search"
               >
-                <SearchIcon style={{ filter: MINUTE_SHADOW_SVG }} />
+                <SearchIcon style={{ filter: SHADOWS.minuteSVG }} />
               </Button>
               <Tooltip title="Shows all projects again.">
                 <Button

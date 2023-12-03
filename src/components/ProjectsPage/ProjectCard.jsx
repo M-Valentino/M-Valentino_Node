@@ -9,12 +9,7 @@ import {
 } from "@mui/material";
 import { useSpring, animated } from "@react-spring/web";
 import { LanguageChip } from "../LanguageChip";
-import { COLORS } from "@/consts/stylingValues";
-import {
-  CARD_AND_TABLE_SHADOW,
-  FINAL_CARD_SHADOW,
-  MINUTE_SHADOW
-} from "@/consts/stylingValues";
+import { COLORS, SHADOWS } from "@/consts/stylingValues";
 import { HREF_TYPES } from "@/consts/projectContent";
 import { PLUS_MORE } from "@/consts/projectContent";
 
@@ -46,13 +41,13 @@ export default function ProjectCard(props) {
   const cardZoom = useSpring({
     from: {
       scale: 1,
-      boxShadow: CARD_AND_TABLE_SHADOW,
+      boxShadow: SHADOWS.initialCardShadow,
       filter: isDesktopView ? "brightness(0.99)" : "brightness(1)",
     },
     to: {
       scale: isHovering && isDesktopView ? 1.05 : 1,
       boxShadow:
-        isHovering && isDesktopView ? FINAL_CARD_SHADOW : CARD_AND_TABLE_SHADOW,
+        isHovering && isDesktopView ? SHADOWS.finalCardShadow : SHADOWS.initialCardShadow,
       filter:
         isHovering && isDesktopView ? "brightness(1)" : "brightness(0.99)",
     },
@@ -103,7 +98,7 @@ export default function ProjectCard(props) {
             width: "100%",
             height: isMobileView ? 260 : 270,
             borderRadius: 2,
-            boxShadow: MINUTE_SHADOW,
+            boxShadow: SHADOWS.minute,
           }}
         >
           {hrefType === HREF_TYPES.iframe && (
@@ -115,8 +110,8 @@ export default function ProjectCard(props) {
                 textAlign: "center",
                 borderBottomRightRadius: 10,
                 fontSize: 13,
-                boxShadow: MINUTE_SHADOW,
-                textShadow: MINUTE_SHADOW,
+                boxShadow: SHADOWS.minute,
+                textShadow: SHADOWS.minute,
               }}
             >
               Try it in your browser!

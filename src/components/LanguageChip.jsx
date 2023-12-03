@@ -6,7 +6,7 @@ import { Typography } from "@mui/material";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { useSpring, animated } from "@react-spring/web";
 import { PLUS_MORE } from "@/consts/projectContent";
-import { MINUTE_SHADOW } from "@/consts/stylingValues";
+import { SHADOWS } from "@/consts/stylingValues";
 
 /**
  * This is a component akin to MUI chips. LanguageChip is used in showing what coding languages
@@ -66,7 +66,7 @@ export const LanguageChip = (props) => {
       borderRadius: 16,
       backgroundColor: getChipColor(),
       textDecoration: "none",
-      boxShadow: MINUTE_SHADOW,
+      boxShadow: SHADOWS.minute,
     },
     typography: {
       fontWeight: 400,
@@ -89,7 +89,7 @@ export const LanguageChip = (props) => {
       borderRadius: 10,
       backgroundColor: getChipColor(),
       textDecoration: "none",
-      boxShadow: MINUTE_SHADOW,
+      boxShadow: SHADOWS.minute,
     },
     typography: {
       fontWeight: 400,

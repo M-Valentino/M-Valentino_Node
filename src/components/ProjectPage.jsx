@@ -16,8 +16,7 @@ import { MainHeading } from "./layout/Headings";
 import { getExtraProjectContent } from "@/utils/getProjectExtraContent";
 import {
   SCREEN_CONTROL_STYLES,
-  MINUTE_SHADOW,
-  MINUTE_SHADOW_SVG,
+  SHADOWS
 } from "@/consts/stylingValues";
 import { HREF_TYPES } from "@/consts/projectContent";
 
@@ -83,7 +82,7 @@ export default function ProjectPage(props) {
               margin: "auto",
               marginBottom: 40,
               display: "block",
-              boxShadow: MINUTE_SHADOW,
+              boxShadow: SHADOWS.minute,
             }}
           />
         );
@@ -177,7 +176,7 @@ export default function ProjectPage(props) {
               width: isSmallMobileView ? 37 : 45,
               marginRight: 10,
               transform: "translateY(-5px)",
-              filter: MINUTE_SHADOW_SVG,
+              filter: SHADOWS.minuteSVG,
             }}
           />
           View Code Source

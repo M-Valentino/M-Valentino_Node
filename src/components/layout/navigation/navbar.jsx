@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Button, useMediaQuery } from "@mui/material/";
-import { MINUTE_SHADOW_SVG } from "@/consts/stylingValues";
+import { SHADOWS } from "@/consts/stylingValues";
 import { MobileMenu } from "./MobileMenu";
 import { DesktopMenu } from "./DesktopMenu";
 
@@ -38,7 +38,7 @@ const NavBar = ({ activeLink }) => {
               src="/mark-valentino-logo.svg"
               style={{
                 width: "100%",
-                filter: MINUTE_SHADOW_SVG,
+                filter: SHADOWS.minuteSVG,
               }}
             />
           </Link>

@@ -8,7 +8,7 @@ import {
   DialogTitle,
   Typography,
 } from "@mui/material";
-import { MINUTE_SHADOW } from "@/consts/stylingValues";
+import { SHADOWS } from "@/consts/stylingValues";
 import { PAGE_TITLES } from "@/consts/pageTitles";
 
 /**
@@ -23,7 +23,7 @@ export const PrivacyPolicyDialog = (props) => {
     <Dialog onClose={handlePrivacyPolicyClose} open={privacyPolicyOpen}>
       <DialogTitle
         fontWeight={600}
-        style={{ fontSize: 24, textAlign: "center", boxShadow: MINUTE_SHADOW }}
+        style={{ fontSize: 24, textAlign: "center", boxShadow: SHADOWS.minute }}
       >
         Privacy Policy
       </DialogTitle>
