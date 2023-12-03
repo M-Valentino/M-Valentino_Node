@@ -10,6 +10,7 @@ import { Post1 } from "@/components/blogComponents/blogPosts/Post1";
 import { Post2 } from "@/components/blogComponents/blogPosts/Post2";
 import { BlogDrawer } from "@/components/blogComponents/BlogDrawer";
 import { BlogPostHeader } from "@/components/blogComponents/BlogPostHeader";
+import { SHADOWS } from "@/consts/stylingValues";
 
 /**
  * Holds all blog posts. appendQuestionMark is needed because blog
@@ -115,6 +116,7 @@ export default function Blog() {
                       transform: "translateY(20px)",
                       width: 40,
                       height: 40,
+                      filter: SHADOWS.minuteSVG
                     }}
                   />
                 )}
