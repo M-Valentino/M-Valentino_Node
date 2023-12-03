@@ -8,10 +8,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { PAGE_TITLES } from "@/consts/pageTitles";
-import {
-  MUI_SECONDARY_COLOR_GRAY,
-  SUCCESS_GREEN,
-} from "@/consts/stylingValues";
+import { COLORS } from "@/consts/stylingValues";
 import { SubHeading } from "@/components/layout/Headings";
 
 export const BlogPostHeader = (props) => {
@@ -48,8 +45,8 @@ export const BlogPostHeader = (props) => {
                   width: 36,
                   color:
                     postIdCopied === postIndex
-                      ? SUCCESS_GREEN
-                      : MUI_SECONDARY_COLOR_GRAY,
+                      ? COLORS.successGreen
+                      : COLORS.mainGray,
                 }}
                 onClick={() => {
                   navigator.clipboard.writeText(
@@ -67,7 +64,7 @@ export const BlogPostHeader = (props) => {
                 <Typography
                   style={{
                     fontSize: isLargeMobileView ? 11 : 14,
-                    color: SUCCESS_GREEN,
+                    color: COLORS.successGreen,
                   }}
                 >
                   Link Copied!

@@ -2,7 +2,7 @@ import React from "react";
 import UseAnimations from "react-useanimations";
 import github from "react-useanimations/lib/github";
 import linkedin from "react-useanimations/lib/linkedin";
-import { MUI_SECONDARY_COLOR_GRAY } from "@/consts/stylingValues";
+import { COLORS } from "@/consts/stylingValues";
 import { PAGE_TITLES } from "@/consts/pageTitles";
 import { NavButton } from "./NavButton";
 
@@ -46,7 +46,7 @@ export const DesktopMenu = ({ activeLink, isDesktopView }) => {
           animation={linkedin}
           size={30}
           wrapperStyle={{ transform: "translate(-1px, -4px)" }}
-          strokeColor={MUI_SECONDARY_COLOR_GRAY}
+          strokeColor={COLORS.mainGray}
           render={(eventProps, animationProps) => (
             <NavButton
               externalLink
@@ -61,7 +61,7 @@ export const DesktopMenu = ({ activeLink, isDesktopView }) => {
           animation={github}
           size={30}
           wrapperStyle={{ transform: "translateY(-4px)" }}
-          strokeColor={MUI_SECONDARY_COLOR_GRAY}
+          strokeColor={COLORS.mainGray}
           render={(eventProps, animationProps) => (
             <NavButton
               externalLink

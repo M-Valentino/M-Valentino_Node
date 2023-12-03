@@ -7,10 +7,7 @@ import { CustomHead } from "@/components/layout/CustomHead";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import ProjectCard from "@/components/ProjectsPage/ProjectCard";
 import { PROJECT_CONTENT } from "@/consts/projectContent";
-import {
-  MUI_PRIMARY_COLOR_DEEP_ORANGE,
-  MINUTE_SHADOW,
-} from "@/consts/stylingValues";
+import { COLORS, MINUTE_SHADOW } from "@/consts/stylingValues";
 import { TECH_STACK } from "@/consts/techStack";
 import { Button, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
 import { TypeAnimation } from "react-type-animation";
@@ -38,7 +35,7 @@ export default function Home() {
               display: "inline-block",
               fontFamily: "sans-serif",
               textShadow: MINUTE_SHADOW,
-              color: MUI_PRIMARY_COLOR_DEEP_ORANGE,
+              color: COLORS.mainOrange,
               fontWeight: 600,
             }}
             repeat={1}
@@ -73,7 +70,7 @@ export default function Home() {
               marginBottom: 40,
               borderRadius: 999,
               maxWidth: 130,
-              border: `10px solid ${MUI_PRIMARY_COLOR_DEEP_ORANGE}`,
+              border: `10px solid ${COLORS.mainOrange}`,
               boxShadow: `${MINUTE_SHADOW}, inset ${MINUTE_SHADOW}`,
             }}
             role="img"

@@ -14,11 +14,8 @@ import {
 } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CloseIcon from "@mui/icons-material/Close";
+import { COLORS } from "@/consts/stylingValues";
 import {
-  MUI_PRIMARY_COLOR_DEEP_ORANGE_LIGHT,
-  MUI_PRIMARY_COLOR_DEEP_ORANGE,
-  MUI_PRIMARY_COLOR_DEEP_ORANGE_DARK,
-  OFF_WHITE_COLOR,
   MINUTE_SHADOW,
   MINUTE_SHADOW_SVG,
   BOOKMARK_INITAL_SHADOW,
@@ -44,16 +41,16 @@ export const BlogDrawer = () => {
 
   const bookmarkMove = useSpring({
     from: {
-      backgroundColor: MUI_PRIMARY_COLOR_DEEP_ORANGE,
+      backgroundColor: COLORS.mainOrange,
       transform: "translateX(-35px) rotateY(0deg)",
       boxShadow: BOOKMARK_INITAL_SHADOW,
     },
     to: {
       backgroundColor: bookmarkHover
         ? bookmarkMouseDown
-          ? MUI_PRIMARY_COLOR_DEEP_ORANGE_LIGHT
-          : MUI_PRIMARY_COLOR_DEEP_ORANGE_DARK
-        : MUI_PRIMARY_COLOR_DEEP_ORANGE,
+          ? COLORS.lightOrange
+          : COLORS.darkOrange
+        : COLORS.mainOrange,
       transform: bookmarkHover
         ? bookmarkMouseDown
           ? "translateX(-10px) rotateY(15deg)"
@@ -100,7 +97,7 @@ export const BlogDrawer = () => {
             display: "inline-block",
             position: "fixed",
             left: 0,
-            backgroundColor: MUI_PRIMARY_COLOR_DEEP_ORANGE,
+            backgroundColor: COLORS.mainOrange,
             width: 130,
             paddingTop: 15,
             paddingBottom: 15,
@@ -122,7 +119,7 @@ export const BlogDrawer = () => {
         >
           <Typography
             style={{
-              color: OFF_WHITE_COLOR,
+              color: COLORS.offWhiteColor,
               textShadow: MINUTE_SHADOW,
               userSelect: "none",
             }}

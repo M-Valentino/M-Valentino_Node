@@ -9,12 +9,11 @@ import {
 } from "@mui/material";
 import { useSpring, animated } from "@react-spring/web";
 import { LanguageChip } from "../LanguageChip";
+import { COLORS } from "@/consts/stylingValues";
 import {
   CARD_AND_TABLE_SHADOW,
   FINAL_CARD_SHADOW,
-  MINUTE_SHADOW,
-  OFF_WHITE_COLOR,
-  MUI_PRIMARY_COLOR_DEEP_ORANGE,
+  MINUTE_SHADOW
 } from "@/consts/stylingValues";
 import { HREF_TYPES } from "@/consts/projectContent";
 import { PLUS_MORE } from "@/consts/projectContent";
@@ -83,7 +82,7 @@ export default function ProjectCard(props) {
     >
       <animated.div
         style={{
-          backgroundColor: OFF_WHITE_COLOR,
+          backgroundColor: COLORS.offWhiteColor,
           maxWidth: isMobileView ? "100%" : 360,
           padding: getCardPadding(),
           borderRadius: 4,
@@ -110,9 +109,9 @@ export default function ProjectCard(props) {
           {hrefType === HREF_TYPES.iframe && (
             <div
               style={{
-                backgroundColor: MUI_PRIMARY_COLOR_DEEP_ORANGE,
+                backgroundColor: COLORS.mainOrange,
                 width: 168,
-                color: OFF_WHITE_COLOR,
+                color: COLORS.offWhiteColor,
                 textAlign: "center",
                 borderBottomRightRadius: 10,
                 fontSize: 13,

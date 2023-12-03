@@ -2,8 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { MenuItem } from "@mui/material";
 import { generateNavLink } from "@/utils/linkFunctions";
-import { MUI_PRIMARY_COLOR_DEEP_ORANGE } from "@/consts/stylingValues";
-
+import { COLORS } from "@/consts/stylingValues";
 /**
  * This componenet is for an individual item in the mobile navigation menu.
  * @param {*} activeLink the current name of the page the user is currently on.
@@ -23,7 +22,7 @@ export const MobileNavItem = ({
         textDecoration: "none",
         color:
           activeLink === itemTextAndOrLink
-            ? MUI_PRIMARY_COLOR_DEEP_ORANGE
+            ? COLORS.mainOrange
             : "#000",
       }}
       target={externalLink ? "_blank" : ""}
