@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { SmartLink } from "./smartLink/SmartLink";
-import { LANGUAGES, LANGUAGE_LINKS } from "@/consts/projectContent";
+import { PLUS_MORE, LANGUAGES, LANGUAGE_LINKS } from "@/consts/projectContent";
 import { Typography } from "@mui/material";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { useSpring, animated } from "@react-spring/web";
-import { PLUS_MORE } from "@/consts/projectContent";
 import { SHADOWS } from "@/consts/stylingValues";
 
 /**

@@ -10,10 +10,32 @@ import {
 import { PAGE_TITLES } from "@/consts/pageTitles";
 import { COLORS, SHADOWS } from "@/consts/stylingValues";
 import { SubHeading } from "@/components/layout/Headings";
+import { useSpring, animated } from "@react-spring/web";
 
 export const BlogPostHeader = (props) => {
   const { item, postIndex, postIdCopied, setPostIdCopied } = props;
   const isLargeMobileView = useMediaQuery("(max-width:428px)");
+
+  /**
+   * Syntactic sugar function that determines if the the postId
+   * copied equals the postIndex from the mapping of posts in the
+   * parent component.
+   * @returns true if clicked, else false
+   */
+  const shareButtonClicked = () => {
+    return postIdCopied === postIndex;
+  };
+
+  const fadeIn = useSpring({
+    from: {
+      filter: "opacity(0)",
+    },
+    to: {
+      filter: shareButtonClicked() ? "opacity(1)" : "opacity(0)",
+    },
+    config: { duration: 200 },
+  });
+
   return (
     <>
       <SubHeading shrinkFontOn={isLargeMobileView}>
@@ -44,10 +66,9 @@ export const BlogPostHeader = (props) => {
                   height: 36,
                   width: 36,
                   filter: SHADOWS.minuteSVG,
-                  color:
-                    postIdCopied === postIndex
-                      ? COLORS.successGreen
-                      : COLORS.mainGray,
+                  color: shareButtonClicked()
+                    ? COLORS.successGreen
+                    : COLORS.mainGray,
                 }}
                 onClick={() => {
                   navigator.clipboard.writeText(
@@ -59,17 +80,19 @@ export const BlogPostHeader = (props) => {
                 <ShareIcon />
               </IconButton>
             </Tooltip>
-            {/* Boolean is for preventing "Link Copied!" from showing on all posts */}
-            {postIdCopied === postIndex && (
+            {shareButtonClicked() && (
               <Stack direction="column" justifyContent="center">
-                <Typography
-                  style={{
-                    fontSize: isLargeMobileView ? 11 : 14,
-                    color: COLORS.successGreen,
-                  }}
-                >
-                  Link Copied!
-                </Typography>
+                <animated.div style={{ ...fadeIn }}>
+                  <Typography
+                    style={{
+                      fontSize: isLargeMobileView ? 11 : 14,
+                      color: COLORS.successGreen,
+                      userSelect: "none",
+                    }}
+                  >
+                    Link Copied!
+                  </Typography>
+                </animated.div>
               </Stack>
             )}
           </>
