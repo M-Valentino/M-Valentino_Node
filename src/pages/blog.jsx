@@ -73,7 +73,7 @@ export default function Blog() {
       incrementPostsToShow();
       postsIncrementedForHighRes.current = true;
     }
-  }, [clientCanSeeAllOfOnePost]);
+  });
 
   const oldTime = useRef(Date.now());
 
