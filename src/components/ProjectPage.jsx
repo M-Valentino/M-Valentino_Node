@@ -16,7 +16,7 @@ import { MainHeading } from "./layout/Headings";
 import { getExtraProjectContent } from "@/utils/getProjectExtraContent";
 import {
   SCREEN_CONTROL_STYLES,
-  SHADOWS
+  SHADOWS,
 } from "@/consts/stylingValues";
 import { HREF_TYPES } from "@/consts/projectContent";
 

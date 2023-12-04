@@ -116,7 +116,7 @@ export default function Blog() {
                       transform: "translateY(20px)",
                       width: 40,
                       height: 40,
-                      filter: SHADOWS.minuteSVG
+                      filter: SHADOWS.minuteSVG,
                     }}
                   />
                 )}

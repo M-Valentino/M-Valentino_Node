@@ -53,65 +53,31 @@ export const LanguageChip = (props) => {
     },
   });
 
-  const fullSizeStyles = {
-    container: {
-      display: "flex",
-      justifyContent: "center",
-      alignContent: "center",
-      flexDirection: "column",
-      paddingLeft: 12.5,
-      paddingRight: 12.5,
-      height: 32,
-      borderRadius: 16,
-      backgroundColor: getChipColor(),
-      textDecoration: "none",
-      boxShadow: SHADOWS.minute,
-    },
-    typography: {
-      fontWeight: 400,
-      opacity: 0.8,
-      fontSize: 15,
-      whiteSpace: "nowrap",
-      userSelect: "none",
-    },
-  };
-
-  const smallSizeStyles = {
-    container: {
-      display: "flex",
-      justifyContent: "center",
-      alignContent: "center",
-      flexDirection: "column",
-      paddingLeft: 7.5,
-      paddingRight: 7.5,
-      height: 20,
-      borderRadius: 10,
-      backgroundColor: getChipColor(),
-      textDecoration: "none",
-      boxShadow: SHADOWS.minute,
-    },
-    typography: {
-      fontWeight: 400,
-      opacity: 0.8,
-      fontSize: 12,
-      whiteSpace: "nowrap",
-      userSelect: "none",
-    },
-  };
-
   const Chip = () => (
     <div
-      style={
-        size === "full" ? fullSizeStyles.container : smallSizeStyles.container
-      }
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignContent: "center",
+        flexDirection: "column",
+        paddingLeft: size === "full" ? 12.5 : 7.5,
+        paddingRight: size === "full" ? 12.5 : 7.5,
+        height: size === "full" ? 32 : 20,
+        borderRadius: size === "full" ? 16 : 10,
+        backgroundColor: getChipColor(),
+        textDecoration: "none",
+        boxShadow: SHADOWS.minute,
+      }}
     >
       <Typography
         color="text.primary"
-        style={
-          size === "full"
-            ? fullSizeStyles.typography
-            : smallSizeStyles.typography
-        }
+        style={{
+          fontWeight: 400,
+          opacity: 0.8,
+          fontSize: size === "full" ? 15 : 12,
+          whiteSpace: "nowrap",
+          userSelect: "none",
+        }}
       >
         <span style={{ color: language === PLUS_MORE ? "#fff" : "#000" }}>
           {language}
