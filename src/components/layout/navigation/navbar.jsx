@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Button, useMediaQuery } from "@mui/material/";
-import { SHADOWS } from "@/consts/stylingValues";
+import { COLORS, SHADOWS } from "@/consts/stylingValues";
 import { MobileMenu } from "./MobileMenu";
 import { DesktopMenu } from "./DesktopMenu";
 
@@ -17,40 +17,59 @@ const NavBar = ({ activeLink }) => {
   const isMobileView = useMediaQuery("(max-width:876px)");
 
   return (
-    <div style={{ marginBottom: 50 }}>
-      {/* For giving the logo touch ripple effects */}
-      <Button
+    <>
+      <div
         style={{
-          padding: 0,
-          position: "absolute",
-          top: 5,
-          left: isDesktopView ? 50 : 5,
+          top: 0,
+          width: "100%",
+          position: "fixed",
+          backgroundColor: COLORS.offWhiteColor,
+          paddingBottom: 5,
+          paddingTop: 5,
         }}
       >
-        <div
+        {/* For giving the logo touch ripple effects */}
+        <Button
           style={{
-            width: 115,
+            padding: 0,
+            position: "absolute",
+            top: 5,
+            left: isDesktopView ? 50 : 5,
           }}
         >
-          <Link href="/">
-            <img
-              alt="Mark Valentino logo"
-              src="/mark-valentino-logo.svg"
-              style={{
-                width: "100%",
-                filter: SHADOWS.minuteSVG,
-              }}
-            />
-          </Link>
-        </div>
-      </Button>
+          <div
+            style={{
+              width: 115,
+            }}
+          >
+            <Link href="/">
+              <img
+                alt="Mark Valentino logo"
+                src="/mark-valentino-logo.svg"
+                style={{
+                  width: "100%",
+                  filter: SHADOWS.minuteSVG,
+                }}
+              />
+            </Link>
+          </div>
+        </Button>
 
-      {isMobileView ? (
-        <MobileMenu activeLink={activeLink} />
-      ) : (
-        <DesktopMenu activeLink={activeLink} isDesktopView={isDesktopView} />
-      )}
-    </div>
+        {isMobileView ? (
+          <MobileMenu activeLink={activeLink} />
+        ) : (
+          <DesktopMenu activeLink={activeLink} isDesktopView={isDesktopView} />
+        )}
+      </div>
+      {/* For creating spacing below the navbar  */}
+      <div
+        style={{
+          width: "100%",
+          height: 43.5,
+          marginBottom: 50,
+        }}
+      ></div>
+    </>
   );
 };
 export default NavBar;
