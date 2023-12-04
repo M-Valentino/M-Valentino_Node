@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import OrangeEarth from "../components/OrangeEarth";
 import { CustomPaper } from "@/components/layout/CustomPaper";
 import { SubHeading } from "@/components/layout/Headings";
@@ -62,20 +63,22 @@ export default function Home() {
             specialties. I have gotten where I am today through passion,
             perseverance, and curiosity.
           </Typography>
-          <img
+          <Image
+            width={130}
+            height={130}
+            quality={95}
             style={{
               margin: "auto",
               display: "block",
               marginTop: 20,
               marginBottom: 40,
               borderRadius: 999,
-              maxWidth: 130,
+              height: "auto",
               border: `10px solid ${COLORS.mainOrange}`,
               boxShadow: `${SHADOWS.minute}, inset ${SHADOWS.minute}`,
             }}
-            role="img"
             alt="Professional portrait of me in a suite and tie."
-            src="https://avatars.githubusercontent.com/u/79779618?s=400&u=15e063ba7f2751b5f71ac4ba9a586fe296f569a8&v=4"
+            src="/githubAvatar.png"
           />
           <SubHeading shrinkFontOn={!isDesktopView}>My Tech Stack</SubHeading>
           <Grid container spacing={4} justifyContent="center">
