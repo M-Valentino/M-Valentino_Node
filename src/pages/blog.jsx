@@ -51,9 +51,24 @@ export const getBlogComponent = (title) => {
 export default function Blog() {
   const isDesktopView = useMediaQuery("(min-width:900px)");
   const isAtLeastTabletView = useMediaQuery("(min-width:600px)");
+  const clientCanSeeAllOfOnePost = useMediaQuery("(min-height:1280px)");
+  const postsIncrementedForHighRes = useRef(false);
 
   // Controlls how many blog posts can be seen.
   const [postsToShow, setPostsToShow] = useState(1);
+
+  /**
+   * On higher resolution displays, all of a post will show and no
+   * scrollbar will appear. If no scrollbar appears, users can't
+   * scroll to the next post.
+   */
+  useEffect(() => {
+    if (clientCanSeeAllOfOnePost && postsIncrementedForHighRes) {
+      setPostsToShow((oldValue) => oldValue + 1);
+      postsIncrementedForHighRes.current = true;
+    }
+  }, [clientCanSeeAllOfOnePost]);
+
   const oldTime = useRef(Date.now());
 
   /**
