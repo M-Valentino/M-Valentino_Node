@@ -22,10 +22,14 @@ const NavBar = ({ activeLink }) => {
         style={{
           top: 0,
           width: "100%",
+          height: isMobileView ? 45 : "none",
           position: "fixed",
-          backgroundColor: COLORS.offWhiteColor,
+          background: `linear-gradient(180deg,${COLORS.offWhiteColor}ff 0%, ${COLORS.offWhiteColor}fe 65%, ${COLORS.offWhiteColor}f7 85%, ${COLORS.offWhiteColor}eb 100%)`,
+          WebkitBackdropFilter: "blur(5px)",
+          boxShadow: SHADOWS.minute,
           paddingBottom: 5,
           paddingTop: 5,
+          zIndex: 999,
         }}
       >
         {/* For giving the logo touch ripple effects */}
@@ -35,6 +39,7 @@ const NavBar = ({ activeLink }) => {
             position: "absolute",
             top: 5,
             left: isDesktopView ? 50 : 5,
+            zIndex: 99,
           }}
         >
           <div
