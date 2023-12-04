@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Button, useMediaQuery } from "@mui/material/";
-import { COLORS, SHADOWS, Z_INDEX_ORDER } from "@/consts/stylingValues";
+import { GRADIENTS, SHADOWS, Z_INDEX_ORDER } from "@/consts/stylingValues";
 import { MobileMenu } from "./MobileMenu";
 import { DesktopMenu } from "./DesktopMenu";
 
@@ -24,7 +24,7 @@ const NavBar = ({ activeLink }) => {
           width: "100%",
           height: isMobileView ? 45 : "none",
           position: "fixed",
-          background: `linear-gradient(180deg,${COLORS.offWhiteColor}ff 0%, ${COLORS.offWhiteColor}fe 65%, ${COLORS.offWhiteColor}f7 85%, ${COLORS.offWhiteColor}eb 100%)`,
+          background: GRADIENTS.navbar,
           WebkitBackdropFilter: "blur(5px)",
           boxShadow: SHADOWS.minute,
           paddingBottom: 5,

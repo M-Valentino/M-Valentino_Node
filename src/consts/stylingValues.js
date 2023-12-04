@@ -25,7 +25,11 @@ export const COLORS = {
   darkOrange: "#ee4312",
   mainGray: "#444",
   successGreen: "#6a6",
-  offWhiteGradient: `linear-gradient(0deg, #fdfbfa 0%, #fffdfa 100%)`,
+};
+
+export const GRADIENTS = {
+  navbar: `linear-gradient(180deg,${COLORS.offWhiteColor}ff 0%, ${COLORS.offWhiteColor}fe 70%, ${COLORS.offWhiteColor}f7 85%, ${COLORS.offWhiteColor}eb 95% , ${COLORS.offWhiteColor}e9 100%)`,
+  offWhiteGradient: `linear-gradient(0deg, #fdfbfa 0%, ${COLORS.offWhiteColor} 100%)`,
 };
 
 export const SCREEN_CONTROL_STYLES = {

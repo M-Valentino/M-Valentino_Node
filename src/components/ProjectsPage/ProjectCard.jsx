@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { useSpring, animated } from "@react-spring/web";
 import { LanguageChip } from "../LanguageChip";
-import { COLORS, SHADOWS } from "@/consts/stylingValues";
+import { COLORS, GRADIENTS, SHADOWS } from "@/consts/stylingValues";
 import { HREF_TYPES } from "@/consts/projectContent";
 import { PLUS_MORE } from "@/consts/projectContent";
 
@@ -77,7 +77,7 @@ export default function ProjectCard(props) {
     >
       <animated.div
         style={{
-          backgroundColor: COLORS.offWhiteColor,
+          background: GRADIENTS.offWhiteGradient,
           maxWidth: isMobileView ? "100%" : 360,
           padding: getCardPadding(),
           borderRadius: 4,
