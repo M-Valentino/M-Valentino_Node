@@ -65,8 +65,7 @@ export const MobileMenu = ({activeLink}) => {
         <MobileNavItem externalLink itemTextAndOrLink={PAGE_TITLES.gitHub} />
         <MobileNavItem externalLink itemTextAndOrLink={PAGE_TITLES.linkedIn} />
       </Menu>
-      {/* For creating spacing below the navbar during mobile view. */}
-      <div style={{ width: "100%", height: 15 }}></div>
+      
     </>
   );
 };
