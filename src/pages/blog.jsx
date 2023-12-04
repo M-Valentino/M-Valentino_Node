@@ -57,6 +57,12 @@ export default function Blog() {
   // Controlls how many blog posts can be seen.
   const [postsToShow, setPostsToShow] = useState(1);
 
+  const incrementPostsToShow = () => {
+    if (postsToShow < BLOG_POSTS.length) {
+      setPostsToShow((oldValue) => oldValue + 1);
+    }
+  };
+
   /**
    * On higher resolution displays, all of a post will show and no
    * scrollbar will appear. If no scrollbar appears, users can't
@@ -64,7 +70,7 @@ export default function Blog() {
    */
   useEffect(() => {
     if (clientCanSeeAllOfOnePost && postsIncrementedForHighRes) {
-      setPostsToShow((oldValue) => oldValue + 1);
+      incrementPostsToShow();
       postsIncrementedForHighRes.current = true;
     }
   }, [clientCanSeeAllOfOnePost]);
@@ -82,10 +88,8 @@ export default function Blog() {
         document.documentElement.scrollHeight - 20 &&
       oldTime.current + 500 < Date.now()
     ) {
-      if (postsToShow < BLOG_POSTS.length) {
-        setPostsToShow((oldValue) => oldValue + 1);
-        oldTime.current = Date.now();
-      }
+      incrementPostsToShow();
+      oldTime.current = Date.now();
     }
   };
 
