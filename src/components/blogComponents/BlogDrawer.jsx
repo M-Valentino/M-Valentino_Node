@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CloseIcon from "@mui/icons-material/Close";
-import { COLORS, SHADOWS } from "@/consts/stylingValues";
+import { COLORS, SHADOWS, Z_INDEX_ORDER} from "@/consts/stylingValues";
 import { BLOG_POSTS_NO_COMPONENT } from "@/pages/blog";
 
 /**
@@ -61,7 +61,7 @@ export const BlogDrawer = () => {
 
   return (
     <>
-      <Drawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+      <Drawer open={drawerOpen} onClose={() => setDrawerOpen(false)} style={{zIndex: Z_INDEX_ORDER.blogDrawer}}>
         <div>
           {/* This is the only way to close the drawer on mobile. Including this 
           on desktop is good for UX */}

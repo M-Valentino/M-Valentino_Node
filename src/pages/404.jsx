@@ -7,7 +7,7 @@ const integratedCircuit = (
       position: "absolute",
       top: 350,
       left: "calc(50% - 62.5px)",
-      zIndex: Z_INDEX_ORDER.third,
+      zIndex: Z_INDEX_ORDER.integratedCircuit,
     }}
   >
     <div

@@ -41,11 +41,14 @@ export const EXTERNAL_FAVICON_STYLES = {
 };
 
 export const Z_INDEX_ORDER = {
-  // >= 9000 is above the navbar
-  first: 9999,
-  second: 9998,
-  third: 8999,
-}
+  iframeScreenControlShrink: 9999,
+  iframeFull: 9998,
+  dialog: 8999,
+  blogDrawer: 7999,
+  mobileNavMenu: 6999,
+  navbar: 6998,
+  integratedCircuit: 5999,
+};
 
 // This controls the main theme of the website.
 export const MainTheme = createTheme({

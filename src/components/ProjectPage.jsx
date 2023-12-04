@@ -67,7 +67,7 @@ export default function ProjectPage(props) {
     margin: 0,
     padding: 0,
     overflow: "hidden",
-    zIndex: Z_INDEX_ORDER.second,
+    zIndex: Z_INDEX_ORDER.iframeFull,
   };
 
   const getProjectComponent = () => {
@@ -108,7 +108,7 @@ export default function ProjectPage(props) {
                   position: iframeFullSize ? "fixed" : "relative",
                   bottom: iframeFullSize ? 40 : "unset",
                   left: iframeFullSize ? 40 : "unset",
-                  zIndex: Z_INDEX_ORDER.first,
+                  zIndex: iframeFullSize ? Z_INDEX_ORDER.iframeScreenControlShrink : "unset",
                   width: 50,
                   height: 50,
                 }}

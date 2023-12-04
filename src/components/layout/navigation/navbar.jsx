@@ -29,7 +29,7 @@ const NavBar = ({ activeLink }) => {
           boxShadow: SHADOWS.minute,
           paddingBottom: 5,
           paddingTop: 5,
-          zIndex: Z_INDEX_ORDER.third,
+          zIndex: Z_INDEX_ORDER.navbar,
         }}
       >
         {/* For giving the logo touch ripple effects */}

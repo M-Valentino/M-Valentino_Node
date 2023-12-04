@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { Divider, IconButton, Menu } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { SHADOWS } from "@/consts/stylingValues";
+import { SHADOWS, Z_INDEX_ORDER } from "@/consts/stylingValues";
 import { PAGE_TITLES } from "@/consts/pageTitles";
 import { MobileNavItem } from "./MobileNavItem";
 
@@ -47,7 +47,7 @@ export const MobileMenu = ({activeLink}) => {
         MenuListProps={{
           "aria-labelledby": "basic-button",
         }}
-        style={{ textDecoration: "none" }}
+        style={{ textDecoration: "none", zIndex: Z_INDEX_ORDER.mobileNavMenu }}
       >
         <MobileNavItem
           activeLink={activeLink}

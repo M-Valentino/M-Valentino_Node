@@ -8,7 +8,7 @@ import {
   DialogTitle,
   Typography,
 } from "@mui/material";
-import { SHADOWS } from "@/consts/stylingValues";
+import { SHADOWS, Z_INDEX_ORDER } from "@/consts/stylingValues";
 import { PAGE_TITLES } from "@/consts/pageTitles";
 
 /**
@@ -20,7 +20,11 @@ export const PrivacyPolicyDialog = (props) => {
   const { handlePrivacyPolicyClose, privacyPolicyOpen } = props;
 
   return (
-    <Dialog onClose={handlePrivacyPolicyClose} open={privacyPolicyOpen}>
+    <Dialog
+      onClose={handlePrivacyPolicyClose}
+      open={privacyPolicyOpen}
+      style={{ zIndex: Z_INDEX_ORDER.dialog }}
+    >
       <DialogTitle
         fontWeight={600}
         style={{ fontSize: 24, textAlign: "center", boxShadow: SHADOWS.minute }}
