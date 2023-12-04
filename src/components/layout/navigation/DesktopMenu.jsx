@@ -15,7 +15,6 @@ export const DesktopMenu = ({ activeLink, isDesktopView }) => {
           justifyContent: "space-around",
           width: 380,
           margin: "auto",
-          zIndex: 999999999,
         }}
       >
         <NavButton

@@ -17,6 +17,7 @@ import { getExtraProjectContent } from "@/utils/getProjectExtraContent";
 import {
   SCREEN_CONTROL_STYLES,
   SHADOWS,
+  Z_INDEX_ORDER,
 } from "@/consts/stylingValues";
 import { HREF_TYPES } from "@/consts/projectContent";
 
@@ -66,7 +67,7 @@ export default function ProjectPage(props) {
     margin: 0,
     padding: 0,
     overflow: "hidden",
-    zIndex: 9,
+    zIndex: Z_INDEX_ORDER.second,
   };
 
   const getProjectComponent = () => {
@@ -107,7 +108,7 @@ export default function ProjectPage(props) {
                   position: iframeFullSize ? "fixed" : "relative",
                   bottom: iframeFullSize ? 40 : "unset",
                   left: iframeFullSize ? 40 : "unset",
-                  zIndex: 99,
+                  zIndex: Z_INDEX_ORDER.first,
                   width: 50,
                   height: 50,
                 }}

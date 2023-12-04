@@ -40,6 +40,13 @@ export const EXTERNAL_FAVICON_STYLES = {
   margin: "auto",
 };
 
+export const Z_INDEX_ORDER = {
+  // >= 9000 is above the navbar
+  first: 9999,
+  second: 9998,
+  third: 8999,
+}
+
 // This controls the main theme of the website.
 export const MainTheme = createTheme({
   palette: {

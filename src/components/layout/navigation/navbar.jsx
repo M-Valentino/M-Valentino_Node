@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Button, useMediaQuery } from "@mui/material/";
-import { COLORS, SHADOWS } from "@/consts/stylingValues";
+import { COLORS, SHADOWS, Z_INDEX_ORDER } from "@/consts/stylingValues";
 import { MobileMenu } from "./MobileMenu";
 import { DesktopMenu } from "./DesktopMenu";
 
@@ -29,7 +29,7 @@ const NavBar = ({ activeLink }) => {
           boxShadow: SHADOWS.minute,
           paddingBottom: 5,
           paddingTop: 5,
-          zIndex: 999,
+          zIndex: Z_INDEX_ORDER.third,
         }}
       >
         {/* For giving the logo touch ripple effects */}
@@ -39,7 +39,6 @@ const NavBar = ({ activeLink }) => {
             position: "absolute",
             top: 5,
             left: isDesktopView ? 50 : 5,
-            zIndex: 99,
           }}
         >
           <div

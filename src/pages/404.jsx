@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Z_INDEX_ORDER } from "@/consts/stylingValues";
 
 const integratedCircuit = (
   <div
@@ -6,7 +7,7 @@ const integratedCircuit = (
       position: "absolute",
       top: 350,
       left: "calc(50% - 62.5px)",
-      zIndex: 9,
+      zIndex: Z_INDEX_ORDER.third,
     }}
   >
     <div
