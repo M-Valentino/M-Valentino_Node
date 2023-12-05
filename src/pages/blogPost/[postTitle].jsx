@@ -1,9 +1,8 @@
 import React from "react";
 import { MainWrapper } from "@/components/layout/MainWrapper";
-import { Typography, useMediaQuery } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 import { CustomHead } from "@/components/layout/CustomHead";
 import { CustomPaper } from "@/components/layout/CustomPaper";
-import { SubHeading } from "@/components/layout/Headings";
 import { BLOG_POSTS_NO_COMPONENT } from "../blog";
 import { getBlogComponent } from "../blog";
 import { BlogDrawer } from "@/components/blogComponents/BlogDrawer";

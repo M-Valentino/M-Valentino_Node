@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import { CustomHead } from "@/components/layout/CustomHead";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -8,6 +8,7 @@ import { CustomPaper } from "@/components/layout/CustomPaper";
 import { MainHeading } from "@/components/layout/Headings";
 import { Post1 } from "@/components/blogComponents/blogPosts/Post1";
 import { Post2 } from "@/components/blogComponents/blogPosts/Post2";
+import { Post3 } from "@/components/blogComponents/blogPosts/Post3";
 import { BlogDrawer } from "@/components/blogComponents/BlogDrawer";
 import { BlogPostHeader } from "@/components/blogComponents/BlogPostHeader";
 import { SHADOWS } from "@/consts/stylingValues";
@@ -18,6 +19,11 @@ import { SHADOWS } from "@/consts/stylingValues";
  * marks in URLs creates incompatibilities.
  */
 export const BLOG_POSTS = [
+  {
+    component: <Post3 />,
+    title: "My UX Invention to Let Users Know Where Links Go",
+    date: "December 5th, 2023",
+  },
   {
     component: <Post2 />,
     title: "I Don't Quite Like the Design of My Site",
@@ -51,17 +57,18 @@ export const getBlogComponent = (title) => {
 export default function Blog() {
   const isDesktopView = useMediaQuery("(min-width:900px)");
   const isAtLeastTabletView = useMediaQuery("(min-width:600px)");
-  const clientCanSeeAllOfOnePost = useMediaQuery("(min-height:1280px)");
-  const postsIncrementedForHighRes = useRef(false);
+  const clientCanSeeAllOfOnePost = useMediaQuery("(min-height:1200px)");
+  const [postsIncrementedForHighRes, setPostsIncrementedForHighRes] =
+    useState(false);
 
   // Controlls how many blog posts can be seen.
   const [postsToShow, setPostsToShow] = useState(1);
 
-  const incrementPostsToShow = () => {
+  const incrementPostsToShow = useCallback(() => {
     if (postsToShow < BLOG_POSTS.length) {
       setPostsToShow((oldValue) => oldValue + 1);
     }
-  };
+  }, [postsToShow]);
 
   /**
    * On higher resolution displays, all of a post will show and no
@@ -69,13 +76,15 @@ export default function Blog() {
    * scroll to the next post.
    */
   useEffect(() => {
-    if (clientCanSeeAllOfOnePost && postsIncrementedForHighRes) {
+    if (clientCanSeeAllOfOnePost && !postsIncrementedForHighRes) {
       incrementPostsToShow();
-      postsIncrementedForHighRes.current = true;
+      setPostsIncrementedForHighRes(true);
     }
-  });
-
-  const oldTime = useRef(Date.now());
+  }, [
+    clientCanSeeAllOfOnePost,
+    postsIncrementedForHighRes,
+    incrementPostsToShow,
+  ]);
 
   /**
    * If user scrolled close to the bottom and 500ms have passed,
@@ -85,11 +94,9 @@ export default function Blog() {
   const handleScroll = () => {
     if (
       Math.ceil(window.innerHeight + window.scrollY) >=
-        document.documentElement.scrollHeight - 20 &&
-      oldTime.current + 500 < Date.now()
+      document.documentElement.scrollHeight - 20
     ) {
       incrementPostsToShow();
-      oldTime.current = Date.now();
     }
   };
 
