@@ -109,7 +109,7 @@ export const PROJECT_CONTENT = [
     index: 1,
     href: "/Earth3JS",
     gitLink:
-      "https://github.com/M-Valentino/M-Valentino_Node/blob/main/src/pages/Earth3JS.jsx",
+      "https://github.com/M-Valentino/M-Valentino_NextJS/blob/main/src/pages/Earth3JS.jsx",
     hrefType: HREF_TYPES.iframe,
     imageLink: "/projectImages/earth3js.webp",
     imageAltText: "3D render of the earth with the moon orbiting it",

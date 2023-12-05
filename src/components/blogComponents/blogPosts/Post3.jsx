@@ -128,7 +128,7 @@ export const ExternalLink = ({ href, children, style, openInNewTab }) => {
         For internal links across my site, I mostly did the same thing, except I
         didn't have to do error handling for my own favicon or use a library to
         extract root domains.{" "}
-        <SmartLink href="https://github.com/M-Valentino/M-Valentino_Node/tree/main/src/components/smartLink">
+        <SmartLink href="https://github.com/M-Valentino/M-Valentino_NextJS/tree/main/src/components/smartLink">
           You can see the rest of my code here
         </SmartLink>
         . Maybe this invention of mine will take off. Who knows.
