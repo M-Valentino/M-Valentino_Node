@@ -25,7 +25,7 @@ export const LANGUAGES = {
   plotly: "Ploty",
 
   // React Stack
-  react: "React",
+  nextJs: "Next.Js",
   reactNative: "React Native",
   firebase: "Firebase",
   jest: "Jest",
@@ -52,7 +52,7 @@ export const LANGUAGE_LINKS = {
   [LANGUAGES.cairoSVG]: "https://cairosvg.org",
   [LANGUAGES.openCV]: "https://opencv.org",
   [LANGUAGES.plotly]: "https://plotly.com/python/",
-  [LANGUAGES.react]: "https://react.dev",
+  [LANGUAGES.nextJs]: "https://nextjs.org/",
   [LANGUAGES.reactNative]: "https://reactnative.dev",
   [LANGUAGES.asyncStorage]:
     "https://react-native-async-storage.github.io/async-storage/docs/install",
@@ -118,7 +118,7 @@ export const PROJECT_CONTENT = [
     description:
       "I made an interactive 3D scene of the earth with the moon orbiting around it. You can toggle between high and low settings, as well as adjust the simulation speed. I made this project to learn 3D web developement.",
     languages: [
-      LANGUAGES.react,
+      LANGUAGES.nextJs,
       LANGUAGES.reactThreeFiber,
       LANGUAGES.drie,
       LANGUAGES.materialUi,

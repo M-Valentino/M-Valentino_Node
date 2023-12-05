@@ -18,8 +18,8 @@ import { PLUS_MORE } from "@/consts/projectContent";
 export default function ProjectTable(props) {
   const { PROJECT_CONTENT } = props;
   const isDesktopView = useMediaQuery("(min-width:900px)");
-  const isLargeMobileView = useMediaQuery("(max-width:600px)");
-  const isMobileView = useMediaQuery("(max-width:538px)");
+  const isLargeMobileView = useMediaQuery("(max-width:612px)");
+  const isMobileView = useMediaQuery("(max-width:548px)");
   const isSmallMobileView = useMediaQuery("(max-width:496px)");
   const isExtraSmallMobileView = useMediaQuery("(max-width:412px)");
 
