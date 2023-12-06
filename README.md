@@ -1,11 +1,36 @@
-# M-Valentino Next.JS
+# Mark Valentino Next.js
+<p align="center" width="100%">
+  <img src="https://mark-valentino.vercel.app/mark-valentino-logo.svg" width="60%">
+</p>
 This is my current professional website created with the Next.js framework. It is currently deployed on Vercel.
 
 https://mark-valentino.vercel.app/
 
+## Features
+### Personal Project Listings
+This website displays my personal coding projects in various ways with the data for each project coming from one JavaScript object. Projects can be displayed as:
+- a grid of cards
+- a table
+- individual project pages using Next.js dynamic routes
+
+#### Projects Page
+- Projects can be toggled between being shown as a grid of cards or a table with one click.
+- Projects can be sorted from newest to oldest or oldest to newest.
+- Projects can be filtered via a search bar.
+
+#### Individual Project Pages
+Some projects have extra content not shown on card views, and this content is shown on the individual project pages. The actual code to the projects themselves that can be run in the browser are displayed in iframes.
+
+### Blog
+My site has a blog with "infinite" scrolling to cut down on loading times. All blog posts have individual routes associated with them as well, which are created dynamically. Blog posts on the infinite scrolling view have the capability to have their unique dynamic link be shared by clicking a button to write to the user's clipboard.
+
+### UIUX
+- Material UI and Material UI inspired components are used throughout the site.
+- The site is responsive and is compatible with mobile, small desktop, and large desktop resolutions.
+- Microsoft Clarity is embedded for user experience analysis.
+- My site uses "Smart Links". <a href="https://mark-valentino.vercel.app/blogPost/My%20UX%20Invention%20to%20Let%20Users%20Know%20Where%20Links%20Go">Read more about them here</a>.
 
 ## Running
-
 ```bash
 npm install
 npm run dev
