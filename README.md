@@ -1,9 +1,9 @@
 # Mark Valentino Next.js
+![Vercel Status](https://img.shields.io/github/deployments/M-Valentino/M-Valentino_NextJS/production?label=vercel&logo=vercel&logoColor=white)
 <p align="center" width="100%">
   <img src="https://mark-valentino.vercel.app/mark-valentino-logo.svg" width="60%">
 </p>
 This is my current professional website created with the Next.js framework. It is currently deployed on Vercel.
-
 https://mark-valentino.vercel.app/
 
 ## Features
