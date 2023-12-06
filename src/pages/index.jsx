@@ -8,7 +8,7 @@ import { CustomHead } from "@/components/layout/CustomHead";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import ProjectCard from "@/components/ProjectsPage/ProjectCard";
 import { PROJECT_CONTENT } from "@/consts/projectContent";
-import { COLORS, SHADOWS } from "@/consts/stylingValues";
+import { BASE_64_IMAGES, COLORS, SHADOWS } from "@/consts/stylingValues";
 import { TECH_STACK } from "@/consts/techStack";
 import { Button, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
 import { TypeAnimation } from "react-type-animation";
@@ -101,7 +101,7 @@ export default function Home() {
                   width: "100%",
                   height: 28,
                   marginBottom: 4,
-                  backgroundImage: "url(/animated-binary.gif)",
+                  backgroundImage: BASE_64_IMAGES.binary,
                   backgroundSize: "44px 28px",
                 }}
               />
@@ -110,7 +110,7 @@ export default function Home() {
                   width: "100%",
                   height: 28,
                   marginBottom: 4,
-                  backgroundImage: "url(/animated-binary-reverse.gif)",
+                  backgroundImage: BASE_64_IMAGES.binaryReverse,
                   backgroundSize: "44px 28px",
                 }}
               />
