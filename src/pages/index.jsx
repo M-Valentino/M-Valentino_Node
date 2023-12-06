@@ -93,31 +93,27 @@ export default function Home() {
                 position: "relative",
                 top: -110,
                 imageRendering: "pixelated",
-                filter: `opacity(0.5)`,
+                filter: `opacity(0.3)`,
               }}
             >
-              {Array.from({ length: 2 }, (_, i) => (
-                <span key={i}>
-                  <div
-                    style={{
-                      width: "100%",
-                      height: 14,
-                      marginBottom: 2,
-                      backgroundImage: "url(/animated-binary.gif)",
-                      backgroundSize: "22px 14px",
-                    }}
-                  />
-                  <div
-                    style={{
-                      width: "100%",
-                      height: 14,
-                      marginBottom: 2,
-                      backgroundImage: "url(/animated-binary-reverse.gif)",
-                      backgroundSize: "22px 14px",
-                    }}
-                  />
-                </span>
-              ))}
+              <div
+                style={{
+                  width: "100%",
+                  height: 28,
+                  marginBottom: 4,
+                  backgroundImage: "url(/animated-binary.gif)",
+                  backgroundSize: "44px 28px",
+                }}
+              />
+              <div
+                style={{
+                  width: "100%",
+                  height: 28,
+                  marginBottom: 4,
+                  backgroundImage: "url(/animated-binary-reverse.gif)",
+                  backgroundSize: "44px 28px",
+                }}
+              />
             </div>
           </div>
           <SubHeading shrinkFontOn={!isDesktopView}>My Tech Stack</SubHeading>
