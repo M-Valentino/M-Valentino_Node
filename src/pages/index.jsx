@@ -63,23 +63,63 @@ export default function Home() {
             specialties. I have gotten where I am today through passion,
             perseverance, and curiosity.
           </Typography>
-          <Image
-            width={130}
-            height={130}
-            quality={95}
+          <div
             style={{
-              margin: "auto",
-              display: "block",
+              width: "100%",
+              height: 150,
               marginTop: 20,
               marginBottom: 40,
-              borderRadius: 999,
-              height: "auto",
-              border: `10px solid ${COLORS.mainOrange}`,
-              boxShadow: `${SHADOWS.minute}, inset ${SHADOWS.minute}`,
             }}
-            alt="Professional portrait of me in a suite and tie."
-            src="/githubAvatar.png"
-          />
+          >
+            <Image
+              width={130}
+              height={130}
+              quality={95}
+              style={{
+                position: "relative",
+                top: 0,
+                left: "calc(50% - 75px)",
+                borderRadius: 999,
+                height: "auto",
+                border: `10px solid ${COLORS.mainOrange}`,
+                boxShadow: `${SHADOWS.minute}, inset ${SHADOWS.minute}`,
+                zIndex: 500,
+              }}
+              alt="Professional portrait of me in a suite and tie."
+              src="/githubAvatar.png"
+            />
+            <div
+              style={{
+                position: "relative",
+                top: -110,
+                imageRendering: "pixelated",
+                filter: `opacity(0.5)`,
+              }}
+            >
+              {Array.from({ length: 2 }, (_, i) => (
+                <span key={i}>
+                  <div
+                    style={{
+                      width: "100%",
+                      height: 14,
+                      marginBottom: 2,
+                      backgroundImage: "url(/animated-binary.gif)",
+                      backgroundSize: "22px 14px",
+                    }}
+                  />
+                  <div
+                    style={{
+                      width: "100%",
+                      height: 14,
+                      marginBottom: 2,
+                      backgroundImage: "url(/animated-binary-reverse.gif)",
+                      backgroundSize: "22px 14px",
+                    }}
+                  />
+                </span>
+              ))}
+            </div>
+          </div>
           <SubHeading shrinkFontOn={!isDesktopView}>My Tech Stack</SubHeading>
           <Grid container spacing={4} justifyContent="center">
             {TECH_STACK.map((data, key) => (
