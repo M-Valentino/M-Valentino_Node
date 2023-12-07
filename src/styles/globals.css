@@ -66,6 +66,26 @@
   }
 }
 
+@media only screen and (min-width:401px) {
+  .projectCard {
+    width: 360px;
+  }
+
+  .projectCardImg {
+    height: 270px;
+  }
+}
+
+@media only screen and (max-width:400px) {
+  .projectCard {
+    width: 100%;
+  }
+
+  .projectCardImg {
+    height: 260px;
+  }
+}
+
 @media only screen and (min-width:381px) {
   .gitHubSCode {
     height: 45px;

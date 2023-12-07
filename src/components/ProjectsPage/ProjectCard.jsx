@@ -76,9 +76,9 @@ export default function ProjectCard(props) {
       href={`/project/${title}`}
     >
       <animated.div
+        className="projectCard"
         style={{
           background: GRADIENTS.offWhiteGradient,
-          maxWidth: isMobileView ? "100%" : 360,
           padding: getCardPadding(),
           borderRadius: 4,
           textRendering: "geometricPrecision!important",
@@ -88,6 +88,7 @@ export default function ProjectCard(props) {
         onMouseLeave={() => setIsHovering(false)}
       >
         <div
+          className="projectCardImg"
           role="img"
           alt={imageAltText}
           style={{
@@ -96,7 +97,6 @@ export default function ProjectCard(props) {
             backgroundPosition: "50% 50%",
             backgroundColor: "#ccc",
             width: "100%",
-            height: isMobileView ? 260 : 270,
             borderRadius: 2,
             boxShadow: SHADOWS.minute,
           }}
