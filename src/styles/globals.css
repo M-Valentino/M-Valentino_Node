@@ -112,6 +112,15 @@
   }
 }
 
+@media only screen and (max-width:372px) {
+  .projectDate {
+    display: none;
+  }
+  .projectCard {
+    padding: 8px;
+  }
+}
+
 .customPaperTable {
   padding: 10px;
 }

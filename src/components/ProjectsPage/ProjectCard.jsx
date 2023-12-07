@@ -29,7 +29,6 @@ export default function ProjectCard(props) {
     imageAltText,
   } = props.data;
   const isDesktopView = useMediaQuery("(min-width:1000px)");
-  const isSmallMobileView = useMediaQuery("(max-width:372px)");
   // True if mouse is hovering on the card, else false.
   const [isHovering, setIsHovering] = useState(false);
 
@@ -109,12 +108,15 @@ export default function ProjectCard(props) {
             </div>
           )}
         </div>
-        <Stack direction="row" spacing={1}>
-          {!isSmallMobileView && (
-            <Typography variant={"h6"} color="primary">
-              {date}
-            </Typography>
-          )}
+        <Stack direction="row">
+          <Typography
+            className="projectDate"
+            variant={"h6"}
+            color="primary"
+            style={{ marginRight: 8 }}
+          >
+            {date}
+          </Typography>
           <Typography
             variant={title.length > 28 ? "h6" : "h5"}
             color="text.primary"
