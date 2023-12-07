@@ -140,10 +140,10 @@ export default function Projects() {
       />
       <MainWrapper activeLink={PAGE_TITLES.projects}>
         <Grid
+          id="projectsMenu"
           container
           justifyContent="space-between"
           style={{
-            width: isDesktopView ? "calc(100% - 100px)" : "calc(100% - 10px)",
             margin: "auto",
             marginTop: 40,
             marginBottom: 20,
@@ -186,9 +186,7 @@ export default function Projects() {
                   disabled={view === CARD_VIEW}
                   color="primary"
                 >
-                  <ViewModuleIcon
-                    style={viewIconStyle}
-                  />
+                  <ViewModuleIcon style={viewIconStyle} />
                   {isDesktopView ? "Card View" : "Cards"}
                 </ToggleButton>
                 <ToggleButton
@@ -197,9 +195,7 @@ export default function Projects() {
                   disabled={view === TABLE_VIEW}
                   color="primary"
                 >
-                  <ViewListIcon
-                    style={viewIconStyle}
-                  />
+                  <ViewListIcon style={viewIconStyle} />
                   {isDesktopView ? "Table View" : "Table"}
                 </ToggleButton>
               </ToggleButtonGroup>
@@ -274,14 +270,13 @@ export default function Projects() {
           <>
             {view === CARD_VIEW ? (
               <Grid
+                id="cardContainer"
                 container
                 justifyContent="center"
                 spacing={3}
                 direction="row"
                 style={{
                   marginBottom: 50,
-                  paddingLeft: isDesktopView ? 40 : 0,
-                  paddingRight: isDesktopView ? 40 : 0,
                 }}
               >
                 {projectResults.map((props, key) => (
