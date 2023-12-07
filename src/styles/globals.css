@@ -36,11 +36,34 @@
     padding: 60px;
   }
 
+  .projectPageDescription {
+    text-align: justify;
+  }
+
+  .projectPageImage {
+    width: 500px;
+  }
+
+  .sourceCodeButton {
+    width: 60%;
+  }
 }
 
 @media only screen and (max-width:900px) {
   .customPaper {
     padding: 10px;
+  }
+
+  .projectPageDescription {
+    text-align: left;
+  }
+
+  .projectPageImage {
+    width: 100%;
+  }
+
+  .sourceCodeButton {
+    width: 100%;
   }
 }
 

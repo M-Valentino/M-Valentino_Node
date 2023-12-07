@@ -1,6 +1,6 @@
 import React from "react";
 import { SmartLink } from "@/components/smartLink/SmartLink";
-import { Typography, useMediaQuery } from "@mui/material";
+import { Typography } from "@mui/material";
 import { CodeBlock, dracula } from "react-code-blocks";
 
 export const Post3 = () => {

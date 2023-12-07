@@ -75,11 +75,11 @@ export default function ProjectPage(props) {
       case HREF_TYPES.externalLink:
         return (
           <img
+            className="projectPageImage"
             src={imageLink}
             role="img"
             alt={imageAltText}
             style={{
-              width: !isDesktopView ? "100%" : 500,
               margin: "auto",
               marginBottom: 40,
               display: "block",
@@ -138,9 +138,9 @@ export default function ProjectPage(props) {
       </Typography>
 
       <Typography
+        className="projectPageDescription"
         variant="body1"
         color="text.secondary"
-        style={{ textAlign: isDesktopView ? "justify" : "left" }}
       >
         {description}
       </Typography>
@@ -160,11 +160,11 @@ export default function ProjectPage(props) {
       </Grid>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Button
+          className="sourceCodeButton"
           target="_blank"
           href={gitLink}
           rel="noreferrer"
           style={{
-            width: !isDesktopView ? "100%" : "60%",
             height: isSmallMobileView ? 70 : 80,
             marginTop: 40,
             marginBottom: 40,
