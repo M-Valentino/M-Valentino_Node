@@ -4,7 +4,6 @@ import { Typography, useMediaQuery } from "@mui/material";
 import { CodeBlock, dracula } from "react-code-blocks";
 
 export const Post3 = () => {
-  const isMobileView = useMediaQuery("(max-width:500px)");
   const ExternalLinkCode = `import React, { useState } from "react";
 import { Tooltip } from "@mui/material";
 import getRootDomain from "get-root-domain";
@@ -109,10 +108,9 @@ export const ExternalLink = ({ href, children, style, openInNewTab }) => {
         tooltip.
       </Typography>
       <div
+        className="codeBlock"
         style={{
           fontFamily: "monospace",
-          height: isMobileView ? 300 : 600,
-          fontSize: isMobileView ? 12 : 14,
           overflowY: "scroll",
           marginBottom: 15,
         }}

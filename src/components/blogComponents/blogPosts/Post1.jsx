@@ -10,11 +10,6 @@ import { SmartLink } from "@/components/smartLink/SmartLink";
 
 export const Post1 = () => {
   const isDesktopView = useMediaQuery("(min-width:900px)");
-  const isMobileView = useMediaQuery("(max-width:500px)");
-  const sideBySideImageStyle = {
-    width: isMobileView ? "80%" : 400,
-    margin: "auto",
-  };
 
   return (
     <>
@@ -57,14 +52,16 @@ export const Post1 = () => {
       </Typography>
       <Stack direction={isDesktopView ? "row" : "column"}>
         <img
+          className="marvalJImg"
           src="/blogImages/blackAndWhiteNoise.png"
           alt="painting of a landscape with black and white noise applied."
-          style={sideBySideImageStyle}
+          style={{margin: "auto"}}
         />
         <img
+          className="marvalJImg"
           src="/blogImages/colorNoise.png"
           alt="painting of a landscape with color noise applied."
-          style={sideBySideImageStyle}
+          style={{margin: "auto"}}
         />
       </Stack>
       <Typography paragraph>
@@ -73,11 +70,11 @@ export const Post1 = () => {
         scan line filter funtions.
       </Typography>
       <img
+        className="marvalJImg"
         src="/blogImages/scanlines.png"
         alt="painting of a landscape with horizontal scanlines applied."
         style={{
           display: "block",
-          width: isMobileView ? "80%" : 400,
           margin: "auto",
         }}
       />
@@ -89,9 +86,10 @@ export const Post1 = () => {
       </Typography>
       <Stack direction={isDesktopView ? "row" : "column"}>
         <img
+          className="marvalJImg"
           src="/blogImages/originalImage.png"
           alt="The original painting of a landscape."
-          style={sideBySideImageStyle}
+          style={{margin: "auto"}}
         />
         <div
           style={{
@@ -104,9 +102,10 @@ export const Post1 = () => {
           <EastIcon />
         </div>
         <img
+          className="marvalJImg"
           src="/blogImages/colorSort.png"
           alt="painting of a landscape with all it's colors sorted from darkest to lightest."
-          style={sideBySideImageStyle}
+          style={{margin: "auto"}}
         />
       </Stack>
       <Typography paragraph>
