@@ -6,9 +6,9 @@ import { COLORS, SHADOWS } from "@/consts/stylingValues";
 import { PAGE_TITLES } from "@/consts/pageTitles";
 import { NavButton } from "./NavButton";
 
-export const DesktopMenu = ({ activeLink, isDesktopView }) => {
+export const DesktopMenu = ({ activeLink }) => {
   return (
-    <>
+    <span id="desktopMenu">
       <div
         style={{
           display: "flex",
@@ -31,13 +31,14 @@ export const DesktopMenu = ({ activeLink, isDesktopView }) => {
         />
       </div>
       <div
+        id="animatedButtonWrapper"
         style={{
           display: "flex",
           justifyContent: "space-between",
           width: 240,
           position: "absolute",
           top: 5,
-          right: isDesktopView ? 50 : 5,
+          right: 5,
         }}
       >
         {/* Wrapping NavButton inside UseAnimations ensures that
@@ -79,6 +80,6 @@ export const DesktopMenu = ({ activeLink, isDesktopView }) => {
           )}
         />
       </div>
-    </>
+    </span>
   );
 };

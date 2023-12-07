@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Button, useMediaQuery } from "@mui/material/";
+import { Button } from "@mui/material/";
 import { GRADIENTS, SHADOWS, Z_INDEX_ORDER } from "@/consts/stylingValues";
 import { MobileMenu } from "./MobileMenu";
 import { DesktopMenu } from "./DesktopMenu";
@@ -13,16 +13,13 @@ import { DesktopMenu } from "./DesktopMenu";
  * @returns component
  */
 const NavBar = ({ activeLink }) => {
-  const isDesktopView = useMediaQuery("(min-width:1200px)");
-  const isMobileView = useMediaQuery("(max-width:876px)");
-
   return (
     <>
       <div
         style={{
           top: 0,
           width: "100%",
-          height: isMobileView ? 45 : "none",
+          height: 45,
           position: "fixed",
           background: GRADIENTS.navbar,
           WebkitBackdropFilter: "blur(5px)",
@@ -34,11 +31,11 @@ const NavBar = ({ activeLink }) => {
       >
         {/* For giving the logo touch ripple effects */}
         <Button
+          id="logoButton"
           style={{
             padding: 0,
             position: "absolute",
             top: 5,
-            left: isDesktopView ? 50 : 5,
           }}
         >
           <div
@@ -58,12 +55,9 @@ const NavBar = ({ activeLink }) => {
             </Link>
           </div>
         </Button>
-
-        {isMobileView ? (
-          <MobileMenu activeLink={activeLink} />
-        ) : (
-          <DesktopMenu activeLink={activeLink} isDesktopView={isDesktopView} />
-        )}
+        {/* Depending on the globals.css, either MobileMenu or DesktopMenun shows */}
+        <MobileMenu activeLink={activeLink} />
+        <DesktopMenu activeLink={activeLink} />
       </div>
       {/* For creating spacing below the navbar  */}
       <div
