@@ -56,7 +56,6 @@ export const getBlogComponent = (title) => {
 
 export default function Blog() {
   const isDesktopView = useMediaQuery("(min-width:900px)");
-  const isAtLeastTabletView = useMediaQuery("(min-width:600px)");
   const clientCanSeeAllOfOnePost = useMediaQuery("(min-height:1200px)");
   const [postsIncrementedForHighRes, setPostsIncrementedForHighRes] =
     useState(false);
@@ -120,7 +119,7 @@ export default function Blog() {
       />
       <MainWrapper activeLink={PAGE_TITLES.blog}>
         <MainHeading shrinkFontOn={!isDesktopView} addMarginBottomOn={true}>
-          {isAtLeastTabletView && "Mark Valentino's"}Tech Blog
+          My Tech Blog
         </MainHeading>
         <BlogDrawer />
         <CustomPaper>

@@ -1,4 +1,16 @@
 /* This stylesheet is for styling what can't be styled inline */
+@media only screen and (min-width:1260px) {
+  .smallBlogDrawerButton {
+    display: none;
+  }
+}
+
+@media only screen and (max-width:1259px) {
+  .bookmarkButton {
+    display: none;
+  }
+}
+
 @media only screen and (min-width:1200px) {
   #logoButton {
     left: 50px;
@@ -116,6 +128,7 @@
   .projectDate {
     display: none;
   }
+
   .projectCard {
     padding: 8px;
   }

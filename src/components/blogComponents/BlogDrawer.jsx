@@ -10,7 +10,6 @@ import {
   ListItemText,
   Drawer,
   Typography,
-  useMediaQuery,
 } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CloseIcon from "@mui/icons-material/Close";
@@ -24,11 +23,6 @@ import { BLOG_POSTS_NO_COMPONENT } from "@/pages/blog";
  * @returns component
  */
 export const BlogDrawer = () => {
-  /**
-   * Bookmark button overlaps the CustomPaper too much when the screen is
-   * under 1366px.
-   */
-  const isDesktopView = useMediaQuery("(min-width:1260px)");
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [bookmarkHover, setBookmarkHover] = useState(false);
   const [bookmarkMouseDown, setBookmarkMouseDown] = useState(false);
@@ -90,8 +84,9 @@ export const BlogDrawer = () => {
           ))}
         </List>
       </Drawer>
-      {isDesktopView ? (
-        // This is a button made to resemble something made by MUI
+      {/* This is a button made to resemble something made by MUI. On lower 
+        res screens, this will be hidden. */}
+      <span className="bookmarkButton">
         <animated.div
           style={{
             display: "inline-block",
@@ -134,7 +129,9 @@ export const BlogDrawer = () => {
             />
           </Typography>
         </animated.div>
-      ) : (
+      </span>
+      {/* On higher res screens this button will be hidden. */}
+      <span className="smallBlogDrawerButton">
         <Button
           variant="contained"
           onClick={() => setDrawerOpen(!drawerOpen)}
@@ -146,7 +143,7 @@ export const BlogDrawer = () => {
         >
           {BUTTON_TEXT}
         </Button>
-      )}
+      </span>
     </>
   );
 };
