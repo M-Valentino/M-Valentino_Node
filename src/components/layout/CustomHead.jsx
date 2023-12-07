@@ -22,6 +22,8 @@ export const CustomHead = ({
       <meta name="keywords" content={keywords} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" href="/favicon.ico" />
+      {/* stylesheet imported here due to a bug with Nextjs minifying code when imported in _app */}
+      <link rel="stylesheet" href="/globals.css"/>
       {loadClarity && (
         <script
           dangerouslySetInnerHTML={{
