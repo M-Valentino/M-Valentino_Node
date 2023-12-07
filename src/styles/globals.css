@@ -65,6 +65,10 @@
   .sourceCodeButton {
     width: 100%;
   }
+
+  .tc_4 {
+    display: none;
+  }
 }
 
 @media only screen and (min-width:877px) {
@@ -75,6 +79,12 @@
 
 @media only screen and (max-width:876px) {
   #desktopMenu {
+    display: none;
+  }
+}
+
+@media only screen and (max-width:612px) {
+  .tc_1 {
     display: none;
   }
 }
@@ -98,6 +108,12 @@
 
   .marvalJImg {
     width: 80%;
+  }
+}
+
+@media only screen and (max-width:412px) {
+  .tc_5 {
+    display: none;
   }
 }
 

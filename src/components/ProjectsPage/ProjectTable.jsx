@@ -17,11 +17,8 @@ import { PLUS_MORE } from "@/consts/projectContent";
 
 export default function ProjectTable(props) {
   const { PROJECT_CONTENT } = props;
-  const isDesktopView = useMediaQuery("(min-width:900px)");
-  const isLargeMobileView = useMediaQuery("(max-width:612px)");
   const isMobileView = useMediaQuery("(max-width:548px)");
   const isSmallMobileView = useMediaQuery("(max-width:496px)");
-  const isExtraSmallMobileView = useMediaQuery("(max-width:412px)");
 
   const getMaxChipsToShow = () => {
     if (isSmallMobileView) {
@@ -41,16 +38,14 @@ export default function ProjectTable(props) {
               key={projectIndex}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-              {!isLargeMobileView && (
-                <TableCell align="right">
-                  <Link
-                    style={{ textDecoration: "none" }}
-                    href={`/project/${row.title}`}
-                  >
-                    {row.date}
-                  </Link>
-                </TableCell>
-              )}
+              <TableCell className="tc_1" align="right">
+                <Link
+                  style={{ textDecoration: "none" }}
+                  href={`/project/${row.title}`}
+                >
+                  {row.date}
+                </Link>
+              </TableCell>
               <TableCell align="left" height={50}>
                 <Link
                   style={{ textDecoration: "none" }}
@@ -77,43 +72,39 @@ export default function ProjectTable(props) {
                   </Typography>
                 </Link>
               </TableCell>
-              {isDesktopView && (
-                <TableCell align="left">
-                  <Typography style={{ fontSize: 12.5 }}>
-                    {/* Keeps only the first sentence of a project description. */}
-                    {row.description.split(/[\.|\?]/, 1)[0]}...
-                  </Typography>
-                </TableCell>
-              )}
-              {!isExtraSmallMobileView && (
-                <TableCell align="left">
-                  <Tooltip
-                    title={
-                      row.languages.length > getMaxChipsToShow()
-                        ? row.languages.join(", ")
-                        : ""
-                    }
-                  >
-                    <Stack direction="row" spacing={1}>
-                      {row.languages
-                        .slice(0, getMaxChipsToShow())
-                        .map((item, chipIndex) => (
-                          <LanguageChip
-                            key={chipIndex}
-                            language={item}
-                            size="small"
-                            showLink
-                          />
-                        ))}
-                      {row.languages.length > getMaxChipsToShow() ? (
-                        <LanguageChip language={PLUS_MORE} size="small" />
-                      ) : (
-                        <></>
-                      )}
-                    </Stack>
-                  </Tooltip>
-                </TableCell>
-              )}
+              <TableCell className="tc_4" align="left">
+                <Typography style={{ fontSize: 12.5 }}>
+                  {/* Keeps only the first sentence of a project description. */}
+                  {row.description.split(/[\.|\?]/, 1)[0]}...
+                </Typography>
+              </TableCell>
+              <TableCell className="tc_5" align="left">
+                <Tooltip
+                  title={
+                    row.languages.length > getMaxChipsToShow()
+                      ? row.languages.join(", ")
+                      : ""
+                  }
+                >
+                  <Stack direction="row" spacing={1}>
+                    {row.languages
+                      .slice(0, getMaxChipsToShow())
+                      .map((item, chipIndex) => (
+                        <LanguageChip
+                          key={chipIndex}
+                          language={item}
+                          size="small"
+                          showLink
+                        />
+                      ))}
+                    {row.languages.length > getMaxChipsToShow() ? (
+                      <LanguageChip language={PLUS_MORE} size="small" />
+                    ) : (
+                      <></>
+                    )}
+                  </Stack>
+                </Tooltip>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
