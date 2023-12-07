@@ -18,13 +18,13 @@ export const MainHeading = ({ children, shrinkFontOn, addMarginBottomOn }) => {
   );
 };
 
-export const SubHeading = ({ children, shrinkFontOn }) => {
+export const SubHeading = ({ children }) => {
   return (
     <Typography
-      variant={shrinkFontOn ? "h5" : "h4"}
+      className="subHeading"
       color="text.primary"
       style={{
-        marginBottom: 20,
+        marginBottom: 15,
         textShadow: SHADOWS.minute,
         fontWeight: "bolder",
         textAlign: "center",

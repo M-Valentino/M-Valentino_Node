@@ -116,7 +116,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <SubHeading shrinkFontOn={!isDesktopView}>My Tech Stack</SubHeading>
+          <SubHeading>My Tech Stack</SubHeading>
           <Grid container spacing={4} justifyContent="center">
             {TECH_STACK.map((data, key) => (
               <Grid item sm={1.7} xs={3} key={key}>
@@ -134,7 +134,7 @@ export default function Home() {
             ))}
           </Grid>
         </CustomPaper>
-        <SubHeading shrinkFontOn={!isDesktopView}>Featured Projects</SubHeading>
+        <SubHeading>Featured Projects</SubHeading>
         <Stack
           direction={isDesktopView ? "row" : "column"}
           justifyContent="space-evenly"

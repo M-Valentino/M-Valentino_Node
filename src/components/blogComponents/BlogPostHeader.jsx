@@ -38,7 +38,7 @@ export const BlogPostHeader = (props) => {
 
   return (
     <>
-      <SubHeading shrinkFontOn={isLargeMobileView}>
+      <SubHeading>
         {item.title}
         {item.appendQuestionMark ? "?" : ""}
       </SubHeading>
