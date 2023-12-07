@@ -38,7 +38,7 @@ export const DesktopMenu = ({ activeLink }) => {
           width: 240,
           position: "absolute",
           top: 5,
-          right: 5,
+
         }}
       >
         {/* Wrapping NavButton inside UseAnimations ensures that

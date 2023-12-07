@@ -36,6 +36,7 @@ const NavBar = ({ activeLink }) => {
             padding: 0,
             position: "absolute",
             top: 5,
+
           }}
         >
           <div
