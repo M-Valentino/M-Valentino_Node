@@ -10,13 +10,11 @@ import ProjectCard from "@/components/ProjectsPage/ProjectCard";
 import { PROJECT_CONTENT } from "@/consts/projectContent";
 import { BASE_64_IMAGES, COLORS, SHADOWS } from "@/consts/stylingValues";
 import { TECH_STACK } from "@/consts/techStack";
-import { Button, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
+import { Button, Grid, Stack, Typography } from "@mui/material";
 import { TypeAnimation } from "react-type-animation";
 import { PAGE_TITLES } from "@/consts/pageTitles";
 
 export default function Home() {
-  const isDesktopView = useMediaQuery("(min-width:900px)");
-
   return (
     <>
       <CustomHead
@@ -135,16 +133,21 @@ export default function Home() {
           </Grid>
         </CustomPaper>
         <SubHeading>Featured Projects</SubHeading>
-        <Stack
-          direction={isDesktopView ? "row" : "column"}
+        <Grid
+          container
           justifyContent="space-evenly"
           style={{ maxWidth: 900, margin: "auto" }}
           spacing={2}
         >
-          <ProjectCard data={PROJECT_CONTENT[0]} />
-          <ProjectCard data={PROJECT_CONTENT[1]} />
-        </Stack>
+          <Grid item>
+            <ProjectCard data={PROJECT_CONTENT[0]} />
+          </Grid>
+          <Grid item>
+            <ProjectCard data={PROJECT_CONTENT[1]} />
+          </Grid>
+        </Grid>
         <Button
+          className="seeMoreButton"
           variant="contained"
           color="primary"
           LinkComponent={Link}
@@ -155,7 +158,6 @@ export default function Home() {
             display: "block",
             marginTop: 30,
             marginBottom: 50,
-            fontSize: isDesktopView ? 30 : 18,
           }}
         >
           <Stack direction="row" style={{ alignItems: "center" }}>

@@ -62,6 +62,10 @@
     width: 500px;
   }
 
+  .seeMoreButton {
+    font-size: 30px;
+  }
+
   .sourceCodeButton {
     width: 60%;
   }
@@ -78,6 +82,10 @@
 
   .projectPageImage {
     width: 100%;
+  }
+
+  .seeMoreButton {
+    font-size: 18px;
   }
 
   .sourceCodeButton {
