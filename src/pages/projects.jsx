@@ -201,14 +201,7 @@ export default function Projects() {
               </ToggleButtonGroup>
             </Stack>
           </Grid>
-          <Grid
-            item
-            md={4}
-            xs={12}
-            style={{
-              marginTop: isTabletView ? 20 : 0,
-            }}
-          >
+          <Grid id="prjctHdingWrppr" item md={4} xs={12}>
             <MainHeading
               shrinkFontOn={isTabletView}
               addMarginBottomOn={isTabletView}
