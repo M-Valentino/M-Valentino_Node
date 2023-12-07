@@ -134,16 +134,26 @@
 }
 
 @media only screen and (min-width:381px) {
-  .gitHubSCode {
+  .gitHubSCodeIcon {
     height: 45px;
     width: 45px;
+  }
+
+  .sourceCodeButton {
+    height: 80px;
+    font-size: 32px;
   }
 }
 
 @media only screen and (max-width:380px) {
-  .gitHubSCode {
+  .gitHubSCodeIcon {
     height: 37px;
     width: 37px;
+  }
+
+  .sourceCodeButton {
+    height: 70px;
+    font-size: 26px;
   }
 }
 

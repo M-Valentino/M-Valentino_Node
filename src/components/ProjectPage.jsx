@@ -45,7 +45,6 @@ export default function ProjectPage(props) {
   } = props.data;
   const isDesktopView = useMediaQuery("(min-width:900px)");
   const isLargeMobileView = useMediaQuery("(max-width:428px)");
-  const isSmallMobileView = useMediaQuery("(max-width:380px)");
   // Handles whether the iframe covers the whole page or not.
   const [iframeFullSize, setIframeFullSize] = useState(false);
 
@@ -165,16 +164,14 @@ export default function ProjectPage(props) {
           href={gitLink}
           rel="noreferrer"
           style={{
-            height: isSmallMobileView ? 70 : 80,
             marginTop: 40,
             marginBottom: 40,
-            fontSize: isSmallMobileView ? 26 : 32,
           }}
           variant="contained"
           color="primary"
         >
           <GitHubIcon
-            className="gitHubSCode"
+            className="gitHubSCodeIcon"
             style={{
               marginRight: 10,
               transform: "translateY(-5px)",
