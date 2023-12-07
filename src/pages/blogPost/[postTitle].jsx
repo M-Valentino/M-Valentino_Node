@@ -1,6 +1,5 @@
 import React from "react";
 import { MainWrapper } from "@/components/layout/MainWrapper";
-import { useMediaQuery } from "@mui/material";
 import { CustomHead } from "@/components/layout/CustomHead";
 import { CustomPaper } from "@/components/layout/CustomPaper";
 import { BLOG_POSTS_NO_COMPONENT } from "../blog";

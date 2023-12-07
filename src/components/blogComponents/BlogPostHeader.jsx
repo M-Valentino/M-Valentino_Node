@@ -1,12 +1,6 @@
 import React from "react";
 import ShareIcon from "@mui/icons-material/Share";
-import {
-  IconButton,
-  Stack,
-  Tooltip,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
+import { IconButton, Stack, Tooltip, Typography } from "@mui/material";
 import { PAGE_TITLES } from "@/consts/pageTitles";
 import { COLORS, SHADOWS } from "@/consts/stylingValues";
 import { SubHeading } from "@/components/layout/Headings";
@@ -14,7 +8,6 @@ import { useSpring, animated } from "@react-spring/web";
 
 export const BlogPostHeader = (props) => {
   const { item, postIndex, postIdCopied, setPostIdCopied } = props;
-  const isLargeMobileView = useMediaQuery("(max-width:428px)");
 
   /**
    * Syntactic sugar function that determines if the the postId
@@ -84,8 +77,8 @@ export const BlogPostHeader = (props) => {
               <Stack direction="column" justifyContent="center">
                 <animated.div style={{ ...fadeIn }}>
                   <Typography
+                    className="linkCopied"
                     style={{
-                      fontSize: isLargeMobileView ? 11 : 14,
                       color: COLORS.successGreen,
                       userSelect: "none",
                     }}
