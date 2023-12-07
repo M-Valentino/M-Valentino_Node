@@ -67,8 +67,14 @@
 }
 
 @media only screen and (min-width:401px) {
+  .cardDescription {
+    text-align: justify;
+    height: 145px;
+  }
+
   .projectCard {
     width: 360px;
+    padding: 24px;
   }
 
   .projectCardImg {
@@ -77,8 +83,14 @@
 }
 
 @media only screen and (max-width:400px) {
+  .cardDescription {
+    text-align: left;
+    height: unset;
+  }
+
   .projectCard {
     width: 100%;
+    padding: 12px;
   }
 
   .projectCardImg {

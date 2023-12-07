@@ -29,7 +29,6 @@ export default function ProjectCard(props) {
     imageAltText,
   } = props.data;
   const isDesktopView = useMediaQuery("(min-width:1000px)");
-  const isMobileView = useMediaQuery("(max-width:400px)");
   const isSmallMobileView = useMediaQuery("(max-width:372px)");
   // True if mouse is hovering on the card, else false.
   const [isHovering, setIsHovering] = useState(false);
@@ -47,21 +46,14 @@ export default function ProjectCard(props) {
     to: {
       scale: isHovering && isDesktopView ? 1.05 : 1,
       boxShadow:
-        isHovering && isDesktopView ? SHADOWS.finalCardShadow : SHADOWS.initialCardShadow,
+        isHovering && isDesktopView
+          ? SHADOWS.finalCardShadow
+          : SHADOWS.initialCardShadow,
       filter:
         isHovering && isDesktopView ? "brightness(1)" : "brightness(0.99)",
     },
     config: { mass: 0.5, friction: 18, tension: 600 },
   });
-
-  const getCardPadding = () => {
-    if (isMobileView && !isSmallMobileView) {
-      return 12;
-    } else if (isSmallMobileView) {
-      return 8;
-    }
-    return 24;
-  };
 
   return (
     <Button
@@ -79,7 +71,6 @@ export default function ProjectCard(props) {
         className="projectCard"
         style={{
           background: GRADIENTS.offWhiteGradient,
-          padding: getCardPadding(),
           borderRadius: 4,
           textRendering: "geometricPrecision!important",
           ...cardZoom,
@@ -131,15 +122,13 @@ export default function ProjectCard(props) {
             {title}
           </Typography>
         </Stack>
-        <div style={{ height: isMobileView ? "unset" : 145 }}>
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            style={{ textAlign: isSmallMobileView ? "left" : "justify" }}
-          >
-            {description}
-          </Typography>
-        </div>
+        <Typography
+          className="cardDescription"
+          variant="body2"
+          color="text.secondary"
+        >
+          {description}
+        </Typography>
         {/* Tooltip shows all languages on a card if there are some hidden. + more
           language chip denotes that there are more languages that couldn't fit. */}
         <Tooltip title={languages.length > 4 ? languages.join(", ") : ""}>
