@@ -133,19 +133,15 @@ export default function Home() {
           </Grid>
         </CustomPaper>
         <SubHeading>Featured Projects</SubHeading>
-        <Grid
-          container
+        <Stack
+          direction={{ sm: "column", md: "row" }}
           justifyContent="space-evenly"
           style={{ maxWidth: 900, margin: "auto" }}
-          spacing={2}
+          spacing={{ xs: 3, md: 4 }}
         >
-          <Grid item>
-            <ProjectCard data={PROJECT_CONTENT[0]} />
-          </Grid>
-          <Grid item>
-            <ProjectCard data={PROJECT_CONTENT[1]} />
-          </Grid>
-        </Grid>
+          <ProjectCard data={PROJECT_CONTENT[0]} />
+          <ProjectCard data={PROJECT_CONTENT[1]} />
+        </Stack>
         <Button
           className="seeMoreButton"
           variant="contained"
