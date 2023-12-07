@@ -7,7 +7,7 @@ https://github.com/JedWatson/react-select/issues/3309
 */
 @media only screen and (min-width:1260px) {
   .smallBlogDrawerButton {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -73,11 +73,11 @@ https://github.com/JedWatson/react-select/issues/3309
   }
 
   .seeMoreButton {
-    font-size: 30px;
+    font-size: 30px !important;
   }
 
   .sourceCodeButton {
-    width: 60%;
+    width: 60% !important;
   }
 }
 
@@ -99,11 +99,11 @@ https://github.com/JedWatson/react-select/issues/3309
   }
 
   .seeMoreButton {
-    font-size: 18px;
+    font-size: 18px !important;
   }
 
   .sourceCodeButton {
-    width: 100%;
+    width: 100% !important;
   }
 
   .tc_4 {
