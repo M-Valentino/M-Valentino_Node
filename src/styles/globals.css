@@ -1,4 +1,10 @@
-/* This stylesheet is for styling what can't be styled inline */
+/* This stylesheet is for styling what can't be styled inline.
+"!important" is used for styles on MUI components since they may
+or may not get applied otherwise. Oddly enough "!important" isn't
+needed for inline styles on MUI components. 
+Potentially the same bug I'm facing:
+https://github.com/JedWatson/react-select/issues/3309
+*/
 @media only screen and (min-width:1260px) {
   .smallBlogDrawerButton {
     display: none;
@@ -55,11 +61,11 @@
   }
 
   #prjctHdingWrppr {
-    margin-top:  0;
+    margin-top:  0 !important;
   }
 
   .projectPageDescription {
-    text-align: justify;
+    text-align: justify !important;
   }
 
   .projectPageImage {
@@ -81,11 +87,11 @@
   }
 
   #prjctHdingWrppr {
-    margin-top: 20px;
+    margin-top: 20px !important;
   }
 
   .projectPageDescription {
-    text-align: left;
+    text-align: left !important;
   }
 
   .projectPageImage {
@@ -173,8 +179,8 @@
 
 @media only screen and (min-width:401px) {
   .cardDescription {
-    text-align: justify;
-    height: 145px;
+    text-align: justify !important;
+    height: 145px !important;
   }
 
   .projectCard {
@@ -189,8 +195,8 @@
 
 @media only screen and (max-width:400px) {
   .cardDescription {
-    text-align: left;
-    height: unset;
+    text-align: left !important;
+    height: unset !important;
   }
 
   .projectCard {
@@ -229,7 +235,7 @@
 
 @media only screen and (max-width:372px) {
   .projectDate {
-    display: none;
+    display: none !important;
   }
 
   .projectCard {
