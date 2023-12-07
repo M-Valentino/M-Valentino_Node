@@ -3,25 +3,47 @@
   #logoButton {
     left: 50px;
   }
+
   #animatedButtonWrapper {
     right: 50px;
   }
 }
+
 @media only screen and (max-width:1199px) {
   #logoButton {
     left: 5px;
   }
+
   #animatedButtonWrapper {
     right: 5px;
   }
 }
+
+@media only screen and (min-width:901px) {
+  .customPaper {
+    padding: 60px;
+  }
+
+}
+
+@media only screen and (max-width:900px) {
+  .customPaper {
+    padding: 10px;
+  }
+}
+
 @media only screen and (min-width:877px) {
   #mobileMenu {
     display: none;
   }
 }
+
 @media only screen and (max-width:876px) {
   #desktopMenu {
     display: none;
   }
+}
+
+.customPaperTable {
+  padding: 10px;
 }

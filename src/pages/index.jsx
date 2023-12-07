@@ -26,7 +26,7 @@ export default function Home() {
         loadClarity
       />
       <MainWrapper activeLink={PAGE_TITLES.home}>
-        <CustomPaper isDesktopView={isDesktopView}>
+        <CustomPaper>
           <TypeAnimation
             sequence={["Hi, I'm Mark Valentino."]}
             wrapper="span"

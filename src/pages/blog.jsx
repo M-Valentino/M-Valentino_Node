@@ -123,7 +123,7 @@ export default function Blog() {
           {isAtLeastTabletView && "Mark Valentino's"}Tech Blog
         </MainHeading>
         <BlogDrawer />
-        <CustomPaper isDesktopView={isDesktopView}>
+        <CustomPaper>
           {BLOG_POSTS.slice(0, postsToShow).map((item, postIndex) => (
             <span key={postIndex}>
               <BlogPostHeader

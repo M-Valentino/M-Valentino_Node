@@ -33,7 +33,7 @@ export default function ProjectTable(props) {
   };
 
   return (
-    <CustomPaper>
+    <CustomPaper mode="table">
       <Table aria-label="Table of projects">
         <TableBody>
           {PROJECT_CONTENT.map((row, projectIndex) => (

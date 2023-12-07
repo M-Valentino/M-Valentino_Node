@@ -26,7 +26,6 @@ export const getStaticProps = async (context) => {
 };
 
 export default function BlogTemplate({ post }) {
-  const isDesktopView = useMediaQuery("(min-width:900px)");
   return (
     <>
       <CustomHead
@@ -36,7 +35,7 @@ export default function BlogTemplate({ post }) {
       />
       <MainWrapper>
         <BlogDrawer />
-        <CustomPaper isDesktopView={isDesktopView}>
+        <CustomPaper>
           <BlogPostHeader item={post} />
           {getBlogComponent(post.title)}
         </CustomPaper>

@@ -108,7 +108,9 @@ export default function ProjectPage(props) {
                   position: iframeFullSize ? "fixed" : "relative",
                   bottom: iframeFullSize ? 40 : "unset",
                   left: iframeFullSize ? 40 : "unset",
-                  zIndex: iframeFullSize ? Z_INDEX_ORDER.iframeScreenControlShrink : "unset",
+                  zIndex: iframeFullSize
+                    ? Z_INDEX_ORDER.iframeScreenControlShrink
+                    : "unset",
                   width: 50,
                   height: 50,
                 }}
@@ -126,7 +128,7 @@ export default function ProjectPage(props) {
     }
   };
   return (
-    <CustomPaper isDesktopView={isDesktopView}>
+    <CustomPaper>
       <MainHeading shrinkFontOn={isLargeMobileView} addMarginBottomOn={true}>
         {title}
       </MainHeading>
