@@ -174,9 +174,8 @@ export default function ProjectPage(props) {
           color="primary"
         >
           <GitHubIcon
+            className="gitHubSCode"
             style={{
-              height: isSmallMobileView ? 37 : 45,
-              width: isSmallMobileView ? 37 : 45,
               marginRight: 10,
               transform: "translateY(-5px)",
               filter: SHADOWS.minuteSVG,

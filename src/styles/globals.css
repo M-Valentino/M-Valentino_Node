@@ -1,4 +1,4 @@
-/* This stylesheet is for handling responsiveness. */
+/* This stylesheet is for styling what can't be styled inline */
 @media only screen and (min-width:1200px) {
   #logoButton {
     left: 50px;
@@ -49,6 +49,7 @@
     height: 600px;
     font-size: 14px;
   }
+
   .marvalJImg {
     width: 400px;
   }
@@ -59,8 +60,23 @@
     height: 300px;
     font-size: 12px;
   }
+
   .marvalJImg {
     width: 80%;
+  }
+}
+
+@media only screen and (min-width:381px) {
+  .gitHubSCode {
+    height: 45px;
+    width: 45px;
+  }
+}
+
+@media only screen and (max-width:380px) {
+  .gitHubSCode {
+    height: 37px;
+    width: 37px;
   }
 }
 
