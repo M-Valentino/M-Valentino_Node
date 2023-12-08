@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ShareIcon from "@mui/icons-material/Share";
 import { IconButton, Stack, Tooltip, Typography } from "@mui/material";
 import { PAGE_TITLES } from "@/consts/pageTitles";
@@ -8,6 +8,15 @@ import { useSpring, animated } from "@react-spring/web";
 
 export const BlogPostHeader = (props) => {
   const { item, postIndex, postIdCopied, setPostIdCopied } = props;
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch(`/api/getViews?title=${item.title}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+      });
+  }, []);
 
   /**
    * Syntactic sugar function that determines if the the postId
@@ -47,6 +56,19 @@ export const BlogPostHeader = (props) => {
             style={{ fontStyle: "italic" }}
           >
             Published {item.date}
+          </Typography>
+        </Stack>
+        <Stack
+          direction="column"
+          justifyContent="center"
+          style={{ marginRight: 10 }}
+        >
+          <Typography
+            variant="subtitle1"
+            color="secondary"
+            style={{ fontStyle: "italic" }}
+          >
+            {data}
           </Typography>
         </Stack>
         {/* Sharing functionality is turned off for dynamically routed blog posts. 
