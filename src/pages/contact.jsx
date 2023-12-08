@@ -4,10 +4,13 @@ import { CustomPaper } from "@/components/layout/CustomPaper";
 import { MainHeading } from "@/components/layout/Headings";
 import { Button, TextField } from "@mui/material";
 export default function Contact() {
+  const emailRef = useRef(); 
   const messageRef = useRef(); 
   const sendValue = () => {
-    if (messageRef.current.value.length > 1024 ) {
-      console.log("hjhjh");
+    if (messageRef.current.value.length > 1024  ) {
+      console.log("Your message is too long");
+    }else if (emailRef.current.value.length > 42){
+      console.log("Your email is too long");
     } else {
     console.log(messageRef.current.value);
     }
@@ -21,11 +24,11 @@ export default function Contact() {
           <TextField
             fullWidth
             required
+            inputRef={emailRef}
             id="email"
             label="Email address"
             variant="outlined"
             helperText=""
-            inputRef={messageRef}
             style={{ marginTop: 20, maxWidth: 300 }}
           />
           <TextField
