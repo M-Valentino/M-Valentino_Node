@@ -12,3 +12,7 @@ export const generateNavLink = (navtext) => {
       return `/${navtext.toLowerCase()}`;
   }
 };
+
+export const removeSpaces = (string) => {
+  return string.replace(/\s/g, "");
+}

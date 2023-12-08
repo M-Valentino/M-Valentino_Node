@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ShareIcon from "@mui/icons-material/Share";
-import { IconButton, Stack, Tooltip, Typography } from "@mui/material";
+import { Grid, IconButton, Tooltip, Typography } from "@mui/material";
 import { PAGE_TITLES } from "@/consts/pageTitles";
 import { COLORS, SHADOWS } from "@/consts/stylingValues";
 import { SubHeading } from "@/components/layout/Headings";
@@ -8,6 +8,17 @@ import { useSpring, animated } from "@react-spring/web";
 
 export const BlogPostHeader = (props) => {
   const { item, postIndex, postIdCopied, setPostIdCopied } = props;
+  const [views, setViews] = useState(null);
+
+  useEffect(() => {
+    if (views === null) {
+      fetch(`/api/getViews?title=${item.title}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setViews(data);
+        });
+    }
+  }, [item.title, views]);
 
   /**
    * Syntactic sugar function that determines if the the postId
@@ -35,12 +46,8 @@ export const BlogPostHeader = (props) => {
         {item.title}
         {item.appendQuestionMark ? "?" : ""}
       </SubHeading>
-      <Stack direction="row" style={{ height: 36, marginBottom: 5 }}>
-        <Stack
-          direction="column"
-          justifyContent="center"
-          style={{ marginRight: 10 }}
-        >
+      <Grid container spacing={2}>
+        <Grid item>
           <Typography
             variant="subtitle1"
             color="secondary"
@@ -48,49 +55,56 @@ export const BlogPostHeader = (props) => {
           >
             Published {item.date}
           </Typography>
-        </Stack>
+        </Grid>
+        <Grid item>
+          <Typography variant="subtitle1" color="secondary">
+            {views === null ? "" : `👁️ ${views} views`}
+          </Typography>
+        </Grid>
         {/* Sharing functionality is turned off for dynamically routed blog posts. 
           postIndex isn't passed as a prop inside [postTitle].jsx*/}
         {postIndex !== undefined && (
-          <>
-            <Tooltip title="Copy link to just this post">
-              <IconButton
-                style={{
-                  height: 36,
-                  width: 36,
-                  filter: SHADOWS.minuteSVG,
-                  color: shareButtonClicked()
-                    ? COLORS.successGreen
-                    : COLORS.mainGray,
-                }}
-                onClick={() => {
-                  navigator.clipboard.writeText(
-                    `https://${PAGE_TITLES.domain}/blogPost/${item.title}`
-                  );
-                  setPostIdCopied(postIndex);
-                }}
-              >
-                <ShareIcon />
-              </IconButton>
-            </Tooltip>
-            {shareButtonClicked() && (
-              <Stack direction="column" justifyContent="center">
-                <animated.div style={{ ...fadeIn }}>
-                  <Typography
-                    className="linkCopied"
-                    style={{
-                      color: COLORS.successGreen,
-                      userSelect: "none",
-                    }}
-                  >
-                    Link Copied!
-                  </Typography>
-                </animated.div>
-              </Stack>
-            )}
-          </>
+          <Grid item>
+            <div style={{ transform: "translateY(-4px)" }}>
+              <Tooltip title="Copy link to just this post">
+                <IconButton
+                  style={{
+                    height: 36,
+                    width: 36,
+                    filter: SHADOWS.minuteSVG,
+                    color: shareButtonClicked()
+                      ? COLORS.successGreen
+                      : COLORS.mainGray,
+                  }}
+                  onClick={() => {
+                    navigator.clipboard.writeText(
+                      `https://${PAGE_TITLES.domain}/blogPost/${item.title}`
+                    );
+                    setPostIdCopied(postIndex);
+                  }}
+                >
+                  <ShareIcon />
+                </IconButton>
+              </Tooltip>
+              {shareButtonClicked() && (
+                <>
+                  <animated.div style={{ ...fadeIn, display: "inline-block" }}>
+                    <Typography
+                      className="linkCopied"
+                      style={{
+                        color: COLORS.successGreen,
+                        userSelect: "none",
+                      }}
+                    >
+                      Link Copied!
+                    </Typography>
+                  </animated.div>
+                </>
+              )}
+            </div>
+          </Grid>
         )}
-      </Stack>
+      </Grid>
     </>
   );
 };
