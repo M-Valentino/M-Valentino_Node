@@ -13,6 +13,12 @@ export const generateNavLink = (navtext) => {
   }
 };
 
-export const removeSpaces = (string) => {
-  return string.replace(/\s/g, "");
-}
+/**
+ * Function to format stings so they can created as Redis
+ * keys that are easy to query.
+ * @param {*} string the input string to be formatted
+ * @returns formatted string
+ */
+export const formatForRedisKey = (string) => {
+  return string.replace(/\s/g, "").replace(/'/g, "");
+};
