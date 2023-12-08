@@ -3,7 +3,7 @@
 <p align="center" width="100%">
   <img src="https://mark-valentino.vercel.app/mark-valentino-logo.svg" width="60%">
 </p>
-This is my current professional website created with the Next.js framework. It is currently deployed on Vercel.
+This is my current professional website created with the Next.js framework and a Redis KV database. It is currently deployed on Vercel.
 https://mark-valentino.vercel.app/
 
 ## Features
@@ -22,7 +22,7 @@ This website displays my personal coding projects in various ways with the data 
 Some projects have extra content not shown on card views, and this content is shown on the individual project pages. The actual code to the projects themselves that can be run in the browser are displayed in iframes.
 
 ### Blog
-My site has a blog with "infinite" scrolling to cut down on loading times. All blog posts have individual routes associated with them as well, which are created dynamically. Blog posts on the infinite scrolling view have the capability to have their unique dynamic link be shared by clicking a button to write to the user's clipboard.
+My site has a blog with "infinite" scrolling to cut down on loading times. All blog posts have individual routes associated with them as well, which are created dynamically. Blog posts on the infinite scrolling view have the capability to have their unique dynamic link be shared by clicking a button to write to the user's clipboard. Each blog post has a view counter which is made possible by an API route and a connection to a Redis database.
 
 ### UIUX
 - Material UI and Material UI inspired components are used throughout the site.
@@ -31,9 +31,24 @@ My site has a blog with "infinite" scrolling to cut down on loading times. All b
 - My site uses "Smart Links". <a href="https://mark-valentino.vercel.app/blogPost/My%20UX%20Invention%20to%20Let%20Users%20Know%20Where%20Links%20Go">Read more about them here</a>.
 
 ## Running
+### For Getting Most Features Working Locally
 ```bash
 npm install
 npm run dev
 ```
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+### Connecting Microsoft Clarity
+#### Local development
+Add a `.env.development.local` file if it doesn't already exist.
+Then create an account on Microsoft Clarity and copy your Clarity ID.
+Add this line to the env file:
+```
+MS_CLARITY_ID="<your Clarity ID>"
+```
+#### Vercel Deployments
+Add your Clarity ID to the list of environment variables with the variable name being `MS_CLARITY_ID`
+
+### Vercel Redis Integration for Local Development and Deployments
+Follow this guide:
+https://vercel.com/guides/using-vercel-kv
