@@ -4,4 +4,5 @@ Disallow: /Earth3JS
 Disallow: /imageToDivs.html
 Disallow: /project/[projectTitle]
 Disallow: /blogPost/[postTitle]
+Disallow: /api/*
 Sitemap: https://mark-valentino.vercel.app/sitemap.xml
