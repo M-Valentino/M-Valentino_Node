@@ -9,7 +9,7 @@ import {
   checkMessageTooShort,
 } from "@/utils/validations";
 
-// /api/sendMessage?email=fds&message=hi
+
 export default function handler(request, response) {
   const email = nextBase64.decode(request.query.email);
   const message = nextBase64.decode(request.query.message);
@@ -21,7 +21,7 @@ export default function handler(request, response) {
     !checkMessageTooLong(message) &&
     !checkMessageTooShort(message)
   ) {
-    console.log(email);
+    kv.lpush("emails", `${email}␟${message}␟${Date.now()}`)
     return response.status(200).json({ message: "success" });
   }
   return response.status(500);

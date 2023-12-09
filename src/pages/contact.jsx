@@ -3,7 +3,7 @@ import nextBase64 from "next-base64";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import { CustomPaper } from "@/components/layout/CustomPaper";
 import { MainHeading } from "@/components/layout/Headings";
-import { Button, TextField } from "@mui/material";
+import { Button, TextField, Typography } from "@mui/material";
 import {
   checkEmailInvalid,
   checkEmailTooLong,
@@ -23,7 +23,7 @@ export default function Contact() {
   const [messageTooShort, setMessageTooShort] = useState(null);
   const [messageInvalid, setMessageInvalid] = useState(null);
   const [messageHasGibberish, setMessageHasGibberish] = useState(null);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
   const [data, setData] = useState(null);
   const [messageSent, setMessageSent] = useState(null);
 
@@ -162,22 +162,23 @@ export default function Contact() {
             style={{ marginTop: 30 }}
           />
           <Button
+            size="large"
             disabled={messageSent}
             variant="contained"
             color="primary"
             // endIcon={<SendIcon />}
             onClick={validate}
+            style={{ marginTop: 20 }}
           >
             Send
           </Button>
+          <Typography color="primary" style={{display: "inline-block", marginLeft: 20, transform: "translateY(10px)"}}>
+          {messageSent === false ? <>sending...</> : <></>}
+          {messageSent && data?.message === "success" && <>Message sent!</>}
+          {error !== "" && <>There was an error sending your message.</>}
+        </Typography>
         </form>
-        {messageSent === false ? (
-          <span style={{ color: "red" }}>sending...</span>
-        ) : (
-          <></>
-        )}
-        {messageSent && data.message === "success" && <>sent!</>}
-        {error !== null && JSON.stringify(error)}
+        
       </CustomPaper>
     </MainWrapper>
   );
