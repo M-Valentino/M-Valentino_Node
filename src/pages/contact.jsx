@@ -13,6 +13,7 @@ import {
   MAX_MESSAGE_LENGTH,
 } from "@/utils/validations";
 
+
 export default function Contact() {
   const emailRef = useRef();
   const messageRef = useRef();
@@ -55,8 +56,9 @@ export default function Contact() {
       setMessageHasGibberish(() => false);
     }
   };
-
+  
   const validateAndSend = () => {
+
     validate();
     if (
       !emailTooLong &&
@@ -66,7 +68,12 @@ export default function Contact() {
       !messageInvalid &&
       !messageHasGibberish
     ) {
-      console.log(messageRef.current.value);
+      fetch(`/api/sendMessage?email=${emailRef.current.value}&message=${messageRef.current.value}`
+
+    )
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
     }
   };
 

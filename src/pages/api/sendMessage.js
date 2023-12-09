@@ -8,11 +8,12 @@ import {
   checkMessageTooShort,
 } from "@/utils/validations";
 
+
 // /api/sendMessage?email=fds&message=hi
 export default function handler(request, response) {
-  if (request.method === "PUT") {
-    const email = atob(request.query.email);
-    const message = atob(request.query.message);
+
+    const email = request.query.email;
+    const message = request.query.message;
     if (
       !checkEmailInvalid(email) &&
       !checkEmailTooLong(email) &&
@@ -21,10 +22,10 @@ export default function handler(request, response) {
       !checkMessageTooLong(message) &&
       !checkMessageTooShort(message)
     ) {
-      kv.json.arrappend
+      console.log(email)
       return response.status(200).json({ message: "success" });
     }
-  } else {
-    return response.status(200).json({ message: "invalid access" });
+   else {
+    return response.status(200).json({ message: email });
   }
 }
