@@ -8,7 +8,9 @@ import {
   checkEmailTooLong,
   checkMessageInvalid,
   checkMessageTooLong,
+  MAX_MESSAGE_LENGTH,
 } from "@/utils/validations";
+
 export default function Contact() {
   const emailRef = useRef();
   const messageRef = useRef();
@@ -16,6 +18,7 @@ export default function Contact() {
   const [emailInvalid, setEmailInvalid] = useState(false);
   const [messageTooLong, setMessageTooLong] = useState(false);
   const [messageInvalid, setMessageInvalid] = useState(false);
+  
   const sendValue = () => {
     if (checkEmailTooLong(emailRef.current.value)) {
       setEmailTooLong(() => true);
@@ -53,11 +56,11 @@ export default function Contact() {
 
   const getMessageHelperText = () => {
     if (messageInvalid && messageTooLong) {
-      return "Message contains invalid character(s). Please limit your message to 1280 characters.";
+      return `Message contains invalid character(s). Please limit your message to ${MAX_MESSAGE_LENGTH} characters.`;
     } else if (messageInvalid) {
       return "Message contains invalid character(s).";
     } else if (messageTooLong) {
-      return "Please limit your message to 1280 characters.";
+      return `Please limit your message to ${MAX_MESSAGE_LENGTH} characters.`;
     }
     return "";
   };

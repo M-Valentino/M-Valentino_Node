@@ -12,6 +12,8 @@ export const checkEmailTooLong = (email) => {
   return false;
 };
 
+export const MAX_MESSAGE_LENGTH = 1280;
+
 export const checkMessageInvalid = (message) => {
   /**
    * This also checks if '{' and '}' aren't there which maybe can
@@ -24,7 +26,7 @@ export const checkMessageInvalid = (message) => {
 };
 
 export const checkMessageTooLong = (message) => {
-  if (message.length > 1280) {
+  if (message.length > MAX_MESSAGE_LENGTH) {
     return true;
   }
   return false;
