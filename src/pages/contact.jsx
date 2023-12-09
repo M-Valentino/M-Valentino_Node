@@ -66,13 +66,13 @@ export default function Contact() {
     <MainWrapper>
       <CustomPaper>
         <MainHeading>Contact Me</MainHeading>
-        <form noValidate autoComplete="off">
+        <form>
           <TextField
             fullWidth
             required
             inputRef={emailRef}
             error={emailTooLong || emailInvalid}
-            id="email"
+            name="email"
             label="Email address"
             variant="outlined"
             helperText={getEmailHelperText()}
@@ -83,7 +83,6 @@ export default function Contact() {
             required
             inputRef={messageRef}
             error={messageTooLong || messageInvalid}
-            id="standard-textarea"
             label="Your message"
             multiline
             rows={12}
