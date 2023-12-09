@@ -24,6 +24,13 @@ Some projects have extra content not shown on card views, and this content is sh
 ### Blog
 My site has a blog with "infinite" scrolling to cut down on loading times. All blog posts have individual routes associated with them as well, which are created dynamically. Blog posts on the infinite scrolling view have the capability to have their unique dynamic link be shared by clicking a button to write to the user's clipboard. Each blog post has a view counter which is made possible by an API route and a connection to a Redis database.
 
+### Contact Form
+Users can send a message through the Contact Me page. Messages sent are stored in the database, along with the email associated and the date saved. There is form validation for the following properties:
+- Email matches a valid pattern.
+- Email length is under 40 characters.
+- Message most likely isn't gibberish (contains at least 4 most common English words out of a list over 100).
+- Message is under 1280 characters, but greater than 12.
+
 ### UIUX
 - Material UI and Material UI inspired components are used throughout the site.
 - The site is responsive and is compatible with mobile, small desktop, and large desktop resolutions.

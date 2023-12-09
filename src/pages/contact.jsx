@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import nextBase64 from "next-base64";
+import { CustomHead } from "@/components/layout/CustomHead";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import { CustomPaper } from "@/components/layout/CustomPaper";
 import { MainHeading } from "@/components/layout/Headings";
@@ -132,69 +133,78 @@ export default function Contact() {
   };
 
   return (
-    <MainWrapper activeLink={PAGE_TITLES.contact}>
-      <CustomPaper>
-        <MainHeading>Contact Me</MainHeading>
-        <form>
-          <TextField
-            fullWidth
-            required
-            inputRef={emailRef}
-            error={emailTooLong || emailInvalid}
-            name="email"
-            label="Email address"
-            variant="outlined"
-            helperText={getEmailHelperText()}
-            style={{ marginTop: 20, maxWidth: 300 }}
-          />
-          <TextField
-            fullWidth
-            required
-            inputRef={messageRef}
-            error={
-              messageTooLong ||
-              messageTooShort ||
-              messageInvalid ||
-              messageHasGibberish
-            }
-            label="Your message"
-            multiline
-            rows={12}
-            variant="outlined"
-            helperText={getMessageHelperText()}
-            style={{ marginTop: 30 }}
-          />
-          <Button
-            size="large"
-            disabled={messageSent}
-            variant="contained"
-            color="primary"
-            endIcon={<SendIcon />}
-            onClick={validate}
-            style={{ marginTop: 20 }}
-          >
-            Send
-          </Button>
-          <Typography
-            color="primary"
-            style={{
-              display: "inline-block",
-              marginLeft: 20,
-              transform: "translateY(10px)",
-            }}
-          >
-            {messageSent === false ? <>sending...</> : <></>}
-            {messageSent && dataRecieved?.message === "success" && <>Message sent!</>}
-            {error !== "" && <>There was an error sending your message.</>}
+    <>
+      <CustomHead
+        descriptionText="Send a message to Mark Valentino."
+        title="Mark Valentino - Contact Me"
+        keywords="message, inquiry, ask, email"
+      />
+      <MainWrapper activeLink={PAGE_TITLES.contact}>
+        <CustomPaper>
+          <MainHeading>Contact Me</MainHeading>
+          <form>
+            <TextField
+              fullWidth
+              required
+              inputRef={emailRef}
+              error={emailTooLong || emailInvalid}
+              name="email"
+              label="Email address"
+              variant="outlined"
+              helperText={getEmailHelperText()}
+              style={{ marginTop: 20, maxWidth: 300 }}
+            />
+            <TextField
+              fullWidth
+              required
+              inputRef={messageRef}
+              error={
+                messageTooLong ||
+                messageTooShort ||
+                messageInvalid ||
+                messageHasGibberish
+              }
+              label="Your message"
+              multiline
+              rows={12}
+              variant="outlined"
+              helperText={getMessageHelperText()}
+              style={{ marginTop: 30 }}
+            />
+            <Button
+              size="large"
+              disabled={messageSent}
+              variant="contained"
+              color="primary"
+              endIcon={<SendIcon />}
+              onClick={validate}
+              style={{ marginTop: 20 }}
+            >
+              Send
+            </Button>
+            <Typography
+              color="primary"
+              style={{
+                display: "inline-block",
+                marginLeft: 20,
+                transform: "translateY(10px)",
+              }}
+            >
+              {messageSent === false ? <>sending...</> : <></>}
+              {messageSent && dataRecieved?.message === "success" && (
+                <>Message sent!</>
+              )}
+              {error !== "" && <>There was an error sending your message.</>}
+            </Typography>
+          </form>
+          <Typography style={{ marginTop: 20 }}>
+            You can reach out to me on{" "}
+            <SmartLink href="https://www.linkedin.com/in/mark-valentino">
+              LinkedIn too if you prefer.
+            </SmartLink>
           </Typography>
-        </form>
-        <Typography style={{marginTop: 20}}>
-          You can reach out to me on{" "}
-          <SmartLink href="https://www.linkedin.com/in/mark-valentino">
-            LinkedIn too if you prefer.
-          </SmartLink>
-        </Typography>
-      </CustomPaper>
-    </MainWrapper>
+        </CustomPaper>
+      </MainWrapper>
+    </>
   );
 }
