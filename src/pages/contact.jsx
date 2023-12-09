@@ -3,8 +3,9 @@ import nextBase64 from "next-base64";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import { CustomPaper } from "@/components/layout/CustomPaper";
 import { MainHeading } from "@/components/layout/Headings";
+import { SmartLink } from "@/components/smartLink/SmartLink";
 import { Button, TextField, Typography } from "@mui/material";
-import SendIcon from '@mui/icons-material/Send';
+import SendIcon from "@mui/icons-material/Send";
 import {
   checkEmailInvalid,
   checkEmailTooLong,
@@ -174,13 +175,25 @@ export default function Contact() {
           >
             Send
           </Button>
-          <Typography color="primary" style={{display: "inline-block", marginLeft: 20, transform: "translateY(10px)"}}>
-          {messageSent === false ? <>sending...</> : <></>}
-          {messageSent && data?.message === "success" && <>Message sent!</>}
-          {error !== "" && <>There was an error sending your message.</>}
-        </Typography>
+          <Typography
+            color="primary"
+            style={{
+              display: "inline-block",
+              marginLeft: 20,
+              transform: "translateY(10px)",
+            }}
+          >
+            {messageSent === false ? <>sending...</> : <></>}
+            {messageSent && data?.message === "success" && <>Message sent!</>}
+            {error !== "" && <>There was an error sending your message.</>}
+          </Typography>
         </form>
-        
+        <Typography style={{marginTop: 20}}>
+          You can reach out to me on{" "}
+          <SmartLink href="https://www.linkedin.com/in/mark-valentino">
+            LinkedIn too if you prefer.
+          </SmartLink>
+        </Typography>
       </CustomPaper>
     </MainWrapper>
   );
