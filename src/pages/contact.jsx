@@ -23,7 +23,9 @@ export default function Contact() {
   const [messageTooShort, setMessageTooShort] = useState(null);
   const [messageInvalid, setMessageInvalid] = useState(null);
   const [messageHasGibberish, setMessageHasGibberish] = useState(null);
-  const [messageSent, setMessageSent] = useState(false);
+  const [error, setError] = useState(null);
+  const [data, setData] = useState(null);
+  const [messageSent, setMessageSent] = useState(null);
 
   const validate = () => {
     if (checkEmailTooLong(emailRef.current.value)) {
@@ -58,6 +60,23 @@ export default function Contact() {
     }
   };
 
+  async function fetchData() {
+    try {
+      const response = await fetch(
+        `/api/sendMessage?email=${nextBase64.encode(
+          emailRef.current.value
+        )}&message=${nextBase64.encode(messageRef.current.value)}`
+      );
+      const data = await response.json();
+      setData(data);
+    } catch (err) {
+      const errorMessage = "Error: " + err.message;
+      setError(errorMessage);
+    } finally {
+      setMessageSent(() => true);
+    }
+  }
+
   useEffect(() => {
     if (
       emailTooLong === false &&
@@ -66,22 +85,10 @@ export default function Contact() {
       messageTooShort === false &&
       messageInvalid === false &&
       messageHasGibberish === false &&
-      messageSent === false
+      messageSent === null
     ) {
-      fetch(
-        `/api/sendMessage?email=${nextBase64.encode(
-          emailRef.current.value
-        )}&message=${nextBase64.encode(messageRef.current.value)}`
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.message === "success") {
-            setMessageSent(() => true);
-          }
-        })
-        .catch((err) =>
-          alert(`Could not send message due to a server error${err}`)
-        );
+      setMessageSent(() => false);
+      fetchData();
     }
   }, [
     emailTooLong,
@@ -164,7 +171,13 @@ export default function Contact() {
             Send
           </Button>
         </form>
-        {messageSent && <>sent!</>}
+        {messageSent === false ? (
+          <span style={{ color: "red" }}>sending...</span>
+        ) : (
+          <></>
+        )}
+        {messageSent && data.message === "success" && <>sent!</>}
+        {error !== null && JSON.stringify(error)}
       </CustomPaper>
     </MainWrapper>
   );
