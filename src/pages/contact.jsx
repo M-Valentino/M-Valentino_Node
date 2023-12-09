@@ -21,9 +21,9 @@ export default function Contact() {
   const [messageTooLong, setMessageTooLong] = useState(false);
   const [messageTooShort, setMessageTooShort] = useState(false);
   const [messageInvalid, setMessageInvalid] = useState(false);
-  const [messageGibberish, setMessageGibberish] = useState(false);
+  const [messageHasGibberish, setMessageHasGibberish] = useState(false);
 
-  const validateAndSend = () => {
+  const validate = () => {
     if (checkEmailTooLong(emailRef.current.value)) {
       setEmailTooLong(() => true);
     } else {
@@ -50,17 +50,21 @@ export default function Contact() {
       setMessageInvalid(() => false);
     }
     if (checkHasGibberish(messageRef.current.value)) {
-      setMessageGibberish(() => true);
+      setMessageHasGibberish(() => true);
     } else {
-      setMessageGibberish(() => false);
+      setMessageHasGibberish(() => false);
     }
+  };
+
+  const validateAndSend = () => {
+    validate();
     if (
       !emailTooLong &&
       !emailInvalid &&
       !messageTooLong &&
       !messageTooShort &&
       !messageInvalid &&
-      !messageGibberish
+      !messageHasGibberish
     ) {
       console.log(messageRef.current.value);
     }
@@ -88,7 +92,7 @@ export default function Contact() {
       return `Please limit your message to ${MAX_MESSAGE_LENGTH} characters.`;
     } else if (messageTooShort) {
       return "Your message is too short.";
-    } else if (messageGibberish) {
+    } else if (messageHasGibberish) {
       return "Your message can't be sent because it is possibly spam.";
     }
     return "";
@@ -118,7 +122,7 @@ export default function Contact() {
               messageTooLong ||
               messageTooShort ||
               messageInvalid ||
-              messageGibberish
+              messageHasGibberish
             }
             label="Your message"
             multiline
