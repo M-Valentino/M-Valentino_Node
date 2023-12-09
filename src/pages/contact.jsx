@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import nextBase64 from "next-base64";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import { CustomPaper } from "@/components/layout/CustomPaper";
 import { MainHeading } from "@/components/layout/Headings";
@@ -13,16 +14,16 @@ import {
   MAX_MESSAGE_LENGTH,
 } from "@/utils/validations";
 
-
 export default function Contact() {
   const emailRef = useRef();
   const messageRef = useRef();
-  const [emailTooLong, setEmailTooLong] = useState(false);
-  const [emailInvalid, setEmailInvalid] = useState(false);
-  const [messageTooLong, setMessageTooLong] = useState(false);
-  const [messageTooShort, setMessageTooShort] = useState(false);
-  const [messageInvalid, setMessageInvalid] = useState(false);
-  const [messageHasGibberish, setMessageHasGibberish] = useState(false);
+  const [emailTooLong, setEmailTooLong] = useState(null);
+  const [emailInvalid, setEmailInvalid] = useState(null);
+  const [messageTooLong, setMessageTooLong] = useState(null);
+  const [messageTooShort, setMessageTooShort] = useState(null);
+  const [messageInvalid, setMessageInvalid] = useState(null);
+  const [messageHasGibberish, setMessageHasGibberish] = useState(null);
+  const [messageSent, setMessageSent] = useState(false);
 
   const validate = () => {
     if (checkEmailTooLong(emailRef.current.value)) {
@@ -56,26 +57,41 @@ export default function Contact() {
       setMessageHasGibberish(() => false);
     }
   };
-  
-  const validateAndSend = () => {
 
-    validate();
+  useEffect(() => {
     if (
-      !emailTooLong &&
-      !emailInvalid &&
-      !messageTooLong &&
-      !messageTooShort &&
-      !messageInvalid &&
-      !messageHasGibberish
+      emailTooLong === false &&
+      emailInvalid === false &&
+      messageTooLong === false &&
+      messageTooShort === false &&
+      messageInvalid === false &&
+      messageHasGibberish === false &&
+      messageSent === false
     ) {
-      fetch(`/api/sendMessage?email=${emailRef.current.value}&message=${messageRef.current.value}`
-
-    )
-    .then(res => res.json())
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
+      fetch(
+        `/api/sendMessage?email=${nextBase64.encode(
+          emailRef.current.value
+        )}&message=${nextBase64.encode(messageRef.current.value)}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.message === "success") {
+            setMessageSent(() => true);
+          }
+        })
+        .catch((err) =>
+          alert(`Could not send message due to a server error${err}`)
+        );
     }
-  };
+  }, [
+    emailTooLong,
+    emailInvalid,
+    messageTooLong,
+    messageTooShort,
+    messageInvalid,
+    messageHasGibberish,
+    messageSent,
+  ]);
 
   const getEmailHelperText = () => {
     if (emailInvalid && emailTooLong) {
@@ -139,14 +155,16 @@ export default function Contact() {
             style={{ marginTop: 30 }}
           />
           <Button
+            disabled={messageSent}
             variant="contained"
             color="primary"
             // endIcon={<SendIcon />}
-            onClick={validateAndSend}
+            onClick={validate}
           >
             Send
           </Button>
         </form>
+        {messageSent && <>sent!</>}
       </CustomPaper>
     </MainWrapper>
   );
