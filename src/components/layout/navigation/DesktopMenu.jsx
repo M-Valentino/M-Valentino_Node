@@ -29,6 +29,10 @@ export const DesktopMenu = ({ activeLink }) => {
           activeLink={activeLink}
           buttonTextAndOrLink={PAGE_TITLES.blog}
         />
+        <NavButton
+          activeLink={activeLink}
+          buttonTextAndOrLink={PAGE_TITLES.contact}
+        />
       </div>
       <div
         id="animatedButtonWrapper"

@@ -4,6 +4,7 @@ import { MainWrapper } from "@/components/layout/MainWrapper";
 import { CustomPaper } from "@/components/layout/CustomPaper";
 import { MainHeading } from "@/components/layout/Headings";
 import { Button, TextField, Typography } from "@mui/material";
+import SendIcon from '@mui/icons-material/Send';
 import {
   checkEmailInvalid,
   checkEmailTooLong,
@@ -13,6 +14,7 @@ import {
   checkHasGibberish,
   MAX_MESSAGE_LENGTH,
 } from "@/utils/validations";
+import { PAGE_TITLES } from "@/consts/pageTitles";
 
 export default function Contact() {
   const emailRef = useRef();
@@ -129,7 +131,7 @@ export default function Contact() {
   };
 
   return (
-    <MainWrapper>
+    <MainWrapper activeLink={PAGE_TITLES.contact}>
       <CustomPaper>
         <MainHeading>Contact Me</MainHeading>
         <form>
@@ -166,7 +168,7 @@ export default function Contact() {
             disabled={messageSent}
             variant="contained"
             color="primary"
-            // endIcon={<SendIcon />}
+            endIcon={<SendIcon />}
             onClick={validate}
             style={{ marginTop: 20 }}
           >
