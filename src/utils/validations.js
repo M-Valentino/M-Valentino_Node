@@ -17,7 +17,7 @@ export const checkMessageInvalid = (message) => {
    * This also checks if '{' and '}' aren't there which maybe can
    * mitigate possible code injections.
    */
-  if (message.match(/^[a-z0-9!"#$%&'()*+,.\/:;<=>?@\[\] ^_`|~-]*$/i)) {
+  if (message.match(/^[\na-z0-9!"#$%&'()*+,.\/:;<=>?@\[\] ^_`|~-]*$/i)) {
     return false;
   }
   return true;
