@@ -8,6 +8,8 @@ import {
   checkEmailTooLong,
   checkMessageInvalid,
   checkMessageTooLong,
+  checkMessageTooShort,
+  checkHasGibberish,
   MAX_MESSAGE_LENGTH,
 } from "@/utils/validations";
 
@@ -17,9 +19,11 @@ export default function Contact() {
   const [emailTooLong, setEmailTooLong] = useState(false);
   const [emailInvalid, setEmailInvalid] = useState(false);
   const [messageTooLong, setMessageTooLong] = useState(false);
+  const [messageTooShort, setMessageTooShort] = useState(false);
   const [messageInvalid, setMessageInvalid] = useState(false);
-  
-  const sendValue = () => {
+  const [messageGibberish, setMessageGibberish] = useState(false);
+
+  const validateAndSend = () => {
     if (checkEmailTooLong(emailRef.current.value)) {
       setEmailTooLong(() => true);
     } else {
@@ -35,12 +39,31 @@ export default function Contact() {
     } else {
       setMessageTooLong(() => false);
     }
+    if (checkMessageTooShort(messageRef.current.value)) {
+      setMessageTooShort(() => true);
+    } else {
+      setMessageTooShort(() => false);
+    }
     if (checkMessageInvalid(messageRef.current.value)) {
       setMessageInvalid(() => true);
     } else {
       setMessageInvalid(() => false);
     }
-    console.log(messageRef.current.value);
+    if (checkHasGibberish(messageRef.current.value)) {
+      setMessageGibberish(() => true);
+    } else {
+      setMessageGibberish(() => false);
+    }
+    if (
+      !emailTooLong &&
+      !emailInvalid &&
+      !messageTooLong &&
+      !messageTooShort &&
+      !messageInvalid &&
+      !messageGibberish
+    ) {
+      console.log(messageRef.current.value);
+    }
   };
 
   const getEmailHelperText = () => {
@@ -56,11 +79,17 @@ export default function Contact() {
 
   const getMessageHelperText = () => {
     if (messageInvalid && messageTooLong) {
-      return `Message contains invalid character(s). Please limit your message to ${MAX_MESSAGE_LENGTH} characters.`;
+      return `Message contains invalid character(s). Also, please limit your message to ${MAX_MESSAGE_LENGTH} characters.`;
+    } else if (messageInvalid && messageTooShort) {
+      return "Message contains invalid character(s). Also, your message is too short.";
     } else if (messageInvalid) {
       return "Message contains invalid character(s).";
     } else if (messageTooLong) {
       return `Please limit your message to ${MAX_MESSAGE_LENGTH} characters.`;
+    } else if (messageTooShort) {
+      return "Your message is too short.";
+    } else if (messageGibberish) {
+      return "Your message can't be sent because it is possibly spam.";
     }
     return "";
   };
@@ -85,7 +114,12 @@ export default function Contact() {
             fullWidth
             required
             inputRef={messageRef}
-            error={messageTooLong || messageInvalid}
+            error={
+              messageTooLong ||
+              messageTooShort ||
+              messageInvalid ||
+              messageGibberish
+            }
             label="Your message"
             multiline
             rows={12}
@@ -97,7 +131,7 @@ export default function Contact() {
             variant="contained"
             color="primary"
             // endIcon={<SendIcon />}
-            onClick={sendValue}
+            onClick={validateAndSend}
           >
             Send
           </Button>
