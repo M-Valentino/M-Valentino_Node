@@ -27,7 +27,7 @@ export default function Contact() {
   const [messageInvalid, setMessageInvalid] = useState(null);
   const [messageHasGibberish, setMessageHasGibberish] = useState(null);
   const [error, setError] = useState("");
-  const [data, setData] = useState(null);
+  const [dataRecieved, setDataRecieved] = useState(null);
   const [messageSent, setMessageSent] = useState(null);
 
   const validate = () => {
@@ -71,7 +71,7 @@ export default function Contact() {
         )}&message=${nextBase64.encode(messageRef.current.value)}`
       );
       const data = await response.json();
-      setData(data);
+      setDataRecieved(data);
     } catch (err) {
       const errorMessage = "Error: " + err.message;
       setError(errorMessage);
@@ -184,7 +184,7 @@ export default function Contact() {
             }}
           >
             {messageSent === false ? <>sending...</> : <></>}
-            {messageSent && data?.message === "success" && <>Message sent!</>}
+            {messageSent && dataRecieved?.message === "success" && <>Message sent!</>}
             {error !== "" && <>There was an error sending your message.</>}
           </Typography>
         </form>

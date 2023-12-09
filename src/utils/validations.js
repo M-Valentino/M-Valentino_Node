@@ -142,15 +142,26 @@ export const checkHasGibberish = (message) => {
     "people",
     "through",
     "how",
+    "same",
+    "work",
+    "being",
+    "because",
+    "man",
+    "life",
+    "before",
+    "each",
     "hi ",
     "hello",
-    "because",
     "website",
   ];
+  let count = 0;
 
   // A for each loop won't break after return
   for (let i = 0; i < commonWords.length; i++) {
     if (message.includes(commonWords[i])) {
+      count++;
+    }
+    if (count === 4) {
       return false;
     }
   }
