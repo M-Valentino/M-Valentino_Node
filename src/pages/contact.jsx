@@ -143,6 +143,7 @@ export default function Contact() {
         <CustomPaper>
           <MainHeading>Contact Me</MainHeading>
           <form>
+            <Typography>Form doesn't work for now. sorry</Typography>
             <TextField
               fullWidth
               required
