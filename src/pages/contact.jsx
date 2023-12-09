@@ -6,6 +6,7 @@ import { Button, TextField } from "@mui/material";
 import {
   checkEmailInvalid,
   checkEmailTooLong,
+  checkMessageInvalid,
   checkMessageTooLong,
 } from "@/utils/validations";
 export default function Contact() {
@@ -14,6 +15,7 @@ export default function Contact() {
   const [emailTooLong, setEmailTooLong] = useState(false);
   const [emailInvalid, setEmailInvalid] = useState(false);
   const [messageTooLong, setMessageTooLong] = useState(false);
+  const [messageInvalid, setMessageInvalid] = useState(false);
   const sendValue = () => {
     if (checkEmailTooLong(emailRef.current.value)) {
       setEmailTooLong(() => true);
@@ -30,7 +32,34 @@ export default function Contact() {
     } else {
       setMessageTooLong(() => false);
     }
+    if (checkMessageInvalid(messageRef.current.value)) {
+      setMessageInvalid(() => true);
+    } else {
+      setMessageInvalid(() => false);
+    }
     console.log(messageRef.current.value);
+  };
+
+  const getEmailHelperText = () => {
+    if (emailInvalid && emailTooLong) {
+      return "What are you doing?";
+    } else if (emailInvalid) {
+      return "Please enter a valid email.";
+    } else if (emailTooLong) {
+      return "Your email is too long.";
+    }
+    return "";
+  };
+
+  const getMessageHelperText = () => {
+    if (messageInvalid && messageTooLong) {
+      return "Message contains invalid character(s). Please limit your message to 1280 characters.";
+    } else if (messageInvalid) {
+      return "Message contains invalid character(s).";
+    } else if (messageTooLong) {
+      return "Please limit your message to 1280 characters.";
+    }
+    return "";
   };
 
   return (
@@ -46,20 +75,20 @@ export default function Contact() {
             id="email"
             label="Email address"
             variant="outlined"
-            helperText=""
+            helperText={getEmailHelperText()}
             style={{ marginTop: 20, maxWidth: 300 }}
           />
           <TextField
             fullWidth
             required
             inputRef={messageRef}
-            error={messageTooLong}
+            error={messageTooLong || messageInvalid}
             id="standard-textarea"
             label="Your message"
             multiline
             rows={12}
             variant="outlined"
-            helperText="bjhb"
+            helperText={getMessageHelperText()}
             style={{ marginTop: 30 }}
           />
           <Button
