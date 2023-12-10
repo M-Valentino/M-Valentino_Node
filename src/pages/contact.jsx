@@ -69,7 +69,8 @@ export default function Contact() {
       const response = await fetch(
         `/api/sendMessage?email=${nextBase64.encode(
           emailRef.current.value
-        )}&message=${nextBase64.encode(messageRef.current.value)}`
+        )}&message=${nextBase64.encode(messageRef.current.value)}`,
+        { method: "PUT" }
       );
       const data = await response.json();
       setDataRecieved(data);
