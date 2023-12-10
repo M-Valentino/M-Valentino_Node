@@ -23,7 +23,6 @@
     "get-root-domain": "^0.0.1",
     "next": "14.0.3",
     "next-base64": "^1.1.0",
-    "next-hcaptcha": "^1.4.3",
     "npm": "^10.2.1",
     "react": "18.2.0",
     "react-code-blocks": "^0.1.5",

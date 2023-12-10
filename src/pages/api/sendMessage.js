@@ -1,4 +1,3 @@
-import { withHCaptcha } from "next-hcaptcha";
 import { kv } from "@vercel/kv";
 import nextBase64 from "next-base64";
 import {
@@ -12,7 +11,7 @@ import {
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-export default withHCaptcha(async (request, response) => {
+export default async function handler(request, response) {
   const { method } = request;
   const email = nextBase64.decode(request.query.email);
   const message = nextBase64.decode(request.query.message);
@@ -48,4 +47,4 @@ export default withHCaptcha(async (request, response) => {
   }
   await sleep(10000);
   return response.status(200).json({ message: "fail" });
-});
+}
