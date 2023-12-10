@@ -9,10 +9,12 @@ import {
   checkMessageTooShort,
 } from "@/utils/validations";
 
-// Prevents the same message from being sent
-const previousMail = await kv.lindex("emails", 0);
+const sleep = ms => new Promise(
+  resolve => setTimeout(resolve, ms));
 
-export default function handler(request, response) {
+export default async function handler(request, response) {
+  // Prevents the same message from being sent
+const previousMail = await kv.lindex("emails", 0);
   const { method } = request;
   const email = nextBase64.decode(request.query.email);
   const message = nextBase64.decode(request.query.message);
@@ -28,6 +30,8 @@ export default function handler(request, response) {
     !previousMail.includes(currentMailSubStr) &&
     method === "PUT"
   ) {
+    console.log(previousMail);
+    await sleep(1500);
     kv.lpush("emails", `${currentMailSubStr}␟${Date.now()}`);
     return response.status(200).json({ message: "success" });
   }
