@@ -28,6 +28,7 @@ export default function Contact() {
   const [messageTooShort, setMessageTooShort] = useState(null);
   const [messageInvalid, setMessageInvalid] = useState(null);
   const [messageHasGibberish, setMessageHasGibberish] = useState(null);
+  const [captchaFilled, setCaptchaFilled] = useState(false);
   const [error, setError] = useState("");
   const [dataRecieved, setDataRecieved] = useState(null);
   const [messageSent, setMessageSent] = useState(null);
@@ -133,6 +134,12 @@ export default function Contact() {
     }
     return "";
   };
+  
+  const handleVerificationSuccess =(token, ekey) => {
+    if (token && ekey) {
+      setCaptchaFilled(() => true);
+    }
+  }
 
   return (
     <>
@@ -176,12 +183,12 @@ export default function Contact() {
 
             <HCaptcha
               sitekey={process.env.HCAPTCHA_SITE_KEY}
-              onVerify={(token, ekey) => handleVerificationSuccess(token, ekey)}
+              onVerify={(token, ekey) => {handleVerificationSuccess(token, ekey)}}
             />
 
             <Button
               size="large"
-              disabled={messageSent}
+              disabled={messageSent || captchaFilled === false}
               variant="contained"
               color="primary"
               endIcon={<SendIcon />}
