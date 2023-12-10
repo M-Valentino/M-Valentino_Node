@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import HCaptcha from '@hcaptcha/react-hcaptcha';
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 import nextBase64 from "next-base64";
 import { CustomHead } from "@/components/layout/CustomHead";
 import { MainWrapper } from "@/components/layout/MainWrapper";
@@ -173,14 +173,12 @@ export default function Contact() {
               helperText={getMessageHelperText()}
               style={{ marginTop: 30, marginBottom: 30 }}
             />
-            <FormComponent>
-              <HCaptcha
-                sitekey={process.env.HCAPTCHA_SITE_KEY}
-                onVerify={(token, ekey) =>
-                  handleVerificationSuccess(token, ekey)
-                }
-              />
-            </FormComponent>
+
+            <HCaptcha
+              sitekey={process.env.HCAPTCHA_SITE_KEY}
+              onVerify={(token, ekey) => handleVerificationSuccess(token, ekey)}
+            />
+
             <Button
               size="large"
               disabled={messageSent}
