@@ -9,8 +9,8 @@ import {
   checkMessageTooShort,
 } from "@/utils/validations";
 
+// Prevents the same message from being sent
 const previousMail = await kv.lindex("emails", 0);
-const prevPrevMail = await kv.lindex("emails", 1);
 
 export default function handler(request, response) {
   const { method } = request;
@@ -25,18 +25,11 @@ export default function handler(request, response) {
     !checkMessageInvalid(message) &&
     !checkMessageTooLong(message) &&
     !checkMessageTooShort(message) &&
-    method === "PUT" 
+    !previousMail.includes(currentMailSubStr) &&
+    method === "PUT"
   ) {
-    // Prevents the same message from being sent
-    if (
-      previousMail.includes(currentMailSubStr) ||
-      prevPrevMail.includes(currentMailSubStr)
-    ) {
-      return response.status(200).json({ message: "fail" });
-    } else {
-      kv.lpush("emails", `${currentMailSubStr}␟${Date.now()}`);
-      return response.status(200).json({ message: "success" });
-    }
+    kv.lpush("emails", `${currentMailSubStr}␟${Date.now()}`);
+    return response.status(200).json({ message: "success" });
   }
   return response.status(500);
 }
