@@ -9,12 +9,13 @@ import {
   checkMessageTooShort,
 } from "@/utils/validations";
 
-const previousMessage = await kv.lindex("emails", 0);
-const prevPrevMessage = await kv.lindex("emails", 1);
+const previousMail = await kv.lindex("emails", 0);
+const prevPrevMail = await kv.lindex("emails", 1);
 
 export default function handler(request, response) {
   const email = nextBase64.decode(request.query.email);
   const message = nextBase64.decode(request.query.message);
+  const currentMailSubStr = `${email}␟${message}`;
   if (
     !checkEmailInvalid(email) &&
     !checkEmailTooLong(email) &&
@@ -25,12 +26,12 @@ export default function handler(request, response) {
   ) {
     // Prevents the same message from being sent
     if (
-      previousMessage.includes(`${email}␟${message}`) ||
-      prevPrevMessage.includes(`${email}␟${message}`)
+      previousMail.includes(currentMailSubStr) ||
+      prevPrevMail.includes(currentMailSubStr)
     ) {
       return response.status(200).json({ message: "fail" });
     } else {
-      kv.lpush("emails", `${email}␟${message}␟${Date.now()}`);
+      kv.lpush("emails", `${currentMailSubStr}␟${Date.now()}`);
       return response.status(200).json({ message: "success" });
     }
   }
