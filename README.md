@@ -26,6 +26,7 @@ My site has a blog with "infinite" scrolling to cut down on loading times. All b
 
 ### Contact Form
 Users can send a message through the Contact Me page. Messages sent are stored in the database, along with the email associated and the date saved. There is form validation for the following properties:
+- User isn't a robot with hCaptcha validation.
 - Email matches a valid pattern.
 - Email length is under 40 characters.
 - Message most likely isn't gibberish (contains at least 4 most common English words out of a list over 100).
@@ -59,3 +60,13 @@ Add your Clarity ID to the list of environment variables with the variable name 
 ### Vercel Redis Integration for Local Development and Deployments
 Follow this guide:
 https://vercel.com/guides/using-vercel-kv
+
+### Connecting hCaptcha
+Create an account on hCaptcha and the domain the site will run on.
+Fill out the following environment variables on Vercel or on your local env:
+```
+HCAPTCHA_SECRET
+HCAPTCHA_SITE_KEY
+NEXT_PUBLIC_HCAPTCHA_SITE_KEY
+```
+Both `HCAPTCHA_SITE_KEY` and `NEXT_PUBLIC_HCAPTCHA_SITE_KEY` must have the same value.
