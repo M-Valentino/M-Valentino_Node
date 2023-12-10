@@ -182,7 +182,7 @@ export default function Contact() {
             />
 
             <HCaptcha
-              sitekey={process.env.HCAPTCHA_SITE_KEY}
+              sitekey="6d1c9368-0f8c-44d3-8b92-9ffa754a840f"
               onVerify={(token, ekey) => {handleVerificationSuccess(token, ekey)}}
             />
 
