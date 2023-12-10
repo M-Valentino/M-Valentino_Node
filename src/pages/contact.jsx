@@ -69,7 +69,8 @@ export default function Contact() {
       const response = await fetch(
         `/api/sendMessage?email=${nextBase64.encode(
           emailRef.current.value
-        )}&message=${nextBase64.encode(messageRef.current.value)}`
+        )}&message=${nextBase64.encode(messageRef.current.value)}`,
+        { method: "PUT" }
       );
       const data = await response.json();
       setDataRecieved(data);
@@ -143,7 +144,6 @@ export default function Contact() {
         <CustomPaper>
           <MainHeading>Contact Me</MainHeading>
           <form>
-            <Typography>Form doesn't work for now. sorry</Typography>
             <TextField
               fullWidth
               required
@@ -195,7 +195,9 @@ export default function Contact() {
               {messageSent && dataRecieved?.message === "success" && (
                 <>Message sent!</>
               )}
-              {error !== "" && <>There was an error sending your message.</>}
+              {(error !== "" || dataRecieved?.message === "fail") && (
+                <>There was an error sending your message.</>
+              )}
             </Typography>
           </form>
           <Typography style={{ marginTop: 20 }}>
