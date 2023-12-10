@@ -29,6 +29,7 @@ export default function Contact() {
   const [messageInvalid, setMessageInvalid] = useState(null);
   const [messageHasGibberish, setMessageHasGibberish] = useState(null);
   const [captchaFilled, setCaptchaFilled] = useState(false);
+  const [token, setToken]= useState("false");
   const [error, setError] = useState("");
   const [dataRecieved, setDataRecieved] = useState(null);
   const [messageSent, setMessageSent] = useState(null);
@@ -71,7 +72,7 @@ export default function Contact() {
       const response = await fetch(
         `/api/sendMessage?email=${nextBase64.encode(
           emailRef.current.value
-        )}&message=${nextBase64.encode(messageRef.current.value)}`,
+        )}&message=${nextBase64.encode(messageRef.current.value)}&token=${token}`,
         { method: "PUT" }
       );
       const data = await response.json();
@@ -134,12 +135,13 @@ export default function Contact() {
     }
     return "";
   };
-  
-  const handleVerificationSuccess =(token, ekey) => {
+
+  const handleVerificationSuccess = (token, ekey) => {
     if (token && ekey) {
       setCaptchaFilled(() => true);
+      setToken(() => token);
     }
-  }
+  };
 
   return (
     <>
@@ -175,17 +177,17 @@ export default function Contact() {
               }
               label="Your message"
               multiline
-              rows={12}
+              rows={8}
               variant="outlined"
               helperText={getMessageHelperText()}
               style={{ marginTop: 30, marginBottom: 30 }}
             />
-
             <HCaptcha
               sitekey="6d1c9368-0f8c-44d3-8b92-9ffa754a840f"
-              onVerify={(token, ekey) => {handleVerificationSuccess(token, ekey)}}
+              onVerify={(token, ekey) => {
+                handleVerificationSuccess(token, ekey);
+              }}
             />
-
             <Button
               size="large"
               disabled={messageSent || captchaFilled === false}

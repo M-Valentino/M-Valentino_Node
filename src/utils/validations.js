@@ -150,8 +150,9 @@ export const checkHasGibberish = (message) => {
     "life",
     "before",
     "each",
-    "hi ",
-    "hello",
+    "Hi ",
+    "Hello",
+    "Dear",
     "website",
   ];
   let count = 0;
