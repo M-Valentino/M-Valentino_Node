@@ -22,6 +22,7 @@ import { PAGE_TITLES } from "@/consts/pageTitles";
 export default function Contact() {
   const emailRef = useRef();
   const messageRef = useRef();
+  // Multiple usestates are used for descriptive helptertext errors.
   const [emailTooLong, setEmailTooLong] = useState(null);
   const [emailInvalid, setEmailInvalid] = useState(null);
   const [messageTooLong, setMessageTooLong] = useState(null);
@@ -29,7 +30,7 @@ export default function Contact() {
   const [messageInvalid, setMessageInvalid] = useState(null);
   const [messageHasGibberish, setMessageHasGibberish] = useState(null);
   const [captchaFilled, setCaptchaFilled] = useState(false);
-  const [token, setToken]= useState("false");
+  const [token, setToken] = useState(false);
   const [error, setError] = useState("");
   const [dataRecieved, setDataRecieved] = useState(null);
   const [messageSent, setMessageSent] = useState(null);
@@ -72,7 +73,9 @@ export default function Contact() {
       const response = await fetch(
         `/api/sendMessage?email=${nextBase64.encode(
           emailRef.current.value
-        )}&message=${nextBase64.encode(messageRef.current.value)}&token=${token}`,
+        )}&message=${nextBase64.encode(
+          messageRef.current.value
+        )}&token=${token}`,
         { method: "PUT" }
       );
       const data = await response.json();
@@ -85,6 +88,7 @@ export default function Contact() {
     }
   }
 
+  // Usestates for validation don't update immediately.
   useEffect(() => {
     if (
       emailTooLong === false &&
@@ -183,7 +187,7 @@ export default function Contact() {
               style={{ marginTop: 30, marginBottom: 30 }}
             />
             <HCaptcha
-              sitekey="6d1c9368-0f8c-44d3-8b92-9ffa754a840f"
+              sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
               onVerify={(token, ekey) => {
                 handleVerificationSuccess(token, ekey);
               }}

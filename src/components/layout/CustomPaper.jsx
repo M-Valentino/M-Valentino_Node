@@ -14,7 +14,7 @@ export const CustomPaper = (props) => {
         marginBottom: 50,
         background: GRADIENTS.offWhiteGradient,
         borderRadius: 4,
-        boxShadow: SHADOWS.small,
+        boxShadow: SHADOWS.minute,
       }}
     >
       {children}
