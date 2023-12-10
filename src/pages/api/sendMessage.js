@@ -12,6 +12,14 @@ import {
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+/**
+ * This handles adding a message sent from the contact form to the list of
+ * emails in the redis db. It does the same form validations as the frontend
+ * and handles verifying the hCaptcha token sent.
+ * @param {*} request
+ * @param {*} response
+ * @returns response.status(200) with a message of success or fail.
+ */
 export default async function handler(request, response) {
   const { method } = request;
 
@@ -22,12 +30,11 @@ export default async function handler(request, response) {
       secretKey: process.env.HCAPTCHA_SECRET,
       siteKey: process.env.HCAPTCHA_SITE_KEY,
     });
-  
+
     if (result.success) {
       return true;
-    } else {
-      return false;
     }
+    return false;
   })();
 
   const email = nextBase64.decode(request.query.email);

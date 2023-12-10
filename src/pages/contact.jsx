@@ -68,8 +68,9 @@ export default function Contact() {
     }
   };
 
-  async function fetchData() {
+  async function sendData() {
     try {
+      // Token generated is already in base64.
       const response = await fetch(
         `/api/sendMessage?email=${nextBase64.encode(
           emailRef.current.value
@@ -100,8 +101,9 @@ export default function Contact() {
       messageSent === null
     ) {
       setMessageSent(() => false);
-      fetchData();
+      sendData();
     }
+    // TODO resolve react-hooks/exhaustive-deps
   }, [
     emailTooLong,
     emailInvalid,
@@ -140,10 +142,10 @@ export default function Contact() {
     return "";
   };
 
-  const handleVerificationSuccess = (token, ekey) => {
-    if (token && ekey) {
+  const handleVerificationSuccess = (tokenRecieved, ekey) => {
+    if (tokenRecieved && ekey) {
       setCaptchaFilled(() => true);
-      setToken(() => token);
+      setToken(() => tokenRecieved);
     }
   };
 
@@ -188,8 +190,8 @@ export default function Contact() {
             />
             <HCaptcha
               sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
-              onVerify={(token, ekey) => {
-                handleVerificationSuccess(token, ekey);
+              onVerify={(tokenRecieved, ekey) => {
+                handleVerificationSuccess(tokenRecieved, ekey);
               }}
             />
             <Button
