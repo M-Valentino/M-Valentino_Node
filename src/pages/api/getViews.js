@@ -6,6 +6,7 @@ import { formatForRedisKey } from "@/utils/linkFunctions";
  * Function to get number of views associated with a blog post and
  * increment them. The query validates if a title exists so that extra keys don't
  * get written to the redis db.
+ * TODO resolve import/no-anonymous-default-export
  */
 export default async (request, response) => {
   const title = formatForRedisKey(request.query.title);
@@ -16,5 +17,5 @@ export default async (request, response) => {
     const views = await kv.incr(`${title}_views`);
     return response.status(200).json(Intl.NumberFormat("en-us").format(views));
   }
-  return response.status(500);
+  return response.status(400);
 };

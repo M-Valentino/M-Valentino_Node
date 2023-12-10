@@ -71,5 +71,5 @@ export default async function handler(request, response) {
   }
   // Rate limit
   await sleep(10000);
-  return response.status(200).json({ message: "fail" });
+  return response.status(400).json({ message: "fail" });
 }
