@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 import nextBase64 from "next-base64";
-import HCaptcha from "@hcaptcha/react-hcaptcha";
 import { CustomHead } from "@/components/layout/CustomHead";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import { CustomPaper } from "@/components/layout/CustomPaper";
@@ -134,21 +134,6 @@ export default function Contact() {
     return "";
   };
 
-  const [token, setToken] = useState(null);
-  const captchaRef = useRef(null);
-
-  const onLoad = () => {
-    // this reaches out to the hCaptcha JS API and runs the
-    // execute function on it. you can use other functions as
-    // documented here:
-    // https://docs.hcaptcha.com/configuration#jsapi
-    captchaRef.current.execute();
-  };
-
-  useEffect(() => {
-    if (token) console.log(`hCaptcha Token: ${token}`);
-  }, [token]);
-
   return (
     <>
       <CustomHead
@@ -188,12 +173,14 @@ export default function Contact() {
               helperText={getMessageHelperText()}
               style={{ marginTop: 30, marginBottom: 30 }}
             />
-            <HCaptcha
-              sitekey={process.env.HCAPTCHA_SITE_KEY}
-              onLoad={onLoad}
-              onVerify={setToken}
-              ref={captchaRef}
-            />
+            <FormComponent>
+              <HCaptcha
+                sitekey={process.env.HCAPTCHA_SITE_KEY}
+                onVerify={(token, ekey) =>
+                  handleVerificationSuccess(token, ekey)
+                }
+              />
+            </FormComponent>
             <Button
               size="large"
               disabled={messageSent}
