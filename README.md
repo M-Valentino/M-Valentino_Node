@@ -1,5 +1,5 @@
 # Mark Valentino Next.js
-![Vercel Status](https://img.shields.io/github/deployments/M-Valentino/M-Valentino_NextJS/production?label=vercel&logo=vercel&logoColor=white)
+![Vercel Status](https://img.shields.io/github/deployments/M-Valentino/M-Valentino_NextJS/production?label=vercel&logo=vercel&logoColor=white) ![License: LGPL v2.1](https://img.shields.io/badge/License-LGPL_v2.1-red.svg)
 <p align="center" width="100%">
   <img src="https://mark-valentino.vercel.app/mark-valentino-logo.svg" width="60%">
 </p>
