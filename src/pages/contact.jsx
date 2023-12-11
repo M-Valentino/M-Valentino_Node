@@ -18,6 +18,7 @@ import {
   MAX_MESSAGE_LENGTH,
 } from "@/utils/validations";
 import { PAGE_TITLES } from "@/consts/pageTitles";
+import { SHADOWS } from "@/consts/stylingValues";
 
 export default function Contact() {
   const emailRef = useRef();
@@ -199,7 +200,7 @@ export default function Contact() {
               disabled={messageSent || captchaFilled === false}
               variant="contained"
               color="primary"
-              endIcon={<SendIcon />}
+              endIcon={<SendIcon style={{ filter: SHADOWS.minuteSVG }} />}
               onClick={validate}
               style={{ marginTop: 10 }}
             >
