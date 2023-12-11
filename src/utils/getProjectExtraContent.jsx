@@ -1,5 +1,6 @@
 import React from "react";
 import { PROJECT_TITLES } from "@/consts/projectContent";
+import { ImageToDivsContent } from "@/components/projectExtraContent/ImageToDivsContent";
 import { Earth3JSContent } from "@/components/projectExtraContent/Earth3JSContent";
 import { IcatContent } from "@/components/projectExtraContent/IcatContent";
 import { ISpyShopperContent } from "@/components/projectExtraContent/ISpyShopperContent";
@@ -15,6 +16,8 @@ import { ExploringCannyEdgeDetectionContent } from "@/components/projectExtraCon
  */
 export const getExtraProjectContent = (title, isDesktopView) => {
   switch (title) {
+    case PROJECT_TITLES.imageToDivs:
+      return <ImageToDivsContent />;
     case PROJECT_TITLES.earth3Js:
       return <Earth3JSContent />;
     case PROJECT_TITLES.icat:
