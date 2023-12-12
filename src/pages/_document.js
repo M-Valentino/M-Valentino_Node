@@ -8,7 +8,7 @@ export default function Document() {
         height: "100%",
         backgroundColor: "rgb(237,233,235)",
         backgroundImage:
-          "linear-gradient(0deg, rgba(230,231,228,1) 0%, rgba(237,233,235,1) 100%)",
+          "linear-gradient(0deg, rgba(230,224,208,1) 0%, rgba(237,233,235,1) 100%)",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
       }}
