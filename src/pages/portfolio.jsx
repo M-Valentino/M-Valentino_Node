@@ -12,6 +12,7 @@ import { CustomHead } from "@/components/layout/CustomHead";
 import { CustomPaper } from "@/components/layout/CustomPaper";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import { MainHeading } from "@/components/layout/Headings";
+import { PORTFOLIO_ITEMS } from "@/consts/portfolioItems";
 
 export default function Portfolio() {
   return (
@@ -25,7 +26,7 @@ export default function Portfolio() {
             Inventor.
           </Typography>
           <Grid container spacing={1} justifyContent="center">
-            {itemData.map((item) => (
+            {PORTFOLIO_ITEMS.map((item) => (
               <Grid item>
                 <ImageListItem key={item.name}>
                   <Image
@@ -38,7 +39,7 @@ export default function Portfolio() {
                   />
                   <ImageListItemBar
                     title={item.title}
-                    subtitle={item.author}
+                    subtitle={item.programUsed}
                     actionIcon={
                       <IconButton
                         sx={{ color: "rgba(255, 255, 255, 0.54)" }}
@@ -57,26 +58,3 @@ export default function Portfolio() {
     </>
   );
 }
-
-const itemData = [
-  {
-    name: "cad_car_isometric.png",
-    title: "Breakfast",
-    author: "@bkristastucchio",
-  },
-  {
-    name: "comming_soon_to_a_store_near_you.png",
-    title: "Burger",
-    author: "@rollelflex_graphy726",
-  },
-  {
-    name: "headphones_housing_inventor_assembly.png",
-    title: "Camera",
-    author: "@helloimnik",
-  },
-  {
-    name: "sturdy_computer_desk.png",
-    title: "Coffee",
-    author: "@nolanissac",
-  },
-];
