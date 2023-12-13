@@ -117,13 +117,13 @@ export default function Home() {
           <SubHeading>My Tech Stack</SubHeading>
           <Grid container spacing={4} justifyContent="center">
             {TECH_STACK.map((data, key) => (
-              <Grid item sm={1.7} xs={3} key={key}>
+              <Grid item md={1.3} sm={1.6} xs={3} key={key}>
                 <img role="img" src={data.src} alt={data.alt} />
                 <Typography
                   style={{
                     textAlign: "center",
                     fontWeight: "bold",
-                    fontSize: data.smallFontSize ? 14 : 16,
+                    fontSize: data.smallFontSize ? 13 : 14,
                   }}
                 >
                   {data.label}

@@ -36,6 +36,7 @@ export const TECH_STACK = [
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/handlebars/handlebars-original.svg",
     alt: "Handlebars logo",
     label: "Handlebars",
+    smallFontSize: true,
   },
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
@@ -51,6 +52,7 @@ export const TECH_STACK = [
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
     alt: "JavaScript logo",
     label: "JavaScript",
+    smallFontSize: true,
   },
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg",
@@ -67,6 +69,7 @@ export const TECH_STACK = [
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
     alt: "Material UI logo",
     label: "Material UI",
+    smallFontSize: true,
   },
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
@@ -102,6 +105,12 @@ export const TECH_STACK = [
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
     alt: "React Native logo",
     label: "React Native",
+    smallFontSize: true,
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
+    alt: "Redis logo",
+    label: "Redis",
   },
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg",
