@@ -1,13 +1,14 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Grid,
   ImageListItem,
   ImageListItemBar,
-  IconButton,
+  // IconButton,
   Typography,
 } from "@mui/material/";
-import InfoIcon from "@mui/icons-material/Info";
+// import InfoIcon from "@mui/icons-material/Info";
 import { CustomHead } from "@/components/layout/CustomHead";
 import { CustomPaper } from "@/components/layout/CustomPaper";
 import { MainWrapper } from "@/components/layout/MainWrapper";
@@ -23,33 +24,49 @@ export default function Portfolio() {
           <MainHeading>Portfolio</MainHeading>
           <Typography gutterBottom>
             This is a curated showcase of my technical art in AutoCAD and
-            Inventor.
+            Inventor. More is to come on this page.
           </Typography>
           <Grid container spacing={1} justifyContent="center">
-            {PORTFOLIO_ITEMS.map((item) => (
-              <Grid item>
-                <ImageListItem key={item.name}>
-                  <Image
-                    src={`/portfolioImages/${item.name}`}
-                    alt={item.title}
-                    quality={95}
-                    width={440}
-                    height={320}
-                    style={{ objectFit: "cover", maxWidth: "100%" }}
-                  />
-                  <ImageListItemBar
-                    title={item.title}
-                    subtitle={item.programUsed}
-                    actionIcon={
-                      <IconButton
-                        sx={{ color: "rgba(255, 255, 255, 0.54)" }}
-                        aria-label={`info about ${item.title}`}
-                      >
-                        <InfoIcon />
-                      </IconButton>
-                    }
-                  />
-                </ImageListItem>
+            {PORTFOLIO_ITEMS.map((portfolioItem) => (
+              <Grid item key={portfolioItem.name}>
+                <Link href={`/portfolioImages/${portfolioItem.name}`}>
+                  <ImageListItem>
+                    {portfolioItem.imageType === "regular" ? (
+                      <Image
+                        src={`/portfolioImages/${portfolioItem.name}`}
+                        alt={portfolioItem.title}
+                        quality={97}
+                        width={440}
+                        height={320}
+                        style={{ objectFit: "cover", maxWidth: "100%" }}
+                      />
+                    ) : (
+                      <img
+                        src={`/portfolioImages/${portfolioItem.name}`}
+                        alt={portfolioItem.title}
+                        style={{
+                          width: 440,
+                          height: 320,
+                          objectFit: "cover",
+                          maxWidth: "100%",
+                          imageRendering: "pixelated",
+                        }}
+                      />
+                    )}
+                    <ImageListItemBar
+                      title={portfolioItem.title}
+                      subtitle={portfolioItem.programUsed}
+                      // actionIcon={
+                      //   <IconButton
+                      //     sx={{ color: "rgba(255, 255, 255, 0.7)" }}
+                      //     aria-label={`info about ${portfolioItem.title}`}
+                      //   >
+                      //     <InfoIcon />
+                      //   </IconButton>
+                      // }
+                    />
+                  </ImageListItem>
+                </Link>
               </Grid>
             ))}
           </Grid>
