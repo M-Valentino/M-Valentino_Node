@@ -14,7 +14,6 @@ import { MainWrapper } from "@/components/layout/MainWrapper";
 import { MainHeading } from "@/components/layout/Headings";
 
 export default function Portfolio() {
-  const MAX_IMAGE_WIDTH = 360;
   return (
     <>
       <CustomHead />
@@ -25,12 +24,7 @@ export default function Portfolio() {
             This is a curated showcase of my technical art in AutoCAD and
             Inventor.
           </Typography>
-          <Grid
-            container
-            spacing={1}
-            justifyContent="center"
-            style={{ }}
-          >
+          <Grid container spacing={1} justifyContent="center">
             {itemData.map((item) => (
               <Grid item>
                 <ImageListItem key={item.name}>
@@ -69,28 +63,20 @@ const itemData = [
     name: "cad_car_isometric.png",
     title: "Breakfast",
     author: "@bkristastucchio",
-    width: 2566,
-    height: 1755,
   },
   {
     name: "comming_soon_to_a_store_near_you.png",
     title: "Burger",
     author: "@rollelflex_graphy726",
-    width: 2566,
-    height: 1755,
   },
   {
     name: "headphones_housing_inventor_assembly.png",
     title: "Camera",
     author: "@helloimnik",
-    width: 2566,
-    height: 1755,
   },
   {
     name: "sturdy_computer_desk.png",
     title: "Coffee",
     author: "@nolanissac",
-    width: 2566,
-    height: 1755,
   },
 ];
