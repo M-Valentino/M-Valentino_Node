@@ -13,7 +13,7 @@ export const DesktopMenu = ({ activeLink }) => {
         style={{
           display: "flex",
           justifyContent: "space-around",
-          width: 400,
+          width: 410,
           margin: "auto",
         }}
       >
