@@ -14,15 +14,17 @@ import { CustomPaper } from "@/components/layout/CustomPaper";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import { MainHeading } from "@/components/layout/Headings";
 import { PORTFOLIO_ITEMS } from "@/consts/portfolioItems";
+import { PAGE_TITLES } from "@/consts/pageTitles";
+import { SHADOWS } from "@/consts/stylingValues";
 
 export default function Portfolio() {
   return (
     <>
       <CustomHead />
-      <MainWrapper>
+      <MainWrapper activeLink={PAGE_TITLES.portfolio}>
         <CustomPaper>
           <MainHeading>Portfolio</MainHeading>
-          <Typography gutterBottom>
+          <Typography style={{ marginTop: 10, marginBottom: 20 }}>
             This is a curated showcase of my technical art in AutoCAD and
             Inventor. More is to come on this page.
           </Typography>
@@ -30,7 +32,7 @@ export default function Portfolio() {
             {PORTFOLIO_ITEMS.map((portfolioItem) => (
               <Grid item key={portfolioItem.name}>
                 <Link href={`/portfolioImages/${portfolioItem.name}`}>
-                  <ImageListItem>
+                  <ImageListItem style={{ boxShadow: SHADOWS.small }}>
                     {portfolioItem.imageType === "regular" ? (
                       <Image
                         src={`/portfolioImages/${portfolioItem.name}`}
