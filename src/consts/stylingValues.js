@@ -58,7 +58,8 @@ export const Z_INDEX_ORDER = {
   blogDrawer: 7999,
   mobileNavMenu: 6999,
   navbar: 6998,
-  integratedCircuit: 5999,
+  avatar: 5999,
+  integratedCircuit: 4999,
 };
 
 // This controls the main theme of the website.

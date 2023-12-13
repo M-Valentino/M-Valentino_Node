@@ -8,7 +8,12 @@ import { CustomHead } from "@/components/layout/CustomHead";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import ProjectCard from "@/components/ProjectsPage/ProjectCard";
 import { PROJECT_CONTENT } from "@/consts/projectContent";
-import { BASE_64_IMAGES, COLORS, SHADOWS } from "@/consts/stylingValues";
+import {
+  BASE_64_IMAGES,
+  COLORS,
+  SHADOWS,
+  Z_INDEX_ORDER,
+} from "@/consts/stylingValues";
 import { TECH_STACK } from "@/consts/techStack";
 import { Button, Grid, Stack, Typography } from "@mui/material";
 import { TypeAnimation } from "react-type-animation";
@@ -82,7 +87,7 @@ export default function Home() {
                 height: "auto",
                 border: `10px solid ${COLORS.mainOrange}`,
                 boxShadow: `${SHADOWS.minute}, inset ${SHADOWS.minute}`,
-                zIndex: 500,
+                zIndex: Z_INDEX_ORDER.avatar,
               }}
               alt="Professional portrait of me in a suite and tie."
               src="/githubAvatar.png"
