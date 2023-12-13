@@ -28,7 +28,7 @@ https://github.com/JedWatson/react-select/issues/3309
   }
 
   #logoButton {
-    left: 50px;
+    left: 50px !important;
   }
 
   #projectsMenu {
@@ -47,7 +47,7 @@ https://github.com/JedWatson/react-select/issues/3309
   }
 
   #logoButton {
-    left: 5px;
+    left: 5px !important;
   }
 
   #projectsMenu {
