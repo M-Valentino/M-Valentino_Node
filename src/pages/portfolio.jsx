@@ -37,7 +37,7 @@ export default function Portfolio() {
                       <Image
                         src={`/portfolioImages/${portfolioItem.name}`}
                         alt={portfolioItem.title}
-                        quality={97}
+                        quality={95}
                         width={440}
                         height={320}
                         style={{ objectFit: "cover", maxWidth: "100%" }}

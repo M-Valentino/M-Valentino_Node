@@ -72,7 +72,8 @@ export default function Home() {
             <Image
               width={130}
               height={130}
-              quality={95}
+              quality={94}
+              priority
               style={{
                 position: "relative",
                 top: 0,
