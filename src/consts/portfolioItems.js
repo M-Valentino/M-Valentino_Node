@@ -15,12 +15,7 @@ export const PORTFOLIO_ITEMS = [
     title: "Isometric Car",
     programUsed: PROGRAMS.autoCAD,
   },
-  {
-    name: "comming_soon_to_a_store_near_you.png",
-    imageType: IMAGE_TYPE.regular,
-    title: "Handheld Virtual Pet Game",
-    programUsed: PROGRAMS.inventor,
-  },
+
   {
     name: "headphones_housing_inventor_assembly.png",
     imageType: IMAGE_TYPE.regular,
@@ -32,6 +27,18 @@ export const PORTFOLIO_ITEMS = [
     imageType: IMAGE_TYPE.regular,
     title: "Sturdy Computer Desk",
     programUsed: PROGRAMS.autoCAD,
+  },
+  {
+    name: "bowtiepastafan.png",
+    imageType: IMAGE_TYPE.regular,
+    title: "Bowtie Pasta Fan Showdown Submission",
+    programUsed: PROGRAMS.inventor,
+  },
+  {
+    name: "comming_soon_to_a_store_near_you.png",
+    imageType: IMAGE_TYPE.regular,
+    title: "Handheld Virtual Pet Game",
+    programUsed: PROGRAMS.inventor,
   },
   {
     name: "unexpectedvistior.png",
