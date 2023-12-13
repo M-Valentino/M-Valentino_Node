@@ -1,6 +1,11 @@
 // Holds the data used in rendering the "My Tech Stack" section on the index page.
 export const TECH_STACK = [
   {
+    src: "/autocad.svg",
+    alt: "AutoCAD logo",
+    label: "AutoCAD",
+  },
+  {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
     alt: "Amazon Web Services logo",
     label: "AWS",
@@ -42,6 +47,11 @@ export const TECH_STACK = [
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
     alt: "HTML5 logo",
     label: "Html5",
+  },
+  {
+    src: "/inventor.svg",
+    alt: "Autodesk Inventor logo",
+    label: "Inventor",
   },
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
