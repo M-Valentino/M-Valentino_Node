@@ -13,7 +13,7 @@ export const DesktopMenu = ({ activeLink }) => {
         style={{
           display: "flex",
           justifyContent: "space-around",
-          width: 380,
+          width: 400,
           margin: "auto",
         }}
       >
@@ -28,6 +28,10 @@ export const DesktopMenu = ({ activeLink }) => {
         <NavButton
           activeLink={activeLink}
           buttonTextAndOrLink={PAGE_TITLES.blog}
+        />
+        <NavButton
+          activeLink={activeLink}
+          buttonTextAndOrLink={PAGE_TITLES.portfolio}
         />
         <NavButton
           activeLink={activeLink}

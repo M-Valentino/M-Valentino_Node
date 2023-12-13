@@ -63,6 +63,10 @@ export const MobileMenu = ({ activeLink }) => {
         />
         <MobileNavItem
           activeLink={activeLink}
+          itemTextAndOrLink={PAGE_TITLES.portfolio}
+        />
+        <MobileNavItem
+          activeLink={activeLink}
           itemTextAndOrLink={PAGE_TITLES.contact}
         />
         <Divider />

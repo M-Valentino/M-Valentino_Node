@@ -61,7 +61,7 @@ https://github.com/JedWatson/react-select/issues/3309
   }
 
   #prjctHdingWrppr {
-    margin-top:  0 !important;
+    margin-top: 0 !important;
   }
 
   .projectPageDescription {
@@ -78,6 +78,10 @@ https://github.com/JedWatson/react-select/issues/3309
 
   .sourceCodeButton {
     width: 60% !important;
+  }
+
+  #mobileMenu {
+    display: none;
   }
 }
 
@@ -109,15 +113,7 @@ https://github.com/JedWatson/react-select/issues/3309
   .tc_4 {
     display: none !important;
   }
-}
 
-@media only screen and (min-width:877px) {
-  #mobileMenu {
-    display: none;
-  }
-}
-
-@media only screen and (max-width:876px) {
   #desktopMenu {
     display: none;
   }
