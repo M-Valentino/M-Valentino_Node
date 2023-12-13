@@ -1,16 +1,20 @@
 import React from "react";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import ImageListItemBar from "@mui/material/ImageListItemBar";
-import IconButton from "@mui/material/IconButton";
+import Image from "next/image";
+import {
+  Grid,
+  ImageListItem,
+  ImageListItemBar,
+  IconButton,
+  Typography,
+} from "@mui/material/";
 import InfoIcon from "@mui/icons-material/Info";
-import { Typography } from "@mui/material";
 import { CustomHead } from "@/components/layout/CustomHead";
 import { CustomPaper } from "@/components/layout/CustomPaper";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import { MainHeading } from "@/components/layout/Headings";
 
 export default function Portfolio() {
+  const MAX_IMAGE_WIDTH = 360;
   return (
     <>
       <CustomHead />
@@ -18,31 +22,42 @@ export default function Portfolio() {
         <CustomPaper>
           <MainHeading>Portfolio</MainHeading>
           <Typography gutterBottom>
-            This is a curated showcase of my technical art in AutoCAD and Inventor.
+            This is a curated showcase of my technical art in AutoCAD and
+            Inventor.
           </Typography>
-          <ImageList sx={{ width: "100%" }}>
+          <Grid
+            container
+            spacing={1}
+            justifyContent="center"
+            style={{ }}
+          >
             {itemData.map((item) => (
-              <ImageListItem key={item.name}>
-                <img
-                  src={`/portfolioImages/${item.name}`}
-                  alt={item.title}
-                  loading="lazy"
-                />
-                <ImageListItemBar
-                  title={item.title}
-                  subtitle={item.author}
-                  actionIcon={
-                    <IconButton
-                      sx={{ color: "rgba(255, 255, 255, 0.54)" }}
-                      aria-label={`info about ${item.title}`}
-                    >
-                      <InfoIcon />
-                    </IconButton>
-                  }
-                />
-              </ImageListItem>
+              <Grid item>
+                <ImageListItem key={item.name}>
+                  <Image
+                    src={`/portfolioImages/${item.name}`}
+                    alt={item.title}
+                    quality={95}
+                    width={440}
+                    height={320}
+                    style={{ objectFit: "cover", maxWidth: "100%" }}
+                  />
+                  <ImageListItemBar
+                    title={item.title}
+                    subtitle={item.author}
+                    actionIcon={
+                      <IconButton
+                        sx={{ color: "rgba(255, 255, 255, 0.54)" }}
+                        aria-label={`info about ${item.title}`}
+                      >
+                        <InfoIcon />
+                      </IconButton>
+                    }
+                  />
+                </ImageListItem>
+              </Grid>
             ))}
-          </ImageList>
+          </Grid>
         </CustomPaper>
       </MainWrapper>
     </>
@@ -54,20 +69,28 @@ const itemData = [
     name: "cad_car_isometric.png",
     title: "Breakfast",
     author: "@bkristastucchio",
+    width: 2566,
+    height: 1755,
   },
   {
     name: "comming_soon_to_a_store_near_you.png",
     title: "Burger",
     author: "@rollelflex_graphy726",
+    width: 2566,
+    height: 1755,
   },
   {
     name: "headphones_housing_inventor_assembly.png",
     title: "Camera",
     author: "@helloimnik",
+    width: 2566,
+    height: 1755,
   },
   {
     name: "sturdy_computer_desk.png",
     title: "Coffee",
     author: "@nolanissac",
+    width: 2566,
+    height: 1755,
   },
 ];
