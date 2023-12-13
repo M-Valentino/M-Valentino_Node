@@ -27,7 +27,7 @@
     "default-case-last": 1,
     "dot-location": [1, "property"],
     "dot-notation": 1,
-    "eol-last": 2,
+    "eol-last": 1,
     "eqeqeq": [1, "smart"],
     "func-call-spacing": 1,
     "func-name-matching": 1
