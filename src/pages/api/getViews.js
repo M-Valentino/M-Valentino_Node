@@ -17,5 +17,5 @@ export default async (request, response) => {
     const views = await kv.incr(`${title}_views`);
     return response.status(200).json(Intl.NumberFormat("en-us").format(views));
   }
-  return response.status(400);
+  return response.status(404);
 };
