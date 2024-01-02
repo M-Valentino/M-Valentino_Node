@@ -17,11 +17,11 @@
     "@react-spring/web": "^9.7.3",
     "@react-three/drei": "^9.89.0",
     "@react-three/fiber": "^8.15.11",
-    "@vercel/kv": "^1.0.0",
+    "@vercel/kv": "^1.0.1",
     "eslint": "8.54.0",
-    "eslint-config-next": "14.0.3",
+    "eslint-config-next": "14.0.4",
     "get-root-domain": "^0.0.1",
-    "next": "14.0.3",
+    "next": "14.0.4",
     "next-base64": "^1.1.0",
     "npm": "^10.2.1",
     "react": "18.2.0",
@@ -29,7 +29,7 @@
     "react-dom": "18.2.0",
     "react-type-animation": "^3.2.0",
     "react-useanimations": "^2.10.0",
-    "three": "^0.158.0",
+    "three": "^0.160.0",
     "verify-hcaptcha": "^1.0.0"
   }
 }
