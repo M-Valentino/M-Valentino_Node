@@ -73,7 +73,7 @@ export default function Contact() {
     try {
       // Token generated is already in base64.
       const response = await fetch(
-        `/api/sendMessage?email=${nextBase64.encode(
+        `/api/contact-message?email=${nextBase64.encode(
           emailRef.current.value
         )}&message=${nextBase64.encode(
           messageRef.current.value
