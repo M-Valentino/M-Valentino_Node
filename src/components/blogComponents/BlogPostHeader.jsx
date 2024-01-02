@@ -12,7 +12,7 @@ export const BlogPostHeader = (props) => {
 
   useEffect(() => {
     if (views === null) {
-      fetch(`/api/getViews?title=${item.title}`)
+      fetch(`/api/blog-post-views?title=${item.title}`)
         .then((res) => res.json())
         .then((data) => {
           setViews(data);
