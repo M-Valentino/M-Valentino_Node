@@ -13,7 +13,7 @@ export const ExpAndEduListItem = (props) => {
   return (
     <Grid item xs={12} md={6}>
       <ListItem disablePadding>
-        <ListItemButton href={url}>
+        <ListItemButton href={url} target="_blank" rel="noopener noreferrer">
           <ListItemIcon>
             {/* Generates a smaller image but optimized for 200% dpi scaling */}
             <Image
