@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { ExpAndEduListItem } from "@/components/homeComponents/ExpAndEduListItem";
 import OrangeEarth from "../components/OrangeEarth";
 import { CustomPaper } from "@/components/layout/CustomPaper";
 import { SubHeading } from "@/components/layout/Headings";
@@ -62,9 +63,12 @@ export default function Home() {
             Hi, I'm Mark Valentino.
           </span>
           <Typography style={{ marginTop: 15, fontSize: 18 }}>
-            Web development, app development, and graphics programming are my
-            specialties. I have gotten where I am today through passion,
-            perseverance, and curiosity.
+            I’m a highly motivated and highly knowledgeable software engineer
+            who is passionate about web development, app development, and
+            graphics programming. I excel at applying creative solutions to
+            problems when it seems all hope is lost. I’m a perfectionist in what
+            I do. I have gotten where I am today through passion, perseverance,
+            and curiosity.
           </Typography>
           <div
             style={{
@@ -90,7 +94,7 @@ export default function Home() {
                 zIndex: Z_INDEX_ORDER.avatar,
               }}
               alt="Professional portrait of me in a suite and tie."
-              src="/githubAvatar.png"
+              src="/home/githubAvatar.png"
             />
             <div
               style={{
@@ -120,6 +124,23 @@ export default function Home() {
               />
             </div>
           </div>
+          <SubHeading>Experience & Education</SubHeading>
+          <Grid container  style={{ marginBottom: 40 }}>
+            <ExpAndEduListItem
+              imgSRC="/home/landIntelligencePin.png"
+              imgAlt="Land Intelligence Pin Logo"
+              primaryText="Full Stack Developer & Data Technician"
+              secondaryText="Land Intelligence, Sept. 2022 - Nov. 2023"
+              url="https://www.landintelligence.net"
+            />
+            <ExpAndEduListItem
+              imgSRC="/home/uscLogo.png"
+              imgAlt="University of South Carolina Gamecocks logo"
+              primaryText="Bachelor of Science in Computer Science"
+              secondaryText="University of South Carolina, Jun. 2021 - May 2023"
+              url="https://sc.edu"
+            />
+          </Grid>
           <SubHeading>My Tech Stack</SubHeading>
           <Grid container spacing={4} justifyContent="center">
             {TECH_STACK.map((data, key) => (
