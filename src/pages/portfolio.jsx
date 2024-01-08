@@ -25,9 +25,23 @@ import { PAGE_TITLES } from "@/consts/pageTitles";
 import { SHADOWS, Z_INDEX_ORDER } from "@/consts/stylingValues";
 
 export default function Portfolio() {
+  const lessThanlargeTabletView = useMediaQuery("(max-width:1100px)");
   const [showDialog, setShowDialog] = useState(false);
   const [dialogItem, setDialogItem] = useState({});
-  const LessThanlargeTabletView = useMediaQuery("(max-width:1100px)");
+  const [zoomLevel, setZoomLevel] = useState(1);
+
+  const handleSetZoomLevel = () => {
+    if (zoomLevel === 1) {
+      setZoomLevel(2);
+    } else {
+      setZoomLevel(1);
+    }
+  };
+  const handleDialogClose = () => {
+    setShowDialog(false);
+    // Users will expect other images to not be zoomed in by default.
+    setZoomLevel(1);
+  };
 
   return (
     <>
@@ -50,7 +64,7 @@ export default function Portfolio() {
                      * on non desktop displays. Opening images in a new tab has a
                      * better UX.
                      */
-                    if (LessThanlargeTabletView) {
+                    if (lessThanlargeTabletView) {
                       window
                         .open(`/portfolioImages/${portfolioItem.url}`, "_blank")
                         .focus();
@@ -88,7 +102,7 @@ export default function Portfolio() {
         </CustomPaper>
         <Dialog
           open={showDialog}
-          onClose={() => setShowDialog(false)}
+          onClose={() => handleDialogClose()}
           fullWidth
           maxWidth="97.5%"
           style={{ zIndex: Z_INDEX_ORDER.dialog }}
@@ -99,11 +113,11 @@ export default function Portfolio() {
               {dialogItem.programUsed}
             </Typography>
             <Typography
-              style={{ fontSize: 17, fontWeight: 500, marginLeft: 20 }}
+              style={{ fontSize: 17, fontWeight: 600, marginLeft: 20 }}
             >
               {dialogItem.title}
             </Typography>
-            <IconButton onClick={() => setShowDialog(false)}>
+            <IconButton onClick={() => handleDialogClose()}>
               <CloseIcon
                 color="primary"
                 fontSize="large"
@@ -113,12 +127,14 @@ export default function Portfolio() {
           </DialogActions>
           <DialogContent>
             <img
+              onClick={() => handleSetZoomLevel()}
               src={`/portfolioImages/${dialogItem.url}`}
               style={{
+                cursor: zoomLevel === 1 ? "zoom-in" : "zoom-out",
                 width:
                   dialogItem.orientation === ORIENTATION_TYPE.landscape
-                    ? "75%"
-                    : "45%",
+                    ? `calc(${zoomLevel} * 75%)`
+                    : `calc(${zoomLevel} * 45%)`,
                 margin: "auto",
                 display: "block",
                 imageRendering:
