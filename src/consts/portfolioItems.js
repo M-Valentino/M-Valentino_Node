@@ -11,7 +11,6 @@ export const IMAGE_TYPE = {
 export const ORIENTATION_TYPE = {
   landscape: "landscape",
   portrait: "portrait",
-  square: "square",
 };
 
 export const PORTFOLIO_ITEMS = [
