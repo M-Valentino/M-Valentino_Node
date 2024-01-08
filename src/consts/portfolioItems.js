@@ -3,47 +3,59 @@ const PROGRAMS = {
   inventor: "Inventor",
 };
 
-const IMAGE_TYPE = {
+export const IMAGE_TYPE = {
   regular: "regular",
   pixelArt: "pixelArt",
 };
 
+export const ORIENTATION_TYPE = {
+  landscape: "landscape",
+  portrait: "portrait",
+  square: "square",
+};
+
 export const PORTFOLIO_ITEMS = [
   {
-    name: "cad_car_isometric.png",
+    url: "cad_car_isometric.png",
     imageType: IMAGE_TYPE.regular,
     title: "Isometric Car",
     programUsed: PROGRAMS.autoCAD,
+    orientation: ORIENTATION_TYPE.landscape,
   },
 
   {
-    name: "headphones_housing_inventor_assembly.png",
+    url: "headphones_housing_inventor_assembly.png",
     imageType: IMAGE_TYPE.regular,
     title: "Headphones Inventor Assembly",
     programUsed: PROGRAMS.inventor,
+    orientation: ORIENTATION_TYPE.portrait,
   },
   {
-    name: "sturdy_computer_desk.png",
+    url: "sturdy_computer_desk.png",
     imageType: IMAGE_TYPE.regular,
     title: "Sturdy Computer Desk",
     programUsed: PROGRAMS.autoCAD,
+    orientation: ORIENTATION_TYPE.landscape,
   },
   {
-    name: "bowtiepastafan.png",
+    url: "bowtiepastafan.png",
     imageType: IMAGE_TYPE.regular,
     title: "Bowtie Pasta Fan Showdown Submission",
     programUsed: PROGRAMS.inventor,
+    orientation: ORIENTATION_TYPE.portrait,
   },
   {
-    name: "comming_soon_to_a_store_near_you.png",
+    url: "comming_soon_to_a_store_near_you.png",
     imageType: IMAGE_TYPE.regular,
     title: "Handheld Virtual Pet Game",
     programUsed: PROGRAMS.inventor,
+    orientation: ORIENTATION_TYPE.landscape,
   },
   {
-    name: "unexpectedvistior.png",
+    url: "unexpectedvistior.png",
     imageType: IMAGE_TYPE.pixelArt,
-    title: "Undexpected Visitor",
+    title: "Unexpected Visitor",
     programUsed: `${PROGRAMS.autoCAD} (for perspective layout), Game Maker Sprite Editor`,
+    orientation: ORIENTATION_TYPE.portrait,
   },
 ];

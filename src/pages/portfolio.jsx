@@ -1,23 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import {
+  Dialog,
+  DialogActions,
+  DialogContent,
   Grid,
   ImageListItem,
   ImageListItemBar,
-  // IconButton,
+  IconButton,
   Typography,
+  useMediaQuery,
 } from "@mui/material/";
-// import InfoIcon from "@mui/icons-material/Info";
+import CloseIcon from "@mui/icons-material/Close";
 import { CustomHead } from "@/components/layout/CustomHead";
 import { CustomPaper } from "@/components/layout/CustomPaper";
 import { MainWrapper } from "@/components/layout/MainWrapper";
 import { MainHeading } from "@/components/layout/Headings";
-import { PORTFOLIO_ITEMS } from "@/consts/portfolioItems";
+import {
+  PORTFOLIO_ITEMS,
+  IMAGE_TYPE,
+  ORIENTATION_TYPE,
+} from "@/consts/portfolioItems";
 import { PAGE_TITLES } from "@/consts/pageTitles";
-import { SHADOWS } from "@/consts/stylingValues";
+import { SHADOWS, Z_INDEX_ORDER } from "@/consts/stylingValues";
 
 export default function Portfolio() {
+  const [showDialog, setShowDialog] = useState(false);
+  const [dialogItem, setDialogItem] = useState({});
+  const LessThanlargeTabletView = useMediaQuery("(max-width:1100px)");
+
   return (
     <>
       <CustomHead />
@@ -30,49 +41,94 @@ export default function Portfolio() {
           </Typography>
           <Grid container spacing={1} justifyContent="center">
             {PORTFOLIO_ITEMS.map((portfolioItem) => (
-              <Grid item key={portfolioItem.name}>
-                <Link href={`/portfolioImages/${portfolioItem.name}`}>
-                  <ImageListItem style={{ boxShadow: SHADOWS.small }}>
-                    {portfolioItem.imageType === "regular" ? (
-                      <Image
-                        src={`/portfolioImages/${portfolioItem.name}`}
-                        alt={portfolioItem.title}
-                        quality={95}
-                        width={440}
-                        height={320}
-                        style={{ objectFit: "cover", maxWidth: "100%" }}
-                      />
-                    ) : (
-                      <img
-                        src={`/portfolioImages/${portfolioItem.name}`}
-                        alt={portfolioItem.title}
-                        style={{
-                          width: 440,
-                          height: 320,
-                          objectFit: "cover",
-                          maxWidth: "100%",
-                          imageRendering: "pixelated",
-                        }}
-                      />
-                    )}
-                    <ImageListItemBar
-                      title={portfolioItem.title}
-                      subtitle={portfolioItem.programUsed}
-                      // actionIcon={
-                      //   <IconButton
-                      //     sx={{ color: "rgba(255, 255, 255, 0.7)" }}
-                      //     aria-label={`info about ${portfolioItem.title}`}
-                      //   >
-                      //     <InfoIcon />
-                      //   </IconButton>
-                      // }
-                    />
-                  </ImageListItem>
-                </Link>
+              <Grid item key={portfolioItem.url}>
+                <ImageListItem
+                  style={{ boxShadow: SHADOWS.small, cursor: "pointer" }}
+                  onClick={() => {
+                    /**
+                     * Images in dialogs are barely smaller than the ImageListItem
+                     * on non desktop displays. Opening images in a new tab has a
+                     * better UX.
+                     */
+                    if (LessThanlargeTabletView) {
+                      window
+                        .open(`/portfolioImages/${portfolioItem.url}`, "_blank")
+                        .focus();
+                    } else {
+                      setShowDialog(true);
+                      setDialogItem(portfolioItem);
+                    }
+                  }}
+                >
+                  <Image
+                    src={`/portfolioImages/${portfolioItem.url}`}
+                    alt={portfolioItem.title}
+                    quality={
+                      portfolioItem.imageType === IMAGE_TYPE.pixelArt ? 100 : 90
+                    }
+                    width={440}
+                    height={320}
+                    style={{
+                      objectFit: "cover",
+                      maxWidth: "100%",
+                      imageRendering:
+                        portfolioItem.imageType === IMAGE_TYPE.pixelArt
+                          ? "pixelated"
+                          : "initial",
+                    }}
+                  />
+                  <ImageListItemBar
+                    title={portfolioItem.title}
+                    subtitle={portfolioItem.programUsed}
+                  />
+                </ImageListItem>
               </Grid>
             ))}
           </Grid>
         </CustomPaper>
+        <Dialog
+          open={showDialog}
+          onClose={() => setShowDialog(false)}
+          fullWidth
+          maxWidth="97.5%"
+          style={{ zIndex: Z_INDEX_ORDER.dialog }}
+        >
+          <DialogActions style={{ flexDirection: "row-reverse" }}>
+            <Typography style={{ marginLeft: 20, fontSize: 14 }}>
+              <b>Made With: </b>
+              {dialogItem.programUsed}
+            </Typography>
+            <Typography
+              style={{ fontSize: 17, fontWeight: 500, marginLeft: 20 }}
+            >
+              {dialogItem.title}
+            </Typography>
+            <IconButton onClick={() => setShowDialog(false)}>
+              <CloseIcon
+                color="primary"
+                fontSize="large"
+                style={{ filter: SHADOWS.minuteSVG }}
+              />
+            </IconButton>
+          </DialogActions>
+          <DialogContent>
+            <img
+              src={`/portfolioImages/${dialogItem.url}`}
+              style={{
+                width:
+                  dialogItem.orientation === ORIENTATION_TYPE.landscape
+                    ? "75%"
+                    : "45%",
+                margin: "auto",
+                display: "block",
+                imageRendering:
+                  dialogItem.imageType === IMAGE_TYPE.pixelArt
+                    ? "pixelated"
+                    : "initial",
+              }}
+            />
+          </DialogContent>
+        </Dialog>
       </MainWrapper>
     </>
   );
