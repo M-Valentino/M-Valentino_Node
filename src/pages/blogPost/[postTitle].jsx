@@ -31,6 +31,8 @@ export default function BlogTemplate({ post }) {
         title={`Mark Valentino - ${post.title}${
           post.appendQuestionMark ? "?" : ""
         }`}
+        descriptionText={post.descriptionText}
+        keywords={post.keywords}
       />
       <MainWrapper>
         <BlogDrawer />

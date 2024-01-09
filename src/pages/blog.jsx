@@ -22,16 +22,22 @@ export const BLOG_POSTS = [
   {
     component: <Post3 />,
     title: "My UX Invention to Let Users Know Where Links Go",
+    descriptionText: "No more guesing. Hover over links and see the site's favicon and domain name.",
+    keywords: "UX, user experience, security, tooltip, favicon, invention, code",
     date: "December 5th, 2023",
   },
   {
     component: <Post2 />,
     title: "I Don't Quite Like the Design of My Site",
+    descriptionText: "My current website may look clean and modern, but I wish I didn't have to follow trends.",
+    keywords: "web design, marketabiltiy, old website, unique",
     date: "November 26, 2023",
   },
   {
     component: <Post1 />,
     title: "Could My Image Processing Library Replace MarvinJ",
+    descriptionText: "My library has extra features such as color sorting and noise filters. I call it MarvalJ.",
+    keywords: "JavaScript, MarvinJ, MarvalJ, library, new, image processing",
     appendQuestionMark: true,
     date: "October 15, 2023",
   },
