@@ -35,7 +35,7 @@ export default function BlogTemplate({ post }) {
       <MainWrapper>
         <BlogDrawer />
         <CustomPaper>
-          <BlogPostHeader item={post} />
+          <BlogPostHeader item={post} isShownOnOwnURL />
           {getBlogComponent(post.title)}
         </CustomPaper>
       </MainWrapper>

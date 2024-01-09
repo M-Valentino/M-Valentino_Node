@@ -3,11 +3,12 @@ import ShareIcon from "@mui/icons-material/Share";
 import { Grid, IconButton, Tooltip, Typography } from "@mui/material";
 import { PAGE_TITLES } from "@/consts/pageTitles";
 import { COLORS, SHADOWS } from "@/consts/stylingValues";
-import { SubHeading } from "@/components/layout/Headings";
+import { MainHeading, SubHeading } from "@/components/layout/Headings";
 import { useSpring, animated } from "@react-spring/web";
 
 export const BlogPostHeader = (props) => {
-  const { item, postIndex, postIdCopied, setPostIdCopied } = props;
+  const { item, postIndex, postIdCopied, setPostIdCopied, isShownOnOwnURL } =
+    props;
   const [views, setViews] = useState(null);
 
   useEffect(() => {
@@ -42,10 +43,21 @@ export const BlogPostHeader = (props) => {
 
   return (
     <>
-      <SubHeading>
-        {item.title}
-        {item.appendQuestionMark ? "?" : ""}
-      </SubHeading>
+      {isShownOnOwnURL ? (
+        /**
+         * If the post is not on the feed, the blog post title becomes
+         * the H1. This is for SEO
+         */
+        <MainHeading>
+          {item.title}
+          {item.appendQuestionMark ? "?" : ""}
+        </MainHeading>
+      ) : (
+        <SubHeading>
+          {item.title}
+          {item.appendQuestionMark ? "?" : ""}
+        </SubHeading>
+      )}
       <Grid container spacing={2}>
         <Grid item>
           <Typography
