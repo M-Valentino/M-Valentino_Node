@@ -44,7 +44,6 @@ export default function ProjectPage(props) {
     gitLink,
   } = props.data;
   const isDesktopView = useMediaQuery("(min-width:900px)");
-  const isLargeMobileView = useMediaQuery("(max-width:428px)");
   // Handles whether the iframe covers the whole page or not.
   const [iframeFullSize, setIframeFullSize] = useState(false);
 
@@ -128,7 +127,7 @@ export default function ProjectPage(props) {
   };
   return (
     <CustomPaper>
-      <MainHeading shrinkFontOn={isLargeMobileView} addMarginBottomOn={true}>
+      <MainHeading addMarginBottomOn={true}>
         {title}
       </MainHeading>
       {getProjectComponent()}

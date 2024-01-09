@@ -152,9 +152,14 @@ https://github.com/JedWatson/react-select/issues/3309
     font-size: 14px;
   }
 
+  .mainHeading {
+    font-size: 48px !important;
+  }
+
   .subHeading {
     font-size: 34px !important;
   }
+
 }
 
 @media only screen and (max-width:428px) {
@@ -162,9 +167,14 @@ https://github.com/JedWatson/react-select/issues/3309
     font-size: 11px;
   }
 
+  .mainHeading {
+    font-size: 36px !important;
+  }
+
   .subHeading {
     font-size: 24px !important;
   }
+
 }
 
 @media only screen and (max-width:412px) {

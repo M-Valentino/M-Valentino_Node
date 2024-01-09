@@ -2,10 +2,11 @@ import React from "react";
 import { Typography } from "@mui/material";
 import { SHADOWS } from "@/consts/stylingValues";
 
-export const MainHeading = ({ children, shrinkFontOn, addMarginBottomOn }) => {
+export const MainHeading = ({ children, addMarginBottomOn }) => {
   return (
     <Typography
-      variant={shrinkFontOn ? "h4" : "h3"}
+      className="mainHeading"
+      variant="h1"
       fontWeight={600}
       textAlign={"center"}
       style={{
@@ -23,6 +24,7 @@ export const SubHeading = ({ children }) => {
     <Typography
       className="subHeading"
       color="text.primary"
+      variant="h2"
       style={{
         marginBottom: 15,
         textShadow: SHADOWS.minute,

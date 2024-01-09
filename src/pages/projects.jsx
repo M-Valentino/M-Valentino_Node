@@ -202,12 +202,7 @@ export default function Projects() {
             </Stack>
           </Grid>
           <Grid id="prjctHdingWrppr" item md={4} xs={12}>
-            <MainHeading
-              shrinkFontOn={isTabletView}
-              addMarginBottomOn={isTabletView}
-            >
-              Projects
-            </MainHeading>
+            <MainHeading addMarginBottomOn={isTabletView}>Projects</MainHeading>
           </Grid>
           <Grid item md={4} xs={12}>
             <Stack direction="row">
