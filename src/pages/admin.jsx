@@ -15,7 +15,7 @@ export default function Admin() {
       const response = await fetch(
         `/api/message-inbox?numberOfMessages=${
           numberOfMessages.current.value - 1
-        }&password=`,
+        }`,
         {
           method: "GET",
           headers: new Headers({
