@@ -131,7 +131,7 @@ export default function Home() {
               imgAlt="Land Intelligence Pin Logo"
               primaryText="Full Stack Developer & Data Technician"
               secondaryText="Land Intelligence, Sept. 2022 - Nov. 2023"
-              url="https://www.landintelligence.net"
+              url="https://web.archive.org/web/20230106061229/https://landintelligence.net"
             />
             <ExpAndEduListItem
               imgSRC="/home/uscLogo.png"
