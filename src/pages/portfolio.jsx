@@ -127,6 +127,7 @@ export default function Portfolio() {
           </DialogActions>
           <DialogContent>
             <img
+              alt={dialogItem.title}
               onClick={() => handleSetZoomLevel()}
               src={`/portfolioImages/${dialogItem.url}`}
               style={{
