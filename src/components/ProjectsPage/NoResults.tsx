@@ -13,7 +13,7 @@ export const NoResults = () => {
           height: 75,
           display: "block",
           margin: "auto",
-          filter: SHADOWS.minute_SVG,
+          filter: SHADOWS.minuteSVG,
         }}
       />
       <Typography>

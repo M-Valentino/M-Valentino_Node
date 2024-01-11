@@ -1,3 +1,4 @@
+import React from "react";
 import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
@@ -18,7 +19,6 @@ export default function Document() {
         style={{
           margin: 0,
           height: "fit",
-          imageRendering: "high-quality",
           backgroundImage: "url(/rotated%20rectangle.svg)",
           backgroundSize: "fill",
           backgroundRepeat: "no-repeat",

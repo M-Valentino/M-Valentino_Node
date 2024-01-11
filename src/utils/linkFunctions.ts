@@ -1,6 +1,6 @@
 import { PAGE_TITLES } from "../consts/pageTitles";
 
-export const generateNavLink = (navtext) => {
+export const generateNavLink = (navtext: string) => {
   switch (navtext) {
     case PAGE_TITLES.home:
       return "/";
@@ -19,6 +19,6 @@ export const generateNavLink = (navtext) => {
  * @param {*} string the input string to be formatted
  * @returns formatted string
  */
-export const formatForRedisKey = (string) => {
+export const formatForRedisKey = (string: string) => {
   return string.replace(/\s/g, "").replace(/'/g, "");
 };
