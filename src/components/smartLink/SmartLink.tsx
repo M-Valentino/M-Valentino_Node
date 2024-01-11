@@ -4,9 +4,9 @@ import { InternalLink } from "./InternalLink";
 
 interface SmartLinkProps {
   href: string;
-  children: FC;
-  style: object;
-  openInNewTab: boolean;
+  children: FC | string;
+  style?: object;
+  openInNewTab?: boolean;
 }
 
 export const SmartLink: React.FC<SmartLinkProps> = ({
