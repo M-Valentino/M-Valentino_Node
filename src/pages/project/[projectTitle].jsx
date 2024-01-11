@@ -1,8 +1,8 @@
 import React from "react";
-import { MainWrapper } from "@/components/layout/MainWrapper";
-import ProjectPage from "@/components/ProjectPage";
-import { CustomHead } from "@/components/layout/CustomHead";
-import { PROJECT_CONTENT } from "@/consts/projectContent";
+import { MainWrapper } from "../../components/layout/MainWrapper";
+import ProjectPage from "../../components/ProjectPage";
+import { CustomHead } from "../../components/layout/CustomHead";
+import { PROJECT_CONTENT } from "../../consts/projectContent";
 
 // Function to get all possible paths for individual project pages
 export const getStaticPaths = async () => {

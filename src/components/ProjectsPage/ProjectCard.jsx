@@ -9,9 +9,9 @@ import {
 } from "@mui/material";
 import { useSpring, animated } from "@react-spring/web";
 import { LanguageChip } from "../LanguageChip";
-import { COLORS, GRADIENTS, SHADOWS } from "@/consts/stylingValues";
-import { HREF_TYPES } from "@/consts/projectContent";
-import { PLUS_MORE } from "@/consts/projectContent";
+import { COLORS, GRADIENTS, SHADOWS } from "../../consts/stylingValues";
+import { HREF_TYPES } from "../../consts/projectContent";
+import { PLUS_MORE } from "../../consts/projectContent";
 
 /**
  * This component takes in one project object from the projectContent array and

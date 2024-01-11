@@ -13,13 +13,13 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import { LanguageChip } from "./LanguageChip";
 import { CustomPaper } from "./layout/CustomPaper";
 import { MainHeading } from "./layout/Headings";
-import { getExtraProjectContent } from "@/utils/getProjectExtraContent";
+import { getExtraProjectContent } from "../utils/getProjectExtraContent";
 import {
   SCREEN_CONTROL_STYLES,
   SHADOWS,
   Z_INDEX_ORDER,
-} from "@/consts/stylingValues";
-import { HREF_TYPES } from "@/consts/projectContent";
+} from "../consts/stylingValues";
+import { HREF_TYPES } from "../consts/projectContent";
 
 /**
  * Component that is shown that takes up most of the screen. When a project

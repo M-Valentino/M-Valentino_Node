@@ -13,7 +13,8 @@ import {
 } from "@mui/material";
 import { LanguageChip } from "../LanguageChip";
 import { CustomPaper } from "../layout/CustomPaper";
-import { PLUS_MORE } from "@/consts/projectContent";
+import { PLUS_MORE } from "../../consts/projectContent";
+
 
 export default function ProjectTable(props) {
   const { PROJECT_CONTENT } = props;

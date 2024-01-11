@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Z_INDEX_ORDER } from "@/consts/stylingValues";
+import { Z_INDEX_ORDER } from "../consts/stylingValues";
 
 const integratedCircuit = (
   <div

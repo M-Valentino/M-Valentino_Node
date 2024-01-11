@@ -12,17 +12,17 @@ import {
   useMediaQuery,
 } from "@mui/material/";
 import CloseIcon from "@mui/icons-material/Close";
-import { CustomHead } from "@/components/layout/CustomHead";
-import { CustomPaper } from "@/components/layout/CustomPaper";
-import { MainWrapper } from "@/components/layout/MainWrapper";
-import { MainHeading } from "@/components/layout/Headings";
+import { CustomHead } from "../components/layout/CustomHead";
+import { CustomPaper } from "../components/layout/CustomPaper";
+import { MainWrapper } from "../components/layout/MainWrapper";
+import { MainHeading } from "../components/layout/Headings";
 import {
   PORTFOLIO_ITEMS,
   IMAGE_TYPE,
   ORIENTATION_TYPE,
-} from "@/consts/portfolioItems";
-import { PAGE_TITLES } from "@/consts/pageTitles";
-import { SHADOWS, Z_INDEX_ORDER } from "@/consts/stylingValues";
+} from "../consts/portfolioItems";
+import { PAGE_TITLES } from "../consts/pageTitles";
+import { SHADOWS, Z_INDEX_ORDER } from "../consts/stylingValues";
 
 export default function Portfolio() {
   const lessThanlargeTabletView = useMediaQuery("(max-width:1100px)");

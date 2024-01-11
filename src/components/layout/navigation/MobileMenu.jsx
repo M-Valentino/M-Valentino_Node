@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Divider, IconButton, Menu } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { SHADOWS, Z_INDEX_ORDER } from "@/consts/stylingValues";
-import { PAGE_TITLES } from "@/consts/pageTitles";
+import { SHADOWS, Z_INDEX_ORDER } from "../../../consts/stylingValues";
+import { PAGE_TITLES } from "../../../consts/pageTitles";
 import { MobileNavItem } from "./MobileNavItem";
 
 export const MobileMenu = ({ activeLink }) => {

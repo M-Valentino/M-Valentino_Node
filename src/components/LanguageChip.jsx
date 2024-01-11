@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { SmartLink } from "./smartLink/SmartLink";
-import { PLUS_MORE, LANGUAGES, LANGUAGE_LINKS } from "@/consts/projectContent";
+import { PLUS_MORE, LANGUAGES, LANGUAGE_LINKS } from "../consts/projectContent";
 import { Typography } from "@mui/material";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { useSpring, animated } from "@react-spring/web";
-import { SHADOWS } from "@/consts/stylingValues";
+import { SHADOWS } from "../consts/stylingValues";
 
 /**
  * This is a component akin to MUI chips. LanguageChip is used in showing what coding languages

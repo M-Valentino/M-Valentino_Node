@@ -17,15 +17,15 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import ViewListIcon from "@mui/icons-material/ViewList";
 import ViewModuleIcon from "@mui/icons-material/ViewModule";
-import { MainWrapper } from "@/components/layout/MainWrapper";
-import ProjectCard from "@/components/ProjectsPage/ProjectCard";
-import ProjectTable from "@/components/ProjectsPage/ProjectTable";
-import { CustomHead } from "@/components/layout/CustomHead";
-import { NoResults } from "@/components/ProjectsPage/NoResults";
-import { PROJECT_CONTENT } from "@/consts/projectContent";
-import { SHADOWS } from "@/consts/stylingValues";
-import { MainHeading } from "@/components/layout/Headings";
-import { PAGE_TITLES } from "@/consts/pageTitles";
+import { MainWrapper } from "../components/layout/MainWrapper";
+import ProjectCard from "../components/ProjectsPage/ProjectCard";
+import ProjectTable from "../components/ProjectsPage/ProjectTable";
+import { CustomHead } from "../components/layout/CustomHead";
+import { NoResults } from "../components/ProjectsPage/NoResults";
+import { PROJECT_CONTENT } from "../consts/projectContent";
+import { SHADOWS } from "../consts/stylingValues";
+import { MainHeading } from "../components/layout/Headings";
+import { PAGE_TITLES } from "../consts/pageTitles";
 
 /**
  * This component shows all projects in either a card view or a table view.

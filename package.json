@@ -31,5 +31,9 @@
     "react-useanimations": "^2.10.0",
     "three": "^0.160.0",
     "verify-hcaptcha": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.47",
+    "typescript": "^5.3.3"
   }
 }

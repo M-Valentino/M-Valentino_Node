@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Tooltip } from "@mui/material";
 import getRootDomain from "get-root-domain";
 import { LinkInfoWrapper } from "./LinkInfoWrapper";
-import { EXTERNAL_FAVICON_STYLES } from "@/consts/stylingValues";
+import { EXTERNAL_FAVICON_STYLES } from "../../consts/stylingValues";
 
 export const ExternalLink = ({ href, children, style, openInNewTab }) => {
   const rootDomain = getRootDomain(href);

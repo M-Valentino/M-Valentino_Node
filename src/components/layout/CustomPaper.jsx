@@ -1,5 +1,5 @@
 import React from "react";
-import { GRADIENTS, SHADOWS } from "@/consts/stylingValues";
+import { GRADIENTS, SHADOWS } from "../../consts/stylingValues";
 
 // This component holds page sections inside the <main> content.
 export const CustomPaper = (props) => {

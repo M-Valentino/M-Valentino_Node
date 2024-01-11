@@ -1,24 +1,24 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ExpAndEduListItem } from "@/components/homeComponents/ExpAndEduListItem";
+import { ExpAndEduListItem } from "../components/homeComponents/ExpAndEduListItem";
 import OrangeEarth from "../components/OrangeEarth";
-import { CustomPaper } from "@/components/layout/CustomPaper";
-import { SubHeading } from "@/components/layout/Headings";
-import { CustomHead } from "@/components/layout/CustomHead";
-import { MainWrapper } from "@/components/layout/MainWrapper";
-import ProjectCard from "@/components/ProjectsPage/ProjectCard";
-import { PROJECT_CONTENT } from "@/consts/projectContent";
+import { CustomPaper } from "../components/layout/CustomPaper";
+import { SubHeading } from "../components/layout/Headings";
+import { CustomHead } from "../components/layout/CustomHead";
+import { MainWrapper } from "../components/layout/MainWrapper";
+import ProjectCard from "../components/ProjectsPage/ProjectCard";
+import { PROJECT_CONTENT } from "../consts/projectContent";
 import {
   BASE_64_IMAGES,
   COLORS,
   SHADOWS,
   Z_INDEX_ORDER,
-} from "@/consts/stylingValues";
-import { TECH_STACK } from "@/consts/techStack";
+} from "../consts/stylingValues";
+import { TECH_STACK } from "../consts/techStack";
 import { Button, Grid, Stack, Typography } from "@mui/material";
 import { TypeAnimation } from "react-type-animation";
-import { PAGE_TITLES } from "@/consts/pageTitles";
+import { PAGE_TITLES } from "../consts/pageTitles";
 
 export default function Home() {
   return (

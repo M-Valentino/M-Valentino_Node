@@ -8,7 +8,7 @@ import {
   checkMessageInvalid,
   checkMessageTooLong,
   checkMessageTooShort,
-} from "@/utils/validations";
+} from "../../utils/validations";
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { SmartLink } from "@/components/smartLink/SmartLink";
+import { SmartLink } from "../../../components/smartLink/SmartLink";
 import { Typography } from "@mui/material";
 import { CodeBlock, dracula } from "react-code-blocks";
 
@@ -8,7 +8,7 @@ export const Post3 = () => {
 import { Tooltip } from "@mui/material";
 import getRootDomain from "get-root-domain";
 import { LinkInfoWrapper } from "./LinkInfoWrapper";
-import { EXTERNAL_FAVICON_STYLES } from "@/consts/stylingValues";
+import { EXTERNAL_FAVICON_STYLES } from "../consts/stylingValues";
 
 export const ExternalLink = ({ href, children, style, openInNewTab }) => {
   const rootDomain = getRootDomain(href);

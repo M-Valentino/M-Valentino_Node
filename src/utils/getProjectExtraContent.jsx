@@ -1,10 +1,10 @@
 import React from "react";
-import { PROJECT_TITLES } from "@/consts/projectContent";
-import { ImageToDivsContent } from "@/components/projectExtraContent/ImageToDivsContent";
-import { Earth3JSContent } from "@/components/projectExtraContent/Earth3JSContent";
-import { IcatContent } from "@/components/projectExtraContent/IcatContent";
-import { ISpyShopperContent } from "@/components/projectExtraContent/ISpyShopperContent";
-import { ExploringCannyEdgeDetectionContent } from "@/components/projectExtraContent/ExploringCannyEdgeDetectionContent";
+import { PROJECT_TITLES } from "../consts/projectContent";
+import { ImageToDivsContent } from "../components/projectExtraContent/ImageToDivsContent";
+import { Earth3JSContent } from "../components/projectExtraContent/Earth3JSContent";
+import { IcatContent } from "../components/projectExtraContent/IcatContent";
+import { ISpyShopperContent } from "../components/projectExtraContent/ISpyShopperContent";
+import { ExploringCannyEdgeDetectionContent } from "../components/projectExtraContent/ExploringCannyEdgeDetectionContent";
 
 /**
  * Function to get extra content associated with a project. This content is shown on

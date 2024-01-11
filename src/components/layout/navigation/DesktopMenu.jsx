@@ -2,8 +2,8 @@ import React from "react";
 import UseAnimations from "react-useanimations";
 import github from "react-useanimations/lib/github";
 import linkedin from "react-useanimations/lib/linkedin";
-import { COLORS, SHADOWS } from "@/consts/stylingValues";
-import { PAGE_TITLES } from "@/consts/pageTitles";
+import { COLORS, SHADOWS } from "../../../consts/stylingValues";
+import { PAGE_TITLES } from "../../../consts/pageTitles";
 import { NavButton } from "./NavButton";
 
 export const DesktopMenu = ({ activeLink }) => {

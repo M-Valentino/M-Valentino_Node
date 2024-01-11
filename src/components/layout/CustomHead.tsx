@@ -1,4 +1,13 @@
 import Head from "next/head";
+import React from "react";
+
+interface CustomHeadProps {
+  descriptionText: string;
+  title: string;
+  keywords: string;
+  loadClarity: boolean;
+}
+
 /**
  * Function to return head elements used inside every webpage.This function
  * exists to keep code for pages less cluttered.
@@ -8,7 +17,7 @@ import Head from "next/head";
  * @param {*} loadClarity a boolean to determine if Clarity should be loaded.
  * @returns component
  */
-export const CustomHead = ({
+export const CustomHead: React.FC<CustomHeadProps> = ({
   descriptionText,
   title,
   keywords,

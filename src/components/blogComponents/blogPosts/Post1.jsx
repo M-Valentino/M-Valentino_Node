@@ -5,8 +5,8 @@ import {
   LANGUAGE_LINKS,
   LANGUAGES,
   PROJECT_TITLES,
-} from "@/consts/projectContent";
-import { SmartLink } from "@/components/smartLink/SmartLink";
+} from "../../../consts/projectContent";
+import { SmartLink } from "../../../components/smartLink/SmartLink";
 
 export const Post1 = () => {
   const isDesktopView = useMediaQuery("(min-width:900px)");

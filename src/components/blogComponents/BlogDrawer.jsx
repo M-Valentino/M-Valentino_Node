@@ -13,8 +13,8 @@ import {
 } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CloseIcon from "@mui/icons-material/Close";
-import { COLORS, SHADOWS, Z_INDEX_ORDER } from "@/consts/stylingValues";
-import { BLOG_POSTS_NO_COMPONENT } from "@/pages/blog";
+import { COLORS, SHADOWS, Z_INDEX_ORDER } from "../../consts/stylingValues";
+import { BLOG_POSTS_NO_COMPONENT } from "../../pages/blog";
 
 /**
  * This Component handles the code for displaying the list of blog posts

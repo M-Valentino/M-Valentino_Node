@@ -1,5 +1,5 @@
 import React from "react";
-import { COLORS, SHADOWS } from "@/consts/stylingValues";
+import { COLORS, SHADOWS } from "../../consts/stylingValues";
 
 export const LinkInfoWrapper = ({ children, rootDomain }) => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { SmartLink } from "@/components/smartLink/SmartLink";
+import { SmartLink } from "../../../components/smartLink/SmartLink";
 import { Typography } from "@mui/material";
 
 export const Post2 = () => {

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import { CustomPaper } from "@/components/layout/CustomPaper";
-import { MainWrapper } from "@/components/layout/MainWrapper";
+import { CustomPaper } from "../components/layout/CustomPaper";
+import { MainWrapper } from "../components/layout/MainWrapper";
 import nextBase64 from "next-base64";
 import { Button, Grid, Divider, TextField, Typography } from "@mui/material";
 

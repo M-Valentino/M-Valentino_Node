@@ -1,6 +1,6 @@
 import { kv } from "@vercel/kv";
 import { BLOG_POSTS_NO_COMPONENT } from "../blog";
-import { formatForRedisKey } from "@/utils/linkFunctions";
+import { formatForRedisKey } from "../../utils/linkFunctions";
 
 /**
  * Function to get number of views associated with a blog post and

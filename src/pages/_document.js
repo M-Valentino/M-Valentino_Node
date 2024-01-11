@@ -21,11 +21,8 @@ export default function Document() {
           imageRendering: "high-quality",
           backgroundImage: "url(/rotated%20rectangle.svg)",
           backgroundSize: "fill",
-          // backgroundSize: "95vw, 420vh",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "right 50% top 80px",
-
-          
         }}
       >
         <Main />

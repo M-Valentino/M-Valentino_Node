@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import nextBase64 from "next-base64";
-import { CustomHead } from "@/components/layout/CustomHead";
-import { MainWrapper } from "@/components/layout/MainWrapper";
-import { CustomPaper } from "@/components/layout/CustomPaper";
-import { MainHeading } from "@/components/layout/Headings";
-import { SmartLink } from "@/components/smartLink/SmartLink";
+import { CustomHead } from "../components/layout/CustomHead";
+import { MainWrapper } from "../components/layout/MainWrapper";
+import { CustomPaper } from "../components/layout/CustomPaper";
+import { MainHeading } from "../components/layout/Headings";
+import { SmartLink } from "../components/smartLink/SmartLink";
 import { Button, TextField, Typography } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import {
@@ -16,9 +16,9 @@ import {
   checkMessageTooShort,
   checkHasGibberish,
   MAX_MESSAGE_LENGTH,
-} from "@/utils/validations";
-import { PAGE_TITLES } from "@/consts/pageTitles";
-import { SHADOWS } from "@/consts/stylingValues";
+} from "../utils/validations";
+import { PAGE_TITLES } from "../consts/pageTitles";
+import { SHADOWS } from "../consts/stylingValues";
 
 export default function Contact() {
   const emailRef = useRef();

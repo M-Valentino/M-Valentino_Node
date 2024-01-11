@@ -1,4 +1,4 @@
-import { PAGE_TITLES } from "@/consts/pageTitles";
+import { PAGE_TITLES } from "../consts/pageTitles";
 
 export const generateNavLink = (navtext) => {
   switch (navtext) {

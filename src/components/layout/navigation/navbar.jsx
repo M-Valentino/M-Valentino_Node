@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@mui/material/";
-import { GRADIENTS, SHADOWS, Z_INDEX_ORDER } from "@/consts/stylingValues";
+import { GRADIENTS, SHADOWS, Z_INDEX_ORDER } from "../../../consts/stylingValues";
 import { MobileMenu } from "./MobileMenu";
 import { DesktopMenu } from "./DesktopMenu";
 

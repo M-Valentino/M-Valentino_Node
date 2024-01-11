@@ -8,8 +8,8 @@ import {
   DialogTitle,
   Typography,
 } from "@mui/material";
-import { SHADOWS, Z_INDEX_ORDER } from "@/consts/stylingValues";
-import { PAGE_TITLES } from "@/consts/pageTitles";
+import { SHADOWS, Z_INDEX_ORDER } from "../../../consts/stylingValues";
+import { PAGE_TITLES } from "../../../consts/pageTitles";
 
 /**
  * Dialog that opens when the Privacy Policy button is clicked.

@@ -1,11 +1,11 @@
 import React from "react";
-import { MainWrapper } from "@/components/layout/MainWrapper";
-import { CustomHead } from "@/components/layout/CustomHead";
-import { CustomPaper } from "@/components/layout/CustomPaper";
+import { MainWrapper } from "../../components/layout/MainWrapper";
+import { CustomHead } from "../../components/layout/CustomHead";
+import { CustomPaper } from "../../components/layout/CustomPaper";
 import { BLOG_POSTS_NO_COMPONENT } from "../blog";
 import { getBlogComponent } from "../blog";
-import { BlogDrawer } from "@/components/blogComponents/BlogDrawer";
-import { BlogPostHeader } from "@/components/blogComponents/BlogPostHeader";
+import { BlogDrawer } from "../../components/blogComponents/BlogDrawer";
+import { BlogPostHeader } from "../../components/blogComponents/BlogPostHeader";
 
 // Function to get all possible paths for individual post pages
 export const getStaticPaths = async () => {

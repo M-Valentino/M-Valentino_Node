@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import { SHADOWS } from "@/consts/stylingValues";
+import { SHADOWS } from "../../consts/stylingValues";
 
 export const MainHeading = ({ children, addMarginBottomOn }) => {
   return (

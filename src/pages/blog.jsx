@@ -1,17 +1,17 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { MainWrapper } from "@/components/layout/MainWrapper";
-import { CustomHead } from "@/components/layout/CustomHead";
+import { MainWrapper } from "../components/layout/MainWrapper";
+import { CustomHead } from "../components/layout/CustomHead";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { Divider, useMediaQuery } from "@mui/material";
-import { PAGE_TITLES } from "@/consts/pageTitles";
-import { CustomPaper } from "@/components/layout/CustomPaper";
-import { MainHeading } from "@/components/layout/Headings";
-import { Post1 } from "@/components/blogComponents/blogPosts/Post1";
-import { Post2 } from "@/components/blogComponents/blogPosts/Post2";
-import { Post3 } from "@/components/blogComponents/blogPosts/Post3";
-import { BlogDrawer } from "@/components/blogComponents/BlogDrawer";
-import { BlogPostHeader } from "@/components/blogComponents/BlogPostHeader";
-import { SHADOWS } from "@/consts/stylingValues";
+import { PAGE_TITLES } from "../consts/pageTitles";
+import { CustomPaper } from "../components/layout/CustomPaper";
+import { MainHeading } from "../components/layout/Headings";
+import { Post1 } from "../components/blogComponents/blogPosts/Post1";
+import { Post2 } from "../components/blogComponents/blogPosts/Post2";
+import { Post3 } from "../components/blogComponents/blogPosts/Post3";
+import { BlogDrawer } from "../components/blogComponents/BlogDrawer";
+import { BlogPostHeader } from "../components/blogComponents/BlogPostHeader";
+import { SHADOWS } from "../consts/stylingValues";
 
 /**
  * Holds all blog posts. appendQuestionMark is needed because blog

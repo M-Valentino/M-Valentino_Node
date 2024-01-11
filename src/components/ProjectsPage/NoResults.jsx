@@ -1,7 +1,7 @@
 import React from "react";
 import SentimentDissatisfiedIcon from "@mui/icons-material/SentimentDissatisfied";
 import { Typography } from "@mui/material";
-import { SHADOWS } from "@/consts/stylingValues";
+import { SHADOWS } from "../../consts/stylingValues";
 
 export const NoResults = () => {
   return (
