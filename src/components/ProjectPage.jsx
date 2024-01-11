@@ -15,6 +15,7 @@ import { CustomPaper } from "./layout/CustomPaper";
 import { MainHeading } from "./layout/Headings";
 import { getExtraProjectContent } from "../utils/getProjectExtraContent";
 import {
+  COLORS,
   SCREEN_CONTROL_STYLES,
   SHADOWS,
   Z_INDEX_ORDER,
@@ -111,8 +112,8 @@ export default function ProjectPage(props) {
                     : "unset",
                   width: 50,
                   height: 50,
+                  color: COLORS.offWhiteColor,
                 }}
-                color="tertiary"
               >
                 {iframeFullSize ? (
                   <FullscreenExitIcon style={SCREEN_CONTROL_STYLES} />
