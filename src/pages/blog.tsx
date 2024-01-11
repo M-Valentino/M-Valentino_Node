@@ -61,7 +61,6 @@ export const getBlogComponent = (title) => {
 };
 
 export default function Blog() {
-  const isDesktopView = useMediaQuery("(min-width:900px)");
   const clientCanSeeAllOfOnePost = useMediaQuery("(min-height:1200px)");
   const [postsIncrementedForHighRes, setPostsIncrementedForHighRes] =
     useState(false);
@@ -124,7 +123,7 @@ export default function Blog() {
         keywords="technology, programming, coding"
       />
       <MainWrapper activeLink={PAGE_TITLES.blog}>
-        <MainHeading shrinkFontOn={!isDesktopView} addMarginBottomOn={true}>
+        <MainHeading addMarginBottomOn={true}>
           My Tech Blog
         </MainHeading>
         <BlogDrawer />

@@ -6,8 +6,8 @@ import nextBase64 from "next-base64";
 import { Button, Grid, Divider, TextField, Typography } from "@mui/material";
 
 export default function Admin() {
-  const numberOfMessages = useRef();
-  const password = useRef();
+  const numberOfMessages = useRef<HTMLInputElement>(null);
+  const password = useRef<HTMLInputElement>(null);
   const [messages, setMessages] = useState(null);
   const [error, setError] = useState("");
 
@@ -15,7 +15,7 @@ export default function Admin() {
     try {
       const response = await fetch(
         `/api/message-inbox?numberOfMessages=${
-          numberOfMessages.current.value - 1
+          +numberOfMessages.current.value - 1
         }`,
         {
           method: "GET",

@@ -2,9 +2,9 @@ import Head from "next/head";
 import React from "react";
 
 interface CustomHeadProps {
-  descriptionText: string;
+  descriptionText?: string;
   title: string;
-  keywords: string;
+  keywords?: string;
   loadClarity?: boolean;
 }
 
