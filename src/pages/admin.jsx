@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { CustomHead } from "../components/layout/CustomHead";
 import { CustomPaper } from "../components/layout/CustomPaper";
 import { MainWrapper } from "../components/layout/MainWrapper";
 import nextBase64 from "next-base64";
@@ -34,6 +35,7 @@ export default function Admin() {
 
   return (
     <>
+    <CustomHead title="admin"/>
       <MainWrapper>
         <CustomPaper>
           <form>
