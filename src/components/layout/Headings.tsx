@@ -4,7 +4,7 @@ import { SHADOWS } from "../../consts/stylingValues";
 
 interface MainHeadingProps {
   children: ReactNode;
-  addMarginBottomOn: boolean;
+  addMarginBottomOn?: boolean;
 }
 
 export const MainHeading: React.FC<MainHeadingProps> = ({

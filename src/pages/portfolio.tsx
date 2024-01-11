@@ -27,7 +27,13 @@ import { SHADOWS, Z_INDEX_ORDER } from "../consts/stylingValues";
 export default function Portfolio() {
   const lessThanlargeTabletView = useMediaQuery("(max-width:1100px)");
   const [showDialog, setShowDialog] = useState(false);
-  const [dialogItem, setDialogItem] = useState({});
+  const [dialogItem, setDialogItem] = useState({
+    url: "",
+    imageType: "",
+    title: "",
+    programUsed: "",
+    orientation: "",
+  });
   const [zoomLevel, setZoomLevel] = useState(1);
 
   const handleSetZoomLevel = () => {
@@ -45,11 +51,11 @@ export default function Portfolio() {
 
   return (
     <>
-      <CustomHead />
+      <CustomHead title={PAGE_TITLES.portfolio} />
       <MainWrapper activeLink={PAGE_TITLES.portfolio}>
         <CustomPaper>
-          <MainHeading>Portfolio</MainHeading>
-          <Typography style={{ marginTop: 10, marginBottom: 20 }}>
+          <MainHeading addMarginBottomOn>Portfolio</MainHeading>
+          <Typography style={{ marginBottom: 20 }}>
             This is a curated showcase of my technical art in AutoCAD and
             Inventor. More is to come on this page.
           </Typography>
@@ -104,7 +110,7 @@ export default function Portfolio() {
           open={showDialog}
           onClose={() => handleDialogClose()}
           fullWidth
-          maxWidth="97.5%"
+          maxWidth="xl"
           style={{ zIndex: Z_INDEX_ORDER.dialog }}
         >
           <DialogActions style={{ flexDirection: "row-reverse" }}>
