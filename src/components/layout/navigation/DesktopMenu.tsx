@@ -6,7 +6,11 @@ import { COLORS, SHADOWS } from "../../../consts/stylingValues";
 import { PAGE_TITLES } from "../../../consts/pageTitles";
 import { NavButton } from "./NavButton";
 
-export const DesktopMenu = ({ activeLink }) => {
+interface DesktopMenuProps {
+  activeLink: string;
+}
+
+export const DesktopMenu: React.FC<DesktopMenuProps> = ({ activeLink }) => {
   return (
     <span id="desktopMenu">
       <div
@@ -46,7 +50,6 @@ export const DesktopMenu = ({ activeLink }) => {
           width: 240,
           position: "absolute",
           top: 5,
-
         }}
       >
         {/* Wrapping NavButton inside UseAnimations ensures that

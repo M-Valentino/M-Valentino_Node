@@ -6,7 +6,11 @@ import { SHADOWS, Z_INDEX_ORDER } from "../../../consts/stylingValues";
 import { PAGE_TITLES } from "../../../consts/pageTitles";
 import { MobileNavItem } from "./MobileNavItem";
 
-export const MobileMenu = ({ activeLink }) => {
+interface MobileMenuProps {
+  activeLink: string;
+}
+
+export const MobileMenu: React.FC<MobileMenuProps> = ({ activeLink }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
