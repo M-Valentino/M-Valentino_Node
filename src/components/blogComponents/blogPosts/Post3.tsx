@@ -1,5 +1,5 @@
 import React from "react";
-import { SmartLink } from "../../../components/smartLink/SmartLink";
+import { SmartLink } from "../../smartLink/SmartLink";
 import { Typography } from "@mui/material";
 import { CodeBlock, dracula } from "react-code-blocks";
 

@@ -1,18 +1,18 @@
-export const checkEmailInvalid = (email) => {
+export const checkEmailInvalid = (email: string) => {
   if (email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{1,4}$/g)) {
     return false;
   }
   return true;
 };
 
-export const checkEmailTooLong = (email) => {
+export const checkEmailTooLong = (email: string) => {
   if (email.length > 40) {
     return true;
   }
   return false;
 };
 
-export const checkMessageInvalid = (message) => {
+export const checkMessageInvalid = (message: string) => {
   /**
    * This also checks if '{' and '}' aren't there which maybe can
    * mitigate possible code injections.
@@ -25,21 +25,21 @@ export const checkMessageInvalid = (message) => {
 
 export const MAX_MESSAGE_LENGTH = 1280;
 
-export const checkMessageTooLong = (message) => {
+export const checkMessageTooLong = (message: string) => {
   if (message.length > MAX_MESSAGE_LENGTH) {
     return true;
   }
   return false;
 };
 
-export const checkMessageTooShort = (message) => {
+export const checkMessageTooShort = (message: string) => {
   if (message.length < 12) {
     return true;
   }
   return false;
 };
 
-export const checkHasGibberish = (message) => {
+export const checkHasGibberish = (message: string) => {
   // A modified list of the most used English words.
   const commonWords = [
     "the",

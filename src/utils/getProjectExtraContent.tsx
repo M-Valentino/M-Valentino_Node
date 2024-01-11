@@ -14,7 +14,10 @@ import { ExploringCannyEdgeDetectionContent } from "../components/projectExtraCo
  * @param {*} isDesktopView an MUI useMediaQuery used in keeping components responsive.
  * @returns extra project contenet in the form of a component.
  */
-export const getExtraProjectContent = (title, isDesktopView) => {
+export const getExtraProjectContent = (
+  title: string,
+  isDesktopView: boolean
+) => {
   switch (title) {
     case PROJECT_TITLES.imageToDivs:
       return <ImageToDivsContent />;

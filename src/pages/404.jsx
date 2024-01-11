@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 import { Z_INDEX_ORDER } from "../consts/stylingValues";
 
