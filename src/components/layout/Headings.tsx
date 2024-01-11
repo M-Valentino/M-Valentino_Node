@@ -1,8 +1,16 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Typography } from "@mui/material";
 import { SHADOWS } from "../../consts/stylingValues";
 
-export const MainHeading = ({ children, addMarginBottomOn }) => {
+interface MainHeadingProps {
+  children: ReactNode;
+  addMarginBottomOn: boolean;
+}
+
+export const MainHeading: React.FC<MainHeadingProps> = ({
+  children,
+  addMarginBottomOn,
+}) => {
   return (
     <Typography
       className="mainHeading"
@@ -19,7 +27,11 @@ export const MainHeading = ({ children, addMarginBottomOn }) => {
   );
 };
 
-export const SubHeading = ({ children }) => {
+interface SubHeadingProps {
+  children: ReactNode;
+}
+
+export const SubHeading: React.FC<SubHeadingProps> = ({ children }) => {
   return (
     <Typography
       className="subHeading"
