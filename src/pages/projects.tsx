@@ -38,6 +38,8 @@ export default function Projects() {
   const isTabletView = useMediaQuery("(max-width:899px)");
   const CARD_VIEW = "cardView";
   const TABLE_VIEW = "tableView";
+  const NEWEST = "newest"
+  const OLDEST = "oldest"
 
   /**
    * For if the projects are shown in a card or table view. Mobile devices will
@@ -66,15 +68,15 @@ export default function Projects() {
    * For managing the order of the projects shown. If false, the oldest
    * projects are shown first.
    */
-  const [showNewestFirst, setShowNewestFirst] = useState(true);
+  const [sort, setSort] = useState(NEWEST);
 
   /**
-   * Function to change the state of showNewestFirst and reverse the ording of
+   * Function to change the state of sort and reverse the ording of
    * the projects.
    * @param {*} event when the user selects "Newest" or "Oldest"
    */
   const handleSetSort = (event) => {
-    setShowNewestFirst(event.target.value);
+    setSort(event.target.value);
     setProjectResults([...projectResults].reverse());
   };
 
@@ -111,7 +113,7 @@ export default function Projects() {
           .indexOf(searchInputValue.toLowerCase()) !== -1
     );
     // If the sort is selected as "Newest".
-    if (showNewestFirst === true) {
+    if (sort === NEWEST) {
       setProjectResults(results);
     } else {
       setProjectResults(results.reverse());
@@ -123,7 +125,7 @@ export default function Projects() {
    * It keeps the current selected sort order too.
    */
   const handleResetFilter = () => {
-    if (showNewestFirst === true) {
+    if (sort === NEWEST) {
       setProjectResults([...PROJECT_CONTENT]);
     } else {
       setProjectResults([...PROJECT_CONTENT].reverse());
@@ -162,12 +164,12 @@ export default function Projects() {
                 <InputLabel>Sort By</InputLabel>
                 <Select
                   aria-label="Sort By"
-                  value={showNewestFirst}
+                  value={sort}
                   label="Sort By"
                   onChange={handleSetSort}
                 >
-                  <MenuItem value={true}>Newest</MenuItem>
-                  <MenuItem value={false}>Oldest</MenuItem>
+                  <MenuItem value={NEWEST}>Newest</MenuItem>
+                  <MenuItem value={OLDEST}>Oldest</MenuItem>
                 </Select>
               </FormControl>
               <ToggleButtonGroup

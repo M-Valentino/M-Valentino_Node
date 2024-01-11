@@ -5,7 +5,7 @@ interface CustomHeadProps {
   descriptionText: string;
   title: string;
   keywords: string;
-  loadClarity: boolean;
+  loadClarity?: boolean;
 }
 
 /**
