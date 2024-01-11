@@ -1,8 +1,20 @@
-import React from "react";
+import React, { FC } from "react";
 import { ExternalLink } from "./ExternalLink";
 import { InternalLink } from "./InternalLink";
 
-export const SmartLink = ({ href, children, style, openInNewTab }) => {
+interface SmartLinkProps {
+  href: string;
+  children: FC;
+  style: object;
+  openInNewTab: boolean;
+}
+
+export const SmartLink: React.FC<SmartLinkProps> = ({
+  href,
+  children,
+  style,
+  openInNewTab,
+}) => {
   return (
     <>
       {href.match(/http.*/) ? (

@@ -1,7 +1,15 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { COLORS, SHADOWS } from "../../consts/stylingValues";
 
-export const LinkInfoWrapper = ({ children, rootDomain }) => {
+interface LinkInfoWrapperProps {
+  children: ReactNode;
+  rootDomain: string;
+}
+
+export const LinkInfoWrapper: React.FC<LinkInfoWrapperProps> = ({
+  children,
+  rootDomain,
+}) => {
   return (
     <div style={{ height: 55 }}>
       <div
