@@ -5,6 +5,7 @@ import { Earth3JSContent } from "../components/projectExtraContent/Earth3JSConte
 import { IcatContent } from "../components/projectExtraContent/IcatContent";
 import { ISpyShopperContent } from "../components/projectExtraContent/ISpyShopperContent";
 import { ExploringCannyEdgeDetectionContent } from "../components/projectExtraContent/ExploringCannyEdgeDetectionContent";
+import { CitiesRecommenderContent } from "../components/projectExtraContent/CitiesRecommenderContent";
 
 /**
  * Function to get extra content associated with a project. This content is shown on
@@ -31,6 +32,8 @@ export const getExtraProjectContent = (
       return (
         <ExploringCannyEdgeDetectionContent isDesktopView={isDesktopView} />
       );
+    case PROJECT_TITLES.citiesRecommender:
+      return <CitiesRecommenderContent />;
     default:
       return <></>;
   }
