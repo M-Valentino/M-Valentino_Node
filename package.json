@@ -33,6 +33,7 @@
     "verify-hcaptcha": "^1.0.0"
   },
   "devDependencies": {
+    "@types/node": "^20.10.8",
     "@types/react": "^18.2.47",
     "typescript": "^5.3.3"
   }
