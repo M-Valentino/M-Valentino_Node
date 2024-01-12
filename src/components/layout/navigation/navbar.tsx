@@ -12,7 +12,7 @@ import { DesktopMenu } from "./DesktopMenu";
  * menu item (mobile) to change color to show it is the active link.
  * @returns component
  */
-const NavBar = ({ activeLink }) => {
+const NavBar = ({ activeLink }: string) => {
   return (
     <>
       <div

@@ -4,11 +4,11 @@ import { Button } from "@mui/material";
 import { generateNavLink } from "../../../utils/linkFunctions";
 
 export const NavButton = (props: {
-  activeLink: string;
+  activeLink?: string;
   buttonTextAndOrLink: string;
-  children: ReactNode;
+  children?: ReactNode;
   externalLink?: boolean;
-  events: any;
+  events?: any;
 }) => {
   const { activeLink, buttonTextAndOrLink, children, externalLink, events } =
     props;
