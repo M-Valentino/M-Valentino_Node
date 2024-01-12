@@ -1,18 +1,27 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@mui/material/";
-import { GRADIENTS, SHADOWS, Z_INDEX_ORDER } from "../../../consts/stylingValues";
+import {
+  GRADIENTS,
+  SHADOWS,
+  Z_INDEX_ORDER,
+} from "../../../consts/stylingValues";
 import { MobileMenu } from "./MobileMenu";
 import { DesktopMenu } from "./DesktopMenu";
+
+interface NavBarProps {
+  activeLink: string;
+}
 
 /**
  * This component is the main navbar of the site and determines
  * whether to show the mobile or desktop menu.
- * @param {*} activeLink The index of the button (desktop) or
+ * @param {*} activeLink The title of the button (desktop) or
  * menu item (mobile) to change color to show it is the active link.
  * @returns component
  */
-const NavBar = ({ activeLink }: string) => {
+const NavBar: React.FC<NavBarProps> = (props) => {
+  const { activeLink } = props;
   return (
     <>
       <div
@@ -36,7 +45,6 @@ const NavBar = ({ activeLink }: string) => {
             padding: 0,
             position: "absolute",
             top: 5,
-
           }}
         >
           <div
