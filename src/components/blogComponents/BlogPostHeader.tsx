@@ -3,10 +3,20 @@ import ShareIcon from "@mui/icons-material/Share";
 import { Grid, IconButton, Tooltip, Typography } from "@mui/material";
 import { PAGE_TITLES } from "../../consts/pageTitles";
 import { COLORS, SHADOWS } from "../../consts/stylingValues";
-import { MainHeading, SubHeading } from "../../components/layout/Headings";
+import { MainHeading, SubHeading } from "../layout/Headings";
 import { useSpring, animated } from "@react-spring/web";
 
-export const BlogPostHeader = (props) => {
+export const BlogPostHeader = (props: {
+  item: {
+    title: string;
+    appendQuestionMark: boolean;
+    date: string;
+  };
+  postIndex: number;
+  postIdCopied: number;
+  setPostIdCopied: Function;
+  isShownOnOwnURL: boolean;
+}) => {
   const { item, postIndex, postIdCopied, setPostIdCopied, isShownOnOwnURL } =
     props;
   const [views, setViews] = useState(null);
