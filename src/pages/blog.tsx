@@ -55,7 +55,7 @@ export const BLOG_POSTS_NO_COMPONENT = BLOG_POSTS.map((obj) => {
   return newObj;
 });
 
-export const getBlogComponent = (title) => {
+export const getBlogComponent = (title: string) => {
   const post = BLOG_POSTS.find((obj) => obj.title === title);
   return post.component;
 };

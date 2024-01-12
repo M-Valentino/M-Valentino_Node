@@ -1,8 +1,11 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { GRADIENTS, SHADOWS } from "../../consts/stylingValues";
 
 // This component holds page sections inside the <main> content.
-export const CustomPaper = (props) => {
+export const CustomPaper = (props: {
+  children: ReactNode;
+  mode?: string;
+}) => {
   const { children, mode } = props;
   return (
     <div
