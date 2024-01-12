@@ -6,7 +6,7 @@ import { MainTheme } from "../../consts/stylingValues";
 
 interface MainWrapperProps {
   children: ReactNode;
-  activeLink: string;
+  activeLink?: string;
 }
 
 /**
