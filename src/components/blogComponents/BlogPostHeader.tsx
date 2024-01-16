@@ -9,13 +9,13 @@ import { useSpring, animated } from "@react-spring/web";
 export const BlogPostHeader = (props: {
   item: {
     title: string;
-    appendQuestionMark: boolean;
+    appendQuestionMark?: boolean;
     date: string;
   };
   postIndex: number;
   postIdCopied: number;
   setPostIdCopied: Function;
-  isShownOnOwnURL: boolean;
+  isShownOnOwnURL?: boolean;
 }) => {
   const { item, postIndex, postIdCopied, setPostIdCopied, isShownOnOwnURL } =
     props;
