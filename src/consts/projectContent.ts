@@ -98,7 +98,7 @@ export const PROJECT_CONTENT = [
     title: PROJECT_TITLES.sacredOS,
     date: "2024",
     description:
-      "Using the MarvinJ JavaScript library, I was able to make an online image converter that allows you to upload and convert images to pure CSS divs. There many not be much use for this program (except for maybe making captchas harder to bypass with AI), but I always like pushing the limits of what's possible in coding.",
+      "I created a Windows 9x inspired web OS written in Vanilla JS where every HTML file is executable. Sacred OS comes complete with a bootloader, a kernel, and a file editor. The OS runs each program inside an iframe, where each iframe can communicate with the kernel.",
     languages: [
       LANGUAGES.vanillaJS,
       LANGUAGES.html,
