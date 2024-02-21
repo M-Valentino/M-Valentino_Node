@@ -2,7 +2,11 @@ import React from "react";
 import { SmartLink } from "../smartLink/SmartLink";
 import { Typography } from "@mui/material";
 
-export const IcatContent = ({ isDesktopView }) => {
+interface IcatContentProps {
+  isDesktopView: boolean;
+}
+
+export const IcatContent: React.FC<IcatContentProps> = ({ isDesktopView }) => {
   return (
     <>
       <Typography variant="h4" gutterBottom>
