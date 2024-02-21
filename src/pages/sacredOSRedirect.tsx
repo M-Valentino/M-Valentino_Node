@@ -25,6 +25,7 @@ export default function SacredOSRedirect() {
             />
           }
           style={{ margin: "auto", fontSize: "6vw" }}
+          sx={{ boxShadow: 20 }}
         >
           Launch Sacred OS
         </Button>
