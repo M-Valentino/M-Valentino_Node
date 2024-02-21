@@ -1,4 +1,5 @@
 import React from "react";
+import { SmartLink } from "../components/smartLink/SmartLink";
 import { Button, ThemeProvider } from "@mui/material";
 import { MainTheme } from "../consts/stylingValues";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
@@ -18,6 +19,9 @@ export default function SacredOSRedirect() {
         }}
       >
         <Button
+          href="https://sacred.neocities.org"
+          target="_blank"
+          rel="noopener"
           variant="contained"
           endIcon={
             <OpenInNewIcon
