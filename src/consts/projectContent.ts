@@ -75,6 +75,7 @@ export const HREF_TYPES = {
 };
 
 export const PROJECT_TITLES = {
+  sacredOS: "Sacred OS",
   imageToDivs: "Image to Divs",
   earth3Js: "Earth 3JS",
   icat: "ICat",
@@ -88,6 +89,24 @@ export const PROJECT_TITLES = {
 export const PROJECT_CONTENT = [
   {
     index: 0,
+    href: "/sacredOSRedirect",
+    gitLink: "https://github.com/M-Valentino/Image-To-Divs",
+    hrefType: HREF_TYPES.iframe,
+    imageLink: "/projectImages/sacredOS.webp",
+    imageAltText:
+      "A screenshot of Robocop for the Gameboy converted to divs with a dot matrix effect. Below it is a a page inspector open showing the divs to the image.",
+    title: PROJECT_TITLES.sacredOS,
+    date: "2024",
+    description:
+      "Using the MarvinJ JavaScript library, I was able to make an online image converter that allows you to upload and convert images to pure CSS divs. There many not be much use for this program (except for maybe making captchas harder to bypass with AI), but I always like pushing the limits of what's possible in coding.",
+    languages: [
+      LANGUAGES.vanillaJS,
+      LANGUAGES.html,
+      LANGUAGES.css,
+    ],
+  },
+  {
+    index: 1,
     href: "/imageToDivs.html",
     gitLink: "https://github.com/M-Valentino/Image-To-Divs",
     hrefType: HREF_TYPES.iframe,
@@ -106,7 +125,7 @@ export const PROJECT_CONTENT = [
     ],
   },
   {
-    index: 1,
+    index: 2,
     href: "/Earth3JS",
     gitLink:
       "https://github.com/M-Valentino/M-Valentino_NextJS/blob/main/src/pages/Earth3JS.jsx",
@@ -125,7 +144,7 @@ export const PROJECT_CONTENT = [
     ],
   },
   {
-    index: 2,
+    index: 3,
     gitLink: "https://github.com/M-Valentino/ICat",
     hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/icat.webp",
@@ -143,14 +162,14 @@ export const PROJECT_CONTENT = [
     ],
   },
   {
-    index: 3,
+    index: 4,
     gitLink: "https://github.com/SCCapstone/I_Spy_A-Eye",
     hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/i-spy-shopper.svg",
     imageAltText:
       "I Spy Shopper Logo of a magnifying glass and a shopping bag.",
     title: PROJECT_TITLES.iSpyShopper,
-    date: "2023",
+    date: "2022",
     description:
       "I Spy Shopper is a grocery devilery app for the visually impaired (with pretend payment transactions). This is also a college capstone group project. I Spy Shopper uses the Kroger API for generating grocery data. It also uses Firebase for authentication and data storage. Over 100 automated tests were written in the app using Detox and Jest.",
     languages: [
@@ -162,7 +181,7 @@ export const PROJECT_CONTENT = [
     ],
   },
   {
-    index: 4,
+    index: 5,
     gitLink: "https://github.com/M-Valentino/Exploring-Canny-Edge-Detection",
     hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/canny_edge_detection.webp",
@@ -180,7 +199,7 @@ export const PROJECT_CONTENT = [
     ],
   },
   {
-    index: 5,
+    index: 6,
     gitLink: "https://github.com/M-Valentino/Image-Manipulation-Experiments",
     hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/tigers.jpg",
@@ -193,7 +212,7 @@ export const PROJECT_CONTENT = [
     languages: [LANGUAGES.java],
   },
   {
-    index: 6,
+    index: 7,
     href: "/retro_calculator.html",
     gitLink:
       "https://github.com/M-Valentino/M-Valentino.github.io/blob/main/calculator.html",
@@ -208,7 +227,7 @@ export const PROJECT_CONTENT = [
   },
 
   {
-    index: 7,
+    index: 8,
     gitLink: "https://github.com/M-Valentino/Cities-Recommender",
     hrefType: HREF_TYPES.externalLink,
     imageLink: "/projectImages/citiesrecommender.png",

@@ -133,7 +133,7 @@ export default function ProjectPage(props) {
       </MainHeading>
       {getProjectComponent()}
       <Typography variant="h6" color="primary">
-        Year completed: {date}
+        Year started: {date}
       </Typography>
 
       <Typography
