@@ -1,7 +1,6 @@
 import React from "react";
-import { SmartLink } from "../components/smartLink/SmartLink";
+import { MainTheme, SHADOWS } from "../consts/stylingValues";
 import { Button, ThemeProvider } from "@mui/material";
-import { MainTheme } from "../consts/stylingValues";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 export default function SacredOSRedirect() {
@@ -23,13 +22,17 @@ export default function SacredOSRedirect() {
           target="_blank"
           rel="noopener"
           variant="contained"
+          style={{ margin: "auto", fontSize: "6.5vw" }}
+          sx={{ boxShadow: 20 }}
           endIcon={
             <OpenInNewIcon
-              style={{ fontSize: "5vw", transform: "translateY(-1.2vw)" }}
+              style={{
+                fontSize: "5.5vw",
+                transform: "translateY(-1.3vw)",
+                filter: SHADOWS.minuteSVG,
+              }}
             />
           }
-          style={{ margin: "auto", fontSize: "6vw" }}
-          sx={{ boxShadow: 20 }}
         >
           Launch Sacred OS
         </Button>

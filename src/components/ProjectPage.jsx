@@ -36,6 +36,7 @@ export default function ProjectPage(props) {
   const {
     href,
     hrefType,
+    hideIframeControls,
     imageLink,
     imageAltText,
     title,
@@ -94,43 +95,43 @@ export default function ProjectPage(props) {
               title="description"
               style={iframeFullSize ? iframeBigStyle : iframeSmallStyle}
             />
-            <Tooltip title={iframeFullSize ? "Shrink" : "Expand"}>
-              {/* This button will always be visible no matter the size of the iframe. When the
+            {!hideIframeControls && (
+              <Tooltip title={iframeFullSize ? "Shrink" : "Expand"}>
+                {/* This button will always be visible no matter the size of the iframe. When the
              iframe covers the full page, it's position will be fixed to the bottom left corner. */}
-              <IconButton
-                onClick={() => setIframeFullSize(!iframeFullSize)}
-                style={{
-                  // Button is below the iframe whe not full screen so it is moved up to appear inside it.
-                  transform: iframeFullSize
-                    ? "none"
-                    : "translate(7.5px, -60px)",
-                  position: iframeFullSize ? "fixed" : "relative",
-                  bottom: iframeFullSize ? 40 : "unset",
-                  left: iframeFullSize ? 40 : "unset",
-                  zIndex: iframeFullSize
-                    ? Z_INDEX_ORDER.iframeScreenControlShrink
-                    : "unset",
-                  width: 50,
-                  height: 50,
-                  color: COLORS.offWhiteColor,
-                }}
-              >
-                {iframeFullSize ? (
-                  <FullscreenExitIcon style={SCREEN_CONTROL_STYLES} />
-                ) : (
-                  <FullscreenIcon style={SCREEN_CONTROL_STYLES} />
-                )}
-              </IconButton>
-            </Tooltip>
+                <IconButton
+                  onClick={() => setIframeFullSize(!iframeFullSize)}
+                  style={{
+                    // Button is below the iframe whe not full screen so it is moved up to appear inside it.
+                    transform: iframeFullSize
+                      ? "none"
+                      : "translate(7.5px, -60px)",
+                    position: iframeFullSize ? "fixed" : "relative",
+                    bottom: iframeFullSize ? 40 : "unset",
+                    left: iframeFullSize ? 40 : "unset",
+                    zIndex: iframeFullSize
+                      ? Z_INDEX_ORDER.iframeScreenControlShrink
+                      : "unset",
+                    width: 50,
+                    height: 50,
+                    color: COLORS.offWhiteColor,
+                  }}
+                >
+                  {iframeFullSize ? (
+                    <FullscreenExitIcon style={SCREEN_CONTROL_STYLES} />
+                  ) : (
+                    <FullscreenIcon style={SCREEN_CONTROL_STYLES} />
+                  )}
+                </IconButton>
+              </Tooltip>
+            )}
           </>
         );
     }
   };
   return (
     <CustomPaper>
-      <MainHeading addMarginBottomOn={true}>
-        {title}
-      </MainHeading>
+      <MainHeading addMarginBottomOn={true}>{title}</MainHeading>
       {getProjectComponent()}
       <Typography variant="h6" color="primary">
         Year started: {date}

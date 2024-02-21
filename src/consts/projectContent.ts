@@ -90,11 +90,12 @@ export const PROJECT_CONTENT = [
   {
     index: 0,
     href: "/sacredOSRedirect",
-    gitLink: "https://github.com/M-Valentino/Image-To-Divs",
+    gitLink: "https://github.com/M-Valentino/sacredOS",
     hrefType: HREF_TYPES.iframe,
+    hideIframeControls: true,
     imageLink: "/projectImages/sacredOS.webp",
     imageAltText:
-      "A screenshot of Robocop for the Gameboy converted to divs with a dot matrix effect. Below it is a a page inspector open showing the divs to the image.",
+      "A screenshot of the Sacred OS operating system with various windows opened.",
     title: PROJECT_TITLES.sacredOS,
     date: "2024",
     description:
