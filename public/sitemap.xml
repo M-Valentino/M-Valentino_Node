@@ -8,12 +8,12 @@
 
 <url>
   <loc>https://mark-valentino.vercel.app/</loc>
-  <lastmod>2024-01-07T21:20:00+00:00</lastmod>
+  <lastmod>2024-02-22T01:25:24+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://mark-valentino.vercel.app/projects</loc>
-  <lastmod>2023-09-02T21:21:26+00:00</lastmod>
+  <lastmod>2024-02-22T01:25:24+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
@@ -34,6 +34,11 @@
 <url>
   <loc>https://mark-valentino.vercel.app/humans.txt</loc>
   <lastmod>2023-09-02T21:21:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://mark-valentino.vercel.app/project/Sacred%20OS</loc>
+  <lastmod>2024-02-22T01:25:24+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
