@@ -8,8 +8,21 @@ import {
   ListItemText,
 } from "@mui/material";
 
-export const ExpAndEduListItem = (props) => {
-  const { imgSRC, imgAlt, primaryText, secondaryText, url } = props;
+interface ExpAndEduListItemProps {
+  imgSRC: string;
+  imgAlt: string;
+  primaryText: string;
+  secondaryText: string;
+  url: string;
+}
+
+export const ExpAndEduListItem: React.FC<ExpAndEduListItemProps> = ({
+  imgSRC,
+  imgAlt,
+  primaryText,
+  secondaryText,
+  url,
+}: ExpAndEduListItemProps) => {
   return (
     <Grid item xs={12} md={6}>
       <ListItem disablePadding>
