@@ -12,7 +12,7 @@ import { SHADOWS, Z_INDEX_ORDER } from "../../../consts/stylingValues";
 import { PAGE_TITLES } from "../../../consts/pageTitles";
 
 interface PrivacyPolicyDialogProps {
-  handlePrivacyPolicyClose: () => void;
+  handlePrivacyPolicyClose: any;
   privacyPolicyOpen: boolean;
 }
 
