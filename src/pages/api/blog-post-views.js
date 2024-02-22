@@ -6,9 +6,8 @@ import { formatForRedisKey } from "../../utils/linkFunctions";
  * Function to get number of views associated with a blog post and
  * increment them. The query validates if a title exists so that extra keys don't
  * get written to the redis db.
- * TODO resolve import/no-anonymous-default-export
  */
-export default async (request, response) => {
+const handler = async (request, response) => {
   const title = formatForRedisKey(request.query.title);
   const checkIfTitleExists = (obj) =>
     formatForRedisKey(obj.title) === title;
@@ -19,3 +18,5 @@ export default async (request, response) => {
   }
   return response.status(404);
 };
+
+export default handler;
