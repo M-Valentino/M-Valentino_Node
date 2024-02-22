@@ -2,7 +2,13 @@ import React from "react";
 import { Grid, Typography } from "@mui/material";
 import { SmartLink } from "../smartLink/SmartLink";
 
-export const ISpyShopperContent = ({ isDesktopView }) => {
+interface ISpyShopperContentProps {
+  isDesktopView: boolean;
+}
+
+export const ISpyShopperContent: React.FC<ISpyShopperContentProps> = ({
+  isDesktopView,
+}) => {
   const screenshotStyles = {
     display: "block",
     margin: "auto",
