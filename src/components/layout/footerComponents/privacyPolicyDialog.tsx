@@ -11,12 +11,19 @@ import {
 import { SHADOWS, Z_INDEX_ORDER } from "../../../consts/stylingValues";
 import { PAGE_TITLES } from "../../../consts/pageTitles";
 
+interface PrivacyPolicyDialogProps {
+  handlePrivacyPolicyClose: () => void;
+  privacyPolicyOpen: boolean;
+}
+
 /**
  * Dialog that opens when the Privacy Policy button is clicked.
  * @param {*} props
  * @returns component
  */
-export const PrivacyPolicyDialog = (props) => {
+export const PrivacyPolicyDialog: React.FC<PrivacyPolicyDialogProps> = (
+  props
+) => {
   const { handlePrivacyPolicyClose, privacyPolicyOpen } = props;
 
   return (
