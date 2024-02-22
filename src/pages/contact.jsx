@@ -104,7 +104,7 @@ export default function Contact() {
       setMessageSent(() => false);
       sendData();
     }
-    // TODO resolve react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     emailTooLong,
     emailInvalid,
