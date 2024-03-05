@@ -65,10 +65,9 @@ export default function Home() {
           <Typography style={{ marginTop: 15, fontSize: 18 }}>
             I’m a highly motivated and highly knowledgeable software engineer
             who is passionate about web development, app development, and
-            graphics programming. I excel at applying creative solutions to
-            problems when it seems all hope is lost. I’m a perfectionist in what
-            I do. I have gotten where I am today through passion, perseverance,
-            and curiosity.
+            graphics programming. I excel at applying creative solutions. I’m a
+            perfectionist in what I do. I have gotten where I am today through
+            passion, perseverance, and curiosity.
           </Typography>
           <div
             style={{
@@ -125,7 +124,7 @@ export default function Home() {
             </div>
           </div>
           <SubHeading>Experience & Education</SubHeading>
-          <Grid container  style={{ marginBottom: 40 }}>
+          <Grid container style={{ marginBottom: 40 }}>
             <ExpAndEduListItem
               imgSRC="/home/landIntelligencePin.png"
               imgAlt="Land Intelligence Pin Logo"
