@@ -19,7 +19,7 @@ import ViewListIcon from "@mui/icons-material/ViewList";
 import ViewModuleIcon from "@mui/icons-material/ViewModule";
 import { MainWrapper } from "../components/layout/MainWrapper";
 import ProjectCard from "../components/ProjectsPage/ProjectCard";
-import ProjectTable from "../components/ProjectsPage/ProjectTable";
+import { ProjectTable } from "../components/ProjectsPage/ProjectTable";
 import { CustomHead } from "../components/layout/CustomHead";
 import { NoResults } from "../components/ProjectsPage/NoResults";
 import { PROJECT_CONTENT } from "../consts/projectContent";
@@ -278,7 +278,6 @@ export default function Projects() {
             ) : (
               <ProjectTable
                 PROJECT_CONTENT={projectResults}
-                key={projectResults}
               />
             )}
           </>
