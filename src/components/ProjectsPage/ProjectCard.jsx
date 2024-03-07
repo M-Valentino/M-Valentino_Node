@@ -94,7 +94,7 @@ export default function ProjectCard(props) {
           {hrefType === HREF_TYPES.iframe && (
             <div
               style={{
-                backgroundColor: COLORS.mainOrange,
+                background: `linear-gradient(${COLORS.mainOrange}, ${COLORS.darkOrange})`,
                 width: 168,
                 color: COLORS.offWhiteColor,
                 textAlign: "center",
