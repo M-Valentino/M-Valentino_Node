@@ -14,14 +14,24 @@ export const getStaticPaths = async () => {
 };
 
 // Function to get all possible data for individual project pages (except for projectExtraContent components)
-export const getStaticProps = async (context) => {
+export const getStaticProps = async (context: { params: { projectTitle: string; }; }) => {
   const project = PROJECT_CONTENT.find(
     (obj) => obj.title === context.params.projectTitle
   );
   return { props: { project: project } };
 };
 
-export default function ProjectTemplate({ project }) {
+type projectObject = {
+  description: string;
+  title: string;
+  languages: string;
+};
+
+interface ProjectTemplateProps {
+  project: projectObject;
+}
+
+const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ project }) => {
   return (
     <>
       <CustomHead
@@ -34,4 +44,6 @@ export default function ProjectTemplate({ project }) {
       </MainWrapper>
     </>
   );
-}
+};
+
+export default ProjectTemplate;
