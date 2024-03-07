@@ -21,8 +21,8 @@ import { PAGE_TITLES } from "../consts/pageTitles";
 import { SHADOWS } from "../consts/stylingValues";
 
 export default function Contact() {
-  const emailRef = useRef();
-  const messageRef = useRef();
+  const emailRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLInputElement>(null);
   // Multiple usestates are used for descriptive helptertext errors.
   const [emailTooLong, setEmailTooLong] = useState(null);
   const [emailInvalid, setEmailInvalid] = useState(null);
