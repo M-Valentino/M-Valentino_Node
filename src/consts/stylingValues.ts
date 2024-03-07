@@ -67,7 +67,7 @@ export const Z_INDEX_ORDER = {
 export const MainTheme = createTheme({
   palette: {
     action: {
-      disabled: "#bbb"
+      disabled: "#a0a0a0"
     },
     primary: {
       light: COLORS.lightOrange,
@@ -113,7 +113,7 @@ export const MainTheme = createTheme({
         },{
           props: { disabled: true },
           style: {
-            filter: "grayscale(0.65) brightness(1.3)",
+            filter: "grayscale(0.8) brightness(1.5)",
           },
         }
       ],
