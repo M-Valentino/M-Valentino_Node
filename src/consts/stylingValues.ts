@@ -104,6 +104,7 @@ export const MainTheme = createTheme({
           props: { variant: "contained" },
           style: {
             textShadow: SHADOWS.minute,
+            background: `linear-gradient(${COLORS.mainOrange}, ${COLORS.darkOrange})`,
           },
         },
       ],
