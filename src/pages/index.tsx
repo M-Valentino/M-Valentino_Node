@@ -108,42 +108,21 @@ export default function Home() {
                 animationDelay: "1s",
               }}
             >
-              <div
-                style={{
-                  width: "100%",
-                  height: 14,
-                  marginBottom: 2,
-                  backgroundImage: BASE_64_IMAGES.binary,
-                  backgroundSize: "22px 14px",
-                }}
-              />
-              <div
-                style={{
-                  width: "100%",
-                  height: 14,
-                  marginBottom: 2,
-                  backgroundImage: BASE_64_IMAGES.binaryReverse,
-                  backgroundSize: "22px 14px",
-                }}
-              />
-              <div
-                style={{
-                  width: "100%",
-                  height: 14,
-                  marginBottom: 2,
-                  backgroundImage: BASE_64_IMAGES.binary,
-                  backgroundSize: "22px 14px",
-                }}
-              />
-              <div
-                style={{
-                  width: "100%",
-                  height: 14,
-                  marginBottom: 2,
-                  backgroundImage: BASE_64_IMAGES.binaryReverse,
-                  backgroundSize: "22px 14px",
-                }}
-              />
+              {Array.apply(null, { length: 4 }).map((_, index) => (
+                <div
+                  key={index}
+                  style={{
+                    width: "100%",
+                    height: 14,
+                    marginBottom: 2,
+                    backgroundImage:
+                      index % 2 === 0
+                        ? BASE_64_IMAGES.binary
+                        : BASE_64_IMAGES.binaryReverse,
+                    backgroundSize: "22px 14px",
+                  }}
+                />
+              ))}
             </div>
           </div>
           <SubHeading>Experience & Education</SubHeading>
