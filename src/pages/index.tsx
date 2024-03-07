@@ -166,7 +166,7 @@ export default function Home() {
           spacing={{ xs: 3, md: 4 }}
         >
           <ProjectCard data={PROJECT_CONTENT[0]} />
-          <ProjectCard data={PROJECT_CONTENT[1]} />
+          <ProjectCard data={PROJECT_CONTENT[2]} />
         </Stack>
         <Button
           className="seeMoreButton"
