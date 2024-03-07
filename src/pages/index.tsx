@@ -91,6 +91,8 @@ export default function Home() {
                 border: `10px solid ${COLORS.mainOrange}`,
                 boxShadow: `${SHADOWS.minute}, inset ${SHADOWS.minute}`,
                 zIndex: Z_INDEX_ORDER.avatar,
+                animation: "rotateAvatar 1s",
+                animationTimingFunction: "ease-out"
               }}
               alt="Professional portrait of me in a suite and tie."
               src="/home/githubAvatar.png"
@@ -100,7 +102,10 @@ export default function Home() {
                 position: "relative",
                 top: -110,
                 imageRendering: "pixelated",
-                filter: `opacity(0.3)`,
+                filter: `opacity(0)`,
+                animation: "binaryFadeIn 1s",
+                animationFillMode: "forwards",
+                animationDelay: "1s"
               }}
             >
               <div

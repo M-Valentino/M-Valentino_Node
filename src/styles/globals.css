@@ -252,3 +252,28 @@ https://github.com/JedWatson/react-select/issues/3309
 .customPaperTable {
   padding: 10px;
 }
+
+@keyframes rotateAvatar {
+
+  /* The distance travelled by a wheel in one revolution is equal to its circumference.
+  The image plus it's round border is 150x150px, and 150 x pi ~= 471px */
+  from {
+    transform: translateX(-471px) rotate(0deg);
+    filter: opacity(0%);
+  }
+
+  to {
+    transform: translateX(0px) rotate(360deg);
+    filter: opacity(100%);
+  }
+}
+
+@keyframes binaryFadeIn {
+  from {
+    filter: opacity(0);
+  }
+
+  to {
+    filter: opacity(0.3);
+  }
+}
