@@ -15,9 +15,13 @@ import { LanguageChip } from "../LanguageChip";
 import { CustomPaper } from "../layout/CustomPaper";
 import { PLUS_MORE } from "../../consts/projectContent";
 
+interface ProjectTableProps {
+  PROJECT_CONTENT: Array<any>;
+}
 
-export default function ProjectTable(props) {
-  const { PROJECT_CONTENT } = props;
+export const ProjectTable: React.FC<ProjectTableProps> = ({
+  PROJECT_CONTENT,
+}) => {
   const isMobileView = useMediaQuery("(max-width:548px)");
   const isSmallMobileView = useMediaQuery("(max-width:496px)");
 
@@ -112,4 +116,4 @@ export default function ProjectTable(props) {
       </Table>
     </CustomPaper>
   );
-}
+};
