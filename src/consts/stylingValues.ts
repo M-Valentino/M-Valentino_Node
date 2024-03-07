@@ -1,3 +1,4 @@
+import { colors } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 export const SHADOWS = {
   // Shadow used when a project card is not being hovered. Also the static shadow of the projects table.
@@ -65,6 +66,9 @@ export const Z_INDEX_ORDER = {
 // This controls the main theme of the website.
 export const MainTheme = createTheme({
   palette: {
+    action: {
+      disabled: "#bbb"
+    },
     primary: {
       light: COLORS.lightOrange,
       main: COLORS.mainOrange,
@@ -106,7 +110,12 @@ export const MainTheme = createTheme({
             textShadow: SHADOWS.minute,
             background: `linear-gradient(${COLORS.mainOrange}, ${COLORS.darkOrange})`,
           },
-        },
+        },{
+          props: { disabled: true },
+          style: {
+            filter: "grayscale(0.65) brightness(1.3)",
+          },
+        }
       ],
     },
   },
