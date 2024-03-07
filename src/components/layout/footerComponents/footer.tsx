@@ -18,46 +18,48 @@ export const Footer = () => {
     setPrivacyPolicyOpen(false);
   };
   return (
-    <Grid container direction="row" justifyContent="center" spacing={1}>
-      <Grid item>
-        <Button
-          LinkComponent={Link}
-          href="/humans.txt"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          humans.txt
-        </Button>
+    <footer>
+      <Grid container direction="row" justifyContent="center" spacing={1}>
+        <Grid item>
+          <Button
+            LinkComponent={Link}
+            href="/humans.txt"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            humans.txt
+          </Button>
+        </Grid>
+        <Grid item>
+          <Button onClick={() => setPrivacyPolicyOpen(true)}>
+            Privacy Policy
+          </Button>
+          <PrivacyPolicyDialog
+            handlePrivacyPolicyClose={handlePrivacyPolicyClose}
+            privacyPolicyOpen={privacyPolicyOpen}
+          />
+        </Grid>
+        <Grid item>
+          <Button
+            LinkComponent={Link}
+            href="/sitemap.xml"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Site Map
+          </Button>
+        </Grid>
+        <Grid item>
+          <Button
+            LinkComponent={Link}
+            href="https://github.com/M-Valentino/M-Valentino_NextJS"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Website Source Code
+          </Button>
+        </Grid>
       </Grid>
-      <Grid item>
-        <Button onClick={() => setPrivacyPolicyOpen(true)}>
-          Privacy Policy
-        </Button>
-        <PrivacyPolicyDialog
-          handlePrivacyPolicyClose={handlePrivacyPolicyClose}
-          privacyPolicyOpen={privacyPolicyOpen}
-        />
-      </Grid>
-      <Grid item>
-        <Button
-          LinkComponent={Link}
-          href="/sitemap.xml"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Site Map
-        </Button>
-      </Grid>
-      <Grid item>
-        <Button
-          LinkComponent={Link}
-          href="https://github.com/M-Valentino/M-Valentino_NextJS"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Website Source Code
-        </Button>
-      </Grid>
-    </Grid>
+    </footer>
   );
 };

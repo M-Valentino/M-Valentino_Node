@@ -24,7 +24,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
   const { activeLink } = props;
   return (
     <>
-      <div
+      <nav
         style={{
           top: 0,
           width: "100%",
@@ -67,7 +67,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
         {/* Depending on the globals.css, either MobileMenu or DesktopMenun shows */}
         <MobileMenu activeLink={activeLink} />
         <DesktopMenu activeLink={activeLink} />
-      </div>
+      </nav>
       {/* For creating spacing below the navbar  */}
       <div
         style={{
