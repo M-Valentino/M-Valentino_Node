@@ -92,7 +92,7 @@ export default function Home() {
                 boxShadow: `${SHADOWS.minute}, inset ${SHADOWS.minute}`,
                 zIndex: Z_INDEX_ORDER.avatar,
                 animation: "rotateAvatar 1s",
-                animationTimingFunction: "ease-out"
+                animationTimingFunction: "ease-out",
               }}
               alt="Professional portrait of me in a suite and tie."
               src="/home/githubAvatar.png"
@@ -105,25 +105,43 @@ export default function Home() {
                 filter: `opacity(0)`,
                 animation: "binaryFadeIn 1s",
                 animationFillMode: "forwards",
-                animationDelay: "1s"
+                animationDelay: "1s",
               }}
             >
               <div
                 style={{
                   width: "100%",
-                  height: 28,
-                  marginBottom: 4,
+                  height: 14,
+                  marginBottom: 2,
                   backgroundImage: BASE_64_IMAGES.binary,
-                  backgroundSize: "44px 28px",
+                  backgroundSize: "22px 14px",
                 }}
               />
               <div
                 style={{
                   width: "100%",
-                  height: 28,
-                  marginBottom: 4,
+                  height: 14,
+                  marginBottom: 2,
                   backgroundImage: BASE_64_IMAGES.binaryReverse,
-                  backgroundSize: "44px 28px",
+                  backgroundSize: "22px 14px",
+                }}
+              />
+              <div
+                style={{
+                  width: "100%",
+                  height: 14,
+                  marginBottom: 2,
+                  backgroundImage: BASE_64_IMAGES.binary,
+                  backgroundSize: "22px 14px",
+                }}
+              />
+              <div
+                style={{
+                  width: "100%",
+                  height: 14,
+                  marginBottom: 2,
+                  backgroundImage: BASE_64_IMAGES.binaryReverse,
+                  backgroundSize: "22px 14px",
                 }}
               />
             </div>
