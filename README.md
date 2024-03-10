@@ -31,6 +31,8 @@ Users can send a message through the Contact Me page. Messages sent are stored i
 - Email length is under 40 characters.
 - Message most likely isn't gibberish (contains at least 4 most common English words out of a list over 100).
 - Message is under 1280 characters, but greater than 12.
+#### Reading stored messages
+Messages can be read by going to `/admin` and entering the number of messages you would like to read and the password. Messages displayed are ordered from newest to oldest, so if you request 1 message, you will get the latest message someone sent.
 
 ### UIUX
 - Material UI and Material UI inspired components are used throughout the site.
@@ -70,3 +72,9 @@ HCAPTCHA_SITE_KEY
 NEXT_PUBLIC_HCAPTCHA_SITE_KEY
 ```
 Both `HCAPTCHA_SITE_KEY` and `NEXT_PUBLIC_HCAPTCHA_SITE_KEY` must have the same value.
+
+### Reading messages on the admin page
+Add this environment variable on your Vercel project and choose your desired password:
+```
+ADMIN_PASSWORD
+```
