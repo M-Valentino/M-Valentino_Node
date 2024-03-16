@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { ExpAndEduListItem } from "../components/homeComponents/ExpAndEduListItem";
 import OrangeEarth from "../components/OrangeEarth";
 import { CustomPaper } from "../components/layout/CustomPaper";
