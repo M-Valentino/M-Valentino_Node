@@ -77,11 +77,9 @@ export default function Home() {
               marginBottom: 40,
             }}
           >
-            <Image
+            <img
               width={130}
               height={130}
-              quality={94}
-              priority
               style={{
                 position: "relative",
                 top: 0,
@@ -95,7 +93,8 @@ export default function Home() {
                 animationTimingFunction: "ease-out",
               }}
               alt="Professional portrait of me in a suite and tie."
-              src="/home/githubAvatar.png"
+              // Encoded as base64 so the image is already loaded when animation starts.
+              src={BASE_64_IMAGES.gitHubAvatar}
             />
             <div
               style={{
