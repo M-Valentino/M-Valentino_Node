@@ -48,7 +48,7 @@ export const Post4 = () => {
           text={trimmedb64String}
           language={"javascript"}
           theme={dracula}
-          showLineNumbers={true}
+          showLineNumbers={false}
           wrapLongLines
         />
       </div>
@@ -74,14 +74,15 @@ export const Post4 = () => {
           text="'data:image/gif;base64,¡=wtJbWFnZU1hZ2ljaw1nYW1tYT0wLjQ1NDU1ACH5BAkKAAEALAAAAAALAAcAAAI,R0lGODlhCw..."
           language={"javascript"}
           theme={dracula}
-          showLineNumbers={true}
+          showLineNumbers={false}
           wrapLongLines
         />
       </div>
       <Typography paragraph>
         '¡' is an upsite down exclamation point and the first visible character
         in the extended ASCII table. It is set to be equal to the substring
-        repeated five times. Now, if we insert '¡' into the base64 data, the data becomes shorter:
+        repeated five times. Now, if we insert '¡' into the base64 data, the
+        data becomes shorter:
       </Typography>
       <div
         style={{
@@ -94,10 +95,16 @@ export const Post4 = () => {
           text="data:image/gif;base64,¡=wtJbWFnZU1hZ2ljaw1nYW1tYT0wLjQ1NDU1ACH5BAkKAAEALAAAAAALAAcAAAI,R0lGODlhCwAHAPAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/¡QDIJ2CGuc3JIR2ofzZC26AgAh/¡PRB5guHmr2JPTVdvyjS8XACH/C0ltYWdlTWFnaWNrDWdhbW1hPTAuNDU0NTUAIfkECQoAAQAsAAAAAAsABwAAAg+MA3B4yuhenIbWi2WbvAAAIf8LSW1hZ2VNYWdpY2sNZ2FtbWE9MC40NTQ1NQAh+QQJCgABACwAAAAACwAHAAACEIwBdprRyJZ0s9GLX2QWgQIAIf8LSW1hZ2VNYWdpY2sNZ2FtbWE9MC40NTQ1NQAh+QQJCgABACwAAAAACwAHAAACD0wAZrl9fFx0sEo781MoFQAh/¡QDBBpimvtoEyT2huZeuykAgAh/¡QBIJxiWvpoFST2hsbfI2HAgAh/¡PRB6GpqB5noyrQoonlW4VACH/C0ltYWdlTWFnaWNrDWdhbW1hPTAuNDU0NTUAIfkECQoAAQAsAAAAAAsABwAAAhCMA4eQe93QM7HSeWXWj/UCACH/C0ltYWdlTWFnaWNrDWdhbW1hPTAuNDU0NTUAIfkECQoAAQAsAAAAAAsABwAAAg+MYYeau/Fcm5DWiyUEERUAIf8LSW1hZ2VNYWdpY2sNZ2FtbWE9MC40NTQ1NQAh+QQJCgABACwAAAAACwAHAAACD0xgBqh8mhyTEdqH82ySFQA7"
           language={"javascript"}
           theme={dracula}
-          showLineNumbers={true}
+          showLineNumbers={false}
           wrapLongLines
         />
       </div>
+      <Typography paragraph>
+        The base64 image has been reduced from 1034 characters to 794
+        characters. So, what if there are multiple repeated substrings?
+        We can just declare another variable like '¢'. We have 94 single 
+        letter variables in the extended ASCII table to choose from.
+      </Typography>
     </>
   );
 };
