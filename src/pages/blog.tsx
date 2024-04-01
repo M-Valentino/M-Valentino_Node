@@ -9,6 +9,7 @@ import { MainHeading } from "../components/layout/Headings";
 import { Post1 } from "../components/blogComponents/blogPosts/Post1";
 import { Post2 } from "../components/blogComponents/blogPosts/Post2";
 import { Post3 } from "../components/blogComponents/blogPosts/Post3";
+import { Post4 } from "../components/blogComponents/blogPosts/Post4";
 import { BlogDrawer } from "../components/blogComponents/BlogDrawer";
 import { BlogPostHeader } from "../components/blogComponents/BlogPostHeader";
 import { SHADOWS } from "../consts/stylingValues";
@@ -19,6 +20,13 @@ import { SHADOWS } from "../consts/stylingValues";
  * marks in URLs creates incompatibilities.
  */
 export const BLOG_POSTS = [
+  {
+    component: <Post4 />,
+    title: "Some Enhancements I Propose to HTML5",
+    descriptionText: "No more guesing. Hover over links and see the site's favicon and domain name.",
+    keywords: "UX, user experience, security, tooltip, favicon, invention, code",
+    date: "December 5th, 2023",
+  },
   {
     component: <Post3 />,
     title: "My UX Invention to Let Users Know Where Links Go",
