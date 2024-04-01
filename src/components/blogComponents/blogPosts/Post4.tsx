@@ -5,6 +5,7 @@ import { BASE_64_IMAGES } from "../../../consts/stylingValues";
 import { CodeBlock, dracula } from "react-code-blocks";
 
 export const Post4 = () => {
+  // There is CSS specific string data that has to be trimmed
   const trimmedb64String = BASE_64_IMAGES.binary.substring(
     5,
     BASE_64_IMAGES.binary.length - 2
@@ -27,7 +28,6 @@ export const Post4 = () => {
         encoding them inside the HTML document. So naturally I just encoded them
         in base64. Here is one one of them {"(I upscaled it)"}:
       </Typography>
-      {/* There is CSS specific string data that has to be trimmed */}
       <img
         src={trimmedb64String}
         width={88}
