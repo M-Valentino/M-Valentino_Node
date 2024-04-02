@@ -23,9 +23,9 @@ export const BLOG_POSTS = [
   {
     component: <Post4 />,
     title: "Some Enhancements I Propose to HTML5",
-    descriptionText: "No more guesing. Hover over links and see the site's favicon and domain name.",
-    keywords: "UX, user experience, security, tooltip, favicon, invention, code",
-    date: "December 5th, 2023",
+    descriptionText: "I have a few improvements to HTML5 I'm sharing: embeded base64 image compression and html generated hamburger menus",
+    keywords: "HTML5, HTML6, improvements, hamburger menu, base64, compression",
+    date: "April 2nd, 2024",
   },
   {
     component: <Post3 />,
