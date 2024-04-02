@@ -101,9 +101,36 @@ export const Post4 = () => {
       </div>
       <Typography paragraph>
         The base64 image has been reduced from 1034 characters to 794
-        characters. So, what if there are multiple repeated substrings?
-        We can just declare another variable like '¢'. We have 94 single 
-        letter variables in the extended ASCII table to choose from.
+        characters. So, what if there are multiple repeated substrings? We can
+        just declare another variable like '¢'. We have 94 single letter
+        variables in the extended ASCII table to choose from.
+      </Typography>
+      <Typography variant="h5" style={{ fontWeight: "bold" }}>
+        Incorporating the Hamburger Menu
+      </Typography>
+      <Typography paragraph>
+        The hamburger menu has become a defacto standard in designing mobile
+        user interfaces, yet it still requires some work to implement while also
+        having a different menu for desktop users. Creating a basic hamburger
+        menu for a website not only involves HTML, but it also involves CSS and
+        JavaScript{" "}
+        <SmartLink href="https://www.w3schools.com/howto/howto_js_mobile_navbar.asp">
+          as you can see in this example from W3 Schools
+        </SmartLink>
+        . Now, if you wanted to have both a desktop menu and a mobile hamburger
+        menu, you would need to use CSS or javaScript to switch between the
+        menus depending on the resolution.
+      </Typography>
+      <Typography paragraph>
+        Due to the learning curve required in creating a responsive user
+        interface, beginners to web development will only make a desktop
+        friendly menu because they aren't that skilled with CSS or may not know
+        a thing with JavaScript. It used to be relatively easy to make an
+        acceptable simple website in the early days of the internet because
+        people only had to worry about coding for desktop users. I believe HTML
+        has some catching up to do with ease of use. That is why I propse there
+        should a new HTML element that will easily create a responsive menu with
+        JavaScript and CSS being optional.
       </Typography>
     </>
   );
