@@ -18,6 +18,7 @@ export const CustomPaper = (props: {
         background: GRADIENTS.offWhiteGradient,
         borderRadius: 4,
         boxShadow: SHADOWS.minute,
+        overflowWrap: "break-word"
       }}
     >
       {children}
