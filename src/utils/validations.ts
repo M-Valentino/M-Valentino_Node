@@ -1,15 +1,9 @@
 export const checkEmailInvalid = (email: string) => {
-  if (email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{1,4}$/g)) {
-    return false;
-  }
-  return true;
+  return !email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{1,4}$/g);
 };
 
 export const checkEmailTooLong = (email: string) => {
-  if (email.length > 40) {
-    return true;
-  }
-  return false;
+  return email.length > 40;
 };
 
 export const checkMessageInvalid = (message: string) => {
@@ -17,26 +11,17 @@ export const checkMessageInvalid = (message: string) => {
    * This also checks if '{' and '}' aren't there which maybe can
    * mitigate possible code injections.
    */
-  if (message.match(/^[\na-z0-9!"#$%&'()*+,.\/:;<=>?@\[\] ^_`|~-]*$/i)) {
-    return false;
-  }
-  return true;
+  return !message.match(/^[\na-z0-9!"#$%&'()*+,.\/:;<=>?@\[\] ^_`|~-]*$/i);
 };
 
 export const MAX_MESSAGE_LENGTH = 1280;
 
 export const checkMessageTooLong = (message: string) => {
-  if (message.length > MAX_MESSAGE_LENGTH) {
-    return true;
-  }
-  return false;
+  return message.length > MAX_MESSAGE_LENGTH;
 };
 
 export const checkMessageTooShort = (message: string) => {
-  if (message.length < 12) {
-    return true;
-  }
-  return false;
+  return message.length < 12;
 };
 
 export const checkHasGibberish = (message: string) => {
