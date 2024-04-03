@@ -40,6 +40,7 @@ export const Post4 = () => {
         width={88}
         height={56}
         style={{ imageRendering: "pixelated" }}
+        alt="animated scrolling pixel art of binary numbers"
       />
       <Typography paragraph>
         Now here is the base64 code for the image:

@@ -20,7 +20,7 @@ interface ProjectTableProps {
 }
 
 export const ProjectTable: React.FC<ProjectTableProps> = ({
-  PROJECT_CONTENT
+  PROJECT_CONTENT,
 }) => {
   const isMobileView = useMediaQuery("(max-width:548px)");
   const isSmallMobileView = useMediaQuery("(max-width:496px)");

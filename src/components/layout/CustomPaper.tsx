@@ -2,10 +2,7 @@ import React, { ReactNode } from "react";
 import { GRADIENTS, SHADOWS } from "../../consts/stylingValues";
 
 // This component holds page sections inside the <main> content.
-export const CustomPaper = (props: {
-  children: ReactNode;
-  mode?: string;
-}) => {
+export const CustomPaper = (props: { children: ReactNode; mode?: string }) => {
   const { children, mode } = props;
   return (
     <div
@@ -18,7 +15,7 @@ export const CustomPaper = (props: {
         background: GRADIENTS.offWhiteGradient,
         borderRadius: 4,
         boxShadow: SHADOWS.minute,
-        overflowWrap: "break-word"
+        overflowWrap: "break-word",
       }}
     >
       {children}
