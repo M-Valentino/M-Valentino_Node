@@ -9,8 +9,10 @@ import {
   checkMessageTooLong,
   checkMessageTooShort,
 } from "../../utils/validations";
+import type { NextApiRequest, NextApiResponse } from "next";
 
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const sleep = (ms: number): Promise<void> =>
+  new Promise((resolve) => setTimeout(resolve, ms));
 
 /**
  * This handles adding a message sent from the contact form to the list of
@@ -20,13 +22,15 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
  * @param {*} response
  * @returns response.status(200) with a message of success or fail.
  */
-export default async function handler(request, response) {
+export default async function handler(  request: NextApiRequest,
+  response: NextApiResponse
+): Promise<void> {
   const { method } = request;
 
   const token = request.query.token;
   const tokenVerified = (async () => {
     const result = await verifyHcaptchaToken({
-      token: token,
+      token: token as string,
       secretKey: process.env.HCAPTCHA_SECRET,
       siteKey: process.env.HCAPTCHA_SITE_KEY,
     });
@@ -37,8 +41,8 @@ export default async function handler(request, response) {
     return false;
   })();
 
-  const email = nextBase64.decode(request.query.email);
-  const message = nextBase64.decode(request.query.message);
+  const email = nextBase64.decode(request.query.email as string);
+  const message = nextBase64.decode(request.query.message as string);
   const previousMail = await kv.lindex("emails", 0);
   const previousTimestamp = parseInt(
     previousMail.substring(previousMail.lastIndexOf("␟") + 1)
