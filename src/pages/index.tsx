@@ -126,13 +126,6 @@ export default function Home() {
           <SubHeading>Experience & Education</SubHeading>
           <Grid container style={{ marginBottom: 40 }}>
             <ExpAndEduListItem
-              imgSRC="/home/ohanafylogo.png"
-              imgAlt="Ohanafy icon logo"
-              primaryText="Software Engineer"
-              secondaryText="Ohanafy, Apr. 2024 - Present"
-              url="https://www.ohanafy.com"
-            />
-            <ExpAndEduListItem
               imgSRC="/home/landIntelligencePin.png"
               imgAlt="Land Intelligence Pin Logo"
               primaryText="Full Stack Developer & Data Technician"
