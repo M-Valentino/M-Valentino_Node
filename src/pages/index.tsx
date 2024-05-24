@@ -106,7 +106,7 @@ export default function Home() {
                 animationDelay: "1s",
               }}
             >
-              {Array.apply(null, { length: 4 }).map((_, index) => (
+              {Array.from({ length: 4 }).map((_: any, index: number) => (
                 <div
                   key={index}
                   style={{
