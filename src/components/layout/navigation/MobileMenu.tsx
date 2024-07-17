@@ -22,10 +22,11 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ activeLink }) => {
   return (
     <span id="mobileMenu">
       <IconButton
-        id="basic-button"
-        aria-controls={open ? "basic-menu" : undefined}
+        id="hamburger-button"
+        aria-controls={open ? "hamburger-menu" : undefined}
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
+        aria-label="Open menu"
         onClick={handleClick}
         style={{ position: "absolute", top: 0, right: 0 }}
       >
@@ -44,12 +45,13 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ activeLink }) => {
         )}
       </IconButton>
       <Menu
-        id="basic-menu"
+        id="hamburger-menu"
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
         MenuListProps={{
-          "aria-labelledby": "basic-button",
+          "aria-labelledby": "hamburger-button",
+          role: "menu",
         }}
         style={{ textDecoration: "none", zIndex: Z_INDEX_ORDER.mobileNavMenu }}
       >

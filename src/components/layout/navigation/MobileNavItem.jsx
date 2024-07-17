@@ -27,6 +27,7 @@ export const MobileNavItem = ({
       }}
       target={externalLink ? "_blank" : ""}
       rel={externalLink ? "noopener noreferrer" : ""}
+      role="menuitem"
     >
       <MenuItem>{itemTextAndOrLink}</MenuItem>
     </Link>
