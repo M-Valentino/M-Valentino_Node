@@ -51,7 +51,11 @@ export default function Portfolio() {
 
   return (
     <>
-      <CustomHead title={PAGE_TITLES.portfolio} />
+      <CustomHead
+        title={PAGE_TITLES.portfolio}
+        descriptionText="Gallery of Mark Valentino's technical drawing and 3D modeling."
+        keywords="AutoCAD, Inventor, Autodesk, art"
+      />
       <MainWrapper activeLink={PAGE_TITLES.portfolio}>
         <CustomPaper>
           <MainHeading addMarginBottomOn>Portfolio</MainHeading>
