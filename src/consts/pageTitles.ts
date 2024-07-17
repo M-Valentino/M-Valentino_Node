@@ -1,5 +1,5 @@
 export const PAGE_TITLES = {
-  domain: "mark-valentino.vercel.app",
+  
   home: "Home",
   projects: "Projects",
   blog: "Blog",
@@ -8,3 +8,10 @@ export const PAGE_TITLES = {
   gitHub: "GitHub",
   linkedIn: "LinkedIn",
 };
+
+export const LINKS = {
+  domain: "mark-valentino.vercel.app",
+  gitHub: "https://github.com/M-Valentino",
+  linkedIn: "https://www.linkedin.com/in/mark-valentino"
+
+}

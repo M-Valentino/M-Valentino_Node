@@ -1,5 +1,6 @@
 import Head from "next/head";
 import React from "react";
+import { LINKS } from "../../consts/pageTitles";
 
 interface CustomHeadProps {
   descriptionText?: string;
@@ -31,6 +32,28 @@ export const CustomHead: React.FC<CustomHeadProps> = ({
       <meta name="keywords" content={keywords} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" href="/favicon.ico" />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:locale" content="en_US" />
+      <meta
+        property="og:image"
+        content={`https://${LINKS.domain}/githubAvatar.png`}
+      />
+      <meta property="og:image:type" content="image/png" />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            name: "Mark Valentino",
+            url: `https://${LINKS.domain}`,
+            logo: `https://${LINKS.domain}/mark-valentino-logo.svg`,
+            sameAs: [LINKS.gitHub, LINKS.linkedIn],
+          }),
+        }}
+      />
       {loadClarity && (
         <script
           dangerouslySetInnerHTML={{

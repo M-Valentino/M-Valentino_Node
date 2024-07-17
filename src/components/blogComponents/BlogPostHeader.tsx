@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ShareIcon from "@mui/icons-material/Share";
 import { Grid, IconButton, Tooltip, Typography } from "@mui/material";
-import { PAGE_TITLES } from "../../consts/pageTitles";
+import { LINKS } from "../../consts/pageTitles";
 import { COLORS, SHADOWS } from "../../consts/stylingValues";
 import { MainHeading, SubHeading } from "../layout/Headings";
 import { useSpring, animated } from "@react-spring/web";
@@ -100,7 +100,7 @@ export const BlogPostHeader = (props: {
                   }}
                   onClick={() => {
                     navigator.clipboard.writeText(
-                      `https://${PAGE_TITLES.domain}/blogPost/${item.title}`
+                      `https://${LINKS.domain}/blogPost/${item.title}`
                     );
                     setPostIdCopied(postIndex);
                   }}

@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import { SHADOWS, Z_INDEX_ORDER } from "../../../consts/stylingValues";
-import { PAGE_TITLES } from "../../../consts/pageTitles";
+import { LINKS } from "../../../consts/pageTitles";
 
 interface PrivacyPolicyDialogProps {
   handlePrivacyPolicyClose: any;
@@ -48,8 +48,8 @@ export const PrivacyPolicyDialog: React.FC<PrivacyPolicyDialogProps> = (
           This document outlines how my site gathers, stores, uses, and possibly
           shares your information when you use my services, including visiting
           my website at{" "}
-          <Link href={`https://${PAGE_TITLES.domain}`}>
-            {PAGE_TITLES.domain}
+          <Link href={`https://${LINKS.domain}`}>
+            {LINKS.domain}
           </Link>
           . By using my website, you agree to the terms laid out in this policy.
           If you have questions or concerns, reading this policy will provide
