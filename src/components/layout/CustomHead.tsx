@@ -37,7 +37,7 @@ export const CustomHead: React.FC<CustomHeadProps> = ({
       <meta property="og:locale" content="en_US" />
       <meta
         property="og:image"
-        content={`${LINKS.domain}/githubAvatar.png`}
+        content={`${LINKS.domain}/home/githubAvatar.png`}
       />
       <meta property="og:image:type" content="image/png" />
 
