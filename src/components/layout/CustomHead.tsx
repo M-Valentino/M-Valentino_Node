@@ -37,7 +37,7 @@ export const CustomHead: React.FC<CustomHeadProps> = ({
       <meta property="og:locale" content="en_US" />
       <meta
         property="og:image"
-        content={`https://${LINKS.domain}/githubAvatar.png`}
+        content={`${LINKS.domain}/githubAvatar.png`}
       />
       <meta property="og:image:type" content="image/png" />
 
@@ -48,8 +48,8 @@ export const CustomHead: React.FC<CustomHeadProps> = ({
             "@context": "http://schema.org",
             "@type": "Organization",
             name: "Mark Valentino",
-            url: `https://${LINKS.domain}`,
-            logo: `https://${LINKS.domain}/mark-valentino-logo.svg`,
+            url: `${LINKS.domain}`,
+            logo: `${LINKS.domain}/mark-valentino-logo.svg`,
             sameAs: [LINKS.gitHub, LINKS.linkedIn],
           }),
         }}

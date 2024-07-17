@@ -48,7 +48,7 @@ export const PrivacyPolicyDialog: React.FC<PrivacyPolicyDialogProps> = (
           This document outlines how my site gathers, stores, uses, and possibly
           shares your information when you use my services, including visiting
           my website at{" "}
-          <Link href={`https://${LINKS.domain}`}>
+          <Link href={LINKS.domain}>
             {LINKS.domain}
           </Link>
           . By using my website, you agree to the terms laid out in this policy.

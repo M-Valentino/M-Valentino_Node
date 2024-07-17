@@ -100,7 +100,7 @@ export const BlogPostHeader = (props: {
                   }}
                   onClick={() => {
                     navigator.clipboard.writeText(
-                      `https://${LINKS.domain}/blogPost/${item.title}`
+                      `${LINKS.domain}/blogPost/${item.title}`
                     );
                     setPostIdCopied(postIndex);
                   }}
