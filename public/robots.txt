@@ -7,4 +7,4 @@ Disallow: /sacredOSRedirect
 Disallow: /project/[projectTitle]
 Disallow: /blogPost/[postTitle]
 Disallow: /api/*
-Sitemap: /sitemap.xml
+Sitemap: https://mark-valentino.vercel.app/sitemap.xml
