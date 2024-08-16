@@ -9,7 +9,7 @@ export const CustomPaper = (props: { children: ReactNode; mode?: string }) => {
       // For disableing padding when used as a table.
       className={mode === "table" ? "customPaperTable" : "customPaper"}
       style={{
-        maxWidth: 900,
+        maxWidth: 960,
         margin: "auto",
         marginBottom: 50,
         background: GRADIENTS.offWhiteGradient,
